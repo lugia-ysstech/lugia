@@ -1,0 +1,39 @@
+#root{
+    height: 100%;
+}
+.menu-container{
+    width: 220px;
+    /* height: calc( 100vh - 60px);
+    position: relative;
+    top: 0;
+    bottom: 0; */
+    /* border-right: 1px solid #ccc; */
+    /* overflow-x: hidden; */
+    /* overflow-y:scroll; */
+}
+.menu-item{
+    /* height: 40px; */
+    width: 100%;
+    line-height: 1.5;
+    padding: 10px 0 10px 10px;
+    font-size: 14px;
+    color: #314659;
+    cursor: pointer;
+}
+.menu-item.active{
+    color: #ffffff;
+    background: #684fff;
+}
+.menu-container a {
+    color: #314659;
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+    padding: 10px 0 10px 10px;
+    font-size: 14px;
+    color: #314659;
+    cursor: pointer;
+}
+a:active,a:hover,a:visited,a:link {
+    text-decoration: none;
+}
