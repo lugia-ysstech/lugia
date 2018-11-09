@@ -17,5 +17,8 @@
     "start": "lugia-scripts start",
     "build": "lugia-scripts build",
     "test": "lugia-scripts test -w"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.11.0"
   }
 }
