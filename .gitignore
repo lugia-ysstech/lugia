@@ -1,0 +1,10 @@
+.DS_Store
+tmp
+/node_modules
+/.history
+lib
+dist
+coverage
+yarn-error.log
+npm-debug.log*
+.changelog
