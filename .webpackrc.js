@@ -1,3 +1,10 @@
 export default {
-  disableCSSModules: true
+  disableCSSModules: true,
+  extraBabelPlugins:[[
+    "import",
+    {
+      "libraryName": "@lugia/lugia-web",
+      "libraryDirectory": "dist"
+    }
+  ]]
 };
