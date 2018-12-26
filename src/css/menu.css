@@ -2,14 +2,7 @@
     height: 100%;
 }
 .menu-container{
-    width: 220px;
-    /* height: calc( 100vh - 60px);
-    position: relative;
-    top: 0;
-    bottom: 0; */
-    /* border-right: 1px solid #ccc; */
-    /* overflow-x: hidden; */
-    /* overflow-y:scroll; */
+
 }
 .menu-item{
     /* height: 40px; */

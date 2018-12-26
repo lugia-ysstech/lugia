@@ -1,0 +1,18 @@
+[ignore]
+.*/node_modules/.*
+.*/build/.*
+.*/config/.*
+.*/public/.*
+.*/scripts/.*
+.*/flow-typed/.*
+.*/.history/.*
+[include]
+src
+[libs]
+flow-typed/
+src/interface/
+node_modules/@lugia/jverify/interface
+node_modules/@lugia/type-utils/interface
+node_modules/@lugia/react-test-utils/interface
+[options]
+module.name_mapper='^core/\(.*\)$' -> '<PROJECT_ROOT>/src/core/\1'
