@@ -8,6 +8,7 @@
     "@lugia/lugiax-core": "^1.0.1-5",
     "@lugia/lugiax-router": "^1.0.0-1",
     "@lugia/mega-scripts": "^1.0.1",
+    "highlight.js": "^9.13.1",
     "history": "^4.7.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
