@@ -6,11 +6,11 @@ export default class BasicDemo extends React.Component {
     return (
       <div>
         <Affix offsetTop={20}>
-          <Button type="primary">Affix top</Button>
+          <Button type='primary'>Affix top</Button>
         </Affix>
         <br />
         <Affix offsetBottom={20}>
-          <Button type="primary">Affix bottom</Button>
+          <Button type='primary'>Affix bottom</Button>
         </Affix>
       </div>
     );

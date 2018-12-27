@@ -13,7 +13,6 @@ import 'highlight.js/styles/atom-one-light.css';
 hljs.registerLanguage('javascript', javascript);
 
 const Wrap = styled.div`
-  padding: 10px;
   box-sizing: border-box;
 `;
 const Title = styled.div`
@@ -91,11 +90,11 @@ export default class extends React.Component {
   }
 
   render() {
-    const { title,desc,demo,code } = this.props;
+    const { title,desc,demo,code,titleID } = this.props;
     const { visible, textVisible } = this.state;
     return (
       <Wrap>
-        <Title>{title}</Title>
+        <Title id={titleID} name={titleID}>{title}</Title>
         <Desc>{desc}</Desc>
         <DemoBox>{demo}</DemoBox>
 

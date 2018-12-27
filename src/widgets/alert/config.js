@@ -1,4 +1,4 @@
-export default {
+module.exports =  {
     BasicDemo: {
         desc:'最简单的用法',
         title: '基本'
@@ -29,6 +29,6 @@ export default {
     },
     ThemeDemo: {
         title: '可配置theme属性',
-        desc: '根据需要单独配置警告提示样式'
+        desc: '根据需要单独配置警告提示样式，可配置 width color'
     }
 }
