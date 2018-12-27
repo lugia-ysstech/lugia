@@ -6,13 +6,13 @@
  */
 import React from 'react';
 import styled from 'styled-components';
-import { CheckBox, Theme } from '@lugia/lugia-web';
+import { Checkbox, Theme } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 // import Widget from '../consts';
 // import CheckBox from './';
 
-const CheckBoxGroup = CheckBox.Group;
-const CheckBoxButton = CheckBox.Button;
+const CheckBoxGroup = Checkbox.Group;
+const CheckBoxButton = Checkbox.Button;
 const Wrapper = styled.div`
   margin: 20px;
 `;
@@ -58,21 +58,21 @@ export default  class CheckBoxGroupDemo extends React.Component<any, any> {
       <div>
         <Wrapper>
           <CheckBoxGroup onChange={this.handleChange} value={this.state.newValue}>
-            <CheckBox value="11" disabled>
+            <Checkbox value="11" disabled>
               CheckBox1
-            </CheckBox>
-            <CheckBox value="22">CheckBox2</CheckBox>
-            <CheckBox value="33">CheckBox3</CheckBox>
+            </Checkbox>
+            <Checkbox value="22">CheckBox2</Checkbox>
+            <Checkbox value="33">CheckBox3</Checkbox>
           </CheckBoxGroup>
         </Wrapper>
         <Wrapper>
           <CheckBoxGroup onChange={this.handleChange}>
-            <CheckBox value="11" disabled>
+            <Checkbox value="11" disabled>
               CheckBox1
-            </CheckBox>
+            </Checkbox>
             {123}
-            <CheckBox value="22">CheckBox2</CheckBox>
-            <CheckBox value="33">CheckBox3</CheckBox>
+            <Checkbox value="22">CheckBox2</Checkbox>
+            <Checkbox value="33">CheckBox3</Checkbox>
           </CheckBoxGroup>
         </Wrapper>
         <Wrapper>
