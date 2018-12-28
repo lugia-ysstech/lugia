@@ -8,7 +8,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {Badge,Theme,Icon,Col, Row} from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
-// import { Col, Row } from '../grid';
+// import { Col, Row } from '@lugia/lugia-web/dist/grid';
 // import Widget from '../consts';
 // import Theme from '../theme';
 // import Icon from '../icon';
