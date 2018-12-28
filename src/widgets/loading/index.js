@@ -1,15 +1,18 @@
-import React from 'react';
-import {Loading} from '@lugia/lugia-web';
+/**
+ *
+ * create by liangguodong
+ *
+ */
+import React from "react";
+import BaseLoad from "./BaseLoad";
+import ScaleLoad from "./ScaleLoad";
+
 class LoadingDemo extends React.Component {
   render() {
-    // const { value, displayValue, } = this.state;
     return (
       <div>
-        <Loading width={14} color={'red'} />
-        <br />
-        <br />
-        <br />
-        <Loading scale />
+        <BaseLoad />
+        <ScaleLoad />
       </div>
     );
   }

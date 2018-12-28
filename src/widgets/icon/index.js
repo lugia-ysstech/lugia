@@ -7,7 +7,6 @@
 import React from 'react';
 import {Icon,Theme} from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
-// import '../common/shirm';
 
 type IconProps = {
     viewClass?: string,
