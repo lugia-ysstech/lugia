@@ -91,9 +91,8 @@ function getImportInfoAndDemo(demos,config,folderName){
     demos.forEach((item,index) => {
         const {title,desc} = config[item];
         const code = fs.readFileSync(`./${folderName}/${item}.js`, 'utf-8');
-        console.log(typeof code);
         const codeStr = code.replace(/\'/g, String.raw`\'`).replace(/\"/g, String.raw`\"`).replace(/\n/g,String.raw`\n`);
-        importInfo = `${importInfo} const ${item} =  require('./${item}').default;`;
+        importInfo = `${importInfo} const ${item} =  require('./${item}').default; `;
         demo = `${demo}<Demo title={'${title}'} titleID={'${folderName}-${index}'} code={<code>{ "${codeStr}"}</code>} desc={'${desc}'}  demo={<${item} />}></Demo>`;
         link = `${link}<Link title={'${title}'} href={'#${folderName}-${index}'} />`
     });

@@ -14,6 +14,7 @@ hljs.registerLanguage('javascript', javascript);
 
 const Wrap = styled.div`
   box-sizing: border-box;
+  margin-bottom: 30px
 `;
 const Title = styled.div`
   font-size: 18px;

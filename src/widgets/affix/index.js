@@ -4,7 +4,7 @@ import  React from 'react';
         import affix from '@lugia/lugia-web/dist/affix/lugia.affix.zh-CN.json';
         import Demo from '../code-box';
         import Title from '../code-box/Title';
-         const BasicDemo =  require('./BasicDemo').default; const TargetDemo =  require('./TargetDemo').default; const CallBackDemo =  require('./CallBackDemo').default; 
+         const BasicDemo =  require('./BasicDemo').default;  const TargetDemo =  require('./TargetDemo').default;  const CallBackDemo =  require('./CallBackDemo').default;  
         
         const { Link } = Anchor;
         const { Row,Col } = Grid;
