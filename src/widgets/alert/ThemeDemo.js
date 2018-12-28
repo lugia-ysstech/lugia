@@ -1,7 +1,6 @@
 import * as React from 'react';
-import Alert from './alert';
-import Theme from '../theme';
-import Widget from '../consts';
+import {Alert, Theme} from '@lugia/lugia-web';
+import Widget from '@lugia/lugia-web/dist/consts/index';
 
 export default class AlertDemo extends React.Component {
   render() {
