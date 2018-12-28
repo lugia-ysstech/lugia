@@ -9,7 +9,7 @@ import { popover, Button, Input } from "@lugia/lugia-web";
 import BasePopover from "./BasePopover";
 import ActionPopover from "./ActionPopover";
 import HoverClickPopover from "./HoverClickPopover";
-import InnerCloseDemo from "./InnerCloseDemo";
+import InnerClosePopover from "./InnerClosePopover";
 
 export const WrapperDemo = () => {
   return (
@@ -18,7 +18,7 @@ export const WrapperDemo = () => {
       <br />
       <ActionPopover />
       <br />
-      <InnerCloseDemo />
+      <InnerClosePopover />
       <br />
       <HoverClickPopover />
     </div>
