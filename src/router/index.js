@@ -6,10 +6,11 @@ import Amountinput from "../widgets/amountinput";
 import Autocomplete from "../widgets/autocomplete";
 import BackTop from "../widgets/back-top";
 import Avatar from "../widgets/avatar";
-// import Badge from "../widgets/badge";
+import Badge from "../widgets/badge";
 import Breadcrumb from "../widgets/breadcrumb";
 import Button from "../widgets/button";
-import Checkbox from "../widgets/checkbox";
+import Card from "../widgets/card";
+// import Checkbox from "../widgets/checkbox";
 // import Collapse from "../widgets/collapse";
 import Divider from "../widgets/divider";
 // import Grid from "./widgets/grid";
@@ -22,94 +23,103 @@ import Modal from "../widgets/modal";
 import Notifications from "../widgets/notification";
 import Numberinput from "../widgets/numberinput";
 import Progress from "../widgets/progress";
+import Popover from "../widgets/popover";
+import Popconfirm from "../widgets/popconfirm";
 import Radio from "../widgets/radio";
 // import Scroller from "../widgets/scroller";
+import Steps from "../widgets/steps";
 import Select from "../widgets/select";
 import Slider from "../widgets/slider";
 import Switch from "../widgets/switch";
-// import Tabs from "../widgets/tabs";
+import Tabs from "../widgets/tabs";
 import Tag from "../widgets/tag";
 import Tooltip from "../widgets/tooltip";
+import TimeLine from "../widgets/timeline";
 import Tree from "../widgets/tree";
 import Trigger from "../widgets/trigger";
-import EditTable from "../edit-table"
-
+import EditTable from "../edit-table";
 
 const routerConfig = {
-  "design":{
-    value:'/design',
-    text:'Lugia Design of React'
+  design: {
+    value: "/design",
+    text: "Lugia Design of React"
   },
   "/edittable": {
     // exact: true,
     component: EditTable,
-    value:'/edittable',
-    text: 'EditTable',
+    value: "/edittable",
+    text: "EditTable"
   },
   "/affix": {
     component: Affix,
-    value:'/affix',
-    text: 'Affix',
-    icon: 'lugia-icon-financial_add_pic',
+    value: "/affix",
+    text: "Affix",
+    icon: "lugia-icon-financial_add_pic"
   },
   "/alert": {
     component: Alert,
-    value:'/alert',
-    text: 'Alert',
+    value: "/alert",
+    text: "Alert"
   },
   "/align": {
     component: Align,
-    value:'/align',
-    text: 'Align',
-    icon: 'lugia-icon-financial_add_pic',
+    value: "/align",
+    text: "Align",
+    icon: "lugia-icon-financial_add_pic"
   },
   "/amountinput": {
     component: Amountinput,
-    value:'/amountinput',
-    text: 'Align',
+    value: "/amountinput",
+    text: "amountinput"
   },
   "/autocomplete": {
     component: Autocomplete,
-    value:'AutoComplete',
-    text: 'Align',
+    value: "AutoComplete",
+    text: "Align"
   },
   "/avatar": {
     component: Avatar,
-    value:'Avatar',
-    text: 'Align',
+    value: "Avatar",
+    text: "Avatar"
   },
   "/backtop": {
     component: BackTop,
-    value:'BackTop',
-    text: 'Align',
+    value: "BackTop",
+    text: "Align"
   },
-  // "/badge": {
-  //   component: Badge,
-  // value:'Badge'
-  // },
+  "/badge": {
+    component: Badge,
+    value: "Badge",
+    text: "Badge"
+  },
   "/breadcrumb": {
     component: Breadcrumb,
-    value:'Breadcrumb',
-    text: 'Align',
+    value: "Breadcrumb",
+    text: "Align"
   },
   "/button": {
     component: Button,
-    value:'Button',
-    text: 'Align',
+    value: "Button",
+    text: "Align"
   },
-  "/checkbox": {
-    component: Checkbox,
-    value:'Checkbox',
-    text: 'Align',
+  "/card": {
+    component: Card,
+    value: "Card",
+    text: "Card"
   },
+  // "/checkbox": {
+  //   component: Checkbox,
+  //   value:'Checkbox',
+  //   text: 'Align',
+  // },
   // "/collapse": {
   //   component: Collapse,
   //     value:'Collapse'
   // },
   "/divider": {
     component: Divider,
-    value:'Divider',
-    text: 'Align',
+    value: "Divider",
+    text: "Align"
   },
   // "/grid": {
   //   component: Grid,
@@ -117,100 +127,122 @@ const routerConfig = {
   // },
   "/icon": {
     component: Icon,
-    value:'Icon',
-    text: 'Align',
+    value: "Icon",
+    text: "Icon"
   },
   "/input": {
     component: Input,
-    value:'Input',
-    text: 'Align',
+    value: "Input",
+    text: "Input"
   },
   "/layout": {
     component: Layouts,
-    value:'Layouts',
-    text: 'Align',
+    value: "Layouts",
+    text: "Align"
   },
   "/loading": {
     component: Loading,
-    value:'Loading',
-    text: 'Align',
+    value: "Loading",
+    text: "Loading"
   },
   "/message": {
     component: Message,
-    value:'Message',
-    text: 'Align',
+    value: "Message",
+    text: "Align"
   },
   "/modal": {
     component: Modal,
-    value:'Modal',
-    text: 'Align',
+    value: "Modal",
+    text: "Align"
   },
   "/notification": {
     component: Notifications,
-    value:'Notifications',
-    text: 'Align',
+    value: "Notifications",
+    text: "Align"
   },
   "/numberinput": {
     component: Numberinput,
-    value:'NumberInput',
-    text: 'Align',
+    value: "NumberInput",
+    text: "NumberInput"
   },
   "/progress": {
     component: Progress,
-    value:'Progress',
-    text: 'Align',
+    value: "Progress",
+    text: "Align"
   },
   "/radio": {
     component: Radio,
-    value:'Radio',
-    text: 'Align',
+    value: "Radio",
+    text: "Align"
   },
   // "/scroller": {
   //   component: Scroller
   // },
   "/select": {
     component: Select,
-    value:'Select',
-    text: 'Align',
+    value: "Select",
+    text: "Align"
+  },
+  "/steps": {
+    component: Steps,
+    value: "Steps",
+    text: "Steps"
+  },
+  "/popover": {
+    component: Popover,
+    value: "Popover",
+    text: "Popover"
+  },
+  "/popconfirm": {
+    component: Popconfirm,
+    value: "Popconfirm",
+    text: "Popconfirm"
   },
   "/slider": {
     component: Slider,
-    value:'Slider',
-    text: 'Align',
+    value: "Slider",
+    text: "Slider"
   },
   "/switch": {
     component: Switch,
-    value:'Switch',
-    text: 'Align',
+    value: "Switch",
+    text: "Switch"
   },
-  // "/tabs": {
-  //   component: Tabs
-  // },
+  "/tabs": {
+    component: Tabs,
+    value: "Tabs",
+    text: "Tabs"
+  },
   "/tag": {
     component: Tag,
-    value:'Tag',
-    text: 'Align',
+    value: "Tag",
+    text: "Align"
   },
   "/tooltip": {
     component: Tooltip,
-    value:'Tooltip',
-    text: 'Align',
+    value: "Tooltip",
+    text: "Tooltip"
+  },
+  "/timeline": {
+    component: TimeLine,
+    value: "TimeLine",
+    text: "TimeLine"
   },
   "/tree": {
     component: Tree,
-    value:'Tree',
-    text: 'Align',
+    value: "Tree",
+    text: "Align"
   },
   "/trigger": {
     component: Trigger,
-    value:'Trigger',
-    text: 'Align',
+    value: "Trigger",
+    text: "Align"
   },
   "/404": {
     component: NotAccess,
     exact: true,
-    value:'NotAccess',
-    text: 'Align',
+    value: "NotAccess",
+    text: "Align"
   }
 };
 
