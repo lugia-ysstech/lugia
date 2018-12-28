@@ -9,6 +9,12 @@ const { Header, Content, Footer} = Layout;
 
 
 export const designRouter = {
+  "/": {
+    exact: true,
+    render: async () => import('./home'),
+    value: '/component/affix',
+    isHidden: true,
+  },
   "/home":{
     value:'首页',
     text:'首页',

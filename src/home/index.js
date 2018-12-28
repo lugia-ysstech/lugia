@@ -12,7 +12,6 @@ const Container = styled.div`
   height:1500px;
 `;
 export default class Pages extends React.Component<any, any> {
-
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
     const defCurrent = defProps.current || ['EditTable'];
     if (!stateProps) {
