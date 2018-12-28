@@ -16,10 +16,10 @@ module.exports ={
     desc: "三种触发条件,click,hover,focus",
     path: "./ActionPopover"
   },
-  InnerCloseDemo: {
+  InnerClosePopover: {
     title: "内部关闭",
     desc: "可在清除关闭",
-    path: "./InnerCloseDemo"
+    path: "./InnerClosePopover"
   },
   HoverClickPopover: {
     title: "嵌套使用",
