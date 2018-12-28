@@ -2,112 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a3ec55a-1f34-4ef9-bea3-2dd311bc1094" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/widgets/back-top/BasicDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/back-top/CustomDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/back-top/ThemeDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/back-top/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/button/BasicDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/button/CircleDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/button/DisabledDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/button/IconDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/button/PlainDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/button/PlainDisabledDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/button/ShapeDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/button/SizeDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/button/ThemeDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/button/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/checkbox/BasicDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/checkbox/BasicGroupDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/checkbox/ButtonLimitedDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/checkbox/ButtonPropsDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/checkbox/DisabledCheckBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/checkbox/DisplayValueGroup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/checkbox/LimitedCheckBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/checkbox/SomeLimitedPropsDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/checkbox/SomePropsDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/checkbox/ThemeCheckBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/checkbox/VerticalGroupDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/checkbox/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/collapse/AccordionDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/collapse/BasicDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/collapse/LimitedDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/collapse/ThemeDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/collapse/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/drawer/BasicDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/drawer/ClosableDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/drawer/DirectionDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/drawer/LevelDrawer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/drawer/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/grid/BasicDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/grid/FlexAlignDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/grid/FlexJustifyDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/grid/FlexOrderDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/grid/GutterDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/grid/OffsetDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/grid/OrderDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/grid/ResponsiveDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/grid/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/message/BasicDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/message/DelayDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/message/TypeDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/message/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/modal/AsyncDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/modal/BasicDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/modal/ConfirmDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/modal/FooterDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/modal/MoreDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/modal/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/notification/BasicDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/notification/DelayDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/notification/DirectionDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/notification/IconDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/notification/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/progress/BasicDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/progress/ChangeCircleDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/progress/ChangeLineDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/progress/CircleDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/progress/CircleSmallDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/progress/DashboardDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/progress/InsideDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/progress/SmallDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/progress/ThemeCircleDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/progress/ThemeDashboardDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/progress/ThemeLineDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/progress/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/radio/BasicDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/radio/BasicGroupDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/radio/ButtonDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/radio/ButtonDisplayDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/radio/DataDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/radio/DisableDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/radio/DisplayDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/radio/LimitedDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/radio/ThemeDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/radio/ThemeGroupDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/radio/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/transfer/BasicDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/transfer/DisplayTreeDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/transfer/LimitedDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/transfer/LimitedTreeDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/transfer/SearchDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/transfer/ThemeDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/transfer/TreeDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/transfer/TreeTreeDemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/transfer/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/layout/AsideLeftDemo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/layout/AsideRightDemo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/layout/BasicDemo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/layout/LeftAsideDemo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/layout/RightAsideDemo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/layout/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/affix/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/affix/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/alert/BasicDemo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/alert/BasicDemo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/alert/ClosableDemo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/alert/ClosableDemo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/alert/CustomClosableDemo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/alert/CustomClosableDemo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/alert/CustomIconDemo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/alert/CustomIconDemo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/alert/DescType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/alert/DescType.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/alert/IconDemo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/alert/IconDemo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/alert/ThemeDemo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/alert/ThemeDemo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/alert/TypeDemo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/alert/TypeDemo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/check-button/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/code-box/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/code-box/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -121,101 +22,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TargetDemo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/affix/TargetDemo.js">
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/layout/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="43" lean-forward="true" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+            <state relative-caret-position="425">
+              <caret line="17" column="18" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsideRightDemo.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/widgets/layout/AsideRightDemo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="717">
+              <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsideLeftDemo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/layout/AsideLeftDemo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="642">
+              <caret line="55" column="45" lean-forward="true" selection-end-line="62" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RightAsideDemo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/layout/RightAsideDemo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="33" column="15" lean-forward="true" selection-end-line="60" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeftAsideDemo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/layout/LeftAsideDemo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="35" column="16" lean-forward="true" selection-end-line="60" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="BasicDemo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/alert/BasicDemo.js">
+        <entry file="file://$PROJECT_DIR$/src/widgets/layout/BasicDemo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClosableDemo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/alert/ClosableDemo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomClosableDemo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/alert/CustomClosableDemo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomIconDemo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/alert/CustomIconDemo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DescType.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/alert/DescType.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IconDemo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/alert/IconDemo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ThemeDemo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/alert/ThemeDemo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="192">
+              <caret line="23" column="16" lean-forward="true" selection-end-line="44" selection-end-column="1" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TypeDemo.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/widgets/alert/TypeDemo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ThemeDemo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/back-top/ThemeDemo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -273,17 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/widgets/modal/BasicDemo.js" />
-        <option value="$PROJECT_DIR$/src/widgets/modal/AsyncDemo.js" />
-        <option value="$PROJECT_DIR$/src/widgets/modal/FooterDemo.js" />
-        <option value="$PROJECT_DIR$/src/widgets/modal/ConfirmDemo.js" />
-        <option value="$PROJECT_DIR$/src/widgets/modal/config.js" />
-        <option value="$PROJECT_DIR$/src/widgets/modal/MoreDemo.js" />
-        <option value="$PROJECT_DIR$/src/widgets/notification/BasicDemo.js" />
-        <option value="$PROJECT_DIR$/src/widgets/notification/DelayDemo.js" />
-        <option value="$PROJECT_DIR$/src/widgets/notification/IconDemo.js" />
-        <option value="$PROJECT_DIR$/src/widgets/notification/config.js" />
-        <option value="$PROJECT_DIR$/src/widgets/notification/DirectionDemo.js" />
         <option value="$PROJECT_DIR$/src/widgets/progress/BasicDemo.js" />
         <option value="$PROJECT_DIR$/src/widgets/progress/InsideDemo.js" />
         <option value="$PROJECT_DIR$/src/widgets/progress/SmallDemo.js" />
@@ -324,6 +184,17 @@
         <option value="$PROJECT_DIR$/src/widgets/alert/IconDemo.js" />
         <option value="$PROJECT_DIR$/src/widgets/alert/ThemeDemo.js" />
         <option value="$PROJECT_DIR$/src/widgets/alert/TypeDemo.js" />
+        <option value="$PROJECT_DIR$/src/widgets/anchor/AffixDemo.js" />
+        <option value="$PROJECT_DIR$/src/widgets/anchor/BasicDemo.js" />
+        <option value="$PROJECT_DIR$/src/widgets/anchor/TypeDemo.js" />
+        <option value="$PROJECT_DIR$/src/widgets/back-top/BasicDemo.js" />
+        <option value="$PROJECT_DIR$/src/widgets/back-top/CustomDemo.js" />
+        <option value="$PROJECT_DIR$/src/widgets/layout/BasicDemo.js" />
+        <option value="$PROJECT_DIR$/src/widgets/layout/LeftAsideDemo.js" />
+        <option value="$PROJECT_DIR$/src/widgets/layout/RightAsideDemo.js" />
+        <option value="$PROJECT_DIR$/src/widgets/layout/AsideLeftDemo.js" />
+        <option value="$PROJECT_DIR$/src/widgets/layout/config.js" />
+        <option value="$PROJECT_DIR$/src/widgets/layout/AsideRightDemo.js" />
       </list>
     </option>
   </component>
@@ -395,35 +266,7 @@
               <item name="lugia-web-demo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="widgets" type="462c0819:PsiDirectoryNode" />
-              <item name="affix" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lugia-web-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lugia-web-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-              <item name="alert" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lugia-web-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lugia-web-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-              <item name="back-top" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lugia-web-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lugia-web-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-              <item name="drawer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lugia-web-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lugia-web-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-              <item name="grid" type="462c0819:PsiDirectoryNode" />
+              <item name="checkbox" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lugia-web-demo" type="b2602c69:ProjectViewProjectNode" />
@@ -431,41 +274,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="widgets" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lugia-web-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lugia-web-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lugia-web-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lugia-web-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-              <item name="modal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lugia-web-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lugia-web-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-              <item name="notification" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lugia-web-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lugia-web-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-              <item name="progress" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lugia-web-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lugia-web-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-              <item name="transfer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -531,7 +339,7 @@
       <workItem from="1545814502478" duration="3617000" />
       <workItem from="1545825309505" duration="7140000" />
       <workItem from="1545876986183" duration="29053000" />
-      <workItem from="1545965475516" duration="14468000" />
+      <workItem from="1545965475516" duration="15339000" />
     </task>
     <task id="LOCAL-00001" summary="新增：&#10;    * demo 例子；&#10;    * 生成脚本；&#10;    * demo 展示组件；">
       <created>1545808426597</created>
@@ -547,11 +355,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545889627755</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="新增：&#10;    * 组件源信息；">
+      <created>1545985040578</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1545985040578</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86402000" />
+    <option name="totallyTimeSpent" value="87273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -633,7 +448,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新增：&#10;    * demo 例子；&#10;    * 生成脚本；&#10;    * demo 展示组件；" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增：&#10;    * demo 例子；&#10;    * 生成脚本；&#10;    * demo 展示组件；" />
+    <MESSAGE value="新增：&#10;    * 组件源信息；" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增：&#10;    * 组件源信息；" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -657,284 +473,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/widgets/notification/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#40#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/notification/BasicDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="14" lean-forward="true" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/notification/DelayDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="18" lean-forward="true" selection-end-line="16" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/notification/IconDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="14" lean-forward="true" selection-end-line="23" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/notification/DirectionDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/notification/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/progress/BasicDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/progress/SmallDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/progress/ChangeLineDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="20" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/progress/ChangeCircleDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/progress/CircleSmallDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="10" lean-forward="true" selection-end-line="13" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/progress/DashboardDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="5" lean-forward="true" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/progress/ThemeLineDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/progress/ThemeCircleDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/progress/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/progress/InsideDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" selection-start-line="3" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/radio/BasicDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="5" lean-forward="true" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/radio/BasicGroupDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/radio/ButtonDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/radio/DataDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/radio/DisableDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/radio/DisplayDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/radio/LimitedDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/radio/ThemeDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/radio/ThemeGroupDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/progress/CircleDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="70" selection-end-line="13" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/radio/ButtonDisplayDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/radio/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="37" column="21" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/transfer/SearchDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/transfer/TreeDemo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="617">
@@ -975,16 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/transfer/BasicDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="25" column="18" lean-forward="true" selection-end-line="28" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/progress/ThemeDashboardDemo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -1016,16 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/back-top/BasicDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1092,13 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/back-top/ThemeDemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/alert/ThemeDemo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1118,10 +629,283 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/alert/TypeDemo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        <state relative-caret-position="25">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/anchor/config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/anchor/AffixDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/anchor/BasicDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/anchor/TypeDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/back-top/BasicDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/back-top/CustomDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/back-top/ThemeDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="47" lean-forward="true" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/button/BasicDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/button/CircleDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/button/DisabledDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/button/PlainDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/button/ThemeDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/checkbox/ThemeCheckBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/collapse/AccordionDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/collapse/ThemeDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/drawer/BasicDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/drawer/LevelDrawer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/drawer/DirectionDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/drawer/config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/message/BasicDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/modal/ConfirmDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/notification/BasicDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/progress/BasicDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/transfer/BasicDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="50" lean-forward="true" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/checkbox/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="27" lean-forward="true" selection-end-line="45" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/checkbox/BasicDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="18" lean-forward="true" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/layout/BasicDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="23" column="16" lean-forward="true" selection-end-line="44" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/layout/LeftAsideDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="35" column="16" lean-forward="true" selection-end-line="60" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/layout/RightAsideDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="33" column="15" lean-forward="true" selection-end-line="60" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/layout/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/layout/AsideLeftDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="55" column="45" lean-forward="true" selection-end-line="62" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/layout/AsideRightDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="717">
+          <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
