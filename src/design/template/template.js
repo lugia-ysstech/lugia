@@ -34,7 +34,10 @@ const Titleline = styled.span`
 `;
 
 
-const Desc = styled.div` 
+const Desc = styled.span`
+  color:#999;
+  font-size:18px; 
+  line-height:1;
 `;
 
 const Content = styled.div` 
@@ -95,8 +98,9 @@ const getImgElement = (data:Object,imgPosition:string) => {
   </ImageContainer>;
 };
 
-const getContentElement = (data:Object) => {
+const getContentElement = (data:Object,titleElement) => {
   return  <ContentContainer>
+    {titleElement}
     {data.map(item => {
       return <React.Fragment>
         <Content>{item}</Content>
@@ -111,27 +115,27 @@ const getElementWithPosition = (data:Array<Object>,level?:Boolean) => {
     {
       data.map((item,index) => {
         let childElement ;
-        const titleElement = <Title level={level}> {level?'':<Titleline/>} {item.title}</Title>;
+        const titleElement = <Title level={level}> {level?'':<Titleline/>} {item.title} <Desc>{item.desc}</Desc> </Title>;
         const {imgPosition} = item;
         switch (imgPosition) {
           case 'left':
             childElement =
               <FlexContainer>
                 {getImgElement(item.img,imgPosition)}
-                {getContentElement(item.content)}
+                {getContentElement(item.content,titleElement)}
               </FlexContainer>;
             break;
           case 'right':
             childElement =
               <FlexContainer>
-                {getContentElement(item.content)}
+                {getContentElement(item.content,titleElement)}
                 {getImgElement(item.img,imgPosition)}
               </FlexContainer>;
             break;
           case 'bottom':
             childElement =
               <React.Fragment>
-                {getContentElement(item.content)}
+                {getContentElement(item.content,titleElement)}
                 {getImgElement(item.img,imgPosition)}
               </React.Fragment>;
             break;
@@ -139,11 +143,10 @@ const getElementWithPosition = (data:Array<Object>,level?:Boolean) => {
             childElement =
               <React.Fragment>
                 {getImgElement(item.img,imgPosition)}
-                {getContentElement(item.content)}
+                {getContentElement(item.content,titleElement)}
               </React.Fragment>;
         }
         return <React.Fragment>
-          {titleElement}
           {childElement}
         </React.Fragment>;
       })
@@ -164,8 +167,8 @@ export default class Template extends React.Component<defProps, stateProps> {
     const {dataSource:{children},dataSource} = this.props;
     const element = getElementWithPosition(children);
 
-    const {title,content,imgPosition,img} = dataSource;
-    const  OutSideElement = getElementWithPosition([{title,content,imgPosition,img}],true);
+    const {title,content,imgPosition,img,desc} = dataSource;
+    const  OutSideElement = getElementWithPosition([{title,content,imgPosition,img,desc}],true);
     return <React.Fragment>
       {OutSideElement}
       {element}

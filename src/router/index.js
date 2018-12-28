@@ -50,6 +50,11 @@ const designRouter = {
     value: '/design/proximity',
     text: '设计核心观',
   },
+  "/design/alignment": {
+    render: () => import('../design/page'),
+    value: '/design/alignment',
+    text: '设计核心观',
+  },
 };
 
 
@@ -73,7 +78,7 @@ const designConfig = [
     text: '设计原则',
     children: [
       {
-        value: '/design/align',
+        value: '/design/alignment',
         text: '对齐',
       },
       {
