@@ -5,7 +5,7 @@
  */
 import * as React from 'react';
 import styled from 'styled-components';
-import Icon from '../icon';
+import {Icon} from '@lugia/lugia-web';
 import hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
 import 'highlight.js/styles/atom-one-light.css';
@@ -113,7 +113,7 @@ export default class extends React.Component {
           onMouseLeave={this.mouseOver}
         >
           <Icons
-            iconClass={visible ? 'lugia-icon-financial_code' : 'lugia-icon-financial_hide_clip'}
+            iconClass={visible ? 'lugia-icon-financial_code' : 'lugia-icon-finacial_hide_code'}
           />
           {textVisible ? (visible ? '隐藏代码' : '显示代码') : ''}
         </VisibleCode>

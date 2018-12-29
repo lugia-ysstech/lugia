@@ -25,6 +25,6 @@ export default class CheckBoxDemo extends React.Component {
                     <CheckBox value="33">CheckBox3</CheckBox>
                 </CheckBoxGroup>
             </div>
-        )
+        );
     }
 }

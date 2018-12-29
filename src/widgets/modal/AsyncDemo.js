@@ -7,17 +7,17 @@ export default class ModalDemo extends React.Component {
         this.state = {
             visible: false,
             confirmLoading: false,
-        }
+        };
     }
     Click = () => {
         this.setState({
             visible: true
-        })
+        });
     };
     buttonClick = () => {
         this.setState({
             visible: false
-        })
+        });
     };
     loadingClick = () => {
         this.setState({

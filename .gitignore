@@ -2,6 +2,7 @@
 tmp
 /node_modules
 /.history
+.idea
 lib
 dist
 coverage

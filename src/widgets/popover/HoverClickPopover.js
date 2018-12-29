@@ -3,9 +3,9 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { Popover, Theme, Button } from "@lugia/lugia-web";
-import styled from "styled-components";
+import React from 'react';
+import { Popover, Theme, Button } from '@lugia/lugia-web';
+import styled from 'styled-components';
 const Direction = styled(Button)``;
 export default class HoverClickPopover extends React.Component<any, any> {
   state = {
@@ -44,7 +44,7 @@ export default class HoverClickPopover extends React.Component<any, any> {
         style={{ width: 500 }}
         description={hoverContent}
         title="This is  hover title"
-        action={"hover"}
+        action={'hover'}
         placement="topLeft"
         visible={this.state.hovered}
         onVisibleChange={this.handleHoverChange}
@@ -53,10 +53,10 @@ export default class HoverClickPopover extends React.Component<any, any> {
           <Popover
             description={clickContent}
             title="This is  click title"
-            action={"click"}
+            action={'click'}
             placement="topLeft"
             visible={this.state.clicked}
-            clear={"lugia-icon-reminder_close"}
+            clear={'lugia-icon-reminder_close'}
             onVisibleChange={this.handleClickChange}
             onClearClick={this.hide}
           >

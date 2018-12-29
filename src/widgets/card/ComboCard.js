@@ -3,9 +3,9 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import styled from "styled-components";
-import { Card, Theme } from "@lugia/lugia-web";
+import React from 'react';
+import styled from 'styled-components';
+import { Card, Theme } from '@lugia/lugia-web';
 
 const CardContainer = styled.div`
   text-align: center;
@@ -40,21 +40,21 @@ const Buy = styled.button`
 `;
 class AmountCard extends React.Component<Object, Object> {
   render() {
-    const price = "9.88";
+    const price = '9.88';
     let int = 0;
     let decimals = 0;
-    if (price.indexOf(".") > 0) {
-      int = price.substring(0, price.indexOf("."));
-      decimals = price.substring(price.indexOf("."));
+    if (price.indexOf('.') > 0) {
+      int = price.substring(0, price.indexOf('.'));
+      decimals = price.substring(price.indexOf('.'));
     }
     return (
       <CardContainer>
-        <Price>{"价格"}</Price>
+        <Price>{'价格'}</Price>
         <PriceNum>
           <PriceNum style={{ fontSize: 32 }}>{int}</PriceNum>
           <PriceNum style={{ fontSize: 18 }}>{decimals}</PriceNum>
         </PriceNum>
-        <Buy>{"购买"}</Buy>
+        <Buy>{'购买'}</Buy>
       </CardContainer>
     );
   }
@@ -71,10 +71,10 @@ export default class ComboCard extends React.Component<Object, Object> {
     return (
       <Theme config={combo}>
         <Card
-          viewClass={"vertical"}
-          type={"combo"}
+          viewClass={'vertical'}
+          type={'combo'}
           content={<AmountCard />}
-          shadow={"hover"}
+          shadow={'hover'}
         />
       </Theme>
     );

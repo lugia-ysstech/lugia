@@ -14,14 +14,14 @@ export default class DrawerDemo extends React.Component {
     openDrawer = () => {
         this.setState({
             visible: true
-        })
+        });
     };
     onClick= () => {
         this.setState({
             visible: false
-        })
+        });
     };
-    handleChange = (obj) => {
+    handleChange = obj => {
         this.setState({
             radioValue: obj.newValue,
         });

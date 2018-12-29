@@ -1,221 +1,30 @@
-/**
- *
- * create by LYQ
- *
- * @flow
- */
-import React from 'react';
-import styled from 'styled-components';
-import {Theme,Radio} from '@lugia/lugia-web';
-// import {consts as Widget} from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts/index';
-
-const RadioGroup = Radio.Group;
-const RadioButton = Radio.Button;
-
-const Wrapper = styled.div`
-  margin-left: 50px;
-  width: 50%;
-`;
-const data = [
-  { text: 'radio1', value: 'Apple' },
-  { text: 'radio2', value: 'Pear' },
-  { text: 'radio3', value: 'Orange', disabled: true },
-];
-const view = {
-  [Widget.RadioGroup]: {
-    width: 100,
-  },
-  register: {
-    width: 120,
-    color: 'red',
-    margin: 20,
-  },
-};
-const radioView = {
-  [Widget.RadioGroup]: {
-    width: 100,
-    color: 'red',
-  },
-};
-const onChange = obj => {
-  console.info('obj-demo', obj);
-};
-export const RadioDemo = () => {
-  return (
-    <div>
-      <Wrapper>
-        <p>default</p>
-        <Radio value="1">Radio</Radio>
-      </Wrapper>
-      <Wrapper>
-        <p>checked</p>
-        <Radio checked>Radio</Radio>
-      </Wrapper>
-      <Wrapper>
-        <p>defaultChecked</p>
-        <Radio defaultChecked>Radio</Radio>
-      </Wrapper>
-      <Wrapper>
-        <p>disabled</p>
-        <Radio value="1" disabled>
-          Radio
-        </Radio>
-        <Radio value="1" checked disabled>
-          Radio
-        </Radio>
-      </Wrapper>
-      <Wrapper>
-        <p>style default</p>
-        <Radio value="1">Radio</Radio>
-        <Radio value="2">Radio</Radio>
-        <p>style vertical</p>
-        <Radio value="1" checked styles="vertical">
-          Radio
-        </Radio>
-        <Radio value="1" styles="vertical">
-          Radio
-        </Radio>
-      </Wrapper>
-      <Theme config={view}>
-        <Radio viewClass="register" checked value="apple">
-          Radio
-        </Radio>
-      </Theme>
-    </div>
-  );
-};
-export default  class RadioGroupDemo extends React.Component<any, any> {
-  constructor() {
-    super();
-    this.state = {
-      value: 'apple',
-      displayValue: 'hello',
-    };
-  }
-  handleChange = (obj: Object) => {
-    this.setState({
-      value: obj.newValue,
-      displayValue: obj.newDisplayValue,
-    });
-  };
-  render() {
-    return (
-      <div>
-        <Wrapper>
-          <p>RadioGroup 正常</p>
-          <RadioGroup defaultValue="1">
-            <Radio value="1">Radio</Radio>
-            <Radio value="2">Radio2</Radio>
-          </RadioGroup>
-          <p>RadioGroup</p>
-          <RadioGroup value="1">
-            <Radio value="1">Radio</Radio>
-            <Radio value="2">Radio2</Radio>
-          </RadioGroup>
-          <p>vertical</p>
-          <RadioGroup defaultValue="1">
-            <Radio value="1" styles="vertical">
-              Radio
-            </Radio>
-            <Radio value="2" styles="vertical">
-              Radio
-            </Radio>
-          </RadioGroup>
-          <p>data</p>
-          <RadioGroup displayFiled="text" defaultValue="Apple" data={data} />
-          <p>styled vertical</p>
-          <RadioGroup
-            onChange={onChange}
-            styles="vertical"
-            displayFiled="text"
-            valueField="value"
-            defaultValue="Apple"
-            data={data}
-          />
-        </Wrapper>
-        <Wrapper>
-          <p>themes</p>
-          <Theme config={view}>
-            <RadioGroup defaultValue="1" onChange={onChange}>
-              <Radio viewClass="register" value="1" styles="vertical">
-                Radio
-              </Radio>
-
-              <Radio viewClass="register" value="2" styles="vertical">
-                Radio
-              </Radio>
-            </RadioGroup>
-          </Theme>
-          <p>data theme</p>
-          <Theme config={view}>
-            <RadioGroup defaultValue="Apple" valueField="value" data={data} />
-          </Theme>
-        </Wrapper>
-
-        <Wrapper>
-          <p>data displayValue</p>
-          <RadioGroup
-            onChange={onChange}
-            displayFiled="text"
-            valueField="value"
-            value="apples"
-            styles="vertical"
-            displayValue="DisplayValue"
-            data={data}
-          />
-        </Wrapper>
-        <Wrapper>
-          <p>data displayValue</p>
-          <RadioGroup
-            onChange={onChange}
-            displayFiled="text"
-            valueField="value"
-            defaultValue="apples"
-            styles="vertical"
-            displayValue="DisplayValue"
-            data={data}
-          />
-        </Wrapper>
-
-        <Wrapper>
-          <RadioGroup childType="button" onChange={onChange} defaultValue="1">
-            <RadioButton value="1">CheckBox1</RadioButton>
-            <RadioButton value="2">CheckBox2</RadioButton>
-            <RadioButton value="3">CheckBox3</RadioButton>
-          </RadioGroup>
-        </Wrapper>
-        <br />
-        <Wrapper>
-          <Theme config={radioView}>
-            <RadioGroup childType="button" onChange={onChange} defaultValue="1">
-              <RadioButton value="1">CheckBox1</RadioButton>
-              <RadioButton value="2">CheckBox2</RadioButton>
-              <RadioButton value="3">CheckBox3</RadioButton>
-            </RadioGroup>
-          </Theme>
-        </Wrapper>
-        <br />
-        <Wrapper>
-          <RadioGroup
-            onChange={onChange}
-            data={data}
-            defaultValue="apple"
-            displayValue="check"
-            childType="button"
-          />
-        </Wrapper>
-        <br />
-        <Wrapper>
-          <RadioGroup
-            onChange={this.handleChange}
-            data={data}
-            value={this.state.value}
-            displayValue={this.state.displayValue}
-            childType="button"
-          />
-        </Wrapper>
-      </div>
-    );
-  }
-};
+import  React from 'react';
+        import {Anchor,Grid} from '@lugia/lugia-web';
+        import EditTables from '../../edit-table'; 
+        import radio from '@lugia/lugia-web/dist/radio/lugia.radio.zh-CN.json';
+        import Demo from '../code-box';
+        import Title from '../code-box/Title';
+         const BasicDemo =  require('./BasicDemo').default;  const DisableDemo =  require('./DisableDemo').default;  const ThemeDemo =  require('./ThemeDemo').default;  const BasicGroupDemo =  require('./BasicGroupDemo').default;  const LimitedDemo =  require('./LimitedDemo').default;  const DataDemo =  require('./DataDemo').default;  const DisplayDemo =  require('./DisplayDemo').default;  const ThemeGroupDemo =  require('./ThemeGroupDemo').default;  const ButtonDemo =  require('./ButtonDemo').default;  const ButtonDisplayDemo =  require('./ButtonDisplayDemo').default;  
+        
+        const { Link } = Anchor;
+        const { Row,Col } = Grid;
+        
+        export default class ComDemo extends React.Component {
+            render(){
+                return(
+                    <Row>
+                        <Col span={20}>
+                            <Title title={'Radio 单选框'} subTitle={'Radio'} desc={'单选框。'} />
+                            <Demo title={'基本'} titleID={'radio-0'} code={<code>{ "import React from \'react\';\nimport {Radio} from \'@lugia/lugia-web\';\n\nexport default class RadioDemo extends React.Component {\n    render() {\n        return (\n            <Radio value=\"1\">Radio</Radio>\n        );\n    }\n}\n"}</code>} desc={'最简单的用法'}  demo={<BasicDemo />}></Demo><Demo title={'禁用状态'} titleID={'radio-1'} code={<code>{ "import React from \'react\';\nimport {Radio} from \'@lugia/lugia-web\';\n\nexport default class RadioDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <Radio value=\"1\" disabled>\n                    Radio\n                </Radio>\n                <Radio value=\"1\" checked disabled>\n                    Radio\n                </Radio>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'Radio 不可用'}  demo={<DisableDemo />}></Demo><Demo title={'Radio 配置主题'} titleID={'radio-2'} code={<code>{ "import React from \'react\';\nimport {Radio, Theme} from \'@lugia/lugia-web\';\n\nexport default class RadioDemo extends React.Component {\n    render() {\n        const view = {\n            register: {\n                width: 120,\n                color: \'red\',\n                margin: 20,\n            }\n        };\n        return (\n            <div>\n                <Theme config={view}>\n                    <Radio viewClass=\"register\" value=\"apple\">\n                        Radio\n                    </Radio>\n                </Theme>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'Radio 配置主题，可配置 width color margin'}  demo={<ThemeDemo />}></Demo><Demo title={'单选按钮组'} titleID={'radio-3'} code={<code>{ "import React from \'react\';\nimport {Radio} from \'@lugia/lugia-web\';\n\nconst RadioGroup = Radio.Group;\n\nexport default class RadioGroupDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <RadioGroup defaultValue=\"1\">\n                    <Radio value=\"1\">Radio1</Radio>\n                    <Radio value=\"2\">Radio2</Radio>\n                </RadioGroup>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'单选按钮组'}  demo={<BasicGroupDemo />}></Demo><Demo title={'受控的 RadioGroup'} titleID={'radio-4'} code={<code>{ "import React from \'react\';\nimport {Radio} from \'@lugia/lugia-web\';\n\nconst RadioGroup = Radio.Group;\n\nexport default class RadioGroupDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <RadioGroup value=\"1\">\n                    <Radio value=\"1\">Radio1</Radio>\n                    <Radio value=\"2\">Radio2</Radio>\n                </RadioGroup>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'受控的 RadioGroup'}  demo={<LimitedDemo />}></Demo><Demo title={'快速生成'} titleID={'radio-5'} code={<code>{ "import React from \'react\';\nimport {Radio} from \'@lugia/lugia-web\';\n\nconst RadioGroup = Radio.Group;\nconst data = [\n    { text: \'radio1\', value: \'Apple\' },\n    { text: \'radio2\', value: \'Pear\' },\n    { text: \'radio3\', value: \'Orange\', disabled: true },\n];\n\nexport default class RadioGroupDemo extends React.Component {\n    onChange = obj => {\n        console.info(\'obj-demo\', obj);\n    };\n    render() {\n        return (\n            <div>\n                <RadioGroup\n                    onChange={this.onChange}\n                    styles=\"vertical\"\n                    displayFiled=\"text\"\n                    valueField=\"value\"\n                    defaultValue=\"Apple\"\n                    data={data}\n                />\n            </div>\n        );\n    }\n}\n"}</code>} desc={'快速生成 RadioGroup，可指定展示字段和value字段'}  demo={<DataDemo />}></Demo><Demo title={'设置 DisplayValue'} titleID={'radio-6'} code={<code>{ "import React from \'react\';\nimport {Radio} from \'@lugia/lugia-web\';\n\nconst RadioGroup = Radio.Group;\nconst data = [\n    { text: \'radio1\', value: \'Apple\' },\n    { text: \'radio2\', value: \'Pear\' },\n    { text: \'radio3\', value: \'Orange\', disabled: true },\n];\n\nexport default class RadioGroupDemo extends React.Component {\n    onChange = obj => {\n        console.info(\'obj-demo\', obj);\n    };\n    render() {\n        const radioView = {\n            [Widget.RadioGroup]: {\n                width: 100,\n                color: \'red\',\n            },\n        };\n        return (\n            <div>\n                <RadioGroup\n                    onChange={this.onChange}\n                    displayFiled=\"text\"\n                    valueField=\"value\"\n                    value=\"apples\"\n                    styles=\"vertical\"\n                    displayValue=\"DisplayValue\"\n                    data={data}\n                />\n            </div>\n        );\n    }\n}\n"}</code>} desc={'设置 value备选项，value 找不到时作为取消项展示备选项'}  demo={<DisplayDemo />}></Demo><Demo title={'配置 Theme'} titleID={'radio-7'} code={<code>{ "import React from \'react\';\nimport {Radio, Theme} from \'@lugia/lugia-web\';\n\nconst RadioGroup = Radio.Group;\n\nexport default class RadioDemo extends React.Component {\n    render() {\n        const view = {\n            register: {\n                width: 120,\n                color: \'red\',\n                margin: 20,\n            }\n        };\n        return (\n            <div>\n                <Theme config={view}>\n                    <Radio viewClass=\"register\" value=\"apple\">\n                        Radio\n                    </Radio>\n                </Theme>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'为 RadioGroup 配置主题，可配置 width color '}  demo={<ThemeGroupDemo />}></Demo><Demo title={'按钮类型'} titleID={'radio-8'} code={<code>{ "import React from \'react\';\nimport {Radio} from \'@lugia/lugia-web\';\n\nconst RadioButton = Radio.Button;\n\nexport default class RadioDemo extends React.Component {\n    onChange = obj => {\n        console.info(\'obj-demo\', obj);\n    };\n    render() {\n        return (\n            <div>\n                <RadioGroup childType=\"button\" onChange={this.onChange} defaultValue=\"1\">\n                    <RadioButton value=\"1\">CheckBox1</RadioButton>\n                    <RadioButton value=\"2\">CheckBox2</RadioButton>\n                    <RadioButton value=\"3\">CheckBox3</RadioButton>\n                </RadioGroup>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'按钮类型的 RadioGroup，配置 childType 为 button '}  demo={<ButtonDemo />}></Demo><Demo title={'按钮类型'} titleID={'radio-9'} code={<code>{ "import React from \'react\';\nimport {Radio} from \'@lugia/lugia-web\';\n\nconst data = [\n    { text: \'radio1\', value: \'Apple\' },\n    { text: \'radio2\', value: \'Pear\' },\n    { text: \'radio3\', value: \'Orange\', disabled: true },\n];\n\nexport default class RadioDemo extends React.Component {\n    constructor() {\n        super();\n        this.state = {\n            value: \'apple\',\n            displayValue: \'hello\',\n        };\n    }\n    handleChange = obj => {\n        this.setState({\n            value: obj.newValue,\n            displayValue: obj.newDisplayValue,\n        });\n    };\n    render() {\n        return (\n            <div>\n                <RadioGroup\n                    onChange={this.handleChange}\n                    data={data}\n                    value={this.state.value}\n                    displayValue={this.state.displayValue}\n                    childType=\"button\"\n                />\n            </div>\n        );\n    }\n}\n"}</code>} desc={'按钮类型的 RadioGroup，配置 childType 为 button '}  demo={<ButtonDisplayDemo />}></Demo>
+                            <EditTables dataSource={radio} />
+                        </Col>
+                        <Col span={4}>
+                            <Anchor  slideType="line">
+                                <Link title={'基本'} href={'#radio-0'} /><Link title={'禁用状态'} href={'#radio-1'} /><Link title={'Radio 配置主题'} href={'#radio-2'} /><Link title={'单选按钮组'} href={'#radio-3'} /><Link title={'受控的 RadioGroup'} href={'#radio-4'} /><Link title={'快速生成'} href={'#radio-5'} /><Link title={'设置 DisplayValue'} href={'#radio-6'} /><Link title={'配置 Theme'} href={'#radio-7'} /><Link title={'按钮类型'} href={'#radio-8'} /><Link title={'按钮类型'} href={'#radio-9'} />
+                            </Anchor>
+                        </Col>
+                    </Row>
+                );
+            }
+         }   
+        

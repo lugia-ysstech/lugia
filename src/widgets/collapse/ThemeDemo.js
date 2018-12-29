@@ -42,6 +42,6 @@ export default class CheckBoxDemo extends React.Component {
                     </Collapse>
                 </Theme>
             </div>
-        )
+        );
     }
 }

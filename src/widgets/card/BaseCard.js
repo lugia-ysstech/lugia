@@ -3,9 +3,9 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { Card, Theme } from "@lugia/lugia-web";
-import styled from "styled-components";
+import React from 'react';
+import { Card, Theme } from '@lugia/lugia-web';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   margin-left: 50px;
@@ -17,10 +17,10 @@ export default class BaseCard extends React.Component<any, any> {
     return (
       <Wrapper>
         <Card
-          title={"this is title"}
-          description={"this is description"}
-          shadow={"always"}
-          operation={"操作"}
+          title={'this is title'}
+          description={'this is description'}
+          shadow={'always'}
+          operation={'操作'}
         />
       </Wrapper>
     );

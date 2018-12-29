@@ -1,14 +1,13 @@
-import React from "react";
-import { createBrowserHistory } from "history";
-import { createApp, go, render } from "@lugia/lugiax-router";
-import "@lugia/lugia-web/dist/css/global.css";
-import Main from "./App";
-import Pages from "./design/page"
+import React from 'react';
+import { createBrowserHistory } from 'history';
+import { createApp, go, render } from '@lugia/lugiax-router';
+import '@lugia/lugia-web/dist/css/global.css';
+import Main from './App';
 
 const history = createBrowserHistory();
 const App = createApp(
   {
-    "/": {
+    '/': {
       component: Main
     }
   },
@@ -16,15 +15,15 @@ const App = createApp(
   {
     async onBeforeGo({ url }) {
       window.scrollTo(0,0);
-      if (url === "/nowPower") {
-        await go({ url: "/404" });
+      if (url === '/nowPower') {
+        await go({ url: '/404' });
         return false;
       }
-      return url !== "/not";
+      return url !== '/not';
     }
   }
 );
 
 render(() => {
   return <App />;
-}, "root");
+}, 'root');
