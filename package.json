@@ -1,5 +1,5 @@
 {
-  "name": "lugiax-example",
+  "name": "lugia-site",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -14,6 +14,9 @@
     "styled-components": "3.4.9"
   },
   "scripts": {
+    "lintfix": "eslint --fix ./src",
+
+    "create": "node ./src/widgets/create.js && npm run lintfix",
     "start": "lugia-scripts start",
     "build": "lugia-scripts build",
     "test": "lugia-scripts test -w",

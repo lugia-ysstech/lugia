@@ -3,8 +3,10 @@
  * create by guorg
  *
  */
+const childProces = require('child_process');
 const fs = require('fs');
 const path = require('path');
+createRouter();
 
 main();
 
@@ -12,58 +14,124 @@ function getPath (folderName) {
   return path.join(__dirname, folderName);
 }
 
+async function createRouter () {
+  const allPathFile = await getFolderNames();
+  const widgetName2Meta = {};
+  const catory2WidgetNames = {};
+  try {
+    await iteratorFolders(allPathFile, (folderName, pos) => {
+
+      try {
+        const meta = loadMeta(folderName);
+        const { widgetName, category } = meta;
+        widgetName2Meta[ widgetName ] = meta;
+        let categoryData = catory2WidgetNames[ category ];
+        if (!categoryData) {
+          catory2WidgetNames[ category ] = categoryData = [];
+        }
+        categoryData.push(meta);
+      } catch (error) {
+        console.log('(%d) %s 读取元信息失败  X', pos, folderName);
+        return;
+      }
+    });
+    const router = Object.keys(catory2WidgetNames).map(key => {
+      const widgets = catory2WidgetNames[ key ];
+      const children = widgets && widgets.map(meta => {
+        const { widgetName, title } = meta;
+        return {
+          widgetName,
+          value: `/component/${widgetName.toLowerCase()}`,
+          text: title,
+        };
+      });
+      return {
+        text: key,
+        category: key,
+        describe: true,
+        children,
+      };
+    });
+
+    const targetFile = path.join(path.dirname(__dirname), 'router', 'widgets.js');
+    await fs.writeFileSync(targetFile, `export default ${JSON.stringify(router)}`);
+
+  } catch (error) {
+    console.log('%s 异常  X', error);
+  }
+}
+
+async function getFolderNames () {
+  return fs.readdirSync(__dirname).filter(folderName => folderName !== 'code-box' && folderName.indexOf('.') === -1);
+}
+
+function loadMeta (folderName) {
+  return require(`@lugia/lugia-web/dist/${folderName}/lugia.${folderName}.zh-CN.json`);
+}
+
+
+async function iteratorFolders (allPathFile, cb) {
+
+  for (let index = 0; index < allPathFile.length; index++) {
+    const folderName = allPathFile[ index ];
+    const stats = await fs.statSync(getPath(folderName));
+    const pos = index + 1;
+    if (stats.isDirectory()) {
+      await cb(folderName, pos);
+    } else {
+      console.log('(%d) %s 目录错误  X', pos, folderName);
+
+    }
+  }
+}
+
 async function main () {
-  const allPathFile = await fs.readdirSync(__dirname).filter(folderName => folderName !== 'code-box' && folderName.indexOf('.') === -1);
+  const allPathFile = await getFolderNames();
   const filePath = [];
   console.log('总共待生成组件[%d]个', allPathFile.length);
   try {
-    for (let index = 0; index < allPathFile.length; index++) {
-      const folderName = allPathFile[ index ];
-      const stats = await fs.statSync(getPath(folderName));
-      const pos = index + 1;
-      if (stats.isDirectory()) {
-        let config;
-        try {
-          config = require(`./${folderName}/config.js`);
-        } catch (err) {
-          console.log('(%d) %s 读取config.js错误  X', pos, folderName);
-          continue;
-        }
+    await iteratorFolders(allPathFile, async (folderName, pos) => {
 
-        const allDemo = Object.keys(config);
-        let meta;
-        try {
-          meta = require(`@lugia/lugia-web/dist/${folderName}/lugia.${folderName}.zh-CN.json`);
-        } catch (error) {
-          console.log('(%d) %s 读取元信息失败  X', pos, folderName);
-          continue;
-        }
-
-        const { childrenWidget } = meta;
-        const subTitle = meta.widgetName;
-        let data;
-        try {
-          data = getContent(allDemo, config, folderName, {
-            title: meta.title,
-            subTitle,
-            desc: meta.desc
-          }, childrenWidget);
-        } catch (error) {
-          console.log('(%d) %s 代码生成错误 X', pos, folderName);
-          continue;
-        }
-        try {
-          await fs.writeFileSync(getPath(`${folderName}/index.js`), data);
-        } catch (err) {
-          console.log('(%d) %s 写入文件失败  X', pos, folderName);
-          continue;
-        }
-        console.log('(%d) %s 成功', pos, folderName);
-        filePath.push(folderName);
-      } else {
-        console.log('(%d) %s 目录错误  X', pos, folderName);
+      let config;
+      try {
+        config = require(`./${folderName}/config.js`);
+      } catch (err) {
+        console.log('(%d) %s 读取config.js错误  X', pos, folderName);
+        return;
       }
-    }
+
+      let meta;
+      try {
+        meta = loadMeta(folderName);
+      } catch (error) {
+        console.log('(%d) %s 读取元信息失败  X', pos, folderName);
+        return;
+      }
+
+      const { childrenWidget } = meta;
+      const subTitle = meta.widgetName;
+      let data;
+      try {
+        const allDemo = Object.keys(config);
+        data = getContent(allDemo, config, folderName, {
+          title: meta.title,
+          subTitle,
+          desc: meta.desc
+        }, childrenWidget);
+      } catch (error) {
+        console.log('(%d) %s 代码生成错误 X', pos, folderName);
+        return;
+      }
+      try {
+        await fs.writeFileSync(getPath(`${folderName}/index.js`), data);
+      } catch (err) {
+        console.log('(%d) %s 写入文件失败  X', pos, folderName);
+        return;
+      }
+      console.log('(%d) %s 成功', pos, folderName);
+      filePath.push(folderName);
+    });
+
   } catch (error) {
     console.log('%s 异常  X', error);
   }
@@ -108,24 +176,34 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
   return indexCode;
 }
 
+function toText (str) {
+  if (!str) {
+    return str;
+  }
+  return str.replace(/\'/g, String.raw`\'`).replace(/\"/g, String.raw`\"`).replace(/\n/g, String.raw`\n`);
+}
+
 function getImportInfoAndDemo (demos, config, folderName) {
   let importInfo = '', demo = '', link = '';
   demos.forEach((item, index) => {
     const { title, desc } = config[ item ];
     const code = fs.readFileSync(getPath(`${folderName}/${item}.js`), 'utf-8');
-    const codeStr = code.replace(/\'/g, String.raw`\'`).replace(/\"/g, String.raw`\"`).replace(/\n/g, String.raw`\n`);
     importInfo = `${importInfo} const ${item} =  require('./${item}').default; `;
-    demo = `${demo}<Demo title={'${title}'} titleID={'${folderName}-${index}'} code={<code>{ "${codeStr}"}</code>} desc={'${desc}'}  demo={<${item} />}></Demo>`;
-    link = `${link}<Link title={'${title}'} href={'#${folderName}-${index}'} />`;
+    const titleTxt = toText(title);
+    const descTxt = toText(desc);
+    demo = `${demo}<Demo title={'${titleTxt}'} titleID={'${folderName}-${index}'} code={<code>{ "${toText(code)}"}</code>} desc={'${descTxt}'}  demo={<${item} />}></Demo>`;
+    link = `${link}<Link title={'${titleTxt}'} href={'#${folderName}-${index}'} />`;
   });
   return { importInfo, demo, link };
 }
+
 function fixFolderName (folderName) {
-  if(!folderName){
+  if (!folderName) {
     return folderName;
   }
-  return folderName.replace(/-/g, '_');
+  return folderName.replace(/-/g, '');
 }
+
 function getAPITable (folderName, childrenWidget) {
   let importInfo = '', demo = '';
   if (childrenWidget) {
@@ -135,7 +213,7 @@ function getAPITable (folderName, childrenWidget) {
       demo = `${demo}<EditTables dataSource={${item}} />`;
     });
   } else {
-    const fixeMoudleName  = fixFolderName(folderName);
+    const fixeMoudleName = fixFolderName(folderName);
     importInfo = `import ${fixeMoudleName} from '@lugia/lugia-web/dist/${folderName}/lugia.${folderName}.zh-CN.json';`;
     demo = `<EditTables dataSource={${fixeMoudleName}} />`;
   }
