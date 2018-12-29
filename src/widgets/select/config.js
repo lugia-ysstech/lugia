@@ -2,7 +2,7 @@
  * create by szfeng
  */
 
-export default {
+module.exports = {
   DefaultSelect: {
     title: '基本用法',
     desc: '默认select为单选',
