@@ -6,9 +6,8 @@
 import React from 'react';
 import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
-import { steps, Button, Theme } from '@lugia/lugia-web';
-const Step = steps.Step;
-const Steps = steps.Steps;
+import { Steps, Button, Theme } from '@lugia/lugia-web';
+const Step = Steps.Step;
 const Wrapper = styled.div`
   text-align: left;
   margin: 50px;
