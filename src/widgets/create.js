@@ -189,7 +189,7 @@ function getImportInfoAndDemo (demos, config, folderName) {
     importInfo = `${importInfo} const ${item} =  require('./${item}').default; `;
     const titleTxt = toText(title);
     const descTxt = toText(desc);
-    demo = `${demo}<Demo title={'${titleTxt}'} titleID={'${folderName}-${index}'} code={<code>{ "${toText(code)}"}</code>} desc={'${descTxt}'}  demo={<${item} />}></Demo>`;
+    demo = `${demo}<Demo title={'${titleTxt}'} titleID={'${folderName}-${index}'} code={<code>{ \`${toText(code)}\`}</code>} desc={'${descTxt}'}  demo={<${item} />}></Demo>`;
     link = `${link}<Link title={'${titleTxt}'} href={'#${folderName}-${index}'} />`;
   });
   return { importInfo, demo, link };
@@ -199,16 +199,16 @@ function fixFolderName (folderName) {
   if (!folderName) {
     return folderName;
   }
-  return folderName.replace(/-/g, '');
+  return folderName.replace(/-/g, '').toUpperCase();
 }
 
 function getAPITable (folderName, childrenWidget) {
   let importInfo = '', demo = '';
   if (childrenWidget) {
     childrenWidget.forEach(item => {
-      item = fixFolderName(item);
-      importInfo = `${importInfo} import ${item} from '@lugia/lugia-web/dist/${folderName}/lugia.${item}.zh-CN.json';`;
-      demo = `${demo}<EditTables dataSource={${item}} />`;
+      const fixeMoudleName = fixFolderName(item);
+      importInfo = `${importInfo} import ${fixeMoudleName} from '@lugia/lugia-web/dist/${folderName}/lugia.${item}.zh-CN.json';`;
+      demo = `${demo}<EditTables dataSource={${fixeMoudleName}} />`;
     });
   } else {
     const fixeMoudleName = fixFolderName(folderName);
