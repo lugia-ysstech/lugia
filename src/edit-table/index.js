@@ -17,10 +17,8 @@ export default class EditTable extends React.Component<PropsType, StateType> {
     dataSource:tableInfo
   };
   static getDerivedStateFromProps(defProps: PropsType, stateProps: StateType) {
-
   }
   render() {
-    console.log(tableInfo);
     return (
       <EditTables
         {...this.props}
