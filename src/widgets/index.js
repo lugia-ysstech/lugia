@@ -8,9 +8,9 @@ import Router from '../router';
 
 import Asides from '../menu';
 
-
+console.log('routerConfig------',Router.routerConfig);
 const rout = createRoute(Router.routerConfig);
-
+console.log('rout',rout);
 const { Content,  Aside } = Layout;
 
 export default () => {

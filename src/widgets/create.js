@@ -3,7 +3,6 @@
  * create by guorg
  *
  */
-const childProces = require('child_process');
 const fs = require('fs');
 const path = require('path');
 createRouter();
@@ -31,7 +30,6 @@ async function createRouter () {
         }
         categoryData.push(meta);
       } catch (error) {
-        console.log('(%d) %s 读取元信息失败  X', pos, folderName);
         return;
       }
     });
@@ -128,7 +126,7 @@ async function main () {
         console.log('(%d) %s 写入文件失败  X', pos, folderName);
         return;
       }
-      console.log('(%d) %s 成功', pos, folderName);
+      // console.log('(%d) %s 成功', pos, folderName);
       filePath.push(folderName);
     });
 
@@ -191,7 +189,7 @@ function getImportInfoAndDemo (demos, config, folderName) {
     importInfo = `${importInfo} const ${item} =  require('./${item}').default; `;
     const titleTxt = toText(title);
     const descTxt = toText(desc);
-    demo = `${demo}<Demo title={'${titleTxt}'} titleID={'${folderName}-${index}'} code={<code>{ "${toText(code)}"}</code>} desc={'${descTxt}'}  demo={<${item} />}></Demo>`;
+    demo = `${demo}<Demo title={'${titleTxt}'} titleID={'${folderName}-${index}'} code={<code>{ \`${toText(code)}\`}</code>} desc={'${descTxt}'}  demo={<${item} />}></Demo>`;
     link = `${link}<Link title={'${titleTxt}'} href={'#${folderName}-${index}'} />`;
   });
   return { importInfo, demo, link };
@@ -201,16 +199,16 @@ function fixFolderName (folderName) {
   if (!folderName) {
     return folderName;
   }
-  return folderName.replace(/-/g, '');
+  return folderName.replace(/-/g, '').toUpperCase();
 }
 
 function getAPITable (folderName, childrenWidget) {
   let importInfo = '', demo = '';
   if (childrenWidget) {
     childrenWidget.forEach(item => {
-      item = fixFolderName(item);
-      importInfo = `${importInfo} import ${item} from '@lugia/lugia-web/dist/${folderName}/lugia.${item}.zh-CN.json';`;
-      demo = `${demo}<EditTables dataSource={${item}} />`;
+      const fixeMoudleName = fixFolderName(item);
+      importInfo = `${importInfo} import ${fixeMoudleName} from '@lugia/lugia-web/dist/${folderName}/lugia.${item}.zh-CN.json';`;
+      demo = `${demo}<EditTables dataSource={${fixeMoudleName}} />`;
     });
   } else {
     const fixeMoudleName = fixFolderName(folderName);
