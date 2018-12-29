@@ -1,14 +1,14 @@
 import  React from 'react';
         import {Anchor,Grid} from '@lugia/lugia-web';
-        import EditTables from '../../edit-table'; 
+        import EditTables from '../../edit-table';
         import amountinput from '@lugia/lugia-web/dist/amount-input/lugia.amount-input.zh-CN.json';
         import Demo from '../code-box';
         import Title from '../code-box/Title';
-         const BaseAmountinput =  require('./BaseAmountinput').default;  const DisableAmountInput =  require('./DisableAmountInput').default;  const DefaultValueAmountInput =  require('./DefaultValueAmountInput').default;  const SizeAmountInput =  require('./SizeAmountInput').default;  const PrefixAmountInput =  require('./PrefixAmountInput').default;  const TransformAmountInput =  require('./TransformAmountInput').default;  
-        
+        const BaseAmountinput =  require('./BaseAmountInput').default;  const DisableAmountInput =  require('./DisableAmountInput').default;  const DefaultValueAmountInput =  require('./DefaultValueAmountInput').default;  const SizeAmountInput =  require('./SizeAmountInput').default;  const PrefixAmountInput =  require('./PrefixAmountInput').default;  const TransformAmountInput =  require('./TransformAmountInput').default;
+
         const { Link } = Anchor;
         const { Row,Col } = Grid;
-        
+
         export default class ComDemo extends React.Component {
             render(){
                 return(
@@ -26,5 +26,5 @@ import  React from 'react';
                     </Row>
                 );
             }
-         }   
-        
+         }
+

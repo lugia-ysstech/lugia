@@ -1,4 +1,57 @@
 
+import widgets from './widgets'
+
+const getMenuConfig = (data) => {
+  const arr  =[];
+  data.forEach(item => {
+    const {category,describe,children} = item;
+    const childArray = [];
+    if(children && children.length >0){
+      children.forEach( childs => {
+        const {value,text} = childs;
+        childArray.push(
+          {
+            value: value,
+            text: text
+          },
+        );
+      });
+    }
+    arr.push(
+      {
+        text: category,
+        value: category,
+        describe: describe,
+        children: childArray,
+      },
+    );
+  });
+  return arr;
+};
+
+const getMenuRouter = (data) =>{
+  // const arr  =[];
+  const childArray = {};
+  data.forEach(item => {
+    const {children} = item;
+    if(children && children.length >0){
+      children.forEach( childs => {
+        const {value,text} = childs;
+        childArray[value] =
+          {
+            value: value,
+            text: text,
+            render: async () => import('../widgets/' +text.toLocaleLowerCase()),
+          };
+
+      });
+    }
+  });
+
+  return childArray;
+};
+
+
 const routerConfig = {
   '/component': {
     exact: true,
@@ -7,23 +60,24 @@ const routerConfig = {
     isHidden: true,
     text: 'Affix',
   },
-  '/component/edittable': {
-    render: () => import('../edit-table'),
-    value: '/component/edittable',
-    text: 'EditTable',
-  },
-
-  '/component/affix': {
-    render: async () => import('../widgets/affix'),
-    value: '/component/affix',
-    text: 'Affix',
-  },
-  '/component/alert': {
-    render: () => import('../widgets/alert'),
-    value: '/component/alert',
-    text: 'Alert',
-  }
+  ...getMenuRouter(widgets)
 };
+
+
+
+
+const menuConfig = [
+  {value: 'Lugia Design of React',text: 'Lugia Design of React',},
+  { value: '快速上手', text: '快速上手' },
+  { value: '项目实战', text: '项目实战' },
+  { value: '在Lugia-mega中使用', text: '在Lugia-mega中使用' },
+  {
+    value: 'Components',
+    text: 'Components',
+    children: getMenuConfig(widgets),
+  },
+];
+
 const designRouter = {
   '/design': {
     exact: true,
@@ -93,4 +147,4 @@ const designConfig = [
   },
 ];
 
-export default {routerConfig,designRouter,designConfig};
+export default {routerConfig,designRouter,designConfig,menuConfig};
