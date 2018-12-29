@@ -19,7 +19,7 @@ module.exports = {
     desc: '三种不同尺寸的数字输入框',
     path: './SizeNumberInput'
   },
-  DisableNumberInput: {
+  DisabledNumberInput: {
     title: '禁用状态',
     desc: '点击切换禁用状态',
     path: './DisableNumberInput'
