@@ -5,7 +5,7 @@
  */
 import * as React from 'react';
 import styled from 'styled-components';
-import Icon from '../icon';
+import {Icon} from '@lugia/lugia-web';
 import hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
 import 'highlight.js/styles/atom-one-light.css';
