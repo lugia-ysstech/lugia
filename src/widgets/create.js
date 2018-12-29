@@ -3,6 +3,7 @@
  * create by guorg
  *
  */
+const childProces = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -107,16 +108,22 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
         `;
   return indexCode;
 }
-
+function toText(str){
+  if(!str){
+    return str;
+  }
+  return str.replace(/\'/g, String.raw`\'`).replace(/\"/g, String.raw`\"`).replace(/\n/g, String.raw`\n`);
+}
 function getImportInfoAndDemo (demos, config, folderName) {
   let importInfo = '', demo = '', link = '';
   demos.forEach((item, index) => {
     const { title, desc } = config[ item ];
     const code = fs.readFileSync(getPath(`${folderName}/${item}.js`), 'utf-8');
-    const codeStr = code.replace(/\'/g, String.raw`\'`).replace(/\"/g, String.raw`\"`).replace(/\n/g, String.raw`\n`);
     importInfo = `${importInfo} const ${item} =  require('./${item}').default; `;
-    demo = `${demo}<Demo title={'${title}'} titleID={'${folderName}-${index}'} code={<code>{ "${codeStr}"}</code>} desc={'${desc}'}  demo={<${item} />}></Demo>`;
-    link = `${link}<Link title={'${title}'} href={'#${folderName}-${index}'} />`;
+    const titleTxt = toText(title);
+    const descTxt = toText(desc);
+    demo = `${demo}<Demo title={'${titleTxt}'} titleID={'${folderName}-${index}'} code={<code>{ "${toText(code)}"}</code>} desc={'${descTxt}'}  demo={<${item} />}></Demo>`;
+    link = `${link}<Link title={'${titleTxt}'} href={'#${folderName}-${index}'} />`;
   });
   return { importInfo, demo, link };
 }
@@ -124,7 +131,7 @@ function fixFolderName (folderName) {
   if(!folderName){
     return folderName;
   }
-  return folderName.replace(/-/g, '_');
+  return folderName.replace(/-/g, '');
 }
 function getAPITable (folderName, childrenWidget) {
   let importInfo = '', demo = '';
