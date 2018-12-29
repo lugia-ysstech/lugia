@@ -5,16 +5,15 @@
  * @flow
  */
 import React from 'react';
-import { go, Link } from '@lugia/lugiax-router';
-import { Theme,tabs} from '@lugia/lugia-web';
+import { go } from '@lugia/lugiax-router';
+import { Tabs, Theme } from '@lugia/lugia-web';
 import '../../css/menu.css';
 import Widget from '@lugia/lugia-web/dist/consts/index';
-import  { bindTo, connect } from '@lugia/lugiax';
+import { bindTo, connect } from '@lugia/lugiax';
 import styled from 'styled-components';
-import {designRouter} from '../../App';
+import { designRouter } from '../../App';
 
-const TabPane = tabs.TabPane;
-const Tabs = tabs.Tabs;
+const TabPane = Tabs.TabPane;
 const getchildren =router => {
   const arr =[];
   for(const i in router){
