@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Alert} from './alert';
+import {Alert} from '@lugia/lugia-web';
 
 export default class AlertDemo extends React.Component {
   render() {
