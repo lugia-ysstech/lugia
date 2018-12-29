@@ -178,7 +178,7 @@ function toText (str) {
   if (!str) {
     return str;
   }
-  return str.replace(/\'/g, String.raw`\'`).replace(/\"/g, String.raw`\"`).replace(/\n/g, String.raw`\n`);
+  return str.replace(/\$/g, String.raw`\$`).replace(/\`/g, String.raw`\``).replace(/\'/g, String.raw`\'`).replace(/\"/g, String.raw`\"`).replace(/\n/g, String.raw`\n`);
 }
 
 function getImportInfoAndDemo (demos, config, folderName) {
