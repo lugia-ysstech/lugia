@@ -4,45 +4,47 @@
  *
  * @flow
  */
-import React from "react";
-import styled from "styled-components";
-import { CheckBox, Theme } from "@lugia/lugia-web";
-import Widget from "@lugia/lugia-web/dist/consts/index";
+import React from 'react';
+import styled from 'styled-components';
+import { Checkbox, Theme } from '@lugia/lugia-web';
+import Widget from '@lugia/lugia-web/dist/consts/index';
+// import Widget from '../consts';
+// import CheckBox from './';
 
-const CheckBoxGroup = CheckBox.Group;
-const CheckBoxButton = CheckBox.Button;
+const CheckBoxGroup = Checkbox.Group;
+const CheckBoxButton = Checkbox.Button;
 const Wrapper = styled.div`
   margin: 20px;
 `;
-const defaultValue = ["1", "2"];
+const defaultValue = ['1', '2'];
 const options = [
-  { label: "check1", value: "11", name: "1" },
-  { label: "check2", value: "22", name: "2" },
-  { label: "check3", value: "33", name: "3" }
+  { label: 'check1', value: '11', name: '1' },
+  { label: 'check2', value: '22', name: '2' },
+  { label: 'check3', value: '33', name: '3' },
 ];
 const handleChange = obj => {
   console.info(obj);
 };
 const view = {
   [Widget.CheckBox]: {
-    color: "red"
+    color: 'red',
   },
   [Widget.CheckBoxGroup]: {
-    color: "red",
-    width: 100
+    color: 'red',
+    width: 100,
   },
   register: {
     width: 120,
-    color: "red",
-    margin: 20
-  }
+    color: 'red',
+    margin: 20,
+  },
 };
-export default class CheckBoxGroupDemo extends React.Component<any, any> {
+export default  class CheckBoxGroupDemo extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      newValue: ["11", "44"],
-      newDisplayValue: ["check4", "check5"]
+      newValue: ['11', '44'],
+      newDisplayValue: ['check4', 'check5'],
     };
   }
 
@@ -55,25 +57,22 @@ export default class CheckBoxGroupDemo extends React.Component<any, any> {
     return (
       <div>
         <Wrapper>
-          <CheckBoxGroup
-            onChange={this.handleChange}
-            value={this.state.newValue}
-          >
-            <CheckBox value="11" disabled>
+          <CheckBoxGroup onChange={this.handleChange} value={this.state.newValue}>
+            <Checkbox value="11" disabled>
               CheckBox1
-            </CheckBox>
-            <CheckBox value="22">CheckBox2</CheckBox>
-            <CheckBox value="33">CheckBox3</CheckBox>
+            </Checkbox>
+            <Checkbox value="22">CheckBox2</Checkbox>
+            <Checkbox value="33">CheckBox3</Checkbox>
           </CheckBoxGroup>
         </Wrapper>
         <Wrapper>
           <CheckBoxGroup onChange={this.handleChange}>
-            <CheckBox value="11" disabled>
+            <Checkbox value="11" disabled>
               CheckBox1
-            </CheckBox>
+            </Checkbox>
             {123}
-            <CheckBox value="22">CheckBox2</CheckBox>
-            <CheckBox value="33">CheckBox3</CheckBox>
+            <Checkbox value="22">CheckBox2</Checkbox>
+            <Checkbox value="33">CheckBox3</Checkbox>
           </CheckBoxGroup>
         </Wrapper>
         <Wrapper>
@@ -82,7 +81,7 @@ export default class CheckBoxGroupDemo extends React.Component<any, any> {
               onChange={handleChange}
               styles="vertical"
               data={options}
-              defaultValue={["11"]}
+              defaultValue={['11']}
               displayField="label"
             />
           </Theme>
@@ -92,8 +91,8 @@ export default class CheckBoxGroupDemo extends React.Component<any, any> {
             onChange={this.handleChange}
             styles="vertical"
             data={options}
-            value={["11", "44"]}
-            displayValue={["check4", "check5"]}
+            value={['11', '44']}
+            displayValue={['check4', 'check5']}
             displayField="label"
           />
         </Wrapper>
@@ -102,17 +101,13 @@ export default class CheckBoxGroupDemo extends React.Component<any, any> {
             onChange={this.handleChange}
             styles="vertical"
             data={options}
-            defaultValue={["11", "44"]}
-            displayValue={["check4", "check5"]}
+            defaultValue={['11', '44']}
+            displayValue={['check4', 'check5']}
             displayField="label"
           />
         </Wrapper>
         <Wrapper>
-          <CheckBoxGroup
-            childType="button"
-            onChange={handleChange}
-            value={defaultValue}
-          >
+          <CheckBoxGroup childType="button" onChange={handleChange} value={defaultValue}>
             <CheckBoxButton value="1">CheckBox1</CheckBoxButton>
             <CheckBoxButton value="2">CheckBox2</CheckBoxButton>
             <CheckBoxButton value="3">CheckBox3</CheckBoxButton>
@@ -120,11 +115,7 @@ export default class CheckBoxGroupDemo extends React.Component<any, any> {
         </Wrapper>
         <Wrapper>
           <Theme config={view}>
-            <CheckBoxGroup
-              childType="button"
-              onChange={handleChange}
-              defaultValue={defaultValue}
-            >
+            <CheckBoxGroup childType="button" onChange={handleChange} defaultValue={defaultValue}>
               <CheckBoxButton value="1">CheckBox1</CheckBoxButton>
               <CheckBoxButton value="2">CheckBox2</CheckBoxButton>
               <CheckBoxButton value="3">CheckBox3</CheckBoxButton>
@@ -136,7 +127,7 @@ export default class CheckBoxGroupDemo extends React.Component<any, any> {
             onChange={this.handleChange}
             data={options}
             value={this.state.newValue}
-            displayValue={["check4", "check5"]}
+            displayValue={['check4', 'check5']}
             displayField="label"
             childType="button"
           />
@@ -145,13 +136,13 @@ export default class CheckBoxGroupDemo extends React.Component<any, any> {
           <CheckBoxGroup
             styles="vertical"
             data={options}
-            childType={"button"}
-            defaultValue={["11", "44"]}
-            defaultDisplayValue={["check4", "check5"]}
+            childType={'button'}
+            defaultValue={['11', '44']}
+            defaultDisplayValue={['check4', 'check5']}
             displayField="label"
           />
         </Wrapper>
       </div>
     );
   }
-}
+};
