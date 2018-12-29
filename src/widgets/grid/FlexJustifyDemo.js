@@ -1,6 +1,6 @@
 import React from 'react';
-import {Row, Col} from '@lugia/lugia-web';
-
+import {Grid} from '@lugia/lugia-web';
+const {Row, Col} = Grid;
 export default class GridDemo extends React.Component {
     render() {
         return (

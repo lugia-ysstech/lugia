@@ -1,8 +1,8 @@
 import React from 'react';
-import {CheckBox} from '@lugia/lugia-web';
+import {Checkbox} from '@lugia/lugia-web';
 
-const CheckBoxGroup = CheckBox.Group;
-const CheckBoxButton = CheckBox.Button;
+const CheckBoxGroup = Checkbox.Group;
+const CheckBoxButton = Checkbox.Button;
 const options = [
     { label: 'check1', value: '11', name: '1' },
     { label: 'check2', value: '22', name: '2' },

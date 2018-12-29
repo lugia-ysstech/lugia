@@ -1,6 +1,6 @@
 import React from 'react';
 import {Radio} from '@lugia/lugia-web';
-
+import Widget from '@lugia/lugia-web/dist/consts/index';
 const RadioGroup = Radio.Group;
 const data = [
     { text: 'radio1', value: 'Apple' },

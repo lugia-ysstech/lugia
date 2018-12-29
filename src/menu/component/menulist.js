@@ -69,7 +69,7 @@ export default class MenuList extends React.Component<any, any> {
 
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
     const path = window.location.pathname;
-    const pathType = path.match(/[^/]+/g)[0]==='design'?'designConfig':'routerConfig';
+    const pathType = path.match(/[^/]+/g)[0]==='design'?'designConfig':'menuConfig';
     const defCurrent = defProps.current || path;
     if (!stateProps) {
       return {
@@ -91,6 +91,7 @@ export default class MenuList extends React.Component<any, any> {
       },
     };
     const {routerType} = this.state;
+    // console.log('Router[routerType]',getMenuItems(Router[routerType]));
     return (
       <Container >
         {

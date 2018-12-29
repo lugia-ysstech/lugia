@@ -27,6 +27,7 @@ export default class CheckBoxDemo extends React.Component {
                 borderSize: 0,
             },
         };
+        const {activeValue} = this.stste;
         return (
             <div>
                 <Theme config={wrapView}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Drawer} from '@lugia/lugia-web';
+import {Drawer,Button} from '@lugia/lugia-web';
 
 export default class DrawerDemo extends React.Component {
     constructor() {

@@ -1,8 +1,8 @@
 import React from 'react';
-import {CheckBox} from '@lugia/lugia-web';
+import {Checkbox} from '@lugia/lugia-web';
 
-const CheckBoxGroup = CheckBox.Group;
-const CheckBoxButton = CheckBox.Button;
+const CheckBoxGroup = Checkbox.Group;
+const CheckBoxButton = Checkbox.Button;
 
 export default class CheckBoxDemo extends React.Component {
     constructor(props) {
