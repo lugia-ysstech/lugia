@@ -31,7 +31,6 @@ async function createRouter () {
         }
         categoryData.push(meta);
       } catch (error) {
-        console.log('(%d) %s 读取元信息失败  X', pos, folderName);
         return;
       }
     });
