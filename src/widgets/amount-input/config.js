@@ -5,7 +5,7 @@
  */
 
 module.exports ={
-  BaseAmountinput: {
+  BaseAmountInput: {
     title: '金额输入框基础用法',
     desc: '金额输入框基础用法',
     path: './BaseAmountInput'
