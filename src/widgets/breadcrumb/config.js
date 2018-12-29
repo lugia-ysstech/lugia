@@ -2,7 +2,7 @@
  * create by szfeng
  */
 
-export default {
+module.exports = {
   DefaultBreadcrumb: {
     title: '基本用法',
     desc: '通过Breadcrumb.Item使用,使用href属性跳转页面,href传入的是完整的路径',
