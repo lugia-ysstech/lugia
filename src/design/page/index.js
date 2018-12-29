@@ -38,7 +38,7 @@ export default class Pages extends React.Component<any, any> {
 
   render() {
     const {pathType} = this.state;
-    console.log(data,pathType);
+    // console.log(data,pathType);
     const dataSource = data[pathType] ||data.introduce;
     return (
       <Container>

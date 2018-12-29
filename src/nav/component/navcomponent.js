@@ -35,7 +35,6 @@ const Wrapper = styled.div`
 const Header = styled.div`
   height: 60px;
   line-height: 60px;
-  border:1px solid red;
   align-item:middle;
 `;
 

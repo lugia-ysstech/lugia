@@ -2,6 +2,7 @@ import React from 'react';
 import {Radio} from '@lugia/lugia-web';
 
 const RadioButton = Radio.Button;
+const RadioGroup = Radio.RadioGroup;
 
 export default class RadioDemo extends React.Component {
     onChange = obj => {
