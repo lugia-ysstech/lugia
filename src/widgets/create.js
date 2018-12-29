@@ -3,7 +3,6 @@
  * create by guorg
  *
  */
-const childProces = require('child_process');
 const fs = require('fs');
 const path = require('path');
 createRouter();
@@ -127,7 +126,7 @@ async function main () {
         console.log('(%d) %s 写入文件失败  X', pos, folderName);
         return;
       }
-      console.log('(%d) %s 成功', pos, folderName);
+      // console.log('(%d) %s 成功', pos, folderName);
       filePath.push(folderName);
     });
 
