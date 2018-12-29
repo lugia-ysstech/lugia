@@ -6,8 +6,8 @@
  */
 import React from 'react';
 import styled from 'styled-components';
-import {Grid ,Row, Col} from '@lugia/lugia-web';
-// const { Row, Col } = Grid;
+import {Grid} from '@lugia/lugia-web';
+const {Row, Col} = Grid;
 const Wrapper = styled.div`
   & > div > div {
     padding: 8px;
