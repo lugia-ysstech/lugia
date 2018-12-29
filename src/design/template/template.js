@@ -14,7 +14,7 @@ import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 const { themeColor } = colorsFunc();
 
 const Title = styled.div.attrs({
-    size:props => props.level?'22px':'18px'
+    size:props => (props.level?'22px':'18px')
 })` 
   font-size:${props => props.size};
   color:#0f1333;
@@ -59,8 +59,8 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img.attrs({
-  width:props => props.imgPosition === 'top' || props.imgPosition === 'bottom'?'550px':'340px',
-  margin:props => props.imgPosition === 'top' || props.imgPosition === 'bottom'?'20px 0':'0 50px',
+  width:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'550px':'340px'),
+  margin:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'20px 0':'0 50px'),
 })` 
   margin:${props => props.margin};
   max-width:${props => props.width};
@@ -68,7 +68,7 @@ const Image = styled.img.attrs({
 `;
 
 const ImageDesc = styled.div.attrs({
-  padding:props => props.imgPosition === 'right' || props.imgPosition === 'left' ?'10px 50px 0 0':'',
+  padding:props => (props.imgPosition === 'right' || props.imgPosition === 'left' ?'10px 50px 0 0':''),
 })` 
   color:#666;
   font-size:12px;
@@ -93,7 +93,7 @@ const getImgElement = (data:Object,imgPosition:string) => {
       return <React.Fragment>
         <Image imgPosition={imgPosition} src={item.url} />
         <ImageDesc imgPosition={imgPosition}>{item.desc}</ImageDesc>
-      </React.Fragment>
+      </React.Fragment>;
     })}
   </ImageContainer>;
 };
@@ -104,7 +104,7 @@ const getContentElement = (data:Object,titleElement) => {
     {data.map(item => {
       return <React.Fragment>
         <Content>{item}</Content>
-      </React.Fragment>
+      </React.Fragment>;
     })}
   </ContentContainer>;
 };
@@ -152,7 +152,7 @@ const getElementWithPosition = (data:Array<Object>,level?:Boolean) => {
       })
     }
 
-  </React.Fragment>
+  </React.Fragment>;
 };
 
 export default class Template extends React.Component<defProps, stateProps> {

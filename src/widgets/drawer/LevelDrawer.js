@@ -10,12 +10,12 @@ export default class DrawerDemo extends React.Component {
             visible3: false
         };
     }
-    openDrawer = (cur) => () => {
+    openDrawer = cur => () => {
         this.setState({
             ['visible' + cur]: true,
         });
     };
-    onClick = (cur) => () => {
+    onClick = cur => () => {
         this.setState({
             ['visible' + cur]: false,
         });

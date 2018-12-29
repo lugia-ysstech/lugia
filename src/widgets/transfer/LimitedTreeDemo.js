@@ -29,7 +29,7 @@ export default class TransferDemo extends React.Component {
                 type="tree"
                 sourceSelectedKeys={['2.2.1']}
                 targetSelectedKeys={['2.1.1']}
-                value={[ '2.1.1']}
+                value={['2.1.1']}
                 showSearch
             />
         );

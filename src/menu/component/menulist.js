@@ -4,30 +4,30 @@
  *
  * @flow
  */
-import React from "react";
-import { go, Link } from "@lugia/lugiax-router";
-import { Button, Menu,Navmenu ,Theme} from "@lugia/lugia-web";
+import React from 'react';
+import { go, Link } from '@lugia/lugiax-router';
+import { Button, Menu,Navmenu ,Theme} from '@lugia/lugia-web';
 import '../../css/menu.css';
-import Router from "../../router";
+import Router from '../../router';
 import Widget from '@lugia/lugia-web/dist/consts/index';
-import { bindTo, connect, } from '@lugia/lugiax';
+import { bindTo, connect } from '@lugia/lugiax';
 import styled from 'styled-components';
 
 const getMenuItems = (data:Object) => {
   const arr =[];
-  for(let item in data){
+  for(const item in data){
     const {text,value} = data[item];
     const obj= {
-      value: value,
+      value,
       text: text || value,
     };
 
     const {icon,describe} = data[item];
     if(icon){
-      obj.icon =icon
+      obj.icon =icon;
     }
     if(describe){
-      obj.describe =describe
+      obj.describe =describe;
     }
 
     const children = data[item].children;
@@ -36,7 +36,7 @@ const getMenuItems = (data:Object) => {
       childArr = getMenuItems(children);
     }
     if(childArr.length){
-      obj.children = childArr
+      obj.children = childArr;
     }
 
     const {isHidden} = data[item];
@@ -69,7 +69,7 @@ export default class MenuList extends React.Component<any, any> {
 
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
     const path = window.location.pathname;
-    const pathType = path.match(/[^/]+/g)[0]==='design'?"designConfig":"routerConfig";
+    const pathType = path.match(/[^/]+/g)[0]==='design'?'designConfig':'routerConfig';
     const defCurrent = defProps.current || path;
     if (!stateProps) {
       return {
@@ -108,11 +108,11 @@ export default class MenuList extends React.Component<any, any> {
       </Container>
     );
   }
-  onSelect = (res) => {
-    const { onSelect, } = this.props;
+  onSelect = res => {
+    const { onSelect } = this.props;
     onSelect && onSelect(res);
     const urls = res.value.toLocaleLowerCase();
-    go({ url: urls })
+    go({ url: urls });
   };
 
 

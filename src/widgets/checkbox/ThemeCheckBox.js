@@ -15,6 +15,6 @@ export default class CheckBoxDemo extends React.Component {
                     <CheckBox >CheckBox</CheckBox>
                 </Theme>
             </div>
-        )
+        );
     }
 }

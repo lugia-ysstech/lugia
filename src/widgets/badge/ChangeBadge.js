@@ -3,9 +3,9 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { Badge, Theme,Icon } from "@lugia/lugia-web";
-import styled from "styled-components";
+import React from 'react';
+import { Badge, Theme,Icon } from '@lugia/lugia-web';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   float: left;
@@ -28,7 +28,7 @@ export default class ChangeBadge extends React.Component<any, any> {
   }
 
   click = type => () => {
-    const count = type === "plus" ? this.state.count + 1 : this.state.count - 1;
+    const count = type === 'plus' ? this.state.count + 1 : this.state.count - 1;
     this.setState({ count });
   };
   render () {
@@ -38,13 +38,13 @@ export default class ChangeBadge extends React.Component<any, any> {
           <Box />
         </Badge>
         <Icon
-          style={{ fontSize: "2em" }}
+          style={{ fontSize: '2em' }}
           iconClass="lugia-icon-reminder_plus_square_o"
-          onClick={this.click("plus")}
+          onClick={this.click('plus')}
         />
         <Icon
           iconClass="lugia-icon-reminder_minus_square_o"
-          onClick={this.click("minus")}
+          onClick={this.click('minus')}
         />
       </Wrapper>);
   }

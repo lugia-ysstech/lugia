@@ -1,196 +1,30 @@
-/**
- *
- * create by LYQ
- *
- * @flow
- */
-import React from 'react';
-import styled from 'styled-components';
-import { Theme ,Collapse,Panel} from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts/index';
-// import Widget from '../consts';
-
-
-const Wrapper = styled.div`
-  width: 900px;
-  margin: 0 auto;
-  padding: 50px;
-  border: 1px solid #e8e8e8;
-`;
-
-const view = {
-  [Widget.Panel]: {
-    width: 500,
-    color: '#56f43e',
-    backgroundColor: '#e6f7ff',
-    margin: 50,
-    borderSize: {
-      top: 0,
-      right: 0,
-      bottom: 1,
-      left: 0,
-    },
-  },
-};
-const wrapView = {
-  [Widget.Collapse]: {
-    width: 500,
-    margin: 20,
-  },
-  [Widget.Panel]: {
-    borderSize: 0,
-  },
-};
-
-export class PanelDemo extends React.Component<any, any> {
-  constructor() {
-    super();
-    this.state = {
-      open: true,
-    };
-  }
-  handleClick = () => {
-    const { open } = this.state;
-    this.setState({
-      open: !open,
-    });
-  };
-  render() {
-    const { open } = this.state;
-
-    return (
-      <div>
-        <Wrapper>
-          <Panel value="1" header="LUGIA">
-            <div>PanelContent...</div>
-            <div>PanelContent...</div>
-          </Panel>
-          <br />
-          <Panel value="2" open={open} onClick={this.handleClick} header="lugia">
-            <div>PanelContent...</div>
-            <div>PanelContent...</div>
-          </Panel>
-          <br />
-          <Panel value="3" header="LUGIA" disabled>
-            <div>PanelContent...</div>
-            <div>PanelContent...</div>
-          </Panel>
-          <br />
-          <Panel value="4" showArrow={false} header="LUGIA">
-            <div>PanelContent...</div>
-            <div>PanelContent...</div>
-          </Panel>
-          <br />
-          <Theme config={view}>
-            <Panel value="4" showArrow={false} header="LUGIA">
-              <div>PanelContent...</div>
-              <div>PanelContent...</div>
-            </Panel>
-          </Theme>
-          <br />
-          <Theme config={view}>
-            <Panel value="5" header="LUGIA">
-              <div>PanelContent...</div>
-              <div>PanelContent...</div>
-            </Panel>
-          </Theme>
-        </Wrapper>
-      </div>
-    );
-  }
-};
-export  default  class CollapseDemo extends React.Component<any, any> {
-  constructor() {
-    super();
-    this.state = {
-      activeValue: '1',
-      defaultActiveValue: '1',
-    };
-  }
-  handleChangeActiveValue = (obj: Object) => {
-    console.info(obj.newValue);
-    this.setState({
-      activeValue: obj.newValue,
-    });
-  };
-  handleChangeDefaultActiveValue = (obj: Object) => {
-    console.info(obj.newValue);
-  };
-  render() {
-    const { activeValue, defaultActiveValue } = this.state;
-    return (
-      <div>
-        <Wrapper>
-          <p>defaultActiveValue={'1'}</p>
-          <Collapse defaultActiveValue={defaultActiveValue}>
-            <Panel value="1" header="LUGIA">
-              <div>PanelContent...</div>
-              <div>PanelContent...</div>
-            </Panel>
-            <Panel value="2" header="LUGIA">
-              <div>PanelContent...</div>
-              <div>PanelContent...</div>
-            </Panel>
-          </Collapse>
-          <br />
-          <p>activeValue={'1'}</p>
-          <Collapse activeValue={'1'}>
-            <Panel value="1" header="LUGIA">
-              <div>PanelContent...</div>
-              <div>PanelContent...</div>
-            </Panel>
-            <Panel value="2" header="LUGIA">
-              <div>PanelContent...</div>
-              <div>PanelContent...</div>
-            </Panel>
-          </Collapse>
-          <br />
-          <p>activeValue={'this.state.activeValue'}</p>
-          <Collapse activeValue={activeValue} onChange={this.handleChangeActiveValue}>
-            <Panel value="1" header="LUGIA">
-              <div>PanelContent...</div>
-              <div>PanelContent...</div>
-            </Panel>
-            <Panel value="2" header="LUGIA">
-              <div>PanelContent...</div>
-              <div>PanelContent...</div>
-            </Panel>
-          </Collapse>
-          <br />
-          <Collapse defaultActiveValue={defaultActiveValue} accordion>
-            <Panel value="1" header="LUGIA">
-              <div>PanelContent...</div>
-              <div>PanelContent...</div>
-            </Panel>
-            <Panel value="2" header="LUGIA">
-              <div>PanelContent...</div>
-              <div>PanelContent...</div>
-            </Panel>
-            <Panel value="3" header="LUGIA">
-              <div>PanelContent...</div>
-              <div>PanelContent...</div>
-            </Panel>
-            <Panel value="4" header="LUGIA">
-              <div>PanelContent...</div>
-              <div>PanelContent...</div>
-            </Panel>
-          </Collapse>
-          <br />
-          <Theme config={wrapView}>
-            <Collapse activeValue={activeValue} onChange={this.handleChangeActiveValue}>
-              <Panel value="1" header="LUGIA">
-                <div>PanelContent...</div>
-                <div>PanelContent...</div>
-              </Panel>
-              <Panel value="2" header="LUGIA">
-                <div>PanelContent...</div>
-                <div>PanelContent...</div>
-              </Panel>
-            </Collapse>
-          </Theme>
-          <br />
-        </Wrapper>
-      </div>
-    );
-  }
-};
+import  React from 'react';
+        import {Anchor,Grid} from '@lugia/lugia-web';
+        import EditTables from '../../edit-table'; 
+        import collapse from '@lugia/lugia-web/dist/collapse/lugia.collapse.zh-CN.json';
+        import Demo from '../code-box';
+        import Title from '../code-box/Title';
+         const BasicDemo =  require('./BasicDemo').default;  const LimitedDemo =  require('./LimitedDemo').default;  const AccordionDemo =  require('./AccordionDemo').default;  const ThemeDemo =  require('./ThemeDemo').default;  
+        
+        const { Link } = Anchor;
+        const { Row,Col } = Grid;
+        
+        export default class ComDemo extends React.Component {
+            render(){
+                return(
+                    <Row>
+                        <Col span={20}>
+                            <Title title={'Collapse 折叠面板'} subTitle={'Collapse'} desc={'折叠面板，用于展开/折叠内容区域。'} />
+                            <Demo title={'基本'} titleID={'collapse-0'} code={<code>{ "import React from \'react\';\nimport {Collapse } from \'@lugia/lugia-web\';\n\nconst Panel = Collapse.Panel;\n\nexport default class CheckBoxDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <Collapse defaultActiveValue={\'1\'}>\n                    <Panel value=\"1\" header=\"LUGIA\">\n                        <div>PanelContent...</div>\n                        <div>PanelContent...</div>\n                    </Panel>\n                    <Panel value=\"2\" header=\"LUGIA\">\n                        <div>PanelContent...</div>\n                        <div>PanelContent...</div>\n                    </Panel>\n                </Collapse>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'最简单的用法，可展开多个面板'}  demo={<BasicDemo />}></Demo><Demo title={'受限的 Collapse'} titleID={'collapse-1'} code={<code>{ "import React from \'react\';\nimport {Collapse } from \'@lugia/lugia-web\';\n\nconst Panel = Collapse.Panel;\n\nexport default class CheckBoxDemo extends React.Component {\n    constructor() {\n        super();\n        this.state = {\n            activeValue: \'1\',\n        };\n    }\n    handleChangeActiveValue = (obj: Object) => {\n        console.info(obj.newValue);\n        this.setState({\n            activeValue: obj.newValue,\n        });\n    };\n    render() {\n        return (\n            <div>\n                <Collapse activeValue={this.state.activeValue} onChange={this.handleChangeActiveValue}>\n                    <Panel value=\"1\" header=\"LUGIA\">\n                        <div>PanelContent...</div>\n                        <div>PanelContent...</div>\n                    </Panel>\n                    <Panel value=\"2\" header=\"LUGIA\">\n                        <div>PanelContent...</div>\n                        <div>PanelContent...</div>\n                    </Panel>\n                </Collapse>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'展开的面板可以受限，根据需要判断是否展开'}  demo={<LimitedDemo />}></Demo><Demo title={'手风琴'} titleID={'collapse-2'} code={<code>{ "import React from \'react\';\nimport {Collapse } from \'@lugia/lugia-web\';\n\nconst Panel = Collapse.Panel;\n\nexport default class CheckBoxDemo extends React.Component {\n\n    render() {\n        return (\n            <div>\n                <Collapse defaultActiveValue={\'1\'} accordion>\n                    <Panel value=\"1\" header=\"LUGIA\">\n                        <div>PanelContent...</div>\n                        <div>PanelContent...</div>\n                    </Panel>\n                    <Panel value=\"2\" header=\"LUGIA\">\n                        <div>PanelContent...</div>\n                        <div>PanelContent...</div>\n                    </Panel>\n                    <Panel value=\"3\" header=\"LUGIA\">\n                        <div>PanelContent...</div>\n                        <div>PanelContent...</div>\n                    </Panel>\n                    <Panel value=\"4\" header=\"LUGIA\">\n                        <div>PanelContent...</div>\n                        <div>PanelContent...</div>\n                    </Panel>\n                </Collapse>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'手风琴模式，只能打开一个面板'}  demo={<AccordionDemo />}></Demo><Demo title={'配置主题'} titleID={'collapse-3'} code={<code>{ "import React from \'react\';\nimport {Collapse,Theme } from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts/index\';\n\nconst Panel = Collapse.Panel;\n\nexport default class CheckBoxDemo extends React.Component {\n    constructor() {\n        super();\n        this.state = {\n            activeValue: \'1\',\n        };\n    }\n    handleChangeActiveValue = (obj: Object) => {\n        console.info(obj.newValue);\n        this.setState({\n            activeValue: obj.newValue,\n        });\n    };\n    render() {\n        const wrapView = {\n            [Widget.Collapse]: {\n                width: 500,\n                margin: 20,\n            },\n            [Widget.Panel]: {\n                borderSize: 0,\n            },\n        };\n        return (\n            <div>\n                <Theme config={wrapView}>\n                    <Collapse activeValue={activeValue} onChange={this.handleChangeActiveValue}>\n                        <Panel value=\"1\" header=\"LUGIA\">\n                            <div>PanelContent...</div>\n                            <div>PanelContent...</div>\n                        </Panel>\n                        <Panel value=\"2\" header=\"LUGIA\">\n                            <div>PanelContent...</div>\n                            <div>PanelContent...</div>\n                        </Panel>\n                    </Collapse>\n                </Theme>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'为折叠面板配置主题，可配置 width margin 和 Panel 的 borderSize 属性'}  demo={<ThemeDemo />}></Demo>
+                            <EditTables dataSource={collapse} />
+                        </Col>
+                        <Col span={4}>
+                            <Anchor  slideType="line">
+                                <Link title={'基本'} href={'#collapse-0'} /><Link title={'受限的 Collapse'} href={'#collapse-1'} /><Link title={'手风琴'} href={'#collapse-2'} /><Link title={'配置主题'} href={'#collapse-3'} />
+                            </Anchor>
+                        </Col>
+                    </Row>
+                );
+            }
+         }   
+        

@@ -4,63 +4,84 @@
  *
  */
 const fs = require('fs');
+const path = require('path');
 
-const allPathFile = fs.readdirSync('./');
-const filePath = [];
-allPathFile.forEach(folderName => {
-    fs.stat(folderName,(error,stats)=>{
-        if(error){
-            console.log(error);
-            return;
-        }else{
-            if(stats.isDirectory()){
-                if(folderName === 'affix'){
-                    const config = require(`./${folderName}/config.js`);
-                    const allDemo = Object.keys(config);
-                    // console.log(fs.readFileSync('./affix/index.js', 'utf-8'));
-                    const meta = require(`@lugia/lugia-web/dist/${folderName}/lugia.${folderName}.zh-CN.json`);
-                    let childrenWidget;
-                    if(meta.childrenWidget){
-                        childrenWidget = meta.childrenWidget
-                    }
-                    console.log(meta);
-                    const data = getContent(allDemo,config,folderName,{title: meta.title,subTitle: meta.widgetName,desc: meta.desc},childrenWidget)
-                    console.log(getContent(allDemo,config,folderName,{title: meta.title,subTitle: meta.widgetName,desc: meta.desc},childrenWidget));
-                    // fs.appendFileSync 同步地将数据追加到文件，如果文件不存在则创建文件。
-                    try {
-                        fs.writeFile(`${folderName}/index.js`,data);
-                        console.log('数据已追加到文件');
-                    } catch (err) {
-                        console.log(err);
-                    }
-                }
-                if(folderName !== 'code-box'){
-                    // fs.appendFileSync 同步地将数据追加到文件，如果文件不存在则创建文件。
-                    // try {
-                    //     fs.appendFileSync(`${item}/index.js`, '追加的数据');
-                    //     console.log('数据已追加到文件');
-                    // } catch (err) {
-                    //     console.log(err);
-                    // }
-                    filePath.push(folderName);
-                }
-            }
+main();
+
+function getPath (folderName) {
+  return path.join(__dirname, folderName);
+}
+
+async function main () {
+  const allPathFile = await fs.readdirSync(__dirname).filter(folderName => folderName !== 'code-box' && folderName.indexOf('.') === -1);
+  const filePath = [];
+  console.log('总共待生成组件[%d]个', allPathFile.length);
+  try {
+    for (let index = 0; index < allPathFile.length; index++) {
+      const folderName = allPathFile[ index ];
+      const stats = await fs.statSync(getPath(folderName));
+      const pos = index + 1;
+      if (stats.isDirectory()) {
+        let config;
+        try {
+          config = require(`./${folderName}/config.js`);
+        } catch (err) {
+          console.log('(%d) %s 读取config.js错误  X', pos, folderName);
+          continue;
         }
 
-    })
-});
+        const allDemo = Object.keys(config);
+        let meta;
+        try {
+          meta = require(`@lugia/lugia-web/dist/${folderName}/lugia.${folderName}.zh-CN.json`);
+        } catch (error) {
+          console.log('(%d) %s 读取元信息失败  X', pos, folderName);
+          continue;
+        }
 
-function getContent(demos,config,folderName,pageInfo,childrenWidget){
-    const {importInfo: ApiImport,demo: ApiTable} = getAPITable(folderName,childrenWidget);
-    const {title: pageTitle, subTitle,desc: pageDesc} = pageInfo;
-    const indexCode =
-        `import  React from 'react';
+        const { childrenWidget } = meta;
+        const subTitle = meta.widgetName;
+        let data;
+        try {
+          data = getContent(allDemo, config, folderName, {
+            title: meta.title,
+            subTitle,
+            desc: meta.desc
+          }, childrenWidget);
+        } catch (error) {
+          console.log('(%d) %s 代码生成错误 X', pos, folderName);
+          continue;
+        }
+        try {
+          await fs.writeFileSync(getPath(`${folderName}/index.js`), data);
+        } catch (err) {
+          console.log('(%d) %s 写入文件失败  X', pos, folderName);
+          continue;
+        }
+        console.log('(%d) %s 成功', pos, folderName);
+        filePath.push(folderName);
+      } else {
+        console.log('(%d) %s 目录错误  X', pos, folderName);
+      }
+    }
+  } catch (error) {
+    console.log('%s 异常  X', error);
+  }
+  console.log('总共待生成组件[%d]个， 成功生成[%d]个', allPathFile.length, filePath.length);
+}
+
+
+function getContent (demos, config, folderName, pageInfo, childrenWidget) {
+  const { importInfo: ApiImport, demo: ApiTable } = getAPITable(folderName, childrenWidget);
+  const { title: pageTitle, subTitle, desc: pageDesc } = pageInfo;
+  const indexCode =
+    `import  React from 'react';
         import {Anchor,Grid} from '@lugia/lugia-web';
         import EditTables from '../../edit-table'; 
         ${ApiImport}
         import Demo from '../code-box';
         import Title from '../code-box/Title';
-        ${getImportInfoAndDemo(demos,config,folderName).importInfo} 
+        ${getImportInfoAndDemo(demos, config, folderName).importInfo} 
         
         const { Link } = Anchor;
         const { Row,Col } = Grid;
@@ -71,12 +92,12 @@ function getContent(demos,config,folderName,pageInfo,childrenWidget){
                     <Row>
                         <Col span={20}>
                             <Title title={'${pageTitle}'} subTitle={'${subTitle}'} desc={'${pageDesc}'} />
-                            ${getImportInfoAndDemo(demos,config,folderName).demo}
+                            ${getImportInfoAndDemo(demos, config, folderName).demo}
                             ${ApiTable}
                         </Col>
                         <Col span={4}>
                             <Anchor  slideType="line">
-                                ${getImportInfoAndDemo(demos,config,folderName).link}
+                                ${getImportInfoAndDemo(demos, config, folderName).link}
                             </Anchor>
                         </Col>
                     </Row>
@@ -84,30 +105,39 @@ function getContent(demos,config,folderName,pageInfo,childrenWidget){
             }
          }   
         `;
-    return indexCode;
+  return indexCode;
 }
-function getImportInfoAndDemo(demos,config,folderName){
-    let importInfo ='',demo='',link='';
-    demos.forEach((item,index) => {
-        const {title,desc} = config[item];
-        const code = fs.readFileSync(`./${folderName}/${item}.js`, 'utf-8');
-        const codeStr = code.replace(/\'/g, String.raw`\'`).replace(/\"/g, String.raw`\"`).replace(/\n/g,String.raw`\n`);
-        importInfo = `${importInfo} const ${item} =  require('./${item}').default; `;
-        demo = `${demo}<Demo title={'${title}'} titleID={'${folderName}-${index}'} code={<code>{ "${codeStr}"}</code>} desc={'${desc}'}  demo={<${item} />}></Demo>`;
-        link = `${link}<Link title={'${title}'} href={'#${folderName}-${index}'} />`
+
+function getImportInfoAndDemo (demos, config, folderName) {
+  let importInfo = '', demo = '', link = '';
+  demos.forEach((item, index) => {
+    const { title, desc } = config[ item ];
+    const code = fs.readFileSync(getPath(`${folderName}/${item}.js`), 'utf-8');
+    const codeStr = code.replace(/\'/g, String.raw`\'`).replace(/\"/g, String.raw`\"`).replace(/\n/g, String.raw`\n`);
+    importInfo = `${importInfo} const ${item} =  require('./${item}').default; `;
+    demo = `${demo}<Demo title={'${title}'} titleID={'${folderName}-${index}'} code={<code>{ "${codeStr}"}</code>} desc={'${desc}'}  demo={<${item} />}></Demo>`;
+    link = `${link}<Link title={'${title}'} href={'#${folderName}-${index}'} />`;
+  });
+  return { importInfo, demo, link };
+}
+function fixFolderName (folderName) {
+  if(!folderName){
+    return folderName;
+  }
+  return folderName.replace(/-/g, '_');
+}
+function getAPITable (folderName, childrenWidget) {
+  let importInfo = '', demo = '';
+  if (childrenWidget) {
+    childrenWidget.forEach(item => {
+      item = fixFolderName(item);
+      importInfo = `${importInfo} import ${item} from '@lugia/lugia-web/dist/${folderName}/lugia.${item}.zh-CN.json';`;
+      demo = `${demo}<EditTables dataSource={${item}} />`;
     });
-    return {importInfo,demo,link};
-}
-function getAPITable(folderName,childrenWidget){
-    let importInfo ='',demo='';
-    if(childrenWidget){
-        childrenWidget.forEach(item => {
-            importInfo = `${importInfo} import ${item} from '@lugia/lugia-web/dist/${folderName}/lugia.${item}.zh-CN.json';`;
-            demo = `${demo}<EditTables dataSource={${item}} />`;
-        });
-    }else{
-        importInfo = `import ${folderName} from '@lugia/lugia-web/dist/${folderName}/lugia.${folderName}.zh-CN.json';`;
-        demo = `<EditTables dataSource={${folderName}} />`;
-    }
-    return {importInfo,demo};
+  } else {
+    const fixeMoudleName  = fixFolderName(folderName);
+    importInfo = `import ${fixeMoudleName} from '@lugia/lugia-web/dist/${folderName}/lugia.${folderName}.zh-CN.json';`;
+    demo = `<EditTables dataSource={${fixeMoudleName}} />`;
+  }
+  return { importInfo, demo };
 }

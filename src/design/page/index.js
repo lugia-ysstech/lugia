@@ -10,7 +10,7 @@ import { Alert ,  Theme } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import styled from 'styled-components';
 import Temlpate from '../template/template';
-import data from './document'
+import data from './document';
 const Container = styled.div` 
   padding:45px 50px 50px;
   width:980px;
@@ -26,7 +26,7 @@ export default class Pages extends React.Component<any, any> {
     if (!stateProps) {
       return {
         current:defCurrent,
-        pathType:pathType
+        pathType
       };
     }
     return {

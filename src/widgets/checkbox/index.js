@@ -1,148 +1,30 @@
-/**
- *
- * create by LYQ
- *
- * @flow
- */
-import React from 'react';
-import styled from 'styled-components';
-import { Checkbox, Theme } from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts/index';
-// import Widget from '../consts';
-// import CheckBox from './';
-
-const CheckBoxGroup = Checkbox.Group;
-const CheckBoxButton = Checkbox.Button;
-const Wrapper = styled.div`
-  margin: 20px;
-`;
-const defaultValue = ['1', '2'];
-const options = [
-  { label: 'check1', value: '11', name: '1' },
-  { label: 'check2', value: '22', name: '2' },
-  { label: 'check3', value: '33', name: '3' },
-];
-const handleChange = obj => {
-  console.info(obj);
-};
-const view = {
-  [Widget.CheckBox]: {
-    color: 'red',
-  },
-  [Widget.CheckBoxGroup]: {
-    color: 'red',
-    width: 100,
-  },
-  register: {
-    width: 120,
-    color: 'red',
-    margin: 20,
-  },
-};
-export default  class CheckBoxGroupDemo extends React.Component<any, any> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      newValue: ['11', '44'],
-      newDisplayValue: ['check4', 'check5'],
-    };
-  }
-
-  handleChange = ({ newValue, newDisplayValue }: any): any => {
-    console.info(newValue, newDisplayValue);
-    this.setState({ newValue, newDisplayValue });
-  };
-
-  render() {
-    return (
-      <div>
-        <Wrapper>
-          <CheckBoxGroup onChange={this.handleChange} value={this.state.newValue}>
-            <Checkbox value="11" disabled>
-              CheckBox1
-            </Checkbox>
-            <Checkbox value="22">CheckBox2</Checkbox>
-            <Checkbox value="33">CheckBox3</Checkbox>
-          </CheckBoxGroup>
-        </Wrapper>
-        <Wrapper>
-          <CheckBoxGroup onChange={this.handleChange}>
-            <Checkbox value="11" disabled>
-              CheckBox1
-            </Checkbox>
-            {123}
-            <Checkbox value="22">CheckBox2</Checkbox>
-            <Checkbox value="33">CheckBox3</Checkbox>
-          </CheckBoxGroup>
-        </Wrapper>
-        <Wrapper>
-          <Theme config={view}>
-            <CheckBoxGroup
-              onChange={handleChange}
-              styles="vertical"
-              data={options}
-              defaultValue={['11']}
-              displayField="label"
-            />
-          </Theme>
-        </Wrapper>
-        <Wrapper>
-          <CheckBoxGroup
-            onChange={this.handleChange}
-            styles="vertical"
-            data={options}
-            value={['11', '44']}
-            displayValue={['check4', 'check5']}
-            displayField="label"
-          />
-        </Wrapper>
-        <Wrapper>
-          <CheckBoxGroup
-            onChange={this.handleChange}
-            styles="vertical"
-            data={options}
-            defaultValue={['11', '44']}
-            displayValue={['check4', 'check5']}
-            displayField="label"
-          />
-        </Wrapper>
-        <Wrapper>
-          <CheckBoxGroup childType="button" onChange={handleChange} value={defaultValue}>
-            <CheckBoxButton value="1">CheckBox1</CheckBoxButton>
-            <CheckBoxButton value="2">CheckBox2</CheckBoxButton>
-            <CheckBoxButton value="3">CheckBox3</CheckBoxButton>
-          </CheckBoxGroup>
-        </Wrapper>
-        <Wrapper>
-          <Theme config={view}>
-            <CheckBoxGroup childType="button" onChange={handleChange} defaultValue={defaultValue}>
-              <CheckBoxButton value="1">CheckBox1</CheckBoxButton>
-              <CheckBoxButton value="2">CheckBox2</CheckBoxButton>
-              <CheckBoxButton value="3">CheckBox3</CheckBoxButton>
-            </CheckBoxGroup>
-          </Theme>
-        </Wrapper>
-        <Wrapper>
-          <CheckBoxGroup
-            onChange={this.handleChange}
-            data={options}
-            value={this.state.newValue}
-            displayValue={['check4', 'check5']}
-            displayField="label"
-            childType="button"
-          />
-        </Wrapper>
-        <Wrapper>
-          <CheckBoxGroup
-            styles="vertical"
-            data={options}
-            childType={'button'}
-            defaultValue={['11', '44']}
-            defaultDisplayValue={['check4', 'check5']}
-            displayField="label"
-          />
-        </Wrapper>
-      </div>
-    );
-  }
-};
+import  React from 'react';
+        import {Anchor,Grid} from '@lugia/lugia-web';
+        import EditTables from '../../edit-table'; 
+        import checkbox from '@lugia/lugia-web/dist/checkbox/lugia.checkbox.zh-CN.json';
+        import Demo from '../code-box';
+        import Title from '../code-box/Title';
+         const BasicDemo =  require('./BasicDemo').default;  const LimitedCheckBox =  require('./LimitedCheckBox').default;  const DisabledCheckBox =  require('./DisabledCheckBox').default;  const ThemeCheckBox =  require('./ThemeCheckBox').default;  const BasicGroupDemo =  require('./BasicGroupDemo').default;  const VerticalGroupDemo =  require('./VerticalGroupDemo').default;  const SomePropsDemo =  require('./SomePropsDemo').default;  const SomeLimitedPropsDemo =  require('./SomeLimitedPropsDemo').default;  const ButtonPropsDemo =  require('./ButtonPropsDemo').default;  const ButtonLimitedDemo =  require('./ButtonLimitedDemo').default;  const DisplayValueGroup =  require('./DisplayValueGroup').default;  
+        
+        const { Link } = Anchor;
+        const { Row,Col } = Grid;
+        
+        export default class ComDemo extends React.Component {
+            render(){
+                return(
+                    <Row>
+                        <Col span={20}>
+                            <Title title={'CheckBox 多选框'} subTitle={'CheckBox'} desc={'多选框。'} />
+                            <Demo title={'基本'} titleID={'checkbox-0'} code={<code>{ "import React from \'react\';\nimport {CheckBox} from \'@lugia/lugia-web\';\n\nexport default class CheckBoxDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <CheckBox>CheckBox</CheckBox>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'最简单的用法'}  demo={<BasicDemo />}></Demo><Demo title={'受限的CheckBox'} titleID={'checkbox-1'} code={<code>{ "import React from \'react\';\nimport {CheckBox} from \'@lugia/lugia-web\';\n\nexport default class CheckBoxDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <CheckBox checked onChange={handleChange}>\n                    CheckBox\n                </CheckBox>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'受限的CheckBox'}  demo={<LimitedCheckBox />}></Demo><Demo title={'禁用的CheckBox'} titleID={'checkbox-2'} code={<code>{ "import React from \'react\';\nimport {CheckBox} from \'@lugia/lugia-web\';\n\nexport default class CheckBoxDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <CheckBox disabled>CheckBox</CheckBox>\n                <CheckBox checked disabled>\n                    CheckBox\n                </CheckBox>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'禁用的CheckBox'}  demo={<DisabledCheckBox />}></Demo><Demo title={'可配置主题'} titleID={'checkbox-3'} code={<code>{ "import React from \'react\';\nimport {CheckBox,Theme} from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts/index\';\n\nexport default class CheckBoxDemo extends React.Component {\n    render() {\n        const view ={\n            [Widget.CheckBox]: {\n                color: \'red\',\n            }\n        };\n        return (\n            <div>\n                <Theme config={view}>\n                    <CheckBox >CheckBox</CheckBox>\n                </Theme>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'根据需要配置主题，可配置 color'}  demo={<ThemeCheckBox />}></Demo><Demo title={'CheckBox 组'} titleID={'checkbox-4'} code={<code>{ "import React from \'react\';\nimport {CheckBox} from \'@lugia/lugia-web\';\n\nconst CheckBoxGroup = CheckBox.Group;\n\nexport default class CheckBoxDemo extends React.Component {\n    constructor(props) {\n        super(props);\n        this.state = {\n            newValue: [\'11\', \'44\']\n        };\n    }\n    handleChange = ({ newValue, newDisplayValue }) => {\n        console.info(newValue, newDisplayValue);\n        this.setState({ newValue});\n    };\n    render() {\n        return (\n            <div>\n                <CheckBoxGroup onChange={this.handleChange} value={this.state.newValue}>\n                    <CheckBox value=\"11\" disabled>\n                        CheckBox1\n                    </CheckBox>\n                    <CheckBox value=\"22\">CheckBox2</CheckBox>\n                    <CheckBox value=\"33\">CheckBox3</CheckBox>\n                </CheckBoxGroup>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'一组CheckBox，组合使用'}  demo={<BasicGroupDemo />}></Demo><Demo title={'垂直的CheckBox组'} titleID={'checkbox-5'} code={<code>{ "import React from \'react\';\nimport {CheckBox} from \'@lugia/lugia-web\';\n\nconst CheckBoxGroup = CheckBox.Group;\n\nexport default class CheckBoxDemo extends React.Component {\n    constructor(props) {\n        super(props);\n        this.state = {\n            newValue: [\'11\', \'44\']\n        };\n    }\n    handleChange = ({ newValue, newDisplayValue }) => {\n        console.info(newValue, newDisplayValue);\n        this.setState({ newValue});\n    };\n    render() {\n        return (\n            <div>\n                <CheckBoxGroup styles=\"vertical\" onChange={this.handleChange} value={this.state.newValue}>\n                    <CheckBox value=\"11\" disabled>\n                        CheckBox1\n                    </CheckBox>\n                    <CheckBox value=\"22\">CheckBox2</CheckBox>\n                    <CheckBox value=\"33\">CheckBox3</CheckBox>\n                </CheckBoxGroup>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'垂直的CheckBox组'}  demo={<VerticalGroupDemo />}></Demo><Demo title={'设置指定字段'} titleID={'checkbox-6'} code={<code>{ "import React from \'react\';\nimport {CheckBox} from \'@lugia/lugia-web\';\n\nconst CheckBoxGroup = CheckBox.Group;\nconst options = [\n    { label: \'check1\', value: \'11\', name: \'1\' },\n    { label: \'check2\', value: \'22\', name: \'2\' },\n    { label: \'check3\', value: \'33\', name: \'3\' },\n];\n\nexport default class CheckBoxDemo extends React.Component {\n    constructor(props) {\n        super(props);\n        this.state = {\n            newValue: [\'11\', \'44\'],\n            newDisplayValue: [\'check4\', \'check5\'],\n        };\n    }\n    handleChange = ({ newValue, newDisplayValue }) => {\n        console.info(newValue, newDisplayValue);\n        this.setState({ newValue, newDisplayValue });\n    };\n    render() {\n        return (\n            <div>\n                <CheckBoxGroup\n                    onChange={this.handleChange}\n                    styles=\"vertical\"\n                    data={options}\n                    defaultValue={[\'11\', \'44\']}\n                    displayValue={[\'check4\', \'check5\']}\n                    displayField=\"label\"\n                />\n            </div>\n        );\n    }\n}\n"}</code>} desc={'设置CheckBox的展示字段，设置CheckBox组value备用选项，value值不存在展示备用项'}  demo={<SomePropsDemo />}></Demo><Demo title={'受限的CheckBox'} titleID={'checkbox-7'} code={<code>{ "import React from \'react\';\nimport {CheckBox} from \'@lugia/lugia-web\';\n\nconst CheckBoxGroup = CheckBox.Group;\nconst options = [\n    { label: \'check1\', value: \'11\', name: \'1\' },\n    { label: \'check2\', value: \'22\', name: \'2\' },\n    { label: \'check3\', value: \'33\', name: \'3\' },\n];\n\nexport default class CheckBoxDemo extends React.Component {\n    constructor(props) {\n        super(props);\n        this.state = {\n            newValue: [\'11\', \'44\'],\n            newDisplayValue: [\'check4\', \'check5\'],\n        };\n    }\n    handleChange = ({ newValue, newDisplayValue }) => {\n        console.info(newValue, newDisplayValue);\n        this.setState({ newValue, newDisplayValue });\n    };\n    render() {\n        return (\n            <div>\n                <CheckBoxGroup\n                    onChange={this.handleChange}\n                    styles=\"vertical\"\n                    data={options}\n                    value={[\'11\', \'44\']}\n                    displayValue={[\'check4\', \'check5\']}\n                    displayField=\"label\"\n                />\n            </div>\n        );\n    }\n}\n"}</code>} desc={'受限的CheckBox,可根据回调函数更改受限字段'}  demo={<SomeLimitedPropsDemo />}></Demo><Demo title={'按钮CheckBox组'} titleID={'checkbox-8'} code={<code>{ "import React from \'react\';\nimport {CheckBox} from \'@lugia/lugia-web\';\n\nconst CheckBoxGroup = CheckBox.Group;\nconst CheckBoxButton = CheckBox.Button;\n\nexport default class CheckBoxDemo extends React.Component {\n    constructor(props) {\n        super(props);\n        this.state = {\n            newValue: [\'11\', \'44\'],\n            newDisplayValue: [\'check4\', \'check5\'],\n        };\n    }\n    handleChange = obj => {\n        console.info(obj);\n    };\n    render() {\n        return (\n            <div>\n                <CheckBoxGroup childType=\"button\" onChange={this.handleChange} defaultValue={[\'1\', \'2\']}>\n                    <CheckBoxButton value=\"1\">CheckBox1</CheckBoxButton>\n                    <CheckBoxButton value=\"2\">CheckBox2</CheckBoxButton>\n                    <CheckBoxButton value=\"3\">CheckBox3</CheckBoxButton>\n                </CheckBoxGroup>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'按钮形状的多选框'}  demo={<ButtonPropsDemo />}></Demo><Demo title={'受限按钮CheckBox组'} titleID={'checkbox-9'} code={<code>{ "import React from \'react\';\nimport {CheckBox} from \'@lugia/lugia-web\';\n\nconst CheckBoxGroup = CheckBox.Group;\nconst CheckBoxButton = CheckBox.Button;\nconst options = [\n    { label: \'check1\', value: \'11\', name: \'1\' },\n    { label: \'check2\', value: \'22\', name: \'2\' },\n    { label: \'check3\', value: \'33\', name: \'3\' },\n];\n\nexport default class CheckBoxDemo extends React.Component {\n    constructor(props) {\n        super(props);\n        this.state = {\n            newValue: [\'11\', \'44\'],\n            newDisplayValue: [\'check4\', \'check5\'],\n        };\n    }\n    handleChange = ({ newValue, newDisplayValue }: any): any => {\n        console.info(newValue, newDisplayValue);\n        this.setState({ newValue, newDisplayValue });\n    };\n    render() {\n        return (\n            <div>\n                <CheckBoxGroup\n                    onChange={this.handleChange}\n                    data={options}\n                    value={this.state.newValue}\n                    displayValue={[\'check4\', \'check5\']}\n                    displayField=\"label\"\n                    childType=\"button\"\n                />\n            </div>\n        );\n    }\n}\n"}</code>} desc={'受限的按钮CheckBox组'}  demo={<ButtonLimitedDemo />}></Demo><Demo title={'按钮CheckBox组取消项'} titleID={'checkbox-10'} code={<code>{ "import React from \'react\';\nimport {CheckBox} from \'@lugia/lugia-web\';\n\nconst CheckBoxGroup = CheckBox.Group;\nconst options = [\n    { label: \'check1\', value: \'11\', name: \'1\' },\n    { label: \'check2\', value: \'22\', name: \'2\' },\n    { label: \'check3\', value: \'33\', name: \'3\' },\n];\n\nexport default class CheckBoxDemo extends React.Component {\n\n    render() {\n        return (\n            <div>\n                <CheckBoxGroup\n                    data={options}\n                    childType={\'button\'}\n                    defaultValue={[\'11\', \'44\']}\n                    defaultDisplayValue={[\'check4\', \'check5\']}\n                    displayField=\"label\"\n                />\n            </div>\n        );\n    }\n}\n"}</code>} desc={'按钮CheckBox组的取消项展示'}  demo={<DisplayValueGroup />}></Demo>
+                            <EditTables dataSource={checkbox} />
+                        </Col>
+                        <Col span={4}>
+                            <Anchor  slideType="line">
+                                <Link title={'基本'} href={'#checkbox-0'} /><Link title={'受限的CheckBox'} href={'#checkbox-1'} /><Link title={'禁用的CheckBox'} href={'#checkbox-2'} /><Link title={'可配置主题'} href={'#checkbox-3'} /><Link title={'CheckBox 组'} href={'#checkbox-4'} /><Link title={'垂直的CheckBox组'} href={'#checkbox-5'} /><Link title={'设置指定字段'} href={'#checkbox-6'} /><Link title={'受限的CheckBox'} href={'#checkbox-7'} /><Link title={'按钮CheckBox组'} href={'#checkbox-8'} /><Link title={'受限按钮CheckBox组'} href={'#checkbox-9'} /><Link title={'按钮CheckBox组取消项'} href={'#checkbox-10'} />
+                            </Anchor>
+                        </Col>
+                    </Row>
+                );
+            }
+         }   
+        

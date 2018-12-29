@@ -32,6 +32,6 @@ export default class CheckBoxDemo extends React.Component {
                     displayField="label"
                 />
             </div>
-        )
+        );
     }
 }

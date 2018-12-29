@@ -7,6 +7,6 @@ export default class CheckBoxDemo extends React.Component {
             <div>
                 <CheckBox>CheckBox</CheckBox>
             </div>
-        )
+        );
     }
 }

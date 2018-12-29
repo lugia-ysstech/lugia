@@ -1,161 +1,30 @@
-/**
- *
- * create by LYQ
- *
- * @flow
- */
-import React from 'react';
-import {Button,Modal} from '@lugia/lugia-web';
-// import Button from '../button';
-
-class ModalBox extends React.Component<any, any> {
-  constructor() {
-    super();
-    this.state = {
-      visable: false,
-    };
-  }
-
-  click = () => {
-    this.setState({
-      visable: true,
-    });
-  };
-
-  buttonClick = () => {
-    this.setState({
-      visable: false,
-    });
-  };
-
-  render() {
-    const { visable } = this.state;
-    return (
-      <div>
-        <Button onClick={this.click}>弹出</Button>
-        <Modal
-          visible={visable}
-          title="另一个对话框！"
-          onOk={this.buttonClick}
-          onCancel={this.buttonClick}
-        >
-          <div style={{ width: '100px', height: '300px' }}>我也是一个对话框</div>
-        </Modal>
-      </div>
-    );
-  }
-}
-
-class ModalDemo extends React.Component<any, any> {
-  constructor() {
-    super();
-    this.state = {
-      visable1: false,
-      visable2: false,
-      visable3: false,
-      visable4: false,
-    };
-  }
-
-  Click = (cur: number) => () => {
-    this.setState({
-      ['visable' + cur]: true,
-    });
-  };
-  buttonClick = (cur: number) => () => {
-    this.setState({
-      ['visable' + cur]: false,
-    });
-  };
-  loadingClick = (cur: number) => () => {
-    this.setState({
-      confirmLoading: true,
-    });
-    setTimeout(() => {
-      this.setState({
-        ['visable' + cur]: false,
-      });
-    }, 2000);
-  };
-
-  render() {
-    const { visable1, visable2, visable3, visable4, confirmLoading } = this.state;
-    return (
-      <div>
-        <Button onClick={this.Click(4)}>Modal</Button>
-        <Modal
-          visible={visable4}
-          title="这是标题！"
-          onOk={this.buttonClick(4)}
-          onCancel={this.buttonClick(4)}
-        >
-          这是内容！
-        </Modal>
-        <br />
-        <br />
-        <Button onClick={this.Click(1)}>Modal</Button>
-        <Modal
-          visible={visable1}
-          title="这是标题！"
-          onOk={this.buttonClick(1)}
-          onCancel={this.buttonClick(1)}
-        >
-          <ModalBox />
-        </Modal>
-        <br />
-        <br />
-        <Button onClick={this.Click(2)}>异步关闭</Button>
-        <Modal
-          visible={visable2}
-          confirmLoading={confirmLoading}
-          onOk={this.loadingClick(2)}
-          onCancel={this.buttonClick(2)}
-          title="这是标题！"
-        >
-          这是内容！
-        </Modal>
-        <br />
-        <br />
-        <Button onClick={this.Click(3)}>自定义页脚</Button>
-        <Modal
-          visible={visable3}
-          footer={[
-            <Button type="primary" onClick={this.buttonClick(3)}>
-              自定义页脚
-            </Button>,
-          ]}
-          title="这是标题！"
-        >
-          这是内容！
-        </Modal>
-        <br />
-        <br />
-        <Button onClick={() => Modal.confirm({ title: 'confirm', content: 'this confirm text!' })}>
-          confirm
-        </Button>
-        <br />
-        <br />
-        <Button onClick={() => Modal.info({ title: 'info', content: 'this info text!' })}>
-          info
-        </Button>
-        <br />
-        <br />
-        <Button onClick={() => Modal.success({ title: 'success', content: 'this success text!' })}>
-          success
-        </Button>
-        <br />
-        <br />
-        <Button onClick={() => Modal.error({ title: 'error', content: 'this error text!' })}>
-          error
-        </Button>
-        <br />
-        <br />
-        <Button onClick={() => Modal.warning({ title: 'warning', content: 'this warning text!' })}>
-          warning
-        </Button>
-      </div>
-    );
-  }
-}
-export default ModalDemo
-// export default ModalBox
+import  React from 'react';
+        import {Anchor,Grid} from '@lugia/lugia-web';
+        import EditTables from '../../edit-table'; 
+        import modal from '@lugia/lugia-web/dist/modal/lugia.modal.zh-CN.json';
+        import Demo from '../code-box';
+        import Title from '../code-box/Title';
+         const BasicDemo =  require('./BasicDemo').default;  const AsyncDemo =  require('./AsyncDemo').default;  const FooterDemo =  require('./FooterDemo').default;  const ConfirmDemo =  require('./ConfirmDemo').default;  const MoreDemo =  require('./MoreDemo').default;  
+        
+        const { Link } = Anchor;
+        const { Row,Col } = Grid;
+        
+        export default class ComDemo extends React.Component {
+            render(){
+                return(
+                    <Row>
+                        <Col span={20}>
+                            <Title title={'Modal 对话框'} subTitle={'Modal'} desc={'Modal 对话框。'} />
+                            <Demo title={'基础对话框'} titleID={'modal-0'} code={<code>{ "import React from \'react\';\nimport {Button,Modal} from \'@lugia/lugia-web\';\n\nexport default class ModalDemo extends React.Component {\n    constructor() {\n        super();\n        this.state = {\n            visible: false,\n        };\n    }\n    Click = () => {\n        this.setState({\n            visible: true\n        });\n    };\n    buttonClick = () => {\n        this.setState({\n            visible: false\n        });\n    };\n\n    render() {\n        return (\n            <div>\n                <Button onClick={this.Click}>Modal</Button>\n                <Modal\n                    visible={this.state.visible}\n                    title=\"这是标题！\"\n                    onOk={this.buttonClick}\n                    onCancel={this.buttonClick}\n                >\n                    这是内容！\n                </Modal>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'基础对话框'}  demo={<BasicDemo />}></Demo><Demo title={'异步关闭'} titleID={'modal-1'} code={<code>{ "import React from \'react\';\nimport {Button,Modal} from \'@lugia/lugia-web\';\n\nexport default class ModalDemo extends React.Component {\n    constructor() {\n        super();\n        this.state = {\n            visible: false,\n            confirmLoading: false,\n        };\n    }\n    Click = () => {\n        this.setState({\n            visible: true\n        });\n    };\n    buttonClick = () => {\n        this.setState({\n            visible: false\n        });\n    };\n    loadingClick = () => {\n        this.setState({\n            confirmLoading: true,\n        });\n        setTimeout(() => {\n            this.setState({\n                visible: false,\n            });\n        }, 3000);\n    };\n\n    render() {\n        return (\n            <div>\n                <Button onClick={this.Click}>Modal</Button>\n                <Modal\n                    visible={this.state.visible}\n                    title=\"这是标题！\"\n                    confirmLoading={this.state.confirmLoading}\n                    onOk={this.loadingClick}\n                    onCancel={this.buttonClick}\n                >\n                    这是内容！\n                </Modal>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'点击确定按钮后先loading，之后在关闭对话框'}  demo={<AsyncDemo />}></Demo><Demo title={'自定义页脚'} titleID={'modal-2'} code={<code>{ "import React from \'react\';\nimport {Button,Modal} from \'@lugia/lugia-web\';\n\nexport default class ModalDemo extends React.Component {\n    constructor() {\n        super();\n        this.state = {\n            visible: false,\n        };\n    }\n    Click = () => {\n        this.setState({\n            visible: true\n        });\n    };\n    buttonClick = () => {\n        this.setState({\n            visible: false\n        });\n    };\n\n    render() {\n        return (\n            <div>\n                <Button onClick={this.Click}>自定义页脚</Button>\n                <Modal\n                    visible={this.state.visible}\n                    footer={[\n                        <Button type=\"primary\" onClick={this.buttonClick}>\n                            自定义页脚\n                        </Button>,\n                    ]}\n                    title=\"这是标题！\"\n                >\n                    这是内容！\n                </Modal>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'可以根据需要自定义页脚按钮，不需要页脚可设置footer 为 null'}  demo={<FooterDemo />}></Demo><Demo title={'确认对话框'} titleID={'modal-3'} code={<code>{ "import React from \'react\';\nimport {Button,Modal} from \'@lugia/lugia-web\';\n\nexport default class ModalDemo extends React.Component {\n\n    render() {\n        return (\n            <Button onClick={() => Modal.confirm({ title: \'confirm\', content: \'this is confirm text!\' })}>\n                confirm\n            </Button>\n        );\n    }\n}\n"}</code>} desc={'快速弹出对话框'}  demo={<ConfirmDemo />}></Demo><Demo title={'信息提示'} titleID={'modal-4'} code={<code>{ "import React from \'react\';\nimport {Button,Modal} from \'@lugia/lugia-web\';\n\nexport default class ModalDemo extends React.Component {\n\n    render() {\n        return (\n            <div>\n                <Button onClick={() => Modal.info({ title: \'info\', content: \'this is info text!\' })}>\n                    info\n                </Button>\n                <Button onClick={() => Modal.success({ title: \'success\', content: \'this is success text!\' })}>\n                    success\n                </Button>\n                <Button onClick={() => Modal.error({ title: \'error\', content: \'this is error text!\' })}>\n                    error\n                </Button>\n                <Button onClick={() => Modal.warning({ title: \'warning\', content: \'this is warning text!\' })}>\n                    warning\n                </Button>\n            </div>\n        );\n    }\n}\n"}</code>} desc={'更多快速弹出对话框'}  demo={<MoreDemo />}></Demo>
+                            <EditTables dataSource={modal} />
+                        </Col>
+                        <Col span={4}>
+                            <Anchor  slideType="line">
+                                <Link title={'基础对话框'} href={'#modal-0'} /><Link title={'异步关闭'} href={'#modal-1'} /><Link title={'自定义页脚'} href={'#modal-2'} /><Link title={'确认对话框'} href={'#modal-3'} /><Link title={'信息提示'} href={'#modal-4'} />
+                            </Anchor>
+                        </Col>
+                    </Row>
+                );
+            }
+         }   
+        

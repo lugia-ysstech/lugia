@@ -33,6 +33,6 @@ export default class CheckBoxDemo extends React.Component {
                     childType="button"
                 />
             </div>
-        )
+        );
     }
 }
