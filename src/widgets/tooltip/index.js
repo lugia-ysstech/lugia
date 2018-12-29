@@ -24,7 +24,7 @@ import  React from 'react';
                             </Anchor>
                         </Col>
                     </Row>
-                )
+                );
             }
          }   
         
