@@ -1,7 +1,7 @@
 
-import widgets from './widgets'
+import widgets from './widgets';
 
-const getMenuConfig = (data) => {
+const getMenuConfig = data => {
   const arr  =[];
   data.forEach(item => {
     const {category,describe,children} = item;
@@ -11,8 +11,8 @@ const getMenuConfig = (data) => {
         const {value,text} = childs;
         childArray.push(
           {
-            value: value,
-            text: text
+            value,
+            text
           },
         );
       });
@@ -21,7 +21,7 @@ const getMenuConfig = (data) => {
       {
         text: category,
         value: category,
-        describe: describe,
+        describe,
         children: childArray,
       },
     );
@@ -29,7 +29,7 @@ const getMenuConfig = (data) => {
   return arr;
 };
 
-const getMenuRouter = (data) =>{
+const getMenuRouter = data => {
   // const arr  =[];
   const childArray = {};
   data.forEach(item => {
@@ -39,8 +39,8 @@ const getMenuRouter = (data) =>{
         const {value,text} = childs;
         childArray[value] =
           {
-            value: value,
-            text: text,
+            value,
+            text,
             render: async () => import('../widgets/' +text.toLocaleLowerCase()),
           };
 
@@ -67,7 +67,7 @@ const routerConfig = {
 
 
 const menuConfig = [
-  {value: 'Lugia Design of React',text: 'Lugia Design of React',},
+  {value: 'Lugia Design of React',text: 'Lugia Design of React'},
   { value: '快速上手', text: '快速上手' },
   { value: '项目实战', text: '项目实战' },
   { value: '在Lugia-mega中使用', text: '在Lugia-mega中使用' },
