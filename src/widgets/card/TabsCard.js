@@ -4,14 +4,13 @@
  *
  */
 import React from 'react';
-import { Card, Theme, tabs } from '@lugia/lugia-web';
+import { Card, Theme, Tabs } from '@lugia/lugia-web';
 import styled from 'styled-components';
 
-const Tabs = tabs.Tabs;
 const Wrapper = styled.div`
   margin-left: 50px;
   margin-top: 50px;
-  display: inline-block;
+  display: inline-blocTk;
 `;
 
 export default class TabsCard extends React.Component<Object, Object> {
