@@ -3,8 +3,8 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { Theme, tabs } from "@lugia/lugia-web";
+import React from 'react';
+import { Theme, tabs } from '@lugia/lugia-web';
 
 const TabPane = tabs.TabPane;
 const Tabs = tabs.Tabs;
@@ -12,7 +12,7 @@ export const hasActivityKeyData = [
   {
     title: 1111,
     content: <div>1111111</div>,
-    activityKey: "0"
+    activityKey: '0'
   },
   {
     title: 222222,
@@ -21,10 +21,10 @@ export const hasActivityKeyData = [
         <div>222222</div>
       </div>
     ),
-    activityKey: "1"
+    activityKey: '1'
   },
   {
-    activityKey: "2",
+    activityKey: '2',
     title: 3333,
     content: (
       <div>
@@ -35,7 +35,7 @@ export const hasActivityKeyData = [
     )
   },
   {
-    activityKey: "3",
+    activityKey: '3',
     title: 44444,
     content: (
       <div>
@@ -47,22 +47,22 @@ export const hasActivityKeyData = [
     )
   },
   {
-    activityKey: "4",
+    activityKey: '4',
     title: 55555,
     content: 55555
   },
   {
-    activityKey: "5",
+    activityKey: '5',
     title: 66666,
     content: 66666
   },
   {
-    activityKey: "6",
+    activityKey: '6',
     title: 777777,
     content: 77777
   },
   {
-    activityKey: "7",
+    activityKey: '7',
     title: 888888,
     content: 888888
   }
@@ -70,13 +70,13 @@ export const hasActivityKeyData = [
 export default class OrderTabs extends React.Component<any, any> {
   state = {
     data: hasActivityKeyData,
-    activeKey: "0"
+    activeKey: '0'
   };
   onAddClick = () => {
     const activityKey = `newTab${this.state.data.length++}`;
     const item = {
-      title: "New Tab",
-      content: "Content of new Tab",
+      title: 'New Tab',
+      content: 'Content of new Tab',
       activityKey
     };
     return item;
@@ -87,8 +87,8 @@ export default class OrderTabs extends React.Component<any, any> {
       <div>
         <p>自定义卡片</p>
         <Tabs
-          tabType={"card"}
-          pagedType={"single"}
+          tabType={'card'}
+          pagedType={'single'}
           onAddClick={this.onAddClick}
           onDeleteClick={this.onDeleteClick}
         />

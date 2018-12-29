@@ -3,10 +3,10 @@
  *
  * @flow
  */
-import Widget from "@lugia/lugia-web/dist/consts/index";
-import { Theme, Tag } from "@lugia/lugia-web";
-import styled from "styled-components";
-import React from "react";
+import Widget from '@lugia/lugia-web/dist/consts/index';
+import { Theme, Tag } from '@lugia/lugia-web';
+import styled from 'styled-components';
+import React from 'react';
 const TagWrap = styled.div`
   display: inline-block;
   margin: 5px;
@@ -16,13 +16,13 @@ export default class DefaultTag extends React.Component<any, any> {
   render() {
     const config1 = {
       [Widget.Tag]: {
-        color: "#ff5588"
+        color: '#ff5588'
       }
     };
 
     const config2 = {
       [Widget.Tag]: {
-        color: "#486fff"
+        color: '#486fff'
       }
     };
 
@@ -51,6 +51,6 @@ export default class DefaultTag extends React.Component<any, any> {
   }
 
   onClose = () => {
-    console.log("close");
+    console.log('close');
   };
 }

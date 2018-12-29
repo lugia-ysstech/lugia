@@ -3,13 +3,13 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { AmountInput } from "@lugia/lugia-web";
+import React from 'react';
+import { AmountInput } from '@lugia/lugia-web';
 
 export default class BaseAmountInput extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
-    this.state = { value: "" };
+    this.state = { value: '' };
   }
 
   onChange = ({ newValue: value }: any) => {

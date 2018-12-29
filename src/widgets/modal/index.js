@@ -157,5 +157,5 @@ class ModalDemo extends React.Component<any, any> {
     );
   }
 }
-export default ModalDemo
+export default ModalDemo;
 // export default ModalBox

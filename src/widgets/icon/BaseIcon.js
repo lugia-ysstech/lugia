@@ -3,9 +3,9 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { Icon } from "@lugia/lugia-web";
-import Widget from "@lugia/lugia-web/dist/consts";
+import React from 'react';
+import { Icon } from '@lugia/lugia-web';
+import Widget from '@lugia/lugia-web/dist/consts';
 
 export default class BaseIcon extends React.Component<any, any> {
   render() {

@@ -6,17 +6,17 @@ export default class ModalDemo extends React.Component {
         super();
         this.state = {
             visible: false,
-        }
+        };
     }
     Click = () => {
         this.setState({
             visible: true
-        })
+        });
     };
     buttonClick = () => {
         this.setState({
             visible: false
-        })
+        });
     };
 
     render() {

@@ -29,7 +29,7 @@ export default class NotificationDemo extends React.Component<any, any> {
     });
   };
   render() {
-      console.log('=====',notification)
+      console.log('=====',notification);
     return (
       <div>
         <br />

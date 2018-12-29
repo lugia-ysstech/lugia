@@ -1,5 +1,5 @@
-import React from "react";
-import {createRoute} from "@lugia/lugiax-router";
+import React from 'react';
+import {createRoute} from '@lugia/lugiax-router';
 import {Layout, Theme} from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import Headers from './nav';
@@ -9,26 +9,26 @@ const { Header, Content, Footer} = Layout;
 
 
 export const designRouter = {
-  "/": {
+  '/': {
     exact: true,
     render: async () => import('./home'),
     value: '/component/affix',
     isHidden: true,
   },
-  "/home":{
+  '/home':{
     value:'首页',
     text:'首页',
     url:'/home',
     render: () => import('./home'),
     // exact: true,
   },
-  "/design":{
+  '/design':{
     value:'设计指南',
     text:'设计指南',
     url:'/design',
     render: () => import('./design'),
   },
-  "/component":{
+  '/component':{
     value:'组件代码',
     text:'组件代码',
     url:'/component',
@@ -75,7 +75,7 @@ export default () => {
     },
     [Widget.Aside]: {
       width:250,
-      backgroundColor:"transparent"
+      backgroundColor:'transparent'
     },
   };
   return (
@@ -94,7 +94,7 @@ export default () => {
 };
 
 const styles = {
-  width: "1140px",
-  height: "100%",
-  margin: "0 auto",
+  width: '1140px',
+  height: '100%',
+  margin: '0 auto',
 };

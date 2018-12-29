@@ -8,7 +8,7 @@ export default class ProgressDemo extends React.Component {
             percent: 30,
         };
     }
-    handleClick = (type) => {
+    handleClick = type => {
         let res = this.state.percent;
         if (type === 'add') {
             res += 10;

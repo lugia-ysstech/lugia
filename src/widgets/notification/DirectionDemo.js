@@ -2,7 +2,7 @@ import React from 'react';
 import {Button,notification} from '@lugia/lugia-web';
 
 export default class NotificationDemo extends React.Component {
-    placementOpen = (placement) => {
+    placementOpen = placement => {
         notification.open({
             icon: 'lugia-icon-reminder_check_circle',
             title: '今天天气很好！',

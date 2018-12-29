@@ -3,8 +3,8 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { NumberInput } from "@lugia/lugia-web";
+import React from 'react';
+import { NumberInput } from '@lugia/lugia-web';
 
 export default class DefaultValueNumberInput extends React.Component<any, any> {
   render() {

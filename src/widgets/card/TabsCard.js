@@ -3,9 +3,9 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { Card, Theme, tabs } from "@lugia/lugia-web";
-import styled from "styled-components";
+import React from 'react';
+import { Card, Theme, tabs } from '@lugia/lugia-web';
+import styled from 'styled-components';
 
 const Tabs = tabs.Tabs;
 const Wrapper = styled.div`
@@ -24,27 +24,27 @@ export default class TabsCard extends React.Component<Object, Object> {
     };
     const defaultData = [
       {
-        icon: "lugia-icon-financial_archive",
+        icon: 'lugia-icon-financial_archive',
         title: 1111111111,
         content: 1111
       },
       {
-        icon: "lugia-icon-financial_archive",
+        icon: 'lugia-icon-financial_archive',
         title: 22222222222,
         content: 22222
       },
       {
-        icon: "lugia-icon-financial_archive",
+        icon: 'lugia-icon-financial_archive',
         title: 3333333,
         content: 333
       },
       {
-        icon: "lugia-icon-financial_archive",
+        icon: 'lugia-icon-financial_archive',
         title: 44444444,
         content: 4444444
       },
       {
-        icon: "lugia-icon-financial_archive",
+        icon: 'lugia-icon-financial_archive',
         title: 55555555,
         content: 5555555
       }
@@ -53,11 +53,11 @@ export default class TabsCard extends React.Component<Object, Object> {
       <Theme config={combo}>
         <Wrapper>
           <Card
-            operation={"操作"}
-            viewClass={"register"}
-            type={"combo"}
+            operation={'操作'}
+            viewClass={'register'}
+            type={'combo'}
             content={<Tabs data={defaultData} />}
-            shadow={"hover"}
+            shadow={'hover'}
           />
         </Wrapper>
       </Theme>

@@ -30,6 +30,6 @@ export default class CheckBoxDemo extends React.Component {
                     </Panel>
                 </Collapse>
             </div>
-        )
+        );
     }
 }
