@@ -8,20 +8,25 @@ const path = require('path');
 
 main();
 
+function getPath (folderName) {
+  return path.join(__dirname, folderName);
+}
+
 async function main () {
-  const allPathFile = await fs.readdirSync(__dirname).filter(folderName => folderName !== 'code-box');
+  const allPathFile = await fs.readdirSync(__dirname).filter(folderName => folderName !== 'code-box' && folderName.indexOf('.') === -1);
   const filePath = [];
-  console.info('总共待生成组件[%d]个', allPathFile.length);
+  console.log('总共待生成组件[%d]个', allPathFile.length);
   try {
     for (let index = 0; index < allPathFile.length; index++) {
       const folderName = allPathFile[ index ];
-      const stats = await fs.statSync(path.join(__dirname, folderName));
+      const stats = await fs.statSync(getPath(folderName));
+      const pos = index + 1;
       if (stats.isDirectory()) {
         let config;
         try {
           config = require(`./${folderName}/config.js`);
         } catch (err) {
-          console.error('(%d) %s 读取config.js错误', index, folderName);
+          console.log('(%d) %s 读取config.js错误  X', pos, folderName);
           continue;
         }
 
@@ -30,7 +35,7 @@ async function main () {
         try {
           meta = require(`@lugia/lugia-web/dist/${folderName}/lugia.${folderName}.zh-CN.json`);
         } catch (error) {
-          console.error('(%d) %s 读取元信息失败', index, folderName);
+          console.log('(%d) %s 读取元信息失败  X', pos, folderName);
           continue;
         }
 
@@ -44,25 +49,25 @@ async function main () {
             desc: meta.desc
           }, childrenWidget);
         } catch (error) {
-          console.error('(%d) %s 代码生成错误', index, folderName);
+          console.log('(%d) %s 代码生成错误 X', pos, folderName);
           continue;
         }
         try {
-          await fs.writeFileSync(path.join(__dirname, `${folderName}/index.js`), data);
+          await fs.writeFileSync(getPath(`${folderName}/index.js`), data);
         } catch (err) {
-          console.log('(%d) %s 写入文件失败', index, folderName);
-          return;
+          console.log('(%d) %s 写入文件失败  X', pos, folderName);
+          continue;
         }
+        console.log('(%d) %s 成功', pos, folderName);
         filePath.push(folderName);
       } else {
-        console.error('(%d) %s 目录错误', index, folderName);
+        console.log('(%d) %s 目录错误  X', pos, folderName);
       }
-
     }
   } catch (error) {
-    console.error('%s 异常', error);
+    console.log('%s 异常  X', error);
   }
-  console.info('总共待生成组件[%d]个， 成功生成[%d]个', allPathFile.length, filePath.length);
+  console.log('总共待生成组件[%d]个， 成功生成[%d]个', allPathFile.length, filePath.length);
 }
 
 
@@ -107,7 +112,7 @@ function getImportInfoAndDemo (demos, config, folderName) {
   let importInfo = '', demo = '', link = '';
   demos.forEach((item, index) => {
     const { title, desc } = config[ item ];
-    const code = fs.readFileSync(path.join(__dirname, `${folderName}/${item}.js`), 'utf-8');
+    const code = fs.readFileSync(getPath(`${folderName}/${item}.js`), 'utf-8');
     const codeStr = code.replace(/\'/g, String.raw`\'`).replace(/\"/g, String.raw`\"`).replace(/\n/g, String.raw`\n`);
     importInfo = `${importInfo} const ${item} =  require('./${item}').default; `;
     demo = `${demo}<Demo title={'${title}'} titleID={'${folderName}-${index}'} code={<code>{ "${codeStr}"}</code>} desc={'${desc}'}  demo={<${item} />}></Demo>`;
