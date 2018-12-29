@@ -3,7 +3,6 @@ import { createBrowserHistory } from "history";
 import { createApp, go, render } from "@lugia/lugiax-router";
 import "@lugia/lugia-web/dist/css/global.css";
 import Main from "./App";
-// import Demo from "./demo"
 
 const history = createBrowserHistory();
 const App = createApp(
@@ -15,8 +14,7 @@ const App = createApp(
   history,
   {
     async onBeforeGo({ url }) {
-      window.scrollTo(0,0)
-      // document.body.scrollTop = 0;
+      window.scrollTo(0,0);
       if (url === "/nowPower") {
         await go({ url: "/404" });
         return false;
