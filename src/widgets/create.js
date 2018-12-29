@@ -120,17 +120,24 @@ function getImportInfoAndDemo (demos, config, folderName) {
   });
   return { importInfo, demo, link };
 }
-
+function fixFolderName (folderName) {
+  if(!folderName){
+    return folderName;
+  }
+  return folderName.replace(/-/g, '_');
+}
 function getAPITable (folderName, childrenWidget) {
   let importInfo = '', demo = '';
   if (childrenWidget) {
     childrenWidget.forEach(item => {
+      item = fixFolderName(item);
       importInfo = `${importInfo} import ${item} from '@lugia/lugia-web/dist/${folderName}/lugia.${item}.zh-CN.json';`;
       demo = `${demo}<EditTables dataSource={${item}} />`;
     });
   } else {
-    importInfo = `import ${folderName} from '@lugia/lugia-web/dist/${folderName}/lugia.${folderName}.zh-CN.json';`;
-    demo = `<EditTables dataSource={${folderName}} />`;
+    const fixeMoudleName  = fixFolderName(folderName);
+    importInfo = `import ${fixeMoudleName} from '@lugia/lugia-web/dist/${folderName}/lugia.${folderName}.zh-CN.json';`;
+    demo = `<EditTables dataSource={${fixeMoudleName}} />`;
   }
   return { importInfo, demo };
 }
