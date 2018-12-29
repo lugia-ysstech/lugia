@@ -45,6 +45,6 @@ export default class LayoutDemo extends React.Component {
                     <div>Aside</div>
                 </Aside>
             </Layout>
-        )
+        );
     }
 }

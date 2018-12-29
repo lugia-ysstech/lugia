@@ -218,4 +218,4 @@ export default  class RadioGroupDemo extends React.Component<any, any> {
       </div>
     );
   }
-};
+}

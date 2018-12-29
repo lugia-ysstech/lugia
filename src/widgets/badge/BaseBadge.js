@@ -3,10 +3,10 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { Badge, Theme } from "@lugia/lugia-web";
-import Widget from "@lugia/lugia-web/dist/consts";
-import styled from "styled-components";
+import React from 'react';
+import { Badge, Theme } from '@lugia/lugia-web';
+import Widget from '@lugia/lugia-web/dist/consts';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   float: left;

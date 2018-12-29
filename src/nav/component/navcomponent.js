@@ -4,23 +4,23 @@
  *
  * @flow
  */
-import React from "react";
-import { go, Link } from "@lugia/lugiax-router";
-import { Theme,tabs} from "@lugia/lugia-web";
+import React from 'react';
+import { go, Link } from '@lugia/lugiax-router';
+import { Theme,tabs} from '@lugia/lugia-web';
 import '../../css/menu.css';
 import Widget from '@lugia/lugia-web/dist/consts/index';
-import  { bindTo, connect, } from '@lugia/lugiax';
+import  { bindTo, connect } from '@lugia/lugiax';
 import styled from 'styled-components';
-import {designRouter} from '../../App'
+import {designRouter} from '../../App';
 
 const TabPane = tabs.TabPane;
 const Tabs = tabs.Tabs;
-const getchildren =(router) =>{
+const getchildren =router => {
   const arr =[];
   for(const i in router){
     const {isHidden,text,url} = router[i];
     if(!isHidden){
-      arr.push(<TabPane title={text}  activityKey={url} />)
+      arr.push(<TabPane title={text}  activityKey={url} />);
     }
   }
   return arr;
@@ -101,10 +101,10 @@ export default class Navcomponent extends React.Component<any, any> {
         </Header>
     );
   }
-  onTabClick = (res) => {
-    const { onTabClick, } = this.props;
+  onTabClick = res => {
+    const { onTabClick } = this.props;
     onTabClick && onTabClick(res);
-    go({ url: res })
+    go({ url: res });
   };
 
 

@@ -4,14 +4,14 @@
  *
  */
 
-import * as React from "react";
-import { Select, Theme } from "@lugia/lugia-web";
-import DefaultSelect from "./DefaultSelect";
-import LimitSingleSelect from "./LimitSingleSelect";
-import SearchSelect from "./SearchSelect";
-import MutlipleSelect from "./MutlipleSelect";
-import CanInputSelect from "./CanInputSelect";
-import LimitMutlipleSelect from "./LimitMutlipleSelect";
+import * as React from 'react';
+import { Select, Theme } from '@lugia/lugia-web';
+import DefaultSelect from './DefaultSelect';
+import LimitSingleSelect from './LimitSingleSelect';
+import SearchSelect from './SearchSelect';
+import MutlipleSelect from './MutlipleSelect';
+import CanInputSelect from './CanInputSelect';
+import LimitMutlipleSelect from './LimitMutlipleSelect';
 
 export default class Demo extends React.Component {
   render() {

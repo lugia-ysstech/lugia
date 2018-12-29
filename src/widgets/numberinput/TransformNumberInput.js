@@ -3,9 +3,9 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { NumberInput } from "@lugia/lugia-web";
-import styled from "styled-components";
+import React from 'react';
+import { NumberInput } from '@lugia/lugia-web';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   float: left;
@@ -18,10 +18,10 @@ export default class TransformNumberInput extends React.Component<any, any> {
   }
   render() {
     const formatter = value => {
-      return `¥ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return `¥ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     };
     const parser = value => {
-      return value.replace(/\$\s?|(,*)/g, "");
+      return value.replace(/\$\s?|(,*)/g, '');
     };
     return (
       <Wrapper>
@@ -37,7 +37,7 @@ export default class TransformNumberInput extends React.Component<any, any> {
         <p>formatter % max 100 min 5 step 5</p>
         <NumberInput
           formatter={value => `${value}%`}
-          parser={value => value.replace("%", "")}
+          parser={value => value.replace('%', '')}
           defaultValue={10}
           max={100}
           min={5}

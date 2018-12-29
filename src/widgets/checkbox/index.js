@@ -145,4 +145,4 @@ export default  class CheckBoxGroupDemo extends React.Component<any, any> {
       </div>
     );
   }
-};
+}

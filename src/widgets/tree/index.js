@@ -206,5 +206,5 @@ export default () => {
         <Theme config={config}>
             <LimitTree data={rowData} expandAll={true} mutliple={true} igronSelectField={'igron'} />
         </Theme>
-    )
+    );
 };

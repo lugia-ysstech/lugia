@@ -98,7 +98,7 @@ export class PanelDemo extends React.Component<any, any> {
       </div>
     );
   }
-};
+}
 export  default  class CollapseDemo extends React.Component<any, any> {
   constructor() {
     super();
@@ -193,4 +193,4 @@ export  default  class CollapseDemo extends React.Component<any, any> {
       </div>
     );
   }
-};
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, message} from '@lugia/lugia-web';
 
 export default class MessageDemo extends React.Component {
-    showMessage = (type) => () => {
+    showMessage = type => () => {
         message[type]('消息提示', 2);
     };
     render() {

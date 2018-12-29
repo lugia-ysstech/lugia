@@ -3,10 +3,10 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { Theme, tabs, Select } from "@lugia/lugia-web";
-import Widget from "@lugia/lugia-web/dist/consts";
-import styled from "styled-components";
+import React from 'react';
+import { Theme, tabs, Select } from '@lugia/lugia-web';
+import Widget from '@lugia/lugia-web/dist/consts';
+import styled from 'styled-components';
 
 const TabPane = tabs.TabPane;
 const Tabs = tabs.Tabs;
@@ -21,7 +21,7 @@ export const hasActivityKeyData = [
   {
     title: 1111,
     content: <div>1111111</div>,
-    activityKey: "0"
+    activityKey: '0'
   },
   {
     title: 222222,
@@ -30,10 +30,10 @@ export const hasActivityKeyData = [
         <div>222222</div>
       </div>
     ),
-    activityKey: "1"
+    activityKey: '1'
   },
   {
-    activityKey: "2",
+    activityKey: '2',
     title: 3333,
     content: (
       <div>
@@ -44,7 +44,7 @@ export const hasActivityKeyData = [
     )
   },
   {
-    activityKey: "3",
+    activityKey: '3',
     title: 44444,
     content: (
       <div>
@@ -56,22 +56,22 @@ export const hasActivityKeyData = [
     )
   },
   {
-    activityKey: "4",
+    activityKey: '4',
     title: 55555,
     content: 55555
   },
   {
-    activityKey: "5",
+    activityKey: '5',
     title: 66666,
     content: 66666
   },
   {
-    activityKey: "6",
+    activityKey: '6',
     title: 777777,
     content: 77777
   },
   {
-    activityKey: "7",
+    activityKey: '7',
     title: 888888,
     content: 888888
   }
@@ -91,8 +91,8 @@ export default class TypeTabs extends React.Component<any, any> {
 
     const onAddClick = e => {
       const newTabs = {
-        title: "new Tabs",
-        content: "new Tabs content"
+        title: 'new Tabs',
+        content: 'new Tabs content'
       };
       return newTabs;
     };
@@ -103,8 +103,8 @@ export default class TypeTabs extends React.Component<any, any> {
           <Wrapper>
             <p>卡片风格</p>
             <Tabs
-              tabType={"card"}
-              pagedType={"single"}
+              tabType={'card'}
+              pagedType={'single'}
               data={hasActivityKeyData}
               onPreClick={onPreClick}
               onNextClick={onNextClick}
@@ -117,8 +117,8 @@ export default class TypeTabs extends React.Component<any, any> {
           <Wrapper>
             <p>窗口风格</p>
             <Tabs
-              tabType={"window"}
-              pagedType={"page"}
+              tabType={'window'}
+              pagedType={'page'}
               data={hasActivityKeyData}
               onPreClick={onPreClick}
               onNextClick={onNextClick}

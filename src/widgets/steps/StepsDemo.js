@@ -3,24 +3,24 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import styled from "styled-components";
-import Widget from "@lugia/lugia-web/dist/consts";
-import { steps, Button, Theme } from "@lugia/lugia-web";
+import React from 'react';
+import styled from 'styled-components';
+import Widget from '@lugia/lugia-web/dist/consts';
+import { steps, Button, Theme } from '@lugia/lugia-web';
 const Step = steps.Step;
 const Steps = steps.Steps;
 const stepsData = [
   {
-    title: "First",
-    content: "First-content"
+    title: 'First',
+    content: 'First-content'
   },
   {
-    title: "Second",
-    content: "Second-content"
+    title: 'Second',
+    content: 'Second-content'
   },
   {
-    title: "Last",
-    content: "Third-content"
+    title: 'Last',
+    content: 'Third-content'
   }
 ];
 const StepContent = styled.div`
@@ -55,7 +55,7 @@ export default class StepsDemo extends React.Component<Object, Object> {
     const theCurrentStepNumber = matchCurrentNumber ? currentStepNumber : 1;
     const content = matchCurrentNumber
       ? stepsData[theCurrentStepNumber - 1].content
-      : "";
+      : '';
     const view = {
       [Widget.Steps]: {
         width: 1000
@@ -78,8 +78,8 @@ export default class StepsDemo extends React.Component<Object, Object> {
           </ButtonContainer>
           <Steps
             currentStepNumber={currentStepNumber}
-            stepType={"simple"}
-            size={"normal"}
+            stepType={'simple'}
+            size={'normal'}
           >
             {stepsData.map((item, i) => <Step title={item.title} />)}
           </Steps>

@@ -3,10 +3,10 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { Card, Theme } from "@lugia/lugia-web";
-import styled from "styled-components";
-import Widget from "@lugia/lugia-web/dist/consts";
+import React from 'react';
+import { Card, Theme } from '@lugia/lugia-web';
+import styled from 'styled-components';
+import Widget from '@lugia/lugia-web/dist/consts';
 
 const Wrapper = styled.div`
   margin-left: 50px;
@@ -37,27 +37,27 @@ export default class TypeCard extends React.Component<any, any> {
       <Wrapper>
         <Theme config={view}>
           <Card
-            title={<div>{"this is title"}</div>}
+            title={<div>{'this is title'}</div>}
             description={[
-              <div>{"this is description"}</div>,
-              <div>{"this is description"}</div>,
-              <div>{"this is description"}</div>,
-              <div>{"this is description"}</div>
+              <div>{'this is description'}</div>,
+              <div>{'this is description'}</div>,
+              <div>{'this is description'}</div>,
+              <div>{'this is description'}</div>
             ]}
-            shadow={"always"}
+            shadow={'always'}
           />
         </Theme>
         <p>头像样式</p>
         <Theme config={avatar}>
           <Wrapper>
             <Card
-              type={"avatar"}
-              title={"this is title"}
-              description={"this is description"}
+              type={'avatar'}
+              title={'this is title'}
+              description={'this is description'}
               avatar={
-                "https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=7878a9471d38534398c28f73f27adb1b/738b4710b912c8fc8e9cace6f1039245d68821a9.jpg"
+                'https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=7878a9471d38534398c28f73f27adb1b/738b4710b912c8fc8e9cace6f1039245d68821a9.jpg'
               }
-              shadow={"hover"}
+              shadow={'hover'}
             />
           </Wrapper>
         </Theme>
@@ -65,42 +65,42 @@ export default class TypeCard extends React.Component<any, any> {
           <p>头像样式</p>
           <Wrapper>
             <Card
-              type={"avatar"}
-              title={"this is title"}
-              description={"this is description"}
-              imageOrientation={"vertical"}
+              type={'avatar'}
+              title={'this is title'}
+              description={'this is description'}
+              imageOrientation={'vertical'}
               avatar={
-                "https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=7878a9471d38534398c28f73f27adb1b/738b4710b912c8fc8e9cace6f1039245d68821a9.jpg"
+                'https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=7878a9471d38534398c28f73f27adb1b/738b4710b912c8fc8e9cace6f1039245d68821a9.jpg'
               }
-              shadow={"hover"}
+              shadow={'hover'}
             />
           </Wrapper>
         </Theme>
         <p>图片样式</p>
         <Wrapper>
           <Card
-            type={"image"}
-            title={"this is title"}
-            imageOrientation={"horizontal"}
-            description={"this is description"}
+            type={'image'}
+            title={'this is title'}
+            imageOrientation={'horizontal'}
+            description={'this is description'}
             image={
-              "https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=4f88e0c6b3de9c82b268f1dd0de8eb6f/f9198618367adab4973d1fbc8bd4b31c8601e464.jpg"
+              'https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=4f88e0c6b3de9c82b268f1dd0de8eb6f/f9198618367adab4973d1fbc8bd4b31c8601e464.jpg'
             }
-            shadow={"hover"}
+            shadow={'hover'}
           />
         </Wrapper>
         <Theme config={cardImage}>
           <p>图片样式</p>
           <Card
-            viewClass={"cardImage"}
-            type={"image"}
-            imageOrientation={"vertical"}
-            title={"this is title"}
-            description={"this is description"}
+            viewClass={'cardImage'}
+            type={'image'}
+            imageOrientation={'vertical'}
+            title={'this is title'}
+            description={'this is description'}
             image={
-              "https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=4f88e0c6b3de9c82b268f1dd0de8eb6f/f9198618367adab4973d1fbc8bd4b31c8601e464.jpg"
+              'https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=4f88e0c6b3de9c82b268f1dd0de8eb6f/f9198618367adab4973d1fbc8bd4b31c8601e464.jpg'
             }
-            shadow={"hover"}
+            shadow={'hover'}
           />
         </Theme>
       </Wrapper>

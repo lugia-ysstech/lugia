@@ -15,7 +15,7 @@ export default class RadioDemo extends React.Component {
             displayValue: 'hello',
         };
     }
-    handleChange = (obj) => {
+    handleChange = obj => {
         this.setState({
             value: obj.newValue,
             displayValue: obj.newDisplayValue,

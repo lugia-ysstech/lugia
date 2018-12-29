@@ -3,15 +3,15 @@
  * create by liangguodong
  *
  */
-import React from "react";
+import React from 'react';
 import {
   Popconfirm,
   Theme,
   Button,
   notification,
   Switch
-} from "@lugia/lugia-web";
-import styled from "styled-components";
+} from '@lugia/lugia-web';
+import styled from 'styled-components';
 
 const Direction = styled(Button)``;
 export default class CoditionPopconfirm extends React.Component<any, any> {
@@ -27,12 +27,12 @@ export default class CoditionPopconfirm extends React.Component<any, any> {
 
   confirm = () => {
     this.setState({ visible: false });
-    notification.success({ title: "操作成功 " });
+    notification.success({ title: '操作成功 ' });
   };
 
   cancel = () => {
     this.setState({ visible: false });
-    notification.error({ title: "取消操作" });
+    notification.error({ title: '取消操作' });
   };
 
   handleVisibleChange = (visible: Object) => {
@@ -61,7 +61,7 @@ export default class CoditionPopconfirm extends React.Component<any, any> {
           okText="确定"
           cancelText="取消"
         >
-          <Direction type='primary'>删除任务</Direction>
+          <Direction type="primary">删除任务</Direction>
         </Popconfirm>
       </div>
     );

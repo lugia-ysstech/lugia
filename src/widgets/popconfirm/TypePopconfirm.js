@@ -3,9 +3,9 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { Popconfirm, Theme, Button, Input, Icon } from "@lugia/lugia-web";
-import styled from "styled-components";
+import React from 'react';
+import { Popconfirm, Theme, Button, Input, Icon } from '@lugia/lugia-web';
+import styled from 'styled-components';
 const Direction = styled(Button)``;
 const Wrapper = styled.div`
   margin: 100px;
@@ -21,7 +21,7 @@ const HintIcon: Object = styled(Icon)`
 export default class TypePopconfirm extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
-    this.state = { value: "" };
+    this.state = { value: '' };
   }
 
   onChange = ({ newValue: value }: any) => {
@@ -29,43 +29,43 @@ export default class TypePopconfirm extends React.Component<any, any> {
   };
 
   render() {
-    const text = "确定删除这个选项吗?";
+    const text = '确定删除这个选项吗?';
     return (
       <Wrapper>
         <Popconfirm
           title={text}
-          action={"click"}
+          action={'click'}
           cancelText="No"
           okText="yes"
           okType="danger"
           icon={
-            <IconWrapper style={{ background: "orange" }}>
+            <IconWrapper style={{ background: 'orange' }}>
               <HintIcon
-                style={{ color: "white" }}
-                iconClass={"lugia-icon-reminder_exclamation"}
+                style={{ color: 'white' }}
+                iconClass={'lugia-icon-reminder_exclamation'}
               />
             </IconWrapper>
           }
         >
-          <Direction type='primary'>提示</Direction>
+          <Direction type="primary">提示</Direction>
         </Popconfirm>
 
         <Popconfirm
           title={text}
-          action={"click"}
+          action={'click'}
           cancelText="No"
           okText="yes"
           okType="danger"
           icon={
-            <IconWrapper style={{ background: "red" }}>
+            <IconWrapper style={{ background: 'red' }}>
               <HintIcon
-                style={{ color: "white" }}
-                iconClass={"lugia-icon-reminder_question"}
+                style={{ color: 'white' }}
+                iconClass={'lugia-icon-reminder_question'}
               />
             </IconWrapper>
           }
         >
-          <Direction type='primary'>危险操作</Direction>
+          <Direction type="primary">危险操作</Direction>
         </Popconfirm>
       </Wrapper>
     );

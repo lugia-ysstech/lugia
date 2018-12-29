@@ -11,12 +11,12 @@ export default class DrawerDemo extends React.Component {
     openDrawer = () => {
         this.setState({
             visible: true
-        })
+        });
     };
     onClick= () => {
         this.setState({
             visible: false
-        })
+        });
     };
     render() {
         const {visible} = this.state;

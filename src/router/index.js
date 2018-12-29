@@ -1,31 +1,31 @@
 
 const routerConfig = {
-  "/component": {
+  '/component': {
     exact: true,
     render: async () => import('../widgets/affix'),
     value: '/component/affix',
     isHidden: true,
     text: 'Affix',
   },
-  "/component/edittable": {
+  '/component/edittable': {
     render: () => import('../edit-table'),
     value: '/component/edittable',
     text: 'EditTable',
   },
 
-  "/component/affix": {
+  '/component/affix': {
     render: async () => import('../widgets/affix'),
     value: '/component/affix',
     text: 'Affix',
   },
-  "/component/alert": {
+  '/component/alert': {
     render: () => import('../widgets/alert'),
     value: '/component/alert',
     text: 'Alert',
   }
 };
 const designRouter = {
-  "/design": {
+  '/design': {
     exact: true,
     render: async () => import('../design/page'),
     value: '/component/affix',
@@ -40,17 +40,17 @@ const designRouter = {
       },
     ]
   },
-  "/design/introduce": {
+  '/design/introduce': {
     render: () => import('../design/page'),
     value: '/design/introduce',
     text: '简介',
   },
-  "/design/proximity": {
+  '/design/proximity': {
     render: () => import('../design/page'),
     value: '/design/proximity',
     text: '设计核心观',
   },
-  "/design/alignment": {
+  '/design/alignment': {
     render: () => import('../design/page'),
     value: '/design/alignment',
     text: '设计核心观',

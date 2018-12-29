@@ -3,10 +3,10 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { Tooltip, Theme,Button } from "@lugia/lugia-web";
-import Widget from "@lugia/lugia-web/dist/consts";
-import styled from "styled-components";
+import React from 'react';
+import { Tooltip, Theme,Button } from '@lugia/lugia-web';
+import Widget from '@lugia/lugia-web/dist/consts';
+import styled from 'styled-components';
 const Content = styled.div`
   margin: 100px;
 `;
@@ -16,7 +16,7 @@ const ButtonDemo = styled(Button)`
 export default class BaseTooltip extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
-    this.state = { value: "" };
+    this.state = { value: '' };
   }
 
   onChange = ({ newValue: value }: any) => {
@@ -27,14 +27,14 @@ export default class BaseTooltip extends React.Component<any, any> {
     const text = <span>prompt text</span>;
     const config = {
       [Widget.Tooltip]: {
-        color: "#fef0ef",
-        fontColor: "#000"
+        color: '#fef0ef',
+        fontColor: '#000'
       }
     };
     return (
       <Theme config={config}>
         <Content className="demo">
-          <div style={{ marginLeft: 70, whiteSpace: "nowrap" }}>
+          <div style={{ marginLeft: 70, whiteSpace: 'nowrap' }}>
             <Tooltip placement="topLeft" title={text}>
               <ButtonDemo type="primary">TL</ButtonDemo>
             </Tooltip>
@@ -45,7 +45,7 @@ export default class BaseTooltip extends React.Component<any, any> {
               <ButtonDemo type="primary">TR</ButtonDemo>
             </Tooltip>
           </div>
-          <div style={{ width: 70, float: "left" }}>
+          <div style={{ width: 70, float: 'left' }}>
             <Tooltip placement="leftTop" title={text}>
               <ButtonDemo type="primary">LT</ButtonDemo>
             </Tooltip>
@@ -70,8 +70,8 @@ export default class BaseTooltip extends React.Component<any, any> {
           <div
             style={{
               marginLeft: 70,
-              clear: "both",
-              whiteSpace: "nowrap"
+              clear: 'both',
+              whiteSpace: 'nowrap'
             }}
           >
             <Tooltip placement="bottomLeft" title={text}>

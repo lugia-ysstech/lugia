@@ -1,8 +1,8 @@
 /**
  * create by szfeng
  */
-import React from "react";
-import { Breadcrumb, Icon } from "@lugia/lugia-web";
+import React from 'react';
+import { Breadcrumb, Icon } from '@lugia/lugia-web';
 
 export default class IconBreadcrumb extends React.Component<any, any> {
   render() {

@@ -45,6 +45,6 @@ export default class LayoutDemo extends React.Component {
                     <Footer>{footer}</Footer>
                 </Layout>
             </Layout>
-        )
+        );
     }
 }

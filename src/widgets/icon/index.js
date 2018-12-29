@@ -14,7 +14,7 @@ type IconProps = {
     getTheme?: Function,
   };
   
-export default (IconProps) => {
+export default IconProps => {
   const onClick = () => {};
   const defaultView = {
     [Widget.Icon]: { 

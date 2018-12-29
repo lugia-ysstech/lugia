@@ -5,7 +5,7 @@
  * @flow
  */
 import React from 'react';
-import BaseTooltip from "./BaseTooltip";
+import BaseTooltip from './BaseTooltip';
 
 export default () => {
 

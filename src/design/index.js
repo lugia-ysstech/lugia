@@ -1,12 +1,12 @@
-import React from "react";
-import { createBrowserHistory } from "history";
-import { createRoute } from "@lugia/lugiax-router";
-import "@lugia/lugia-web/dist/css/global.css";
-import Widget from "@lugia/lugia-web/dist/consts/index";
+import React from 'react';
+import { createBrowserHistory } from 'history';
+import { createRoute } from '@lugia/lugiax-router';
+import '@lugia/lugia-web/dist/css/global.css';
+import Widget from '@lugia/lugia-web/dist/consts/index';
 import {Layout,Theme} from '@lugia/lugia-web';
-import Router from "../router";
+import Router from '../router';
 
-import Asides from "../menu";
+import Asides from '../menu';
 
 
 const rout = createRoute(Router.designRouter);
@@ -31,7 +31,7 @@ export default () => {
     },
     [Widget.Aside]: {
       width:250,
-      backgroundColor:"transparent"
+      backgroundColor:'transparent'
     },
   };
   return (

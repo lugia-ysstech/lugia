@@ -3,8 +3,8 @@
  * create by liangguodong
  *
  */
-import React from "react";
-import { Input,Button } from "@lugia/lugia-web";
+import React from 'react';
+import { Input,Button } from '@lugia/lugia-web';
 
 export default class DisableInput extends React.Component<any, any> {
   constructor (props: any) {
@@ -28,6 +28,6 @@ export default class DisableInput extends React.Component<any, any> {
           <Button onClick={this.toggle} type="primary">点击切换 disabled</Button>
         </div>
         <Input disabled={this.state.disabled}/>
-    </div> )
+    </div> );
   }
 }
