@@ -5,7 +5,7 @@
  * @flow
  */
 import React from 'react';
-import { CheckButton } from '@lugia/lugia-web';
+import { checkButton   } from '@lugia/lugia-web';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -28,29 +28,30 @@ export default () => {
     <div>
       <Wrapper>
         <h4>size</h4>
-        <CheckButton size="small">CheckButton</CheckButton>
+        <checkButton size="small">checkButton</checkButton>
         <Div />
-        <CheckButton>CheckButton</CheckButton>
+        <checkButton>checkButton</checkButton>
         <Div />
-        <CheckButton size="large">CheckButton</CheckButton>
+        <checkButton size="large">checkButton</checkButton>
         <Div />
-        <CheckButton size="bigger">CheckButton</CheckButton>
+        <checkButton size="bigger">checkButton</checkButton>
       </Wrapper>
 
       <Wrapper>
         <h4>checked</h4>
-        <CheckButton checked>CheckButton</CheckButton>
+        <checkButton checked>checkButton</checkButton>
         <Div />
-        <CheckButton onChange={handleChange}>CheckButton</CheckButton>
+        <checkButton onChange={handleChange}>checkButton</checkButton>
       </Wrapper>
       <Wrapper>
         <h4>disabled</h4>
-        <CheckButton disabled>CheckButton</CheckButton>
+        <checkButton disabled>checkButton</checkButton>
         <Div />
-        <CheckButton disabled checked>
-          CheckButton
-        </CheckButton>
+        <checkButton disabled checked>
+          checkButton
+        </checkButton>
       </Wrapper>
     </div>
   );
 };
+
