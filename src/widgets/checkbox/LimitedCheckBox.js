@@ -1,14 +1,19 @@
 import React from 'react';
-import {CheckBox} from '@lugia/lugia-web';
+import {Checkbox} from '@lugia/lugia-web';
 
 export default class CheckBoxDemo extends React.Component {
     render() {
         return (
             <div>
-                <CheckBox checked onChange={handleChange}>
+                <Checkbox checked onChange={this.handleChange}>
                     CheckBox
-                </CheckBox>
+                </Checkbox>
             </div>
         );
     }
+  handleChange = (value: Array<string>) => {
+    this.setState({
+      value,
+    });
+  };
 }
