@@ -1,0 +1,141 @@
+{
+  "extends": "eslint-config-react-app",
+  "rules": {
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "constructor-super": "off",
+    "generator-star-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "no-class-assign": "error",
+    "no-confusing-arrow": [
+      "error",
+      {
+        "allowParens": true
+      }
+    ],
+    "no-const-assign": "error",
+    "no-dupe-class-members": "error",
+    "no-new-symbol": "off",
+    "no-this-before-super": "error",
+    "no-useless-computed-key": "error",
+    "no-var": "error",
+    "object-shorthand": [
+      "error",
+      "always",
+      {
+        "avoidQuotes": true,
+        "ignoreConstructors": false
+      }
+    ],
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all",
+        "ignoreReadBeforeAssign": true
+      }
+    ],
+    "no-eq-null": "error",
+    "no-eval": "error",
+    "default-case": "error",
+    "no-extra-boolean-cast": "error",
+    "no-func-assign": "error",
+    "no-ex-assign": "error",
+    "no-empty": "error",
+    "use-isnan": "error",
+    "valid-typeof": "error",
+    "no-extra-semi": "error",
+    "no-duplicate-case": "error",
+    "no-unused-vars": "warn",
+    "no-dupe-args": "error",
+    "no-constant-condition": "error",
+    //    "for-direction": "error",
+    "prefer-reflect": "off",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "off",
+    "require-yield": "off",
+    "no-cond-assign": "error",
+    "no-dupe-keys": "error",
+    "linebreak-style": 0,
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error",
+          "log"
+        ]
+      }
+    ],
+    "no-debugger": "error",
+    "semi": "error",
+    "require-await": "off",
+    "template-curly-spacing": "error",
+    "yield-star-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "dot-location": "error",
+    "dot-notation": "error",
+    "no-alert": "error",
+    "no-with": "error",
+    "no-caller": "error",
+    "no-else-return": "error",
+    "no-extend-native": "error",
+    "no-new-func": "error",
+    "no-self-assign": "error",
+    "no-labels": "error",
+    "no-multi-str": "error",
+    "no-redeclare": "error",
+    "camelcase": "error",
+    "block-spacing": "error",
+    "array-bracket-spacing": "error",
+    "brace-style": "error",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "only-multiline",
+        "objects": "only-multiline",
+        "imports": "only-multiline",
+        "exports": "only-multiline",
+        "functions": "only-multiline"
+      }
+    ],
+    "yoda": "error",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "quote-props": [
+      "error",
+      "as-needed"
+    ],
+    "eol-last": "error",
+    "consistent-this": "error",
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
+    "init-declarations": "off"
+  }
+}

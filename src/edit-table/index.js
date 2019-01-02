@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import EditTables from './edittable';
 
 const tableInfo = require('./lugia.table.zh-CN');
@@ -17,10 +17,8 @@ export default class EditTable extends React.Component<PropsType, StateType> {
     dataSource:tableInfo
   };
   static getDerivedStateFromProps(defProps: PropsType, stateProps: StateType) {
-
   }
   render() {
-    console.log(tableInfo);
     return (
       <EditTables
         {...this.props}

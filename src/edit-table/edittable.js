@@ -1,6 +1,6 @@
 
-import * as React from "react";
-import {Table,Tr,Td,Args}  from "../css/edittable";
+import * as React from 'react';
+import {Table,Tr,Td,Args}  from '../css/edittable';
 
 type PropsType ={
   dataSource:Object
@@ -13,9 +13,9 @@ type StateType ={
 
 const objectToArray = (obj:Object) => {
   const arr =[];
-  for (let key in obj) {
+  for (const key in obj) {
     obj[key].name = key;
-    arr.push(obj[key])
+    arr.push(obj[key]);
   }
   return arr;
 };
@@ -30,7 +30,7 @@ const getEventProps =(args:Object) => {
 };
 
 const getEventPropsElement = (arr:Array<string>) => {
-    return arr.map((item) => (
+    return arr.map(item => (
       <Args>{item}</Args>
     ));
 };
@@ -75,11 +75,11 @@ class Element extends React.Component<PropsType, StateType> {
     return (
       <Table>
         <Tr>
-          {title.map( (item) => (
+          {title.map( item => (
             <Td>{item}</Td>
           ))}
         </Tr>
-        { propsSource.map( (item) => (
+        { propsSource.map( item => (
           <Tr>
             <Td>{item.name}</Td>
             <Td>{item.desc}</Td>
