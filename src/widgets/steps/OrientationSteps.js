@@ -5,10 +5,9 @@
  */
 import React from 'react';
 import styled from 'styled-components';
-import { steps, Button, Theme } from '@lugia/lugia-web';
+import { Steps, Button, Theme } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
-const Step = steps.Step;
-const Steps = steps.Steps;
+const Step = Steps.Step;
 const VWrapper = styled.div`
   text-align: left;
   margin: 50px;

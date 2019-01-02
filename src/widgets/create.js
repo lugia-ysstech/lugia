@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 createRouter();
 
-main();
+// main();
 
 function getPath (folderName) {
   return path.join(__dirname, folderName);
@@ -28,6 +28,7 @@ async function createRouter () {
         if (!categoryData) {
           catory2WidgetNames[ category ] = categoryData = [];
         }
+        meta.floderName = folderName;
         categoryData.push(meta);
       } catch (error) {
         return;
@@ -36,9 +37,10 @@ async function createRouter () {
     const router = Object.keys(catory2WidgetNames).map(key => {
       const widgets = catory2WidgetNames[ key ];
       const children = widgets && widgets.map(meta => {
-        const { widgetName, title } = meta;
+        const { widgetName, title, floderName } = meta;
         return {
           widgetName,
+          floderName,
           value: `/component/${widgetName.toLowerCase()}`,
           text: title,
         };
@@ -51,12 +53,43 @@ async function createRouter () {
       };
     });
 
-    const targetFile = path.join(path.dirname(__dirname), 'router', 'widgets.js');
-    await fs.writeFileSync(targetFile, `export default ${JSON.stringify(router)}`);
+    await fs.writeFileSync(getRouterFile('widgets.js'), `export default ${JSON.stringify(router)}`);
+    await fs.writeFileSync(getRouterFile('widgetrouter.js'), `export default ${(getMenuRouter(router))}`);
 
   } catch (error) {
     console.log('%s 异常  X', error);
   }
+}
+
+function getRouterFile (file) {
+  return path.join(path.dirname(__dirname), 'router', file);
+}
+
+function getMenuRouter (data) {
+  // const arr  =[];
+
+  const res = [];
+  res.push('{');
+
+  data.forEach(item => {
+    const { children } = item;
+    children && children.forEach(childs => {
+      const { value, text, widgetName, floderName } = childs;
+      res.push(`
+      '${value}':
+        {
+          value: '${value}',
+          text: '${text}',
+          exact: true,
+          render: async () => {
+            return import('../widgets/${floderName}');
+          },
+        },`);
+
+    });
+  });
+  res.push(' }');
+  return res.join('');
 }
 
 async function getFolderNames () {
@@ -178,7 +211,7 @@ function toText (str) {
   if (!str) {
     return str;
   }
-  return str.replace(/\'/g, String.raw`\'`).replace(/\"/g, String.raw`\"`).replace(/\n/g, String.raw`\n`);
+  return str.replace(/\$/g, String.raw`\$`).replace(/\`/g, String.raw`\``).replace(/\'/g, String.raw`\'`).replace(/\"/g, String.raw`\"`).replace(/\n/g, String.raw`\n`);
 }
 
 function getImportInfoAndDemo (demos, config, folderName) {

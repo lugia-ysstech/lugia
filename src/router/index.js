@@ -1,18 +1,18 @@
+import widgets from './widgets';
+import widgetrouter from './widgetrouter';
 
-import widgets from './widgets'
-
-const getMenuConfig = (data) => {
-  const arr  =[];
+const getMenuConfig = data => {
+  const arr = [];
   data.forEach(item => {
-    const {category,describe,children} = item;
+    const { category, describe, children } = item;
     const childArray = [];
-    if(children && children.length >0){
-      children.forEach( childs => {
-        const {value,text} = childs;
+    if (children && children.length > 0) {
+      children.forEach(childs => {
+        const { value, text } = childs;
         childArray.push(
           {
-            value: value,
-            text: text
+            value,
+            text
           },
         );
       });
@@ -21,7 +21,7 @@ const getMenuConfig = (data) => {
       {
         text: category,
         value: category,
-        describe: describe,
+        describe,
         children: childArray,
       },
     );
@@ -29,27 +29,6 @@ const getMenuConfig = (data) => {
   return arr;
 };
 
-const getMenuRouter = (data) =>{
-  // const arr  =[];
-  const childArray = {};
-  data.forEach(item => {
-    const {children} = item;
-    if(children && children.length >0){
-      children.forEach( childs => {
-        const {value,text} = childs;
-        childArray[value] =
-          {
-            value: value,
-            text: text,
-            render: async () => import('../widgets/' +text.toLocaleLowerCase()),
-          };
-
-      });
-    }
-  });
-
-  return childArray;
-};
 
 
 const routerConfig = {
@@ -60,14 +39,12 @@ const routerConfig = {
     isHidden: true,
     text: 'Affix',
   },
-  ...getMenuRouter(widgets)
+  ...widgetrouter
 };
 
 
-
-
 const menuConfig = [
-  {value: 'Lugia Design of React',text: 'Lugia Design of React',},
+  { value: 'Lugia Design of React', text: 'Lugia Design of React' },
   { value: '快速上手', text: '快速上手' },
   { value: '项目实战', text: '项目实战' },
   { value: '在Lugia-mega中使用', text: '在Lugia-mega中使用' },
@@ -86,7 +63,7 @@ const designRouter = {
     isHidden: true,
     describe: true,
     text: 'Lugia.D',
-    children:[
+    children: [
       {
         value: 'Lugia Design of React',
         text: 'Lugia Design of React',
@@ -147,4 +124,4 @@ const designConfig = [
   },
 ];
 
-export default {routerConfig,designRouter,designConfig,menuConfig};
+export default { routerConfig, designRouter, designConfig, menuConfig };
