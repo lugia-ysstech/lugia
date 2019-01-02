@@ -69,11 +69,12 @@ const Image = styled.img.attrs({
 
 const ImageDesc = styled.div.attrs({
   padding:props => (props.imgPosition === 'right' || props.imgPosition === 'left' ?'10px 50px 0 0':''),
+  align:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'center':'right')
 })` 
   color:#666;
   font-size:12px;
   line-height:1;
-  text-align:right;
+  text-align:${props => props.align};
   margin:${props => props.imgPosition}
   padding:${props => props.padding};
 `;
