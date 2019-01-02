@@ -1,10 +1,10 @@
 import React from 'react';
 import {createRoute} from '@lugia/lugiax-router';
-import {Layout, Theme} from '@lugia/lugia-web';
+import {Grid, Layout, Theme} from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import Headers from './nav';
 import Widgets from './widgets';
-
+const { Row, Col } = Grid;
 const { Header, Content, Footer} = Layout;
 
 
@@ -51,18 +51,15 @@ const footer = (
   </div>
 );
 
-const header = (
-  <div style={{ height: '60px', lineHeight: '60px', textAlign: 'center', background: '#381be5' }}>
-    Header
+const block = (
+  <div style={{ height: '60px'}}>
   </div>
 );
 
 export default () => {
   const layoutView = {
-    [Widget.Layout]: {
-    },
     [Widget.Content]: {
-      width:900,
+      width:'100%',
       padding: {
         top: 20,
         bottom: 20,
@@ -73,25 +70,26 @@ export default () => {
       bordeLeftColor:'#cccccc',
       bordeLeftStyle:'solid'
     },
-    [Widget.Aside]: {
-      width:250,
-      backgroundColor:'transparent'
-    },
   };
+
   return (
-    <div style={styles}>
+    <Row>
+        <Col span={0}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
+          {block}
+        </Col>
+        <Col span={24}  xl={{ span: 22 }}  xxl={{ span: 20 }}>
+          <Headers />
+         {rout}
+          <Footer>{footer}</Footer>
+        </Col>
+        <Col span={0}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
+          {block}
+        </Col>
+    </Row>
 
-        <Header><Headers /></Header>
-        <Theme config={layoutView}>
-          <Layout direction="row">
-            <Content>{rout}</Content>
-          </Layout>
-        </Theme>
-        <Footer>{footer}</Footer>
-
-    </div>
   );
 };
+
 
 const styles = {
   width: '1140px',

@@ -13,7 +13,7 @@ import Temlpate from '../template/template';
 import data from './document';
 const Container = styled.div` 
   padding:45px 50px 50px;
-  width:980px;
+  width:100%;
 `;
 
 
