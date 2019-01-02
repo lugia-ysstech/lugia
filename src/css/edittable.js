@@ -31,7 +31,7 @@ export const Td = styled.td`
   vertical-align:middle;
   line-height:24px;
   max-width:242px;
-  color:${ props => props.mode?'#f8ac30':'#36384c'}
+  color:${props => (props.mode?'#f8ac30':'#36384c')}
 `;
 
 export const Args = styled.div`

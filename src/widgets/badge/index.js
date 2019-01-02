@@ -1,139 +1,30 @@
-/**
- *
- * create by liangguodong on 2018/8/27
- *
- * @flow
- */
-import React from 'react';
-import styled from 'styled-components';
-import {Badge,Theme,Icon,Col, Row} from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts/index';
-// import { Col, Row } from '../grid';
-// import Widget from '../consts';
-// import Theme from '../theme';
-// import Icon from '../icon';
-
-const Box = styled.div`
-  width: 40px;
-  height: 40px;
-  background: #ccc;
-  margin-left: 10px;
-`;
-
-class Turn extends React.Component<any, any> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-    };
-  }
-
-  click = type => () => {
-    const count = type === 'plus' ? this.state.count + 1 : this.state.count - 1;
-    this.setState({ count });
-  };
-
-  render() {
-    return (
-      <Row>
-        <Col span={4}>
-          <Badge count={this.state.count} showZero overflowCount={9}>
-            <Box />
-          </Badge>
-          <Icon
-            style={{ fontSize: '2em' }}
-            iconClass="lugia-icon-reminder_plus_square_o"
-            onClick={this.click('plus')}
-          />
-          <Icon iconClass="lugia-icon-reminder_minus_square_o" onClick={this.click('minus')} />
-        </Col>
-      </Row>
-    );
-  }
-}
-
-export default () => {
-  const view = {
-    [Widget.Badge]: { backgroundColor: 'orange', color: 'black' },
-  };
-  return (
-    <div>
-      <Theme config={{ [Widget.Row]: { margin: 50 } }}>
-        <Row>
-          <Col span={4}>
-            <Badge count={4}>
-              <Box />
-            </Badge>
-          </Col>
-          <Col span={4}>
-            <Badge count={99}>
-              <Box />
-            </Badge>
-          </Col>
-          <Col span={4}>
-            <Badge>
-              <Box />
-            </Badge>
-          </Col>
-        </Row>
-        <Theme config={view}>
-          <Row>
-            <Col span={4}>
-              <Badge count={0}>
-                <Box />
-              </Badge>
-            </Col>
-            <Col span={4}>
-              <Badge showZero>
-                <Box />
-              </Badge>
-            </Col>
-            <Col span={4}>
-              <Badge showZero count={0}>
-                <Box />
-              </Badge>
-            </Col>
-            <Col span={4}>
-              <a href="www.baidu.com">
-                <Badge>
-                  <Box />
-                </Badge>
-              </a>
-            </Col>
-          </Row>
-        </Theme>
-        <Row>
-          <Col span={4}>
-            <Theme config={{ green: { backgroundColor: 'green' } }}>
-              <Badge viewClass="green">
-                <Box />
-              </Badge>
-            </Theme>{' '}
-          </Col>
-          <Col span={4}>
-            <Theme config={{ purple: { backgroundColor: 'purple' } }}>
-              <Badge viewClass="purple">
-                <Box />
-              </Badge>
-            </Theme>{' '}
-          </Col>
-          <Col span={4}>
-            <Theme config={{ yellow: { backgroundColor: 'yellow' } }}>
-              <Badge viewClass="yellow">
-                <Box />
-              </Badge>
-            </Theme>{' '}
-          </Col>
-          <Col span={4}>
-            <Theme config={{ blue: { backgroundColor: 'blue' } }}>
-              <Badge viewClass="blue">
-                <Box />
-              </Badge>
-            </Theme>
-          </Col>
-        </Row>
-        <Turn />
-      </Theme>
-    </div>
-  );
-};
+import  React from 'react';
+        import {Anchor,Grid} from '@lugia/lugia-web';
+        import EditTables from '../../edit-table'; 
+        import BADGE from '@lugia/lugia-web/dist/badge/lugia.badge.zh-CN.json';
+        import Demo from '../code-box';
+        import Title from '../code-box/Title';
+         const BaseBadge =  require('./BaseBadge').default;  const OverFlowBadge =  require('./OverFlowBadge').default;  const ColorBadge =  require('./ColorBadge').default;  const ClickBadge =  require('./ClickBadge').default;  const ShowZeroBadge =  require('./ShowZeroBadge').default;  const ChangeBadge =  require('./ChangeBadge').default;  
+        
+        const { Link } = Anchor;
+        const { Row,Col } = Grid;
+        
+        export default class ComDemo extends React.Component {
+            render(){
+                return(
+                    <Row>
+                        <Col span={20}>
+                            <Title title={'徽标数'} subTitle={'Badge'} desc={'图标右上角的圆形徽标数字'} />
+                            <Demo title={'徽标基本用法'} titleID={'badge-0'} code={<code>{ '/**\n *\n * create by liangguodong\n *\n */\nimport React from \'react\';\nimport { Badge, Theme } from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts\';\nimport styled from \'styled-components\';\n\nconst Wrapper = styled.div`\n  float: left;\n  margin-left: 50px;\n  text-align: center;\n  padding: 20px;\n`;\nconst Box = styled.div`\n  width: 40px;\n  height: 40px;\n  background: #ccc;\n  margin-left: 10px;\n`;\nexport default class BaseBadge extends React.Component<any, any> {\n\n  render () {\n    return (\n      <Wrapper>\n        <Badge count={0}>\n          <Box />\n        </Badge>\n        <Badge count={4}>\n          <Box/>\n        </Badge>\n        <Badge count={99}>\n          <Box/>\n        </Badge>\n        <Badge count={100}>\n          <Box/>\n        </Badge>\n      </Wrapper>);\n  }\n}\n'}</code>} desc={'显示不同数量的徽标'}  demo={<BaseBadge />}></Demo><Demo title={'封顶数字'} titleID={'badge-1'} code={<code>{ '/**\n *\n * create by liangguodong\n *\n */\nimport React from \'react\';\nimport { Badge, Theme } from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts\';\nimport styled from \'styled-components\';\n\nconst Wrapper = styled.div`\n  float: left;\n  margin-left: 50px;\n  text-align: center;\n  padding: 20px;\n`;\nconst Box = styled.div`\n  width: 40px;\n  height: 40px;\n  background: #ccc;\n  margin-left: 10px;\n`;\nexport default class OverFlowBadge extends React.Component<any, any> {\n\n  render () {\n    return (\n      <Wrapper>\n        <Badge overFlow={9} count={8}>\n          <Box/>\n        </Badge>\n        <Badge overFlow={99} count={88}>\n          <Box/>\n        </Badge>\n        <Badge overFlow={999} count={888}>\n          <Box/>\n        </Badge>\n      </Wrapper>);\n  }\n}\n'}</code>} desc={'显示不同封顶数字的徽标'}  demo={<OverFlowBadge />}></Demo><Demo title={'设置颜色'} titleID={'badge-2'} code={<code>{ '/**\n *\n * create by liangguodong\n *\n */\nimport React from \'react\';\nimport { Badge, Theme } from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts\';\nimport styled from \'styled-components\';\n\nconst Wrapper = styled.div`\n  float: left;\n  margin-left: 50px;\n  text-align: center;\n  padding: 20px;\n`;\nconst Box = styled.div`\n  width: 40px;\n  height: 40px;\n  background: #ccc;\n  margin-left: 10px;\n`;\nexport default class ColorBadge extends React.Component<any, any> {\n\n  render () {\n    return (\n      <Wrapper>\n        <Theme config={{ green: { backgroundColor: \'green\' } }}>\n          <Badge viewClass=\"green\">\n            <Box />\n          </Badge>\n        </Theme>\n        <Theme config={{ purple: { backgroundColor: \'purple\' } }}>\n          <Badge viewClass=\"purple\">\n            <Box />\n          </Badge>\n        </Theme>\n        <Theme config={{ yellow: { backgroundColor: \'yellow\' } }}>\n          <Badge viewClass=\"yellow\">\n            <Box />\n          </Badge>\n        </Theme>\n        <Theme config={{ blue: { backgroundColor: \'blue\' } }}>\n          <Badge viewClass=\"blue\">\n            <Box />\n          </Badge>    </Theme>\n      </Wrapper>);\n  }\n}\n'}</code>} desc={'显示不同颜色的徽标'}  demo={<ColorBadge />}></Demo><Demo title={'可点击'} titleID={'badge-3'} code={<code>{ '/**\n *\n * create by liangguodong\n *\n */\nimport React from \'react\';\nimport { Badge, Theme } from \'@lugia/lugia-web\';\nimport styled from \'styled-components\';\n\nconst Wrapper = styled.div`\n  float: left;\n  margin-left: 50px;\n  text-align: center;\n  padding: 20px;\n`;\nconst Box = styled.div`\n  width: 40px;\n  height: 40px;\n  background: #ccc;\n  margin-left: 10px;\n`;\nexport default class ClickBadge extends React.Component<any, any> {\n\n  render () {\n    return (\n      <Wrapper>\n        <a href=\"www.baidu.com\">\n          <Badge>\n            <Box />\n          </Badge>\n        </a>\n      </Wrapper>);\n  }\n}\n'}</code>} desc={'用a标签包裹 可以点击'}  demo={<ClickBadge />}></Demo><Demo title={'0的显示'} titleID={'badge-4'} code={<code>{ '/**\n *\n * create by liangguodong\n *\n */\nimport React from \'react\';\nimport { Badge, Theme } from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts\';\nimport styled from \'styled-components\';\n\nconst Wrapper = styled.div`\n  float: left;\n  margin-left: 50px;\n  text-align: center;\n  padding: 20px;\n`;\nconst Box = styled.div`\n  width: 40px;\n  height: 40px;\n  background: #ccc;\n  margin-left: 10px;\n`;\nexport default class BaseBadge extends React.Component<any, any> {\n\n  render () {\n    return (\n      <Wrapper>\n        <Badge count={0}>\n          <Box />\n        </Badge>\n        <Badge showZero count={0}>\n          <Box />\n        </Badge>\n      </Wrapper>);\n  }\n}\n'}</code>} desc={'徽标数是0时,是否显示数字'}  demo={<ShowZeroBadge />}></Demo><Demo title={'动态修改'} titleID={'badge-5'} code={<code>{ '/**\n *\n * create by liangguodong\n *\n */\nimport React from \'react\';\nimport { Badge, Theme,Icon } from \'@lugia/lugia-web\';\nimport styled from \'styled-components\';\n\nconst Wrapper = styled.div`\n  float: left;\n  margin-left: 50px;\n  text-align: center;\n  padding: 20px;\n`;\nconst Box = styled.div`\n  width: 40px;\n  height: 40px;\n  background: #ccc;\n  margin-left: 10px;\n`;\nexport default class ChangeBadge extends React.Component<any, any> {\n  constructor(props) {\n    super(props);\n    this.state = {\n      count: 0\n    };\n  }\n\n  click = type => () => {\n    const count = type === \'plus\' ? this.state.count + 1 : this.state.count - 1;\n    this.setState({ count });\n  };\n  render () {\n    return (\n      <Wrapper>\n        <Badge count={this.state.count} showZero overflowCount={9}>\n          <Box />\n        </Badge>\n        <Icon\n          style={{ fontSize: \'2em\' }}\n          iconClass=\"lugia-icon-reminder_plus_square_o\"\n          onClick={this.click(\'plus\')}\n        />\n        <Icon\n          iconClass=\"lugia-icon-reminder_minus_square_o\"\n          onClick={this.click(\'minus\')}\n        />\n      </Wrapper>);\n  }\n}\n'}</code>} desc={'动态改变显示徽标数'}  demo={<ChangeBadge />}></Demo>
+                            <EditTables dataSource={BADGE} />
+                        </Col>
+                        <Col span={4}>
+                            <Anchor  slideType="line">
+                                <Link title={'徽标基本用法'} href={'#badge-0'} /><Link title={'封顶数字'} href={'#badge-1'} /><Link title={'设置颜色'} href={'#badge-2'} /><Link title={'可点击'} href={'#badge-3'} /><Link title={'0的显示'} href={'#badge-4'} /><Link title={'动态修改'} href={'#badge-5'} />
+                            </Anchor>
+                        </Col>
+                    </Row>
+                );
+            }
+         }   
+        

@@ -1,240 +1,30 @@
-/**
- *
- * create by LYQ
- *
- * @flow
- */
-import React from 'react';
-import styled from 'styled-components';
-import {Progress,Button,Theme} from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts/index';
-
-export default class ProgressDemo extends React.Component<any, any> {
-  constructor() {
-    super();
-    this.state = {
-      percent: 30,
-    };
-  }
-  handleClick = (type: 'add' | 'sub') => {
-    let res = this.state.percent;
-    if (type === 'add') {
-      res += 10;
-    } else {
-      res -= 10;
-    }
-    this.setState({
-      percent: res,
-    });
-  };
-  render() {
-    const view = {
-      [Widget.Progress]: {
-        color: 'red',
-        width: 100,
-        height: 18,
-      },
-    };
-    const CircleView = {
-      [Widget.Progress]: {
-        color: 'red',
-      },
-    };
-    return (
-      <div>
-        <div style={{ width: '300px', margin: '50px' }}>
-          <h1>line</h1>
-          <p>props: percent={30}</p>
-          <br />
-          <Progress percent={30} />
-          <br />
-          <p>props: percent={30} status="active"</p>
-          <br />
-          <Progress percent={30} status="active" />
-          <br />
-          <p>props: percent={30} status="success" format= percent => percent + '--'</p>
-          <br />
-          <Progress percent={30} status="success" format={percent => percent + '--'} />
-          <br />
-          <p>props: percent={30} status="success"</p>
-          <br />
-          <Progress percent={30} status="success" />
-          <br />
-          <p>props: percent={30} status="error"</p>
-          <br />
-          <Progress percent={30} status="error" />
-          <br />
-          <p>props: percent={100} status="error"</p>
-          <br />
-          <Progress percent={100} status="error" />
-          <br />
-          <p>props: percent=this.state.percent status="active"</p>
-          <br />
-          <Progress percent={this.state.percent} status="active" />
-          <Button onClick={() => this.handleClick('add')}>+10</Button>&nbsp;
-          <Button onClick={() => this.handleClick('sub')}>-10</Button>
-          <br />
-          <p>props: percent={30} showInfo=false</p>
-          <br />
-          <Progress percent={30} showInfo={false} />
-          <br />
-          <p>Theme===>>> props: percent={30}</p>
-          <br />
-          <Theme config={view}>
-            <Progress percent={30} />
-          </Theme>
-          <div style={{ width: '200px', margin: '50px 0' }}>
-            <p>props: size=small percent={30}</p>
-            <br />
-            <Progress size="small" percent={30} />
-            <br />
-            <p>props: size=small percent={30} status="active"</p>
-            <br />
-            <Progress size="small" percent={30} status="active" />
-            <br />
-            <p>props: size=small percent={30} status="success"</p>
-            <br />
-            <Progress size="small" percent={30} status="success" />
-            <br />
-            <p>props: size=small percent={30} status="error"</p>
-            <br />
-            <Progress size="small" percent={30} status="error" />
-            <br />
-            <p>props: size=small percent={100} status="error"</p>
-            <br />
-            <Progress size="small" percent={100} status="error" />
-          </div>
-          <div style={{ width: '300px', margin: '50px 0' }}>
-            <p>percent={0} showType="inside"</p>
-            <br />
-            <Progress percent={0} showType="inside" />
-            <br />
-            <p>percent={30} showType="inside" status="active"</p>
-            <br />
-            <Progress percent={30} showType="inside" status="active" />
-            <br />
-            <p>percent={30} showType="inside"</p>
-            <br />
-            <Progress percent={30} showType="inside" />
-            <br />
-            <p>percent={30} showType="inside" status="success"</p>
-            <br />
-            <Progress percent={130} showType="inside" />
-            <br />
-            <p>percent={30} showType="inside" status="error"</p>
-            <br />
-            <Progress percent={30} showType="inside" status="error" />
-            <br />
-            <br />
-            <p>percent={100} showType="inside" status="error"</p>
-            <br />
-            <Progress percent={100} showType="inside" status="error" />
-            <br />
-            <p>Theme===>>> props: percent={30}</p>
-            <br />
-            <Theme config={view}>
-              <Progress percent={30} showType="inside" />
-            </Theme>
-          </div>
-        </div>
-
-        <div style={{ margin: '50px' }}>
-          <h1>circle</h1>
-          <p>type="circle" props: percent={0}</p>
-          <br />
-          <Progress type="circle" percent={0} />
-          <br />
-          <p>type="circle" props: percent={30}</p>
-          <br />
-          <Progress type="circle" percent={this.state.percent} />
-          <Button onClick={() => this.handleClick('add')}>+10</Button>&nbsp;
-          <Button onClick={() => this.handleClick('sub')}>-10</Button>
-          <br />
-          <p>type="circle" props: percent={100}</p>
-          <br />
-          <Progress type="circle" percent={100} />
-          <br />
-          <p>type="circle" props: percent={50}</p>
-          <br />
-          <Progress type="circle" status="success" percent={50} />
-          <br />
-          <p>type="circle" props: percent={50}</p>
-          <br />
-          <Progress type="circle" status="error" percent={50} />
-          <br />
-          <p>type="circle" props: percent={100}</p>
-          <br />
-          <Progress type="circle" status="error" percent={100} />
-          <br />
-          <p>props: percent={50} status="error" format= percent => percent + '--'</p>
-          <br />
-          <Progress type="circle" status="error" percent={50} format={percent => percent + '--'} />
-          <br />
-          <p>Theme: color===>>> props: percent={30}</p>
-          <br />
-          <Theme config={CircleView}>
-            <Progress type="circle" percent={30} />
-          </Theme>
-          <p>type="circle" size="small" props: percent={0}</p>
-          <br />
-          <Progress type="circle" size="small" percent={0} />
-          <br />
-          <p>type="circle" props: percent={30}</p>
-          <br />
-          <Progress type="circle" size="small" percent={this.state.percent} />
-          <br />
-          <p>type="circle" props: percent={100}</p>
-          <br />
-          <Progress type="circle" size="small" percent={100} />
-          <br />
-          <p>type="circle" props: percent={50}</p>
-          <br />
-          <Progress type="circle" size="small" status="error" percent={50} />
-          <br />
-          <p>type="circle" props: percent={100}</p>
-          <br />
-          <Progress type="circle" size="small" status="error" percent={100} />
-          <br />
-          <div style={{ margin: '50px' }}>
-            <h1>dashboard</h1>
-            <p>type="dashboard" props: percent={50}</p>
-            <br />
-            <Progress type="dashboard" percent={50} />
-            <br />
-            <p>type="dashboard" props: percent={100}</p>
-            <br />
-            <Progress type="dashboard" percent={100} />
-            <br />
-            <p>type="dashboard" props: percent={80} status="success"</p>
-            <br />
-            <Progress type="dashboard" status="success" percent={80} />
-            <br />
-            <p>type="dashboard" props: percent={40} status="error"</p>
-            <br />
-            <Progress type="dashboard" status="error" percent={40} />
-            <br />
-            <p>type="dashboard" props: percent={100} status="error"</p>
-            <br />
-            <Progress type="dashboard" status="error" percent={100} />
-            <br />
-            <p>type="dashboard" props: percent={50} format= percent => percent + '--'</p>
-            <br />
-            <Progress type="dashboard" percent={50} format={percent => percent + '--'} />
-            <br />
-            <p>type="circle" props: percent={this.state.percent}</p>
-            <br />
-            <Progress type="dashboard" percent={this.state.percent} />
-            <Button onClick={() => this.handleClick('add')}>+10</Button>&nbsp;
-            <Button onClick={() => this.handleClick('sub')}>-10</Button>
-            <br />
-            <p>Theme: color===>>> props: percent={30}</p>
-            <br />
-            <Theme config={CircleView}>
-              <Progress type="dashboard" percent={30} />
-            </Theme>
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+import  React from 'react';
+        import {Anchor,Grid} from '@lugia/lugia-web';
+        import EditTables from '../../edit-table'; 
+        import PROGRESS from '@lugia/lugia-web/dist/progress/lugia.progress.zh-CN.json';
+        import Demo from '../code-box';
+        import Title from '../code-box/Title';
+         const BasicDemo =  require('./BasicDemo').default;  const SmallDemo =  require('./SmallDemo').default;  const InsideDemo =  require('./InsideDemo').default;  const ThemeLineDemo =  require('./ThemeLineDemo').default;  const ChangeLineDemo =  require('./ChangeLineDemo').default;  const CircleDemo =  require('./CircleDemo').default;  const CircleSmallDemo =  require('./CircleSmallDemo').default;  const ChangeCircleDemo =  require('./ChangeCircleDemo').default;  const ThemeCircleDemo =  require('./ThemeCircleDemo').default;  const DashboardDemo =  require('./DashboardDemo').default;  const ThemeDashboardDemo =  require('./ThemeDashboardDemo').default;  
+        
+        const { Link } = Anchor;
+        const { Row,Col } = Grid;
+        
+        export default class ComDemo extends React.Component {
+            render(){
+                return(
+                    <Row>
+                        <Col span={20}>
+                            <Title title={'Progress 进度条'} subTitle={'Progress'} desc={'展示操作的当前进度。'} />
+                            <Demo title={'进度条'} titleID={'progress-0'} code={<code>{ 'import React from \'react\';\nimport {Progress} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <Progress percent={30} />\n                <Progress percent={50} status=\"active\" />\n                <Progress percent={70} status=\"error\" />\n                <Progress percent={100} status=\"success\" />\n                <Progress percent={70} showInfo={false} />\n            </div>\n        );\n    }\n}\n'}</code>} desc={'基础的进度条'}  demo={<BasicDemo />}></Demo><Demo title={'小型进度条'} titleID={'progress-1'} code={<code>{ 'import React from \'react\';\nimport {Progress} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <Progress percent={30} size=\"small\" />\n                <Progress percent={50} status=\"active\" size=\"small\" />\n                <Progress percent={70} status=\"error\" size=\"small\" />\n                <Progress percent={100} status=\"success\" size=\"small\" />\n            </div>\n        );\n    }\n}\n'}</code>} desc={'更小的进度条，放在狭窄的地方'}  demo={<SmallDemo />}></Demo><Demo title={'内容内置'} titleID={'progress-2'} code={<code>{ 'import React from \'react\';\nimport {Progress} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <Progress percent={0} showType=\"inside\" />\n                <Progress percent={30} showType=\"inside\" status=\"active\" />\n                <Progress percent={30} showType=\"inside\" />\n                <Progress percent={100} showType=\"inside\" />\n                <Progress percent={30} showType=\"inside\" status=\"error\" />\n            </div>\n        );\n    }\n}\n'}</code>} desc={'内容内置的进图条，节省空间'}  demo={<InsideDemo />}></Demo><Demo title={'配置主题'} titleID={'progress-3'} code={<code>{ 'import React from \'react\';\nimport {Progress, Theme} from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts/index\';\n\nexport default class ProgressDemo extends React.Component {\n    render() {\n        const view = {\n            [Widget.Progress]: {\n                color: \'red\',\n                width: 200,\n                height: 18,\n            },\n        };\n        return (\n            <div>\n                <Theme config={view}>\n                    <Progress percent={30} showType=\"inside\" />\n                </Theme>\n                <Theme config={view}>\n                    <Progress percent={30} />\n                </Theme>\n            </div>\n        );\n    }\n}\n'}</code>} desc={'可配置主题的线性进度条，可配置 color width height'}  demo={<ThemeLineDemo />}></Demo><Demo title={'动态展示'} titleID={'progress-4'} code={<code>{ 'import React from \'react\';\nimport {Progress, Button} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    constructor() {\n        super();\n        this.state = {\n            percent: 30,\n        };\n    }\n    handleClick = type => {\n        let res = this.state.percent;\n        if (type === \'add\') {\n            res += 10;\n        } else {\n            res -= 10;\n        }\n        this.setState({\n            percent: res,\n        });\n    };\n    render() {\n        return (\n            <div>\n                <Progress percent={this.state.percent} status=\"active\" />\n                <Button onClick={() => this.handleClick(\'add\')}>+10</Button>&nbsp;&nbsp;\n                <Button onClick={() => this.handleClick(\'sub\')}>-10</Button>\n            </div>\n        );\n    }\n}\n'}</code>} desc={'可以动的进度条'}  demo={<ChangeLineDemo />}></Demo><Demo title={'圆形进度条'} titleID={'progress-5'} code={<code>{ 'import React from \'react\';\nimport {Progress} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <Progress type=\"circle\" percent={0} />\n                <Progress type=\"circle\" status=\"error\" percent={50} />\n                <Progress type=\"circle\" status=\"success\" percent={100} />\n            </div>\n        );\n    }\n}\n'}</code>} desc={'圆形进度条'}  demo={<CircleDemo />}></Demo><Demo title={'小型圆形进度条'} titleID={'progress-6'} code={<code>{ 'import React from \'react\';\nimport {Progress} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <Progress type=\"circle\" size=\"small\" percent={0} />\n                <Progress type=\"circle\" size=\"small\" status=\"error\" percent={50} />\n                <Progress type=\"circle\" size=\"small\" status=\"success\" percent={100} />\n            </div>\n        );\n    }\n}\n'}</code>} desc={'小型圆形进度条，节省空间'}  demo={<CircleSmallDemo />}></Demo><Demo title={'小型圆形进度条'} titleID={'progress-7'} code={<code>{ 'import React from \'react\';\nimport {Progress, Button} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    constructor() {\n        super();\n        this.state = {\n            percent: 30,\n        };\n    }\n    handleClick = type => {\n        let res = this.state.percent;\n        if (type === \'add\') {\n            res += 10;\n        } else {\n            res -= 10;\n        }\n        this.setState({\n            percent: res,\n        });\n    };\n    render() {\n        return (\n            <div>\n                <Progress type=\"circle\" percent={this.state.percent} />\n                <Button onClick={() => this.handleClick(\'add\')}>+10</Button>&nbsp;\n                <Button onClick={() => this.handleClick(\'sub\')}>-10</Button>\n            </div>\n        );\n    }\n}\n'}</code>} desc={'小型圆形进度条，节省空间'}  demo={<ChangeCircleDemo />}></Demo><Demo title={'圆形进度条配置主题'} titleID={'progress-8'} code={<code>{ 'import React from \'react\';\nimport {Progress, Theme} from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts/index\';\n\nexport default class ProgressDemo extends React.Component {\n\n    render() {\n        const CircleView = {\n            [Widget.Progress]: {\n                color: \'red\',\n            },\n        };\n        return (\n            <div>\n                <Theme config={CircleView}>\n                    <Progress type=\"circle\" percent={30} />\n                </Theme>\n            </div>\n        );\n    }\n}\n'}</code>} desc={'可配置主题圆形进度条，可配置 color'}  demo={<ThemeCircleDemo />}></Demo><Demo title={'仪表盘'} titleID={'progress-9'} code={<code>{ 'import React from \'react\';\nimport {Progress} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <Progress type=\"dashboard\" percent={50} />\n                <Progress type=\"dashboard\" percent={100} />\n                <Progress type=\"dashboard\" status=\"error\" percent={40} />\n                <Progress type=\"dashboard\" status=\"success\" percent={80} />\n            </div>\n        );\n    }\n}\n'}</code>} desc={'仪表盘样式的进度条'}  demo={<DashboardDemo />}></Demo><Demo title={'仪表盘主题'} titleID={'progress-10'} code={<code>{ 'import React from \'react\';\nimport {Progress, Theme} from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts/index\';\n\nexport default class ProgressDemo extends React.Component {\n\n    render() {\n        const CircleView = {\n            [Widget.Progress]: {\n                color: \'red\',\n            },\n        };\n        return (\n            <div>\n                <Theme config={CircleView}>\n                    <Progress type=\"dashboard\" percent={30} />\n                </Theme>\n            </div>\n        );\n    }\n}\n'}</code>} desc={'可配置主题仪表盘样式的进度条，可配置 color'}  demo={<ThemeDashboardDemo />}></Demo>
+                            <EditTables dataSource={PROGRESS} />
+                        </Col>
+                        <Col span={4}>
+                            <Anchor  slideType="line">
+                                <Link title={'进度条'} href={'#progress-0'} /><Link title={'小型进度条'} href={'#progress-1'} /><Link title={'内容内置'} href={'#progress-2'} /><Link title={'配置主题'} href={'#progress-3'} /><Link title={'动态展示'} href={'#progress-4'} /><Link title={'圆形进度条'} href={'#progress-5'} /><Link title={'小型圆形进度条'} href={'#progress-6'} /><Link title={'小型圆形进度条'} href={'#progress-7'} /><Link title={'圆形进度条配置主题'} href={'#progress-8'} /><Link title={'仪表盘'} href={'#progress-9'} /><Link title={'仪表盘主题'} href={'#progress-10'} />
+                            </Anchor>
+                        </Col>
+                    </Row>
+                );
+            }
+         }   
+        

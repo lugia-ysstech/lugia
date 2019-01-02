@@ -1,19 +1,21 @@
 {
-  "name": "lugiax-example",
+  "name": "lugia-site",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@lugia/lugia-web": "^1.0.4-5.2",
+    "@lugia/lugia-web": "^1.0.47",
     "@lugia/lugiax": "^1.0.1-3",
-    "@lugia/lugiax-core": "^1.0.1-5",
     "@lugia/lugiax-router": "^1.0.0-1",
-    "@lugia/mega-scripts": "^1.1.1",
+    "@lugia/mega-scripts": "^1.2.0",
+    "highlight.js": "^9.13.1",
     "history": "^4.7.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "styled-components": "3.4.9"
   },
   "scripts": {
+    "lintfix": "eslint --fix ./src",
+    "create": "node ./src/widgets/create.js && npm run lintfix",
     "start": "lugia-scripts start",
     "build": "lugia-scripts build",
     "test": "lugia-scripts test -w",
