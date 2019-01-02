@@ -5,8 +5,7 @@
  *
  */
 import React from 'react';
-import { go, Link } from '@lugia/lugiax-router';
-import { Button, Menu,Navmenu ,Theme} from '@lugia/lugia-web';
+import { Button, Menu, Navmenu, Theme } from '@lugia/lugia-web';
 import '../css/menu.css';
 import { bindTo, connect } from '@lugia/lugiax';
 import nav from './models/nav';

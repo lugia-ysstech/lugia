@@ -6,9 +6,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Widget from '@lugia/lugia-web/dist/consts';
-import { steps, Button, Theme } from '@lugia/lugia-web';
-const Step = steps.Step;
-const Steps = steps.Steps;
+import { Steps, Button, Theme } from '@lugia/lugia-web';
+const Step = Steps.Step;
 const stepsData = [
   {
     title: 'First',
