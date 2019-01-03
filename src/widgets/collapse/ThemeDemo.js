@@ -11,7 +11,7 @@ export default class CheckBoxDemo extends React.Component {
             activeValue: '1',
         };
     }
-    handleChangeActiveValue = (obj: Object) => {
+    handleChangeActiveValue = obj => {
         console.info(obj.newValue);
         this.setState({
             activeValue: obj.newValue,

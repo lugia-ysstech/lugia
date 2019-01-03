@@ -1,6 +1,6 @@
 import React from 'react';
 import {Radio} from '@lugia/lugia-web';
-const RadioGroup = Radio.RadioGroup;
+const RadioGroup = Radio.Group;
 
 const data = [
     { text: 'radio1', value: 'Apple' },
