@@ -5764,7 +5764,7 @@ he@1.2.x:
   resolved "http://registry.npm.taobao.org/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
 
-highlight.js@^9.13.1:
+highlight.js@^9.11.0, highlight.js@^9.13.1:
   version "9.13.1"
   resolved "http://registry.npm.taobao.org/highlight.js/download/highlight.js-9.13.1.tgz#054586d53a6863311168488a0f58d6c505ce641e"
   integrity sha1-BUWG1TpoYzERaEiKD1jWxQXOZB4=
@@ -10011,6 +10011,13 @@ react-error-overlay@^4.0.1:
   version "4.0.1"
   resolved "http://registry.npm.taobao.org/react-error-overlay/download/react-error-overlay-4.0.1.tgz#417addb0814a90f3a7082eacba7cee588d00da89"
   integrity sha1-QXrdsIFKkPOnCC6sunzuWI0A2ok=
+
+react-highlight@^0.12.0:
+  version "0.12.0"
+  resolved "http://registry.npm.taobao.org/react-highlight/download/react-highlight-0.12.0.tgz#34de986a0bfdf228904d0c269b69538d95b35802"
+  integrity sha1-NN6Yagv98iiQTQwmm2lTjZWzWAI=
+  dependencies:
+    highlight.js "^9.11.0"
 
 react-is@^16.3.1, react-is@^16.3.2, react-is@^16.5.2, react-is@^16.6.0, react-is@^16.6.1, react-is@^16.7.0:
   version "16.7.0"
