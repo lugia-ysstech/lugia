@@ -3,7 +3,6 @@ import { createBrowserHistory } from 'history';
 import { createApp, go, render } from '@lugia/lugiax-router';
 import '@lugia/lugia-web/dist/css/global.css';
 import Main from './App';
-import Home from './home';
 
 const history = createBrowserHistory();
 const App = createApp(
