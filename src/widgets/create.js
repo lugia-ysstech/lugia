@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 createRouter();
 
-// main();
+main();
 
 function getPath (folderName) {
   return path.join(__dirname, folderName);
