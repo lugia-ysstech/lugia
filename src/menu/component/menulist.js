@@ -85,9 +85,9 @@ export default class MenuList extends React.Component<any, any> {
 
   render() {
     const config = {
-      [Widget.NavMenu]: {
-        height:'100px;',
-        marginTop:'40px'
+      [Widget.Navmenu]: {
+        width:280,
+        height: '100%',
       },
     };
     const {routerType} = this.state;
