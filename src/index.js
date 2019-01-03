@@ -26,5 +26,5 @@ const App = createApp(
 );
 
 render(() => {
-  return <Home />;
+  return <App />;
 }, 'root');

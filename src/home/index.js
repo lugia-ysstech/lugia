@@ -9,10 +9,17 @@ import { Alert , Theme,Grid } from '@lugia/lugia-web';
 import styled , { keyframes } from 'styled-components';
 
 const { Row, Col } = Grid;
+
+
 const Wrapper = styled.div`
   width:100%;
   min-height:20px;
 `;
+
+const Head = styled.div`
+  height:60px;
+`;
+
 
 const BgImg1 = styled.div`
   background:url("../../public/home/pic1.png") no-repeat;
@@ -67,9 +74,6 @@ const MiddleWrapper = styled.div`
   padding-bottom:500px;
 `;
 
-const Head = styled.div`
-  height:60px;
-`;
 
 
 const ModelOne = styled.div`
@@ -201,9 +205,9 @@ const Line = styled.div`
 `;
 
 const DesignCardBox = styled.div`
+ width:100%;
  margin-top:42px ;
  margin-left:-40px;
- overflow:hidden;
  padding-bottom:20px;
  display: flex;
  justify-content:space-between;
@@ -269,7 +273,7 @@ const SolutionCard = styled.div`
   text-align:center;
   padding: 15px 30px;
   position:absolute;
-  left:20px;
+  left:10px;
   top:285px;
   z-index:1;
   display:flex;
@@ -299,17 +303,6 @@ const ButtonCard = styled.div`
 `;
 
 export default class Pages extends React.Component<any, any> {
-  static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
-    const defCurrent = defProps.current || null;
-    if (!stateProps) {
-      return {
-        current:defCurrent,
-      };
-    }
-    return {
-      current: 'current' in defProps ? defCurrent : stateProps.current,
-    };
-  }
 
 
   render() {
