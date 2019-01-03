@@ -36,7 +36,7 @@ const getEventPropsElement = (arr:Array<string>) => {
 };
 
 const getDefaultValue = (val:any) => {
-  if(val ==='undefined' || val === 'null') return '——';
+  if(val ===undefined || val === null) return '——';
   return val.toString();
 };
 
