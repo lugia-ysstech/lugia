@@ -53,9 +53,9 @@ const isInString = (target, key) => {
 };
 
 const Container = styled.div`
-  padding:42px 0 0;
-  // position:fixed;
-  // top:22px;
+  padding:${props => (props.fixed?'0':'42px 0 0')};
+  position:${props => (props.fixed?'fixed':'relative')};
+  top:0;
 `;
 
 type DefProps={
@@ -114,10 +114,9 @@ export default class MenuList extends React.Component<any, any> {
         height: height || 500,
       },
     };
-    const {routerType} = this.state;
-    // console.log('Router[routerType]',getMenuItems(Router[routerType]));
+    const {routerType,fixed} = this.state;
     return (
-      <Container >
+      <Container fixed={fixed}>
         {
           <Theme config={config}>
             <Navmenu
@@ -141,10 +140,17 @@ export default class MenuList extends React.Component<any, any> {
   };
 
   addWindowListener = () => {
-
     const scrollTop = getScrollTop();
-
-    console.log('scrollTop',scrollTop);
+    const viewHeight = document.body.clientHeight ;
+    let fix = false,height=viewHeight -122;
+    if(scrollTop >= 80){
+      fix = true;
+      height=viewHeight;
+    }
+    this.setState({
+      fixed:fix,
+      height
+    });
   };
 
 }
