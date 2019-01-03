@@ -54,6 +54,8 @@ const isInString = (target, key) => {
 
 const Container = styled.div`
   padding:42px 0 0;
+  // position:fixed;
+  // top:22px;
 `;
 
 type DefProps={
@@ -64,6 +66,19 @@ type DefProps={
 type StateProps={
   currentState:Array<string>
 };
+
+function getScrollTop(): number {
+  let scrollPos;
+  if (window.pageYOffset) {
+    scrollPos = window.pageYOffset;
+  } else if (document.compatMode && document.compatMode != 'BackCompat') {
+    scrollPos = document.documentElement && document.documentElement.scrollTop;
+  } else if (document.body) {
+    scrollPos = document.body.scrollTop;
+  }
+  return scrollPos || 0;
+}
+
 
 export default class MenuList extends React.Component<any, any> {
 
@@ -83,11 +98,20 @@ export default class MenuList extends React.Component<any, any> {
     };
   }
 
+  componentDidMount () {
+    const viewHeight = document.body.clientHeight - 122;
+    this.setState({
+      height: viewHeight
+    });
+    window.addEventListener('scroll', this.addWindowListener);
+  }
+
   render() {
+    const {height} = this.state;
     const config = {
       [Widget.Navmenu]: {
         width:280,
-        height: '100%',
+        height: height || 500,
       },
     };
     const {routerType} = this.state;
@@ -116,5 +140,11 @@ export default class MenuList extends React.Component<any, any> {
     go({ url: urls });
   };
 
+  addWindowListener = () => {
+
+    const scrollTop = getScrollTop();
+
+    console.log('scrollTop',scrollTop);
+  };
 
 }
