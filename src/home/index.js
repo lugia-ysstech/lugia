@@ -7,6 +7,7 @@
 import * as React from 'react';
 import { Alert , Theme,Grid } from '@lugia/lugia-web';
 import styled , { keyframes } from 'styled-components';
+import { go} from '@lugia/lugiax-router';
 
 const { Row, Col } = Grid;
 
@@ -303,8 +304,6 @@ const ButtonCard = styled.div`
 `;
 
 export default class Pages extends React.Component<any, any> {
-
-
   render() {
     return (
       <React.Fragment>
@@ -321,8 +320,8 @@ export default class Pages extends React.Component<any, any> {
                 <H2>BE BORN FOR FINANCE</H2>
                 <Text>Lugia的诞生就是要树立金融行业组件化的标杆。我们不仅仅创造了一套属于金融行业的开源组件设计器，而是将设计、代码，变成一种专属语言，一种跨时代的组件规范。</Text>
                 <ButtonContainer>
-                  <Button active>开始使用</Button>
-                  <Button>设计指南</Button>
+                  <Button active onClick={e => this.linkToUrl('component')}>开始使用</Button>
+                  <Button onClick={e => this.linkToUrl('design')}>设计指南</Button>
                 </ButtonContainer>
               </ModelOne>
               <ModelTwo>
@@ -381,4 +380,24 @@ export default class Pages extends React.Component<any, any> {
       </React.Fragment>
     );
   }
+
+  linkToUrl = target => {
+    let url = null;
+    switch(target){
+      case 'home':
+        url ='/home';
+        break;
+      case 'design':
+        url ='/design';
+        break;
+      case 'component':
+        url ='/component';
+        break;
+      default:
+        break;
+    }
+    url && go({ url });
+
+  };
+
 }
