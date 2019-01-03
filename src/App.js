@@ -5,7 +5,7 @@ import Widget from '@lugia/lugia-web/dist/consts/index';
 import Headers from './nav';
 import Widgets from './widgets';
 const { Row, Col } = Grid;
-const { Header, Content, Footer} = Layout;
+const { Footer} = Layout;
 
 
 export const designRouter = {
@@ -73,20 +73,9 @@ export default () => {
   };
 
   return (
-    <Row>
-        <Col span={0}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
-          {block}
-        </Col>
-        <Col span={24}  xl={{ span: 22 }}  xxl={{ span: 20 }}>
-          <Headers />
+    <React.Fragment>
          {rout}
-          <Footer>{footer}</Footer>
-        </Col>
-        <Col span={0}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
-          {block}
-        </Col>
-    </Row>
-
+    </React.Fragment>
   );
 };
 
