@@ -5,10 +5,9 @@
  */
 import React from 'react';
 import styled from 'styled-components';
-import { timeLine, Theme, Button, Icon, tabs } from '@lugia/lugia-web';
+import { TimeLine, Theme, Button, Icon, tabs } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
-const TimeLine = timeLine.TimeLine;
-const TimeLineItem = timeLine.TimeLineItem;
+const TimeLineItem = TimeLine.TimeLineItem;
 
 const Wrapper = styled.div`
   text-align: left;

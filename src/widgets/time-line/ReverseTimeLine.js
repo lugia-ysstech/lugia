@@ -4,9 +4,8 @@
  *
  */
 import React from 'react';
-import { timeLine, Theme, Button, Icon } from '@lugia/lugia-web';
-const TimeLine = timeLine.TimeLine;
-const TimeLineItem = timeLine.TimeLineItem;
+import { TimeLine, Theme, Button, Icon } from '@lugia/lugia-web';
+const TimeLineItem = TimeLine.TimeLineItem;
 export default class ReverseTimeLine extends React.Component<Object, Object> {
   state = {
     reverse: false
