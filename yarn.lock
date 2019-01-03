@@ -931,10 +931,10 @@
     babel-plugin-transform-dynamic-import "2.1.0"
     babel-plugin-transform-react-remove-prop-types "0.4.20"
 
-"@lugia/lugia-web@^1.0.47":
-  version "1.0.47"
-  resolved "http://192.168.102.79:5001/@lugia/lugia-web/download/@lugia/lugia-web-1.0.47.tgz#62019ea1f0f0f8c9de7fd067db5a522d1d1c1866"
-  integrity sha1-YgGeofDw+Mnef9Bn21pSLR0cGGY=
+"@lugia/lugia-web@^1.0.48":
+  version "1.0.48"
+  resolved "http://192.168.102.79:5001/@lugia/lugia-web/download/@lugia/lugia-web-1.0.48.tgz#12b45a898388f607465d562856febd1738086f9a"
+  integrity sha1-ErRaiYOI9gdGXVYoVv69FzgIb5o=
   dependencies:
     "@lugia/type-utils" "^1.0.4"
     babel-polyfill "6.26.0"
