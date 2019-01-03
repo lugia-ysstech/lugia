@@ -38,8 +38,12 @@ export const Args = styled.div`
   
   
 `;
-
-
+export const Title = styled.span`
+  font-family: '微软雅黑';
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
 // export const EditIcon = styled(Icon)`
 //   // color:${ props => props.mode?'#f8ac30':'#36384c'}
 // `;
