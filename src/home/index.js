@@ -201,10 +201,12 @@ const Line = styled.div`
 `;
 
 const DesignCardBox = styled.div`
-  margin-top:42px ;
-  margin-left:-40px;
-  overflow:hidden;
+ margin-top:42px ;
+ margin-left:-40px;
+ overflow:hidden;
  padding-bottom:20px;
+ display: flex;
+ justify-content:space-between;
 `;
 
 const DesignCard = styled.div`
@@ -213,7 +215,6 @@ const DesignCard = styled.div`
   background: #fff;
   padding: 42px 64px;
   margin-right:106px;
-  float:left;
   display: flex;
   flex-direction: column;
   align-items:center;
@@ -235,7 +236,7 @@ const CardTitle = styled.div`
 `;
 
 const ModelThird = styled.div`
-  width:80%;
+  width:100%;
   padding:226px 60px 0 46% ;
   margin:0 30px ;
   position:relative;
@@ -245,8 +246,9 @@ const ModelThird = styled.div`
 `;
 
 const TextBox = styled.div`
-  // width:50%;
+  width:70%;
   text-align:right;
+  float:right;
 `;
 
 const SquareRight = styled.div`
