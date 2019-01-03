@@ -4,10 +4,9 @@
  *
  */
 import React from 'react';
-import { Theme, tabs } from '@lugia/lugia-web';
+import { Theme, Tabs } from '@lugia/lugia-web';
 
-const TabPane = tabs.TabPane;
-const Tabs = tabs.Tabs;
+const TabPane = Tabs.TabPane;
 export const hasActivityKeyData = [
   {
     title: 1111,
