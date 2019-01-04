@@ -2,7 +2,7 @@ export default {
       '/component/affix':
         {
           value: '/component/affix',
-          text: 'Affix 固钉',
+          text: '固钉',
           exact: true,
           render: async () => {
             return import('../widgets/affix');
@@ -11,7 +11,7 @@ export default {
       '/component/alert':
         {
           value: '/component/alert',
-          text: 'Alert 警告提示',
+          text: '警告提示',
           exact: true,
           render: async () => {
             return import('../widgets/alert');
@@ -20,7 +20,7 @@ export default {
       '/component/amountinput':
         {
           value: '/component/amountinput',
-          text: '金额文本输入框',
+          text: '金额输入框',
           exact: true,
           render: async () => {
             return import('../widgets/amount-input');
@@ -29,7 +29,7 @@ export default {
       '/component/anchor':
         {
           value: '/component/anchor',
-          text: 'Anchor 锚点',
+          text: '锚点',
           exact: true,
           render: async () => {
             return import('../widgets/anchor');
@@ -38,7 +38,7 @@ export default {
       '/component/backtop':
         {
           value: '/component/backtop',
-          text: 'BackTop 回到顶部',
+          text: '回到顶部',
           exact: true,
           render: async () => {
             return import('../widgets/back-top');
@@ -47,7 +47,7 @@ export default {
       '/component/checkbox':
         {
           value: '/component/checkbox',
-          text: 'CheckBox 多选框',
+          text: '多选框',
           exact: true,
           render: async () => {
             return import('../widgets/checkbox');
@@ -56,7 +56,7 @@ export default {
       '/component/collapse':
         {
           value: '/component/collapse',
-          text: 'Collapse 折叠面板',
+          text: '折叠面板',
           exact: true,
           render: async () => {
             return import('../widgets/collapse');
@@ -65,7 +65,7 @@ export default {
       '/component/drawer':
         {
           value: '/component/drawer',
-          text: 'Drawer 抽屉',
+          text: '抽屉',
           exact: true,
           render: async () => {
             return import('../widgets/drawer');
@@ -92,7 +92,7 @@ export default {
       '/component/message':
         {
           value: '/component/message',
-          text: 'Message 全局提示',
+          text: '全局提示',
           exact: true,
           render: async () => {
             return import('../widgets/message');
@@ -101,7 +101,7 @@ export default {
       '/component/modal':
         {
           value: '/component/modal',
-          text: 'Modal 对话框',
+          text: '对话框',
           exact: true,
           render: async () => {
             return import('../widgets/modal');
@@ -110,7 +110,7 @@ export default {
       '/component/notification':
         {
           value: '/component/notification',
-          text: 'Notification 通知提醒框',
+          text: '通知提醒框',
           exact: true,
           render: async () => {
             return import('../widgets/notification');
@@ -125,10 +125,19 @@ export default {
             return import('../widgets/number-input');
           },
         },
+      '/component/pagination':
+        {
+          value: '/component/pagination',
+          text: '分页',
+          exact: true,
+          render: async () => {
+            return import('../widgets/pagination');
+          },
+        },
       '/component/progress':
         {
           value: '/component/progress',
-          text: 'Progress 进度条',
+          text: '进度条',
           exact: true,
           render: async () => {
             return import('../widgets/progress');
@@ -137,7 +146,7 @@ export default {
       '/component/radio':
         {
           value: '/component/radio',
-          text: 'Radio 单选框',
+          text: '单选框',
           exact: true,
           render: async () => {
             return import('../widgets/radio');
@@ -155,7 +164,7 @@ export default {
       '/component/select':
         {
           value: '/component/select',
-          text: 'Select 选择器',
+          text: '选择器',
           exact: true,
           render: async () => {
             return import('../widgets/select');
@@ -179,6 +188,15 @@ export default {
             return import('../widgets/switch');
           },
         },
+      '/component/table':
+        {
+          value: '/component/table',
+          text: '表格',
+          exact: true,
+          render: async () => {
+            return import('../widgets/table');
+          },
+        },
       '/component/tag':
         {
           value: '/component/tag',
@@ -191,7 +209,7 @@ export default {
       '/component/transfer':
         {
           value: '/component/transfer',
-          text: 'Transfer 单选框',
+          text: '穿梭框',
           exact: true,
           render: async () => {
             return import('../widgets/transfer');
@@ -236,7 +254,7 @@ export default {
       '/component/carousel':
         {
           value: '/component/carousel',
-          text: 'Carousel 走马灯',
+          text: '走马灯',
           exact: true,
           render: async () => {
             return import('../widgets/carousel');
@@ -281,7 +299,7 @@ export default {
       '/component/breadcrumb':
         {
           value: '/component/breadcrumb',
-          text: 'Breadcrumb面包屑',
+          text: '面包屑',
           exact: true,
           render: async () => {
             return import('../widgets/breadcrumb');
@@ -290,7 +308,7 @@ export default {
       '/component/button':
         {
           value: '/component/button',
-          text: 'Button 按钮',
+          text: '按钮',
           exact: true,
           render: async () => {
             return import('../widgets/button');
@@ -326,7 +344,7 @@ export default {
       '/component/grid':
         {
           value: '/component/grid',
-          text: 'Grid 栅格',
+          text: '栅格',
           exact: true,
           render: async () => {
             return import('../widgets/grid');
@@ -335,7 +353,7 @@ export default {
       '/component/layout':
         {
           value: '/component/layout',
-          text: 'Layout 布局',
+          text: '布局',
           exact: true,
           render: async () => {
             return import('../widgets/layout');
@@ -353,7 +371,7 @@ export default {
       '/component/skeleton':
         {
           value: '/component/skeleton',
-          text: 'Skeleton 加载占位符',
+          text: '加载占位符',
           exact: true,
           render: async () => {
             return import('../widgets/skeleton');
