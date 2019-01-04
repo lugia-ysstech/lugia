@@ -32,7 +32,7 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.div`
-  height: 60px;
+  height: 80px;
   line-height: 60px;
   align-item:middle;
 `;
