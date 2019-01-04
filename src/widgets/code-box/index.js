@@ -5,12 +5,9 @@
  */
 import * as React from 'react';
 import styled from 'styled-components';
-import {Icon} from '@lugia/lugia-web';
-import hljs from 'highlight.js/lib/highlight';
-import javascript from 'highlight.js/lib/languages/javascript';
-import 'highlight.js/styles/atom-one-light.css';
+import { Icon } from '@lugia/lugia-web';
+import Highlight from 'react-highlight';
 
-hljs.registerLanguage('javascript', javascript);
 
 const Wrap = styled.div`
   box-sizing: border-box;
@@ -79,19 +76,16 @@ const Icons = styled(Icon)`
 `;
 
 export default class extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       visible: false,
       textVisible: false,
     };
   }
-  componentDidMount() {
-    hljs.initHighlightingOnLoad();
-  }
 
-  render() {
-    const { title,desc,demo,code,titleID } = this.props;
+  render () {
+    const { title, desc, demo, code, titleID } = this.props;
     const { visible, textVisible } = this.state;
     return (
       <Wrap>
@@ -100,11 +94,9 @@ export default class extends React.Component {
         <DemoBox>{demo}</DemoBox>
 
         <CodeBox visible={visible}>
-          <pre>
-            <code className="language-jsx">
+            <Highlight className="language-jsx">
               {code}
-            </code>
-          </pre>
+            </Highlight>
         </CodeBox>
 
         <VisibleCode
@@ -120,6 +112,7 @@ export default class extends React.Component {
       </Wrap>
     );
   }
+
   handleClick = () => {
     const { visible } = this.state;
     this.setState({
