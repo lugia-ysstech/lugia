@@ -2,7 +2,6 @@ import React from 'react';
 import { Rate, Theme } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
-import Theme from '../theme';
 const TitleBox = styled.div`
   position: relative;
   padding: 10px;
