@@ -9,7 +9,6 @@ export default class DefaultValueAmountInput extends React.Component<any, any> {
 
   onChange = ({ newValue: value }: any) => {
     this.setState({ value });
-    this.props.onChange({ newValue: value });
   };
 
   render() {
