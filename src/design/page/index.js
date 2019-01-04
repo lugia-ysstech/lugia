@@ -12,7 +12,7 @@ import styled from 'styled-components';
 import Temlpate from '../template/template';
 import data from './document';
 const Container = styled.div` 
-  padding:45px 50px 50px;
+  padding:45px 50px 50px 0;
   width:100%;
 `;
 

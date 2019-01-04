@@ -76,18 +76,19 @@ const BgImg2 = styled.div`
 `;
 
 const BgImg3 = styled.img`
+  width:600px;
   position:absolute;
   left:-180px;
   top:220px;
-  z-index:1;
+  z-index:3;
   
 `;
 
 const BgImg4 = styled.img`
-  position:absolute;
-  left:355px;
-  top:428px;
-  z-index:2;
+  position: absolute;
+  left: 295px;
+  top: 395px;
+  z-index: 6;
   
 `;
 
@@ -98,7 +99,7 @@ const BgImg5 = styled.div`
   height:600px;
   left: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: 2;
 `;
 
 const MiddleWrapper = styled.div`
@@ -109,7 +110,7 @@ const MiddleWrapper = styled.div`
 
 
 const ModelOne = styled.div`
-  width:50%;
+  width:52%;
   padding:180px 0 0 48px;
   margin:0 30px;
 `;
@@ -153,10 +154,11 @@ const Button = styled.div.attrs({
   width:122px;
   height:40px;
   text-align:center;
-  line-height:40px;
+  line-height:38px;
   border-radius: 40px;
   cursor: pointer;
   user-select: none;
+  font-size:18px;
   background:${props => props.bgcolor};
   color:${props => props.color};
   border:${props => props.border};
@@ -174,8 +176,7 @@ const Button = styled.div.attrs({
 
 const ModelTwo = styled.div`
   width:100%;
-  padding:388px 0 0;
-  margin:0 30px ;
+  margin:388px 0 0;
   position:relative;
 
 `;
@@ -195,7 +196,7 @@ const Design = styled.div`
   font-size: 30px;
   color: #000033;
   transform-origin:0;
-  padding:0 0 0 20px;
+  padding:0 0 0 50px;
   opacity:0;
   animation: ${slideToRight} 1s 1s cubic-bezier(.57,.12,.35,.59) forwards;
 `;
@@ -211,8 +212,8 @@ const slideDown = keyframes`
 
 const Square = styled.div`
   position:absolute;
-  left:-20px;
-  top:382px;
+  left:10px;
+  top:-4px;
   width:22px;
   background:#4d63ff;
   border-radius:22px;
@@ -224,7 +225,7 @@ const spendLine = keyframes`
     height:0px;
   }
   100% {
-    height:880px;
+    height:980px;
   }
 `;
 
@@ -236,13 +237,31 @@ const Line = styled.div`
   animation: ${spendLine} 1s ease forwards;
 `;
 
+const LineRow = styled.div`
+  width:100%;
+  height:2px;
+  border-bottom:1px solid #e8e8e8;
+  position:absolute;
+  top:55%;
+  opacity:0;
+  animation: ${slideToRight} 1s 1s cubic-bezier(.57,.12,.35,.59) forwards;
+`;
+
+const LineRight = styled.div`
+  position:absolute;
+  right:5%;
+  width:1px;
+  background:#e8e8e8;
+  animation: ${spendLine} 1s ease forwards;
+`;
+
+
 const DesignCardBox = styled.div`
  width:100%;
  margin-top:42px ;
- margin-left:-40px;
- padding-bottom:20px;
  display: flex;
  justify-content:space-between;
+ position:relative;
 `;
 
 const DesignCard = styled.div`
@@ -250,7 +269,6 @@ const DesignCard = styled.div`
   border-radius: 10px;
   background: #fff;
   padding: 42px 64px;
-  margin-right:106px;
   display: flex;
   flex-direction: column;
   align-items:center;
@@ -272,8 +290,8 @@ const CardTitle = styled.div`
 `;
 
 const ModelThird = styled.div`
-  width:100%;
-  padding:226px 60px 0 46% ;
+  width:95%;
+  padding:226px 60px 0 50% ;
   margin:0 30px ;
   position:relative;
   min-height:800px;
@@ -282,7 +300,7 @@ const ModelThird = styled.div`
 `;
 
 const TextBox = styled.div`
-  width:70%;
+  width:100%;
   text-align:right;
   float:right;
 `;
@@ -305,9 +323,9 @@ const SolutionCard = styled.div`
   text-align:center;
   padding: 15px 30px;
   position:absolute;
-  left:10px;
-  top:285px;
-  z-index:1;
+  left:-40px;
+  top:260px;
+  z-index:5;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -398,6 +416,7 @@ export default class Pages extends React.Component<any, any> {
               <ModelTwo>
                 <Square />
                 <Design>设计指南</Design>
+                <LineRow/>
                 <DesignCardBox>
                   <DesignCard>
                     <CardImg src="../../public/home/sense.png" />
@@ -415,10 +434,12 @@ export default class Pages extends React.Component<any, any> {
                     <Button active>开始使用</Button>
                   </DesignCard>
                 </DesignCardBox>
+                <LineRight/>
               </ModelTwo>
               <ModelThird>
                 <BgImg3 src="../../public/home/pic3.png" />
                 <BgImg4 src="../../public/home/pic4.png" />
+
                 <TextBox>
                   <SquareRight/>
                   <SolutionCard>

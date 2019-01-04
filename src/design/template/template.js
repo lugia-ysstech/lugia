@@ -5,22 +5,25 @@
  * @flow
  */
 import * as React from 'react';
-import { Alert ,  Theme } from '@lugia/lugia-web';
+import {Theme ,Anchor } from '@lugia/lugia-web';
 // import { Widget} from '@lugia/lugia-web/dist/consts/index';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import styled from 'styled-components';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 
 const { themeColor } = colorsFunc();
+const { Link } = Anchor;
 
 const Title = styled.div.attrs({
-    size:props => (props.level?'22px':'18px')
+  size:props => (props.level?'24px':'18px'),
+  margin:props => (props.level?'0 0 26px':'0 0 40px')
 })` 
   font-size:${props => props.size};
   color:#0f1333;
   line-height:1;
-  font-weight:500;
-  margin:30px 0 20px;
+  font-weight:600;
+  // padding:0 0 0 50px;
+  margin:${props => props.margin};
 `;
 
 const Titleline = styled.span` 
@@ -38,19 +41,27 @@ const Desc = styled.span`
   color:#999;
   font-size:18px; 
   line-height:1;
+  font-weight:normal;
 `;
 
 const Content = styled.div` 
-  color:#36384d;
-  font-size:14px;
-  line-height:1.5;
+  color:${props => (props.color || '#36384d')};
+  font-size:${props => (props.size || '14px')};
+  font-weight:${props => (props.weight || 'normal')};
+  line-height:1.8;
+  margin:${props => (props.margin || '0')};
 `;
+
+
 const ContentContainer = styled.div` 
-  
+   padding:0 0 0 50px;
 `;
 
 const FlexContainer = styled.div` 
- display:flex;
+  display:flex;
+  margin-bottom:40px;
+  padding:0 50px 0 0;
+  justify-content:space-between;
 `;
 
 
@@ -59,7 +70,7 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img.attrs({
-  width:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'550px':'340px'),
+  width:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'550px':'436px'),
   margin:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'20px 0':'0 50px'),
 })` 
   margin:${props => props.margin};
@@ -68,16 +79,20 @@ const Image = styled.img.attrs({
 `;
 
 const ImageDesc = styled.div.attrs({
-  padding:props => (props.imgPosition === 'right' || props.imgPosition === 'left' ?'10px 50px 0 0':''),
-  align:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'center':'right')
+  padding:props => (props.imgPosition === 'right' || props.imgPosition === 'left' ?'10px 50px 10px 0':''),
+  align:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'center':'right'),
 })` 
   color:#666;
   font-size:12px;
   line-height:1;
   text-align:${props => props.align};
-  margin:${props => props.imgPosition}
   padding:${props => props.padding};
 `;
+
+const AnchorContainer = styled.div` 
+  width:15%;
+`;
+
 
 type defProps ={
   dataSource?:Object,
@@ -99,12 +114,13 @@ const getImgElement = (data:Object,imgPosition:string) => {
   </ImageContainer>;
 };
 
-const getContentElement = (data:Object,titleElement) => {
+const getContentElement = (data:Object,titleElement,level:boolean) => {
   return  <ContentContainer>
-    {titleElement}
+    {level && titleElement}
     {data.map(item => {
+      const {text,size,color,margin} = item;
       return <React.Fragment>
-        <Content>{item}</Content>
+        <Content size={size} color={color} margin={margin} >{text}</Content>
       </React.Fragment>;
     })}
   </ContentContainer>;
@@ -116,27 +132,27 @@ const getElementWithPosition = (data:Array<Object>,level?:Boolean) => {
     {
       data.map((item,index) => {
         let childElement ;
-        const titleElement = <Title level={level}> {level?'':<Titleline/>} {item.title} <Desc>{item.desc}</Desc> </Title>;
+        const titleElement = item.title && <Title id={'link-'+index} name={'link-'+index} level={level}> {level?'':<Titleline/>} {item.title} <Desc>{item.desc}</Desc> </Title>;
         const {imgPosition} = item;
         switch (imgPosition) {
           case 'left':
             childElement =
               <FlexContainer>
                 {getImgElement(item.img,imgPosition)}
-                {getContentElement(item.content,titleElement)}
+                {getContentElement(item.content,titleElement,level)}
               </FlexContainer>;
             break;
           case 'right':
             childElement =
               <FlexContainer>
-                {getContentElement(item.content,titleElement)}
+                {getContentElement(item.content,titleElement,level)}
                 {getImgElement(item.img,imgPosition)}
               </FlexContainer>;
             break;
           case 'bottom':
             childElement =
               <React.Fragment>
-                {getContentElement(item.content,titleElement)}
+                {getContentElement(item.content,titleElement,level)}
                 {getImgElement(item.img,imgPosition)}
               </React.Fragment>;
             break;
@@ -144,16 +160,30 @@ const getElementWithPosition = (data:Array<Object>,level?:Boolean) => {
             childElement =
               <React.Fragment>
                 {getImgElement(item.img,imgPosition)}
-                {getContentElement(item.content,titleElement)}
+                {getContentElement(item.content,titleElement,level)}
               </React.Fragment>;
         }
         return <React.Fragment>
+          {!level && <ContentContainer>{titleElement}</ContentContainer> }
           {childElement}
         </React.Fragment>;
       })
     }
 
   </React.Fragment>;
+};
+
+const getAnchorElement = (data:Object) => {
+  return <AnchorContainer>
+    <Anchor slideType="circle">
+      {data.map((item,index) => {
+        const {title} = item;
+        return <React.Fragment>
+          <Link title={title} href={'#link-'+index} />
+        </React.Fragment>;
+      })}
+    </Anchor>
+  </AnchorContainer>;
 };
 
 export default class Template extends React.Component<defProps, stateProps> {
@@ -169,10 +199,18 @@ export default class Template extends React.Component<defProps, stateProps> {
     const element = getElementWithPosition(children);
 
     const {title,content,imgPosition,img,desc} = dataSource;
-    const  OutSideElement = getElementWithPosition([{title,content,imgPosition,img,desc}],true);
+    const  outSideElement = getElementWithPosition([{title,content,imgPosition,img,desc}],true);
+
+    const anchor = getAnchorElement(children);
     return <React.Fragment>
-      {OutSideElement}
-      {element}
+      <FlexContainer>
+        <ContentContainer>
+          {outSideElement}
+          {element}
+        </ContentContainer>
+        {anchor}
+      </FlexContainer>
+
     </React.Fragment>;
 
   }
