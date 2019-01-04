@@ -1,10 +1,3 @@
-
-/**
- *
- * create by liangguodong
- *
- */
-
 module.exports ={
   BasePopover: {
     title: '气泡弹出框基本用法',

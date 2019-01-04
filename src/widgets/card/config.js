@@ -1,9 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
-
 module.exports = {
   BaseCard: {
     title: '卡片基本用法',

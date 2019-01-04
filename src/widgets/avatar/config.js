@@ -1,9 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
-
 module.exports ={
 
   ShapeAvatar: {

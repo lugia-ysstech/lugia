@@ -1,9 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
-
 module.exports = {
   BasePopconfirm: {
     title: '气泡确认框基本用法',

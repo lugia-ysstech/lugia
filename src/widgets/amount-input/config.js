@@ -1,9 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
-
 module.exports ={
   BaseAmountInput: {
     title: '金额输入框基础用法',

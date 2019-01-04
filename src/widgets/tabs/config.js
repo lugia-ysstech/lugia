@@ -1,9 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
-
 module.exports = {
   BaseTabs: {
     title: '基本使用',

@@ -1,8 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import { AmountInput,Button } from '@lugia/lugia-web';
 

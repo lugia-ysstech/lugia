@@ -1,8 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import { Input,Icon } from '@lugia/lugia-web';
 import styled from 'styled-components';
