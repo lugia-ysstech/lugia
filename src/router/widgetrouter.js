@@ -62,6 +62,15 @@ export default {
             return import('../widgets/collapse');
           },
         },
+      '/component/datepicker':
+        {
+          value: '/component/datepicker',
+          text: '日期选择器',
+          exact: true,
+          render: async () => {
+            return import('../widgets/date-picker');
+          },
+        },
       '/component/drawer':
         {
           value: '/component/drawer',
@@ -87,6 +96,15 @@ export default {
           exact: true,
           render: async () => {
             return import('../widgets/input');
+          },
+        },
+      '/component/menu':
+        {
+          value: '/component/menu',
+          text: '菜单',
+          exact: true,
+          render: async () => {
+            return import('../widgets/menu');
           },
         },
       '/component/message':
@@ -321,6 +339,15 @@ export default {
           exact: true,
           render: async () => {
             return import('../widgets/icon');
+          },
+        },
+      '/component/cascader':
+        {
+          value: '/component/cascader',
+          text: '级联选择',
+          exact: true,
+          render: async () => {
+            return import('../widgets/cascader');
           },
         },
       '/component/divider':
