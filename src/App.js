@@ -1,11 +1,11 @@
 import React from 'react';
 import {createRoute} from '@lugia/lugiax-router';
-import {Layout, Theme} from '@lugia/lugia-web';
+import {Grid, Layout, Theme} from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import Headers from './nav';
 import Widgets from './widgets';
-
-const { Header, Content, Footer} = Layout;
+const { Row, Col } = Grid;
+const { Footer} = Layout;
 
 
 export const designRouter = {
@@ -51,18 +51,15 @@ const footer = (
   </div>
 );
 
-const header = (
-  <div style={{ height: '60px', lineHeight: '60px', textAlign: 'center', background: '#381be5' }}>
-    Header
+const block = (
+  <div style={{ height: '60px'}}>
   </div>
 );
 
 export default () => {
   const layoutView = {
-    [Widget.Layout]: {
-    },
     [Widget.Content]: {
-      width:900,
+      width:'100%',
       padding: {
         top: 20,
         bottom: 20,
@@ -73,25 +70,15 @@ export default () => {
       bordeLeftColor:'#cccccc',
       bordeLeftStyle:'solid'
     },
-    [Widget.Aside]: {
-      width:250,
-      backgroundColor:'transparent'
-    },
   };
+
   return (
-    <div style={styles}>
-
-        <Header><Headers /></Header>
-        <Theme config={layoutView}>
-          <Layout direction="row">
-            <Content>{rout}</Content>
-          </Layout>
-        </Theme>
-        <Footer>{footer}</Footer>
-
-    </div>
+    <React.Fragment>
+         {rout}
+    </React.Fragment>
   );
 };
+
 
 const styles = {
   width: '1140px',
