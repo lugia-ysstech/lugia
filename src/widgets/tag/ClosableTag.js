@@ -12,8 +12,19 @@ const TagWrap = styled.div`
   margin: 5px;
 `;
 
-export default class DefaultTag extends React.Component<any, any> {
+export default class ClosableTag extends React.Component<any, any> {
   render() {
+    const config1 = {
+      [Widget.Tag]: {
+        color: '#ff5588'
+      }
+    };
+
+    const config2 = {
+      [Widget.Tag]: {
+        color: '#486fff'
+      }
+    };
 
     return [
       <div>
@@ -25,7 +36,7 @@ export default class DefaultTag extends React.Component<any, any> {
               }
             }}
           >
-            <Tag>标签1</Tag>
+            <Tag closable>标签1</Tag>
           </Theme>
         </TagWrap>
 
@@ -37,55 +48,14 @@ export default class DefaultTag extends React.Component<any, any> {
               }
             }}
           >
-            <Tag type={'primary'}>标签2</Tag>
-          </Theme>
-        </TagWrap>
-
-        <TagWrap>
-          <Tag type={'basic'}>标签3</Tag>
-        </TagWrap>
-
-        <TagWrap>
-          <Theme
-            config={{
-              [Widget.Tag]: {
-                color: '#f22735'
-              }
-            }}
-          >
-            <Tag type={'presets'}>标签4</Tag>
-          </Theme>
-        </TagWrap>
-      </div>,
-      <div>
-        <TagWrap>
-          <Theme
-            config={{
-              [Widget.Tag]: {
-                color: '#4d63ff'
-              }
-            }}
-          >
-            <Tag shape={'round'}>标签1</Tag>
-          </Theme>
-        </TagWrap>
-
-        <TagWrap>
-          <Theme
-            config={{
-              [Widget.Tag]: {
-                color: '#e8e8e8'
-              }
-            }}
-          >
-            <Tag type={'primary'} shape={'round'}>
+            <Tag type={'primary'} closable>
               标签2
             </Tag>
           </Theme>
         </TagWrap>
 
         <TagWrap>
-          <Tag type={'basic'} shape={'round'}>
+          <Tag type={'basic'} closable>
             标签3
           </Tag>
         </TagWrap>
@@ -98,7 +68,56 @@ export default class DefaultTag extends React.Component<any, any> {
               }
             }}
           >
-            <Tag type={'presets'} shape={'round'}>
+            <Tag type={'presets'} closable>
+              标签4
+            </Tag>
+          </Theme>
+        </TagWrap>
+      </div>,
+      <div>
+        <TagWrap>
+          <Theme
+            config={{
+              [Widget.Tag]: {
+                color: '#4d63ff'
+              }
+            }}
+          >
+            <Tag shape={'round'} closable>
+              标签1
+            </Tag>
+          </Theme>
+        </TagWrap>
+
+        <TagWrap>
+          <Theme
+            config={{
+              [Widget.Tag]: {
+                color: '#e8e8e8'
+              }
+            }}
+          >
+            <Tag type={'primary'} shape={'round'} closable>
+              标签2
+            </Tag>
+          </Theme>
+        </TagWrap>
+
+        <TagWrap>
+          <Tag type={'basic'} shape={'round'} closable>
+            标签3
+          </Tag>
+        </TagWrap>
+
+        <TagWrap>
+          <Theme
+            config={{
+              [Widget.Tag]: {
+                color: '#f22735'
+              }
+            }}
+          >
+            <Tag type={'presets'} shape={'round'} closable>
               标签4
             </Tag>
           </Theme>
