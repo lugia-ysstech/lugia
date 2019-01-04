@@ -31,8 +31,6 @@ const getMenuConfig = data => {
   return arr;
 };
 
-
-
 const routerConfig = {
   '/component': {
     exact: true,
@@ -53,7 +51,6 @@ const routerConfig = {
   }
 };
 
-
 const menuConfig = [
   { value: 'Lugia Design of React', text: 'Lugia Design of React' },
   { value: '快速上手', text: '快速上手' },
@@ -65,6 +62,7 @@ const menuConfig = [
     children: getMenuConfig(widgets),
   },
 ];
+
 
 const designRouter = {
   '/design': {
@@ -87,16 +85,36 @@ const designRouter = {
     value: '/design/introduce',
     text: '简介',
   },
-  '/design/proximity': {
+  '/design/core': {
     render: () => import('../design/page'),
-    value: '/design/proximity',
+    value: '/design/core',
     text: '设计核心观',
   },
   '/design/alignment': {
     render: () => import('../design/page'),
     value: '/design/alignment',
-    text: '设计核心观',
+    text: '对齐',
   },
+  '/design/repeat': {
+    render: () => import('../design/page'),
+    value: '/design/repeat',
+    text: '重复',
+  },
+  '/design/proximity': {
+    render: () => import('../design/page'),
+    value: '/design/proximity',
+    text: '组织性',
+  },
+  '/design/hierarchy': {
+    render: () => import('../design/page'),
+    value: '/design/hierarchy',
+    text: '层级性',
+  },
+    '/design/feedback': {
+  render: () => import('../design/page'),
+    value: '/design/feedback',
+    text: '反馈',
+},
 };
 
 
@@ -110,7 +128,7 @@ const designConfig = [
         text: '简介',
       },
       {
-        value: '/design/proximity',
+        value: '/design/core',
         text: '设计核心观',
       },
     ],
@@ -128,8 +146,16 @@ const designConfig = [
         text: '重复',
       },
       {
-        value: '/design/organization',
+        value: '/design/proximity',
         text: '组织性',
+      },
+      {
+        value: '/design/hierarchy',
+        text: '层级性',
+      },
+      {
+        value: '/design/feedback',
+        text: '反馈',
       },
     ],
   },

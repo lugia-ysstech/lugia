@@ -18,14 +18,14 @@ const DesignDocument ={
 
     ]
   },
-  proximity:{
+  core:{
     title:'知性',
-    content:['知性一词，原本是德国古典哲学常用的术语。康德认为知性是介于感性和理性之间的一种认知能力。对于设计来说，知性可以同时定义为“形式上的优美和极致”和“科学上的精确和简洁”，我们相信知性的设计，实现了二者的完美契合。'],
+    content:[{text:'知性一词，原本是德国古典哲学常用的术语。康德认为知性是介于感性和理性之间的一种认知能力。对于设计来说，知性可以同时定义为“形式上的优美和极致”和“科学上的精确和简洁”，我们相信知性的设计，实现了二者的完美契合。'}],
     children:[
       {
         title:'形式上的优美和极致',
         content:['优秀设计的经典要素之一是形式的简约，以简驭繁。','Lugia对于界面设计，就是用最少的屏幕与器件来完成任务。与此同时我们把简约适用于行为，在视觉设计中给予用户最简单的工具，即运用最少的视觉区别明确传达想要表达的意思。','优秀的设计让人感觉是一个整体，各部分平衡和谐。Lugia设计形式上遵循自然，利用人类对自然的感知，提炼自然界中的客观规律并运用到界面设计中，从而创造出有层次、有艺术感的设计语言。'],
-        img:[{url:'../public/design-core-img1.png',desc:'图片1描述'}],
+        img:[{url:'../public/design-core-img1.png'}],
         imgPosition:'top',
       },
       {
@@ -39,25 +39,267 @@ const DesignDocument ={
   alignment:{
     title:'对齐',
     desc:'Alignment',
-    img:[{url:'../public/design-core-img2.png'}],
+    img:[{url:'../public/align/align_img.png'}],
     imgPosition:'left',
     content:[
-      '人类发展历史中，整齐是人类的心理的一种信号。例如生活中：把到处都是的衣服挂好，把书桌整理好，把桌椅对齐摆好。这事我们通过视觉感受反馈给人脑的一种信号，生活如此，荧幕上也亦如此。',
-      '在人类知觉过程中人们往往倾向于使知觉对象的直线继续成为直线，使曲线继续成为曲线。在页面设计中，将原色进行整齐对齐，既符合用户的认知特性，也能引导视觉流向。让用户更流畅地接收信息-摘自：“格式塔学派”中的连续性（law of Contunuity）',
+      {text:'人类发展历史中，整齐是人类的心理的一种信号。例如生活中：把到处都是的衣服挂好，把书桌整理好，把桌椅对齐摆好。这事我们通过视觉感受反馈给人脑的一种信号，生活如此，荧幕上也亦如此。'},
+      {text:'在人类知觉过程中人们往往倾向于使知觉对象的直线继续成为直线，使曲线继续成为曲线。在页面设计中，将原色进行整齐对齐，既符合用户的认知特性，也能引导视觉流向。让用户更流畅地接收信息-摘自：“格式塔学派”中的连续性（law of Contunuity）',size:'12px',color:'#999',margin:'10px 0 0 '},
     ],
     children:[
       {
         title:'段落对齐',
-        content:['在文章段落遇到较短、较散时，需要确定一个统一的视觉起点。在整段文字保持左、中、右三个对齐原则。'],
-        img:[{url:'../public/design-core-img1.png',desc:'段落对齐示例'}],
+        content:[{text:'在文章段落遇到较短、较散时，需要确定一个统一的视觉起点。在整段文字保持左、中、右三个对齐原则。'}],
+        img:[{url:'../public/align/align_img1.jpg',desc:'段落对齐示例'}],
         imgPosition:'right',
       },
       {
-        title:'科学上的精确和简洁',
-        content:['用户可能会因为悦目而又兴趣尝试使用，但是使用的体验如果不好，他一样会离开。 lugia解决了产品的可用性、易用性问题，让用户在使用这些产品的过程中感觉更加方便容易，有效完成任务，达成预期目标。因此Lugia致力于消除阻碍用户使用的障碍，如歧义的文字，迷惑性的按钮，出错的页面，违背用户习惯的操作。','Lugia对用户群体有清晰的了解和划分，能做到业务使用的共同感。我们把一个复杂信息架构产品，分角色，划场景，可以让用户对产品目的了解更深刻，全局把握更强，精简页面层级，提升用户的使用效率和舒适度。'],
-        img:[{url:'../public/design-core-img2.png'}],
-        imgPosition:'top',
+        title:'布局形状对齐',
+        content:[{text:'为了统一整体布局摆放，增强布局可视性，在整个数据表中，所有布局形块保持左、右对齐方式。'}],
+        img:[{url:'../public/align/align_img2.jpg',desc:'布局形状对齐示例'}],
+        imgPosition:'right',
+      },
+      {
+        title:'层级关系对齐',
+        content:[{text:'在操作列表数据时候，会出现很多的层级关系，为了避免层级混乱，要在层级级别以退字符并左对齐形式，进行区分。'}],
+        img:[{url:'../public/align/align_img3.jpg',desc:'层级关系对齐示例'}],
+        imgPosition:'right',
+      },
+      {
+        title:'表单类对齐',
+        content:[
+          {text:'1.在表单类，保持语句一致，字体在左侧以“冒号”统一右对齐。'},
+          {text:'2.数据表内文案，可根据数据需求，进行左、中、右对齐。'},
+          {text:'3.input框根据实际需求，保持左、右对齐。'},
+          {text:'顶对齐：',size:'12px',color:'#999',weight:'600',margin:'20px 0 0'},
+          {text:'适用于简易表单，让用户快速预览完成。',size:'12px',color:'#ccc'},
+          {text:'左对齐：',size:'12px',color:'#999',weight:'600'},
+          {text:'适用于填写布局复杂、有陌生数据、需谨填写；。',size:'12px',color:'#ccc'},
+          {text:'右对齐：',size:'12px',color:'#999',weight:'600'},
+          {text:'适用于稍复杂的表单。网页高度有限的情况。',size:'12px',color:'#ccc'},
+        ],
+        img:[{url:'../public/align/align_img4.jpg',desc:'表单类对齐'}],
+        imgPosition:'right',
+      },
+      {
+        title:'数据类对齐',
+        content:[
+          {text:'在后台数据系统中：',weight:'600'},
+          {text:'数据时最直观反应页面概况的方式。所以在数据设计中，要遵循信息明确，易查看，易适用原则。'},
+          {text:'文字类：',weight:'600'},
+          {text:'采用文字左对齐；数字用右对齐；表头遵循数字对齐的原则。且不能用居中对齐。'},
+          {text:'数字类：',weight:'600'},
+          {text:'采用无衬线等高表列数字（高度一样，垂直对齐）。'},
+        ],
+        img:[{url:'../public/align/align_img5.jpg',desc:'文字类对齐示例'},{url:'../public/align/align_img6.jpg',desc:'数字类对齐示例'}],
+        imgPosition:'right',
+      },
+
+    ]
+  },
+  repeat:{
+    title:'重复',
+    content:[{text:'在页面规划中，不免有很多（功能、级别、种类）相同的元素，在这些相同元素中采用重复的设计原理，减少用户的学习时间。让用户单次记忆即可知道这些元素的使用环境。'}],
+    desc:'Repeat',
+    img:[{url:'../public/repeat/repeat_img.png'}],
+    imgPosition:'left',
+    children:[
+      {
+        title:'图表重复',
+        content:[{text:'相同级别的图表类型，采用形状重复的原则，保持数据可查看性。'}],
+        img:[{url:'../public/repeat/repeat_img1.jpg',desc:'在需要数据对照时候，第一个使用饼图，则其他同级别数据也使用饼图'}],
+        imgPosition:'right',
+      },
+      {
+        title:'ICONS重复',
+        content:[{text:'在相同的数据下，icons元素保持统一。'}],
+        img:[{url:'../public/repeat/repeat_img2.jpg',desc:'例如：使用搜索icons时，无论当前页面成为几级页面，搜索icons保持统一。'}],
+        imgPosition:'right',
+      },
+      {
+        title:'文案格式重复',
+        content:[{text:'为了方便阅读，同级别文案段落，以重复形式展示。'}],
+        img:[{url:'../public/repeat/repeat_img3.jpg',desc:'文案格式重复示例'}],
+        imgPosition:'right',
+      },
+      {
+        title:'形状重复',
+        content:[{text:'同级显示区域，线框保持形状重复，以让内容保持统一。'}],
+        img:[{url:'../public/repeat/repeat_img4.jpg',desc:'形状重复示例'}],
+        imgPosition:'right',
       }
+    ]
+  },
+  proximity:{
+    title:'组织性',
+    content:[{text:'根据格式塔（Gestalt）心理学：当对象离得太近的时候，意识会认为它们是相关的。因此物体之间的相对距离会影响我们感知它们是否以及如何在一起。'}],
+    desc:'Proximity',
+    img:[{url:'../public/proximity/proximity_img.png'}],
+    imgPosition:'left',
+    children:[
+      {
+        title:'间距组织',
+        content:[{text:'【布局】'},{text:'纵向上通过8px（小型间距）、16px（中型间距）、24px（大型间距）三种规格来划分信息层次，在三种规格不适用的情况下，可以通过加减8px的倍数来拉开信息层次'},{text:'横向上为了适用不同尺寸的屏幕，采用栅格布局来排布组件，从而保证布局的灵活性。'}],
+        img:[{url:'../public/proximity/proximity_img1.jpg'}],
+        imgPosition:'right',
+      },
+      {
+        content:[{text:'【组件】'},{text:'在各个组件内部，元素的横纵向间距也应该有所区分'}],
+        img:[{url:'../public/proximity/proximity_img2.jpg',desc:'复选框排列'}],
+        imgPosition:'right',
+      },
+      {
+        title:'形式组织',
+        content:[{text:'【形状】'},{text:'如果其它因素相同，那么相似的物体看起来归属于一组。因此在同一组织的信息中，文字以及图标大小都应统一。'}],
+        img:[{url:'../public/proximity/proximity_img3.jpg',desc:'形式组织示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[{text:'【颜色】'},{text:'在形状大小相同时，颜色的统一也会影响信息的组织性，并且颜色权重大于形状。'}],
+        img:[{url:'../public/proximity/proximity_img4.jpg',desc:'颜色组织示例'}],
+        imgPosition:'right',
+      },
+      {
+        title:'视觉分割',
+        content:[{text:'【元素】'},{text:'增加元素来拉开信息层次。'}],
+        img:[{url:'../public/proximity/proximity_img5.jpg',desc:'元素分割示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[{text:'【卡片式】'},{text:'信息卡片化，卡片边界就是天然的分割线。'}],
+        img:[{url:'../public/proximity/proximity_img6.jpg',desc:'卡片式示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'【留白】'},
+          {text:'使界面更吸引人、更简洁。更有呼吸感，让内容主体更突出。'},
+          {text:'【颜色界定】'},
+          {text:'利用颜色的不同来界定界面范围。'}
+        ],
+
+      },
+
+    ]
+  },
+  hierarchy:{
+    title:'层级性',
+    content:[{text:'在不同元素之间建立一种层次结构，可以帮助用户更好的理解接受界面信息，这种层次性可以通过增强元素之间的对比来实现。'}],
+    desc:'Hierarchy',
+    img:[{url:'../public/hierarchy/hierarchy_img.png'}],
+    imgPosition:'left',
+    children:[
+      {
+        title:'大小区分',
+        content:[{text:'通过调整区块和元素排版、大小等方式来突出层次感，提高页面的易读性和节奏感。'}],
+        img:[{url:'../public/hierarchy/hierarchy_img1.jpg',desc:'在整体布局中，通过卡片大小的变化，来区分信息传达的重点。'}],
+        imgPosition:'right',
+      },
+      {
+        title:'加强对比',
+        content:[{text:'加强对比效果，强化重点项或者弱化其他项，让用户能在操作上快速判断出重要信息。'},{text:'注：在一些需要用户慎重决策的场景中，也可以通过适当加入对比，使得用户可以第一时间接收分辨信息。',size:'12px',color:'#999',margin:'10px 0 0 '}],
+        img:[{url:'../public/hierarchy/hierarchy_img2.jpg',desc:'例如，表格筛选时，筛选选中项就要区分其他选项'}],
+        imgPosition:'right',
+      },
+      {
+        title:'状态区分',
+        content:[
+          {text:'下拉状态，示意用户下步操作。'},
+          {text:'【静态区分】'},
+          {text:'通过对元素形状、颜色的改变等方法来实现状态层级的区分。'},
+          {text:'【动态区分】',margin:'10px 0 0'},
+          {text:'可以通过加入动效效果，以便用户更好的了解自己处于何种状态。'}
+          ],
+        img:[{url:'../public/hierarchy/hierarchy_img3.jpg',desc:'静态下，用不同颜色点区分信息状态；光标悬停时，该项出现'}],
+        imgPosition:'right',
+      },
+
+    ]
+  },
+  feedback:{
+    title:'反馈',
+    content:[{text:'在用户与界面发生交互行为时，页面要给予用户即使的反馈。避免让使用者进行没有必要的思考。以及让使用者有明确的方向感。'},
+      {text:'方向感：让用户无须思考就能得到一下信息：“我在页面的什么位置，这个页面上的重要信息是什么。我可以随时找回刚才的数据，我明确下一步要做什么。”',size:'12px',color:'#999',margin:'10px 0 0 '}
+    ],
+    desc:'Feedback',
+    img:[{url:'../public/feedback/feedback_img.png'}],
+    imgPosition:'left',
+    children:[
+      {
+        title:'Button',
+        content:[
+          {text:'1.如果某个操作非常重要，就应该把它放在界面中，并实时可见。'},
+          {text:'2.当用户与Button发生交互行为，button要给予相应的反馈。'},
+          {text:'3.每个页面仅使用一种主要按钮。不能同时使用多个，除非有一个很好的理由。比如：强调某一种功能。'},
+          {text:'常规状态：设计要点，常规状态下的按钮，务必要看起来也像个按钮。',size:'12px',color:'#999',margin:'10px 0 0 '},
+          {text:'焦点状态：提供一个感觉良好的视觉反馈。可以尝试一些视觉愉悦的状态切换动效。按下状态：可以加一些有实质用途的动效，同时达到令人愉悦的效果。',size:'12px',color:'#999'},
+          {text:'不激活状态：分两种：直接隐藏。或以不可点形式展示。各有利弊，按需选择。',size:'12px',color:'#999'},
+          ],
+        img:[{url:'../public/feedback/feedback_img1.jpg'}],
+        imgPosition:'right',
+      },
+      {
+        title:'弹窗',
+        content:[
+          {text:'1.当用户与软件发生行为时，部分可视区域可用弹窗形式给予反馈，在需要弹窗提示交互行为时候，应在设计上减轻弹窗比例。如果页面内容多到需要滚动，则改为跳转。'},
+          {text:'2.弹窗的关闭方式应该是多元的，而不仅仅是右上角的关闭。比如：点击任意弹窗外空间，都可进行关闭。'},
+          {text:'3.弹窗里不可有链接，不可进行页面跳转。'}
+          ],
+        img:[{url:'../public/feedback/feedback_img2.jpg',desc:'点击任意弹窗外空间，都可进行关闭。'}],
+        imgPosition:'right',
+      },
+      {
+        title:'可视区域 ≠ 可点击区域',
+        content:[
+          {text:'在使用Table时，文字链的点击范围受到文字长短影响，可以设置整个单元格为热区，以便用户触发。'},
+          {text:'当需要增强按钮的响应性时，可以通过增加用户点击热区的范围，而不是增大按钮形状，从而增强响应性，又不缺失美感。'},
+        ],
+        img:[{url:'../public/feedback/feedback_img3.jpg',desc:'增加热区示例'}],
+        imgPosition:'right',
+      },
+      {
+        title:'Tooltip（文字提示）',
+        content:[
+          {text:'提示文字很少时。如果一个按钮、标签、icon没什么必要为其写上说明文字，只需要简短说明一下即可。那么tooltip合适。'},
+          {text:'只用于提供辅助文字。不可用于必要文字、主要任务。如果该段文字是必须要有的，那直接写上去，别让用户可哪找。'},
+          {text:'谨慎使用在极少使用的功能上。为了不打断主要用户操作流程。也以防用的频率太少了，用户会忘记咋回事。'},
+        ],
+        img:[{url:'../public/feedback/feedback_img4.jpg',desc:'增加热区示例'}],
+        imgPosition:'right',
+      },
+      {
+        title:'表格反馈',
+        content:[
+          {text:'增加对象：在列表/表格中，新增了一个对象。在新增对象后，有几秒的高亮提示，告知用户这是新增项。'},
+          {text:'新增一条对象时，该字段“高亮”告知用户该新增项，几秒后高亮消失。',size:'12px',color:'#999',margin:'10px 0 0'},
+        ],
+        img:[{url:'../public/feedback/feedback_img5.jpg',desc:'对象添加示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'删除对象：在列表/表格中，删除对象同时有几秒的过渡效果，给用户接受信息删除的反馈时间。'},
+          {text:'删除一条对象，以从左到右擦出动画删除该字段。',size:'12px',color:'#999',margin:'10px 0 0'},
+        ],
+        img:[{url:'../public/feedback/feedback_img6.jpg',desc:'对象删除示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'更改对象：在列表/表格中，更改了一个对象的同时出现了高亮提示，表明该对象发生了修改。'},
+          {text:'在用户点击更改字段时，该字段给予显示框提示，更改完成后，给予数据几秒钟高亮显示，点击任意地点可确认更改项。',size:'12px',color:'#999',margin:'10px 0 0'},
+        ],
+        img:[{url:'../public/feedback/feedback_img7.jpg',desc:'对象更改示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'呼出对象：点击页面中元素，呼出一个新对象。'},
+          {text:'呼出地方多以弹窗样式展示。',size:'12px',color:'#999',margin:'10px 0 0'},
+        ],
+        img:[{url:'../public/feedback/feedback_img8.jpg',desc:'呼出对象示例'}],
+        imgPosition:'right',
+      },
+
     ]
   },
 };

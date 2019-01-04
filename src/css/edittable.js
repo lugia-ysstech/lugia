@@ -8,7 +8,6 @@
  */
 
 import styled from 'styled-components';
-// import Icon from '@lugia/lugia-web';
 
 export const Table = styled.table`
   border-top: 1px solid #e8e8e8;
@@ -38,10 +37,10 @@ export const Args = styled.div`
   
   
 `;
-export const Title = styled.span`
+export const Title = styled.div`
   font-family: '微软雅黑';
-  font-size: 14px;
-  margin-top: 20px;
+  font-size: 18px;
+  margin-top: 30px;
   margin-bottom: 20px;
 `;
 // export const EditIcon = styled(Icon)`
