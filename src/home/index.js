@@ -5,9 +5,13 @@
  * @flow
  */
 import * as React from 'react';
-import { Alert , Theme,Grid } from '@lugia/lugia-web';
+import { Alert , Theme,Grid,Input ,Icon} from '@lugia/lugia-web';
 import styled , { keyframes } from 'styled-components';
-import { go} from '@lugia/lugiax-router';
+import {go} from '@lugia/lugiax-router';
+import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
+import Widget from '@lugia/lugia-web/dist/consts/index';
+
+const { themeColor } = colorsFunc();
 
 const { Row, Col } = Grid;
 
@@ -19,8 +23,35 @@ const Wrapper = styled.div`
 
 const Head = styled.div`
   height:60px;
+  line-height:60px;
 `;
 
+const HeadRight = styled.div`
+  float:right;
+  display:flex;
+  align-items:center;
+  margin-left
+`;
+
+const Logo = styled.img`
+  margin:10px 12px 0 -60px;
+  height:60%;
+  float:left;
+`;
+
+const Language = styled.span`
+  margin:0 10px 0 0;
+  color:#999;
+  
+`;
+
+const ThemeColor = styled.span`
+  background:${themeColor};
+  width:16px;
+  height:16px;
+  border-radius:5px;
+  
+`;
 
 const BgImg1 = styled.div`
   background:url("../../public/home/pic1.png") no-repeat;
@@ -303,8 +334,35 @@ const ButtonCard = styled.div`
   }
 `;
 
-export default class Pages extends React.Component<any, any> {
+class SearchIcon extends React.Component<any> {
+  static displayName = Widget.SearchIcon;
+
   render() {
+    return <Icon iconClass="lugia-icon-financial_search" key="refresh" {...this.props} />;
+  }
+}
+
+export default class Pages extends React.Component<any, any> {
+
+  static getDerivedStateFromProps(defProps: any, stateProps: any) {
+
+    if (!stateProps) {
+      return {
+        value:defProps.value || '在lugia中搜索',
+      };
+    }
+    return {
+      current: 'current' in defProps ? defProps.value : stateProps.current,
+    };
+  }
+
+  render() {
+    const InputStyle = {
+      [Widget.Input]: {
+        borderSize:{top:0,right:0,bottom:1,left:0},
+        borderColor:'#ccc',
+      },
+    };
     return (
       <React.Fragment>
         <Row>
@@ -314,7 +372,20 @@ export default class Pages extends React.Component<any, any> {
           <Col span={14} >
             <MiddleWrapper>
               <Line />
-              <Head> </Head>
+              <Head>
+                <Logo src="../../../public/lugia-logo.png" alt=""/>
+
+                <Theme config={InputStyle}>
+                  <Input prefix={<SearchIcon />} value={this.state.value}   />
+                </Theme>
+
+                <HeadRight>
+                  <Language>English</Language>
+                  <Language>|</Language>
+                  <ThemeColor/>
+                </HeadRight>
+
+              </Head>
               <ModelOne>
                 <H1>LUGIA DESIGN</H1>
                 <H2>BE BORN FOR FINANCE</H2>
@@ -381,7 +452,7 @@ export default class Pages extends React.Component<any, any> {
     );
   }
 
-  linkToUrl = target => {
+  linkToUrl = (target:string) => {
     let url = null;
     switch(target){
       case 'home':
