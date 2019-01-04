@@ -1,8 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import { Switch, Theme } from '@lugia/lugia-web';
 export default class InverseSwitch extends React.Component<any, any> {

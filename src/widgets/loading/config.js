@@ -1,9 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
-
 module.exports ={
   BaseLoad: {
     title: '基本用法',

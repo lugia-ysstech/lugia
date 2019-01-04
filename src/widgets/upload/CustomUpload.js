@@ -1,5 +1,5 @@
-import React from "react";
-import { Upload, Theme } from "@lugia/lugia-web";
+import React from 'react';
+import { Upload, Theme } from '@lugia/lugia-web';
 
 class UploadDemo extends React.Component<any, any> {
   constructor(props: Object) {
@@ -8,16 +8,16 @@ class UploadDemo extends React.Component<any, any> {
 
   render() {
     const defaultProps4 = {
-      listType: "picture",
-      inputId: "upload4"
+      listType: 'picture',
+      inputId: 'upload4'
     };
     const defaultProps9 = {
-      listType: "area",
-      inputId: "upload6"
+      listType: 'area',
+      inputId: 'upload6'
     };
     const defaultProps7 = {
-      listType: "default",
-      inputId: "upload"
+      listType: 'default',
+      inputId: 'upload'
     };
     return (
       <div>

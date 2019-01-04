@@ -1,9 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
-
 module.exports ={
   BaseTooltip: {
     title: '提示气泡框基本用法',

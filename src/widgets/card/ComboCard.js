@@ -1,8 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import styled from 'styled-components';
 import { Card, Theme } from '@lugia/lugia-web';

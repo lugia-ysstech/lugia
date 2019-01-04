@@ -1,11 +1,5 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import { TimeLine, Theme, Button, Icon, tabs } from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
 const TimeLineItem = TimeLine.TimeLineItem;
 const Wrapper = styled.div`

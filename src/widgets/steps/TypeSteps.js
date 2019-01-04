@@ -1,8 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
