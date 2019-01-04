@@ -53,7 +53,9 @@ const isInString = (target, key) => {
 };
 
 const Container = styled.div`
-  padding:42px 0 0;
+  padding:${props => (props.fixed?'0':'42px 0 0')};
+  position:${props => (props.fixed?'fixed':'relative')};
+  top:0;
 `;
 
 type DefProps={
@@ -64,6 +66,19 @@ type DefProps={
 type StateProps={
   currentState:Array<string>
 };
+
+function getScrollTop(): number {
+  let scrollPos;
+  if (window.pageYOffset) {
+    scrollPos = window.pageYOffset;
+  } else if (document.compatMode && document.compatMode != 'BackCompat') {
+    scrollPos = document.documentElement && document.documentElement.scrollTop;
+  } else if (document.body) {
+    scrollPos = document.body.scrollTop;
+  }
+  return scrollPos || 0;
+}
+
 
 export default class MenuList extends React.Component<any, any> {
 
@@ -83,17 +98,25 @@ export default class MenuList extends React.Component<any, any> {
     };
   }
 
+  componentDidMount () {
+    const viewHeight = document.body.clientHeight - 122;
+    this.setState({
+      height: viewHeight
+    });
+    window.addEventListener('scroll', this.addWindowListener);
+  }
+
   render() {
+    const {height} = this.state;
     const config = {
-      [Widget.NavMenu]: {
-        height:'100px;',
-        marginTop:'40px'
+      [Widget.Navmenu]: {
+        width:280,
+        height: height || 500,
       },
     };
-    const {routerType} = this.state;
-    // console.log('Router[routerType]',getMenuItems(Router[routerType]));
+    const {routerType,fixed} = this.state;
     return (
-      <Container >
+      <Container fixed={fixed}>
         {
           <Theme config={config}>
             <Navmenu
@@ -116,5 +139,18 @@ export default class MenuList extends React.Component<any, any> {
     go({ url: urls });
   };
 
+  addWindowListener = () => {
+    const scrollTop = getScrollTop();
+    const viewHeight = document.body.clientHeight ;
+    let fix = false,height=viewHeight -122;
+    if(scrollTop >= 80){
+      fix = true;
+      height=viewHeight;
+    }
+    this.setState({
+      fixed:fix,
+      height
+    });
+  };
 
 }
