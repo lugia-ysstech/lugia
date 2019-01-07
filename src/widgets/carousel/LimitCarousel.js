@@ -57,7 +57,7 @@ export default class CarouselLimtDemo extends React.Component<any, any> {
   };
 
   render() {
-    const view = { [Widget.Carousel]: { width: 700, height: 350 } };
+    const view = { [Widget.Carousel]: { width: 500, height: 250 } };
     return (
       <Theme config={view}>
         <Carousel
