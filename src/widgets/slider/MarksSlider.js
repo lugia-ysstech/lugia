@@ -1,11 +1,5 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import { Slider, Theme } from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts';
 export default class MarksSlider extends React.Component<any, any> {
   onchange = v => {
   };

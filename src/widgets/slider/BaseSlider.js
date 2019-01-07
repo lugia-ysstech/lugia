@@ -1,10 +1,4 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
-import styled from 'styled-components';
 import { Slider, Theme } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
 export default class BaseSlider extends React.Component<any, any> {

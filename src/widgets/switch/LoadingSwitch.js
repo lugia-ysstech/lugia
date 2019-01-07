@@ -1,8 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import { Switch } from '@lugia/lugia-web';
 export default class BaseSwitch extends React.Component<any, any> {

@@ -1,8 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
 module.exports = {
   BaseNumberInput: {
     title: '数字输入框基本用法',

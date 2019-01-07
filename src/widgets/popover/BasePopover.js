@@ -1,8 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import { Popover, Theme, Button } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';

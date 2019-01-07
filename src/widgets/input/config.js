@@ -1,9 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
-
 module.exports ={
   BaseInput: {
     title: '输入框基本用法',

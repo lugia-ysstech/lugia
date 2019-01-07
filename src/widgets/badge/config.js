@@ -1,9 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
-
 module.exports = {
   BaseBadge: {
     title: '徽标基本用法',

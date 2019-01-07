@@ -1,10 +1,5 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
-// import { AmountInput } from '@lugia/lugia-web';
+import { AmountInput } from '@lugia/lugia-web';
 
 export default class BaseAmountInput extends React.Component<any, any> {
   constructor(props: any) {
@@ -17,7 +12,6 @@ export default class BaseAmountInput extends React.Component<any, any> {
   };
 
   render() {
-    return '1111111';
-  //  return <AmountInput value={this.state.value} onChange={this.onChange} />;
+   return <AmountInput value={this.state.value} onChange={this.onChange} />;
   }
 }

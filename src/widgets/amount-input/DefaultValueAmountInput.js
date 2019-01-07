@@ -1,8 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import { AmountInput } from '@lugia/lugia-web';
 
@@ -14,7 +9,6 @@ export default class DefaultValueAmountInput extends React.Component<any, any> {
 
   onChange = ({ newValue: value }: any) => {
     this.setState({ value });
-    this.props.onChange({ newValue: value });
   };
 
   render() {
