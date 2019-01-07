@@ -224,6 +224,15 @@ export default {
             return import('../widgets/tag');
           },
         },
+      '/component/timepicker':
+        {
+          value: '/component/timepicker',
+          text: '时间选择器',
+          exact: true,
+          render: async () => {
+            return import('../widgets/time-picker');
+          },
+        },
       '/component/transfer':
         {
           value: '/component/transfer',
@@ -233,6 +242,24 @@ export default {
             return import('../widgets/transfer');
           },
         },
+      '/component/tree':
+        {
+          value: '/component/tree',
+          text: '树形控件',
+          exact: true,
+          render: async () => {
+            return import('../widgets/tree');
+          },
+        },
+      '/component/treeselect':
+        {
+          value: '/component/treeselect',
+          text: '树形选择控件',
+          exact: true,
+          render: async () => {
+            return import('../widgets/tree-select');
+          },
+        },
       '/component/upload':
         {
           value: '/component/upload',
@@ -240,6 +267,24 @@ export default {
           exact: true,
           render: async () => {
             return import('../widgets/upload');
+          },
+        },
+      '/component/autocomplete':
+        {
+          value: '/component/autocomplete',
+          text: '自动完成',
+          exact: true,
+          render: async () => {
+            return import('../widgets/auto-complete');
+          },
+        },
+      '/component/cascader':
+        {
+          value: '/component/cascader',
+          text: '级联选择',
+          exact: true,
+          render: async () => {
+            return import('../widgets/cascader');
           },
         },
       '/component/avatar':
@@ -341,15 +386,6 @@ export default {
             return import('../widgets/icon');
           },
         },
-      '/component/cascader':
-        {
-          value: '/component/cascader',
-          text: '级联选择',
-          exact: true,
-          render: async () => {
-            return import('../widgets/cascader');
-          },
-        },
       '/component/divider':
         {
           value: '/component/divider',
@@ -386,6 +422,24 @@ export default {
             return import('../widgets/layout');
           },
         },
+      '/component/navmenu':
+        {
+          value: '/component/navmenu',
+          text: '导航菜单',
+          exact: true,
+          render: async () => {
+            return import('../widgets/navmenu');
+          },
+        },
+      '/component/steps':
+        {
+          value: '/component/steps',
+          text: '步骤条',
+          exact: true,
+          render: async () => {
+            return import('../widgets/steps');
+          },
+        },
       '/component/popconfirm':
         {
           value: '/component/popconfirm',
@@ -402,14 +456,5 @@ export default {
           exact: true,
           render: async () => {
             return import('../widgets/skeleton');
-          },
-        },
-      '/component/steps':
-        {
-          value: '/component/steps',
-          text: '步骤条',
-          exact: true,
-          render: async () => {
-            return import('../widgets/steps');
           },
         } };
