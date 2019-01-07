@@ -13,13 +13,13 @@ module.exports = {
     desc: '多选的Tree,可通过igronSelectField指定禁选的标识符',
     path: './DefaultMutlipleTree'
   },
-  InlineSingleTree: {
+  InlineDataSingleTree: {
     title: '嵌套数据的单选Tree',
     desc:
       '通过指定translateTreeData：true,组件内部将嵌套数据自动转换成Tree型展开数据,可通过disabled指定禁选的项。注意需要指定valueField和displayField',
     path: './InlineSingleTree'
   },
-  InlineMutlipleTree: {
+  InlineDataMutlipleTree: {
     title: '嵌套数据的多选Tree',
     desc:
       '通过指定translateTreeData：true,组件内部将嵌套数据自动转换成Tree型展开数据,可通过disabled指定禁选的项,通过mutliple生成多选Tree。注意需要指定valueField和displayField',
