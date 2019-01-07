@@ -33,7 +33,7 @@ class MyTag extends React.Component<any, any> {
   }
 
   onClick = (e, checked) => {
-    this.setState({ checked: !checked });
+    this.setState({ checked });
   };
 }
 
