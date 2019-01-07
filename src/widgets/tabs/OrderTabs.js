@@ -1,8 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import { Theme, Tabs } from '@lugia/lugia-web';
 

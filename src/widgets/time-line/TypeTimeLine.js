@@ -1,8 +1,4 @@
-/**
- *
- * create by liangguodong
- *
- */
+
 import React from 'react';
 import { TimeLine, Theme, Button, Icon, tabs } from '@lugia/lugia-web';
 import styled from 'styled-components';

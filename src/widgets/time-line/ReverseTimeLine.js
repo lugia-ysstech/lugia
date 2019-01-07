@@ -1,8 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import { TimeLine, Theme, Button, Icon } from '@lugia/lugia-web';
 const TimeLineItem = TimeLine.TimeLineItem;

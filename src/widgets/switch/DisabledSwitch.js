@@ -1,10 +1,4 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
-import styled from 'styled-components';
 import { Switch, Button } from '@lugia/lugia-web';
 export default class DisabledSwitch extends React.Component {
   state = {

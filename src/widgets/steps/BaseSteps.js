@@ -1,8 +1,3 @@
-/**
- *
- * create by liangguodong
- *
- */
 import React from 'react';
 import styled from 'styled-components';
 import { Steps, Button, Theme } from '@lugia/lugia-web';
