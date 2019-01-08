@@ -344,6 +344,8 @@ const ButtonCard = styled.div`
   background: #fff;
   color: #4d63ff;
   font-size:18px;
+  position:absolute;
+  bottom:-20px;
   &:hover{
     background: #faf9fe;
   }
@@ -407,10 +409,10 @@ export default class Pages extends React.Component<any, any> {
               <ModelOne>
                 <H1>LUGIA DESIGN</H1>
                 <H2>BE BORN FOR FINANCE</H2>
-                <Text>Lugia的诞生就是要树立金融行业组件化的标杆。我们不仅仅创造了一套属于金融行业的开源组件设计器，而是将设计、代码，变成一种专属语言，一种跨时代的组件规范。</Text>
+                <Text>Lugia 的诞生就是要树立金融行业大前端解决方案的标杆。我们提供的不仅仅是设计规范、开源组件库、可视化开发套件......而是将设计、开发、工程，有机高效的演变为一种适应多端、多层的前端设计语言。Lugia 的目标是降低开发成本，提升开发质量，为前端开发人员赋能，让用户体验 知性。</Text>
                 <ButtonContainer>
-                  <Button active onClick={e => this.linkToUrl('component')}>开始使用</Button>
-                  <Button onClick={e => this.linkToUrl('design')}>设计指南</Button>
+                  <Button active onClick={e => this.linkToUrl('/component/affix')}>开始使用</Button>
+                  <Button onClick={e => this.linkToUrl('/design/introduce')}>设计指南</Button>
                 </ButtonContainer>
               </ModelOne>
               <ModelTwo>
@@ -421,17 +423,17 @@ export default class Pages extends React.Component<any, any> {
                   <DesignCard>
                     <CardImg src="../../public/home/sense.png" />
                     <CardTitle>设计价值观</CardTitle>
-                    <Button active>开始使用</Button>
+                    <Button active onClick={e => this.linkToUrl('/design/core')}>开始使用</Button>
                   </DesignCard>
                   <DesignCard>
                     <CardImg src="../../public/home/design.png" />
                     <CardTitle>设计原则</CardTitle>
-                    <Button active>开始使用</Button>
+                    <Button active  onClick={e => this.linkToUrl('/design/alignment')}>开始使用</Button>
                   </DesignCard>
                   <DesignCard>
                     <CardImg src="../../public/home/view.png" />
                     <CardTitle>视觉原则</CardTitle>
-                    <Button active>开始使用</Button>
+                    <Button active  onClick={e => this.linkToUrl('/design/layout')}>开始使用</Button>
                   </DesignCard>
                 </DesignCardBox>
                 <LineRight/>
@@ -443,18 +445,17 @@ export default class Pages extends React.Component<any, any> {
                 <TextBox>
                   <SquareRight/>
                   <SolutionCard>
-                    <H2 color="#fff">BE BORN FOR FINANCE</H2>
-                    <Text color="#fff">Lugia的诞生就是要树立金融行业组件化的标杆。我们不仅仅创造了一套属于金融行业的开源组件设计器，而是将设计、代码，变成一种专属语言，一种跨时代的组件规范。</Text>
-                    <ButtonCard>开始使用</ButtonCard>
+                    <H2 color="#fff">Lugia Design</H2>
+                    <Text color="#fff">大道至简的设计规范。对于设计来说，知性 可以同时定义为 “ 形式上的优美和极致 ” 和 “ 科学上的精确和简洁 ”，我们相信知性的设计，实现了二者的完美契合。</Text>
+                    <ButtonCard onClick={e => this.linkToUrl('/design/introduce')}>开始使用</ButtonCard>
                   </SolutionCard>
                   <Design>解决方案</Design>
-                  <H2>BORN FOR FINANCE</H2>
-                  <Text>Lugia的诞生就是要树立金融行业组件化的标杆。我们不仅仅创造了一套属于金融行业的开源组件设计器，而是将设计、代码，变成一种专属语言，一种跨时代的组件规范。</Text>
-                  <H2>FOR FINANCE</H2>
-                  <Text>Lugia的诞生就是要树立金融行业组件化的标杆。我们不仅仅创造了一套属于金融行业的开源组件设计器，而是将设计、代码，变成一种专属语言，一种跨时代的组件规范。</Text>
-                  <H2>BE BORN</H2>
-                  <Text>Lugia的诞生就是要树立金融行业组件化的标杆。我们不仅仅创造了一套属于金融行业的开源组件设计器，而是将设计、代码，变成一种专属语言，一种跨时代的组件规范。</Text>
-
+                  <H2>Lugia Web</H2>
+                  <Text>一套基于 Lugia Design 的高品质 React 组件库，满足金融行业高性能组件的需求，适用于 Web 端。</Text>
+                  <H2>LugiaX</H2>
+                  <Text>一个基于 Redux 的前端状态管理工具。提供简单高效的全局状态管理方案、 基于 async/await 的异步操作、快捷的双向绑定。LugiaX 内置路由库，对 react-router 做了轻量封装，使用起来更加简单明了。</Text>
+                  <H2 >Lugia Mega</H2>
+                  <Text >标准、高效、开箱即用的前端可视化开发工具。Lugia Mega 是一个无需环境搭建、快速上手的跨平台桌面应用（Mac 和 Windows）。为开发人员提供可视化、屏蔽底层、元信息式的开发方式。帮助设计师、产品经理快速设计原型，成果可以直接让开发人员使用。Lugia Mega 贯穿了整个项目的生命周期，让您极速构建前端应用、轻松管理所有项目。</Text>
 
                 </TextBox>
 
@@ -474,21 +475,8 @@ export default class Pages extends React.Component<any, any> {
   }
 
   linkToUrl = (target:string) => {
-    let url = null;
-    switch(target){
-      case 'home':
-        url ='/home';
-        break;
-      case 'design':
-        url ='/design/introduce';
-        break;
-      case 'component':
-        url ='/component/affix';
-        break;
-      default:
-        break;
-    }
-    url && go({ url });
+
+    target && go({ url:target });
 
   };
 
