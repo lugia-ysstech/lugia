@@ -1,5 +1,5 @@
 import React from 'react';
-import { Theme, Tabs } from '@lugia/lugia-web';
+import { Theme, Tabs,Button } from '@lugia/lugia-web';
 
 const TabPane = Tabs.TabPane;
 export const hasActivityKeyData = [
@@ -70,7 +70,7 @@ export default class ChangeTabs extends React.Component<any, any> {
     hasActivityKeyData[0] = {
       title: 1000000000000,
       content: 1000000000,
-      activityKey: '-1'
+      activityKey: '0'
     };
     this.setState({ data: hasActivityKeyData });
   };
@@ -99,9 +99,9 @@ export default class ChangeTabs extends React.Component<any, any> {
     const { data } = this.state;
     return (
       <div>
-        <button style={{ width: 200 }} onClick={this.change}>
-          {'点击修改data内容'}
-        </button>
+        <Button style={{ width: 200 }} onClick={this.change} type={'primary'}>
+          {'点击修改标签内容'}
+        </Button>
         <Tabs
           tabType={'card'}
           pagedType={'single'}

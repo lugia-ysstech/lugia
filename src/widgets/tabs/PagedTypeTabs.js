@@ -8,7 +8,6 @@ const TabPane = Tabs.TabPane;
 const Wrapper = styled.div`
   text-align: left;
   margin-top: 50px;
-  margin-left: 100px;
   display: inline-block;
 `;
 export const hasActivityKeyData = [
@@ -84,7 +83,6 @@ export default class PagedTypeTabs extends React.Component<any, any> {
     return (
       <Theme config={view}>
           <Wrapper>
-            <p>翻单个标签页</p>
             <Tabs
               tabType={'card'}
               pagedType={'single'}
@@ -95,7 +93,6 @@ export default class PagedTypeTabs extends React.Component<any, any> {
           </Wrapper>
           <br />
           <Wrapper>
-            <p>翻整页</p>
             <Tabs
               tabType={'card'}
               pagedType={'page'}

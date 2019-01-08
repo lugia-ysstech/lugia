@@ -8,7 +8,6 @@ const TabPane = Tabs.TabPane;
 const Wrapper = styled.div`
   text-align: left;
   margin-top: 50px;
-  margin-left: 100px;
   display: inline-block;
 `;
 export const hasActivityKeyData = [
@@ -95,7 +94,6 @@ export default class TypeTabs extends React.Component<any, any> {
         <Wrapper>
           <br />
           <Wrapper>
-            <p>卡片风格</p>
             <Tabs
               tabType={'card'}
               pagedType={'single'}
@@ -109,7 +107,6 @@ export default class TypeTabs extends React.Component<any, any> {
           <br />
           <br />
           <Wrapper>
-            <p>窗口风格</p>
             <Tabs
               tabType={'window'}
               pagedType={'page'}
