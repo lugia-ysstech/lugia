@@ -4,7 +4,7 @@
  *
  */
 import * as React from 'react';
-import { Tree, Theme } from '@lugia/lugia-web';
+import { TreeSelect, Theme } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
 
 const data = [
@@ -64,26 +64,17 @@ const data = [
   }
 ];
 
-export default class InlineDataMutlipleTree extends React.Component<
-  Object,
-  Object
-> {
+export default class InlineDataTreeSelect extends React.Component<any, any> {
   render() {
-    const config = {
-      [Widget.Tree]: {
-        height: 520,
-        width: 300
-      }
-    };
+    const config = { [Widget.TreeSelect]: { width: 300, height: 300 } };
     return (
       <Theme config={config}>
-        <Tree
-          expandAll
+        <TreeSelect
           data={data}
+          onlySelectLeaf
+          expandAll
           mutliple
           translateTreeData
-          valueField={'value'}
-          displayField={'text'}
         />
       </Theme>
     );
