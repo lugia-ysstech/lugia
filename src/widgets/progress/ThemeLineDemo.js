@@ -16,6 +16,7 @@ export default class ProgressDemo extends React.Component {
                 <Theme config={view}>
                     <Progress percent={30} showType="inside" />
                 </Theme>
+                <br/>
                 <Theme config={view}>
                     <Progress percent={30} />
                 </Theme>
