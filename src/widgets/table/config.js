@@ -12,7 +12,7 @@ module.exports =  {
         desc: '表头只支持列合并，使用 column 里的 colSpan 进行设置。 表格支持行/列合并，使用 render 里的单元格属性 colSpan 或者 rowSpan 设值为 0 时，设置的表格不会渲染。'
     },
     TreeDemo: {
-          title: '展示树形数据的 Table，当数据中有 children 字段时会自动展示为树形表格',
-          desc: 'Radio 不可用'
+        title: '树形数据的 Table',
+        desc: '展示树形数据的 Table，当数据中有 children 字段时会自动展示为树形表格'
     }
 };
