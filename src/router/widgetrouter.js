@@ -35,6 +35,15 @@ export default {
             return import('../widgets/anchor');
           },
         },
+      '/component/autocomplete':
+        {
+          value: '/component/autocomplete',
+          text: '自动完成',
+          exact: true,
+          render: async () => {
+            return import('../widgets/auto-complete');
+          },
+        },
       '/component/backtop':
         {
           value: '/component/backtop',
@@ -276,15 +285,6 @@ export default {
           exact: true,
           render: async () => {
             return import('../widgets/upload');
-          },
-        },
-      '/component/autocomplete':
-        {
-          value: '/component/autocomplete',
-          text: '自动完成',
-          exact: true,
-          render: async () => {
-            return import('../widgets/auto-complete');
           },
         },
       '/component/avatar':
