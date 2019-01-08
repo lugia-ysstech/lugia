@@ -23,6 +23,7 @@ export default class ProgressDemo extends React.Component {
         return (
             <div>
                 <Progress type="circle" percent={this.state.percent} />
+                <br/>
                 <Button onClick={() => this.handleClick('add')}>+10</Button>&nbsp;
                 <Button onClick={() => this.handleClick('sub')}>-10</Button>
             </div>
