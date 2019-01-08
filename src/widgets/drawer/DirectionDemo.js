@@ -1,7 +1,11 @@
 import React from 'react';
 import {Drawer, Radio, Button} from '@lugia/lugia-web';
+import styled from 'styled-components';
 
 const RadioGroup = Radio.Group;
+const RadioBox = styled.div`
+  margin-bottom: 10px;
+`;
 
 export default class DrawerDemo extends React.Component {
     constructor() {
@@ -30,12 +34,14 @@ export default class DrawerDemo extends React.Component {
         const {visible, radioValue} = this.state;
         return (
             <div>
-                <RadioGroup value={radioValue} onChange={this.handleChange}>
-                    <Radio value="right">right</Radio>
-                    <Radio value="left">left</Radio>
-                    <Radio value="top">top</Radio>
-                    <Radio value="bottom">bottom</Radio>
-                </RadioGroup>
+                <RadioBox>
+                    <RadioGroup value={radioValue} onChange={this.handleChange}>
+                        <Radio value="right">right</Radio>
+                        <Radio value="left">left</Radio>
+                        <Radio value="top">top</Radio>
+                        <Radio value="bottom">bottom</Radio>
+                    </RadioGroup>
+                </RadioBox>
                 <Button type="primary" onClick={this.openDrawer}>
                     click me
                 </Button>
