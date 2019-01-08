@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {Table} from '@lugia/lugia-web';
-console.info(Table);
 
 const columns = [{
   title: 'Name', dataIndex: 'name', key:'name', width: 100,
