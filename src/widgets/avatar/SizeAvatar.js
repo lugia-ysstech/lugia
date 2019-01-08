@@ -5,7 +5,6 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   float: left;
-  margin-left: 50px;
   text-align: center;
   padding: 20px;
 `;

@@ -3,7 +3,6 @@ import { Card, Theme } from '@lugia/lugia-web';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  margin-left: 50px;
   margin-top: 50px;
   display: inline-block;
 `;

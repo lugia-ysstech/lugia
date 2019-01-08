@@ -6,7 +6,7 @@ export default class DisabledNumberInput extends React.Component<any, any> {
     disabled: true
   };
 
-  toggle = () => {
+  click = () => {
     this.setState({
       disabled: !this.state.disabled
     });
@@ -15,16 +15,17 @@ export default class DisabledNumberInput extends React.Component<any, any> {
   render() {
     return (
       <div>
+        <div>
+          <Button onClick={this.click} type="primary">
+            点击切换状态
+          </Button>
+        </div>
         <NumberInput
           min={1}
           max={10}
           disabled={this.state.disabled}
           defaultValue={5}
         />
-        <p />
-        <Button onClick={this.toggle} type="primary">
-          点击切换
-        </Button>
       </div>
     );
   }

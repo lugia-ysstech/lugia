@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   float: left;
-  margin-left: 50px;
 `;
 
 export default class TransformInput extends React.Component<any, any> {
@@ -20,7 +19,6 @@ export default class TransformInput extends React.Component<any, any> {
     };
     return (
       <Wrapper>
-        <p>formatter input</p>
         <Input
           placeholder={'请填写金额'}
           formatter={formatter}

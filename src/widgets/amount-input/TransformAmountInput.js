@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   float: left;
-  margin-left: 50px;
 `;
 
 export default class TransformAmountInput extends React.Component<any, any> {
@@ -14,9 +13,7 @@ export default class TransformAmountInput extends React.Component<any, any> {
   render() {
     return(
       <Wrapper>
-        <p> transform:true </p>
         <AmountInput transform={true} />
-        <p> transform:false </p>
         <AmountInput transform={false} />
       </Wrapper>);
   }

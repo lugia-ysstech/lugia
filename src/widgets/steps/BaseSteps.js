@@ -21,7 +21,6 @@ export default class BaseSteps extends React.Component<any, any> {
     return (
       <Theme config={view}>
         <Wrapper>
-          <p>基本使用,五种状态</p>
           <Steps orientation="horizontal" size={'normal'}>
             <Step
               title="1111"
@@ -47,7 +46,6 @@ export default class BaseSteps extends React.Component<any, any> {
           </Steps>
         </Wrapper>
         <Wrapper>
-          <p>带有描述 居中显示</p>
           <Steps orientation="horizontal" size={'normal'} desAlign={'center'}>
             <Step
               title="1111"
