@@ -38,16 +38,6 @@ export const designRouter = {
     render: () => import('./access/NotAccess')
   }
 
-  NotFound: {
-    render: async () => {
-      return  () => <Redirect
-        to={{
-          pathname: '/home',
-        }}
-      />;
-    },
-  }
-
 };
 const rout = createRoute(designRouter);
 
