@@ -366,7 +366,7 @@ export default class Pages extends React.Component<any, any> {
 
     if (!stateProps) {
       return {
-        value:defProps.value || '在lugia中搜索',
+
       };
     }
     return {
@@ -394,7 +394,7 @@ export default class Pages extends React.Component<any, any> {
                 <Logo src="../../../public/lugia-logo.png" alt=""/>
 
                 <Theme config={InputStyle}>
-                  <Input prefix={<SearchIcon />} value={this.state.value}   />
+                  <Input prefix={<SearchIcon />} onChange={this.handleInputChange} placeholder="在lugia中搜索" value={this.state.value}   />
                 </Theme>
 
                 <HeadRight>
@@ -480,16 +480,23 @@ export default class Pages extends React.Component<any, any> {
         url ='/home';
         break;
       case 'design':
-        url ='/design';
+        url ='/design/introduce';
         break;
       case 'component':
-        url ='/component';
+        url ='/component/affix';
         break;
       default:
         break;
     }
     url && go({ url });
 
+  };
+
+  handleInputChange = (event:Object) => {
+    const {newValue} = event;
+    this.setState({
+      value:newValue,
+    });
   };
 
 }
