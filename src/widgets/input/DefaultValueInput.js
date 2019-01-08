@@ -6,7 +6,6 @@ export default class DefaultValueInput extends React.Component<any, any> {
     return (
       <div>
         <Input defaultValue="hello world" />
-        <Input value="value" />
       </div>
     );
   }

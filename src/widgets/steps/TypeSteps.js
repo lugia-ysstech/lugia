@@ -26,7 +26,6 @@ export default class TypeSteps extends React.Component<any, any> {
     return (
       <Theme config={view}>
         <Wrapper>
-          <p>带有描述</p>
           <Steps orientation="horizontal" size={'normal'}>
             <Step
               title="1111"
@@ -52,7 +51,6 @@ export default class TypeSteps extends React.Component<any, any> {
           </Steps>
         </Wrapper>
         <Wrapper>
-          <p>带有描述 居中显示</p>
           <Steps orientation="horizontal" size={'normal'} desAlign={'center'}>
             <Step
               title="1111"
@@ -78,7 +76,6 @@ export default class TypeSteps extends React.Component<any, any> {
           </Steps>
         </Wrapper>
         <Wrapper>
-          <p>简洁风格 size mini</p>
           <Steps orientation="horizontal" stepType={'simple'} size={'mini'}>
             <Step title="1111" stepStatus="finish" />
             <Step title="222" stepStatus="process" />
@@ -88,7 +85,6 @@ export default class TypeSteps extends React.Component<any, any> {
           </Steps>
         </Wrapper>
         <Wrapper>
-          <p>半扁平风格</p>
           <Steps orientation="horizontal" stepType={'flat'} size={'mini'}>
             <Step title="1111" stepStatus="finish" />
             <Step title="222" stepStatus="process" />
@@ -98,7 +94,6 @@ export default class TypeSteps extends React.Component<any, any> {
           </Steps>
         </Wrapper>
         <Wrapper>
-          <p>半扁平风格</p>
           <Steps orientation="horizontal" stepType={'flat'} size={'normal'}>
             <Step title="1111" stepStatus="finish" />
             <Step title="222" stepStatus="process" />
@@ -109,7 +104,6 @@ export default class TypeSteps extends React.Component<any, any> {
         </Wrapper>
 
         <Wrapper>
-          <p>icon</p>
           <Steps orientation="horizontal" stepType={'icon'} size={'mini'}>
             <Step icon={'lugia-icon-financial_cloud'} stepStatus="finish" />
             <Step icon={'lugia-icon-financial_cloud'} stepStatus="process" />
@@ -119,7 +113,6 @@ export default class TypeSteps extends React.Component<any, any> {
           </Steps>
         </Wrapper>
         <Wrapper>
-          <p>点状 虚线</p>
           <Steps orientation="horizontal" stepType={'dot'}>
             <Step title="1111" stepStatus="finish" />
             <Step title="222" stepStatus="process" isDashed={true} />
@@ -129,7 +122,6 @@ export default class TypeSteps extends React.Component<any, any> {
           </Steps>
         </Wrapper>
         <Wrapper>
-          <p>点状 实线</p>
           <Steps orientation="horizontal" stepType={'dot'}>
             <Step title="1111" stepStatus="finish" />
             <Step title="222" stepStatus="process" />

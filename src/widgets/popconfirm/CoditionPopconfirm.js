@@ -45,7 +45,6 @@ export default class CoditionPopconfirm extends React.Component<any, any> {
   render() {
     return (
       <div style={{ margin: 20 }}>
-        <p> 触发弹出框</p>
         <Switch defaultChecked onChange={this.changeCondition} />
         <Popconfirm
           title="确定要删除吗?"

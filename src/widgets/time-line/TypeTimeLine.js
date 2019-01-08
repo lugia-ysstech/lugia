@@ -14,7 +14,6 @@ export default class TypeTimeLine extends React.Component<any, any> {
     return (
       <div>
         <Wrapper>
-          <p> 调节高度的 简洁样式</p>
           <br />
           <TimeLine>
             <TimeLineItem viewClass={'long'} time="2018-01-01" />
@@ -25,7 +24,6 @@ export default class TypeTimeLine extends React.Component<any, any> {
           </TimeLine>
         </Wrapper>
         <Wrapper>
-          <p>有详情描述 简洁样式 </p>
           <br />
           <TimeLine>
             <TimeLineItem time="2018-01-01" description={'description111'} />
@@ -36,7 +34,6 @@ export default class TypeTimeLine extends React.Component<any, any> {
           </TimeLine>
         </Wrapper>
         <Wrapper>
-          <p>自定义元素 图标样式 </p>
           <br />
           <TimeLine>
             <TimeLineItem
@@ -57,7 +54,6 @@ export default class TypeTimeLine extends React.Component<any, any> {
           </TimeLine>
         </Wrapper>
         <Wrapper>
-          <p>节点说明样式 无描述信息 </p>
           <br />
           <TimeLine>
             <TimeLineItem time="2018-01-01" />
@@ -68,7 +64,6 @@ export default class TypeTimeLine extends React.Component<any, any> {
           </TimeLine>
         </Wrapper>
         <Wrapper>
-          <p>节点说明样式 </p>
           <br />
           <TimeLine>
             <TimeLineItem time="2018-01-01" description={'description111'} />

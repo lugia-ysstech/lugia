@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Widget from '@lugia/lugia-web/dist/consts';
 
 const Wrapper = styled.div`
-  margin-left: 50px;
   margin-top: 50px;
   display: inline-block;
 `;
@@ -42,7 +41,6 @@ export default class TypeCard extends React.Component<any, any> {
             shadow={'always'}
           />
         </Theme>
-        <p>头像样式</p>
         <Theme config={avatar}>
           <Wrapper>
             <Card
@@ -57,7 +55,6 @@ export default class TypeCard extends React.Component<any, any> {
           </Wrapper>
         </Theme>
         <Theme config={avatar}>
-          <p>头像样式</p>
           <Wrapper>
             <Card
               type={'avatar'}
@@ -71,7 +68,6 @@ export default class TypeCard extends React.Component<any, any> {
             />
           </Wrapper>
         </Theme>
-        <p>图片样式</p>
         <Wrapper>
           <Card
             type={'image'}
@@ -85,7 +81,6 @@ export default class TypeCard extends React.Component<any, any> {
           />
         </Wrapper>
         <Theme config={cardImage}>
-          <p>图片样式</p>
           <Card
             viewClass={'cardImage'}
             type={'image'}

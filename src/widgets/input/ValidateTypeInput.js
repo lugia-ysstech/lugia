@@ -5,7 +5,6 @@ import { fixControlledValue } from '@lugia/lugia-web/dist/utils';
 
 const Wrapper = styled.div`
   float: left;
-  margin-left: 50px;
 `;
 
 const onChange = cmpName => (value: any) => {};
@@ -100,20 +99,18 @@ export default class ValidateTypeInput extends React.Component<any, any> {
   render() {
     return (
       <Wrapper>
-        <div>校验是否含有</div>
-        <p>校验信息显示类型 top '</p>
         <TopInput
           viewClass="register"
           validateType="top"
           onChange={onChange('limit')}
         />
-        <p>校验信息显示类型 bottom</p>
+        <br/>
         <ValidateInput
           viewClass="register"
           validateType="bottom"
           onChange={onChange('limit')}
         />
-        <p>校验信息显示类型 inner</p>
+        <br/>
         <ValidateInput
           viewClass="register"
           validateType="inner"

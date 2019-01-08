@@ -79,7 +79,6 @@ export default class OrderTabs extends React.Component<any, any> {
   render() {
     return (
       <div>
-        <p>自定义卡片</p>
         <Tabs
           tabType={'card'}
           pagedType={'single'}
