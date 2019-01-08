@@ -44,6 +44,15 @@ export default {
             return import('../widgets/back-top');
           },
         },
+      '/component/cascader':
+        {
+          value: '/component/cascader',
+          text: '级联选择',
+          exact: true,
+          render: async () => {
+            return import('../widgets/cascader');
+          },
+        },
       '/component/checkbox':
         {
           value: '/component/checkbox',
@@ -276,15 +285,6 @@ export default {
           exact: true,
           render: async () => {
             return import('../widgets/auto-complete');
-          },
-        },
-      '/component/cascader':
-        {
-          value: '/component/cascader',
-          text: '级联选择',
-          exact: true,
-          render: async () => {
-            return import('../widgets/cascader');
           },
         },
       '/component/avatar':
