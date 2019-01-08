@@ -81,7 +81,7 @@ export default class InlineDataMutlipleTree extends React.Component<
           expandAll
           data={data}
           mutliple
-          translateTreeData
+          translateTreeData={true}
           valueField={'value'}
           displayField={'text'}
         />

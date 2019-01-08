@@ -1,6 +1,6 @@
 /**
  *
- * create by szfeng
+ * create by ligx
  *
  */
 import * as React from 'react';
