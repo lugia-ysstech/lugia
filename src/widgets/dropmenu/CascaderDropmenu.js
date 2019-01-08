@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DropMenu, Theme, Menu } from '@lugia/lugia-web';
+import { Dropmenu, Theme, Menu } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
 
@@ -26,16 +26,16 @@ export default class extends React.Component<any, any> {
     const menu = <Menu data={data} action={'hover'} />;
     const defaultView = {
       [Widget.DropMenuButton]: { width: 180 },
-      [Widget.DropMenu]: { width: 120, height: 160 }
+      [Widget.Dropmenu]: { width: 120, height: 160 }
     };
 
     return (
       <div>
         <Theme config={defaultView}>
           <Box>
-            <DropMenu menus={menu} action={'hover'}>
-              <DropMenu.Button type="basic">Basic</DropMenu.Button>
-            </DropMenu>
+            <Dropmenu menus={menu} action={'hover'}>
+              <Dropmenu.Button type="basic">Basic</Dropmenu.Button>
+            </Dropmenu>
           </Box>
         </Theme>
       </div>
