@@ -1,5 +1,5 @@
 import React from 'react';
-import {createRoute} from '@lugia/lugiax-router';
+import {createRoute, Redirect} from '@lugia/lugiax-router';
 import {Grid, Layout, Theme} from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import Headers from './nav';
@@ -34,6 +34,16 @@ export const designRouter = {
     url:'/component',
     component: Widgets,
   },
+
+  NotFound: {
+    render: async () => {
+      return  () => <Redirect
+        to={{
+          pathname: '/home',
+        }}
+      />;
+    },
+  }
 
 };
 const rout = createRoute(designRouter);
