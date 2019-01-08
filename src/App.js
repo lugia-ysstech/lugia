@@ -12,7 +12,7 @@ export const designRouter = {
   '/': {
     exact: true,
     render: async () => import('./home'),
-    value: '/component/affix',
+    value: '/home',
     isHidden: true,
   },
   '/home':{
@@ -34,6 +34,9 @@ export const designRouter = {
     url:'/component',
     component: Widgets,
   },
+  NotFound:{
+    render: () => import('./access/NotAccess')
+  }
 
   NotFound: {
     render: async () => {

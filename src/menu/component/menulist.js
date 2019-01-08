@@ -53,9 +53,12 @@ const isInString = (target, key) => {
 };
 
 const Container = styled.div`
-  padding:${props => (props.fixed?'0':'42px 0 0')};
+  padding:${props => (props.fixed?'0':'42px 0 10px')};
   position:${props => (props.fixed?'fixed':'relative')};
   top:0;
+  box-shadow:10px 0 7px -7px rgba(232,232,232,0.5);
+  width:260px;
+  height:${props => (props.height+'px')}
 `;
 
 type DefProps={
@@ -84,8 +87,11 @@ export default class MenuList extends React.Component<any, any> {
 
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
     const path = window.location.pathname;
-    const pathType = path.match(/[^/]+/g)[0]==='design'?'designConfig':'menuConfig';
-    const defCurrent = defProps.current || path;
+    const pathFilter = path.match(/[^/]+/g);
+    const pathType = pathFilter[0]==='design'?'designConfig':'menuConfig';
+    const defaultUrl = Router[pathType][0].children?Router[pathType][0].children[0].value:Router[pathType][0].value;
+    const defCurrent = pathFilter.length>1 ?path:defaultUrl;
+    console.log(defCurrent,pathType,pathFilter);
     if (!stateProps) {
       return {
         current:defCurrent,
@@ -110,13 +116,13 @@ export default class MenuList extends React.Component<any, any> {
     const {height} = this.state;
     const config = {
       [Widget.Navmenu]: {
-        width:280,
+        width:250,
         height: height || 500,
       },
     };
     const {routerType,fixed} = this.state;
     return (
-      <Container fixed={fixed}>
+      <Container fixed={fixed} height={height}>
         {
           <Theme config={config}>
             <Navmenu
@@ -142,14 +148,12 @@ export default class MenuList extends React.Component<any, any> {
   addWindowListener = () => {
     const scrollTop = getScrollTop();
     const viewHeight = document.body.clientHeight ;
-    let fix = false,height=viewHeight -122;
+    let fix = false;
     if(scrollTop >= 80){
       fix = true;
-      height=viewHeight;
     }
     this.setState({
       fixed:fix,
-      height
     });
   };
 

@@ -63,60 +63,24 @@ const menuConfig = [
   },
 ];
 
+const getDesignRoute = data => {
 
-const designRouter = {
-  '/design': {
-    exact: true,
-    render: async () => import('../design/page'),
-    value: '/component/affix',
-    isHidden: true,
-    describe: true,
-    text: 'Lugia.D',
-    children: [
-      {
-        value: 'Lugia Design of React',
-        text: 'Lugia Design of React',
-        icon: 'lugia-icon-financial_add_pic',
-      },
-    ]
-  },
-  '/design/introduce': {
-    render: () => import('../design/page'),
-    value: '/design/introduce',
-    text: '简介',
-  },
-  '/design/core': {
-    render: () => import('../design/page'),
-    value: '/design/core',
-    text: '设计核心观',
-  },
-  '/design/alignment': {
-    render: () => import('../design/page'),
-    value: '/design/alignment',
-    text: '对齐',
-  },
-  '/design/repeat': {
-    render: () => import('../design/page'),
-    value: '/design/repeat',
-    text: '重复',
-  },
-  '/design/proximity': {
-    render: () => import('../design/page'),
-    value: '/design/proximity',
-    text: '组织性',
-  },
-  '/design/hierarchy': {
-    render: () => import('../design/page'),
-    value: '/design/hierarchy',
-    text: '层级性',
-  },
-    '/design/feedback': {
-  render: () => import('../design/page'),
-    value: '/design/feedback',
-    text: '反馈',
-},
+  const rout = {};
+  data.forEach( item => {
+    const {children} = item;
+    children.forEach( items => {
+      const {value,text} = items;
+      rout[value] = {
+        render: () => import('../design/page'),
+        value,
+        text,
+      };
+
+    });
+  });
+  return rout;
+
 };
-
 
 const designConfig = [
   {
@@ -157,8 +121,59 @@ const designConfig = [
         value: '/design/feedback',
         text: '反馈',
       },
+      {
+        value: '/design/guide',
+        text: '引导',
+      },
+      {
+        value: '/design/accessibility',
+        text: '易用性',
+      },
+      {
+        value: '/design/reduceskip',
+        text: '减少跳转',
+      },
+    ],
+  },
+  {
+    value: '视觉原则',
+    text: '视觉原则',
+    children: [
+      {
+        value: '/design/layout',
+        text: '布局',
+      },
+      {
+        value: '/design/pattern',
+        text: '样式',
+      },
+      {
+        value: '/design/color',
+        text: '色彩',
+      },
+      {
+        value: '/design/font',
+        text: '字体',
+      },
+      {
+        value: '/design/icon',
+        text: '图标',
+      },
+
     ],
   },
 ];
+
+const designRouter = {
+  '/design': {
+    exact: true,
+    render: async () => import('../design/page'),
+    value: '/design/introduce',
+    isHidden: true,
+    text: 'Lugia.D',
+  },
+  ...getDesignRoute(designConfig)
+};
+
 
 export default { routerConfig, designRouter, designConfig, menuConfig };

@@ -1,20 +1,37 @@
 const DesignDocument ={
   introduce:{
-    title:'简介',
-    content:['知性一词，原本是德国古典哲学常用的术语。康德认为知性是介于感性和理性之间的一种认知能力。对于设计来说，知性可以同时定义为“形式上的优美和极致”和“科学上的精确和简洁”，我们相信知性的设计，实现了二者的完美契合。'],
+    title:'',
+    content:[{text:'Lugia Design',margin:'0 0 0 30px',size:'24px',weight:600}],
+    img:[{url:'../public/design/lugia-logo.png'}],
+    imgPosition:'bottom',
     children:[
       {
-        title:'科学上的精确和简洁',
-        content:['用户可能会因为悦目而又兴趣尝试使用，但是使用的体验如果不好，他一样会离开。 lugia解决了产品的可用性、易用性问题，让用户在使用这些产品的过程中感觉更加方便容易，有效完成任务，达成预期目标。因此Lugia致力于消除阻碍用户使用的障碍，如歧义的文字，迷惑性的按钮，出错的页面，违背用户习惯的操作。','Lugia对用户群体有清晰的了解和划分，能做到业务使用的共同感。我们把一个复杂信息架构产品，分角色，划场景，可以让用户对产品目的了解更深刻，全局把握更强，精简页面层级，提升用户的使用效率和舒适度。'],
-        img:[{url:'../public/design-core-img2.png'}],
-        imgPosition:'top',
+        content:[
+          {text:'Lugia Design 是一套适合于金融后台前端应用使用的设计语言。'},
+          {text:'其实我们认为页面的形式并不需要将重点放在：”色彩单一，线条应用，分割等等这些单一视觉方面。“',margin:'20px  0 0'},
+          {text:'因为对于宏观的金融行业来讲，页面的重点应该在形式上的优美和科学上的简洁，在解决用户需求行为时要大胆，敢于创新，敢于解决当今金融市场软件市场上的刚性需求点。而在实际用户应用时要化繁为简，让用户不需学习，就可直接上手应用。'},
+          {text:'因此在Lugia Design是从视觉交互和体验交互两方面分别总结出四个设计原则：',margin:'20px 0 30px'},
+        ],
+
       },
       {
-        title:'形式上的优美和极致',
-        content:['优秀设计的经典要素之一是形式的简约，以简驭繁。','Lugia对于界面设计，就是用最少的屏幕与器件来完成任务。与此同时我们把简约适用于行为，在视觉设计中给予用户最简单的工具，即运用最少的视觉区别明确传达想要表达的意思。','优秀的设计让人感觉是一个整体，各部分平衡和谐。Lugia设计形式上遵循自然，利用人类对自然的感知，提炼自然界中的客观规律并运用到界面设计中，从而创造出有层次、有艺术感的设计语言。'],
-        img:[{url:'../public/design-core-img1.png',desc:'图片1描述'}],
-        imgPosition:'top',
-      }
+        title:'视觉交互',
+        card:[
+          {text:'对齐原则',desc:'Alignment',url:'../public/design/alignment.png'},
+          {text:'重复原则',desc:'Repeat',url:'../public/design/repeat.png'},
+          {text:'组织性原则',desc:'Proximity',url:'../public/design/proximity.png'},
+          {text:'层级性原则',desc:'Hierarchy',url:'../public/design/hierarchy.png'}
+        ]
+      },
+      {
+        title:'体验交互',
+        card:[
+          {text:'反馈原则',desc:'Feedback',url:'../public/design/feedback.png'},
+          {text:'引导原则',desc:'Guide',url:'../public/design/guide.png'},
+          {text:'易用性原则',desc:'Accessibility',url:'../public/design/accessibility.png'},
+          {text:'减少跳转原则',desc:'Reduce skip',url:'../public/design/reduceskip.png'}
+        ]
+      },
 
     ]
   },
@@ -138,42 +155,42 @@ const DesignDocument ={
     children:[
       {
         title:'间距组织',
-        content:[{text:'【布局】'},{text:'纵向上通过8px（小型间距）、16px（中型间距）、24px（大型间距）三种规格来划分信息层次，在三种规格不适用的情况下，可以通过加减8px的倍数来拉开信息层次'},{text:'横向上为了适用不同尺寸的屏幕，采用栅格布局来排布组件，从而保证布局的灵活性。'}],
+        content:[{text:'【布局】',weight:600},{text:'纵向上通过8px（小型间距）、16px（中型间距）、24px（大型间距）三种规格来划分信息层次，在三种规格不适用的情况下，可以通过加减8px的倍数来拉开信息层次'},{text:'横向上为了适用不同尺寸的屏幕，采用栅格布局来排布组件，从而保证布局的灵活性。'}],
         img:[{url:'../public/proximity/proximity_img1.jpg'}],
         imgPosition:'right',
       },
       {
-        content:[{text:'【组件】'},{text:'在各个组件内部，元素的横纵向间距也应该有所区分'}],
+        content:[{text:'【组件】',weight:600},{text:'在各个组件内部，元素的横纵向间距也应该有所区分'}],
         img:[{url:'../public/proximity/proximity_img2.jpg',desc:'复选框排列'}],
         imgPosition:'right',
       },
       {
         title:'形式组织',
-        content:[{text:'【形状】'},{text:'如果其它因素相同，那么相似的物体看起来归属于一组。因此在同一组织的信息中，文字以及图标大小都应统一。'}],
+        content:[{text:'【形状】',weight:600},{text:'如果其它因素相同，那么相似的物体看起来归属于一组。因此在同一组织的信息中，文字以及图标大小都应统一。'}],
         img:[{url:'../public/proximity/proximity_img3.jpg',desc:'形式组织示例'}],
         imgPosition:'right',
       },
       {
-        content:[{text:'【颜色】'},{text:'在形状大小相同时，颜色的统一也会影响信息的组织性，并且颜色权重大于形状。'}],
+        content:[{text:'【颜色】',weight:600},{text:'在形状大小相同时，颜色的统一也会影响信息的组织性，并且颜色权重大于形状。'}],
         img:[{url:'../public/proximity/proximity_img4.jpg',desc:'颜色组织示例'}],
         imgPosition:'right',
       },
       {
         title:'视觉分割',
-        content:[{text:'【元素】'},{text:'增加元素来拉开信息层次。'}],
+        content:[{text:'【元素】',weight:600},{text:'增加元素来拉开信息层次。'}],
         img:[{url:'../public/proximity/proximity_img5.jpg',desc:'元素分割示例'}],
         imgPosition:'right',
       },
       {
-        content:[{text:'【卡片式】'},{text:'信息卡片化，卡片边界就是天然的分割线。'}],
+        content:[{text:'【卡片式】',weight:600},{text:'信息卡片化，卡片边界就是天然的分割线。'}],
         img:[{url:'../public/proximity/proximity_img6.jpg',desc:'卡片式示例'}],
         imgPosition:'right',
       },
       {
         content:[
-          {text:'【留白】'},
+          {text:'【留白】',weight:600},
           {text:'使界面更吸引人、更简洁。更有呼吸感，让内容主体更突出。'},
-          {text:'【颜色界定】'},
+          {text:'【颜色界定】',weight:600},
           {text:'利用颜色的不同来界定界面范围。'}
         ],
 
@@ -204,9 +221,9 @@ const DesignDocument ={
         title:'状态区分',
         content:[
           {text:'下拉状态，示意用户下步操作。'},
-          {text:'【静态区分】'},
+          {text:'【静态区分】',weight:600},
           {text:'通过对元素形状、颜色的改变等方法来实现状态层级的区分。'},
-          {text:'【动态区分】',margin:'10px 0 0'},
+          {text:'【动态区分】',margin:'10px 0 0',weight:600},
           {text:'可以通过加入动效效果，以便用户更好的了解自己处于何种状态。'}
           ],
         img:[{url:'../public/hierarchy/hierarchy_img3.jpg',desc:'静态下，用不同颜色点区分信息状态；光标悬停时，该项出现'}],
@@ -263,7 +280,7 @@ const DesignDocument ={
           {text:'只用于提供辅助文字。不可用于必要文字、主要任务。如果该段文字是必须要有的，那直接写上去，别让用户可哪找。'},
           {text:'谨慎使用在极少使用的功能上。为了不打断主要用户操作流程。也以防用的频率太少了，用户会忘记咋回事。'},
         ],
-        img:[{url:'../public/feedback/feedback_img4.jpg',desc:'增加热区示例'}],
+        img:[{url:'../public/feedback/feedback_img4.jpg'}],
         imgPosition:'right',
       },
       {
@@ -297,6 +314,608 @@ const DesignDocument ={
           {text:'呼出地方多以弹窗样式展示。',size:'12px',color:'#999',margin:'10px 0 0'},
         ],
         img:[{url:'../public/feedback/feedback_img8.jpg',desc:'呼出对象示例'}],
+        imgPosition:'right',
+      },
+
+    ]
+  },
+  guide:{
+    title:'引导',
+    content:[{text:'引导就是用户进入下一个交互层次的提醒和暗示，利用这些提示方式可以使用户在短时间内理解计算机可进行的交互性行为，使人机交互过程更佳自然、顺畅。'},
+      {text:'当用户对界面进行交互行为时，会有很多的功能不易于发现（或不易于适用），所以利用界面引导来解决交互功能布局问题。',size:'12px',color:'#999',margin:'10px 0 0 '}
+    ],
+    desc:'Guide',
+    img:[{url:'../public/guide/guide_img.png'}],
+    imgPosition:'left',
+    children:[
+      {
+        title:'静态引导',
+        content:[
+          {text:'指通过可视化技术在页面上提供引导交互的邀请。'},
+          {text:'文字引导，告知用户接下来要做的事情。'},
+        ],
+        img:[{url:'../public/guide/guide_img1.jpg',desc:'文本引导示例'}],
+        imgPosition:'right',
+      },
+      {
+
+        content:[
+          {text:'利用图片引导，让用户感知接下来要进行的行为。'},
+        ],
+        img:[{url:'../public/guide/guide_img2.jpg',desc:'图片类示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'当录入信息时，给予与信息的引导提醒，避免反馈。'},
+        ],
+        img:[{url:'../public/guide/guide_img3.jpg',desc:'信息提示性引导示例'}],
+        imgPosition:'right',
+      },
+      {
+
+        content:[
+          {text:'利用录入框的尺寸，让用户感知自己所录入信息的数量。'},
+        ],
+        img:[{url:'../public/guide/guide_img4.jpg',desc:'窗口引导示例'}],
+        imgPosition:'right',
+      },
+      {
+        title:'动态引导',
+        content:[
+          {text:'指通过可视化技术在页面上提供引导交互的邀请。'},
+          {text:'鼠标悬停提示，让用户感知到计算机能读懂你所发生的行为。'},
+        ],
+        img:[{url:'../public/guide/guide_img5.jpg',desc:'鼠标悬停示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'用户与计算机产生交互动作时，计算机需要判断用户接下来的行为。常用于登陆注册引导性'},
+        ],
+        img:[{url:'../public/guide/guide_img6.jpg',desc:'预见性引导示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'当用户停留到当前页面，如果有后续页面，用户有需要知道的权利。'},
+        ],
+        img:[{url:'../public/guide/guide_img7.jpg',desc:'后续内容引导示例'}],
+        imgPosition:'right',
+      },
+
+    ]
+  },
+  accessibility:{
+    title:'易用性',
+    content:[{text:'“不用思考，因为我都帮你想好了”这是lugia设计原则的重要原则之一。尽可能事先排除一切不必要的干扰和噪声，让用户能够专注、有效率地达成他们使用产品的目的，进而得到一个愉快的使用体验。'}
+    ],
+    desc:'Accessibility',
+    img:[{url:'../public/accessibility/accessibility_img.png'}],
+    imgPosition:'left',
+    children:[
+      {
+        title:'减少肢体性',
+        content:[
+          {text:'【热键操作】',weight:600},
+          {text:'让使用者以最少的按钮操作，就能快速找到需要的信息'},
+          {text:'【减少距离】',weight:600},
+          {text:'尽量把相关的选项放在接近的位置，以减少光标移动的距离。'},
+        ],
+        img:[{url:'../public/accessibility/accessibility_img1.jpg',desc:'减少距离示例'}],
+        imgPosition:'right',
+      },
+      {
+
+        content:[
+          {text:'【减少操作情况】',weight:600},
+          {text:'减少可能出现的操作情况。'},
+          {text:'副选单维持开放的条件：',margin:'10px 0 0 '},
+          {text:'其一是使用者的游标，必须朝着副选单的方向行进；',size:'12px',color:'#999'},
+          {text:'其二是游标速度，必须维持在特定的最低限速之上。；',size:'12px',color:'#999'},
+        ],
+        img:[{url:'../public/accessibility/accessibility_img2.jpg'}],
+        imgPosition:'right',
+      },
+      {
+        title:'提高理解性',
+        content:[
+          {text:'【文案理解】',weight:600},
+          {text:'尽量选择熟悉的词汇，避免让用户做没必要的思考。'},
+        ],
+        img:[{url:'../public/accessibility/accessibility_img3.jpg',desc:'文案理解示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'【折叠窗口】',weight:600},
+          {text:'在视图切换时，有助于保持信息的连贯性，同时也能拓展虚拟空间。'},
+        ],
+        img:[{url:'../public/accessibility/accessibility_img4.jpg',desc:'折叠窗口示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'【形成组块】',weight:600},
+          {text:'“形成组块”是一种提升短期和长期记忆效能的技巧，也就是把一长串的资讯分成小组，借此方便使用者辨识与记忆，对页面结构和信息层次一目了然。'},
+        ],
+        img:[{url:'../public/accessibility/accessibility_img5.jpg',desc:'形成组块示例'}],
+        imgPosition:'right',
+      },
+      {
+        title:'直接拖放',
+        content:[
+          {text:'【制定常用功能】',weight:600},
+          {text:'板块顺序是可以根据自身喜好自定义的，包括定义常用的应用、排序、删除、新增等等；这样用户可以根据自己的习惯定制自己适合的板块分布方式。'},
+          {text:'注：此功能在区块之间、区块内部组件之间可以拖放，区块组件内部与区块组件内部之间不可调换位置。',size:'12px',color:'#999',margin:'10px 0 0'},
+        ],
+        img:[{url:'../public/accessibility/accessibility_img6.jpg',desc:'移动版块示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'【组件内部拖放】',weight:600},
+          {text:'列表拖放，限一个维度（上/下或者左/右）进行拖放。'},
+        ],
+        img:[{url:'../public/accessibility/accessibility_img7.jpg',desc:'组件内部拖放示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'【拖拽与button结合】',weight:600},
+          {text:'常用于空间较少，页面设计简洁，但重点相对较弱的时候。'},
+        ],
+        img:[{url:'../public/accessibility/accessibility_img8.jpg',desc:'拖拽与button结合示例'}],
+        imgPosition:'right',
+      },
+
+    ]
+  },
+  reduceskip:{
+    title:'减少跳转',
+    content:[{text:'当页面跳转时候，容易打断用户注意力，引起视觉盲视，因此能在一个页面上解决的问题，就在一个页面上面解决，从而减少页面跳转的频率。'}
+    ],
+    desc:'Reduce skip',
+    img:[{url:'../public/reduceskip/reduceskip_img.png'}],
+    imgPosition:'left',
+    children:[
+      {
+        title:'防呆装置',
+        content:[
+          {text:'防呆装置（Fool-proofing）是一种预防矫正的行为约束手段，运用避免产生错误的限制方法。'},
+          {text:'【撤销/重做】',weight:600,margin:'10px 0 0'},
+          {text:'允许用户犯错，采用悬浮层方式避免打断用户心流。'},
+        ],
+        img:[{url:'../public/reduceskip/reduceskip_img1.jpg',desc:'撤销示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'【再次确认】',weight:600,margin:'20px 0 0'},
+          {text:'在无法实现撤销操作时，增加操作步骤，减少失误发生的可能性。'},
+          {text:'注意悬浮层错开需要删除的选项，使上下文连贯。',size:'12px',color:'#999',margin:'10px 0 0'},
+        ],
+        img:[{url:'../public/reduceskip/reduceskip_img2.jpg',desc:'再次确认示例'}],
+        imgPosition:'right',
+      },
+
+      {
+        title:'补充说明',
+        content:[
+          {text:'【详情悬浮态】',weight:600},
+          {text:'一般在列表中，通过用户『悬停』/『点击』某个区块，在当前页加载该条列表项的更多详情信息。'},
+        ],
+        img:[{url:'../public/reduceskip/reduceskip_img3.jpg',desc:'详情悬浮示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'【列表下拉态】',weight:600},
+          {text:'在列表中，显示某条列表项的详情信息，保持上下文不中断。'},
+        ],
+        img:[{url:'../public/reduceskip/reduceskip_img4.jpg',desc:'列表下拉示例'}],
+        imgPosition:'right',
+      },
+      {
+        title:'输入编辑',
+        content:[
+          {text:'【单字段行内编辑】',weight:600},
+          {text:'当『读取』远比『编辑』重要时，可以使用『单击编辑』。'},
+        ],
+        img:[{url:'../public/reduceskip/reduceskip_img5.jpg',desc:'单击编辑示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'当『读取』为主，同时又要突出『编辑』操作时，可使用『文字链/图标编辑』。'},
+        ],
+        img:[{url:'../public/reduceskip/reduceskip_img6.jpg',desc:'文字链/图标示例'}],
+        imgPosition:'right',
+      },
+      {
+        title:'输入编辑',
+        content:[
+          {text:'【多字段行内编辑】',weight:600},
+          {text:'扩大空间来进行多行编辑。'},
+        ],
+        img:[{url:'../public/reduceskip/reduceskip_img7.jpg',desc:'多字段行内示例'}],
+        imgPosition:'right',
+      },
+      {
+        content:[
+          {text:'【输入覆盖层】',weight:600},
+          {text:'在覆盖层上，让用户直接进行少量字段的输入。'},
+        ],
+        img:[{url:'../public/reduceskip/reduceskip_img8.jpg',desc:'输入覆盖层示例'}],
+        imgPosition:'right',
+      },
+
+    ]
+  },
+  layout:{
+    title:'布局',
+    content:[{text:'空间布局是体系化视觉设计的起点和传统的平面设计不同之处在于。UI界面的布局空间要基于“动态、体系化”的角度出发展开。'},
+      {text:'Lugia受到建筑界大师柯布西耶的模度思想的启发，基于“秩序之美”的原则，探索UI设计中的动态空间秩序，形成了Lugia的界面布局方式，为设计者构筑具备理性之美的布局空间创造了条件。'}
+    ],
+    desc:'Layout',
+    img:[{url:'../public/reduceskip/reduceskip_img.png'}],
+    imgPosition:'left',
+    children:[
+      {
+        title:'左右布局的适配',
+        content:[
+          {text:'左右布局用于导航架构信息逻辑强的设计方案中，常见的做法是将左边的导航栏固定，对右边的工作区域进行动态缩放。'},
+        ],
+        img:[{url:'../public/layout/layout_img1.jpg'}],
+        imgPosition:'right',
+      },
+      {
+        title:'上下布局的适配',
+        content:[
+          {text:'上下布局常用于页面出现多个图表信息，需要以图表为主要目标查看时，做法是将左边导航栏固定，对右边的工作区域进行动态缩放。'},
+        ],
+        img:[{url:'../public/layout/layout_img2.jpg'}],
+        imgPosition:'right',
+      },
+
+      {
+        title:'左中右布局的适配方案',
+        content:[
+          {text:'左中右布局常用于多个功能栏状态时布局。做法是将左、右两边的导航栏固定，对中间的工作区域进行动态缩放'},
+        ],
+        img:[{url:'../public/layout/layout_img3.jpg'}],
+        imgPosition:'right',
+      },
+      {
+        title:'分屏布局适配方案',
+        content:[
+          {text:'分屏布局常用于对主要信息页面进行对比查看分析时，做法是将顶部导航栏进行固定，对中间两个工作区域进行动态缩放。'},
+        ],
+        img:[{url:'../public/layout/layout_img4.jpg'}],
+        imgPosition:'right',
+      },
+      {
+        title:'关于栅格',
+        content:[
+          {text:'依据金融后台业务信息量大、信息分组较多、单个盒子内信息体积较小的中后台页面设计特点；Lugia采用24栅格体系，相对12栅格系统，24栅格系统变化更加灵活，更适合内容比较多样复杂的场景。'},
+        ],
+        img:[{url:'../public/layout/layout_img5.jpg'}],
+        imgPosition:'bottom',
+      },
+      {
+        title:'可以被8整除',
+        content:[
+          {text:'对于目前市场桌面设备屏幕而言，4是整除率最高的一个原子，接下来依次是8、10、6、12。但4作为基本原子实在过于小了，太小的步进单位将导致决策成本的增加，因为将元素间距增加4px或者减小4px视觉感受到的差异并不明显， 而在剩下的6、8、10、12四个单位中，8的整除率最高（80%），以8像素作为一个步进单位的变化，视觉上也可以感受到较为明显的差异，因此Lugia选取整除率最高的8做为栅格系统的原子单位。'},
+        ],
+
+      },
+
+    ]
+  },
+  pattern:{
+    title:'样式',
+    content:[{text:'样式决定了页面的品质。'},
+      {text:'要达到视觉性的精致，重点在于编辑样式，也就是在设计的过程中，要不断地挑战每一个视觉元素的正常性和必要性。lugia在视觉上制定了一套统一的样式规范。',margin:'20px 0 0'}
+    ],
+    desc:'Pattern',
+    img:[{url:'../public/pattern/pattern_img.png'}],
+    imgPosition:'left',
+    children:[
+      {
+        title:'色彩规律',
+        content:[
+          {text:'Lugia的设计团队倾向于采用 HSB 色彩模型进行统一色彩规律的制定。'},
+          {text:'注：主题色建议选取“S”值和“B”均大于等于20%的颜色。',size:'12px',color:'#999',margin:'20px 0 0'},
+        ],
+        img:[{url:'../public/pattern/pattern_img1.jpg'}],
+        imgPosition:'right',
+      },
+      {
+        title:'色彩类别',
+        content:[
+          {text:'Lugia选取一种主题色，其他为辅色，功能上建议划分为5种颜色：'},
+          {text:'·Primary Color(主题色)',size:'12px',color:'#999',margin:'20px 0 0'},
+          {text:'·Success Color(成功色)',size:'12px',color:'#999'},
+          {text:'·Warning Color(警示色)',size:'12px',color:'#999'},
+          {text:'·Danger Color(危险色)',size:'12px',color:'#999'},
+          {text:'·Black Color(黑色)',size:'12px',color:'#999'},
+        ],
+        img:[{url:'../public/pattern/pattern_img2.jpg'}],
+        imgPosition:'right',
+      },
+      {
+        title:'中性色',
+        content:[
+          {text:'基于页面颜色丰富程度的同时，还需要增加中性色的体现。因为合理的选择中性色能够令页面信息具备良好的主次关系，助力阅读体验。Lugia为用户设定的中性色效果体验如下：'},
+          {text:'·背景灰：用作底色背景。',size:'12px',color:'#999',margin:'20px 0 0'},
+          {text:'·辅助灰：用作分割线/边界线/斜线等。',size:'12px',color:'#999'},
+          {text:'·浅灰：用作辅助性文字、阴影。',size:'12px',color:'#999'},
+          {text:'·中灰：用作次标题、正文。',size:'12px',color:'#999'},
+          {text:'·深灰：用作主标题、深色背景。',size:'12px',color:'#999'},
+        ],
+        img:[{url:'../public/pattern/pattern_img3.jpg'}],
+        imgPosition:'right',
+      },
+      {
+        title:'阴影',
+        content:[
+          {text:'Lugia遵循半扁平化风格，统一模块化阴影效果。在阴影上设计效果如下：'},
+          {text:'·微弱：表示一些交互组件Z轴升高，增加可用性。',size:'12px',color:'#999',margin:'20px 0 0'},
+          {text:'·明显：表示组件的hover状态。',size:'12px',color:'#999'},
+          {text:'·远处阴影：用于弹窗。',size:'12px',color:'#999'},
+        ],
+        img:[{url:'../public/pattern/pattern_img4.jpg'}],
+        imgPosition:'right',
+      },
+      {
+        title:'圆角',
+        content:[
+          {text:'基于人类视网膜对大自然形体的认知。巴罗（Barrow）神经学研究所完成的关于“角（corners）“的科学研究发现。”角的突显性感知与角的度数的线性变化，锐角比顿角产生更强的虚幻的突显性”'},
+          {text:'Lugia基于人类的生态特征，将圆角的规整运用到模块中。',margin:'20px 0 0'},
+          {text:'·4px：通用组件中。',size:'12px',color:'#999',margin:'20px 0 0'},
+          {text:'·全圆角：特殊组件情况。',size:'12px',color:'#999'},
+        ],
+        img:[{url:'../public/pattern/pattern_img5.jpg'}],
+        imgPosition:'right',
+      },
+
+
+    ]
+  },
+  color:{
+    title:'字体',
+    content:[{text:'Lugia色彩上相对于其他的组件风格，为了让用户能够最直观的感受颜色变化，使用者可以直接选取模块进行操作。'},
+      {text:'而在配色方案中，我们追求自然的美，将自然界中变化运用到组件的配色中。',margin:'20px 0 0'},
+    ],
+    desc:'Color',
+    img:[{url:'../public/color/color_img.png'}],
+    imgPosition:'left',
+    children:[
+      {
+        colorTheme:[
+          {
+            name:'爱丽丝',
+            pantone:'../public/color/color_img_alice',
+            theme:'../public/color/color_img_theme_alice'
+          },
+          {
+            name:'白日梦',
+            pantone:'../public/color/color_img_dream',
+            theme:'../public/color/color_img_theme_dream'
+          },
+          {
+            name:'冰寒',
+            pantone:'../public/color/color_img_binghan',
+            theme:'../public/color/color_img_theme_binghan'
+          },
+          {
+            name:'冰晶',
+            pantone:'../public/color/color_img_bingjing',
+            theme:'../public/color/color_img_theme_bingjing'
+          },
+          {
+            name:'冰与火',
+            pantone:'../public/color/color_img_binghuo',
+            theme:'../public/color/color_img_theme_binghuo'
+          },
+          {
+            name:'光纤',
+            pantone:'../public/color/color_img_guangxian',
+            theme:'../public/color/color_img_theme_guangxian'
+          },
+          {
+            name:'恒星',
+            pantone:'../public/color/color_img_hengxing',
+            theme:'../public/color/color_img_theme_hengxing'
+          },
+          {
+            name:'彗星',
+            pantone:'../public/color/color_img_huixing',
+            theme:'../public/color/color_img_theme_huixing'
+          },
+          {
+            name:'火绒',
+            pantone:'../public/color/color_img_huorong',
+            theme:'../public/color/color_img_theme_huorong'
+          },
+          {
+            name:'极光',
+            pantone:'../public/color/color_img_jiguang',
+            theme:'../public/color/color_img_theme_jiguang'
+          },
+          {
+            name:'科技蓝',
+            pantone:'../public/color/color_img_kejilan',
+            theme:'../public/color/color_img_theme_kejilan'
+          },
+          {
+            name:'科学',
+            pantone:'../public/color/color_img_science',
+            theme:'../public/color/color_img_theme_science'
+          },
+          {
+            name:'融雪',
+            pantone:'../public/color/color_img_rongxue',
+            theme:'../public/color/color_img_theme_rongxue'
+          },
+          {
+            name:'苔藓',
+            pantone:'../public/color/color_img_taixian',
+            theme:'../public/color/color_img_theme_taixian'
+          },
+          {
+            name:'温暖',
+            pantone:'../public/color/color_img_warm',
+            theme:'../public/color/color_img_theme_warm'
+          },
+          {
+            name:'幸运红',
+            pantone:'../public/color/color_img_lucky',
+            theme:'../public/color/color_img_theme_lucky'
+          },
+          {
+            name:'氤氲',
+            pantone:'../public/color/color_img_yinyun',
+            theme:'../public/color/color_img_theme_yinyun'
+          },
+          {
+            name:'庄园',
+            pantone:'../public/color/color_img_manor',
+            theme:'../public/color/color_img_theme_manor'
+          },
+          {
+            name:'紫罗兰',
+            pantone:'../public/color/color_img_violet',
+            theme:'../public/color/color_img_theme_violet'
+          },
+          {
+            name:'自然',
+            pantone:'../public/color/color_img_nature',
+            theme:'../public/color/color_img_theme_nature'
+          },
+
+
+
+        ],
+      },
+
+    ]
+  },
+  font:{
+    title:'字体',
+    content:[{text:'字体是界面设计中最基本的构成元素之一。Lugia字体方案，是根据人眼阅读习惯，清晰页面的视觉层次，我们建议所选字体要满足以下三个方面：'},
+      {text:'·合理的使用不同的字重、字号和颜色；'},
+      {text:'·尽量使用统一字体；'},
+      {text:'·遵循 WCAG 2.0 标准，字体在使用时与背景颜色的对比值满足无障碍阅读的最低标准。'},
+    ],
+    desc:'Font',
+    img:[{url:'../public/font/font_img.png'}],
+    imgPosition:'left',
+    children:[
+      {
+        title:'字体使用建议',
+        content:[
+          {text:'中文字体优先级：PingFang SC、Hiragino Sans GB 、Microsoft YaHei'},
+        ],
+        img:[{url:'../public/font/PingFangSC.png'},{url:'../public/font/hiaginosans.png'},{url:'../public/font/yahei.png'}],
+        imgPosition:'bottom',
+      },
+      {
+        content:[
+          {text:'英文字体优先级：Helvetica Neue、Helvetica、Arialc',margin:'20px 0 0'},
+        ],
+        img:[{url:'../public/font/helveticaneue.png'},{url:'../public/font/helvetica.png'},{url:'../public/font/arial.png'}],
+        imgPosition:'bottom',
+      },
+      {
+        title:'字号',
+        content:[
+          {text:'文字的大小规范，关系着整个界面的统一性、协调性。在Lugia的视觉体系中，我们建议的主要字号为14px。其余的字号的选择可根据具体情况进行自由的定义。建议在一个系统设计中（展示型页面除外），字阶的选择尽量控制在 3-5 种之间。'},
+        ],
+        img:[{url:'../public/font/font_img1.jpg'}],
+        imgPosition:'bottom',
+      },
+      {
+        title:'行高',
+        content:[
+          {text:'行高也是影响用户阅读体验的重要因素之一，查阅资料得知西文的基本行高通常是字号的 1.2em 左右，而中文因为字符复杂，所以中文行高需要更大。现在公认1.5em 至 1.8em 之间会有一个比较好的视觉阅读效果，根据金融行业数据信息量过大的特点，lugia选择了1.5em行距'},
+          {text:'LUGIA行高计算公式：行高值=字号 x 1.5。例如：12 号字体的行高为 18px，14 号字体的行高为 22px。'},
+
+        ],
+        img:[{url:'../public/font/font_img2.jpg',desc:'注：因适配开发的原因，字号和行高只能定为偶数。'}],
+        imgPosition:'bottom',
+      },
+      {
+        title:'字重',
+        content:[
+          {text:'字重的选择同样基于易读、稳定、克制的原则。多数情况下，只出现 regular 以及 medium 的两种字体重量，分别对应代码中的 300 和 500。'},
+          {text:'在英文字体加粗的情况下会采用 semibold 的字体重量，对应代码中的 600。',margin:'20px 0 0'},
+        ],
+
+      },
+      {
+        title:'颜色比例',
+        content:[
+          {text:'文本颜色如果和背景颜色太接近就会难以阅读。考虑到无障碍设计的需求，我们参考   遵循 WCAG 2.0 标准（标准详情见 https://www.w3.org/Translations/WCAG20-zh/#visual-audio-contrast），将正文文本、标题和背景色之间保持在了 7:1 以上的 AAA 级对比度。'},
+        ],
+        img:[{url:'../public/font/font_img3.jpg'}],
+        imgPosition:'bottom',
+      },
+
+    ]
+  },
+  icon:{
+    title:'图标',
+    content:[{text:'图标是一种抽象的、跨语言的符号，随着信息传播速度和载体的快速增长，图标代替或辅助文字信息向用户更一致、高效、具象地理解信息。'},
+      {text:'Lugia的图标在设计和使用时遵循以下三个原则点：'},
+      {text:'表意清晰;',margin:'0 0 0 10px'},
+      {text:'一致性强;',margin:'0 0 0 10px'},
+      {text:'易于扩展。',margin:'0 0 0 10px'},
+    ],
+    desc:'Icon',
+    img:[{url:'../public/icon/icon_img.png'}],
+    imgPosition:'left',
+    children:[
+      {
+        title:'表意清晰',
+        content:[
+          {text:'在设计图标时，不仅要针对单个图标思考，更要把图标作为界面中的一部分，结合当前场景进行考虑，在当前场景/界面中，图标是否满足清晰表义的要求。'},
+          {text:'特殊的情景下，图标可能还需要结合文字，作为一种辅助信息，目的都是帮助信息更清晰地传达给用户。'},
+        ],
+        img:[{url:'../public/icon/icon_img1.jpg',desc:'不同的颜色对图标含义的影响'}],
+        imgPosition:'right',
+      },
+      {
+        title:'一致性强',
+        content:[
+          {text:'界面中的图标一般是成系列的设计，除了视觉风格和特征保持一致以外，在同一产品内，同样的功能和信息图标应也保持一致的形态，避免用户产生疑惑。'},
+        ],
+        img:[{url:'../public/icon/icon_img2.jpg',desc:'Lugia方向图标'}],
+        imgPosition:'right',
+      },
+      {
+        title:'易于扩展',
+        content:[
+          {text:'随着业务和功能的变化，在产品发展过程中很可能需要扩展图标库，这就要求我们在最初设计图标时应定义好视觉特征与延展规则，让图标易于在原有设计上进行扩展，使得设计可延续。',margin:'0 0 26px '},
+
+        ],
+      },
+      {
+
+        content:[
+          {text:'·制定尺寸规范',weight:600},
+          {text:'这套参考线是根据1024*1024尺寸绘制。方形和圆形采用同样的尺寸，由于方形的面积比圆形大，在视觉上，方形会比圆形显大，为了达到视觉上的统一，相对缩小图标方形尺寸的面积。',url:'../public/icon/icon_img3.jpg',margin:'0 0 26px'},
+        ],
+        img:[{url:'../public/icon/icon_img4.jpg',desc:'网格和关键轮廓线'}],
+        imgPosition:'right',
+      },
+      {
+
+        content:[
+          {text:'·统一粗细/圆角',weight:600,margin:'26px 0 0'},
+          {text:'Lugia采用统一的标准，线条粗细为72px。外轮廓线统一半径为 72px 的圆角，icon 内部空间的边角保持直角，笔画的终端为圆角。'},
+        ],
+        img:[{url:'../public/icon/icon_img5.jpg',desc:'统一粗细/圆角'}],
         imgPosition:'right',
       },
 
