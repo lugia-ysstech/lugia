@@ -15,7 +15,7 @@ export default class PrecisionNumberInput extends React.Component<any, any> {
           step={0.005}
           defaultValue="0.05"
           precision={3}
-        />precision
+        />
         <NumberInput
           max={10}
           min={0.01}

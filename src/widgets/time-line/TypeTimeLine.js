@@ -6,7 +6,6 @@ const TimeLineItem = TimeLine.TimeLineItem;
 const Wrapper = styled.div`
   text-align: left;
   margin-top: 50px;
-  margin-left: 100px;
   display: inline-block;
 `;
 export default class TypeTimeLine extends React.Component<any, any> {

@@ -8,7 +8,6 @@ const TabPane = Tabs.TabPane;
 const Wrapper = styled.div`
   text-align: left;
   margin-top: 50px;
-  margin-left: 100px;
   display: inline-block;
 `;
 const children = [
@@ -116,7 +115,6 @@ export default class BaseTabs extends React.Component<any, any> {
     return (
       <Theme config={view}>
         <Wrapper>
-          <p>基本使用 配置data</p>
           <Tabs
             titleType={'line'}
             tabPosition={'top'}
@@ -126,7 +124,6 @@ export default class BaseTabs extends React.Component<any, any> {
           />
         </Wrapper>
         <Wrapper>
-          <p>基本使用 配置children</p>
           <Tabs
             titleType={'line'}
             tabPosition={'top'}
