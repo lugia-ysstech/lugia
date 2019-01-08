@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   float: left;
-  margin-left: 50px;
 `;
 
 export default class TransformNumberInput extends React.Component<any, any> {
@@ -20,7 +19,6 @@ export default class TransformNumberInput extends React.Component<any, any> {
     };
     return (
       <Wrapper>
-        <p>formatter max 10000000 min 10000 step 10000</p>
         <NumberInput
           formatter={formatter}
           parser={parser}
@@ -29,7 +27,6 @@ export default class TransformNumberInput extends React.Component<any, any> {
           min={10000}
           step={10000}
         />
-        <p>formatter % max 100 min 5 step 5</p>
         <NumberInput
           formatter={value => `${value}%`}
           parser={value => value.replace('%', '')}

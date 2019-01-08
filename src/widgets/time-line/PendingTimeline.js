@@ -13,7 +13,6 @@ export default class PendingTimeline extends React.Component<any, any> {
   render() {
     return (
       <Wrapper>
-        <p> 默认 幽灵节点样式 </p>
         <br />
         <TimeLine pending={true}>
           <TimeLineItem time="2018-01-01" description={'description111'} />
@@ -22,7 +21,6 @@ export default class PendingTimeline extends React.Component<any, any> {
           <TimeLineItem time="2018-01-04" description={'description444'} />
           <TimeLineItem time="2018-01-05" description={'description555'} />
         </TimeLine>
-        <p>自定义 幽灵节点内容为 Icon </p>
         <br />
         <TimeLine
           pending={true}
