@@ -80,7 +80,7 @@ export default class InlineDataSingleTree extends React.Component<
         <Tree
           expandAll
           data={data}
-          translateTreeData
+          translateTreeData={true}
           valueField={'value'}
           displayField={'text'}
         />
