@@ -958,35 +958,33 @@
     styled-components "3.4.9"
     warning "3.0.0"
 
-"@lugia/lugiax-core@^1.0.2":
-  version "1.0.2"
-  resolved "http://192.168.102.79:5001/@lugia/lugiax-core/download/@lugia/lugiax-core-1.0.2.tgz#01ceb46c43f29ebea8d1653001d3117da33c4b1a"
-  integrity sha1-Ac60bEPynr6o0WUwAdMRfaM8Sxo=
+"@lugia/lugiax-core@^1.0.3":
+  version "1.0.3"
+  resolved "http://192.168.102.79:5001/@lugia/lugiax-core/download/@lugia/lugiax-core-1.0.3.tgz#4580a5bf7314d3dcfc5dfa7c9cf259e771f894df"
+  integrity sha1-RYClv3MU09z8Xfp8nPJZ53H4lN8=
   dependencies:
     immutable "^3.8.2"
     redux "^4.0.0"
     redux-immutable "^4.0.0"
     redux-saga "^0.16.0"
 
-"@lugia/lugiax-router@^1.0.2":
-  version "1.0.2"
-  resolved "http://192.168.102.79:5001/@lugia/lugiax-router/download/@lugia/lugiax-router-1.0.2.tgz#78aa8fdd7e806dc84a54f002a69800e62acd9916"
-  integrity sha1-eKqP3X6AbchKVPACppgA5irNmRY=
+"@lugia/lugiax-router@^1.0.6":
+  version "1.0.6"
+  resolved "http://192.168.102.79:5001/@lugia/lugiax-router/download/@lugia/lugiax-router-1.0.6.tgz#68247f0f117e42b0ec7b6fa0b210f514c3637074"
+  integrity sha1-aCR/DxF+QrDse2+gshD1FMNjcHQ=
   dependencies:
-    "@lugia/lugiax-core" "^1.0.2"
+    "@lugia/lugiax-core" "^1.0.3"
     connected-react-router "^4.4.1"
-    hoist-non-react-statics "^3.0.1"
     react-loadable "^5.5.0"
     react-redux "^5.0.7"
     react-router "^4.3.1"
 
-"@lugia/lugiax@^1.0.2":
-  version "1.0.2"
-  resolved "http://192.168.102.79:5001/@lugia/lugiax/download/@lugia/lugiax-1.0.2.tgz#d25c276bd9f0b22c7642b8eafa510ba1ec412db5"
-  integrity sha1-0lwna9nwsix2Qrjq+lELoexBLbU=
+"@lugia/lugiax@^1.0.4":
+  version "1.0.4"
+  resolved "http://192.168.102.79:5001/@lugia/lugiax/download/@lugia/lugiax-1.0.4.tgz#e0be762048287af3779b7008a82c44d28433c83d"
+  integrity sha1-4L52IEgoevN3m3AIqCxE0oQzyD0=
   dependencies:
-    "@lugia/lugiax-core" "^1.0.2"
-    hoist-non-react-statics "^3.0.1"
+    "@lugia/lugiax-core" "^1.0.3"
     immutable "^3.8.2"
 
 "@lugia/mega-jest@^1.1.3":
@@ -5790,7 +5788,7 @@ hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   resolved "http://registry.npm.taobao.org/hoist-non-react-statics/download/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha1-xZA89AnA39kI84jmGdhrnBF0y0c=
 
-hoist-non-react-statics@^3.0.1, hoist-non-react-statics@^3.1.0:
+hoist-non-react-statics@^3.1.0:
   version "3.2.1"
   resolved "http://registry.npm.taobao.org/hoist-non-react-statics/download/hoist-non-react-statics-3.2.1.tgz#c09c0555c84b38a7ede6912b61efddafd6e75e1e"
   integrity sha1-wJwFVchLOKft5pErYe/dr9bnXh4=
