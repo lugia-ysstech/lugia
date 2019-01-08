@@ -5,7 +5,7 @@
  * @flow
  */
 import * as React from 'react';
-import {Theme ,Anchor } from '@lugia/lugia-web';
+import {Theme ,Anchor,Icon } from '@lugia/lugia-web';
 // import { Widget} from '@lugia/lugia-web/dist/consts/index';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import styled from 'styled-components';
@@ -60,20 +60,16 @@ const ContentBox = styled.div`
 
 const ContentContainer = styled.div` 
    padding:${props => (props.level ?'0 0 0 20px':'0  50px')};
-   // width:${props => (props.level ?'40%':props.imgPosition === 'right' || props.imgPosition === 'left' ?'50%':'100%')};
 `;
 
 const FlexContainer = styled.div` 
   display:flex;
   margin-bottom:40px;
-  // padding:0 50px 0 0;
   justify-content:space-between;
 `;
 
 const ImageContainer = styled.div`  
  text-align:center;
-  // width:${props => (props.level ?'553px':'436px')}
- // width:${props => (props.level ?'60%':props.imgPosition === 'right' || props.imgPosition === 'left' ?'436px':'100%')};
  padding:${props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'0 50px':props.level ?'0 50px':'0')};
 `;
 
@@ -145,12 +141,50 @@ const DesignCardImage = styled.img`
   height:80px;
 `;
 
+const PantoneContainer = styled.div`
+  height:136px;
+  background:#edf0fe;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  margin:30px 0;
+`;
+
+const PantoneIcon = styled(Icon)`
+  margin:0 10px;
+  font-size:22px;
+  color:#fff;
+  box-shadow:0 0 6px rgba(232,232,232,1);
+`;
+
+const PantoneBox = styled.div`
+  width: calc(100% - 80px);
+  overflow:hidden;
+`;
+
+const PantoneCardBox = styled.div.attrs({
+  width:props => (props.width+'px' || '10000px'),
+  left:props => (-(props.left * 146 +10) +'px')
+})`
+  width: ${props => props.width};;
+  transform:translateX(${props => props.left});
+  transition: all 0.3s linear
+`;
+
+const PantoneCard = styled.div`
+  width:146px;
+  margin:10px;
+  display:inline-block;
+  cursor:pointer;
+`;
+
 type defProps ={
   dataSource?:Object,
 };
 
 type stateProps={
-
+  current:number,
+  index:number,
 };
 
 const getImgElement = (data:Object,imgPosition:string,level?:Boolean) => {
@@ -237,7 +271,8 @@ const getElementWithPosition = (data:Array<Object>,level?:Boolean) => {
         return <React.Fragment>
           {!level && <ContentBox>{titleElement}</ContentBox> }
           {childElement}
-          {getHtmlElement(card)}
+          {card && getHtmlElement(card)}
+
         </React.Fragment>;
       })
     }
@@ -251,14 +286,29 @@ const getAnchorElement = (data:Object) => {
       {data.map((item,index) => {
         const {title} = item;
         return <React.Fragment>
-          <Link title={title} href={'#link-'+index} />
+            {title &&<Link title={title} href={'#link-'+index} />}
         </React.Fragment>;
       })}
     </Anchor>
   </AnchorContainer>;
 };
 
+
+
 export default class Template extends React.Component<defProps, stateProps> {
+
+  static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
+    if (!stateProps) {
+      return {
+        current:0,
+        index:0
+      };
+    }
+    return {
+
+    };
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -274,16 +324,75 @@ export default class Template extends React.Component<defProps, stateProps> {
     const  outSideElement = getElementWithPosition([{title,content,imgPosition,img,desc}],true);
 
     const anchor = getAnchorElement(children);
+    const {colorTheme} = children[0];
     return <React.Fragment>
       <FlexContainer>
         <ContentBox>
           {outSideElement}
           {element}
+          {colorTheme && this.getColorThemeElement(colorTheme)}
         </ContentBox>
         {anchor}
       </FlexContainer>
 
     </React.Fragment>;
 
-  }
+  };
+
+  getColorThemeElement = (data:Object) => {
+    if(!data) return;
+    const length = data.length;
+    const width = 166*length +10;
+    const {handleClick,clickToPrevOrNext} = this;
+    const {current,index} = this.state;
+
+    return <React.Fragment>
+      <InnerImage src={data[current].theme}/>
+      <PantoneContainer>
+        <PantoneIcon iconClass="lugia-icon-direction_left_circle" onClick={ e => {
+          clickToPrevOrNext('prev',length);
+        }}/>
+        <PantoneBox>
+          <PantoneCardBox width={width} left={index}>
+            {
+              data.map((item,index) => {
+                const {pantone,name} = item;
+                return <PantoneCard onClick={ e => {
+                  handleClick(index);
+                }} >
+                  <InnerImage  src={pantone} />
+                </PantoneCard>;
+              })
+            }
+          </PantoneCardBox>
+
+        </PantoneBox>
+
+        <PantoneIcon iconClass="lugia-icon-direction_right_circle" onClick={ e => {
+          clickToPrevOrNext('next',length);
+        }} />
+      </PantoneContainer>
+    </React.Fragment>;
+  };
+
+  handleClick = (index:number) => {
+    this.setState({
+      current:index,
+    });
+  };
+
+  clickToPrevOrNext = (type:string,length:number) => {
+    const {index} = this.state;
+
+    let direction = 1;
+    if(type === 'prev'){
+      direction = -1;
+    }
+    const newValue = index + direction;
+    if(newValue <0 || newValue >length-1) return;
+    this.setState({
+      index:newValue,
+    });
+  };
+
 }

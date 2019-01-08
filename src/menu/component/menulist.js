@@ -91,7 +91,6 @@ export default class MenuList extends React.Component<any, any> {
     const pathType = pathFilter[0]==='design'?'designConfig':'menuConfig';
     const defaultUrl = Router[pathType][0].children?Router[pathType][0].children[0].value:Router[pathType][0].value;
     const defCurrent = pathFilter.length>1 ?path:defaultUrl;
-    console.log(defCurrent,pathType,pathFilter);
     if (!stateProps) {
       return {
         current:defCurrent,

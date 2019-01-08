@@ -695,106 +695,104 @@ const DesignDocument ={
         colorTheme:[
           {
             name:'爱丽丝',
-            pantone:'../public/color/color_img_alice',
-            theme:'../public/color/color_img_theme_alice'
+            pantone:'../public/color/color_img_alice.jpg',
+            theme:'../public/color/color_img_theme_alice.jpg'
           },
           {
             name:'白日梦',
-            pantone:'../public/color/color_img_dream',
-            theme:'../public/color/color_img_theme_dream'
+            pantone:'../public/color/color_img_dream.jpg',
+            theme:'../public/color/color_img_theme_dream.jpg'
           },
           {
             name:'冰寒',
-            pantone:'../public/color/color_img_binghan',
-            theme:'../public/color/color_img_theme_binghan'
+            pantone:'../public/color/color_img_binghan.jpg',
+            theme:'../public/color/color_img_theme_binghan.jpg'
           },
           {
             name:'冰晶',
-            pantone:'../public/color/color_img_bingjing',
-            theme:'../public/color/color_img_theme_bingjing'
+            pantone:'../public/color/color_img_bingjing.jpg',
+            theme:'../public/color/color_img_theme_bingjing.jpg'
           },
           {
             name:'冰与火',
-            pantone:'../public/color/color_img_binghuo',
-            theme:'../public/color/color_img_theme_binghuo'
+            pantone:'../public/color/color_img_binghuo.jpg',
+            theme:'../public/color/color_img_theme_binghuo.jpg'
           },
           {
             name:'光纤',
-            pantone:'../public/color/color_img_guangxian',
-            theme:'../public/color/color_img_theme_guangxian'
+            pantone:'../public/color/color_img_guangxian.jpg',
+            theme:'../public/color/color_img_theme_guangxian.jpg'
           },
           {
             name:'恒星',
-            pantone:'../public/color/color_img_hengxing',
-            theme:'../public/color/color_img_theme_hengxing'
+            pantone:'../public/color/color_img_hengxing.jpg',
+            theme:'../public/color/color_img_theme_hengxing.jpg'
           },
           {
             name:'彗星',
-            pantone:'../public/color/color_img_huixing',
-            theme:'../public/color/color_img_theme_huixing'
+            pantone:'../public/color/color_img_huixing.jpg',
+            theme:'../public/color/color_img_theme_huixing.jpg'
           },
           {
             name:'火绒',
-            pantone:'../public/color/color_img_huorong',
-            theme:'../public/color/color_img_theme_huorong'
+            pantone:'../public/color/color_img_huorong.jpg',
+            theme:'../public/color/color_img_theme_huorong.jpg'
           },
           {
             name:'极光',
-            pantone:'../public/color/color_img_jiguang',
-            theme:'../public/color/color_img_theme_jiguang'
+            pantone:'../public/color/color_img_jiguang.jpg',
+            theme:'../public/color/color_img_theme_jiguang.jpg'
           },
           {
             name:'科技蓝',
-            pantone:'../public/color/color_img_kejilan',
-            theme:'../public/color/color_img_theme_kejilan'
+            pantone:'../public/color/color_img_kejilan.jpg',
+            theme:'../public/color/color_img_theme_kejilan.jpg'
           },
           {
             name:'科学',
-            pantone:'../public/color/color_img_science',
-            theme:'../public/color/color_img_theme_science'
+            pantone:'../public/color/color_img_science.jpg',
+            theme:'../public/color/color_img_theme_science.jpg'
           },
           {
             name:'融雪',
-            pantone:'../public/color/color_img_rongxue',
-            theme:'../public/color/color_img_theme_rongxue'
+            pantone:'../public/color/color_img_rongxue.jpg',
+            theme:'../public/color/color_img_theme_rongxue.jpg'
           },
           {
             name:'苔藓',
-            pantone:'../public/color/color_img_taixian',
-            theme:'../public/color/color_img_theme_taixian'
+            pantone:'../public/color/color_img_taixian.jpg',
+            theme:'../public/color/color_img_theme_taixian.jpg'
           },
           {
             name:'温暖',
-            pantone:'../public/color/color_img_warm',
-            theme:'../public/color/color_img_theme_warm'
+            pantone:'../public/color/color_img_warm.jpg',
+            theme:'../public/color/color_img_theme_warm.jpg'
           },
           {
             name:'幸运红',
-            pantone:'../public/color/color_img_lucky',
-            theme:'../public/color/color_img_theme_lucky'
+            pantone:'../public/color/color_img_lucky.jpg',
+            theme:'../public/color/color_img_theme_lucky.jpg'
           },
           {
             name:'氤氲',
-            pantone:'../public/color/color_img_yinyun',
-            theme:'../public/color/color_img_theme_yinyun'
+            pantone:'../public/color/color_img_yinyun.jpg',
+            theme:'../public/color/color_img_theme_yinyun.jpg'
           },
           {
             name:'庄园',
-            pantone:'../public/color/color_img_manor',
-            theme:'../public/color/color_img_theme_manor'
+            pantone:'../public/color/color_img_manor.jpg',
+            theme:'../public/color/color_img_theme_manor.jpg'
           },
           {
             name:'紫罗兰',
-            pantone:'../public/color/color_img_violet',
-            theme:'../public/color/color_img_theme_violet'
+            pantone:'../public/color/color_img_violet.jpg',
+            theme:'../public/color/color_img_theme_violet.jpg'
           },
           {
             name:'自然',
-            pantone:'../public/color/color_img_nature',
-            theme:'../public/color/color_img_theme_nature'
+            pantone:'../public/color/color_img_nature.jpg',
+            theme:'../public/color/color_img_theme_nature.jpg'
           },
-
-
 
         ],
       },
