@@ -102,7 +102,7 @@ export default class TableDemo extends React.Component {
   render() {
     return (
       <div>
-        <Table columns={columns} dataSource={data} />
+        <Table columns={columns} data={data} />
       </div>
     );
   }

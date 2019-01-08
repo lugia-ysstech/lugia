@@ -52,6 +52,9 @@ const CodeBox = styled.div`
   font-size: 16px;
   box-sizing: border-box;
   display: ${props => (props.visible ? 'block' : 'none')};
+  & > pre > code {
+    line-height: 2;
+  }
 `;
 const VisibleCode = styled.div`
   font-size: 14px;
