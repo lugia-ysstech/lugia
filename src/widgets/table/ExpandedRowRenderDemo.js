@@ -8,7 +8,7 @@ const columns = [{
 }, {
   title: 'Address', dataIndex: 'address', key:'address', width: 200,
 }, {
-  title: 'Operations', dataIndex: '', key:'operations', render: () => <a href="javascript:;">Delete</a>,
+  title: 'Operations', dataIndex: 'operations', key:'operations', render: () => <a href="javascript:;">Delete</a>,
 }];
 
 const data = [
@@ -27,7 +27,7 @@ export default class TableDemo extends React.Component {
         <Table
           columns={columns}
           expandedRowRender={record => <p style={{ margin: 0 }}>{record.description}</p>}
-          dataSource={data}
+          data={data}
         />
       </div>
     );
