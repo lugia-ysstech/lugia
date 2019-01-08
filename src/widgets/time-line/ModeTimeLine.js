@@ -15,7 +15,6 @@ export default class ModeTimeLine extends React.Component<any, any> {
   render() {
     return (
       <Wrapper>
-        <p> 有详情描述 简洁样式</p>
         <br />
         <TimeLine>
           <TimeLineItem time="2018-01-01" description={'description111'} />
@@ -24,7 +23,6 @@ export default class ModeTimeLine extends React.Component<any, any> {
           <TimeLineItem time="2018-01-04" description={'description444'} />
           <TimeLineItem time="2018-01-05" description={'description555'} />
         </TimeLine>
-        <p> 左右分散排列 有详情描述 简洁样式</p>
         <br />
         <TimeLine mode={'alternate'}>
           <TimeLineItem time="2018-01-01" description={'description111'} />

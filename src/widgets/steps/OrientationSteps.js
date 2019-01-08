@@ -24,7 +24,6 @@ export default class OrientationSteps extends React.Component<any, any> {
     return (
       <Theme config={view}>
           <VWrapper>
-            <p>简洁风格 size mini</p>
 
             <Steps orientation="vertical" stepType="simple" size="mini">
               <Step title="1111" stepStatus="finish" content="content1" />
@@ -35,7 +34,6 @@ export default class OrientationSteps extends React.Component<any, any> {
             </Steps>
           </VWrapper>
           <VWrapper>
-            <p>简洁风格 size normal</p>
 
             <Steps orientation="vertical" stepType="simple" size="normal">
               <Step title="1111" stepStatus="finish" content="content1" />
@@ -46,7 +44,6 @@ export default class OrientationSteps extends React.Component<any, any> {
             </Steps>
           </VWrapper>
           <VWrapper>
-            <p>带有描述</p>
             <Steps orientation="vertical" stepType="simple" size={'normal'}>
               <Step
                 title="1111"
@@ -72,7 +69,6 @@ export default class OrientationSteps extends React.Component<any, any> {
             </Steps>
           </VWrapper>
           <VWrapper>
-            <p>半扁平风格 size normal</p>
 
             <Steps orientation="vertical" stepType="flat" size="normal">
               <Step title="1111" stepStatus="finish" content="content1" />
@@ -83,7 +79,6 @@ export default class OrientationSteps extends React.Component<any, any> {
             </Steps>
           </VWrapper>
           <VWrapper>
-            <p>icon</p>
             <Steps orientation="vertical" stepType={'icon'} size={'mini'}>
               <Step
                 icon={'lugia-icon-financial_cloud'}
@@ -113,7 +108,6 @@ export default class OrientationSteps extends React.Component<any, any> {
             </Steps>
           </VWrapper>
           <VWrapper>
-            <p>点状 虚线 size normal</p>
             <Steps orientation="vertical" stepType={'dot'}>
               <Step title="1111" stepStatus="finish" />
               <Step title="222" stepStatus="process" isDashed={true} />
@@ -123,7 +117,6 @@ export default class OrientationSteps extends React.Component<any, any> {
             </Steps>
           </VWrapper>
           <VWrapper>
-            <p>点状风格 size normal</p>
             <Steps orientation="vertical" stepType="dot" size="normal">
               <Step title="1111" stepStatus="finish" content="content1" />
               <Step title="222" stepStatus="process" content="content2" />

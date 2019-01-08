@@ -15,7 +15,6 @@ export default class StatusTimeLine extends React.Component<any, any> {
   render() {
     return (
       <Wrapper>
-        <p>不同状态 简洁样式</p>
         <br />
         <TimeLine direction={'left'}>
           <TimeLineItem time="2018-01-01" status={'success'} />

@@ -3,7 +3,6 @@ import { Divider } from '@lugia/lugia-web';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  margin-left: 50px;
 `;
 export default class PositionDivider extends React.Component<any, any> {
   render() {
