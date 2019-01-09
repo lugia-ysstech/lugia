@@ -36,7 +36,9 @@ export const designRouter = {
     component: Widgets,
   },
   NotFound:{
-    render: () => import('./access/NotAccess'),
+    render: async () => {
+      return () => <Redirect to={'/home'}></Redirect>;
+    },
     isHidden: true,
   }
 
