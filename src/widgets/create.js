@@ -92,7 +92,7 @@ async function createSearchIndex () {
       });
     });
   });
-  await fs.writeFileSync(getRouterFile('search.js'), `export default ${JSON.stringify(res)}`);
+  await fs.writeFileSync(getRouterFile('search.js'), `module.exports = ${JSON.stringify(res)}`);
 }
 
 async function getRouter (folderNames) {
