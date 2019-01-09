@@ -64,7 +64,7 @@ const ContentContainer = styled.div`
 
 const FlexContainer = styled.div` 
   display:flex;
-  margin-bottom:40px;
+  margin-bottom:30px;
   justify-content:space-between;
 `;
 

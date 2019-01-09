@@ -56,7 +56,6 @@ const Container = styled.div`
   padding:${props => (props.fixed?'0':'42px 0 10px')};
   position:${props => (props.fixed?'fixed':'relative')};
   top:0;
-  box-shadow:10px 0 7px -7px rgba(232,232,232,0.5);
   width:260px;
   height:${props => (props.height+'px')}
 `;
@@ -104,12 +103,21 @@ export default class MenuList extends React.Component<any, any> {
   }
 
   componentDidMount () {
+    this.getWindowHeight();
+    window.addEventListener('scroll', this.addWindowListener);
+    window.onresize = () => {
+      this.getWindowHeight();
+    };
+  }
+
+  getWindowHeight = () => {
+
     const viewHeight = document.body.clientHeight - 122;
+    console.log('viewHeight',viewHeight);
     this.setState({
       height: viewHeight
     });
-    window.addEventListener('scroll', this.addWindowListener);
-  }
+  };
 
   render() {
     const {height} = this.state;
@@ -146,7 +154,6 @@ export default class MenuList extends React.Component<any, any> {
 
   addWindowListener = () => {
     const scrollTop = getScrollTop();
-    const viewHeight = document.body.clientHeight ;
     let fix = false;
     if(scrollTop >= 80){
       fix = true;
