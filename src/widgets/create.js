@@ -84,9 +84,10 @@ async function createSearchIndex () {
     });
 
     content && content.forEach(item => {
+      const {text} =item;
       res.push({
         url: `design/${ruleKey}`,
-        content: item,
+        content: text,
         power: 2,
         type: rule
       });
