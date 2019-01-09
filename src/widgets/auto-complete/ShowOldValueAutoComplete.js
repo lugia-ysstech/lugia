@@ -6,35 +6,86 @@
 import React from 'react';
 import { AutoComplete } from '@lugia/lugia-web';
 
-const data = ['@gmail.com', '@sina.com', '@163.com', '@qq.com'];
+const data = [
+  'Nikcy Romero',
+  'Armin van Buuren',
+  'Hardwell',
+  'Zedd',
+  'Kazze',
 
-export default class Demo extends React.Component<any, any> {
+  'Vicetone',
+  'Martin Garrix',
+  'David Guetta',
+  'The Chainsmokers',
+  'Kygo',
+
+  'Axwell ^ Ingrosso',
+  'Dimitri Vegas & Like Mike',
+  'Calvin Harris',
+  'Avicci',
+  'Fedde Le Grand',
+
+  'Tiesto',
+  'Snoop Dogg',
+  'Bassjackers',
+  'Sebastian Ingrosso',
+  'Swedish House Mafia',
+  'Alesso',
+  'Afrojack',
+  'Knife Party',
+  'Dannic',
+  'R3hab'
+];
+
+export default class ShowOldAutoComplete extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuData: []
+      menuData: data,
+      value: ''
     };
   }
   render() {
-    const { menuData } = this.state;
     return (
       <AutoComplete
-        data={menuData}
+        data={this.state.menuData}
         onChange={this.onChange}
         placeholder={'请输入'}
+        showOldValue={true}
       />
     );
   }
 
   onChange = value => {
-    const newData = [];
-    data.forEach(item => {
-      if (value.indexOf('@') === -1) {
-        item = '' + value + item;
-        newData.push(item);
-      }
-    });
+    this.search(value);
+  };
 
-    this.setState({ menuData: newData });
+  search(query) {
+    let menuData;
+    let rowSet = [];
+    const len = data.length;
+
+    for (let i = 0; i < len; i++) {
+      const row = data[i];
+      if (query === row) {
+        rowSet = [];
+        break;
+      }
+
+      if (this.searchValue(query, row)) {
+        rowSet.push(row);
+      }
+    }
+
+    if (rowSet.length === len) {
+      menuData = data;
+    } else {
+      menuData = rowSet;
+    }
+    this.setState({ menuData });
+  }
+
+  searchValue = (query, row) => {
+    return row.indexOf(query) !== -1 || row === query;
   };
 }

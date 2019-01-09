@@ -1,17 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Skeleton } from '@lugia/lugia-web';
+import { Skeleton, Button } from '@lugia/lugia-web';
 
-const Button = styled.button`
-  width: 200px;
-  height: 50px;
-  background: cornflowerblue;
-  margin: 20px;
-  outline: none;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  color: #fff;
+// const Button = styled.button`
+//   width: 200px;
+//   height: 50px;
+//   background: cornflowerblue;
+//   margin: 20px;
+//   outline: none;
+//   border: none;
+//   border-radius: 10px;
+//   font-size: 16px;
+//   color: #fff;
+// `;
+
+const ButtonWrap = styled.div`
+  margin-bottom: 20px;
 `;
 
 const Box = styled.div`
@@ -20,10 +24,18 @@ const Box = styled.div`
   display: inline-block;
 `;
 
+const H = styled.p`
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 26px;
+  color: #666;
+`;
+
 const P = styled.p`
   font-size: 14px;
   font-weight: 900;
-  line-height: 30px;
+  color: #666;
+  line-height: 22px;
 `;
 
 export default class SwitchSkeleton extends React.Component {
@@ -35,12 +47,12 @@ export default class SwitchSkeleton extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <ButtonWrap>
           <Button onClick={this.handleClickButton}>点击切换</Button>
-        </div>
+        </ButtonWrap>
         <Skeleton avatar={true} animation={true} loading={this.state.loading}>
           <Box>
-            <h2>标题</h2>
+            <H>标题</H>
             <P>如今，在各大互联网公司，他们都有属于自己的开源设计规范。</P>
             <P>
               页面的重点应该在形式上的有没和科学上的简洁,在解决用户需求行为时要大胆,用于创新。
