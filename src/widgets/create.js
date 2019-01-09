@@ -5,23 +5,107 @@
  */
 const fs = require('fs');
 const path = require('path');
-createRouter();
+const documents = require('../design/page/getDocument')({});
 
-main();
+createDemoRouter();
+createDemoPage();
+createSearchIndex();
 
 function getPath (folderName) {
   return path.join(__dirname, folderName);
 }
 
-async function createRouter () {
+async function createSearchIndex () {
+  const res = [];
+  const widget = '组件';
+  const rule = '原则';
   const allPathFile = await getFolderNames();
+  const folderNames = await getDemoFolderNames(allPathFile);
+  const router = await getRouter(folderNames);
+  router.forEach(categoryData => {
+    const { children } = categoryData;
+    if (children) {
+      children.forEach(item => {
+        const { value: url, text, widgetName } = item;
+        if (url) {
+          text && res.push({
+            url,
+            type: widget,
+            content: text,
+            power: 2,
+          });
+          widgetName && res.push({
+            url,
+            type: widget,
+            content: widgetName,
+            power: 1,
+          });
+        }
+      });
+    }
+  });
+
+  const folderName2Meta = await getFolderName2Meta(folderNames);
+  Object.values(folderName2Meta);
+  const folderName2DemoConfig = await getFolderName2DemoConfig(folderNames);
+  Object.values(folderName2DemoConfig);
+  folderNames.forEach(folderName => {
+    const meta = folderName2Meta[ folderName ];
+    const config = folderName2DemoConfig[ folderName ];
+    if (!meta) {
+      return;
+    }
+    const { widgetName } = meta;
+    const url = getUrl(widgetName);
+    Object.values(config).forEach(configValue => {
+      const { title, desc } = configValue;
+      title && res.push({
+        url,
+        type: widget,
+        content: title,
+        power: 3,
+      });
+      desc && res.push({
+        url,
+        type: widget,
+        content: desc,
+        power: 4,
+      });
+    });
+  });
+  const ruleKeys = Object.keys(documents);
+  ruleKeys && ruleKeys.forEach(ruleKey => {
+    const { title, content } = documents[ ruleKey ];
+    title && res.push({
+      url: `design/${ruleKey}`,
+      content: title,
+      power: 1,
+      type: rule
+    });
+
+    content && content.forEach(item => {
+      res.push({
+        url: `design/${ruleKey}`,
+        content: item,
+        power: 2,
+        type: rule
+      });
+    });
+  });
+  await fs.writeFileSync(getRouterFile('search.js'), `export default ${JSON.stringify(res)}`);
+}
+
+async function getRouter (folderNames) {
   const widgetName2Meta = {};
   const catory2WidgetNames = {};
   try {
-    await iteratorFolders(allPathFile, (folderName, pos) => {
-
+    const folderName2Meta = await getFolderName2Meta(folderNames);
+    folderNames.forEach(folderName => {
       try {
-        const meta = loadMeta(folderName);
+        const meta = folderName2Meta[ folderName ];
+        if (!meta) {
+          return;
+        }
         const { widgetName, category } = meta;
         widgetName2Meta[ widgetName ] = meta;
         let categoryData = catory2WidgetNames[ category ];
@@ -41,7 +125,7 @@ async function createRouter () {
         return {
           widgetName,
           floderName,
-          value: `/component/${widgetName.toLowerCase()}`,
+          value: getUrl(widgetName),
           text: title,
         };
       });
@@ -52,10 +136,23 @@ async function createRouter () {
         children,
       };
     });
+    return router;
+  } catch (error) {
+    console.log('%s 异常  X', error);
+  }
+}
 
+function getUrl (widgetName) {
+  return `/component/${widgetName.toLowerCase()}`;
+}
+
+async function createDemoRouter () {
+  try {
+    const allPathFile = await getFolderNames();
+    const folderNames = await getDemoFolderNames(allPathFile);
+    const router = await getRouter(folderNames);
     await fs.writeFileSync(getRouterFile('widgets.js'), `export default ${JSON.stringify(router)}`);
     await fs.writeFileSync(getRouterFile('widgetrouter.js'), `export default ${(getMenuRouter(router))}`);
-
   } catch (error) {
     console.log('%s 异常  X', error);
   }
@@ -74,7 +171,7 @@ function getMenuRouter (data) {
   data.forEach(item => {
     const { children } = item;
     children && children.forEach(childs => {
-      const { value, text, widgetName, floderName } = childs;
+      const { value, text, floderName } = childs;
       res.push(`
       '${value}':
         {
@@ -101,50 +198,42 @@ function loadMeta (folderName) {
 }
 
 
-async function iteratorFolders (allPathFile, cb) {
-
+async function getDemoFolderNames (allPathFile, cb) {
+  const res = [];
   for (let index = 0; index < allPathFile.length; index++) {
     const folderName = allPathFile[ index ];
     const stats = await fs.statSync(getPath(folderName));
     const pos = index + 1;
     if (stats.isDirectory()) {
-      await cb(folderName, pos);
+      res.push(folderName);
     } else {
       console.log('(%d) %s 目录错误  X', pos, folderName);
-
     }
   }
+  return res;
 }
 
-async function main () {
+async function createDemoPage () {
   const allPathFile = await getFolderNames();
   const filePath = [];
   console.log('总共待生成组件[%d]个', allPathFile.length);
   try {
-    await iteratorFolders(allPathFile, async (folderName, pos) => {
+    const folderNames = await getDemoFolderNames(allPathFile);
+    const folderName2Meta = await getFolderName2Meta(folderNames);
+    const folderName2DemoConfig = await getFolderName2DemoConfig(folderNames);
 
-      let config;
-      try {
-        config = require(`./${folderName}/config.js`);
-      } catch (err) {
-        console.log('(%d) %s 读取config.js错误  X', pos, folderName);
+    folderNames.forEach(async (folderName, pos) => {
+      const meta = folderName2Meta[ folderName ];
+      const config = folderName2DemoConfig[ folderName ];
+      if (!meta || !config) {
         return;
       }
-
-      let meta;
-      try {
-        meta = loadMeta(folderName);
-      } catch (error) {
-        console.log('(%d) %s 读取元信息失败  X', pos, folderName);
-        return;
-      }
-
       const { childrenWidget } = meta;
       const subTitle = meta.widgetName;
-      let data;
+      let demoPageContent;
       try {
-        const allDemo = Object.keys(config);
-        data = getContent(allDemo, config, folderName, {
+        const allDemoNames = Object.keys(config);
+        demoPageContent = getContent(allDemoNames, config, folderName, {
           title: meta.title,
           subTitle,
           desc: meta.desc
@@ -154,19 +243,51 @@ async function main () {
         return;
       }
       try {
-        await fs.writeFileSync(getPath(`${folderName}/index.js`), data);
+        await fs.writeFileSync(getPath(`${folderName}/index.js`), demoPageContent);
       } catch (err) {
         console.log('(%d) %s 写入文件失败  X', pos, folderName);
         return;
       }
       // console.log('(%d) %s 成功', pos, folderName);
       filePath.push(folderName);
+      if (pos === folderNames.length - 1) {
+        console.log('总共待生成组件[%d]个， 成功生成[%d]个', allPathFile.length, filePath.length);
+      }
     });
 
   } catch (error) {
     console.log('%s 异常  X', error);
   }
-  console.log('总共待生成组件[%d]个， 成功生成[%d]个', allPathFile.length, filePath.length);
+}
+
+async function getFolderName2Meta (folderNames) {
+  const metas = {};
+  folderNames.forEach((folderName, pos) => {
+    try {
+      metas[ folderName ] = loadMeta(folderName);
+    } catch (error) {
+      console.log('(%d) %s 读取元信息失败  X', pos, folderName);
+      return;
+    }
+  });
+  return metas;
+}
+
+async function getFolderName2DemoConfig (folderNames) {
+  const configs = {};
+  try {
+    folderNames.forEach((folderName, pos) => {
+      try {
+        configs[ folderName ] = require(`./${folderName}/config.js`);
+      } catch (err) {
+        console.log('(%d) %s 读取config.js错误  X', pos, folderName);
+        return;
+      }
+    });
+  } catch (error) {
+    console.log('%s 异常  X', error);
+  }
+  return configs;
 }
 
 
