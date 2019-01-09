@@ -27,6 +27,7 @@ export const designRouter = {
     text:'设计指南',
     url:'/design',
     render: () => import('./design'),
+
   },
   '/component':{
     value:'组件代码',
@@ -35,7 +36,8 @@ export const designRouter = {
     component: Widgets,
   },
   NotFound:{
-    render: () => import('./access/NotAccess')
+    render: () => import('./access/NotAccess'),
+    isHidden: true,
   }
 
 };
