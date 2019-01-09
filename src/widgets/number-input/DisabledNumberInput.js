@@ -15,7 +15,7 @@ export default class DisabledNumberInput extends React.Component<any, any> {
   render() {
     return (
       <div>
-        <div>
+        <div style={{ marginBottom: 10 }}>
           <Button onClick={this.click} type="primary">
             点击切换状态
           </Button>
