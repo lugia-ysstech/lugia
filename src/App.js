@@ -12,7 +12,7 @@ export const designRouter = {
   '/': {
     exact: true,
     render: async () => import('./home'),
-    value: '/component/affix',
+    value: '/home',
     isHidden: true,
   },
   '/home':{
@@ -27,6 +27,7 @@ export const designRouter = {
     text:'设计指南',
     url:'/design',
     render: () => import('./design'),
+
   },
   '/component':{
     value:'组件代码',
@@ -34,15 +35,9 @@ export const designRouter = {
     url:'/component',
     component: Widgets,
   },
-
-  NotFound: {
-    render: async () => {
-      return  () => <Redirect
-        to={{
-          pathname: '/home',
-        }}
-      />;
-    },
+  NotFound:{
+    render: () => import('./access/NotAccess'),
+    isHidden: true,
   }
 
 };
