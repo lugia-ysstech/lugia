@@ -10,6 +10,18 @@ import styled , { keyframes } from 'styled-components';
 import {go} from '@lugia/lugiax-router';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 import Widget from '@lugia/lugia-web/dist/consts/index';
+import Footer from '../footer';
+import Search from '../search';
+
+import logo from '../../public/lugia-logo.png';
+import pic1 from '../../public/home/pic1.png';
+import pic2 from '../../public/home/pic2.png';
+import pic3 from '../../public/home/pic3.png';
+import pic4 from '../../public/home/pic4.png';
+import pic5 from '../../public/home/pic5.png';
+import sense from '../../public/home/sense.png';
+import design from '../../public/home/design.png';
+import view from '../../public/home/view.png';
 
 const { themeColor } = colorsFunc();
 
@@ -53,8 +65,9 @@ const ThemeColor = styled.span`
   
 `;
 
+
 const BgImg1 = styled.div`
-  background:url("../../public/home/pic1.png") no-repeat;
+  background:url("${pic1}") no-repeat;
   position:absolute;
   width:55%;
   height:2000px;
@@ -64,8 +77,9 @@ const BgImg1 = styled.div`
  
 `;
 
+
 const BgImg2 = styled.div`
-  background:url("../../public/home/pic2.png") no-repeat 100%;
+  background:url("${pic2}") no-repeat 100%;
   background-position: right;
   position:absolute;
   width:20%;
@@ -92,8 +106,9 @@ const BgImg4 = styled.img`
   
 `;
 
+
 const BgImg5 = styled.div`
-  background:url("../../public/home/pic5.png") no-repeat center top;
+  background:url("${pic5}") no-repeat center top;
   position: absolute;
   width: 100%;
   height:600px;
@@ -104,7 +119,7 @@ const BgImg5 = styled.div`
 
 const MiddleWrapper = styled.div`
   width:100%;
-  padding-bottom:500px;
+ 
 `;
 
 
@@ -225,7 +240,7 @@ const spendLine = keyframes`
     height:0px;
   }
   100% {
-    height:980px;
+    height:1100px;
   }
 `;
 
@@ -265,7 +280,7 @@ const DesignCardBox = styled.div`
 `;
 
 const DesignCard = styled.div`
-  width: 288px;
+  width: 270px;
   border-radius: 10px;
   background: #fff;
   padding: 42px 64px;
@@ -354,13 +369,10 @@ const ButtonCard = styled.div`
   }
 `;
 
-class SearchIcon extends React.Component<any> {
-  static displayName = Widget.SearchIcon;
 
-  render() {
-    return <Icon iconClass="lugia-icon-financial_search" key="refresh" {...this.props} />;
-  }
-}
+const SearchBox = styled.div`
+ float:left;
+`;
 
 export default class Pages extends React.Component<any, any> {
 
@@ -377,12 +389,7 @@ export default class Pages extends React.Component<any, any> {
   }
 
   render() {
-    const InputStyle = {
-      [Widget.Input]: {
-        borderSize:{top:0,right:0,bottom:1,left:0},
-        borderColor:'#ccc',
-      },
-    };
+
     return (
       <React.Fragment>
         <Row>
@@ -393,12 +400,8 @@ export default class Pages extends React.Component<any, any> {
             <MiddleWrapper>
               <Line />
               <Head>
-                <Logo src="../../../public/lugia-logo.png" alt=""/>
-
-                <Theme config={InputStyle}>
-                  <Input prefix={<SearchIcon />} onChange={this.handleInputChange} placeholder="在lugia中搜索" value={this.state.value}   />
-                </Theme>
-
+                <Logo src={logo} alt=""/>
+                <SearchBox><Search/></SearchBox>
                 <HeadRight>
                   <Language>English</Language>
                   <Language>|</Language>
@@ -421,17 +424,17 @@ export default class Pages extends React.Component<any, any> {
                 <LineRow/>
                 <DesignCardBox>
                   <DesignCard>
-                    <CardImg src="../../public/home/sense.png" />
+                    <CardImg src={sense} />
                     <CardTitle>设计价值观</CardTitle>
                     <Button active onClick={e => this.linkToUrl('/design/core')}>开始使用</Button>
                   </DesignCard>
                   <DesignCard>
-                    <CardImg src="../../public/home/design.png" />
+                    <CardImg src={design} />
                     <CardTitle>设计原则</CardTitle>
                     <Button active  onClick={e => this.linkToUrl('/design/alignment')}>开始使用</Button>
                   </DesignCard>
                   <DesignCard>
-                    <CardImg src="../../public/home/view.png" />
+                    <CardImg src={view} />
                     <CardTitle>视觉原则</CardTitle>
                     <Button active  onClick={e => this.linkToUrl('/design/layout')}>开始使用</Button>
                   </DesignCard>
@@ -439,8 +442,8 @@ export default class Pages extends React.Component<any, any> {
                 <LineRight/>
               </ModelTwo>
               <ModelThird>
-                <BgImg3 src="../../public/home/pic3.png" />
-                <BgImg4 src="../../public/home/pic4.png" />
+                <BgImg3 src={pic3} />
+                <BgImg4 src={pic4} />
 
                 <TextBox>
                   <SquareRight/>
@@ -460,6 +463,7 @@ export default class Pages extends React.Component<any, any> {
                 </TextBox>
 
               </ModelThird>
+              <Footer/>
             </MiddleWrapper>
           </Col>
           <Col span={5} >
@@ -480,11 +484,5 @@ export default class Pages extends React.Component<any, any> {
 
   };
 
-  handleInputChange = (event:Object) => {
-    const {newValue} = event;
-    this.setState({
-      value:newValue,
-    });
-  };
 
 }
