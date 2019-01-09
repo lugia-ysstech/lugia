@@ -18,7 +18,6 @@ import MenuList from './component/menulist';
 const NavmenuList = connect(
   menu,
   state => {
-    // console.log('get(current)',state.menu.get('current'));
     return { current: state.menu.get('current') };
   },
   mutations => {
