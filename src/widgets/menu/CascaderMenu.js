@@ -4,15 +4,23 @@ import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
 
 const Button = styled.div`
-  width: 200px;
-  height: 40px;
-  background: cornflowerblue;
+  width: 90px;
+  height: 32px;
+  background: #4d63ff;
   border-radius: 5px;
   color: #fff;
   text-align: center;
-  line-height: 40px;
+  line-height: 32px;
   margin: 10px;
   display: inline-block;
+  cursor: pointer;
+`;
+
+const MenuWrap = styled.div`
+  box-shadow:0px 0px 6px rgba(51,51,51,0.2);
+  display: inline-block;
+  margin: 20px;
+  border-radius: 4px;
 `;
 
 const data = [
@@ -86,18 +94,20 @@ export default class extends React.Component<any, any> {
             [Widget.SubMenu]: { width: 150 }
           }}
         >
-          <Menu
-            separator={'/'}
-            action={'hover'}
-            expandedPath={expandedPath}
-            selectedKeys={selectedKeys}
-            data={data}
-            offsetY={0}
-            onExpandPathChange={this.onExpandPathChange}
-            onClick={this.onClick}
-          />
+          <MenuWrap>
+            <Menu
+              separator={'/'}
+              action={'hover'}
+              expandedPath={expandedPath}
+              selectedKeys={selectedKeys}
+              data={data}
+              offsetY={0}
+              onExpandPathChange={this.onExpandPathChange}
+              onClick={this.onClick}
+            />
+          </MenuWrap>
         </Theme>
-
+        <div />
         <Button onClick={this.expandClick}>展开</Button>
         <Button onClick={this.closeClick}>收起</Button>
       </div>
