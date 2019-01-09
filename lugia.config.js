@@ -1,12 +1,13 @@
 export default {
   disableCSSModules: true,
   cssModulesWithAffix: true,
+  publicPath: '/',
   extraBabelPlugins: [
     [
-      "import",
+      'import',
       {
-        libraryName: "@lugia/lugia-web",
-        libraryDirectory: "dist"
+        libraryName: '@lugia/lugia-web',
+        libraryDirectory: 'dist'
       }
     ]
   ],
