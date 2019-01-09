@@ -12,10 +12,18 @@ import styled from 'styled-components';
 import Temlpate from '../template/template';
 import data from './document';
 const Container = styled.div` 
-  padding:45px 50px 50px;
+  padding:45px 0 50px 0;
   width:100%;
 `;
 
+type DefProps ={
+  current?:string,
+}
+
+type StateProps ={
+  current?:string,
+  pathType:string
+}
 
 export default class Pages extends React.Component<any, any> {
 

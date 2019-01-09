@@ -22,6 +22,7 @@ const getchildren =router => {
       arr.push(<TabPane title={text}  activityKey={url} />);
     }
   }
+
   return arr;
 } ;
 
@@ -29,6 +30,7 @@ const Wrapper = styled.div`
   text-align: left;
   float:right;
   margin-right:80px;
+  position:relative;
 `;
 
 const Header = styled.div`
@@ -62,22 +64,21 @@ export default class Navcomponent extends React.Component<any, any> {
 
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
 
-    const path = window.location.pathname.match(/[^/]+/);
-    const defCurrent = defProps.current || (path?'/'+path[0]:null);
+    const path = '/'+window.location.pathname.match(/[^/]+/)[0];
     if (!stateProps) {
       return {
-        current:defCurrent,
+        current:path,
       };
     }
     return {
-      current: 'current' in defProps ? defCurrent : stateProps.current,
+      current: 'current' in defProps ? path : stateProps.current,
     };
   }
 
   render() {
     const view = {
       [Widget.Tabs]: {
-        width: 360,
+        width: 340,
         height: 60,
       },
     };
