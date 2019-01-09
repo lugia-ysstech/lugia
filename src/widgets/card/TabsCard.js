@@ -11,36 +11,31 @@ export default class TabsCard extends React.Component<Object, Object> {
   render() {
     const combo = {
       register: {
-        width: 700,
+        width: 500,
         height: 300
       },
     };
     const defaultData = [
       {
-        icon: 'lugia-icon-financial_archive',
-        title: 1111111111,
-        content: 1111
+        title: 'Tab1',
+        content: 'content of Tab1'
       },
       {
-        icon: 'lugia-icon-financial_archive',
-        title: 22222222222,
-        content: 22222
+        title: 'Tab2',
+        content: 'content of Tab2'
       },
       {
-        icon: 'lugia-icon-financial_archive',
-        title: 3333333,
-        content: 333
+        title: 'Tab3',
+        content: 'content of Tab3'
       },
       {
-        icon: 'lugia-icon-financial_archive',
-        title: 44444444,
-        content: 4444444
+        title: 'Tab4',
+        content: 'content of Tab4'
       },
       {
-        icon: 'lugia-icon-financial_archive',
-        title: 55555555,
-        content: 5555555
-      }
+        title: 'Tab5',
+        content: 'content of Tab5'
+      },
     ];
     return (
       <Theme config={combo}>

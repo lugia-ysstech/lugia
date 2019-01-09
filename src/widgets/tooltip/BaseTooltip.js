@@ -2,11 +2,36 @@ import React from 'react';
 import { Tooltip, Theme,Button } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
-const Content = styled.div`
-  margin: 100px;
+const buttonWidth = 80;
+const DirectionButton = styled(Button)`
+  width: ${buttonWidth}px;
 `;
-const ButtonDemo = styled(Button)`
-  width: 70px;
+const ToolTipBaseWrapper = styled.div`
+  display: inline-block;
+`;
+const DirectionTopWrapper = styled.div`
+  margin-left: ${buttonWidth}px;
+  white-space: nowrap;
+  display: inline-block;
+`;
+const DirectionLeftWrapper = styled.div`
+  width: ${buttonWidth}px;
+  position: absolute;
+`;
+const DirectionRightWrapper = styled.div`
+  width: ${buttonWidth}px;
+  margin-left: ${buttonWidth * 4 + 24}px;
+`;
+const DirectionBottomWrapper = styled.div`
+  margin-left: ${buttonWidth}px;
+  white-space: nowrap;
+  display: inline-block;
+`;
+const ToolTipHWrapper = ToolTipBaseWrapper.extend`
+  margin-right: 10px;
+`;
+const ToolTipVWrapper = ToolTipBaseWrapper.extend`
+  margin-top: 10px;
 `;
 export default class BaseTooltip extends React.Component<any, any> {
   constructor(props: any) {
@@ -23,63 +48,82 @@ export default class BaseTooltip extends React.Component<any, any> {
     const config = {
       [Widget.Tooltip]: {
         color: '#fef0ef',
-        fontColor: '#000'
-      }
+        fontColor: '#000',
+      },
+      [Widget.Button]: {
+        width: buttonWidth,
+      },
     };
     return (
       <Theme config={config}>
-        <Content className="demo">
-          <div style={{ marginLeft: 70, whiteSpace: 'nowrap' }}>
+        <DirectionTopWrapper>
+          <ToolTipHWrapper>
             <Tooltip placement="topLeft" title={text}>
-              <ButtonDemo type="primary">TL</ButtonDemo>
+              <DirectionButton type="primary">TL</DirectionButton>
             </Tooltip>
+          </ToolTipHWrapper>
+          <ToolTipHWrapper>
             <Tooltip placement="top" title={text}>
-              <ButtonDemo type="primary">Top</ButtonDemo>
+              <DirectionButton type="primary">Top</DirectionButton>
             </Tooltip>
+          </ToolTipHWrapper>
+          <ToolTipHWrapper>
             <Tooltip placement="topRight" title={text}>
-              <ButtonDemo type="primary">TR</ButtonDemo>
+              <DirectionButton type="primary">TR</DirectionButton>
             </Tooltip>
-          </div>
-          <div style={{ width: 70, float: 'left' }}>
+          </ToolTipHWrapper>
+        </DirectionTopWrapper>
+        <DirectionLeftWrapper>
+          <ToolTipVWrapper>
             <Tooltip placement="leftTop" title={text}>
-              <ButtonDemo type="primary">LT</ButtonDemo>
+              <DirectionButton type="primary">LT</DirectionButton>
             </Tooltip>
+          </ToolTipVWrapper>
+          <ToolTipVWrapper>
             <Tooltip placement="left" title={text}>
-              <ButtonDemo type="primary">Left</ButtonDemo>
+              <DirectionButton type="primary">Left</DirectionButton>
             </Tooltip>
+          </ToolTipVWrapper>
+          <ToolTipVWrapper>
             <Tooltip placement="leftBottom" title={text}>
-              <ButtonDemo type="primary">LB</ButtonDemo>
+              <DirectionButton type="primary">LB</DirectionButton>
             </Tooltip>
-          </div>
-          <div style={{ width: 70, marginLeft: 70 * 4 + 24 }}>
+          </ToolTipVWrapper>
+        </DirectionLeftWrapper>
+        <DirectionRightWrapper>
+          <ToolTipVWrapper>
             <Tooltip placement="rightTop" title={text}>
-              <ButtonDemo type="primary">RT</ButtonDemo>
+              <DirectionButton type="primary">RT</DirectionButton>
             </Tooltip>
+          </ToolTipVWrapper>
+          <ToolTipVWrapper>
             <Tooltip placement="right" title={text}>
-              <ButtonDemo type="primary">Right</ButtonDemo>
+              <DirectionButton type="primary">Right</DirectionButton>
             </Tooltip>
+          </ToolTipVWrapper>
+          <ToolTipVWrapper>
             <Tooltip placement="rightBottom" title={text}>
-              <ButtonDemo type="primary">RB</ButtonDemo>
+              <DirectionButton type="primary">RB</DirectionButton>
             </Tooltip>
-          </div>
-          <div
-            style={{
-              marginLeft: 70,
-              clear: 'both',
-              whiteSpace: 'nowrap'
-            }}
-          >
+          </ToolTipVWrapper>
+        </DirectionRightWrapper>
+        <DirectionBottomWrapper>
+          <ToolTipHWrapper>
             <Tooltip placement="bottomLeft" title={text}>
-              <ButtonDemo type="primary">BL</ButtonDemo>
+              <DirectionButton type="primary">BL</DirectionButton>
             </Tooltip>
+          </ToolTipHWrapper>
+          <ToolTipHWrapper>
             <Tooltip placement="bottom" title={text}>
-              <ButtonDemo type="primary">Bottom</ButtonDemo>
+              <DirectionButton type="primary">Bottom</DirectionButton>
             </Tooltip>
+          </ToolTipHWrapper>
+          <ToolTipHWrapper>
             <Tooltip placement="bottomRight" title={text}>
-              <ButtonDemo type="primary">BR</ButtonDemo>
+              <DirectionButton type="primary">BR</DirectionButton>
             </Tooltip>
-          </div>
-        </Content>
+          </ToolTipHWrapper>
+        </DirectionBottomWrapper>
       </Theme>
     );
   }
