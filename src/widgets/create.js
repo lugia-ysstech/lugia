@@ -295,6 +295,7 @@ async function getFolderName2DemoConfig (folderNames) {
 function getContent (demos, config, folderName, pageInfo, childrenWidget) {
   const { importInfo: ApiImport, demo: ApiTable } = getAPITable(folderName, childrenWidget);
   const { title: pageTitle, subTitle, desc: pageDesc } = pageInfo;
+  const importInfoAndDemo = getImportInfoAndDemo(demos, config, folderName);
   const indexCode =
     `import  React from 'react';
         import {Anchor,Grid} from '@lugia/lugia-web';
@@ -302,7 +303,7 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
         ${ApiImport}
         import Demo from '../code-box';
         import Title from '../code-box/Title';
-        ${getImportInfoAndDemo(demos, config, folderName).importInfo} 
+        ${importInfoAndDemo.importInfo} 
         
         const { Link } = Anchor;
         const { Row,Col } = Grid;
@@ -313,12 +314,12 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
                     <Row>
                         <Col span={20}>
                             <Title title={'${pageTitle}'} subTitle={'${subTitle}'} desc={'${pageDesc}'} />
-                            ${getImportInfoAndDemo(demos, config, folderName).demo}
+                            ${importInfoAndDemo.demo}
                             ${ApiTable}
                         </Col>
                         <Col span={4}>
                             <Anchor  slideType="line">
-                                ${getImportInfoAndDemo(demos, config, folderName).link}
+                                ${importInfoAndDemo.link}
                             </Anchor>
                         </Col>
                     </Row>
