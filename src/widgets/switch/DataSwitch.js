@@ -1,25 +1,41 @@
 import React from 'react';
-import { Switch } from '@lugia/lugia-web';
-export default class DataSwitch extends React.Component<any, any> {
+import {DemoItem} from './styled';
+import { Switch,Icon } from '@lugia/lugia-web';
+export default class DataSwitch extends React.Component {
   render() {
     return (
-      <div style={{ margin: '20px' }}>
-        <section style={{ marginBottom: '20px' }}>
-          <h3>data.length=3</h3>
-          <Switch data={[{ text: '年' }, { text: '月' }, { text: '日' }]} />
-        </section>
-        <section style={{ marginBottom: '20px' }}>
-          <h3>data.length=2 isInverse defaultValue</h3>
-          <Switch
-            data={[{ text: '开' }, { text: '关' }]}
-            isInverse
-            defaultValue
+      <div>
+        <DemoItem>
+          <Switch 
+            defaultValue 
+            data={[{ text: '年' }, { text: '月' }]} 
           />
-        </section>
-        <section style={{ marginBottom: '20px' }}>
-          <h3>data `data.length=1 isInverse`</h3>
-          <Switch data={[{ text: '开' }]} isInverse />
-        </section>
+        </DemoItem><br/>
+        <DemoItem>
+          <Switch 
+            defaultValue 
+            data={[{ text: '开' },{ text: '关' }]} 
+          />
+        </DemoItem><br/>
+        <DemoItem>
+          <Switch 
+            defaultValue 
+            displayFiled={'left'} 
+            data={[
+              { text: '开',left: '日'},
+              { text: '关',left: '月'}
+            ]} 
+          />
+        </DemoItem><br/>
+        <DemoItem>
+          <Switch 
+            defaultValue 
+            data={[
+              { text: <Icon iconClass={'lugia-icon-reminder_check'} /> },
+              { text: <Icon iconClass={'lugia-icon-reminder_close'} /> }
+              ]} 
+          />
+        </DemoItem>
       </div>
     );
   }
