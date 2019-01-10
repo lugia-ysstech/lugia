@@ -14,11 +14,17 @@ import SearchElement from './component/search';
 const SearchComponent = connect(
   search,
   state => {
-    return { searchInfo: state.search.get('searchInfo') };
+    return {
+      searchInfo: state.search.get('searchInfo'),
+      result: state.search.get('result'),
+    };
   },
   mutations => {
     const { search } = mutations;
-    return { onTabClick: search.onTabClick};
+    return {
+      handleInputChange: search.handleInputChange,
+      fetchRequest: search.fetchRequest
+    };
   }
 )(SearchElement);
 
