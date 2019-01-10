@@ -7,7 +7,7 @@
 import React from 'react';
 import { Button, Menu, Navmenu, Theme } from '@lugia/lugia-web';
 import '../css/menu.css';
-import { connect } from '@lugia/lugiax';
+import { bindTo, connect } from '@lugia/lugiax';
 import search from './models/search';
 import SearchElement from './component/search';
 
@@ -23,7 +23,7 @@ const SearchComponent = connect(
     const { search } = mutations;
     return {
       handleInputChange: search.handleInputChange,
-      fetchRequest: search.asyncFetchRequest
+      fetchRequest: search.fetchRequest
     };
   }
 )(SearchElement);
