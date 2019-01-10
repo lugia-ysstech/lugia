@@ -19,7 +19,7 @@ export default class DisableInput extends React.Component<any, any> {
   render () {
     return (
       <div>
-        <div style={{ marginTop: 20 }}>
+        <div style={{ marginBottom: 10 }}>
           <Button onClick={this.toggle} type="primary">点击切换禁用状态</Button>
         </div>
         <Input disabled={this.state.disabled}/>

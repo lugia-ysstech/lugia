@@ -20,13 +20,13 @@ module.exports = {
     path: './PagedTypeTabs'
   },
   OrderTabs: {
-    title: '自定义标签页',
+    title: '自定义增删标签页',
     desc: '卡片风格和窗口风格,可以自定义增加,删除标签页',
     path: './OrderTabs'
   },
   ChangeTabs: {
-    title: '自定义标签页',
-    desc: '卡片风格和窗口风格,可以自定义增加,删除标签页',
+    title: '修改配置标签',
+    desc: '可以自定义配置标签数据',
     path: './ChangeTabs'
   }
 };
