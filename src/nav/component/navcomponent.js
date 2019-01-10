@@ -9,9 +9,9 @@ import { go } from '@lugia/lugiax-router';
 import { Tabs, Theme } from '@lugia/lugia-web';
 import '../../css/menu.css';
 import Widget from '@lugia/lugia-web/dist/consts/index';
-import { bindTo, connect } from '@lugia/lugiax';
 import styled from 'styled-components';
 import { designRouter } from '../../App';
+import logo from '../../../public/lugia-logo.png';
 
 const TabPane = Tabs.TabPane;
 const getchildren =router => {
@@ -85,7 +85,7 @@ export default class Navcomponent extends React.Component<any, any> {
     const {current} = this.state;
     return (
         <Header>
-          <Logo src="../../../public/lugia-logo.png" alt=""/>
+          <Logo src={logo} alt=""/>
           <Language>English | </Language>
           <Theme config={view}>
           <Wrapper>
