@@ -233,15 +233,6 @@ export default {
             return import('../widgets/table');
           },
         },
-      '/component/tag':
-        {
-          value: '/component/tag',
-          text: '标签',
-          exact: true,
-          render: async () => {
-            return import('../widgets/tag');
-          },
-        },
       '/component/timepicker':
         {
           value: '/component/timepicker',
@@ -339,6 +330,15 @@ export default {
           exact: true,
           render: async () => {
             return import('../widgets/tabs');
+          },
+        },
+      '/component/tag':
+        {
+          value: '/component/tag',
+          text: '标签',
+          exact: true,
+          render: async () => {
+            return import('../widgets/tag');
           },
         },
       '/component/timeline':
