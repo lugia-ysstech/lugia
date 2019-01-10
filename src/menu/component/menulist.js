@@ -48,9 +48,6 @@ const getMenuItems = (data:Object) => {
   return arr;
 };
 
-const isInString = (target, key) => {
-  return target.indexOf(key) !== -1;
-};
 
 const Container = styled.div`
   padding:${props => (props.fixed?'0':'42px 0 10px')};
@@ -113,7 +110,6 @@ export default class MenuList extends React.Component<any, any> {
   getWindowHeight = () => {
 
     const viewHeight = document.body.clientHeight - 122;
-    console.log('viewHeight',viewHeight);
     this.setState({
       height: viewHeight
     });
