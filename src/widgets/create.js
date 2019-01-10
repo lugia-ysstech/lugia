@@ -57,16 +57,19 @@ async function createSearchIndex () {
     }
     const { widgetName } = meta;
     const url = getUrl(widgetName);
-    Object.values(config).forEach(configValue => {
+    Object.keys(config).forEach((demoName, i) => {
+      const configValue = config[ demoName ];
+
       const { title, desc } = configValue;
+      const link = `${url}#${folderName}-${i}`;
       title && res.push({
-        url,
+        url: link,
         type: widget,
         content: title,
         power: 3,
       });
       desc && res.push({
-        url,
+        url: link,
         type: widget,
         content: desc,
         power: 4,
@@ -75,22 +78,37 @@ async function createSearchIndex () {
   });
   const ruleKeys = Object.keys(documents);
   ruleKeys && ruleKeys.forEach(ruleKey => {
-    const { title, content } = documents[ ruleKey ];
+    const document = documents[ ruleKey ];
+    const { title, content } = document;
+    const url = `design/${ruleKey}`;
     title && res.push({
-      url: `design/${ruleKey}`,
+      url,
       content: title,
       power: 1,
       type: rule
     });
 
     content && content.forEach(item => {
-      const {text} =item;
+      const { text } = item;
       res.push({
-        url: `design/${ruleKey}`,
+        url,
         content: text,
         power: 2,
         type: rule
       });
+    });
+
+    const { children } = document;
+    children && children.forEach((childItem, index) => {
+      const { title } = childItem;
+      if (title) {
+        res.push({
+          url: `${url}#link-${index}`,
+          content: title,
+          power: 3,
+          type: rule
+        });
+      }
     });
   });
   await fs.writeFileSync(getRouterFile('search.js'), `module.exports = ${JSON.stringify(res)}`);
