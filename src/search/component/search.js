@@ -97,7 +97,7 @@ export default class Navcomponent extends React.Component<any, any> {
         borderSize:{top:0,right:0,bottom:1,left:0},
         borderColor:'#ccc',
         margin: {top:0,right:0,bottom:0,left:38},
-        width:130
+        width:150
       },
       [Widget.Trigger]: {
         width:500,
