@@ -1,4 +1,5 @@
 import React from 'react';
+import {DemoItem} from './styled';
 import { Switch, Button } from '@lugia/lugia-web';
 export default class DisabledSwitch extends React.Component {
   state = {
@@ -14,11 +15,15 @@ export default class DisabledSwitch extends React.Component {
   render() {
     return (
       <div>
-        <Switch disabled={this.state.disabled} />
+        <DemoItem>
+          <Switch defaultValue disabled={this.state.disabled} />
+        </DemoItem>
         <br />
-        <Button type="primary" onClick={this.toggle}>
-          点击切换禁用状态
-        </Button>
+        <DemoItem>
+          <Button type="primary" onClick={this.toggle}>
+            点击切换
+          </Button>
+        </DemoItem>        
       </div>
     );
   }

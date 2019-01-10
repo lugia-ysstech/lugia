@@ -1,17 +1,17 @@
 import React from 'react';
+import {DemoItem} from './styled';
 import { Switch } from '@lugia/lugia-web';
-export default class BaseSwitch extends React.Component<any, any> {
+export default class BaseSwitch extends React.Component{
   render() {
     return (
-      <div style={{ margin: '20px' }}>
-        <section style={{ marginBottom: '20px' }}>
-          <h3>loading</h3>
+      <div>
+        <DemoItem>
           <Switch loading />
-        </section>
-        <section style={{ marginBottom: '20px' }}>
-          <h3>'loading=delay:3000'</h3>
-          <Switch loading={{ delay: 3000 }} />
-        </section>
+        </DemoItem>
+        <br/>
+        <DemoItem>
+          <Switch size={'small'} loading />
+        </DemoItem>
       </div>
     );
   }
