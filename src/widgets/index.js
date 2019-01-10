@@ -1,13 +1,12 @@
 import React from 'react';
-import { createBrowserHistory } from 'history';
 import { createRoute } from '@lugia/lugiax-router';
 import '@lugia/lugia-web/dist/css/global.css';
-import Widget from '@lugia/lugia-web/dist/consts/index';
-import {Grid, Layout, Theme} from '@lugia/lugia-web';
+import { Grid, Layout, Theme } from '@lugia/lugia-web';
 import Router from '../router';
 import Asides from '../menu';
 import styled from 'styled-components';
 import Headers from '../nav';
+import PageLoading from '../pageloading';
 
 const { Content} = Layout;
 const { Row, Col } = Grid;
@@ -30,7 +29,7 @@ const Block = styled.div`
   height:60px;
 `;
 export default () => {
-  const rout = createRoute(Router.routerConfig);
+  const rout = createRoute(Router.routerConfig, PageLoading);
   return (
     <React.Fragment>
       <Container>
