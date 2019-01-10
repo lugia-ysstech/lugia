@@ -16,10 +16,10 @@ Lugia Web 旨在降低开发成本，提升开发质量，为前端开发人员�
 
 ```bash
 ## 安装
-$ yarn global add @lugia/mega
+$ npm install @lugia/mega -g
 
 ## 查看版本
-$ mega -v
+$ mega -V
 1.0.3
 
 ## 帮助
