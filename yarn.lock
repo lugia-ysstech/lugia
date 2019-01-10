@@ -931,10 +931,10 @@
     babel-plugin-transform-dynamic-import "2.1.0"
     babel-plugin-transform-react-remove-prop-types "0.4.20"
 
-"@lugia/lugia-web@^1.0.66":
-  version "1.0.66"
-  resolved "http://192.168.102.79:5001/@lugia/lugia-web/download/@lugia/lugia-web-1.0.66.tgz#d6a9ddda234e5355afbdac02959ea6941cd2f3ea"
-  integrity sha1-1qnd2iNOU1WvvawClZ6mlBzS8+o=
+"@lugia/lugia-web@^1.0.67":
+  version "1.0.67"
+  resolved "http://192.168.102.79:5001/@lugia/lugia-web/download/@lugia/lugia-web-1.0.67.tgz#8c8a6c86f3a13e68fc84a1cfa72b39e0f8b0deb4"
+  integrity sha1-jIpshvOhPmj8hKHPpys54Piw3rQ=
   dependencies:
     "@lugia/type-utils" "^1.0.4"
     babel-polyfill "6.26.0"
@@ -958,33 +958,33 @@
     styled-components "3.4.9"
     warning "3.0.0"
 
-"@lugia/lugiax-core@^1.0.3":
-  version "1.0.3"
-  resolved "http://192.168.102.79:5001/@lugia/lugiax-core/download/@lugia/lugiax-core-1.0.3.tgz#4580a5bf7314d3dcfc5dfa7c9cf259e771f894df"
-  integrity sha1-RYClv3MU09z8Xfp8nPJZ53H4lN8=
+"@lugia/lugiax-core@^1.0.4":
+  version "1.0.4"
+  resolved "http://192.168.102.79:5001/@lugia/lugiax-core/download/@lugia/lugiax-core-1.0.4.tgz#dee5ca3ca4e5343150448e781544504662a1070f"
+  integrity sha1-3uXKPKTlNDFQRI54FURQRmKhBw8=
   dependencies:
     immutable "^3.8.2"
     redux "^4.0.0"
     redux-immutable "^4.0.0"
     redux-saga "^0.16.0"
 
-"@lugia/lugiax-router@^1.0.6":
-  version "1.0.6"
-  resolved "http://192.168.102.79:5001/@lugia/lugiax-router/download/@lugia/lugiax-router-1.0.6.tgz#68247f0f117e42b0ec7b6fa0b210f514c3637074"
-  integrity sha1-aCR/DxF+QrDse2+gshD1FMNjcHQ=
+"@lugia/lugiax-router@^1.0.7":
+  version "1.0.7"
+  resolved "http://192.168.102.79:5001/@lugia/lugiax-router/download/@lugia/lugiax-router-1.0.7.tgz#d12cbbe0255a66b738c9f75f1ac96d233aa8fbc8"
+  integrity sha1-0Sy74CVaZrc4yfdfGsltIzqo+8g=
   dependencies:
-    "@lugia/lugiax-core" "^1.0.3"
+    "@lugia/lugiax-core" "^1.0.4"
     connected-react-router "^4.4.1"
     react-loadable "^5.5.0"
     react-redux "^5.0.7"
     react-router "^4.3.1"
 
-"@lugia/lugiax@^1.0.4":
-  version "1.0.4"
-  resolved "http://192.168.102.79:5001/@lugia/lugiax/download/@lugia/lugiax-1.0.4.tgz#e0be762048287af3779b7008a82c44d28433c83d"
-  integrity sha1-4L52IEgoevN3m3AIqCxE0oQzyD0=
+"@lugia/lugiax@^1.0.5":
+  version "1.0.5"
+  resolved "http://192.168.102.79:5001/@lugia/lugiax/download/@lugia/lugiax-1.0.5.tgz#2316536a421ca9611424bdc267884c7c2bcd6143"
+  integrity sha1-IxZTakIcqWEUJL3CZ4hMfCvNYUM=
   dependencies:
-    "@lugia/lugiax-core" "^1.0.3"
+    "@lugia/lugiax-core" "^1.0.4"
     immutable "^3.8.2"
 
 "@lugia/mega-jest@^1.1.3":

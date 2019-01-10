@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@lugia/lugia-web": "^1.0.66",
-    "@lugia/lugiax": "^1.0.4",
-    "@lugia/lugiax-router": "^1.0.6",
+    "@lugia/lugia-web": "^1.0.67",
+    "@lugia/lugiax": "^1.0.5",
+    "@lugia/lugiax-router": "^1.0.7",
     "@lugia/mega-scripts": "^1.2.0",
     "highlight.js": "^9.13.1",
     "history": "^4.7.2",
