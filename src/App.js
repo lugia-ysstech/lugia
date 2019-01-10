@@ -2,10 +2,8 @@ import React from 'react';
 import {createRoute, Redirect} from '@lugia/lugiax-router';
 import {Grid, Layout, Theme} from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
-import Headers from './nav';
+import PageLoading from './pageloading';
 import Widgets from './widgets';
-const { Row, Col } = Grid;
-const { Footer} = Layout;
 
 
 export const designRouter = {
@@ -43,7 +41,7 @@ export const designRouter = {
   }
 
 };
-const rout = createRoute(designRouter);
+const rout = createRoute(designRouter, PageLoading);
 
 const footer = (
   <div

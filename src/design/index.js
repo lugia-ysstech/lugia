@@ -1,16 +1,15 @@
 import React from 'react';
-import { createBrowserHistory } from 'history';
 import { createRoute } from '@lugia/lugiax-router';
 import '@lugia/lugia-web/dist/css/global.css';
-import Widget from '@lugia/lugia-web/dist/consts/index';
-import {Grid, Layout, Theme} from '@lugia/lugia-web';
+import { Grid, Layout, Theme } from '@lugia/lugia-web';
 import Router from '../router';
 import Headers from '../nav';
 import Asides from '../menu';
+import PageLoading from '../pageloading';
 
 
 const { Row, Col } = Grid;
-const rout = createRoute(Router.designRouter);
+const rout = createRoute(Router.designRouter, PageLoading);
 
 const block = (
   <div style={{ height: '60px'}}>
