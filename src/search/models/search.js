@@ -19,7 +19,7 @@ export default lugiax.register({
     sync: {
 
       onTabClick(state, inParam) {
-        // console.log('------',state, inParam);
+
         return state.set('searchInfo', inParam);
 
       },
