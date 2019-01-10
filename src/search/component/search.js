@@ -6,15 +6,56 @@
  */
 import React from 'react';
 import { go } from '@lugia/lugiax-router';
-import {Theme ,Icon,Input,AutoComplete} from '@lugia/lugia-web';
+import {Theme ,Icon,Input,Trigger} from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import styled from 'styled-components';
-//
-// const SearchInput = styled(Input)`
-//   margin:0 50px;
-//   border-bottom:1px solid #ccc !important;
-//   // position:relative;
-// `;
+import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
+
+const Container = styled.div`
+  width:300px;
+`;
+
+const Type = styled.div`
+  font-size:16px;
+  color:#333333;
+  line-height:1.0;
+  margin:24px 0 18px;
+  padding:0 16px;
+`;
+const { themeColor } = colorsFunc();
+const TypeLine = styled.div`
+  width:6px;
+  height:16px;
+  background:${themeColor};
+  margin-right:8px;
+  display:inline-block;
+  border-radius:6px;
+  vertical-align: top;
+`;
+
+const Title = styled.div`
+  font-size:14px;
+  color:#999999;
+  line-height:1.5;
+  text-align:right;
+  padding:0 16px 0 0;
+`;
+const Li = styled.div`
+  display:flex;
+  width:500px;
+  padding:0 16px;
+  line-height:1.5;
+  margin:8px 0;
+  cursor:pointer;
+`;
+const LiLeft = styled.div`
+  width:156px;  
+`;
+const LiRight = styled.div`
+  width:342px;
+  border-left:1px solid #999999;
+  padding:0 16px;
+`;
 
 
 type DefProps={
@@ -34,22 +75,19 @@ class SearchIcon extends React.Component<any> {
   }
 }
 
-
-const data = [
-  'autocomplete',
-];
-
 export default class Navcomponent extends React.Component<any, any> {
 
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
-
+    const {searchInfo,result} = defProps;
     if (!stateProps) {
       return {
-        menuData:data
+        searchInfo,
+        result
       };
     }
     return {
-
+      searchInfo: 'searchInfo' in defProps?searchInfo:stateProps.searchInfo,
+      result: 'searchInfo' in defProps?result:stateProps.result,
     };
   }
 
@@ -59,37 +97,91 @@ export default class Navcomponent extends React.Component<any, any> {
         borderSize:{top:0,right:0,bottom:1,left:0},
         borderColor:'#ccc',
         margin: {top:0,right:0,bottom:0,left:38},
+        width:150
       },
-      [Widget.AutoComplete]: {
-        width:80,
+      [Widget.Trigger]: {
+        width:500,
       },
+
     };
+    const {searchInfo} = this.state;
+    const poup = this.getPopup();
     return (
         <Theme config={InputStyle}>
-          {/*<Input prefix={<SearchIcon />} onChange={this.handleInputChange} placeholder="在lugia中搜索" value={this.state.value}   />*/}
-          <AutoComplete
-
-            data={this.state.menuData}
-
-            onChange={this.handleInputChange}
-
-            placeholder={'在lugia中搜索'}
-
-          />
+          <Trigger
+            offsetX={120}
+            offsetY={1}
+            action={['focus']}
+            popup={poup}
+          >
+            <Input prefix={<SearchIcon />} onChange={this.handleInputChange} placeholder="在lugia中搜索" value={searchInfo}   />
+          </Trigger>
 
         </Theme>
 
     );
   }
 
-  handleInputChange = (newValue:Object) => {
-    console.log(newValue);
-    this.setState({
-      value:newValue,
-    });
+  getPopEement =(data:Object) => {
+    const child = [] ;
+    for(const i in data){
+      child.push(
+        <React.Fragment>
+          <Type >
+            <TypeLine/>
+            {i}
+          </Type>
+        {
+          data[i].map((item, index) => (
+            <React.Fragment>
+              {index <= 10 && <Li>
+              <LiLeft onClick={e => this.linkToUrl(item.url.split('#')[0])}> <Title>{item.owner}</Title> </LiLeft>
+              <LiRight onClick={e => this.linkToUrl(item.url)}>{item.content}</LiRight>
+            </Li>}
+            </React.Fragment>
+        ))
+        }
+        </React.Fragment>
+      );
+
+    }
+    return (
+      <React.Fragment>
+        {child.map(item => (
+          <React.Fragment>
+            {item}
+          </React.Fragment>
+        ))}
+      </React.Fragment>
+    );
+  };
+  getPopup = () => {
+    const {result} = this.state;
+      return (
+        <Container>
+          {result && this.getPopEement(result)}
+        </Container>
+      );
+
+  };
+  handleInputChange = (event:Object) => {
+    let newValue='';
+    if(!event){
+      newValue = null;
+    }else{
+      newValue = event.newValue;
+    }
+    const { handleInputChange } = this.props;
+    handleInputChange && handleInputChange(newValue);
+    this.fetchRequest(newValue);
   };
 
-  linkToUrl = res => {
+  fetchRequest= (newValue:string) => {
+    const {fetchRequest } = this.props;
+    fetchRequest && fetchRequest(newValue);
+  };
+  linkToUrl = (res:string) => {
+    this.handleInputChange(null);
     go({ url: res });
   };
 
