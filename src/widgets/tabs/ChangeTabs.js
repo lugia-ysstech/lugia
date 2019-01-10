@@ -1,64 +1,47 @@
 import React from 'react';
-import { Theme, Tabs } from '@lugia/lugia-web';
+import { Theme, Tabs, Button } from '@lugia/lugia-web';
 
 const TabPane = Tabs.TabPane;
 export const hasActivityKeyData = [
   {
-    title: 1111,
-    content: <div>1111111</div>,
+    title: 'Tab1',
+    content: <div>content of Tab1</div>,
     activityKey: '0'
   },
   {
-    title: 222222,
-    content: (
-      <div>
-        <div>222222</div>
-      </div>
-    ),
+    title: 'Tab2',
+    content: <div>content of Tab2</div>,
     activityKey: '1'
   },
   {
     activityKey: '2',
-    title: 3333,
-    content: (
-      <div>
-        <div>
-          <div>33333</div>
-        </div>
-      </div>
-    )
+    title: 'Tab3',
+    content: <div>content of Tab3</div>
   },
   {
     activityKey: '3',
-    title: 44444,
-    content: (
-      <div>
-        <div>
-          <div>44444</div>
-          <div>44444</div>
-        </div>
-      </div>
-    )
+    title: 'Tab4',
+    content: <div>content of Tab4</div>
   },
   {
     activityKey: '4',
-    title: 55555,
-    content: 55555
+    title: 'Tab5',
+    content: <div>content of Tab5</div>
   },
   {
     activityKey: '5',
-    title: 66666,
-    content: 66666
+    title: 'Tab6',
+    content: <div>content of Tab6</div>
   },
   {
     activityKey: '6',
-    title: 777777,
-    content: 77777
+    title: 'Tab7',
+    content: <div>content of Tab7</div>
   },
   {
     activityKey: '7',
-    title: 888888,
-    content: 888888
+    title: 'Tab8',
+    content: <div>content of Tab8</div>
   }
 ];
 export default class ChangeTabs extends React.Component<any, any> {
@@ -70,7 +53,7 @@ export default class ChangeTabs extends React.Component<any, any> {
     hasActivityKeyData[0] = {
       title: 1000000000000,
       content: 1000000000,
-      activityKey: '-1'
+      activityKey: '0'
     };
     this.setState({ data: hasActivityKeyData });
   };
@@ -99,9 +82,9 @@ export default class ChangeTabs extends React.Component<any, any> {
     const { data } = this.state;
     return (
       <div>
-        <button style={{ width: 200 }} onClick={this.change}>
-          {'点击修改data内容'}
-        </button>
+        <Button style={{ width: 200 }} onClick={this.change} type={'primary'}>
+          {'点击修改标签内容'}
+        </Button>
         <Tabs
           tabType={'card'}
           pagedType={'single'}

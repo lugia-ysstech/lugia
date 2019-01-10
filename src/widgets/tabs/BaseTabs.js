@@ -8,97 +8,68 @@ const TabPane = Tabs.TabPane;
 const Wrapper = styled.div`
   text-align: left;
   margin-top: 50px;
-  margin-left: 100px;
   display: inline-block;
 `;
 const children = [
-  <TabPane title={'1111'} content={'11111'} activityKey={'0'} />,
-  <TabPane title={'2222'} content={<div>2222</div>} activityKey={'1'} />,
+  <TabPane title={'Tab1'} content={<div>content of Tab1</div>} activityKey={'0'} />,
   <TabPane
-    title={'3333'}
-    content={
-      <div>
-        <div>
-          <div>3333</div>
-        </div>
-      </div>
-    }
+    title={'Tab2'}
+    content={<div>content of Tab2</div>}
+    activityKey={'1'}
+  />,
+  <TabPane
+    title={'Tab3'}
+    content={<div>content of Tab3</div>}
     activityKey={'2'}
   />,
   <TabPane
-    title={'4444'}
-    content={
-      <div>
-        <div>
-          <div>44444</div>
-        </div>
-      </div>
-    }
+    title={'Tab4'}
+    content={<div>content of Tab4</div>}
     activityKey={'3'}
   />,
   <TabPane
-    title={'555555'}
-    content={
-      <div>
-        <div>
-          <div>55555</div>
-        </div>
-      </div>
-    }
+    title={'Tab5'}
+    content={<div>content of Tab5</div>}
     activityKey={'4'}
   />,
   <TabPane
-    title={'666666'}
-    content={
-      <div>
-        <div>
-          <div>66666</div>
-        </div>
-      </div>
-    }
+    title={'Tab6'}
+    content={<div>content of Tab6</div>}
     activityKey={'5'}
   />
 ];
 const defaultData = [
   {
-    icon: 'lugia-icon-financial_archive',
-    title: 1111111111,
-    content: 1111
+    title: 'Tab1',
+    content: 'content of Tab1'
   },
   {
-    icon: 'lugia-icon-financial_archive',
-    title: 22222222222,
-    content: 22222
+    title: 'Tab2',
+    content: 'content of Tab2'
   },
   {
-    icon: 'lugia-icon-financial_archive',
-    title: 3333333,
-    content: 333
+    title: 'Tab3',
+    content: 'content of Tab3'
   },
   {
-    icon: 'lugia-icon-financial_archive',
-    title: 44444444,
-    content: 4444444
+    title: 'Tab4',
+    content: 'content of Tab4'
   },
   {
-    icon: 'lugia-icon-financial_archive',
-    title: 55555,
-    content: 555555
+    title: 'Tab5',
+    content: 'content of Tab5'
   },
   {
-    icon: 'lugia-icon-financial_archive',
-    title: 666666,
-    content: 66666
+    title: 'Tab6',
+    content: 'content of Tab6'
   },
   {
-    icon: 'lugia-icon-financial_archive',
-    title: 7777777,
-    content: 777777
+    title: 'Tab7',
+    content: 'content of Tab7'
   },
   {
-    icon: 'lugia-icon-financial_archive',
-    title: 88888,
-    content: 888888
+    title: 'Tab8',
+    content: 'content of Tab8'
   }
 ];
 export default class BaseTabs extends React.Component<any, any> {
@@ -116,7 +87,6 @@ export default class BaseTabs extends React.Component<any, any> {
     return (
       <Theme config={view}>
         <Wrapper>
-          <p>基本使用 配置data</p>
           <Tabs
             titleType={'line'}
             tabPosition={'top'}
@@ -126,7 +96,6 @@ export default class BaseTabs extends React.Component<any, any> {
           />
         </Wrapper>
         <Wrapper>
-          <p>基本使用 配置children</p>
           <Tabs
             titleType={'line'}
             tabPosition={'top'}
