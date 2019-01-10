@@ -36,7 +36,7 @@ module.exports =  {
         desc: '按钮类型的 RadioGroup，配置 childType 为 button '
     },
     ButtonDisplayDemo: {
-        title: '按钮类型',
-        desc: '按钮类型的 RadioGroup，配置 childType 为 button '
+        title: '按钮类型的 DisplayValue',
+        desc: '按钮类型的 value备选项，value 找不到时作为取消项展示备选项'
     }
 };
