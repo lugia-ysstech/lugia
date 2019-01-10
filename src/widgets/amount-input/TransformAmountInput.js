@@ -14,7 +14,6 @@ export default class TransformAmountInput extends React.Component<any, any> {
     return(
       <Wrapper>
         <AmountInput transform={true} />
-        <AmountInput transform={false} />
       </Wrapper>);
   }
 }

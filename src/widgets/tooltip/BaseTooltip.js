@@ -47,7 +47,7 @@ export default class BaseTooltip extends React.Component<any, any> {
     const text = <span>prompt text</span>;
     const config = {
       [Widget.Tooltip]: {
-        color: '#fef0ef',
+        color: '#fff',
         fontColor: '#000',
       },
       [Widget.Button]: {

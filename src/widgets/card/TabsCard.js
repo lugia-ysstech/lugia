@@ -13,7 +13,7 @@ export default class TabsCard extends React.Component<Object, Object> {
       register: {
         width: 500,
         height: 300
-      },
+      }
     };
     const defaultData = [
       {
@@ -35,7 +35,7 @@ export default class TabsCard extends React.Component<Object, Object> {
       {
         title: 'Tab5',
         content: 'content of Tab5'
-      },
+      }
     ];
     return (
       <Theme config={combo}>
