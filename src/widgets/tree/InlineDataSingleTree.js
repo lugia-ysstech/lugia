@@ -78,7 +78,7 @@ export default class InlineDataSingleTree extends React.Component<
     return (
       <Theme config={config}>
         <Tree
-          expandAll
+          autoHeight
           data={data}
           translateTreeData={true}
           valueField={'value'}

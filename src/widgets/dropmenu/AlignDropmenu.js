@@ -12,7 +12,7 @@ for (let i = 0; i < 10; i++) {
 
 const Box = styled.div`
   display: inline-block;
-  margin: 30px;
+  margin: 5px 10px;
 `;
 
 const menu = <Menu data={data} />;
@@ -21,7 +21,7 @@ export default class extends React.Component<any, any> {
   render() {
     const defaultView = {
       [Widget.DropMenuButton]: { width: 120 },
-      [Widget.Dropmenu]: { width: 80 }
+      [Widget.DropMenu]: { width: 80 }
     };
 
     return (
@@ -29,17 +29,17 @@ export default class extends React.Component<any, any> {
         <Theme config={defaultView}>
           <Box>
             <Dropmenu menus={menu} align={'bottomLeft'}>
-              <Dropmenu.Button divided={false}>Click me</Dropmenu.Button>
+              <Dropmenu.Button divided={false}>向下左对齐</Dropmenu.Button>
             </Dropmenu>
           </Box>
           <Box>
             <Dropmenu menus={menu} align={'bottom'}>
-              <Dropmenu.Button divided={false}>Click me</Dropmenu.Button>
+              <Dropmenu.Button divided={false}>向下居中对齐</Dropmenu.Button>
             </Dropmenu>
           </Box>
           <Box>
             <Dropmenu menus={menu} align={'bottomRight'}>
-              <Dropmenu.Button divided={false}>Click me</Dropmenu.Button>
+              <Dropmenu.Button divided={false}>向下右对齐</Dropmenu.Button>
             </Dropmenu>
           </Box>
           <div>
@@ -49,21 +49,21 @@ export default class extends React.Component<any, any> {
           <Box>
             <Dropmenu menus={menu} align={'topLeft'} action={'hover'}>
               <Dropmenu.Button direction={'up'} divided={false}>
-                Hover me
+                向上左对齐
               </Dropmenu.Button>
             </Dropmenu>
           </Box>
           <Box>
             <Dropmenu menus={menu} align={'top'} action={'hover'}>
               <Dropmenu.Button direction={'up'} divided={false}>
-                Hover me
+                向上居中对齐
               </Dropmenu.Button>
             </Dropmenu>
           </Box>
           <Box>
             <Dropmenu menus={menu} align={'topRight'} action={'hover'}>
               <Dropmenu.Button direction={'up'} divided={false}>
-                Hover me
+                向上右对齐
               </Dropmenu.Button>
             </Dropmenu>
           </Box>
