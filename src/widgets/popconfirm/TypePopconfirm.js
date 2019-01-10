@@ -3,7 +3,6 @@ import { Popconfirm, Theme, Button, Input, Icon } from '@lugia/lugia-web';
 import styled from 'styled-components';
 const Direction = styled(Button)``;
 const Wrapper = styled.div`
-  margin: 100px;
 `;
 const IconWrapper = styled.div`
   border-radius: 50%;

@@ -19,7 +19,6 @@ const stepsData = [
 ];
 const StepContent = styled.div`
   margin-top: 30px;
-  margin-left: 45px;
   border: 1px solid #ccc;
   height: 100px;
 `;
@@ -52,12 +51,8 @@ export default class StepsDemo extends React.Component<Object, Object> {
       : '';
     const view = {
       [Widget.Steps]: {
-        width: 1000
+        width: 470
       },
-      [Widget.Step]: {
-        width: 350,
-        height: 100
-      }
     };
     return (
       <div>
