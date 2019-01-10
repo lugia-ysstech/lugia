@@ -39,12 +39,20 @@ const routerConfig = {
     isHidden: true,
     text: 'Affix',
   },
+  '/component/404': {
+    exact: true,
+    render: async () => import('../access/NotAccess'),
+    value: '/component/404',
+    isHidden: true,
+    text: '404',
+  },
   ...widgetrouter,
   NotFound: {
+    isHidden: true,
     render: async () => {
       return  () => <Redirect
         to={{
-          pathname: '/home',
+          pathname: '/component/404',
         }}
       />;
     },
@@ -172,7 +180,24 @@ const designRouter = {
     isHidden: true,
     text: 'Lugia.D',
   },
-  ...getDesignRoute(designConfig)
+  ...getDesignRoute(designConfig),
+  '/design/404': {
+    exact: true,
+    render: async () => import('../access/NotAccess'),
+    value: '/design/404',
+    isHidden: true,
+    text: '404',
+  },
+  NotFound: {
+    isHidden: true,
+    render: async () => {
+      return  () => <Redirect
+        to={{
+          pathname: '/design/404',
+        }}
+      />;
+    },
+  }
 };
 
 
