@@ -1,14 +1,20 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import {Button} from '@lugia/lugia-web';
+
+const Empty = styled.span`
+  display: inline-block;
+  width: 10px;
+`;
 
 export default class ButtonDemo extends React.Component<any, any> {
     render() {
         return (
             <div>
-                <Button shape="round">Default</Button>
-                <Button type="primary" shape="round">Primary</Button>
-                <Button type="success" shape="round">Success</Button>
-                <Button type="warning" shape="round">Warning</Button>
+                <Button shape="round">Default</Button><Empty />
+                <Button type="primary" shape="round">Primary</Button><Empty />
+                <Button type="success" shape="round">Success</Button><Empty />
+                <Button type="warning" shape="round">Warning</Button><Empty />
                 <Button type="danger" shape="round">Danger</Button>
             </div>
         );
