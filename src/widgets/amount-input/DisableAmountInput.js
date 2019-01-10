@@ -9,7 +9,7 @@ export default class DisableAmountInput extends React.Component<any, any> {
     disabled: false,
   };
 
-  toggle = () => {
+  click = () => {
     const disabled =!this.state.disabled;
     this.setState({
       disabled
@@ -19,8 +19,8 @@ export default class DisableAmountInput extends React.Component<any, any> {
   render () {
     return (
       <div>
-        <div style={{ marginTop: 20 }}>
-          <Button onClick={this.toggle} type="primary">点击切换 disabled</Button>
+        <div style={{ marginBottom: 10 }}>
+          <Button onClick={this.click} type="primary">点击切换禁用状态</Button>
         </div>
         <AmountInput disabled={this.state.disabled}/>
     </div> );

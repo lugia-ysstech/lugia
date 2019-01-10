@@ -3,9 +3,39 @@ import { Popover, Theme, Button } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
 
-const Direction = styled(Button)``;
 const Wrapper = styled.div`
   margin: 100px;
+`;
+const buttonWidth = 80;
+const DirectionButton = styled(Button)`
+  width: ${buttonWidth}px;
+`;
+const ToolTipBaseWrapper = styled.div`
+  display: inline-block;
+`;
+const DirectionButtonTopWrapper = styled.div`
+  margin-left: ${buttonWidth}px;
+  white-space: nowrap;
+  display: inline-block;
+`;
+const DirectionButtonLeftWrapper = styled.div`
+  width: ${buttonWidth}px;
+  position: absolute;
+`;
+const DirectionButtonRightWrapper = styled.div`
+  width: ${buttonWidth}px;
+  margin-left: ${buttonWidth * 4 + 24}px;
+`;
+const DirectionButtonBottomWrapper = styled.div`
+  margin-left: ${buttonWidth}px;
+  white-space: nowrap;
+  display: inline-block;
+`;
+const ToolTipHWrapper = ToolTipBaseWrapper.extend`
+  margin-right: 10px;
+`;
+const ToolTipVWrapper = ToolTipBaseWrapper.extend`
+  margin-top: 10px;
 `;
 export default class BasePopover extends React.Component<any, any> {
   constructor(props: any) {
@@ -22,6 +52,9 @@ export default class BasePopover extends React.Component<any, any> {
       [Widget.Popover]: {
         color: '#fef0ef',
         fontColor: '#000'
+      },
+      [Widget.Button]: {
+        width: buttonWidth
       }
     };
     const text = 'this is title ';
@@ -29,94 +62,151 @@ export default class BasePopover extends React.Component<any, any> {
     return (
       <Wrapper>
         <Theme config={config}>
-          <div style={{ marginLeft: 50, whiteSpace: 'nowrap' }}>
-            <Popover placement="topLeft" title={text} action={'click'}>
-              <Direction type="primary">TL</Direction>
-            </Popover>
-            <Popover
-              placement="top"
-              title={text}
-              description={[<div>{description}</div>, <div>{description}</div>]}
-            >
-              <Direction type="primary">Top</Direction>
-            </Popover>
-            <Popover
-              placement="topRight"
-              title={text}
-              description={[<div>{description}</div>, <div>{description}</div>]}
-            >
-              <Direction type="primary">TR</Direction>
-            </Popover>
-          </div>
-          <div style={{ width: 45, float: 'left' }}>
-            <Popover
-              placement="leftTop"
-              title={text}
-              description={[<div>{description}</div>, <div>{description}</div>]}
-            >
-              <Direction type="primary">LT</Direction>
-            </Popover>
-            <Popover
-              placement="left"
-              title={text}
-              description={[<div>{description}</div>, <div>{description}</div>]}
-            >
-              <Direction type="primary">Left</Direction>
-            </Popover>
-            <Popover
-              placement="leftBottom"
-              title={text}
-              description={[<div>{description}</div>, <div>{description}</div>]}
-            >
-              <Direction type="primary">LB</Direction>
-            </Popover>
-          </div>
-          <div style={{ width: 50, marginLeft: 200 }}>
-            <Popover
-              placement="rightTop"
-              title={text}
-              description={[<div>{description}</div>, <div>{description}</div>]}
-            >
-              <Direction type="primary">RT</Direction>
-            </Popover>
-            <Popover
-              placement="right"
-              title={text}
-              description={[<div>{description}</div>, <div>{description}</div>]}
-            >
-              <Direction type="primary">Right</Direction>
-            </Popover>
-            <Popover
-              placement="rightBottom"
-              title={text}
-              description={[<div>{description}</div>, <div>{description}</div>]}
-            >
-              <Direction type="primary">RB</Direction>
-            </Popover>
-          </div>
-          <div style={{ marginLeft: 50, clear: 'both', whiteSpace: 'nowrap' }}>
-            <Popover
-              placement="bottomLeft"
-              title={text}
-              description={[<div>{description}</div>, <div>{description}</div>]}
-            >
-              <Direction type="primary">BL</Direction>
-            </Popover>
-            <Popover
-              placement="bottom"
-              title={text}
-              description={[<div>{description}</div>, <div>{description}</div>]}
-            >
-              <Direction type="primary">Bottom</Direction>
-            </Popover>
-            <Popover
-              placement="bottomRight"
-              title={text}
-              description={[<div>{description}</div>, <div>{description}</div>]}
-            >
-              <Direction type="primary">BR</Direction>
-            </Popover>
-          </div>
+          <DirectionButtonTopWrapper>
+            <ToolTipHWrapper>
+              <Popover placement="topLeft" title={text} action={'click'}>
+                <DirectionButton type="primary">TL</DirectionButton>
+              </Popover>
+            </ToolTipHWrapper>
+            <ToolTipHWrapper>
+              <Popover
+                placement="top"
+                title={text}
+                description={[
+                  <div>{description}</div>,
+                  <div>{description}</div>
+                ]}
+              >
+                <DirectionButton type="primary">Top</DirectionButton>
+              </Popover>
+            </ToolTipHWrapper>
+            <ToolTipHWrapper>
+              <Popover
+                placement="topRight"
+                title={text}
+                description={[
+                  <div>{description}</div>,
+                  <div>{description}</div>
+                ]}
+              >
+                <DirectionButton type="primary">TR</DirectionButton>
+              </Popover>
+            </ToolTipHWrapper>
+          </DirectionButtonTopWrapper>
+          <DirectionButtonLeftWrapper>
+            <ToolTipVWrapper>
+              <Popover
+                placement="leftTop"
+                title={text}
+                description={[
+                  <div>{description}</div>,
+                  <div>{description}</div>
+                ]}
+              >
+                <DirectionButton type="primary">LT</DirectionButton>
+              </Popover>
+            </ToolTipVWrapper>
+            <ToolTipVWrapper>
+              <Popover
+                placement="left"
+                title={text}
+                description={[
+                  <div>{description}</div>,
+                  <div>{description}</div>
+                ]}
+              >
+                <DirectionButton type="primary">Left</DirectionButton>
+              </Popover>
+            </ToolTipVWrapper>
+            <ToolTipVWrapper>
+              <Popover
+                placement="leftBottom"
+                title={text}
+                description={[
+                  <div>{description}</div>,
+                  <div>{description}</div>
+                ]}
+              >
+                <DirectionButton type="primary">LB</DirectionButton>
+              </Popover>
+            </ToolTipVWrapper>
+          </DirectionButtonLeftWrapper>
+          <DirectionButtonRightWrapper>
+            <ToolTipVWrapper>
+              <Popover
+                placement="rightTop"
+                title={text}
+                description={[
+                  <div>{description}</div>,
+                  <div>{description}</div>
+                ]}
+              >
+                <DirectionButton type="primary">RT</DirectionButton>
+              </Popover>
+            </ToolTipVWrapper>
+            <ToolTipVWrapper>
+              <Popover
+                placement="right"
+                title={text}
+                description={[
+                  <div>{description}</div>,
+                  <div>{description}</div>
+                ]}
+              >
+                <DirectionButton type="primary">Right</DirectionButton>
+              </Popover>
+            </ToolTipVWrapper>
+            <ToolTipVWrapper>
+              <Popover
+                placement="rightBottom"
+                title={text}
+                description={[
+                  <div>{description}</div>,
+                  <div>{description}</div>
+                ]}
+              >
+                <DirectionButton type="primary">RB</DirectionButton>
+              </Popover>
+            </ToolTipVWrapper>
+          </DirectionButtonRightWrapper>
+          <DirectionButtonBottomWrapper>
+            <ToolTipHWrapper>
+              <Popover
+                placement="bottomLeft"
+                title={text}
+                description={[
+                  <div>{description}</div>,
+                  <div>{description}</div>
+                ]}
+              >
+                <DirectionButton type="primary">BL</DirectionButton>
+              </Popover>
+            </ToolTipHWrapper>
+            <ToolTipHWrapper>
+              <Popover
+                placement="bottom"
+                title={text}
+                description={[
+                  <div>{description}</div>,
+                  <div>{description}</div>
+                ]}
+              >
+                <DirectionButton type="primary">Bottom</DirectionButton>
+              </Popover>
+            </ToolTipHWrapper>
+            <ToolTipHWrapper>
+              <Popover
+                placement="bottomRight"
+                title={text}
+                description={[
+                  <div>{description}</div>,
+                  <div>{description}</div>
+                ]}
+              >
+                <DirectionButton type="primary">BR</DirectionButton>
+              </Popover>
+            </ToolTipHWrapper>
+          </DirectionButtonBottomWrapper>
         </Theme>
       </Wrapper>
     );

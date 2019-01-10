@@ -1,10 +1,41 @@
 import React from 'react';
 import { Popconfirm, Theme, Button } from '@lugia/lugia-web';
 import styled from 'styled-components';
+import Widget from '@lugia/lugia-web/dist/consts';
 
-const Direction = styled(Button)``;
 const Wrapper = styled.div`
   margin: 100px;
+`;
+const buttonWidth = 80;
+const DirectionButton = styled(Button)`
+  width: ${buttonWidth}px;
+`;
+const ToolTipBaseWrapper = styled.div`
+  display: inline-block;
+`;
+const DirectionButtonButtonTopWrapper = styled.div`
+  margin-left: ${buttonWidth}px;
+  white-space: nowrap;
+  display: inline-block;
+`;
+const DirectionButtonButtonLeftWrapper = styled.div`
+  width: ${buttonWidth}px;
+  position: absolute;
+`;
+const DirectionButtonButtonRightWrapper = styled.div`
+  width: ${buttonWidth}px;
+  margin-left: ${buttonWidth * 4 + 24}px;
+`;
+const DirectionButtonButtonBottomWrapper = styled.div`
+  margin-left: ${buttonWidth}px;
+  white-space: nowrap;
+  display: inline-block;
+`;
+const ToolTipHWrapper = ToolTipBaseWrapper.extend`
+  margin-right: 10px;
+`;
+const ToolTipVWrapper = ToolTipBaseWrapper.extend`
+  margin-top: 10px;
 `;
 export default class BasePopconfirm extends React.Component<any, any> {
   constructor(props: any) {
@@ -18,52 +49,87 @@ export default class BasePopconfirm extends React.Component<any, any> {
 
   render() {
     const text = '确定删除这个选项吗?';
+    const config = {
+      [Widget.Popover]: {
+        color: '#fef0ef',
+        fontColor: '#000'
+      },
+      [Widget.Button]: {
+        width: buttonWidth
+      }
+    };
     return (
       <Wrapper>
-        <div style={{ marginLeft: 50, whiteSpace: 'nowrap' }}>
-          <Popconfirm placement="topLeft" title={text} action={'click'}>
-            <Direction type="primary">TL</Direction>
-          </Popconfirm>
-          <Popconfirm placement="top" title={text}>
-            <Direction type="primary">Top</Direction>
-          </Popconfirm>
-          <Popconfirm placement="topRight" title={text}>
-            <Direction type="primary">TR</Direction>
-          </Popconfirm>
-        </div>
-        <div style={{ width: 70, float: 'left' }}>
-          <Popconfirm placement="leftTop" title={text}>
-            <Direction type="primary">LT</Direction>
-          </Popconfirm>
-          <Popconfirm placement="left" title={text}>
-            <Direction type="primary">Left</Direction>
-          </Popconfirm>
-          <Popconfirm placement="leftBottom" title={text}>
-            <Direction type="primary">LB</Direction>
-          </Popconfirm>
-        </div>
-        <div style={{ width: 70, marginLeft: 200 }}>
-          <Popconfirm placement="rightTop" title={text}>
-            <Direction type="primary">RT</Direction>
-          </Popconfirm>
-          <Popconfirm placement="right" title={text}>
-            <Direction type="primary">Right</Direction>
-          </Popconfirm>
-          <Popconfirm placement="rightBottom" title={text}>
-            <Direction type="primary">RB</Direction>
-          </Popconfirm>
-        </div>
-        <div style={{ marginLeft: 50, clear: 'both', whiteSpace: 'nowrap' }}>
-          <Popconfirm placement="bottomLeft" title={text}>
-            <Direction type="primary">BL</Direction>
-          </Popconfirm>
-          <Popconfirm placement="bottom" title={text}>
-            <Direction type="primary">Bottom</Direction>
-          </Popconfirm>
-          <Popconfirm placement="bottomRight" title={text}>
-            <Direction type="primary">BR</Direction>
-          </Popconfirm>
-        </div>
+        <Theme config={config}>
+          <DirectionButtonButtonTopWrapper>
+            <ToolTipHWrapper>
+              <Popconfirm placement="topLeft" title={text} action={'click'}>
+                <DirectionButton type="primary">TL</DirectionButton>
+              </Popconfirm>
+            </ToolTipHWrapper>
+            <ToolTipHWrapper>
+              <Popconfirm placement="top" title={text}>
+                <DirectionButton type="primary">Top</DirectionButton>
+              </Popconfirm>
+            </ToolTipHWrapper>
+            <ToolTipHWrapper>
+              <Popconfirm placement="topRight" title={text}>
+                <DirectionButton type="primary">TR</DirectionButton>
+              </Popconfirm>
+            </ToolTipHWrapper>
+          </DirectionButtonButtonTopWrapper>
+          <DirectionButtonButtonLeftWrapper>
+            <ToolTipVWrapper>
+              <Popconfirm placement="leftTop" title={text}>
+                <DirectionButton type="primary">LT</DirectionButton>
+              </Popconfirm>
+            </ToolTipVWrapper>
+            <ToolTipVWrapper>
+              <Popconfirm placement="left" title={text}>
+                <DirectionButton type="primary">Left</DirectionButton>
+              </Popconfirm>
+            </ToolTipVWrapper>
+            <ToolTipVWrapper>
+              <Popconfirm placement="leftBottom" title={text}>
+                <DirectionButton type="primary">LB</DirectionButton>
+              </Popconfirm>
+            </ToolTipVWrapper>
+          </DirectionButtonButtonLeftWrapper>
+          <DirectionButtonButtonRightWrapper>
+            <ToolTipVWrapper>
+              <Popconfirm placement="rightTop" title={text}>
+                <DirectionButton type="primary">RT</DirectionButton>
+              </Popconfirm>
+            </ToolTipVWrapper>
+            <ToolTipVWrapper>
+              <Popconfirm placement="right" title={text}>
+                <DirectionButton type="primary">Right</DirectionButton>
+              </Popconfirm>
+            </ToolTipVWrapper>
+            <ToolTipVWrapper>
+              <Popconfirm placement="rightBottom" title={text}>
+                <DirectionButton type="primary">RB</DirectionButton>
+              </Popconfirm>
+            </ToolTipVWrapper>
+          </DirectionButtonButtonRightWrapper>
+          <DirectionButtonButtonBottomWrapper>
+            <ToolTipHWrapper>
+              <Popconfirm placement="bottomLeft" title={text}>
+                <DirectionButton type="primary">BL</DirectionButton>
+              </Popconfirm>
+            </ToolTipHWrapper>
+            <ToolTipHWrapper>
+              <Popconfirm placement="bottom" title={text}>
+                <DirectionButton type="primary">Bottom</DirectionButton>
+              </Popconfirm>
+            </ToolTipHWrapper>
+            <ToolTipHWrapper>
+              <Popconfirm placement="bottomRight" title={text}>
+                <DirectionButton type="primary">BR</DirectionButton>
+              </Popconfirm>
+            </ToolTipHWrapper>
+          </DirectionButtonButtonBottomWrapper>
+        </Theme>
       </Wrapper>
     );
   }
