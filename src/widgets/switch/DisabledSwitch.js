@@ -1,6 +1,10 @@
 import React from 'react';
-import {DemoItem} from './styled';
 import { Switch, Button } from '@lugia/lugia-web';
+import styled from 'styled-components';
+export const DemoItem=styled.div`
+  padding:0 0 20px 0;
+`;
+
 export default class DisabledSwitch extends React.Component {
   state = {
     disabled: true
@@ -14,17 +18,14 @@ export default class DisabledSwitch extends React.Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <DemoItem>
           <Switch defaultValue disabled={this.state.disabled} />
         </DemoItem>
-        <br />
-        <DemoItem>
-          <Button type="primary" onClick={this.toggle}>
-            点击切换
-          </Button>
-        </DemoItem>        
-      </div>
+        <Button type="primary" onClick={this.toggle}>
+          点击切换
+        </Button>     
+      </React.Fragment>
     );
   }
 }
