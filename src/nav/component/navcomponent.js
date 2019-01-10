@@ -12,6 +12,7 @@ import Widget from '@lugia/lugia-web/dist/consts/index';
 import styled from 'styled-components';
 import { designRouter } from '../../App';
 import logo from '../../../public/lugia-logo.png';
+import Search from '../../search';
 
 const TabPane = Tabs.TabPane;
 const getchildren =router => {
@@ -51,6 +52,10 @@ const Language = styled.div`
   float:right;
 `;
 
+const SearchBox = styled.div`
+ float:left;
+`;
+
 type DefProps={
   current?:Array<string>,
   onSelect?:Function,
@@ -86,6 +91,7 @@ export default class Navcomponent extends React.Component<any, any> {
     return (
         <Header>
           <Logo src={logo} alt=""/>
+          <SearchBox><Search/></SearchBox>
           <Language>English | </Language>
           <Theme config={view}>
           <Wrapper>
