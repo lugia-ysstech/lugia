@@ -10,30 +10,6 @@ import {Theme ,Icon,Input,Trigger} from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import styled from 'styled-components';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
-require('isomorphic-fetch');
-
-const defaultData ={
-  原则:[
-    {url: 'design/color', content: '字体', power: 1, type: '原则'},
-    {
-      url: 'design/font',
-      content: {text: '字体是界面设计中最基本的构成元素之一。Lugia字体方案，是根据人眼阅读习惯，清晰页面的视觉层次，我们建议所选字体要满足以下三个方面：'},
-      power: 2,
-      type: '原则'
-    },
-    {url: 'design/font', content: {text: '·合理的使用不同的字重、字号和颜色；'}, power: 2, type: '原则'}, {
-      url: 'design/font',
-      content: {text: '·尽量使用统一字体；'},
-      power: 2,
-      type: '原则'
-    },
-    {
-      url: 'design/font',
-      content: {text: '·遵循 WCAG 2.0 标准，字体在使用时与背景颜色的对比值满足无障碍阅读的最低标准。'},
-      power: 2,
-      type: '原则'
-    },
-]};
 
 const Container = styled.div`
   width:300px;
@@ -44,6 +20,7 @@ const Type = styled.div`
   color:#333333;
   line-height:1.0;
   margin:24px 0 18px;
+  padding:0 16px;
 `;
 const { themeColor } = colorsFunc();
 const TypeLine = styled.div`
@@ -51,19 +28,35 @@ const TypeLine = styled.div`
   height:16px;
   background:${themeColor};
   margin-right:8px;
+  display:inline-block;
+  border-radius:6px;
+  vertical-align: top;
 `;
 
 const Title = styled.div`
-  font-size:19px;
+  font-size:14px;
   color:#999999;
   line-height:1.5;
   text-align:right;
-  width:
+  padding:0 16px 0 0;
 `;
 const Li = styled.div`
   display:flex;
-  
+  width:500px;
+  padding:0 16px;
+  line-height:1.5;
+  margin:8px 0;
+  cursor:pointer;
 `;
+const LiLeft = styled.div`
+  width:156px;  
+`;
+const LiRight = styled.div`
+  width:342px;
+  border-left:1px solid #999999;
+  padding:0 16px;
+`;
+
 
 type DefProps={
   current?:Array<string>,
@@ -82,12 +75,9 @@ class SearchIcon extends React.Component<any> {
   }
 }
 
-
-
 export default class Navcomponent extends React.Component<any, any> {
 
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
-    console.log(defProps,stateProps);
     const {searchInfo,result} = defProps;
     if (!stateProps) {
       return {
@@ -107,6 +97,10 @@ export default class Navcomponent extends React.Component<any, any> {
         borderSize:{top:0,right:0,bottom:1,left:0},
         borderColor:'#ccc',
         margin: {top:0,right:0,bottom:0,left:38},
+        width:130
+      },
+      [Widget.Trigger]: {
+        width:500,
       },
 
     };
@@ -115,7 +109,7 @@ export default class Navcomponent extends React.Component<any, any> {
     return (
         <Theme config={InputStyle}>
           <Trigger
-            offsetX={20}
+            offsetX={120}
             offsetY={1}
             action={['focus']}
             popup={poup}
@@ -129,30 +123,54 @@ export default class Navcomponent extends React.Component<any, any> {
   }
 
   getPopEement =(data:Object) => {
-    let child ;
+    const child = [] ;
     for(const i in data){
-      data[i].forEach((item,index) => {
-        console.log(item);
-      })
-      ;
+      child.push(
+        <React.Fragment>
+          <Type >
+            <TypeLine/>
+            {i}
+          </Type>
+        {
+          data[i].map((item, index) => (
+            <React.Fragment>
+              {index <= 10 && <Li>
+              <LiLeft onClick={e => this.linkToUrl(item.url.split('#')[0])}> <Title>{item.owner}</Title> </LiLeft>
+              <LiRight onClick={e => this.linkToUrl(item.url)}>{item.content}</LiRight>
+            </Li>}
+            </React.Fragment>
+        ))
+        }
+        </React.Fragment>
+      );
+
     }
     return (
       <React.Fragment>
-        {child}
+        {child.map(item => (
+          <React.Fragment>
+            {item}
+          </React.Fragment>
+        ))}
       </React.Fragment>
     );
   };
   getPopup = () => {
-    const {data} = this.state;
+    const {result} = this.state;
       return (
         <Container>
-          {data && this.getPopEement(data)}
+          {result && this.getPopEement(result)}
         </Container>
       );
 
   };
   handleInputChange = (event:Object) => {
-    const {newValue} = event;
+    let newValue='';
+    if(!event){
+      newValue = null;
+    }else{
+      newValue = event.newValue;
+    }
     const { handleInputChange } = this.props;
     handleInputChange && handleInputChange(newValue);
     this.fetchRequest(newValue);
@@ -163,6 +181,7 @@ export default class Navcomponent extends React.Component<any, any> {
     fetchRequest && fetchRequest(newValue);
   };
   linkToUrl = (res:string) => {
+    this.handleInputChange(null);
     go({ url: res });
   };
 
