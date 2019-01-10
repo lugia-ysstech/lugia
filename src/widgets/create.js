@@ -114,7 +114,7 @@ async function createSearchIndex () {
   await fs.writeFileSync(getRouterFile('search.js'), `module.exports = ${JSON.stringify(res)}`);
 }
 
-async function getRouter (folderNames) {
+async function getRouter (folderNames, cb = item => item.title) {
   const widgetName2Meta = {};
   const catory2WidgetNames = {};
   try {
@@ -140,12 +140,12 @@ async function getRouter (folderNames) {
     const router = Object.keys(catory2WidgetNames).map(key => {
       const widgets = catory2WidgetNames[ key ];
       const children = widgets && widgets.map(meta => {
-        const { widgetName, title, floderName } = meta;
+        const { widgetName, floderName } = meta;
         return {
           widgetName,
           floderName,
           value: getUrl(widgetName),
-          text: title,
+          text: cb(meta),
         };
       });
       return {
@@ -169,7 +169,7 @@ async function createDemoRouter () {
   try {
     const allPathFile = await getFolderNames();
     const folderNames = await getDemoFolderNames(allPathFile);
-    const router = await getRouter(folderNames);
+    const router = await getRouter(folderNames, item => `${item.widgetName} ${item.title}`);
     await fs.writeFileSync(getRouterFile('widgets.js'), `export default ${JSON.stringify(router)}`);
     await fs.writeFileSync(getRouterFile('widgetrouter.js'), `export default ${(getMenuRouter(router))}`);
   } catch (error) {
