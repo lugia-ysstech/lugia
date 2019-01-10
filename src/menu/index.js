@@ -5,12 +5,9 @@
  *
  */
 import React from 'react';
-import { go, Link } from '@lugia/lugiax-router';
-import { Button, Menu,Navmenu ,Theme} from '@lugia/lugia-web';
+import { Button, Menu, Navmenu, Theme, Affix } from '@lugia/lugia-web';
 import '../css/menu.css';
-import routerConfig from '../router';
-import Widget from '@lugia/lugia-web/dist/consts/index';
-import { bindTo, connect } from '@lugia/lugiax';
+import { connect } from '@lugia/lugiax';
 import menu from './models/menu';
 import MenuList from './component/menulist';
 
@@ -29,10 +26,10 @@ const NavmenuList = connect(
 
 export default () => {
   return (
-    <div >
+    <Affix>
       {
         <NavmenuList/>
       }
-    </div>
+    </Affix>
   );
 };
