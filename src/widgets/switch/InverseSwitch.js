@@ -1,13 +1,13 @@
 import React from 'react';
-import { Switch, Theme } from '@lugia/lugia-web';
-export default class InverseSwitch extends React.Component<any, any> {
+import {DemoItem} from './styled';
+import { Switch } from '@lugia/lugia-web';
+export default class InverseSwitch extends React.Component {
   render() {
     return (
-      <div style={{ margin: '20px' }}>
-        <section style={{ marginBottom: '20px' }}>
-          <h3>isInverse</h3>
-          <Switch isInverse />
-        </section>
+      <div>
+        <DemoItem>
+          <Switch defaultValue isInverse />
+        </DemoItem>
       </div>
     );
   }
