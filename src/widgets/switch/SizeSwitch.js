@@ -1,14 +1,16 @@
 import React from 'react';
-import {DemoItem} from './styled';
 import { Switch } from '@lugia/lugia-web';
-
+import styled from 'styled-components';
+export const DemoItem=styled.div`
+  padding:0 0 10px 0;
+`;
 export default class BaseSwitch extends React.Component {
   render() {
     return (
-      <div>
-        <DemoItem><Switch defaultValue /></DemoItem><br/>
+      <React.Fragment>
+        <DemoItem><Switch defaultValue /></DemoItem>
         <DemoItem><Switch defaultValue size={'small'} /></DemoItem>
-      </div>
+      </React.Fragment>
     );
   }
 }

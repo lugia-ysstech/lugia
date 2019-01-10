@@ -1,6 +1,9 @@
 import React from 'react';
-import {DemoItem} from './styled'; 
 import { Slider, Button } from '@lugia/lugia-web';
+import styled from 'styled-components';
+export const DemoItem=styled.div`
+  padding:0 20px 20px 0;
+`;
 export default class DisabledSlider extends React.Component {
   constructor() {
     super();
@@ -23,11 +26,9 @@ export default class DisabledSlider extends React.Component {
             disabled={this.state.disabled}
           />
         </DemoItem><br/>
-        <DemoItem>
-          <Button type="primary" onClick={this.toggle}>
-            点击切换
-          </Button>
-        </DemoItem>
+        <Button type="primary" onClick={this.toggle}>
+          点击切换
+        </Button>
       </div>
     );
   }

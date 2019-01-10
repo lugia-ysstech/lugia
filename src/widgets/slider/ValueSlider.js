@@ -1,6 +1,9 @@
 import React from 'react';
-import {DemoItem} from './styled'; 
 import { Slider } from '@lugia/lugia-web';
+import styled from 'styled-components';
+export const DemoItem=styled.div`
+  padding:0 20px 20px 0;
+`;
 export default class BaseSlider extends React.Component {
   constructor(){
     super();
@@ -11,18 +14,20 @@ export default class BaseSlider extends React.Component {
   }
   onchange = obj => {
     const {newValue}=obj;
-    this.setState({value:newValue,rangeValue:[...newValue]});
+    this.setState({value:newValue});
   };
+  onchangeRange=obj => {
+    const {newValue}=obj;
+    this.setState({rangeValue:[...newValue]});
+  }
   render() {
     return (
-      <div>
+      <React.Fragment>
         <DemoItem>
           <Slider value={this.state.value} onChange={this.onchange}/>
-        </DemoItem><br/>
-        <DemoItem>
-          <Slider value={this.state.rangeValue} onChange={this.onchange}/>
         </DemoItem>
-      </div>
+          <Slider value={this.state.rangeValue} onChange={this.onchangeRange}/>
+      </React.Fragment>
     );
   }
 }
