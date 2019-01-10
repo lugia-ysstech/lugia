@@ -18,6 +18,11 @@ module.exports = {
     desc: '指定mutliple属性,开启多选选择树',
     path: './MutlipleTreeSelect'
   },
+  DigDataTreeSelect: {
+    title: '可加载大数据',
+    desc: '可支持20万条数据快速加载成Tree控件',
+    path: './DigDataTreeSelect'
+  },
   InlineDataTreeSelect: {
     title: '传入嵌套数据生成选择树',
     desc:

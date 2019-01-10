@@ -8,11 +8,22 @@ module.exports = {
     desc: '默认为单选,可通过igronSelectField指定禁选的标识符',
     path: './DefaultTree'
   },
+  RoundtTree: {
+    title: '不同样式风格的单选树',
+    desc: '设置shape：round,选中时圆角为全圆',
+    path: './RoundtTree'
+  },
   DefaultMutlipleTree: {
     title: '多选的Tree',
     desc: '多选的Tree,可通过igronSelectField指定禁选的标识符',
     path: './DefaultMutlipleTree'
   },
+  DigDataTree: {
+    title: '可加载大数据',
+    desc: '可支持20万条数据快速加载成Tree控件',
+    path: './DigDataTree'
+  },
+
   InlineDataSingleTree: {
     title: '嵌套数据的单选Tree',
     desc:
