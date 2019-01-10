@@ -28,8 +28,8 @@ export const designRouter = {
 
   },
   '/component':{
-    value:'组件代码',
-    text:'组件代码',
+    value:'lugia-web',
+    text:'lugia-web',
     url:'/component',
     component: Widgets,
   },
