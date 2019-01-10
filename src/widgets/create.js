@@ -31,12 +31,14 @@ async function createSearchIndex () {
           text && res.push({
             url,
             type: widget,
+            owner: widgetName,
             content: text,
             power: 2,
           });
           widgetName && res.push({
             url,
             type: widget,
+            owner: widgetName,
             content: widgetName,
             power: 1,
           });
@@ -63,12 +65,14 @@ async function createSearchIndex () {
       const { title, desc } = configValue;
       const link = `${url}#${folderName}-${i}`;
       title && res.push({
+        owner: widgetName,
         url: link,
         type: widget,
         content: title,
         power: 3,
       });
       desc && res.push({
+        owner: widgetName,
         url: link,
         type: widget,
         content: desc,
@@ -83,6 +87,7 @@ async function createSearchIndex () {
     const url = `design/${ruleKey}`;
     title && res.push({
       url,
+      owner: title,
       content: title,
       power: 1,
       type: rule
@@ -91,6 +96,7 @@ async function createSearchIndex () {
     content && content.forEach(item => {
       const { text } = item;
       res.push({
+        owner: title,
         url,
         content: text,
         power: 2,
@@ -103,6 +109,7 @@ async function createSearchIndex () {
       const { title } = childItem;
       if (title) {
         res.push({
+          owner: title,
           url: `${url}#link-${index}`,
           content: title,
           power: 3,
