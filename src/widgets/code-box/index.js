@@ -96,11 +96,11 @@ export default class extends React.Component {
         <Desc>{desc}</Desc>
         <DemoBox>{demo}</DemoBox>
 
-        <CodeBox visible={visible}>
-            <Highlight className="language-jsx">
-              {code}
-            </Highlight>
-        </CodeBox>
+        {visible ? <CodeBox visible={true}>
+          <Highlight className="language-jsx">
+            {code}
+          </Highlight>
+        </CodeBox> : null}
 
         <VisibleCode
           onClick={this.handleClick}
