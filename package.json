@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@lugia/lugia-web": "^1.0.63",
+    "@lugia/lugia-web": "^1.0.66",
     "@lugia/lugiax": "^1.0.4",
     "@lugia/lugiax-router": "^1.0.6",
     "@lugia/mega-scripts": "^1.2.0",
