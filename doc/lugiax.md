@@ -1,25 +1,29 @@
 # Lugiax
 
-一套更易上手的状态管理工具。
+一个基于 Redux 的前端状态管理工具。提供简单高效的全局状态管理方案、 基于 async/await 的异步操作、
+快捷的双向绑定。LugiaX 内置路由库，对 react-router 做了轻量封装，使用起来更加简单明了。
 
 ## 设计思想
 
-基于`redux` + `redux-saga` 封装出更加简单的状态管理工具。
+基于`redux` + `redux-saga` 封装出更加简单的状态管理工具。我们引入了 `mutation` 的概念（`mutation` + `state`），
+简化了 `redux`。lugiax 的 state 是 不可改变的，
+可参看 [Immutable ](https://facebook.github.io/immutable-js/docs/#/)；
+Immutable数据一旦创建，就不能更改。而 `mutation` 就是修改 `state` 的唯一途径。state 被修改后，
+并不会通知全局来进行更新，而是通知所绑定的对应的 Component 来进行更新。
 
-* 引入 model，作为 store 根对象下唯一的属性列；
-* 将 acition 分为 datachange-action 和 event-action 两种.datachange-action是通过特定的API自动触发，
-重新计算对应的 reducer，而不会重新计算所有的 reducer。datachange-action不对外公开使用；
-* 对值组件（泛指所有有value属性指定值，onChange指定值变化的React组件），引入双向绑定功能。
-方便开发人员进行页面开发；
-* action 为最小业务处理单位，可以将其理解为一次事务操作，action 中可以调用自己或其它 model 的 action。
+### mutation
 
-## 特性
+`mutation` 是一个标准函数，修改方式是通过返回一个新的 state ，然后通过 state.set 来修改 state。
+`mutation` 提供了 async 和 sync 两种不同的操作方式。
 
-* 处理简单交互：数据自动绑定
-* 处理中等交互：action监听
-* 处理复杂交互：异步任务编排、Obserable进行流程编排
+### mutation 进阶
 
-## API
+* 可以通过 `wait` 等待一个mutation结束，然后处理返回新的 state
+* 可以通过 `on` 进行全局监听，被监听状态改变后，会执行 `lugiax.on`
+* 可以通过 `getState` 获取其他 model 状态
+
+
+## lugiax API
 
 ### lugiax.register
 
@@ -27,10 +31,15 @@ params:
 
 ```javascript
 {
-  model: '', // 模块名称（必填），值必须唯一否则将会报错；
+  model: '', // string 模块名称（必填），值必须唯一否则将会报错；
   state: {}，//组件的初始状态 类型为非 null & 非 undefined即可
-  actions:{ // 本模型对外提供的一系列业务操作
-    async login(){ // 一个业务操作}
+  mutations:{ // 本模型对外提供的一系列业务操作
+    sync: {
+      doSomethings() { // 一个同步操作} // Function
+    },
+    async: {
+      login() { // 一个异步业务操作}  // Function
+    } 
   }
 }
 ```
@@ -39,8 +48,9 @@ returned:
 
 ```javascript
 {
-  mutations:{
-    login //供React组件或其它Model的Action进行调用的触发action的方法。 
+  mutations:{ //供React组件或其它Model的Action进行调用的触发更新 state 的方法。 
+    doSomethings,  // Function
+    asyncLogin // Function 异步操作会返回 async 开头的方法名： login -> asyncLogin
   }
 }  
 ```
@@ -62,11 +72,13 @@ connect(
 
 ### lugiax.bind
 
+双向绑定。
+
 ```javascript
 bind(
   tomato, // 模块名称（必填）
   {
-    taskName: 'value', // 绑定属性值（必填）
+    taskName: 'value', // string 绑定属性值（必填）
   },
   { // 触发时间
     onChange: {
@@ -80,11 +92,13 @@ bind(
 
 ### lugiax.bindTo
 
+双向绑定。
+
 ```javascript
 bindTo(
   tomato, // 模块名称（必填）
   {
-    taskName: 'value', // 绑定属性值（必填）
+    taskName: 'value', // string 绑定属性值（必填）
   },
   {
     onChange: {
@@ -96,3 +110,68 @@ bindTo(
 )(InputTask //Component 组件)
 ```
 
+### lugiax.getState()
+
+某个 model 获取其他 model 的 state，使用之前要在该model 引入要获取 state 的 model。
+
+````javascript
+lugiax.getState(modelName)
+````
+
+### lugiax.on()
+
+某个操作可能在多个 异步 `mutation` 执行完成后触发，这时候你可能用到 `lugiax.on` 来监听这些 `mutation`。
+
+````javascript
+## example：
+const getAsyncResult = new Promise((resolve,reject) => {
+  const asyncResult = [];
+  lugiax.on(async (mutation, params, { mutations, wait, }) => {
+    if(true){ // 做一些判断
+      asyncResult.push(params)
+    }
+    if(asyncResult.length === 2){ // mutation 全部响应后放回
+      resolve(asyncResult);
+    }
+  })
+})
+````
+
+## lugiax-router 路由
+
+lugiax 对 react-router 做了轻量的封装，createApp 和 createRoute 供你创建路由使用。
+
+### createRoute
+
+```javascript
+createRoute({
+  [path: string]:{
+     render?: Function,
+     exact?: boolean, 
+     strict?: boolean,
+     component?: Function,
+     onPageLoad?: Function,
+     onPageUnLoad?: ?Function
+  }
+})
+```
+除了 component 的静态打包外，还提供了 render 动态打包，用于代码分割。
+
+#### 页面生命周期函数
+
+* onPageLoad 页面加载完成后执行
+* onPageUnLoad 页面卸载时执行
+
+### createApp
+
+```javascript
+createApp({
+  routerMap: RouterMap, // type: Object，通过 createRoute 创建后的route
+  history: Object,
+  param?: CreateAppParam = {}
+})
+```
+param 提供 loading 和 onBeforeGo 两个api；
+
+* loading: 路由切换的加载页面，可配置 Component 组件
+* onBeforeGo 跳转之前的回调，可做权限处理
