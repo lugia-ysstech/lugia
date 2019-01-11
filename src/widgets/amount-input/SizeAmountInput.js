@@ -3,7 +3,6 @@ import { AmountInput } from '@lugia/lugia-web';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  float: left;
   display: inline-block;
 `;
 const InputWrapper = styled.div`

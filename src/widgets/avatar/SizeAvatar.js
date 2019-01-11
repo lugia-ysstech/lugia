@@ -4,8 +4,6 @@ import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  float: left;
-  text-align: center;
 `;
 export default class SizeAvatar extends React.Component<any, any> {
 
