@@ -5,11 +5,7 @@
 
 ## 设计思想
 
-基于`redux` + `redux-saga` 封装出更加简单的状态管理工具。我们引入了 `mutation` 的概念（`mutation` + `state`），
-简化了 `redux`。lugiax 的 state 是 不可变类型的数据，
-可参看 [Immutable ](https://facebook.github.io/immutable-js/docs/#/)；
-Immutable数据一旦创建，就不能更改。而 `mutation` 就是修改 `state` 的唯一途径。state 被修改后，
-并不会通知全局来进行更新，而是通知所绑定的对应的 Component 来进行更新。
+基于`redux` + `redux-saga` 封装出更加简单的状态管理工具。我们引入了 `mutation` 的概念（`mutation` + `state`）， 简化了 `redux`。lugiax 的 state 是 不可变类型的数据， 可参看 [Immutable ](https://facebook.github.io/immutable-js/docs/#/)； Immutable数据一旦创建，就不能更改。而 `mutation` 就是修改 `state` 的唯一途径。state 被修改后， 并不会通知全局来进行更新，而是通知所绑定的对应的 Component 来进行更新。
 
 ### state
 
@@ -37,8 +33,8 @@ const mutation = {
     async changeName(data, inParam, { mutations, }) {
       return data.set('name', inParam.name);
     },
-    async start(data, inParam, { mutations, }) {          
-      await mutations.changeName();
+    async start(data, inParam, { mutations,wait, }) {          
+      await wait(asyncChangeName)
       state.set('pwd','333')
     }
   }

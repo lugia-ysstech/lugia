@@ -1190,6 +1190,7 @@ module.exports = param => {
     },
     'quick-start':{
       type:'document',
+      baseUrl:'/component',
       title: '快速上手',
       content: [{ text: 'Lugia Web 旨在降低开发成本，提升开发质量，为前端开发人员赋能，让用户体验知性。', margin: '0 0 30px 30px' }],
       children: [
@@ -1296,6 +1297,7 @@ module.exports = param => {
     },
     'start-project':{
       type:'document',
+      baseUrl:'/component',
       title: '项目实战',
       content: [{ text: '在复杂的项目中，你可能会用到 Redux 或者 dva 这样的数据流方案，同样，我们也推出了自己的状态管理工具 lugiax 来与 lugia-web 组件库\n' +
         '搭配使用，同样，我们也推荐你在项目使用 lugiax。',margin: '0 50px 30px 30px' }],
@@ -1703,6 +1705,221 @@ module.exports = param => {
               'Done in 16.34s.',bash:true, margin: '0 0 30px',javascript:true},
 
             {text: 'build 命令会将项目进行打包，可在 `dist` 目录下查看打包后的文件。', margin: '0 0 30px'},
+          ]
+        },
+
+
+      ]
+    },
+    lugiax:{
+      type:'document',
+      baseUrl:'/component',
+      title: 'Lugiax',
+      content: [{ text: '一个基于 Redux 的前端状态管理工具。提供简单高效的全局状态管理方案、 基于 async/await 的异步操作、快捷的双向绑定。LugiaX 内置路由库，对 react-router 做了轻量封装，使用起来更加简单明了。',margin: '0 50px 30px 30px' }],
+      children: [
+        {
+          title:'设计思想',
+          content: [
+            {text: '基于`redux` + `redux-saga` 封装出更加简单的状态管理工具。我们引入了 `mutation` 的概念（`mutation` + `state`）， 简化了 `redux`。lugiax 的 state 是 不可变类型的数据， 可参看 [Immutable ](https://facebook.github.io/immutable-js/docs/#/)； Immutable数据一旦创建，就不能更改。而 `mutation` 就是修改 `state` 的唯一途径。state 被修改后， 并不会通知全局来进行更新，而是通知所绑定的对应的 Component 来进行更新。' ,margin: '0 0 30px'},
+            {text: 'state',weight:600, margin: '0 0 5px'},
+            {text: '`state` 是单独的，每个 model 都有自己的 `state`，并且是不可变类型的',margin: '0 0 5px'},
+            {text: 'mutation',weight:600, margin: '0 0 10px'},
+            {text: '`mutation` 是一个标准函数，是唯一修改 `state` 的途径，修改方式是通过返回一个新的 state ，然后通过 state.set 来修改 state。并且 `mutation` 只能修改自己域下面的 `state`。`mutation` 提供了 async 和 sync 两种不同的操作方式。',margin: '0 0 30px'},
+            {text: 'mutation 进阶',weight:600, margin: '0 0 5px'},
+            {text: '可以通过 `wait` 等待一个mutation结束，然后处理返回新的 state'},
+            {text: '可以通过 `lugiax.on` 进行全局监听，被监听状态改变后，会执行 `lugiax.on`'},
+            {text: '可以通过 `lugiax.getState` 获取其他 model 状态',margin: '0 0 30px'},
+            {text: 'wait:',weight:600, margin: '0 0 5px'},
+            {text:'const mutation = {\n' +
+              '  async: {\n' +
+              '    async changePwd(data, inParam, { mutations,  }) {\n' +
+              '      return data.set(\'pwd\', inParam.pwd);\n' +
+              '    },\n' +
+              '    async changeName(data, inParam, { mutations, }) {\n' +
+              '      return data.set(\'name\', inParam.name);\n' +
+              '    },\n' +
+              '    async start(data, inParam, { mutations, wait,}) {          \n' +
+              '      await wait(asyncChangeName);\n' +
+              '      state.set(\'pwd\',\'333\')\n' +
+              '    }\n' +
+              '  }\n' +
+              '};\n' +
+              'lugiax.register({model:\'user\',state:{name: \'li\',pwd: \'12345\'},mutation});',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: 'lugiax.on:',weight:600, margin: '0 0 5px'},
+            {text:'const getAsyncResult = new Promise((resolve,reject) => {\n' +
+              '  const asyncResult = [];\n' +
+              '  lugiax.on(async (mutation, params, { mutations, wait, }) => {\n' +
+              '    if(true){ // 做一些判断\n' +
+              '      asyncResult.push(params)\n' +
+              '    }\n' +
+              '    if(asyncResult.length === 2){ // mutation 全部响应后放回\n' +
+              '      resolve(asyncResult);\n' +
+              '    }\n' +
+              '  })\n' +
+              '})',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: 'lugiax.getState:',weight:600, margin: '0 0 5px'},
+            {text:'import lugiax from "@lugia/lugiax";\n' +
+              'const userModel = lugiax.register({\n' +
+              '  model: \'user\',\n' +
+              '  state: {name: \'user\'},\n' +
+              '  mutations: {}\n' +
+              '});\n' +
+              'const loginModel = lugiax.register({\n' +
+              '  model: \'login\',\n' +
+              '  state: {login: \' \'},\n' +
+              '  mutations: {}\n' +
+              '});\n' +
+              '\n' +
+              'lugiax.getState().get(\'user\').get(\'name\'); // user',bash:true, margin: '0 0 30px',javascript:true},
+
+
+
+          ],
+        },
+        {
+          title: 'lugiax API',
+          content: [
+            {text: 'lugiax.register',weight:600},
+            {text: 'params:', margin: '0 0 5px'},
+            {text:'{\n' +
+              '  model: \'\', // string 模块名称（必填），值必须唯一否则将会报错；\n' +
+              '  state: {}，//组件的初始状态 类型为非 null & 非 undefined即可\n' +
+              '  mutations:{ // 本模型对外提供的一系列业务操作\n' +
+              '    sync: {\n' +
+              '      doSomethings() { // 一个同步操作} // Function\n' +
+              '    },\n' +
+              '    async: {\n' +
+              '      login() { // 一个异步业务操作}  // Function\n' +
+              '    } \n' +
+              '  }\n' +
+              '}',bash:true, margin: '0 0 30px',javascript:true},
+            {text: 'returned:', margin: '0 0 5px'},
+            {text:'{\n' +
+              '  mutations:{ //供React组件或其它Model的Action进行调用的触发更新 state 的方法。 \n' +
+              '    doSomethings,  // Function\n' +
+              '    asyncLogin // Function 异步操作会返回 async 开头的方法名： login -> asyncLogin\n' +
+              '  }\n' +
+              '}  ',bash:true, margin: '0 0 30px',javascript:true},
+            {text: 'lugiax.connect',weight:600, margin: '0 0 5px'},
+            {text:'lugiax.connect(\n' +
+              '  todo, // 模块名称（必填）\n' +
+              '  state => {\n' +
+              '    return { data: state.data, };\n' +
+              '  },\n' +
+              '  mutations => {\n' +
+              '    const { todo, } = mutations;\n' +
+              '    return { delItem: todo.delTask, };\n' +
+              '  }\n' +
+              ')(List);\n',bash:true, margin: '0 0 30px',javascript:true},
+            {text: 'lugiax.bind',weight:600},
+            {text: '双向绑定，需要指定 `mutation`，不能动态生成 `mutation` 。',margin: '0 0 5px'},
+            {text:'const mutations = {\n' +
+              '  sync: {\n' +
+              '    changeName(data, inParam) {\n' +
+              '      return data.set(\'name\', inParam.name);\n' +
+              '    },\n' +
+              '    changePwd(data, inParam) {\n' +
+              '      return data.set(\'pwd\', inParam.pwd);\n' +
+              '    },\n' +
+              '  }\n' +
+              '}\n' +
+              'const userModel = lugiax.register({model:\'user\',state:{name: \'li\',pwd: \'12345\'},mutations})\n' +
+              'lugiax.bind(\n' +
+              '  userModel,\n' +
+              '  model => {\n' +
+              '    const result = { value: model.get(\'name\'), pwd: model.get(\'pwd\'), };\n' +
+              '    return result;\n' +
+              '  },\n' +
+              '  {\n' +
+              '    onChange: (mutations, e) => {\n' +
+              '      return mutations.changeName({ name: e.target.value, });\n' +
+              '    },\n' +
+              '    onClick: (mutations, e) => {\n' +
+              '      return mutations.changePwd({ pwd: newPwd, });\n' +
+              '    },\n' +
+              '  }\n' +
+              ')(InputTask //Component 组件)',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: 'lugiax.bindTo',weight:600},
+            {text: '双向绑定，并且可以动态生成 `mutation`。',margin: '0 0 5px'},
+            {text:'lugiax.bindTo(\n' +
+              '  tomato, // 模块名称（必填）\n' +
+              '  {\n' +
+              '    taskName: \'value\', // string 绑定属性值（必填）\n' +
+              '  },\n' +
+              '  {\n' +
+              '    onChange: {\n' +
+              '      taskName(v) {\n' +
+              '        return v;\n' +
+              '      },\n' +
+              '    },\n' +
+              '  }\n' +
+              ')(InputTask //Component 组件)',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: 'lugiax.getState()',weight:600},
+            {text: '某个 model 获取其他 model 的 state，使用之前要在该model 引入要获取 state 的 model。', margin: '0 0 5px'},
+            {text:'lugiax.getState(modelName)',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: 'lugiax.on()',weight:600},
+            {text: '某个操作可能在多个 异步 `mutation` 执行完成后触发，这时候你可能用到 `lugiax.on` 来监听这些 `mutation`。',margin: '0 0 5px'},
+            {text:'## example：\n' +
+              'const getAsyncResult = new Promise((resolve,reject) => {\n' +
+              '  const asyncResult = [];\n' +
+              '  lugiax.on(async (mutation, params, { mutations, wait, }) => {\n' +
+              '    if(true){ // 做一些判断\n' +
+              '      asyncResult.push(params)\n' +
+              '    }\n' +
+              '    if(asyncResult.length === 2){ // mutation 全部响应后放回\n' +
+              '      resolve(asyncResult);\n' +
+              '    }\n' +
+              '  })\n' +
+              '})',bash:true, margin: '0 0 30px',javascript:true},
+
+          ]
+        },
+        {
+          title: 'lugiax-router 路由',
+          content: [
+            {text: 'lugiax 对 react-router 做了轻量的封装，createApp 和 createRoute 供你创建路由使用。'},
+
+            {text: 'createRoute',weight:600},
+            {text:'createRoute({\n' +
+              '  [path: string]:{\n' +
+              '     render?: Function,\n' +
+              '     exact?: boolean, \n' +
+              '     strict?: boolean,\n' +
+              '     component?: Function,\n' +
+              '     onPageLoad?: Function,\n' +
+              '     onPageUnLoad?: ?Function\n' +
+              '  }\n' +
+              '})',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: '除了 component 的静态打包外，还提供了 render 动态打包，用于代码分割。',margin: '0 0 30px'},
+          ],
+        },
+
+        {
+          title: '页面生命周期函数',
+          content: [
+            {text: 'onPageLoad 页面加载完成后执行', margin: '0 0 5px'},
+            {text: 'onPageUnLoad 页面卸载时执行', margin: '0 0 30px'},
+
+          ]
+        },
+        {
+          title: 'createApp',
+          content: [
+            {text:'createApp({\n' +
+              '  routerMap: RouterMap, // type: Object，通过 createRoute 创建后的route\n' +
+              '  history: Object,\n' +
+              '  param?: CreateAppParam = {}\n' +
+              '})',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: 'param 提供 loading 和 onBeforeGo 两个api；', margin: '0 0 5px'},
+            {text: 'loading: 路由切换的加载页面，可配置 Component 组件', margin: '0 0 5px'},
+            {text: 'onBeforeGo 跳转之前的回调，可做权限处理', margin: '0 0 5px'},
           ]
         },
 

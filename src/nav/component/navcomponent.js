@@ -10,7 +10,7 @@ import {  Theme } from '@lugia/lugia-web';
 import '../../css/menu.css';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
-import styled from 'styled-components';
+import styled , { keyframes } from 'styled-components';
 import { designRouter } from '../../App';
 import logo from '../../../public/lugia-logo.png';
 import Search from '../../search';
@@ -28,6 +28,15 @@ const Wrapper = styled.div`
 
 
 
+const slideToRight = keyframes`
+  0% {
+    width:0;
+  }
+  100% {
+   width:100%;
+  }
+`;
+
 const TabPane = styled.span`
   font-size:16px;
   color:${props => (props.active?themeColor:'#36384d')};
@@ -42,9 +51,12 @@ const TabPane = styled.span`
     bottom:8px;
     width:100%;
     height:2px;
+    border-radius:2px;
     background:${themeColor};
+    animation: ${slideToRight} 0.2s cubic-bezier(.57,.12,.35,.59) forwards;
   }
 `;
+
 const TabBox = styled.div`
   
 `;
@@ -59,6 +71,7 @@ const Logo = styled.img`
   margin:10px 12px 0 10px;
   height:60%;
   float:left;
+  cursor:pointer
 `;
 
 const Language = styled.div`
@@ -123,7 +136,7 @@ export default class Navcomponent extends React.Component<any, any> {
     console.log('current',current);
     return (
         <Header>
-          <Logo src={logo} alt=""/>
+          <Logo src={logo} alt="" onClick={e => this.onTabClick('/home')}/>
           <SearchBox><Search/></SearchBox>
           <HeadRight>
             <Language>English</Language>

@@ -31,7 +31,7 @@ $ mega -h
 ```bash
 
 ## 初始化一个 react app
-$ mega create <app-name> [scaffolding]
+y
 ```
 
 ### Scaffolding
