@@ -42,7 +42,6 @@ const DemoBox = styled.div`
   box-shadow: 0px 0px 6px rgba(102, 102, 102, 0.2);
   background: #fff;
   box-sizing: border-box;
-  overflow: hidden;
 
   &:hover {
     box-shadow: 0px 0px 6px rgba(77, 99, 255, 0.2);
