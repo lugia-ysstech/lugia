@@ -42,5 +42,5 @@ const Box = styled.div`
 
 export default () => {
 
-  return <Box><PageLoading time={1} loading urls={urls}/></Box>;
+  return <Box><PageLoading time={2} loading urls={urls}/></Box>;
 };
