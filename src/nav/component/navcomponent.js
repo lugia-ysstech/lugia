@@ -6,26 +6,18 @@
  */
 import React from 'react';
 import { go } from '@lugia/lugiax-router';
-import { Tabs, Theme } from '@lugia/lugia-web';
+import {  Theme } from '@lugia/lugia-web';
 import '../../css/menu.css';
 import Widget from '@lugia/lugia-web/dist/consts/index';
+import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 import styled from 'styled-components';
 import { designRouter } from '../../App';
 import logo from '../../../public/lugia-logo.png';
 import Search from '../../search';
 
-const TabPane = Tabs.TabPane;
-const getchildren =router => {
-  const arr =[];
-  for(const i in router){
-    const {isHidden,text,url} = router[i];
-    if(!isHidden){
-      arr.push(<TabPane title={text}  activityKey={url} />);
-    }
-  }
+const { themeColor } = colorsFunc();
+// const TabPane = Tabs.TabPane;
 
-  return arr;
-} ;
 
 const Wrapper = styled.div`
   text-align: left;
@@ -34,8 +26,31 @@ const Wrapper = styled.div`
   position:relative;
 `;
 
+
+
+const TabPane = styled.span`
+  font-size:16px;
+  color:${props => (props.active?themeColor:'#36384d')};
+  margin:0 14px;
+  cursor:pointer;
+  display:inline-block;
+  position:relative;
+  &::after{
+    display:${props => (props.active?'block':'none')};
+    content:"";
+    position:absolute;
+    bottom:8px;
+    width:100%;
+    height:2px;
+    background:${themeColor};
+  }
+`;
+const TabBox = styled.div`
+  
+`;
+
 const Header = styled.div`
-  height: 80px;
+  height: 60px;
   line-height: 60px;
   align-item:middle;
 `;
@@ -55,6 +70,23 @@ const Language = styled.div`
 const SearchBox = styled.div`
  float:left;
 `;
+
+const HeadRight = styled.div`
+  float:right;
+  display:flex;
+  align-items:center;
+  margin-left
+`;
+
+
+const ThemeColor = styled.span`
+  background:${themeColor};
+  width:16px;
+  height:16px;
+  border-radius:5px;
+  
+`;
+
 
 type DefProps={
   current?:Array<string>,
@@ -88,18 +120,21 @@ export default class Navcomponent extends React.Component<any, any> {
       },
     };
     const {current} = this.state;
+    console.log('current',current);
     return (
         <Header>
           <Logo src={logo} alt=""/>
           <SearchBox><Search/></SearchBox>
-          <Language>English | </Language>
+          <HeadRight>
+            <Language>English</Language>
+            <Language>|</Language>
+            <ThemeColor/>
+          </HeadRight>
           <Theme config={view}>
           <Wrapper>
-            <Tabs
-              onTabClick={this.onTabClick}
-              defaultActivityKey={current}
-              children={getchildren(designRouter)}
-            />
+            <TabBox>
+              {this.getchildren(designRouter,current)}
+            </TabBox>
           </Wrapper>
           </Theme>
 
@@ -111,6 +146,15 @@ export default class Navcomponent extends React.Component<any, any> {
     onTabClick && onTabClick(res);
     go({ url: res });
   };
-
+  getchildren = (router,current) => {
+    const arr =[];
+    for(const i in router){
+      const {isHidden,text,url} = router[i];
+      if(!isHidden){
+        arr.push(<TabPane title={text} active={current === url} onClick={e => this.onTabClick(url)}>{text}</TabPane>);
+      }
+    }
+    return arr;
+  } ;
 
 }
