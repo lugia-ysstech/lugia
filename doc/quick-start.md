@@ -4,8 +4,8 @@ Lugia Web 旨在降低开发成本，提升开发质量，为前端开发人员�
 
 ## 说在前面
 
-在开始之前，我们推荐先学习 [React](http://facebook.github.io/react/) 和 [ES2015](https://babeljs.io/docs/en/learn),并且配置了 [Node.js](https://nodejs.org/en/) v8 版本及以上。
-如果你刚开始学习前端或者 React，将 UI 框架作为你的第一步可能不是最好的主意。
+在使用 `lugia-web` 之前，我们建议你已经对 [React](http://facebook.github.io/react/) 和 [ES2015](https://babeljs.io/docs/en/learn) 有过学习，
+并且配置了 [Node.js](https://nodejs.org/en/) v8 版本及以上。
 
 ## 创建一个本地实例
 
@@ -16,10 +16,10 @@ Lugia Web 旨在降低开发成本，提升开发质量，为前端开发人员�
 
 ```bash
 ## 安装
-$ yarn global add @lugia/mega
+$ npm install @lugia/mega -g
 
 ## 查看版本
-$ mega -v
+$ mega -V
 1.0.3
 
 ## 帮助
