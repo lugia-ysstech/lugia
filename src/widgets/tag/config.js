@@ -20,5 +20,11 @@ module.exports = {
     title: '可选择的标签',
     desc: '通过type: optional,变为可选择标签,传入checked来控制是否选中',
     path: './OptionalTag'
+  },
+
+  AddTag: {
+    title: '可动态添加标签',
+    desc: '遍历数组生成一组标签，通过改变数组的值，动态生成或删除标签',
+    path: './AddTag'
   }
 };
