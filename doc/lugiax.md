@@ -6,22 +6,76 @@
 ## 设计思想
 
 基于`redux` + `redux-saga` 封装出更加简单的状态管理工具。我们引入了 `mutation` 的概念（`mutation` + `state`），
-简化了 `redux`。lugiax 的 state 是 不可改变的，
+简化了 `redux`。lugiax 的 state 是 不可变类型的数据，
 可参看 [Immutable ](https://facebook.github.io/immutable-js/docs/#/)；
 Immutable数据一旦创建，就不能更改。而 `mutation` 就是修改 `state` 的唯一途径。state 被修改后，
 并不会通知全局来进行更新，而是通知所绑定的对应的 Component 来进行更新。
 
+### state
+
+`state` 是单独的，每个 model 都有自己的 `state`，并且是不可变类型的
+
 ### mutation
 
-`mutation` 是一个标准函数，修改方式是通过返回一个新的 state ，然后通过 state.set 来修改 state。
+`mutation` 是一个标准函数，是唯一修改 `state` 的途径，修改方式是通过返回一个新的 state ，然后通过 state.set 来修改 state。
+并且 `mutation` 只能修改自己域下面的 `state`。
 `mutation` 提供了 async 和 sync 两种不同的操作方式。
 
 ### mutation 进阶
 
 * 可以通过 `wait` 等待一个mutation结束，然后处理返回新的 state
-* 可以通过 `on` 进行全局监听，被监听状态改变后，会执行 `lugiax.on`
-* 可以通过 `getState` 获取其他 model 状态
+* 可以通过 `lugiax.on` 进行全局监听，被监听状态改变后，会执行 `lugiax.on`
+* 可以通过 `lugiax.getState` 获取其他 model 状态
 
+```javascript
+## wait:
+const mutation = {
+  async: {
+    async changePwd(data, inParam, { mutations, }) {
+      return data.set('pwd', inParam.pwd);
+    },
+    async changeName(data, inParam, { mutations, }) {
+      return data.set('name', inParam.name);
+    },
+    async start(data, inParam, { mutations, }) {          
+      await mutations.changeName();
+      state.set('pwd','333')
+    }
+  }
+};
+lugiax.register({model:'user',state:{name: 'li',pwd: '12345'},mutation});
+
+
+## lugiax.on:
+
+const getAsyncResult = new Promise((resolve,reject) => {
+  const asyncResult = [];
+  lugiax.on(async (mutation, params, { mutations, wait, }) => {
+    if(true){ // 做一些判断
+      asyncResult.push(params)
+    }
+    if(asyncResult.length === 2){ // mutation 全部响应后放回
+      resolve(asyncResult);
+    }
+  })
+})
+
+## lugiax.getState:
+
+import lugiax from "@lugia/lugiax";
+const userModel = lugiax.register({
+  model: 'user',
+  state: {name: 'user'},
+  mutations: {}
+});
+const loginModel = lugiax.register({
+  model: 'login',
+  state: {login: ' '},
+  mutations: {}
+});
+
+lugiax.getState().get('user').get('name'); // user
+```
 
 ## lugiax API
 
@@ -58,7 +112,7 @@ returned:
 ### lugiax.connect
 
 ```javascript
-connect(
+lugiax.connect(
   todo, // 模块名称（必填）
   state => {
     return { data: state.data, };
@@ -72,19 +126,32 @@ connect(
 
 ### lugiax.bind
 
-双向绑定。
+双向绑定，需要指定 `mutation`，不能动态生成 `mutation` 。
 
 ```javascript
-bind(
-  tomato, // 模块名称（必填）
-  {
-    taskName: 'value', // string 绑定属性值（必填）
+const mutations = {
+  sync: {
+    changeName(data, inParam) {
+      return data.set('name', inParam.name);
+    },
+    changePwd(data, inParam) {
+      return data.set('pwd', inParam.pwd);
+    },
+  }
+}
+const userModel = lugiax.register({model:'user',state:{name: 'li',pwd: '12345'},mutations})
+lugiax.bind(
+  userModel,
+  model => {
+    const result = { value: model.get('name'), pwd: model.get('pwd'), };
+    return result;
   },
-  { // 触发时间
-    onChange: {
-      taskName(v) {
-        return v;
-      },
+  {
+    onChange: (mutations, e) => {
+      return mutations.changeName({ name: e.target.value, });
+    },
+    onClick: (mutations, e) => {
+      return mutations.changePwd({ pwd: newPwd, });
     },
   }
 )(InputTask //Component 组件)
@@ -92,10 +159,10 @@ bind(
 
 ### lugiax.bindTo
 
-双向绑定。
+双向绑定，并且可以动态生成 `mutation`。
 
 ```javascript
-bindTo(
+lugiax.bindTo(
   tomato, // 模块名称（必填）
   {
     taskName: 'value', // string 绑定属性值（必填）
