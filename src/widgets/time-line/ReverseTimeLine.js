@@ -12,10 +12,11 @@ export default class ReverseTimeLine extends React.Component<Object, Object> {
 
   render() {
     return (
-      <div style={{ margin: 30 }}>
+      <div >
+      <div style={{ marginBottom: '30px' }}>
         <Button type="primary" onClick={this.handleClick}>
           点击反转
-        </Button>
+        </Button></div>
         <TimeLine reverse={this.state.reverse}>
           <TimeLineItem time="2018-01-01" description={'description111'} />
           <TimeLineItem time="2018-01-02" description={'description222'} />

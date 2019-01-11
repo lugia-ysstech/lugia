@@ -12,82 +12,64 @@ export default class OrientationSteps extends React.Component<any, any> {
   render() {
     const view = {
       [Widget.Steps]: {
-        width: 1000
+        width: 400
       },
-      [Widget.Step]: {
-        width: 350,
-        height: 100
-      }
     };
     return (
       <Theme config={view}>
         <VWrapper>
-          <Steps orientation="vertical" stepType="simple" size="mini">
-            <Step title="1111" stepStatus="finish" content="content1" />
-            <Step title="222" stepStatus="process" content="content2" />
-            <Step title="33" stepStatus="next" content="content3" />
-          </Steps>
-        </VWrapper>
-        <VWrapper>
           <Steps orientation="vertical" stepType="simple" size="normal">
-            <Step title="1111" stepStatus="finish" content="content1" />
-            <Step title="222" stepStatus="process" content="content2" />
-            <Step title="33" stepStatus="next" content="content3" />
+            <Step title="step1" stepStatus="finish" content="content1" />
+            <Step title="step2" stepStatus="process" content="content2" />
+            <Step title="step3" stepStatus="next" content="content3" />
           </Steps>
         </VWrapper>
         <VWrapper>
           <Steps orientation="vertical" stepType="simple" size={'normal'}>
             <Step
-              title="1111"
-              description={'description111'}
+              title="step1"
+              description={'description1'}
               stepStatus="finish"
             />
             <Step
-              title="222"
+              title="step2"
               description={'description2'}
               stepStatus="process"
             />
-            <Step title="33" description={'description33'} stepStatus="next" />
+            <Step title="step3" description={'description3'} stepStatus="next" />
           </Steps>
         </VWrapper>
         <VWrapper>
           <Steps orientation="vertical" stepType="flat" size="normal">
-            <Step title="1111" stepStatus="finish" content="content1" />
-            <Step title="222" stepStatus="process" content="content2" />
-            <Step title="33" stepStatus="next" content="content3" />
+            <Step title="step1" stepStatus="finish" content="content1" />
+            <Step title="step2" stepStatus="process" content="content2" />
+            <Step title="step3" stepStatus="next" content="content3" />
           </Steps>
         </VWrapper>
         <VWrapper>
           <Steps orientation="vertical" stepType={'icon'} size={'mini'}>
             <Step
               icon={'lugia-icon-financial_cloud'}
-              title="1111"
+              title="step1"
               stepStatus="finish"
             />
             <Step
               icon={'lugia-icon-financial_cloud'}
-              title="222"
+              title="step2"
               stepStatus="process"
             />
             <Step
               icon={'lugia-icon-financial_cloud'}
-              title="333"
+              title="step3"
               stepStatus="next"
             />
           </Steps>
         </VWrapper>
         <VWrapper>
           <Steps orientation="vertical" stepType={'dot'}>
-            <Step title="1111" stepStatus="finish" />
-            <Step title="222" stepStatus="process" isDashed={true} />
-            <Step title="33" stepStatus="next" isDashed={true} />
-          </Steps>
-        </VWrapper>
-        <VWrapper>
-          <Steps orientation="vertical" stepType="dot" size="normal">
-            <Step title="1111" stepStatus="finish" content="content1" />
-            <Step title="222" stepStatus="process" content="content2" />
-            <Step title="33" stepStatus="next" content="content3" />
+            <Step title="step1" stepStatus="finish" />
+            <Step title="step2" stepStatus="process" isDashed={true} />
+            <Step title="step3" stepStatus="next" isDashed={true} />
           </Steps>
         </VWrapper>
       </Theme>
