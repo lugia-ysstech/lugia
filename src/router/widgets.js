@@ -1,8 +1,8 @@
-export default [ {
+export default [{
   text: '数据录入',
   category: '数据录入',
   describe: true,
-  children: [ {
+  children: [{
     widgetName: 'Affix',
     floderName: 'affix',
     value: '/component/affix',
@@ -142,12 +142,12 @@ export default [ {
     floderName: 'tree-select',
     value: '/component/treeselect',
     text: 'TreeSelect 树形选择控件'
-  }, { widgetName: 'Upload', floderName: 'upload', value: '/component/upload', text: 'Upload 上传' } ]
+  }, { widgetName: 'Upload', floderName: 'upload', value: '/component/upload', text: 'Upload 上传' }]
 }, {
   text: '数据展示',
   category: '数据展示',
   describe: true,
-  children: [ {
+  children: [{
     widgetName: 'Avatar',
     floderName: 'avatar',
     value: '/component/avatar',
@@ -177,12 +177,12 @@ export default [ {
     floderName: 'time-line',
     value: '/component/timeline',
     text: 'Timeline 时间轴'
-  }, { widgetName: 'Tooltip', floderName: 'tooltip', value: '/component/tooltip', text: 'Tooltip 文字提示' } ]
+  }, { widgetName: 'Tooltip', floderName: 'tooltip', value: '/component/tooltip', text: 'Tooltip 文字提示' }]
 }, {
   text: '通用',
   category: '通用',
   describe: true,
-  children: [ {
+  children: [{
     widgetName: 'Breadcrumb',
     floderName: 'breadcrumb',
     value: '/component/breadcrumb',
@@ -192,45 +192,45 @@ export default [ {
     floderName: 'button',
     value: '/component/button',
     text: 'Button 按钮'
-  }, { widgetName: 'Icon', floderName: 'icon', value: '/component/icon', text: 'Icon 图标' } ]
+  }, { widgetName: 'Icon', floderName: 'icon', value: '/component/icon', text: 'Icon 图标' }]
 }, {
   text: '其他',
   category: '其他',
   describe: true,
-  children: [ {
+  children: [{
     widgetName: 'Divider',
     floderName: 'divider',
     value: '/component/divider',
     text: 'Divider 分割线'
-  }, { widgetName: 'Loading', floderName: 'loading', value: '/component/loading', text: 'Loading 加载中' } ]
+  }, { widgetName: 'Loading', floderName: 'loading', value: '/component/loading', text: 'Loading 加载中' }]
 }, {
   text: '布局',
   category: '布局',
   describe: true,
-  children: [ {
+  children: [{
     widgetName: 'Grid',
     floderName: 'grid',
     value: '/component/grid',
     text: 'Grid 栅格'
-  }, { widgetName: 'Layout', floderName: 'layout', value: '/component/layout', text: 'Layout 布局' } ]
+  }, { widgetName: 'Layout', floderName: 'layout', value: '/component/layout', text: 'Layout 布局' }]
 }, {
   text: '导航',
   category: '导航',
   describe: true,
-  children: [ {
+  children: [{
     widgetName: 'NavMenu',
     floderName: 'navmenu',
     value: '/component/navmenu',
     text: 'NavMenu 导航菜单'
-  }, { widgetName: 'Steps', floderName: 'steps', value: '/component/steps', text: 'Steps 步骤条' } ]
+  }, { widgetName: 'Steps', floderName: 'steps', value: '/component/steps', text: 'Steps 步骤条' }]
 }, {
   text: '反馈',
   category: '反馈',
   describe: true,
-  children: [ {
+  children: [{
     widgetName: 'Popconfirm',
     floderName: 'popconfirm',
     value: '/component/popconfirm',
     text: 'Popconfirm 气泡确认框'
-  }, { widgetName: 'Skeleton', floderName: 'skeleton', value: '/component/skeleton', text: 'Skeleton 加载占位符' } ]
-} ];
+  }, { widgetName: 'Skeleton', floderName: 'skeleton', value: '/component/skeleton', text: 'Skeleton 加载占位符' }]
+}];
