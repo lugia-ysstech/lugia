@@ -84,9 +84,9 @@ async function createSearchIndex () {
   const ruleKeys = Object.keys(documents);
   ruleKeys && ruleKeys.forEach(ruleKey => {
     const document = documents[ ruleKey ];
-    const { title, content, type } = document;
+    const { title, content, type, baseUrl } = document;
     const isDocument = type === 'document';
-    const url = isDocument ? getUrl(ruleKey) : `/design/${ruleKey}`;
+    const url = baseUrl ? baseUrl : `/design/${ruleKey}`;
     title && res.push({
       url,
       owner: title,
