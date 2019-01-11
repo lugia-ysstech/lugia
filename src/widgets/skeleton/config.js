@@ -10,14 +10,13 @@ module.exports = {
   },
   ParagraphSkeleton: {
     title: '只有段落的占位符',
-    desc:
-      'avatar控制是否显示头像占位符,默认为true。title控制是否显示标题占位符,默认为true,titleWidth控制title占位符的宽度。paragraph为段落占位符的数量,paragraphWidth设置段落占位图的宽度。',
+    desc: '通过avatar：false隐藏头像占位符，默认为true。',
     path: './ParagraphSkeleton'
   },
   MultiSkeleton: {
     title: '更复杂的占位符',
     desc:
-      '带有头像和图片占位符,pictureWidth和pictureHeight分别控制图像占位符的宽度和高度',
+      '带有头像和图片占位符，pictureWidth和pictureHeight分别控制图像占位符的宽度和高度',
     path: './MultiSkeleton'
   },
   AnimationSkeleton: {

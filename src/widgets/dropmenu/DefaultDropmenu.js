@@ -12,7 +12,7 @@ for (let i = 0; i < 10; i++) {
 
 const Box = styled.div`
   display: inline-block;
-  margin: 30px;
+  margin: 0 10px;
 `;
 
 const menu = <Menu data={data} />;
@@ -21,7 +21,7 @@ export default class extends React.Component<any, any> {
   render() {
     const defaultView = {
       [Widget.DropMenuButton]: { width: 120 },
-      [Widget.Dropmenu]: { width: 80 }
+      [Widget.DropMenu]: { width: 80 }
     };
 
     return (

@@ -78,7 +78,7 @@ export default class InlineDataMutlipleTree extends React.Component<
     return (
       <Theme config={config}>
         <Tree
-          expandAll
+          autoHeight
           data={data}
           mutliple
           translateTreeData={true}

@@ -6,7 +6,6 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   float: left;
   text-align: center;
-  padding: 20px;
 `;
 export default class ComboAvatar extends React.Component<any, any> {
 
@@ -15,7 +14,9 @@ export default class ComboAvatar extends React.Component<any, any> {
       [ Widget.Avatar ]: {
         color: 'white',
         backgroundColor: '#cccccc',
-        margin: 10
+        margin: 10,
+        height:42,
+        width:42
       },
       [ Widget.Badge ]: {
         position: { right: 10, top: 5 }

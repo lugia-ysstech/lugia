@@ -15,7 +15,7 @@ class MyTag extends React.Component<any, any> {
     super(props);
 
     this.state = {
-      checked: true
+      checked: false
     };
   }
   render() {
@@ -26,7 +26,7 @@ class MyTag extends React.Component<any, any> {
           type={'optional'}
           onClick={this.onClick}
         >
-          可选择标签
+          Click me
         </Tag>
       </TagWrap>
     );
@@ -37,4 +37,4 @@ class MyTag extends React.Component<any, any> {
   };
 }
 
-export default () => [<MyTag />, <MyTag />, <MyTag />];
+export default () => [<MyTag />, <MyTag />, <MyTag />, <MyTag />];

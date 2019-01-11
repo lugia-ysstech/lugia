@@ -4,10 +4,10 @@ import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
 
 const MenuWrap = styled.div`
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px 2px #ccc
+  box-shadow:0px 0px 6px rgba(51,51,51,0.2);
   display: inline-block;
   margin: 20px;
+  border-radius: 4px;
 `;
 
 const data = [];

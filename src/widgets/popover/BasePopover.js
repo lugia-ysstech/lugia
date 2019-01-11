@@ -4,7 +4,6 @@ import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  margin: 100px;
 `;
 const buttonWidth = 80;
 const DirectionButton = styled(Button)`
