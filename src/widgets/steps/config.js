@@ -9,15 +9,15 @@ module.exports = {
     desc: '可配置两种尺寸的步骤条',
     path: './SizeSteps'
   },
-  OrientationSteps: {
-    title: '方向',
-    desc: '步骤条方向,垂直,水平',
-    path: './OrientationSteps'
-  },
   TypeSteps: {
     title: '风格',
     desc: '步骤条多种风格',
     path: './TypeSteps'
+  },
+  OrientationSteps: {
+    title: '方向',
+    desc: '步骤条方向,垂直,水平',
+    path: './OrientationSteps'
   },
   StepsDemo: {
     title: '按步骤显示',
