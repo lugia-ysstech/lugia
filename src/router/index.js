@@ -61,6 +61,12 @@ const routerConfig = {
     value: '/component/start-project',
     text: '项目实战',
   },
+  '/component/lugiax': {
+    exact: true,
+    render: async () => import('../design/page'),
+    value: '/component/lugiax',
+    text: 'Lugia Design of React',
+  },
   '/component/404': {
     exact: true,
     render: async () => import('../access/NotAccess'),
@@ -85,6 +91,7 @@ const menuConfig = [
   { value: '/component/lugia', text: 'Lugia Design of React' },
   { value: '/component/quick-start', text: '快速上手' },
   { value: '/component/start-project', text: '项目实战' },
+  { value: '/component/lugiax', text: 'lugiax使用' },
   { value: '在Lugia-mega中使用', text: '在Lugia-mega中使用' },
   {
     value: 'Components',
