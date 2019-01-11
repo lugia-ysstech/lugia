@@ -182,6 +182,7 @@ export default class Navcomponent extends React.Component<any, any> {
   };
   linkToUrl = (res:string) => {
     this.handleInputChange(null);
+    console.log(res);
     go({ url: res });
   };
 

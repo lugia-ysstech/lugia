@@ -10,13 +10,14 @@ import {Theme ,Anchor,Icon } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import styled from 'styled-components';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
+import Highlight from 'react-highlight';
 
 const { themeColor } = colorsFunc();
 const { Link } = Anchor;
 
 const Title = styled.div.attrs({
   size:props => (props.level?'24px':'18px'),
-  margin:props => (props.level?'0 0 26px':'0 0 40px'),
+  margin:props => (props.level?props.imgPosition?'0 0 26px':'0 0 26px 30px':'0 0 20px'),
   padding:props => (props.level?'0':'0 0 0 50px')
 })` 
   font-size:${props => props.size};
@@ -39,7 +40,7 @@ const Titleline = styled.span`
 
 
 const Desc = styled.span`
-  color:#999;
+  color:#92939e;
   font-size:18px; 
   line-height:1;
   font-weight:normal;
@@ -51,6 +52,9 @@ const Content = styled.div`
   font-weight:${props => (props.weight || 'normal')};
   line-height:1.8;
   margin:${props => (props.margin || '0')};
+  background:${props => (props.bash?'#f8f8f8':'transparent')};
+  padding:${props => (props.bash?'8px 16px':'0')};
+  border-radius:${props => (props.bash?'4px':'0')};
 `;
 
 const ContentBox = styled.div` 
@@ -92,7 +96,7 @@ const ImageDesc = styled.div.attrs({
   padding:props => (props.imgPosition === 'right' || props.imgPosition === 'left' ?'10px  0':''),
   align:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'center':'right'),
 })` 
-  color:#666;
+  color:#525466;
   font-size:12px;
   line-height:1;
   text-align:${props => props.align};
@@ -120,7 +124,8 @@ const DesignCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items:center;
-  box-shadow: 0 0 6px rgba(102,102,102,0.2);
+  box-shadow: 0 0 6px rgba(77,99,255,0.2);
+ 
  
 `;
 
@@ -154,11 +159,13 @@ const PantoneIcon = styled(Icon)`
   margin:0 10px;
   font-size:22px;
   color:#fff;
-  box-shadow:0 0 6px rgba(232,232,232,1);
+  border-radius:50%;
+  box-shadow:0 0 6px rgba(77,99,255,0.2);
 `;
 
 const PantoneBox = styled.div`
   width: calc(100% - 80px);
+  height:100%;
   overflow:hidden;
 `;
 
@@ -166,17 +173,43 @@ const PantoneCardBox = styled.div.attrs({
   width:props => (props.width+'px' || '10000px'),
   left:props => (-(props.left * 146 +10) +'px')
 })`
-  width: ${props => props.width};;
+  width: ${props => props.width};
+  height:100%;
   transform:translateX(${props => props.left});
-  transition: all 0.3s linear
+  transition: all 0.3s linear;
 `;
 
 const PantoneCard = styled.div`
   width:146px;
-  margin:10px;
+  margin:15px 10px 0;
   display:inline-block;
   cursor:pointer;
+  padding:10px;
+  background:#fff;
+  border-radius:4px;
+  vertical-align:top;
+  &:hover{
+    box-shadow:0 0 16px rgba(77,99,255,0.2);
+  }
 `;
+
+const PantoneCardText = styled.div`
+  display:none;
+  color:#333333;
+  margin-bottom:5px;
+   ${PantoneCard}:hover & {
+    display: block;
+  }
+
+`;
+
+const PantoneInnerImage = styled.img` 
+  max-width:${props => props.width};
+  width:100%;
+  border-radius:4px;
+  box-shadow:0 0 6px rgba(77,99,255,0.1);
+`;
+
 
 type defProps ={
   dataSource?:Object,
@@ -189,14 +222,14 @@ type stateProps={
 
 const getImgElement = (data:Object,imgPosition:string,level?:Boolean) => {
   if(!data) return;
-  return <FlexContainer>
+  return <React.Fragment>
       {data.map(item => {
         return <ImageContainer level={level} imgPosition={imgPosition}>
           <Image imgPosition={imgPosition} src={item.url}  level={level} />
           <ImageDesc imgPosition={imgPosition}>{item.desc}</ImageDesc>
         </ImageContainer>;
       })}
-    </FlexContainer>;
+    </React.Fragment>;
 
 };
 
@@ -205,9 +238,13 @@ const getContentElement = (data:Object,titleElement,imgPosition:string,level?:Bo
   return  <ContentContainer level={level} imgPosition={imgPosition}>
     {level && titleElement}
     {data.map(item => {
-      const {text,size,color,margin,weight,url,desc} = item;
+      const {text,size,color,margin,weight,url,bash,javascript} = item;
       return <React.Fragment>
-        <Content size={size} color={color} margin={margin} weight={weight} >{text}</Content>
+        <Content size={size} color={color} bash={bash} margin={margin} weight={weight} >
+          {javascript?<Highlight className="language-jsx">
+            {text}
+          </Highlight>:text}
+          </Content>
         {url && <InnerImage  src={url}  />}
       </React.Fragment>;
     })}
@@ -237,8 +274,8 @@ const getElementWithPosition = (data:Array<Object>,level?:Boolean) => {
     {
       data.map((item,index) => {
         let childElement ;
-        const titleElement = item.title && <Title id={'link-'+index} name={'link-'+index} level={level}> {level?'':<Titleline/>} {item.title} <Desc>{item.desc}</Desc> </Title>;
-        const {imgPosition,content,img,card} = item;
+        const {imgPosition,content,img,card,title} = item;
+        const titleElement = item.title && <Title id={'link-'+index} name={'link-'+index} imgPosition={imgPosition} level={level}> {level?'':<Titleline/>} {title} <Desc>{item.desc}</Desc> </Title>;
         switch (imgPosition) {
           case 'left':
             childElement =
@@ -282,7 +319,7 @@ const getElementWithPosition = (data:Array<Object>,level?:Boolean) => {
 
 const getAnchorElement = (data:Object) => {
   return <AnchorContainer>
-    <Anchor slideType="circle">
+    <Anchor slideType="line">
       {data.map((item,index) => {
         const {title} = item;
         return <React.Fragment>
@@ -360,7 +397,8 @@ export default class Template extends React.Component<defProps, stateProps> {
                 return <PantoneCard onClick={ e => {
                   handleClick(index);
                 }} >
-                  <InnerImage  src={pantone} />
+                  <PantoneCardText>{name}</PantoneCardText>
+                  <PantoneInnerImage  src={pantone} />
                 </PantoneCard>;
               })
             }
