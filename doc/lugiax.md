@@ -60,6 +60,24 @@ connect(
 )(List);
 ```
 
+### lugiax.bind
+
+```javascript
+bind(
+  tomato, // 模块名称（必填）
+  {
+    taskName: 'value', // 绑定属性值（必填）
+  },
+  { // 触发时间
+    onChange: {
+      taskName(v) {
+        return v;
+      },
+    },
+  }
+)(InputTask //Component 组件)
+```
+
 ### lugiax.bindTo
 
 ```javascript
