@@ -86,7 +86,7 @@ async function createSearchIndex () {
     const document = documents[ ruleKey ];
     const { title, content, type, baseUrl } = document;
     const isDocument = type === 'document';
-    const url = baseUrl ? baseUrl : `/design/${ruleKey}`;
+    const url = `${baseUrl?baseUrl: '/design'}/${ruleKey}`;
     title && res.push({
       url,
       owner: title,
