@@ -23,7 +23,7 @@ module.exports = {
   },
 
   MutlipleSelect: {
-    title: '带搜索框的 Select 选择器',
+    title: '多选的 Select 选择器',
     desc: '通过 mutliple 属性开启多选',
     path: './MutlipleSelect'
   },
