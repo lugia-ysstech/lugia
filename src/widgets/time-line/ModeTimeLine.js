@@ -3,27 +3,14 @@ import { TimeLine, Theme, Button, Icon } from '@lugia/lugia-web';
 import styled from 'styled-components';
 const TimeLineItem = TimeLine.TimeLineItem;
 const Wrapper = styled.div`
-  text-align: left;
-  margin: 50px;
+  display: inline-block;
+  margin-left: 100px;
 `;
 export default class ModeTimeLine extends React.Component<any, any> {
-  constructor(props: any) {
-    super(props);
-    this.state = { value: '' };
-  }
 
   render() {
     return (
       <Wrapper>
-        <br />
-        <TimeLine>
-          <TimeLineItem time="2018-01-01" description={'description111'} />
-          <TimeLineItem time="2018-01-02" description={'description222'} />
-          <TimeLineItem time="2018-01-03" description={'description333'} />
-          <TimeLineItem time="2018-01-04" description={'description444'} />
-          <TimeLineItem time="2018-01-05" description={'description555'} />
-        </TimeLine>
-        <br />
         <TimeLine mode={'alternate'}>
           <TimeLineItem time="2018-01-01" description={'description111'} />
           <TimeLineItem time="2018-01-02" description={'description222'} />

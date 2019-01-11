@@ -4,8 +4,7 @@ import { TimeLine, Theme, Button, Icon, tabs } from '@lugia/lugia-web';
 const TimeLineItem = TimeLine.TimeLineItem;
 
 const Wrapper = styled.div`
-  text-align: left;
-  margin-top: 50px;
+  margin-right: 50px;
   display: inline-block;
 `;
 export default class PendingTimeline extends React.Component<any, any> {
