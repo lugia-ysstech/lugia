@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { fixControlledValue } from '@lugia/lugia-web/dist/utils';
 
 const Wrapper = styled.div`
-  float: left;
   display: inline-block;
 `;
 
