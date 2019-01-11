@@ -18,12 +18,28 @@ const stepsData = [
   }
 ];
 const StepContent = styled.div`
-  margin-top: 30px;
+  margin-top: 10px;
   border: 1px solid #ccc;
-  height: 100px;
+  height: 200px;
+  width: 450px;
+  font-size:12px;
+  background：#e8e8e8;
+  border-radius:4px;
+  position:relative;
 `;
 const ButtonContainer = styled.div`
-  margin-bottom: 30px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 8px;
+`;
+const ContentText = styled.div`
+  margin-top: 10px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
 `;
 export default class StepsDemo extends React.Component<Object, Object> {
   constructor(props) {
@@ -51,20 +67,12 @@ export default class StepsDemo extends React.Component<Object, Object> {
       : '';
     const view = {
       [Widget.Steps]: {
-        width: 470
-      },
+        width: 1400
+      }
     };
     return (
       <div>
         <Theme config={view}>
-          <ButtonContainer>
-            <Button type="primary" onClick={() => this.pre()}>
-              pre
-            </Button>
-            <Button type="primary" onClick={() => this.next()}>
-              Next
-            </Button>
-          </ButtonContainer>
           <Steps
             currentStepNumber={currentStepNumber}
             stepType={'simple'}
@@ -72,7 +80,17 @@ export default class StepsDemo extends React.Component<Object, Object> {
           >
             {stepsData.map((item, i) => <Step title={item.title} />)}
           </Steps>
-          <StepContent>{content}</StepContent>
+          <StepContent>{<ContentText>{content}</ContentText>}</StepContent>
+          <ButtonContainer>
+            <Button type="primary" onClick={() => this.pre()}>
+              上一步
+            </Button>
+          </ButtonContainer>
+          <ButtonContainer>
+            <Button type="primary" onClick={() => this.next()}>
+              下一步
+            </Button>
+          </ButtonContainer>
         </Theme>
       </div>
     );

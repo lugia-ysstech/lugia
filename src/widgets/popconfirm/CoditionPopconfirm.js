@@ -47,6 +47,7 @@ export default class CoditionPopconfirm extends React.Component<any, any> {
       <div style={{ margin: 20 }}>
         <Switch defaultChecked onChange={this.changeCondition} />
         <Popconfirm
+          placement="top"
           title="确定要删除吗?"
           visible={this.state.visible}
           onVisibleChange={this.handleVisibleChange}
