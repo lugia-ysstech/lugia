@@ -80,62 +80,65 @@ import patternImg3 from '../../../public/pattern/pattern_img3.jpg';
 import patternImg4 from '../../../public/pattern/pattern_img4.jpg';
 import patternImg5 from '../../../public/pattern/pattern_img5.jpg';
 import colorImg from '../../../public/color/color_img.png';
-import imgAlice from '../../../public/color/color_img_alice.jpg';
-import imgThemeAlice from '../../../public/color/color_img_theme_alice.jpg';
-import imgDream from '../../../public/color/color_img_dream.jpg';
-import imgThemeDream from '../../../public/color/color_img_theme_dream.jpg';
-import imgBinghan from '../../../public/color/color_img_binghan.jpg';
-import imgThemeBinghan from '../../../public/color/color_img_theme_binghan.jpg';
-import imgBingjing from '../../../public/color/color_img_bingjing.jpg';
-import imgThemeBingjing from '../../../public/color/color_img_theme_bingjing.jpg';
-import imgBinghuo from '../../../public/color/color_img_binghuo.jpg';
-import imgThemeBinghuo from '../../../public/color/color_img_theme_binghuo.jpg';
-import imgGuangxian from '../../../public/color/color_img_guangxian.jpg';
-import imgThemeGuangxian from '../../../public/color/color_img_theme_guangxian.jpg';
-import imgHengxing from '../../../public/color/color_img_hengxing.jpg';
-import imgThemeHengxing from '../../../public/color/color_img_theme_hengxing.jpg';
-import imgHuixing from '../../../public/color/color_img_huixing.jpg';
-import imgThemeHuixing from '../../../public/color/color_img_theme_huixing.jpg';
-import imgHuorong from '../../../public/color/color_img_huorong.jpg';
-import imgThemeHuorong from '../../../public/color/color_img_theme_huorong.jpg';
-import imgJiguang from '../../../public/color/color_img_jiguang.jpg';
-import imgThemeJiguang from '../../../public/color/color_img_theme_jiguang.jpg';
-import imgKejilan from '../../../public/color/color_img_kejilan.jpg';
-import imgThemeKejilan from '../../../public/color/color_img_theme_kejilan.jpg';
-import imgScience from '../../../public/color/color_img_science.jpg';
-import imgThemeScience from '../../../public/color/color_img_theme_science.jpg';
-import imgRongxue from '../../../public/color/color_img_rongxue.jpg';
-import imgThemeRongxue from '../../../public/color/color_img_theme_rongxue.jpg';
-import imgTaixian from '../../../public/color/color_img_taixian.jpg';
-import imgThemeTaixian from '../../../public/color/color_img_theme_taixian.jpg';
-import imgWarm from '../../../public/color/color_img_warm.jpg';
-import imgThemeWarm from '../../../public/color/color_img_theme_warm.jpg';
-import imgLucky from '../../../public/color/color_img_lucky.jpg';
-import imgThemeLucky from '../../../public/color/color_img_theme_lucky.jpg';
-import imgYinyun from '../../../public/color/color_img_yinyun.jpg';
-import imgThemeYinyun from '../../../public/color/color_img_theme_yinyun.jpg';
-import imgManor from '../../../public/color/color_img_manor.jpg';
-import imgThemeManor from '../../../public/color/color_img_theme_manor.jpg';
-import imgViolet from '../../../public/color/color_img_violet.jpg';
-import imgThemeViolet from '../../../public/color/color_img_theme_violet.jpg';
-import imgNature from '../../../public/color/color_img_nature.jpg';
-import imgThemeNature from '../../../public/color/color_img_theme_nature.jpg';
+import imgAlice from '../../../public/color/color_img_alice.png';
+import imgThemeAlice from '../../../public/color/color_img_theme_alice.png';
+import imgDream from '../../../public/color/color_img_dream.png';
+import imgThemeDream from '../../../public/color/color_img_theme_dream.png';
+import imgBinghan from '../../../public/color/color_img_binghan.png';
+import imgThemeBinghan from '../../../public/color/color_img_theme_binghan.png';
+import imgBingjing from '../../../public/color/color_img_bingjing.png';
+import imgThemeBingjing from '../../../public/color/color_img_theme_bingjing.png';
+import imgBinghuo from '../../../public/color/color_img_binghuo.png';
+import imgThemeBinghuo from '../../../public/color/color_img_theme_binghuo.png';
+import imgGuangxian from '../../../public/color/color_img_guangxian.png';
+import imgThemeGuangxian from '../../../public/color/color_img_theme_guangxian.png';
+import imgHengxing from '../../../public/color/color_img_hengxing.png';
+import imgThemeHengxing from '../../../public/color/color_img_theme_hengxing.png';
+import imgHuixing from '../../../public/color/color_img_huixing.png';
+import imgThemeHuixing from '../../../public/color/color_img_theme_huixing.png';
+import imgHuorong from '../../../public/color/color_img_huorong.png';
+import imgThemeHuorong from '../../../public/color/color_img_theme_huorong.png';
+import imgJiguang from '../../../public/color/color_img_jiguang.png';
+import imgThemeJiguang from '../../../public/color/color_img_theme_jiguang.png';
+import imgKejilan from '../../../public/color/color_img_kejilan.png';
+import imgThemeKejilan from '../../../public/color/color_img_theme_kejilan.png';
+import imgScience from '../../../public/color/color_img_science.png';
+import imgThemeScience from '../../../public/color/color_img_theme_science.png';
+import imgRongxue from '../../../public/color/color_img_rongxue.png';
+import imgThemeRongxue from '../../../public/color/color_img_theme_rongxue.png';
+import imgTaixian from '../../../public/color/color_img_taixian.png';
+import imgThemeTaixian from '../../../public/color/color_img_theme_taixian.png';
+import imgWarm from '../../../public/color/color_img_warm.png';
+import imgThemeWarm from '../../../public/color/color_img_theme_warm.png';
+import imgLucky from '../../../public/color/color_img_lucky.png';
+import imgThemeLucky from '../../../public/color/color_img_theme_lucky.png';
+import imgYinyun from '../../../public/color/color_img_yinyun.png';
+import imgThemeYinyun from '../../../public/color/color_img_theme_yinyun.png';
+import imgManor from '../../../public/color/color_img_manor.png';
+import imgThemeManor from '../../../public/color/color_img_theme_manor.png';
+import imgViolet from '../../../public/color/color_img_violet.png';
+import imgThemeViolet from '../../../public/color/color_img_theme_violet.png';
+import imgNature from '../../../public/color/color_img_nature.png';
+import imgThemeNature from '../../../public/color/color_img_theme_nature.png';
+import imgZhaoxia from '../../../public/color/color_img_zhaoxia.png';
+import imgThemeZhaoxia from '../../../public/color/color_img_theme_zhaoxia.png';
 import fontImg from '../../../public/font/font_img.png';
-import PingFangSC from '../../../public/font/PingFangSC.png';
-import hiaginosans from '../../../public/font/hiaginosans.png';
-import yahei from '../../../public/font/yahei.png';
-import helveticaneue from '../../../public/font/helveticaneue.png';
-import helvetica from '../../../public/font/helvetica.png';
-import arial from '../../../public/font/arial.png';
 import fontImg1 from '../../../public/font/font_img1.jpg';
 import fontImg2 from '../../../public/font/font_img2.jpg';
 import fontImg3 from '../../../public/font/font_img3.jpg';
+import fontImg4 from '../../../public/font/font_img4.png';
+import fontImg5 from '../../../public/font/font_img5.png';
+import fontImg6 from '../../../public/font/font_img6.png';
 import iconImg from '../../../public/icon/icon_img.png';
 import iconImg1 from '../../../public/icon/icon_img1.jpg';
 import iconImg2 from '../../../public/icon/icon_img2.jpg';
 import iconImg3 from '../../../public/icon/icon_img3.jpg';
 import iconImg4 from '../../../public/icon/icon_img4.jpg';
 import iconImg5 from '../../../public/icon/icon_img5.jpg';
+import welcome from '../../../public/welcome.png';
+import component from '../../../public/component.png';
+import routewelcome from '../../../public/route-welcome.png';
+
 
 export default {
   introduce,
@@ -260,20 +263,22 @@ export default {
   imgThemeViolet,
   imgNature,
   imgThemeNature,
+  imgZhaoxia,
+  imgThemeZhaoxia,
   fontImg,
-  PingFangSC,
-  hiaginosans,
-  yahei,
-  helveticaneue,
-  helvetica,
-  arial,
   fontImg1,
   fontImg2,
   fontImg3,
+  fontImg4,
+  fontImg5,
+  fontImg6,
   iconImg,
   iconImg1,
   iconImg2,
   iconImg3,
   iconImg4,
-  iconImg5
+  iconImg5,
+  welcome,
+  component,
+  routewelcome
 };

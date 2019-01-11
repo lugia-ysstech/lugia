@@ -92,7 +92,7 @@ const BgImg2 = styled.div`
 const BgImg3 = styled.img`
   width:600px;
   position:absolute;
-  left:-180px;
+  right:55%;
   top:220px;
   z-index:3;
   
@@ -100,7 +100,7 @@ const BgImg3 = styled.img`
 
 const BgImg4 = styled.img`
   position: absolute;
-  left: 295px;
+  right: 50%;
   top: 395px;
   z-index: 6;
   
@@ -125,7 +125,7 @@ const MiddleWrapper = styled.div`
 
 
 const ModelOne = styled.div`
-  width:52%;
+  width:500px;
   padding:180px 0 0 48px;
   margin:0 30px;
 `;
@@ -136,6 +136,8 @@ const H1 = styled.div`
   color: #ff5b00;
   font-family: 'Helvetica Neue';
   font-weight:800;
+ 
+}
 `;
 
 const H2 = styled.div`
@@ -143,12 +145,12 @@ const H2 = styled.div`
   color: ${props => (props.color || '#000033')};
   font-family: 'Helvetica Neue';
   font-weight:800;
-  margin: 20px 0;
+  margin: ${props => (props.margin || '20px 0')};
 `;
 
 const Text = styled.div`
   font-size: 14px;
-  color:${props => (props.color || '#666')};
+  color:${props => (props.color || '#36384d')};
   line-height:1.5;
   margin: 0 0 30px;
   text-align:left;
@@ -338,7 +340,7 @@ const SolutionCard = styled.div`
   text-align:center;
   padding: 15px 30px;
   position:absolute;
-  left:-40px;
+  right:60%;
   top:260px;
   z-index:5;
   display:flex;
@@ -453,10 +455,10 @@ export default class Pages extends React.Component<any, any> {
                     <ButtonCard onClick={e => this.linkToUrl('/design/introduce')}>开始使用</ButtonCard>
                   </SolutionCard>
                   <Design>解决方案</Design>
+                  <H2 margin={'36px 0 20px'}>LugiaX</H2>
+                  <Text>一个基于 Redux 的前端状态管理工具。提供简单高效的全局状态管理方案、 基于 async/await 的异步操作、快捷的双向绑定。LugiaX 内置路由库，对 react-router 做了轻量封装，使用起来更加简单明了。</Text>
                   <H2>Lugia Web</H2>
                   <Text>一套基于 Lugia Design 的高品质 React 组件库，满足金融行业高性能组件的需求，适用于 Web 端。</Text>
-                  <H2>LugiaX</H2>
-                  <Text>一个基于 Redux 的前端状态管理工具。提供简单高效的全局状态管理方案、 基于 async/await 的异步操作、快捷的双向绑定。LugiaX 内置路由库，对 react-router 做了轻量封装，使用起来更加简单明了。</Text>
                   <H2 >Lugia Mega</H2>
                   <Text >标准、高效、开箱即用的前端可视化开发工具。Lugia Mega 是一个无需环境搭建、快速上手的跨平台桌面应用（Mac 和 Windows）。为开发人员提供可视化、屏蔽底层、元信息式的开发方式。帮助设计师、产品经理快速设计原型，成果可以直接让开发人员使用。Lugia Mega 贯穿了整个项目的生命周期，让您极速构建前端应用、轻松管理所有项目。</Text>
 
