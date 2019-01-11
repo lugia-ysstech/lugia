@@ -4,8 +4,12 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   float: left;
+  display: inline-block;
 `;
-
+const InputWrapper = styled.div`
+  margin-right: 10px;
+  display: inline-block;
+`;
 export default class SizeNumberInput extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
@@ -17,11 +21,18 @@ export default class SizeNumberInput extends React.Component<any, any> {
   };
 
   render() {
-    return(
-    <Wrapper>
-    <Input size={'small'} placeholder={'请填写金额'} />
-    <Input placeholder={'请填写金额'} />
-    <Input size={'large'} placeholder={'请填写金额'} />
-    </Wrapper>);
+    return (
+      <Wrapper>
+        <InputWrapper>
+          <Input size={'small'} placeholder={'请填写金额'} />
+        </InputWrapper>
+        <InputWrapper>
+          <Input placeholder={'请填写金额'} />
+        </InputWrapper>
+        <InputWrapper>
+          <Input size={'large'} placeholder={'请填写金额'} />
+        </InputWrapper>
+      </Wrapper>
+    );
   }
 }
