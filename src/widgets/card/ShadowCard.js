@@ -6,6 +6,9 @@ const Wrapper = styled.div`
   margin-top: 50px;
   display: inline-block;
 `;
+const Operation = styled.div`
+  color: #4d63ff;
+`;
 export default class ShadowCard extends React.Component<any, any> {
   render() {
     return (
@@ -14,19 +17,19 @@ export default class ShadowCard extends React.Component<any, any> {
           title={'this is title'}
           description={'this is description'}
           shadow={'always'}
-          operation={'操作'}
+          operation={<Operation> 操作</Operation>}
         />
         <Card
           title={'this is title'}
           description={'this is description'}
           shadow={'hover'}
-          operation={'操作'}
+          operation={<Operation> 操作</Operation>}
         />
         <Card
           title={'this is title'}
           description={'this is description'}
           shadow={'never'}
-          operation={'操作'}
+          operation={<Operation> 操作</Operation>}
         />
       </Wrapper>
     );

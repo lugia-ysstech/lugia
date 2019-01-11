@@ -6,7 +6,9 @@ const Wrapper = styled.div`
   margin-top: 50px;
   display: inline-blocTk;
 `;
-
+const Operation = styled.div`
+  color: #4d63ff;
+`;
 export default class TabsCard extends React.Component<Object, Object> {
   render() {
     const combo = {
@@ -41,7 +43,7 @@ export default class TabsCard extends React.Component<Object, Object> {
       <Theme config={combo}>
         <Wrapper>
           <Card
-            operation={'操作'}
+            operation={<Operation> 操作</Operation>}
             viewClass={'register'}
             type={'combo'}
             content={<Tabs data={defaultData} />}
