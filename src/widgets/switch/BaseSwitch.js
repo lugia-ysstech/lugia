@@ -3,9 +3,7 @@ import { Switch } from '@lugia/lugia-web';
 export default class BaseSwitch extends React.Component {
   render() {
     return (
-      <div>
           <Switch defaultValue/>
-      </div>
     );
   }
 }

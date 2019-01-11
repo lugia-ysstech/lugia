@@ -2,14 +2,18 @@
 import React from 'react';
 import moment from 'moment';
 import { DatePicker } from '@lugia/lugia-web';
-import {DemoItem} from './styled';
+import styled from 'styled-components';
 const {RangePicker} =DatePicker;
+export const DemoItem=styled.span`
+  display:inline-block;
+  padding:0 20px 20px 0;
+`;
 export default class BaseDemo extends React.Component {
   
   render() {
     const formatOne ='YYYY-MM-DD';
     const formatTwo='YYYY/MM/DD HH:mm:ss';
-    return  <div>
+    return  <React.Fragment>
               <DemoItem>
                 <DatePicker  format={formatOne} placeholder={'选择时间'}
                   buttonOptions={{
@@ -45,6 +49,6 @@ export default class BaseDemo extends React.Component {
                 }} 
                  placeholder={['开始时间','结束时间']}/>
               </DemoItem>
-            </div> ;
+            </React.Fragment> ;
   }
 }

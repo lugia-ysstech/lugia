@@ -1,11 +1,15 @@
 
 import React from 'react';
 import { DatePicker } from '@lugia/lugia-web';
-import {DemoItem} from './styled';
+import styled from 'styled-components';
+export const DemoItem=styled.span`
+  display:inline-block;
+  padding:0 20px 20px 0;
+`;
 const {YearPicker,MonthPicker,WeekPicker,WeeksPicker,RangePicker} =DatePicker;
 export default class BaseDemo extends React.Component {
   render() {
-    return  <div>
+    return  <React.Fragment>
               <DemoItem>
                 <DatePicker defaultValue={'2019-01-01'} disabled/>
               </DemoItem>
@@ -26,6 +30,6 @@ export default class BaseDemo extends React.Component {
               <DemoItem>
                 <RangePicker defaultValue={['2019-01-01','2019-02-03']} disabled/>
               </DemoItem>
-            </div> ;
+            </React.Fragment> ;
   }
 }

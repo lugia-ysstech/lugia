@@ -1,12 +1,15 @@
 import React from 'react';
-import {DemoItem} from './styled'; 
 import { Slider } from '@lugia/lugia-web';
+import styled from 'styled-components';
+export const DemoItem=styled.div`
+  padding:0 20px 20px 0;
+`;
 export default class MarksSlider extends React.Component {
   onchange = v => {
   };
   render() {
     return (
-      <div>
+      <React.Fragment>
         <DemoItem>
             <Slider
               defaultValue={30}
@@ -68,7 +71,7 @@ export default class MarksSlider extends React.Component {
               }}
             />
           </DemoItem>  
-      </div>
+      </React.Fragment>
     );
   }
 }
