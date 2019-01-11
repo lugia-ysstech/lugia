@@ -1,8 +1,12 @@
 
 import React from 'react';
 import { DatePicker } from '@lugia/lugia-web';
-import {DemoItem} from './styled';
+import styled from 'styled-components';
 const {RangePicker} =DatePicker;
+export const DemoItem=styled.span`
+  display:inline-block;
+  padding:0 20px 20px 0;
+`;
 export default class BaseDemo extends React.Component {
   constructor(props) {
     super(props);
@@ -17,12 +21,12 @@ export default class BaseDemo extends React.Component {
     this.setState({rangeValue:newValue});
   }
   render() {
-    return  <div>
+    return  <React.Fragment>
               <DemoItem>
                 <DatePicker value={this.state.dateValue} format={'YYYY-MM-DD'} onChange={this.onChange}/>
               </DemoItem>
               <br/>
               <DemoItem><RangePicker value={this.state.rangeValue} format={'YYYY-MM-DD'} onChange={this.rangeChange}/></DemoItem>
-            </div> ;
+            </React.Fragment> ;
   }
 }

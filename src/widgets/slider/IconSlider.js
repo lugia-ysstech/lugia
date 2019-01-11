@@ -1,10 +1,12 @@
 import React from 'react';
-import {DemoItem} from './styled';
 import { Slider } from '@lugia/lugia-web';
+import styled from 'styled-components';
+export const DemoItem=styled.div`
+  padding:0 30px 0;
+`;
 export default class IconSlider extends React.Component {
   render() {
     return (
-      <div style={{ float: 'left', padding: '0 40px 50px' }}>
       <DemoItem>
       <Slider
             defaultValue={5}
@@ -15,7 +17,6 @@ export default class IconSlider extends React.Component {
             ]}
           />
       </DemoItem>
-      </div>
     );
   }
 }
