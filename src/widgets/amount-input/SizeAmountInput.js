@@ -7,8 +7,8 @@ const Wrapper = styled.div`
   display: inline-block;
 `;
 const InputWrapper = styled.div`
-  margin-right: 10px;
   display: inline-block;
+  padding: 5px 10px;
 `;
 
 const onChange = cmpName => (value: any) => {};
