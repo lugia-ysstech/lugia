@@ -2,18 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Skeleton, Button } from '@lugia/lugia-web';
 
-// const Button = styled.button`
-//   width: 200px;
-//   height: 50px;
-//   background: cornflowerblue;
-//   margin: 20px;
-//   outline: none;
-//   border: none;
-//   border-radius: 10px;
-//   font-size: 16px;
-//   color: #fff;
-// `;
-
 const ButtonWrap = styled.div`
   margin-bottom: 20px;
 `;

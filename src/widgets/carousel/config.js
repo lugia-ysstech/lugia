@@ -26,7 +26,7 @@ module.exports = {
   },
 
   FadeCarousel: {
-    title: '指示器在外部显示',
+    title: '渐显切换',
     desc:
       '设置switchType：fade切换方式渐显,设置animationTime：1000设置动画执行时间为1000毫秒',
     path: './FadeCarousel'
