@@ -35,7 +35,7 @@ export const designRouter = {
   },
   NotFound:{
     render: async () => {
-      return () => <Redirect to={'/home'}></Redirect>;
+      return () => <Redirect to={'/home'}/>;
     },
     isHidden: true,
   }
