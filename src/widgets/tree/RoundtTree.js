@@ -10,7 +10,13 @@ import Widget from '@lugia/lugia-web/dist/consts';
 const data = [
   { key: '1', title: '选项 1' },
   { key: '1.1', title: '选项 1.1', pid: '1', path: '1' },
-  { key: '1.1.1', title: '选项 1.1.1', pid: '1.1', path: '1/1.1', isLeaf: true },
+  {
+    key: '1.1.1',
+    title: '选项 1.1.1',
+    pid: '1.1',
+    path: '1/1.1',
+    isLeaf: true
+  },
   {
     key: '1.1.2',
     title: '选项 1.1.2',
@@ -21,7 +27,13 @@ const data = [
   },
 
   { key: '1.2', title: '选项 1.2', pid: '1', path: '1' },
-  { key: '1.2.1', title: '选项 1.2.1', pid: '1.2', path: '1/1.2', isLeaf: true },
+  {
+    key: '1.2.1',
+    title: '选项 1.2.1',
+    pid: '1.2',
+    path: '1/1.2',
+    isLeaf: true
+  },
   { key: '1.2.2', title: '选项 1.2.2', pid: '1.2', path: '1/1.2' },
   {
     key: '1.2.2.1',
@@ -55,7 +67,12 @@ export default class DefaultTree extends React.Component<Object, Object> {
     };
     return (
       <Theme config={config}>
-        <Tree data={data} igronSelectField={'notCanSelect'} autoHeight />
+        <Tree
+          data={data}
+          igronSelectField={'notCanSelect'}
+          autoHeight
+          shape={'round'}
+        />
       </Theme>
     );
   }

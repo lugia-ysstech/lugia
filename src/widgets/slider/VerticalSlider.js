@@ -1,12 +1,16 @@
 import React from 'react';
-import {DemoList} from './styled';
 import { Slider } from '@lugia/lugia-web';
+import styled from 'styled-components';
+export const DemoList=styled.span`
+  display:inline-block;
+  padding:0 100px;
+`;
 export default class IconSlider extends React.Component {
   render() {
     onchange = v => {
     };
     return (
-      <div>
+      <React.Fragment>
         <DemoList>
           <Slider defaultValue={10} vertical tips/>
         </DemoList>
@@ -40,7 +44,7 @@ export default class IconSlider extends React.Component {
               }}
             />
         </DemoList>
-      </div>
+      </React.Fragment>
     );
   }
 }

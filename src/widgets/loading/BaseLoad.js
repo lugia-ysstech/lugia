@@ -1,11 +1,7 @@
 import React from 'react';
 import { Loading } from '@lugia/lugia-web';
-export default class BaseLoad extends React.Component<any, any> {
+export default class BaseLoad extends React.Component {
   render() {
-    return (
-      <div>
-        <Loading width={14} color={'red'} />
-      </div>
-    );
+    return <Loading/>;
   }
 }

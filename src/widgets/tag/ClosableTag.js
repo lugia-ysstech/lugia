@@ -1,7 +1,6 @@
 /**
  * create by szfeng
  *
- * @flow
  */
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import { Theme, Tag } from '@lugia/lugia-web';
@@ -14,18 +13,6 @@ const TagWrap = styled.div`
 
 export default class ClosableTag extends React.Component<any, any> {
   render() {
-    const config1 = {
-      [Widget.Tag]: {
-        color: '#ff5588'
-      }
-    };
-
-    const config2 = {
-      [Widget.Tag]: {
-        color: '#486fff'
-      }
-    };
-
     return [
       <div>
         <TagWrap>

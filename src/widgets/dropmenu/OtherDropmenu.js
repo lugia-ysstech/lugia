@@ -13,7 +13,7 @@ const data = [
       { value: '二级信息2', text: '二级信息2' }
     ]
   },
-  { value: '参数设置三', text: '参数设置三', disabled: true }
+  { value: '参数设置三', text: '参数设置三', disabled: true, divided: true }
 ];
 
 const Box = styled.div`

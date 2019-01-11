@@ -11,12 +11,8 @@ export default class BaseSteps extends React.Component<any, any> {
   render() {
     const view = {
       [Widget.Steps]: {
-        width: 1000
+        width: 470
       },
-      [Widget.Step]: {
-        width: 350,
-        height: 100
-      }
     };
     return (
       <Theme config={view}>
@@ -33,16 +29,6 @@ export default class BaseSteps extends React.Component<any, any> {
               stepStatus="process"
             />
             <Step title="33" description={'description33'} stepStatus="next" />
-            <Step
-              title="444"
-              description={'description444'}
-              stepStatus="wait"
-            />
-            <Step
-              title="555"
-              description={'description5555'}
-              stepStatus="error"
-            />
           </Steps>
         </Wrapper>
         <Wrapper>
@@ -58,16 +44,6 @@ export default class BaseSteps extends React.Component<any, any> {
               stepStatus="process"
             />
             <Step title="33" description={'description33'} stepStatus="next" />
-            <Step
-              title="444"
-              description={'description444'}
-              stepStatus="wait"
-            />
-            <Step
-              title="555"
-              description={'description5555'}
-              stepStatus="error"
-            />
           </Steps>
         </Wrapper>
       </Theme>

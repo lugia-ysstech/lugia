@@ -2,7 +2,7 @@ module.exports = {
   BaseSteps: {
     title: '基本用法',
     desc: '步骤条基本用法,有五种状态',
-    path: './BaseTimeLine'
+    path: './BaseSteps'
   },
   OrientationSteps: {
     title: '方向',

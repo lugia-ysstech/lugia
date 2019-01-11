@@ -21,10 +21,17 @@ module.exports = {
   },
   OutsideIndicatorCarousel: {
     title: '指示器在外部显示',
-    desc:
-      '设置indicator：outside指示器在外部显示,设置switchType：fade切换方式渐显,设置animationTime：1000设置动画执行时间为1000毫秒',
+    desc: '设置indicator：outside指示器在外部显示',
     path: './OutsideIndicatorCarousel'
   },
+
+  FadeCarousel: {
+    title: '指示器在外部显示',
+    desc:
+      '设置switchType：fade切换方式渐显,设置animationTime：1000设置动画执行时间为1000毫秒',
+    path: './FadeCarousel'
+  },
+
   LimitCarousel: {
     title: '受限的走马灯',
     desc: '通过传入start来控制走马灯的切换,start是索引值',
