@@ -3,7 +3,6 @@ import { NumberInput } from '@lugia/lugia-web';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  float: left;
 `;
 
 export default class TransformNumberInput extends React.Component<any, any> {
