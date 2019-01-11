@@ -4,14 +4,22 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   float: left;
+  display: inline-block;
 `;
-
+const InputWrapper = styled.div`
+  margin-right: 10px;
+  display: inline-block;
+`;
 export default class PrefixAmountInput extends React.Component<any, any> {
   render() {
     return(
     <Wrapper>
-      <AmountInput amountPrefix="¥" />
-      <AmountInput amountPrefix="$" />
+      <InputWrapper>
+        <AmountInput amountPrefix="¥" />
+      </InputWrapper>
+      <InputWrapper>
+        <AmountInput amountPrefix="$" />
+      </InputWrapper>
     </Wrapper>);
   }
 }

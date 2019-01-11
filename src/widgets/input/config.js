@@ -5,7 +5,7 @@ module.exports ={
     path: './BasePopconfirm'
   },
   DefaultValueInput: {
-    title: '显示默认值的输入框',
+    title: '显示默认值',
     desc: '显示默认值的输入框',
     path: './DefaultValueInput'
   },
