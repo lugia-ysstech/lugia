@@ -9,6 +9,11 @@ module.exports = {
     desc: '右边显示,或者分散排布',
     path: './ModeTimeLine'
   },
+  DescriptionTimeLine: {
+    title: '描述',
+    desc: '配置显示描述信息',
+    path: './DescriptionTimeLine'
+  },
   TypeTimeLine: {
     title: '风格',
     desc: '时间轴多种风格',

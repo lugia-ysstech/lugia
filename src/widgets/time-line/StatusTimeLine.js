@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const TimeLineItem = TimeLine.TimeLineItem;
 const Wrapper = styled.div`
   text-align: left;
-  margin: 50px;
 `;
 export default class StatusTimeLine extends React.Component<any, any> {
   constructor(props: any) {
@@ -16,7 +15,7 @@ export default class StatusTimeLine extends React.Component<any, any> {
     return (
       <Wrapper>
         <br />
-        <TimeLine direction={'left'}>
+        <TimeLine >
           <TimeLineItem time="2018-01-01" status={'success'} />
           <TimeLineItem time="2018-01-02" />
           <TimeLineItem time="2018-01-03" status={'failed'} />

@@ -5,13 +5,13 @@ import Widget from '@lugia/lugia-web/dist/consts';
 const Step = Steps.Step;
 const Wrapper = styled.div`
   text-align: left;
-  margin: 50px;
+  margin-bottom: 50px;
 `;
 export default class BaseSteps extends React.Component<any, any> {
   render() {
     const view = {
       [Widget.Steps]: {
-        width: 470
+        width: 600
       },
     };
     return (
@@ -19,31 +19,32 @@ export default class BaseSteps extends React.Component<any, any> {
         <Wrapper>
           <Steps orientation="horizontal" size={'normal'}>
             <Step
-              title="1111"
-              description={'description111'}
+              title="step1"
+              description={'description1'}
               stepStatus="finish"
             />
             <Step
-              title="222"
+              title="step2"
               description={'description2'}
               stepStatus="process"
             />
-            <Step title="33" description={'description33'} stepStatus="next" />
+            <Step title="step3" description={'description3'} stepStatus="next" />
           </Steps>
         </Wrapper>
+        <br/>
         <Wrapper>
           <Steps orientation="horizontal" size={'normal'} desAlign={'center'}>
             <Step
-              title="1111"
-              description={'description111'}
+              title="step1"
+              description={'description1'}
               stepStatus="finish"
             />
             <Step
-              title="222"
+              title="step2"
               description={'description2'}
               stepStatus="process"
             />
-            <Step title="33" description={'description33'} stepStatus="next" />
+            <Step title="step3" description={'description3'} stepStatus="next" />
           </Steps>
         </Wrapper>
       </Theme>

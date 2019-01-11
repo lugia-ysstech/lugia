@@ -28,24 +28,24 @@ export default class TypeSteps extends React.Component<any, any> {
         <Wrapper>
           <Steps orientation="horizontal" size={'normal'}>
             <Step
-              title="1111"
-              description={'description111'}
+              title="step1"
+              description={'description1'}
               stepStatus="finish"
             />
             <Step
-              title="222"
+              title="step2"
               description={'description2'}
               stepStatus="process"
             />
-            <Step title="33" description={'description33'} stepStatus="next" />
+            <Step title="step3" description={'description3'} stepStatus="next" />
             <Step
-              title="444"
-              description={'description444'}
+              title="step4"
+              description={'description4'}
               stepStatus="wait"
             />
             <Step
-              title="555"
-              description={'description5555'}
+              title="step5"
+              description={'description5'}
               stepStatus="error"
             />
           </Steps>
@@ -53,53 +53,53 @@ export default class TypeSteps extends React.Component<any, any> {
         <Wrapper>
           <Steps orientation="horizontal" size={'normal'} desAlign={'center'}>
             <Step
-              title="1111"
-              description={'description111'}
+              title="step1"
+              description={'description1'}
               stepStatus="finish"
             />
             <Step
-              title="222"
+              title="step2"
               description={'description2'}
               stepStatus="process"
             />
-            <Step title="33" description={'description33'} stepStatus="next" />
+            <Step title="step3" description={'description3'} stepStatus="next" />
             <Step
-              title="444"
-              description={'description444'}
+              title="step4"
+              description={'description4'}
               stepStatus="wait"
             />
             <Step
-              title="555"
-              description={'description5555'}
+              title="step5"
+              description={'description5'}
               stepStatus="error"
             />
           </Steps>
         </Wrapper>
         <Wrapper>
           <Steps orientation="horizontal" stepType={'simple'} size={'mini'}>
-            <Step title="1111" stepStatus="finish" />
-            <Step title="222" stepStatus="process" />
-            <Step title="33" stepStatus="next" />
-            <Step title="444" stepStatus="wait" />
-            <Step title="555" stepStatus="error" />
+            <Step title="step1" stepStatus="finish" />
+            <Step title="step2" stepStatus="process" />
+            <Step title="step3" stepStatus="next" />
+            <Step title="step4" stepStatus="wait" />
+            <Step title="step5" stepStatus="error" />
           </Steps>
         </Wrapper>
         <Wrapper>
           <Steps orientation="horizontal" stepType={'flat'} size={'mini'}>
-            <Step title="1111" stepStatus="finish" />
-            <Step title="222" stepStatus="process" />
-            <Step title="33" stepStatus="next" />
-            <Step title="444" stepStatus="wait" />
-            <Step title="555" stepStatus="error" />
+            <Step title="step1" stepStatus="finish" />
+            <Step title="step2" stepStatus="process" />
+            <Step title="step3" stepStatus="next" />
+            <Step title="step4" stepStatus="wait" />
+            <Step title="step5" stepStatus="error" />
           </Steps>
         </Wrapper>
         <Wrapper>
           <Steps orientation="horizontal" stepType={'flat'} size={'normal'}>
-            <Step title="1111" stepStatus="finish" />
-            <Step title="222" stepStatus="process" />
-            <Step title="33" stepStatus="next" />
-            <Step title="444" stepStatus="wait" />
-            <Step title="555" stepStatus="error" />
+            <Step title="step1" stepStatus="finish" />
+            <Step title="step2" stepStatus="process" />
+            <Step title="step3" stepStatus="next" />
+            <Step title="step4" stepStatus="wait" />
+            <Step title="step5" stepStatus="error" />
           </Steps>
         </Wrapper>
 
@@ -114,20 +114,20 @@ export default class TypeSteps extends React.Component<any, any> {
         </Wrapper>
         <Wrapper>
           <Steps orientation="horizontal" stepType={'dot'}>
-            <Step title="1111" stepStatus="finish" />
-            <Step title="222" stepStatus="process" isDashed={true} />
-            <Step title="33" stepStatus="next" isDashed={true} />
-            <Step title="444" stepStatus="wait" isDashed={true} />
-            <Step title="555" stepStatus="error" isDashed={true} />
+            <Step title="step1" stepStatus="finish" />
+            <Step title="step2" stepStatus="process" isDashed={true} />
+            <Step title="step3" stepStatus="next" isDashed={true} />
+            <Step title="step4" stepStatus="wait" isDashed={true} />
+            <Step title="step5" stepStatus="error" isDashed={true} />
           </Steps>
         </Wrapper>
         <Wrapper>
           <Steps orientation="horizontal" stepType={'dot'}>
-            <Step title="1111" stepStatus="finish" />
-            <Step title="222" stepStatus="process" />
-            <Step title="33" stepStatus="next" />
-            <Step title="444" stepStatus="wait" />
-            <Step title="555" stepStatus="error" />
+            <Step title="step1" stepStatus="finish" />
+            <Step title="step2" stepStatus="process" />
+            <Step title="step3" stepStatus="next" />
+            <Step title="step4" stepStatus="wait" />
+            <Step title="step5" stepStatus="error" />
           </Steps>
         </Wrapper>
       </Theme>

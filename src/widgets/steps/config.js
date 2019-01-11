@@ -4,6 +4,11 @@ module.exports = {
     desc: '步骤条基本用法,有五种状态',
     path: './BaseSteps'
   },
+  SizeSteps: {
+    title: '尺寸',
+    desc: '可配置两种尺寸的步骤条',
+    path: './SizeSteps'
+  },
   OrientationSteps: {
     title: '方向',
     desc: '步骤条方向,垂直,水平',
