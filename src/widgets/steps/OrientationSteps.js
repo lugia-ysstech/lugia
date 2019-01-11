@@ -18,13 +18,6 @@ export default class OrientationSteps extends React.Component<any, any> {
     return (
       <Theme config={view}>
         <VWrapper>
-          <Steps orientation="vertical" stepType="simple" size="mini">
-            <Step title="step1" stepStatus="finish" content="content1" />
-            <Step title="step2" stepStatus="process" content="content2" />
-            <Step title="step3" stepStatus="next" content="content3" />
-          </Steps>
-        </VWrapper>
-        <VWrapper>
           <Steps orientation="vertical" stepType="simple" size="normal">
             <Step title="step1" stepStatus="finish" content="content1" />
             <Step title="step2" stepStatus="process" content="content2" />
@@ -77,13 +70,6 @@ export default class OrientationSteps extends React.Component<any, any> {
             <Step title="step1" stepStatus="finish" />
             <Step title="step2" stepStatus="process" isDashed={true} />
             <Step title="step3" stepStatus="next" isDashed={true} />
-          </Steps>
-        </VWrapper>
-        <VWrapper>
-          <Steps orientation="vertical" stepType="dot" size="normal">
-            <Step title="step1" stepStatus="finish" content="content1" />
-            <Step title="step2" stepStatus="process" content="content2" />
-            <Step title="step3" stepStatus="next" content="content3" />
           </Steps>
         </VWrapper>
       </Theme>
