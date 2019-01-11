@@ -122,22 +122,24 @@ module.exports = param => {
     imgThemeViolet,
     imgNature,
     imgThemeNature,
+    imgZhaoxia,
+    imgThemeZhaoxia,
     fontImg,
-    PingFangSC,
-    hiaginosans,
-    yahei,
-    helveticaneue,
-    helvetica,
-    arial,
     fontImg1,
     fontImg2,
     fontImg3,
+    fontImg4,
+    fontImg5,
+    fontImg6,
     iconImg,
     iconImg1,
     iconImg2,
     iconImg3,
     iconImg4,
-    iconImg5
+    iconImg5,
+    welcome,
+    component,
+    routewelcome
   } = param;
   const DesignDocument = {
     introduce: {
@@ -178,17 +180,17 @@ module.exports = param => {
     },
     core: {
       title: '知性',
-      content: [{ text: '知性一词，原本是德国古典哲学常用的术语。康德认为知性是介于感性和理性之间的一种认知能力。对于设计来说，知性可以同时定义为“形式上的优美和极致”和“科学上的精确和简洁”，我们相信知性的设计，实现了二者的完美契合。' }],
+      content: [{ text: '知性一词，原本是德国古典哲学常用的术语。康德认为知性是介于感性和理性之间的一种认知能力。对于设计来说，知性可以同时定义为“形式上的优美和极致”和“科学上的精确和简洁”，我们相信知性的设计，实现了二者的完美契合。', margin: '0 0 30px 30px' }],
       children: [
         {
           title: '形式上的优美和极致',
-          content: ['优秀设计的经典要素之一是形式的简约，以简驭繁。', 'Lugia对于界面设计，就是用最少的屏幕与器件来完成任务。与此同时我们把简约适用于行为，在视觉设计中给予用户最简单的工具，即运用最少的视觉区别明确传达想要表达的意思。', '优秀的设计让人感觉是一个整体，各部分平衡和谐。Lugia设计形式上遵循自然，利用人类对自然的感知，提炼自然界中的客观规律并运用到界面设计中，从而创造出有层次、有艺术感的设计语言。'],
+          content: [{text:'优秀设计的经典要素之一是形式的简约，以简驭繁。'}, {text:'Lugia对于界面设计，就是用最少的屏幕与器件来完成任务。与此同时我们把简约适用于行为，在视觉设计中给予用户最简单的工具，即运用最少的视觉区别明确传达想要表达的意思。'}, {text:'优秀的设计让人感觉是一个整体，各部分平衡和谐。Lugia设计形式上遵循自然，利用人类对自然的感知，提炼自然界中的客观规律并运用到界面设计中，从而创造出有层次、有艺术感的设计语言。', margin: '0 0 40px'}],
           img: [{ url: coreimg1 }],
           imgPosition: 'top',
         },
         {
           title: '科学上的精确和简洁',
-          content: ['用户可能会因为悦目而又兴趣尝试使用，但是使用的体验如果不好，他一样会离开。 lugia解决了产品的可用性、易用性问题，让用户在使用这些产品的过程中感觉更加方便容易，有效完成任务，达成预期目标。因此Lugia致力于消除阻碍用户使用的障碍，如歧义的文字，迷惑性的按钮，出错的页面，违背用户习惯的操作。', 'Lugia对用户群体有清晰的了解和划分，能做到业务使用的共同感。我们把一个复杂信息架构产品，分角色，划场景，可以让用户对产品目的了解更深刻，全局把握更强，精简页面层级，提升用户的使用效率和舒适度。'],
+          content: [{text:'用户可能会因为悦目而又兴趣尝试使用，但是使用的体验如果不好，他一样会离开。 lugia解决了产品的可用性、易用性问题，让用户在使用这些产品的过程中感觉更加方便容易，有效完成任务，达成预期目标。因此Lugia致力于消除阻碍用户使用的障碍，如歧义的文字，迷惑性的按钮，出错的页面，违背用户习惯的操作。'}, {text:'Lugia对用户群体有清晰的了解和划分，能做到业务使用的共同感。我们把一个复杂信息架构产品，分角色，划场景，可以让用户对产品目的了解更深刻，全局把握更强，精简页面层级，提升用户的使用效率和舒适度。', margin: '0 0 30px'}],
           img: [{ url: coreimg2 }],
           imgPosition: 'top',
         }
@@ -204,7 +206,7 @@ module.exports = param => {
         {
           text: '在人类知觉过程中人们往往倾向于使知觉对象的直线继续成为直线，使曲线继续成为曲线。在页面设计中，将原色进行整齐对齐，既符合用户的认知特性，也能引导视觉流向。让用户更流畅地接收信息-摘自：“格式塔学派”中的连续性（law of Contunuity）',
           size: '12px',
-          color: '#999',
+          color: '#92939e',
           margin: '10px 0 0 '
         },
       ],
@@ -233,11 +235,11 @@ module.exports = param => {
             { text: '1.在表单类，保持语句一致，字体在左侧以“冒号”统一右对齐。' },
             { text: '2.数据表内文案，可根据数据需求，进行左、中、右对齐。' },
             { text: '3.input框根据实际需求，保持左、右对齐。' },
-            { text: '顶对齐：', size: '12px', color: '#999', weight: '600', margin: '20px 0 0' },
+            { text: '顶对齐：', size: '12px', color: '#525466', weight: '600', margin: '20px 0 0' },
             { text: '适用于简易表单，让用户快速预览完成。', size: '12px', color: '#ccc' },
-            { text: '左对齐：', size: '12px', color: '#999', weight: '600' },
+            { text: '左对齐：', size: '12px', color: '#525466', weight: '600' },
             { text: '适用于填写布局复杂、有陌生数据、需谨填写；。', size: '12px', color: '#ccc' },
-            { text: '右对齐：', size: '12px', color: '#999', weight: '600' },
+            { text: '右对齐：', size: '12px', color: '#525466', weight: '600' },
             { text: '适用于稍复杂的表单。网页高度有限的情况。', size: '12px', color: '#ccc' },
           ],
           img: [{ url: alignImg4, desc: '表单类对齐' }],
@@ -344,7 +346,7 @@ module.exports = param => {
         {
           content: [
             { text: '【留白】', weight: 600 },
-            { text: '使界面更吸引人、更简洁。更有呼吸感，让内容主体更突出。' },
+            { text: '使界面更吸引人、更简洁。更有呼吸感，让内容主体更突出。', margin: '0 0 20px' },
             { text: '【颜色界定】', weight: 600 },
             { text: '利用颜色的不同来界定界面范围。' }
           ],
@@ -371,7 +373,7 @@ module.exports = param => {
           content: [{ text: '加强对比效果，强化重点项或者弱化其他项，让用户能在操作上快速判断出重要信息。' }, {
             text: '注：在一些需要用户慎重决策的场景中，也可以通过适当加入对比，使得用户可以第一时间接收分辨信息。',
             size: '12px',
-            color: '#999',
+            color: '#92939e',
             margin: '10px 0 0 '
           }],
           img: [{ url: hierarchyImg2, desc: '例如，表格筛选时，筛选选中项就要区分其他选项' }],
@@ -398,7 +400,7 @@ module.exports = param => {
         {
           text: '方向感：让用户无须思考就能得到一下信息：“我在页面的什么位置，这个页面上的重要信息是什么。我可以随时找回刚才的数据，我明确下一步要做什么。”',
           size: '12px',
-          color: '#999',
+          color: '#92939e',
           margin: '10px 0 0 '
         }
       ],
@@ -412,13 +414,13 @@ module.exports = param => {
             { text: '1.如果某个操作非常重要，就应该把它放在界面中，并实时可见。' },
             { text: '2.当用户与Button发生交互行为，button要给予相应的反馈。' },
             { text: '3.每个页面仅使用一种主要按钮。不能同时使用多个，除非有一个很好的理由。比如：强调某一种功能。' },
-            { text: '常规状态：设计要点，常规状态下的按钮，务必要看起来也像个按钮。', size: '12px', color: '#999', margin: '10px 0 0 ' },
+            { text: '常规状态：设计要点，常规状态下的按钮，务必要看起来也像个按钮。', size: '12px', color: '#92939e', margin: '10px 0 0 ' },
             {
               text: '焦点状态：提供一个感觉良好的视觉反馈。可以尝试一些视觉愉悦的状态切换动效。按下状态：可以加一些有实质用途的动效，同时达到令人愉悦的效果。',
               size: '12px',
-              color: '#999'
+              color: '#92939e'
             },
-            { text: '不激活状态：分两种：直接隐藏。或以不可点形式展示。各有利弊，按需选择。', size: '12px', color: '#999' },
+            { text: '不激活状态：分两种：直接隐藏。或以不可点形式展示。各有利弊，按需选择。', size: '12px', color: '#92939e' },
           ],
           img: [{ url: feedbackImg1 }],
           imgPosition: 'right',
@@ -456,7 +458,7 @@ module.exports = param => {
           title: '表格反馈',
           content: [
             { text: '增加对象：在列表/表格中，新增了一个对象。在新增对象后，有几秒的高亮提示，告知用户这是新增项。' },
-            { text: '新增一条对象时，该字段“高亮”告知用户该新增项，几秒后高亮消失。', size: '12px', color: '#999', margin: '10px 0 0' },
+            { text: '新增一条对象时，该字段“高亮”告知用户该新增项，几秒后高亮消失。', size: '12px', color: '#92939e', margin: '10px 0 0' },
           ],
           img: [{ url: feedbackImg5, desc: '对象添加示例' }],
           imgPosition: 'right',
@@ -464,7 +466,7 @@ module.exports = param => {
         {
           content: [
             { text: '删除对象：在列表/表格中，删除对象同时有几秒的过渡效果，给用户接受信息删除的反馈时间。' },
-            { text: '删除一条对象，以从左到右擦出动画删除该字段。', size: '12px', color: '#999', margin: '10px 0 0' },
+            { text: '删除一条对象，以从左到右擦出动画删除该字段。', size: '12px', color: '#92939e', margin: '10px 0 0' },
           ],
           img: [{ url: feedbackImg6, desc: '对象删除示例' }],
           imgPosition: 'right',
@@ -475,7 +477,7 @@ module.exports = param => {
             {
               text: '在用户点击更改字段时，该字段给予显示框提示，更改完成后，给予数据几秒钟高亮显示，点击任意地点可确认更改项。',
               size: '12px',
-              color: '#999',
+              color: '#92939e',
               margin: '10px 0 0'
             },
           ],
@@ -485,7 +487,7 @@ module.exports = param => {
         {
           content: [
             { text: '呼出对象：点击页面中元素，呼出一个新对象。' },
-            { text: '呼出地方多以弹窗样式展示。', size: '12px', color: '#999', margin: '10px 0 0' },
+            { text: '呼出地方多以弹窗样式展示。', size: '12px', color: '#92939e', margin: '10px 0 0' },
           ],
           img: [{ url: feedbackImg8, desc: '呼出对象示例' }],
           imgPosition: 'right',
@@ -499,7 +501,7 @@ module.exports = param => {
         {
           text: '当用户对界面进行交互行为时，会有很多的功能不易于发现（或不易于适用），所以利用界面引导来解决交互功能布局问题。',
           size: '12px',
-          color: '#999',
+          color: '#92939e',
           margin: '10px 0 0 '
         }
       ],
@@ -590,8 +592,8 @@ module.exports = param => {
             { text: '【减少操作情况】', weight: 600 },
             { text: '减少可能出现的操作情况。' },
             { text: '副选单维持开放的条件：', margin: '10px 0 0 ' },
-            { text: '其一是使用者的游标，必须朝着副选单的方向行进；', size: '12px', color: '#999' },
-            { text: '其二是游标速度，必须维持在特定的最低限速之上。；', size: '12px', color: '#999' },
+            { text: '其一是使用者的游标，必须朝着副选单的方向行进；', size: '12px', color: '#92939e' },
+            { text: '其二是游标速度，必须维持在特定的最低限速之上。；', size: '12px', color: '#92939e' },
           ],
           img: [{ url: accessibilityImg2 }],
           imgPosition: 'right',
@@ -626,7 +628,7 @@ module.exports = param => {
           content: [
             { text: '【制定常用功能】', weight: 600 },
             { text: '板块顺序是可以根据自身喜好自定义的，包括定义常用的应用、排序、删除、新增等等；这样用户可以根据自己的习惯定制自己适合的板块分布方式。' },
-            { text: '注：此功能在区块之间、区块内部组件之间可以拖放，区块组件内部与区块组件内部之间不可调换位置。', size: '12px', color: '#999', margin: '10px 0 0' },
+            { text: '注：此功能在区块之间、区块内部组件之间可以拖放，区块组件内部与区块组件内部之间不可调换位置。', size: '12px', color: '#92939e', margin: '10px 0 0' },
           ],
           img: [{ url: accessibilityImg6, desc: '移动版块示例' }],
           imgPosition: 'right',
@@ -672,7 +674,7 @@ module.exports = param => {
           content: [
             { text: '【再次确认】', weight: 600, margin: '20px 0 0' },
             { text: '在无法实现撤销操作时，增加操作步骤，减少失误发生的可能性。' },
-            { text: '注意悬浮层错开需要删除的选项，使上下文连贯。', size: '12px', color: '#999', margin: '10px 0 0' },
+            { text: '注意悬浮层错开需要删除的选项，使上下文连贯。', size: '12px', color: '#92939e', margin: '10px 0 0' },
           ],
           img: [{ url: reduceskipImg2, desc: '再次确认示例' }],
           imgPosition: 'right',
@@ -804,7 +806,7 @@ module.exports = param => {
           title: '色彩规律',
           content: [
             { text: 'Lugia的设计团队倾向于采用 HSB 色彩模型进行统一色彩规律的制定。' },
-            { text: '注：主题色建议选取“S”值和“B”均大于等于20%的颜色。', size: '12px', color: '#999', margin: '20px 0 0' },
+            { text: '注：主题色建议选取“S”值和“B”均大于等于20%的颜色。', size: '12px', color: '#92939e', margin: '20px 0 0' },
           ],
           img: [{ url: patternImg1 }],
           imgPosition: 'right',
@@ -813,11 +815,11 @@ module.exports = param => {
           title: '色彩类别',
           content: [
             { text: 'Lugia选取一种主题色，其他为辅色，功能上建议划分为5种颜色：' },
-            { text: '·Primary Color(主题色)', size: '12px', color: '#999', margin: '20px 0 0' },
-            { text: '·Success Color(成功色)', size: '12px', color: '#999' },
-            { text: '·Warning Color(警示色)', size: '12px', color: '#999' },
-            { text: '·Danger Color(危险色)', size: '12px', color: '#999' },
-            { text: '·Black Color(黑色)', size: '12px', color: '#999' },
+            { text: '·Primary Color(主题色)', size: '12px', color: '#92939e', margin: '20px 0 0' },
+            { text: '·Success Color(成功色)', size: '12px', color: '#92939e' },
+            { text: '·Warning Color(警示色)', size: '12px', color: '#92939e' },
+            { text: '·Danger Color(危险色)', size: '12px', color: '#92939e' },
+            { text: '·Black Color(黑色)', size: '12px', color: '#92939e' },
           ],
           img: [{ url: patternImg2 }],
           imgPosition: 'right',
@@ -826,11 +828,11 @@ module.exports = param => {
           title: '中性色',
           content: [
             { text: '基于页面颜色丰富程度的同时，还需要增加中性色的体现。因为合理的选择中性色能够令页面信息具备良好的主次关系，助力阅读体验。Lugia为用户设定的中性色效果体验如下：' },
-            { text: '·背景灰：用作底色背景。', size: '12px', color: '#999', margin: '20px 0 0' },
-            { text: '·辅助灰：用作分割线/边界线/斜线等。', size: '12px', color: '#999' },
-            { text: '·浅灰：用作辅助性文字、阴影。', size: '12px', color: '#999' },
-            { text: '·中灰：用作次标题、正文。', size: '12px', color: '#999' },
-            { text: '·深灰：用作主标题、深色背景。', size: '12px', color: '#999' },
+            { text: '·背景灰：用作底色背景。', size: '12px', color: '#92939e', margin: '20px 0 0' },
+            { text: '·辅助灰：用作分割线/边界线/斜线等。', size: '12px', color: '#92939e' },
+            { text: '·浅灰：用作辅助性文字、阴影。', size: '12px', color: '#92939e' },
+            { text: '·中灰：用作次标题、正文。', size: '12px', color: '#92939e' },
+            { text: '·深灰：用作主标题、深色背景。', size: '12px', color: '#92939e' },
           ],
           img: [{ url: patternImg3 }],
           imgPosition: 'right',
@@ -839,9 +841,9 @@ module.exports = param => {
           title: '阴影',
           content: [
             { text: 'Lugia遵循半扁平化风格，统一模块化阴影效果。在阴影上设计效果如下：' },
-            { text: '·微弱：表示一些交互组件Z轴升高，增加可用性。', size: '12px', color: '#999', margin: '20px 0 0' },
-            { text: '·明显：表示组件的hover状态。', size: '12px', color: '#999' },
-            { text: '·远处阴影：用于弹窗。', size: '12px', color: '#999' },
+            { text: '·微弱：表示一些交互组件Z轴升高，增加可用性。', size: '12px', color: '#92939e', margin: '20px 0 0' },
+            { text: '·明显：表示组件的hover状态。', size: '12px', color: '#92939e' },
+            { text: '·远处阴影：用于弹窗。', size: '12px', color: '#92939e' },
           ],
           img: [{ url: patternImg4 }],
           imgPosition: 'right',
@@ -851,8 +853,8 @@ module.exports = param => {
           content: [
             { text: '基于人类视网膜对大自然形体的认知。巴罗（Barrow）神经学研究所完成的关于“角（corners）“的科学研究发现。”角的突显性感知与角的度数的线性变化，锐角比顿角产生更强的虚幻的突显性”' },
             { text: 'Lugia基于人类的生态特征，将圆角的规整运用到模块中。', margin: '20px 0 0' },
-            { text: '·4px：通用组件中。', size: '12px', color: '#999', margin: '20px 0 0' },
-            { text: '·全圆角：特殊组件情况。', size: '12px', color: '#999' },
+            { text: '·4px：通用组件中。', size: '12px', color: '#92939e', margin: '20px 0 0' },
+            { text: '·全圆角：特殊组件情况。', size: '12px', color: '#92939e' },
           ],
           img: [{ url: patternImg5 }],
           imgPosition: 'right',
@@ -862,7 +864,7 @@ module.exports = param => {
       ]
     },
     color: {
-      title: '字体',
+      title: '色彩',
       content: [{ text: 'Lugia色彩上相对于其他的组件风格，为了让用户能够最直观的感受颜色变化，使用者可以直接选取模块进行操作。' },
         { text: '而在配色方案中，我们追求自然的美，将自然界中变化运用到组件的配色中。', margin: '20px 0 0' },
       ],
@@ -901,6 +903,11 @@ module.exports = param => {
               name: '光纤',
               pantone: imgGuangxian,
               theme: imgThemeGuangxian
+            },
+            {
+              name: '朝霞',
+              pantone: imgZhaoxia,
+              theme: imgThemeZhaoxia
             },
             {
               name: '恒星',
@@ -994,14 +1001,14 @@ module.exports = param => {
           content: [
             { text: '中文字体优先级：PingFang SC、Hiragino Sans GB 、Microsoft YaHei' },
           ],
-          img: [{ url: PingFangSC }, { url: hiaginosans }, { url: yahei }],
+          img: [{ url: fontImg4 }],
           imgPosition: 'bottom',
         },
         {
           content: [
             { text: '英文字体优先级：Helvetica Neue、Helvetica、Arialc', margin: '20px 0 0' },
           ],
-          img: [{ url: helveticaneue }, { url: helvetica }, { url: arial }],
+          img: [{ url: fontImg5}],
           imgPosition: 'bottom',
         },
         {
@@ -1028,6 +1035,8 @@ module.exports = param => {
             { text: '字重的选择同样基于易读、稳定、克制的原则。多数情况下，只出现 regular 以及 medium 的两种字体重量，分别对应代码中的 300 和 500。' },
             { text: '在英文字体加粗的情况下会采用 semibold 的字体重量，对应代码中的 600。', margin: '20px 0 0' },
           ],
+          img: [{ url: fontImg6}],
+          imgPosition: 'bottom',
 
         },
         {
@@ -1102,6 +1111,601 @@ module.exports = param => {
           img: [{ url: iconImg5, desc: '统一粗细/圆角' }],
           imgPosition: 'right',
         },
+
+      ]
+    },
+    lugia:{
+      type:'document',
+      title: 'Lugia Web of React',
+      content: [{ text: '一套基于 Lugia Design 的高品质 React 组件库，满足金融行业高性能组件的需求，适用于 Web 端。', margin: '0 0 0 30px'}],
+      children: [
+        {
+          img: [{ url: introduce }],
+          imgPosition: 'top',
+
+        },
+        {
+          title:'特性',
+          content: [
+            { text: '多端统一' },
+            { text: '整体开发风格统一', margin: '12px 20px' },
+            { text: 'API接口设计统一' , margin: '12px 20px'},
+            { text: '多端统一的样式语法，放弃CSS标准', margin: '12px 20px' },
+            { text: '适用于金融行业，轻量化数据处理' , margin: '12px 0' },
+            { text: '开箱即用，使用方便' , margin: '12px 0'},
+            { text: '性能稳定，功能强大，测试覆盖率高达90%' , margin: '12px 0 30px'},
+          ],
+
+        },
+        {
+          title: '支持环境',
+          content: [
+            { text: '现代浏览器和 IE10 及以上' },
+            { text: '支持服务端渲染', margin: '12px 0 30px'},
+          ]
+        },
+        {
+          title: '版本',
+          content: [
+            { text: '稳定版：[1.0.0](https://www.npmjs.com/package/lugia-web)', margin: '12px 0 30px' },
+          ]
+        },
+        {
+          title: '安装',
+          content: [
+            { text: '我们推荐使用 npm 或 yarn 来进行安装，不仅方便，也可放心在生产环境打包部署。' },
+            { text: '安装之前，你需要安装 [nrm](https://www.npmjs.com/package/nrm) 来管理你的 `npm` 源信息。' },
+            {text:'安装\n' +
+              '  $ npm install -g nrm\n' +
+              '查看版本\n' +
+              '  $ nrm -V',bash:true, margin: '0 0 30px',javascript:true},
+            { text: '安装成功后，你需要配置 `lugia` 私服：' },
+            {text:'  $ nrm add lugia http://192.168.102.79:5001/\n' +
+              '  $ nrm use lugia\n' +
+              '  $ nrm ls',bash:true, margin: '0 0 30px',javascript:true},
+            { text: '运行完命令后，你会看到，`npm` 源指向了 `lugia`。' },
+            {text:'  npm ---- https://registry.npmjs.org/\n' +
+              '  cnpm --- http://r.cnpmjs.org/\n' +
+              '  taobao - https://registry.npm.taobao.org/\n' +
+              '  nj ----- https://registry.nodejitsu.com/\n' +
+              '  rednpm - http://registry.mirror.cqupt.edu.cn/\n' +
+              '  npmMirror  https://skimdb.npmjs.com/registry/\n' +
+              '  edunpm - http://registry.enpmjs.org/\n' +
+              '* lugia -- http://192.168.102.79:5001/',bash:true, margin: '0 0 30px',javascript:true},
+            { text: '这样，你就可以尽情享用 `lugia-web` 了。' },
+            {text:'  $ npm install @lugia/lugia-web --save\n' +
+              '  $ yarn add @lugia/lugia-web\n',bash:true, margin: '0 0 30px',javascript:true},
+          ]
+        },
+        {
+          title: '示例',
+          content: [
+            {text:'  import { DatePicker } from \'@lugia/lugia-web\';\n' +
+              '  ReactDOM.render(<DatePicker />, root);\n',bash:true, margin: '0 0 30px',javascript:true},
+          ]
+        },
+
+
+      ]
+    },
+    'quick-start':{
+      type:'document',
+      title: '快速上手',
+      content: [{ text: 'Lugia Web 旨在降低开发成本，提升开发质量，为前端开发人员赋能，让用户体验知性。', margin: '0 0 30px 30px' }],
+      children: [
+        {
+          title:'说在前面',
+          content: [
+            { text: '在开始之前，我们推荐先学习 [React](http://facebook.github.io/react/) 和 [ES2015](https://babeljs.io/docs/en/learn),并且配置了 [Node.js](https://nodejs.org/en/) v8 版本及以上。\n' +
+              '如果你刚开始学习前端或者 React，将 UI 框架作为你的第一步可能不是最好的主意。' , margin: '0 0 30px'},
+          ],
+
+        },
+        {
+          title: '创建一个本地实例',
+          content: [
+            { text: '项目开发过程中，你会需要对 ES2015 和 jsx 的代码的构建、调试、打包部署等一系列需求。我们为此提供了 lugia-mega(一个基于前端物料库体系的可视化开发工具)，\n' +
+              '下面我们用实例来进行说明。', margin: '0 0 30px'},
+          ]
+        },
+        {
+          title: '1.安装脚手架工具',
+          content: [
+            {text:'安装\n' +
+              '$ yarn global add @lugia/mega\n' +
+              '\n' +
+              '查看版本\n' +
+              '$ mega -v\n' +
+              '1.0.3\n' +
+              '\n' +
+              '帮助\n' +
+              '$ mega -h',bash:true, margin: '0 0 30px',javascript:true}
+          ]
+        },
+        {
+          title: '2.创建一个项目',
+          content: [
+            {text:'初始化一个 react app\n' +
+              '$ mega create <app-name> [scaffolding]\n' +
+              '\n' +
+              'Scaffolding\n' +
+              '空值时会下载默认脚手架项目\n' +
+              '\n' +
+              ' lugiax\n' +
+              'Use @lugia/lugiax、@lugia/lugia-web、@lugia/lugiax-router\n' +
+              '\n' +
+              ' dva\n' +
+              'Use [dva](https://github.com/dvajs/dva)\n' +
+              '\n' +
+              ' cra\n' +
+              'create-react-app',bash:true, margin: '0 0 30px',javascript:true}
+          ]
+        },
+
+        {
+          title: '下面我们来安装脚手架',
+          content: [
+            { text: '安装', bash:true,weight: 600},
+            { text: '$ yarn global add @lugia/mega', bash:true,javascript:true},
+            { text: '安装成功后，运行', bash:true,weight: 600},
+            { text: 'mega create lugia-web-demo lugiax', bash:true,javascript:true},
+            { text: '![安装成功](./img/create-app.png)', bash:true},
+            { text: '到这里，一个了不起的项目已经安装成功了。', margin: '0 0 30px' ,bash:true},
+          ]
+        },
+        {
+          title: '3.使用组件',
+          content: [
+            { text: '脚手架会生成一个应用实例，我们可以先不使用它，先来试用我们的组件吧：' },
+            { text: '可以用下面代码替换掉 `src/index.js` 的内容。', margin: '0 0 30px' },
+            { text: 'import React from \'react\';\n' +
+              'import ReactDOM from \'react-dom\';\n' +
+              'import \'@lugia/lugia-web/dist/css/global.css\';\n' +
+              'import { Button } from \'@lugia/lugia-web\';\n' +
+              '\n' +
+              'class App extends React.Component {\n' +
+              '    render(){\n' +
+              '        return (\n' +
+              '            <div>\n' +
+              '                <Button type="success">Success</Button>\n' +
+              '            </div>\n' +
+              '        );\n' +
+              '    }\n' +
+              '}\n' +
+              '\n' +
+              'ReactDOM.render(<App />, document.getElementById(\'root\'));', margin: '0 0 30px' ,bash:true,javascript:true},
+            { text: '可以在组件库中试用更多组件。', margin: '0 0 30px' },
+          ]
+        },
+        {
+          title: '4.开发调试',
+          content: [
+            { text: '$ yarn start', bash:true,javascript:true},
+            { text: '运行命令，在浏览器查看效果和调试。', margin: '0 0 30px' ,bash:true},
+          ]
+        },
+        {
+          title: '5.构建和部署',
+          content: [
+            { text: '$ yarn build',bash:true,javascript:true},
+            { text: '打包后的文件会构建到 `dist` 目录中，可以自由部署到不同环境中。', margin: '0 0 30px' ,bash:true},
+          ]
+        },
+
+      ]
+    },
+    'start-project':{
+      type:'document',
+      title: '项目实战',
+      content: [{ text: '在复杂的项目中，你可能会用到 Redux 或者 dva 这样的数据流方案，同样，我们也推出了自己的状态管理工具 lugiax 来与 lugia-web 组件库\n' +
+        '搭配使用，同样，我们也推荐你在项目使用 lugiax。',margin: '0 50px 30px 30px' }],
+      children: [
+        {
+          title:'创建一个新应用',
+          content: [
+            {text: '让我们创建一个新目录来开始新的项目：' },
+            {text: '首先，创建一个新目录，' , margin: '0 0 30px'},
+            {text:'$ mkdir my-project\n' +
+              '$ cd my-project',bash:true, margin: '0 0 30px',javascript:true},
+            {text: '然后，使用 lugia-mega 来安装一个空的脚手架，' , margin: '0 0 30px'},
+            {text:'$ mega create lugiax',bash:true, margin: '0 0 30px',javascript:true},
+            {text: '安装完成后，你会看到如下代码，' , margin: '0 0 30px'},
+            {text:'Success! Created lugiax at D:\\Work\\my-project\\lugiax\n' +
+              'Inside that directory, you can run several commands:\n' +
+              '\n' +
+              '  yarn start\n' +
+              '    Starts the development server.\n' +
+              '\n' +
+              '  yarn build\n' +
+              '    Bundles the app into static files for production.\n' +
+              '\n' +
+              '  yarn test\n' +
+              '    Starts the test runner.\n' +
+              '\n' +
+              'We suggest that you begin by typing:\n' +
+              '\n' +
+              '  cd D:\\Work\\my-project\\lugiax\n' +
+              '  yarn start\n' +
+              '\n' +
+              'Happy hacking!',bash:true, margin: '0 0 30px',javascript:true},
+            {text: '一个简单的脚手架，已经安装成功了！' },
+            {text: '启动项目：' , margin: '0 0 30px'},
+            {text:'## 运行\n' +
+              '$ yarn start',bash:true, margin: '0 0 30px',javascript:true},
+            {text: '在浏览器的 [http://localhost:8000](http://localhost:8000)， 你会看到 mega 的欢迎界面。' , margin: '0 0 30px'},
+          ],
+          img: [{ url: welcome }],
+          imgPosition: 'bottom',
+        },
+        {
+          title: '使用 lugia-web',
+          content: [
+            {text: '在使用 lugia-web 组件库之前，需要配置 `lugia.config.js`，来处理 lugia-web 的按需加载，配置如下：', margin: '0 0 30px'},
+            {text:'export default {\n' +
+              '  disableCSSModules: true,\n' +
+              '  cssModulesWithAffix: true,\n' +
+              '  publicPath: \'/\',\n' +
+              '  extraBabelPlugins: [\n' +
+              '    [\n' +
+              '      \'import\',\n' +
+              '      {\n' +
+              '        libraryName: \'@lugia/lugia-web\',\n' +
+              '        libraryDirectory: \'dist\'\n' +
+              '      }\n' +
+              '    ]\n' +
+              '  ],\n' +
+              '  applyWebpack(webpackConfig, { webpack, mega }) {\n' +
+              '    return webpackConfig;\n' +
+              '  }\n' +
+              '};',bash:true, margin: '0 0 30px',javascript:true},
+            {text: '由于，我们创建的是一个空的脚手架，所以配置完成后，需要安装 `babel-plugin-import` `lugia-web` `lugiax` `lugiax-router`，', margin: '0 0 30px'},
+            {text:'$ yarn add babel-plugin-import\n' +
+              '$ yarn add @lugia/lugia-web\n' +
+              '$ yarn add @lugia/lugiax\n' +
+              '$ yarn add @lugia/lugiax-router',bash:true, margin: '0 0 30px',javascript:true},
+
+          ]
+        },
+        {
+          title: '编写 Component',
+          content: [
+            {text: '我们先在 `src` 文件夹下创建 `component` 文件夹，并创建如下文件：', margin: '0 0 30px'},
+          ],
+          img: [{ url: component }],
+          imgPosition: 'bottom',
+        },
+        {
+
+          content: [
+            {text: '代码为：'},
+            {text: '##  nav-menu/index.js :', margin: '0 0 30px'},
+            {text:'import React from \'react\';\n' +
+              'import {Link} from \'@lugia/lugiax-router\';\n' +
+              'import {Button} from \'@lugia/lugia-web\';\n' +
+              '\n' +
+              'export default class Header extends React.Component {\n' +
+              '  render(){\n' +
+              '    return (\n' +
+              '      <div>\n' +
+              '        <Link to="/home"><Button type="primary">Home 首页</Button></Link>\n' +
+              '        <Link to="/list"><Button type="primary">List 列表</Button></Link>\n' +
+              '      </div>\n' +
+              '    )\n' +
+              '  }\n' +
+              '}\n',bash:true, margin: '0 0 30px',javascript:true},
+            {text: '##  home/index.js :', margin: '0 0 30px'},
+            {text:'import React from \'react\';\n' +
+              '\n' +
+              'export default class Home extends React.Component {\n' +
+              '  render(){\n' +
+              '    return (\n' +
+              '      <div>\n' +
+              '        Home\n' +
+              '      </div>\n' +
+              '    )\n' +
+              '  }\n' +
+              '}\n',bash:true, margin: '0 0 30px',javascript:true},
+            {text: '##  list/index.js :', margin: '0 0 30px'},
+            {text:'import React from \'react\';\n' +
+              '\n' +
+              'export default class List extends React.Component {\n' +
+              '  render(){\n' +
+              '    return (\n' +
+              '      <div>\n' +
+              '        List\n' +
+              '      </div>\n' +
+              '    )\n' +
+              '  }\n' +
+              '}',bash:true, margin: '0 0 30px',javascript:true},
+
+          ],
+
+        },
+        {
+          title: '2.创建路由',
+          content: [
+            {text: '修改 `src/App/APP.jsx` 和 `src/index.js` 文件代码如下：'},
+            {text: '##  APP.jsx', margin: '0 0 30px'},
+            {text:'import React, { Component } from \'react\';\n' +
+              'import reactLogo from \'../assets/react.logo.svg\';\n' +
+              'import megaLogo from \'../assets/logo.png\';\n' +
+              'import \'./App.css\';\n' +
+              'import { createRoute} from \'@lugia/lugiax-router\';\n' +
+              'import NavMenu from \'../component/nav-menu\';\n' +
+              '\n' +
+              'const route = {\n' +
+              '  \'/\': {\n' +
+              '    render: async () => import(\'../component/home\'),\n' +
+              '    exact: true,\n' +
+              '  },\n' +
+              '  \'/home\': {\n' +
+              '    render: async () => import(\'../component/home\')\n' +
+              '  },\n' +
+              '  \'/list\': {\n' +
+              '    render: async () => import(\'../component/list\')\n' +
+              '  },\n' +
+              '};\n' +
+              '\n' +
+              'class App extends Component {\n' +
+              '  render() {\n' +
+              '    return (\n' +
+              '      <div className="App">\n' +
+              '        <header className="App-header">\n' +
+              '          <img src={megaLogo} alt="mega-logo" />\n' +
+              '          <span className="App-plus">+</span>\n' +
+              '          <img src={reactLogo} className="App-logo" alt="react-logo" />\n' +
+              '        </header>\n' +
+              '        <h1 className="App-title">Lugia Mega of React</h1>\n' +
+              '        <p className="App-intro">\n' +
+              '          <code>React 实现</code> 标准、高效、开箱即用的前端可视化开发工具\n' +
+              '        </p>\n' +
+              '        <NavMenu />\n' +
+              '        {createRoute(route)}\n' +
+              '      </div>\n' +
+              '    );\n' +
+              '  }\n' +
+              '}\n' +
+              '\n' +
+              'export default App;',bash:true, margin: '0 0 30px',javascript:true},
+            {text: '##  index.js', margin: '0 0 30px'},
+            {text:'import React from \'react\';\n' +
+              'import { createBrowserHistory } from "history";\n' +
+              'import { createApp, go, render } from "@lugia/lugiax-router";\n' +
+              'import \'./index.css\';\n' +
+              'import "@lugia/lugia-web/dist/css/global.css";\n' +
+              'import Main from "./App";\n' +
+              '\n' +
+              'const history = createBrowserHistory();\n' +
+              'const App = createApp(\n' +
+              '  {\n' +
+              '    "/": {\n' +
+              '      component: Main\n' +
+              '    }\n' +
+              '  },\n' +
+              '  history,\n' +
+              '  {\n' +
+              '    async onBeforeGo({ url }) {\n' +
+              '      if (url === "/nowPower") {\n' +
+              '        await go({ url: "/404" });\n' +
+              '        return false;\n' +
+              '      }\n' +
+              '      return url !== "/not";\n' +
+              '    }\n' +
+              '  }\n' +
+              ');\n' +
+              '\n' +
+              'render(() => {\n' +
+              '  return <App />;\n' +
+              '}, "root");\n',bash:true, margin: '0 0 30px',javascript:true},
+            {text: '修改完后，再重新启动项目，看到如下界面：', margin: '0 0 30px',url: routewelcome},
+            {text: '这样，一个简单的路由就搭建完成了，你也可以根据你的爱好配置不同样式。', margin: '0 0 30px'},
+
+          ],
+        },
+
+        {
+          title: '创建 model',
+          content: [
+            {text: '在 `list` 目录下创建 `models/todo.js`;', margin: '0 0 30px'},
+            {text:'import lugiax from "@lugia/lugiax";\n' +
+              '\n' +
+              'const model = "todo";\n' +
+              'const state = {\n' +
+              '  formData: {\n' +
+              '    task: ""\n' +
+              '  },\n' +
+              '  tasks: ["hello"]\n' +
+              '};\n' +
+              'export default lugiax.register({\n' +
+              '  model,\n' +
+              '  state,\n' +
+              '  mutations: {\n' +
+              '    sync: {\n' +
+              '      addTask(state, inParam, { mutations }) {\n' +
+              '        const task = state.getIn(["formData", "task"]);\n' +
+              '        if (!task) {\n' +
+              '          return state;\n' +
+              '        }\n' +
+              '        let tasks = state.get("tasks");\n' +
+              '        tasks = tasks.push(task);\n' +
+              '        state = mutations.cleanTaksInput();\n' +
+              '        return state.set("tasks", tasks);\n' +
+              '      },\n' +
+              '\n' +
+              '      delTask(state, inParam) {\n' +
+              '        let tasks = state.get("tasks");\n' +
+              '        tasks = tasks.delete(tasks.findIndex(title => title === inParam.title));\n' +
+              '        return state.set("tasks", tasks);\n' +
+              '      },\n' +
+              '\n' +
+              '      cleanTaksInput(state) {\n' +
+              '        return state.setIn(["formData", "task"], "");\n' +
+              '      }\n' +
+              '    }\n' +
+              '  }\n' +
+              '});\n',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: '## Component 与 model connect 起来'},
+            {text: '在 `list` 文件夹下创建 `components` 文件夹，内容如下：'},
+            {text: '## components/InputTask.js :', margin: '0 0 30px'},
+            {text:'import React, { Component } from "react";\n' +
+              'import { Input } from "@lugia/lugia-web";\n' +
+              '\n' +
+              'export default class InputTask extends Component {\n' +
+              '  render() {\n' +
+              '    return (\n' +
+              '      <Input\n' +
+              '        onChange={this.onChange}\n' +
+              '        onKeyDown={this.onKeyDown}\n' +
+              '        value={this.props.value}\n' +
+              '      />\n' +
+              '    );\n' +
+              '  }\n' +
+              '\n' +
+              '  onChange = (e) => {\n' +
+              '    const { onChange } = this.props;\n' +
+              '    onChange && onChange(e.newValue);\n' +
+              '  };\n' +
+              '\n' +
+              '  onKeyDown = (e) => {\n' +
+              '    if (e.keyCode === 13) {\n' +
+              '      const { onEnter } = this.props;\n' +
+              '      onEnter && onEnter();\n' +
+              '    }\n' +
+              '  };\n' +
+              '}',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: '## components/List.js :', margin: '0 0 30px'},
+            {text:'\n' +
+              'import React, { Component } from "react";\n' +
+              'import styled from "styled-components";\n' +
+              'const hoverColor = "red";\n' +
+              'const Item = styled.li`\n' +
+              '  user-select: none;\n' +
+              '  cursor: pointer;\n' +
+              '  &:hover {\n' +
+              '    color: ${hoverColor};\n' +
+              '  }\n' +
+              '`;\n' +
+              '\n' +
+              'const CloseIcon = styled.span`\n' +
+              '  user-select: none;\n' +
+              '  cursor: pointer;\n' +
+              '  ${Item}:hover {\n' +
+              '    color: ${hoverColor};\n' +
+              '  }\n' +
+              '  &:hover {\n' +
+              '    color: ${hoverColor};\n' +
+              '  }\n' +
+              '`;\n' +
+              '\n' +
+              'export default class List extends Component {\n' +
+              '  render() {\n' +
+              '    return <ul>{this.renderList()}</ul>;\n' +
+              '  }\n' +
+              '\n' +
+              '  delItem = (title) => () => {\n' +
+              '    const { delItem } = this.props;\n' +
+              '    delItem && delItem({ title });\n' +
+              '  };\n' +
+              '\n' +
+              '  renderList() {\n' +
+              '    const { data = [] } = this.props;\n' +
+              '    return data.map(title => {\n' +
+              '      const del = this.delItem(title);\n' +
+              '      return (\n' +
+              '        <Item onClick={del}>\n' +
+              '          {title} <CloseIcon onClick={del}>x</CloseIcon>\n' +
+              '        </Item>\n' +
+              '      );\n' +
+              '    });\n' +
+              '  }\n' +
+              '}\n',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: '现在我们创建完成了 Component 和 model，下面我们把他们关联起来：'},
+            {text: '## list/index.js', margin: '0 0 30px'},
+            {text:'import React, { Component } from "react";\n' +
+              'import InputTask from "./components/InputTask";\n' +
+              'import List from "./components/List";\n' +
+              'import { bindTo, connect } from "@lugia/lugiax";\n' +
+              'import todo from "./models/todo";\n' +
+              '\n' +
+              'const TodoList = connect(\n' +
+              '  todo,\n' +
+              '  state => {\n' +
+              '    return { data: state.todo.get("tasks") };\n' +
+              '  },\n' +
+              '  mutations => {\n' +
+              '    const { todo } = mutations;\n' +
+              '    return { delItem: todo.delTask };\n' +
+              '  }\n' +
+              ')(List);\n' +
+              '\n' +
+              'const fieldPath = ["formData", "task"];\n' +
+              'const fieldName = fieldPath.join(".");\n' +
+              '\n' +
+              'const TodoInput = bindTo(\n' +
+              '  todo,\n' +
+              '  {\n' +
+              '    [fieldName]: "value"\n' +
+              '  },\n' +
+              '  {\n' +
+              '    onChange: {\n' +
+              '      [fieldName](v) {\n' +
+              '        return v;\n' +
+              '      }\n' +
+              '    }\n' +
+              '  },\n' +
+              '  {\n' +
+              '    onEnter() {\n' +
+              '      todo.mutations.addTask();\n' +
+              '    }\n' +
+              '  }\n' +
+              ')(InputTask);\n' +
+              '\n' +
+              'export default () => {\n' +
+              '  return (\n' +
+              '    <div>\n' +
+              '      <h1>To Do List</h1>\n' +
+              '      <TodoInput />\n' +
+              '      <TodoList />\n' +
+              '    </div>\n' +
+              '  );\n' +
+              '};',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: '这样，TodoInput 和 TodoList 组件就和 model 关联起来了，这里用到了 `connect` 和 `bindTo` ， lugiax 共提供了\n' +
+              '`connect` 、`bindTo` 、`bind` 三种绑定方法，关于更多请参考lugiax', margin: '0 0 30px'},
+
+
+
+          ]
+        },
+        {
+          title: '构建应用',
+          content: [
+            {text: '开发完成后，运行', margin: '0 0 30px'},
+            {text:'$ yarn build',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: '几秒后输出：', margin: '0 0 30px'},
+            {text:'yarn run v1.7.0\n' +
+              '$ lugia-scripts build\n' +
+              'Build completed in 10.78s\n' +
+              '\n' +
+              'Compiled successfully.\n' +
+              '\n' +
+              'File sizes after gzip:\n' +
+              '\n' +
+              '  135.61 KB  dist\\index.f327bddb.js\n' +
+              '  22.46 KB   dist\\1.03dbcdbf.async.js\n' +
+              '  4.28 KB    dist\\index.5771692d.css\n' +
+              '  729 B      dist\\0.e5277a87.async.js\n' +
+              '\n' +
+              'Done in 16.34s.',bash:true, margin: '0 0 30px',javascript:true},
+
+            {text: 'build 命令会将项目进行打包，可在 `dist` 目录下查看打包后的文件。', margin: '0 0 30px'},
+          ]
+        },
+
 
       ]
     },

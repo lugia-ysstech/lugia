@@ -34,10 +34,32 @@ const getMenuConfig = data => {
 const routerConfig = {
   '/component': {
     exact: true,
-    render: async () => import('../widgets/affix'),
-    value: '/component/affix',
+    render: async () => {
+      return  () => <Redirect
+        to={{
+          pathname: '/component/lugia',
+        }}
+      />;
+    },
     isHidden: true,
-    text: 'Affix',
+  },
+  '/component/lugia': {
+    exact: true,
+    render: async () => import('../design/page'),
+    value: '/component/lugia',
+    text: 'Lugia Design of React',
+  },
+  '/component/quick-start':{
+    exact: true,
+    render: async () => import('../design/page'),
+    value: '/component/quick-start',
+    text: '快速上手',
+  },
+  '/component/start-project':{
+    exact: true,
+    render: async () => import('../design/page'),
+    value: '/component/start-project',
+    text: '项目实战',
   },
   '/component/404': {
     exact: true,
@@ -60,9 +82,9 @@ const routerConfig = {
 };
 
 const menuConfig = [
-  { value: 'Lugia Design of React', text: 'Lugia Design of React' },
-  { value: '快速上手', text: '快速上手' },
-  { value: '项目实战', text: '项目实战' },
+  { value: '/component/lugia', text: 'Lugia Design of React' },
+  { value: '/component/quick-start', text: '快速上手' },
+  { value: '/component/start-project', text: '项目实战' },
   { value: '在Lugia-mega中使用', text: '在Lugia-mega中使用' },
   {
     value: 'Components',
