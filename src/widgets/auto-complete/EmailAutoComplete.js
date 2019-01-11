@@ -22,6 +22,7 @@ export default class Demo extends React.Component<any, any> {
         data={menuData}
         onChange={this.onChange}
         placeholder={'请输入'}
+        showOldValue={true}
       />
     );
   }

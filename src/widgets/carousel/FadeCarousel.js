@@ -20,7 +20,7 @@ const ItemWrap = styled.div`
 export default class DefaultCarousel extends React.Component<any, any> {
   render() {
     return (
-      <Carousel indicatorType={'outside'} animationTime={1000}>
+      <Carousel switchType={'fade'} animationTime={1000}>
         {this.getItemWrap()}
       </Carousel>
     );

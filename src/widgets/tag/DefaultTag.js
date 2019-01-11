@@ -1,7 +1,6 @@
 /**
  * create by szfeng
  *
- * @flow
  */
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import { Theme, Tag } from '@lugia/lugia-web';
@@ -14,7 +13,6 @@ const TagWrap = styled.div`
 
 export default class DefaultTag extends React.Component<any, any> {
   render() {
-
     return [
       <div>
         <TagWrap>
