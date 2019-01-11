@@ -3,9 +3,6 @@ import { Badge, Theme,Icon } from '@lugia/lugia-web';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  float: left;
-  text-align: center;
-  padding: 20px;
 `;
 const Box = styled.div`
   width: 40px;
