@@ -66,14 +66,13 @@ export default class PositionTabs extends React.Component<any, any> {
     ];
 
     const handleSelect = obj => {
-
       const { newValue } = obj;
       this.setState({ tabPosition: newValue.toString() });
     };
     return (
       <Theme config={view}>
+        <Select displayField={'label'} data={data} onSelect={handleSelect} />
         <Wrapper>
-          <Select displayField={'label'} data={data} onSelect={handleSelect} />
           <Tabs
             titleType={'line'}
             tabPosition={this.state.tabPosition}
