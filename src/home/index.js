@@ -99,9 +99,11 @@ const BgImg3 = styled.img`
 `;
 
 const BgImg4 = styled.img`
+  width: 18%;
+  max-width:160px;
   position: absolute;
-  right: 50%;
-  top: 395px;
+  right: 53%;
+  top: 52%;
   z-index: 6;
   
 `;
@@ -163,7 +165,6 @@ const Text = styled.div`
   line-height:1.5;
   margin: 0 0 30px;
   text-align:left;
-  letter-spacing:1px;
 `;
 
 const ButtonContainer = styled.div`
@@ -275,7 +276,7 @@ const LineRow = styled.div`
 
 const LineRight = styled.div`
   position:absolute;
-  right:5%;
+  right:15px;
   width:1px;
   background:#e8e8e8;
   animation: ${spendLine} 1s ease forwards;
@@ -316,9 +317,8 @@ const CardTitle = styled.div`
 `;
 
 const ModelThird = styled.div`
-  width:95%;
-  padding:226px 60px 0 50% ;
-  margin:0 30px ;
+  width:100%;
+  padding:226px 50px 0 53% ;
   position:relative;
   min-height:800px;
   position:relative;
@@ -333,8 +333,8 @@ const TextBox = styled.div`
 
 const SquareRight = styled.div`
   position:absolute;
-  right:20px;
-  top:222px;
+  right:5px;
+  top:220px;
   width:22px;
   background:#4d63ff;
   border-radius:22px;
@@ -404,10 +404,10 @@ export default class Pages extends React.Component<any, any> {
     return (
       <React.Fragment>
         <Row>
-          <Col span={5} >
+          <Col span={5} xl={{ span: 4 }}  xxl={{ span: 5 }}>
             <Wrapper> </Wrapper>
           </Col>
-          <Col span={14} >
+          <Col span={14} xl={{ span: 16 }}  xxl={{ span: 14 }}>
             <MiddleWrapper>
               <Line />
               <Head>
@@ -477,7 +477,7 @@ export default class Pages extends React.Component<any, any> {
               <Footer/>
             </MiddleWrapper>
           </Col>
-          <Col span={5} >
+          <Col span={5} xl={{ span: 4 }}  xxl={{ span: 5 }}>
             <Wrapper > </Wrapper>
           </Col>
         </Row>
