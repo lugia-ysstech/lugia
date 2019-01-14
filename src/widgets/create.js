@@ -19,6 +19,7 @@ async function createSearchIndex () {
   const res = [];
   const widget = '组件';
   const rule = '原则';
+  const study = '教程';
   const allPathFile = await getFolderNames();
   const folderNames = await getDemoFolderNames(allPathFile);
   const router = await getRouter(folderNames);
@@ -83,14 +84,15 @@ async function createSearchIndex () {
   const ruleKeys = Object.keys(documents);
   ruleKeys && ruleKeys.forEach(ruleKey => {
     const document = documents[ ruleKey ];
-    const { title, content } = document;
-    const url = `design/${ruleKey}`;
+    const { title, content, type, baseUrl } = document;
+    const isDocument = type === 'document';
+    const url = `${baseUrl?baseUrl: '/design'}/${ruleKey}`;
     title && res.push({
       url,
       owner: title,
       content: title,
       power: 1,
-      type: rule
+      type: isDocument ? study : rule
     });
 
     content && content.forEach(item => {
