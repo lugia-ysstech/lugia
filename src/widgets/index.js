@@ -14,7 +14,7 @@ const { Row, Col } = Grid;
 
 const InnerContainer = styled.div`
   width:100%;
-  padding:45px 0 50px ;
+  padding:45px 0 50px 50px;
 `;
 
 

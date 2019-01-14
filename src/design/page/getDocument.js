@@ -1117,11 +1117,11 @@ module.exports = param => {
     lugia:{
       type:'document',
       title: 'Lugia Web of React',
-      content: [{ text: '一套基于 Lugia Design 的高品质 React 组件库，满足金融行业高性能组件的需求，适用于 Web 端。', margin: '0 0 0 30px'}],
+      content: [{ text: '一套基于 Lugia Design 的高品质 React 组件库，满足金融行业高性能组件的需求，适用于 Web 端。', margin: '0 0 30px'}],
       children: [
         {
           img: [{ url: introduce }],
-          imgPosition: 'top',
+          imgPosition: 'left',
 
         },
         {
@@ -1192,7 +1192,7 @@ module.exports = param => {
       type:'document',
       baseUrl:'/component',
       title: '快速上手',
-      content: [{ text: 'Lugia Web 旨在降低开发成本，提升开发质量，为前端开发人员赋能，让用户体验知性。', margin: '0 0 30px 30px' }],
+      content: [{ text: 'Lugia Web 旨在降低开发成本，提升开发质量，为前端开发人员赋能，让用户体验知性。', margin: '0 0 30px' }],
       children: [
         {
           title:'说在前面',
@@ -1300,7 +1300,7 @@ module.exports = param => {
       baseUrl:'/component',
       title: '项目实战',
       content: [{ text: '在复杂的项目中，你可能会用到 Redux 或者 dva 这样的数据流方案，同样，我们也推出了自己的状态管理工具 lugiax 来与 lugia-web 组件库\n' +
-        '搭配使用，同样，我们也推荐你在项目使用 lugiax。',margin: '0 50px 30px 30px' }],
+        '搭配使用，同样，我们也推荐你在项目使用 lugiax。',margin: '0 0 30px' }],
       children: [
         {
           title:'创建一个新应用',
@@ -1715,7 +1715,7 @@ module.exports = param => {
       type:'document',
       baseUrl:'/component',
       title: 'Lugiax',
-      content: [{ text: '一个基于 Redux 的前端状态管理工具。提供简单高效的全局状态管理方案、 基于 async/await 的异步操作、快捷的双向绑定。LugiaX 内置路由库，对 react-router 做了轻量封装，使用起来更加简单明了。',margin: '0 50px 30px 30px' }],
+      content: [{ text: '一个基于 Redux 的前端状态管理工具。提供简单高效的全局状态管理方案、 基于 async/await 的异步操作、快捷的双向绑定。LugiaX 内置路由库，对 react-router 做了轻量封装，使用起来更加简单明了。',margin: '0 0 30px' }],
       children: [
         {
           title:'设计思想',
