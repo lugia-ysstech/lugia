@@ -3,7 +3,6 @@ import { Card, Theme, Tabs } from '@lugia/lugia-web';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  margin-top: 50px;
   display: inline-blocTk;
 `;
 const Operation = styled.div`
@@ -29,21 +28,13 @@ export default class TabsCard extends React.Component<Object, Object> {
       {
         title: 'Tab3',
         content: 'content of Tab3'
-      },
-      {
-        title: 'Tab4',
-        content: 'content of Tab4'
-      },
-      {
-        title: 'Tab5',
-        content: 'content of Tab5'
       }
     ];
     return (
       <Theme config={combo}>
         <Wrapper>
           <Card
-            operation={<Operation> 操作</Operation>}
+            operation={<Operation>操作</Operation>}
             viewClass={'register'}
             type={'combo'}
             content={<Tabs data={defaultData} />}

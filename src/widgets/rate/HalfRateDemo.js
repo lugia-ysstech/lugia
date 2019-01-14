@@ -38,7 +38,6 @@ export default class HalfRateDemo extends React.Component<any, any> {
     return (
       <div>
         <Theme config={rate}>
-          <TitleBox>半星用法(总分10分) allowHalf：</TitleBox>
           <Rate {...config} />
           <TextBox>{this.state.config} 分</TextBox>
         </Theme>
