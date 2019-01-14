@@ -5,7 +5,7 @@ import '@lugia/lugia-web/dist/css/global.css';
 import Main from './App';
 import 'highlight.js/styles/atom-one-light.css';
 import PageLoading from './pageloading';
-import urls from './pageloading/images';
+import Highlight from 'react-highlight';
 const history = createBrowserHistory();
 const App = createApp(
   {
@@ -26,7 +26,7 @@ const App = createApp(
     }
   }
 );
-
+console.info(Highlight);
 render(() => {
   return <App />;
 }, 'root');
