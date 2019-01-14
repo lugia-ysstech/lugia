@@ -17,14 +17,14 @@ const { Link } = Anchor;
 
 const Title = styled.div.attrs({
   size:props => (props.level?'24px':'18px'),
-  margin:props => (props.level?props.imgPosition?'0 0 26px':'0 0 26px 30px':'0 0 20px'),
+  margin:props => (props.level?props.imgPosition?'0 0 26px':'0 0 26px ':'0 0 20px'),
   padding:props => (props.level?'0':'0 0 0 50px')
 })` 
   font-size:${props => props.size};
   color:#0f1333;
   line-height:1;
   font-weight:600;
-  padding:${props => props.padding};
+  // padding:${props => props.padding};
   margin:${props => props.margin};
 `;
 
@@ -63,7 +63,7 @@ const ContentBox = styled.div`
 `;
 
 const ContentContainer = styled.div` 
-   padding:${props => (props.level ?'0 0 0 20px':'0  50px')};
+   // padding:${props => (props.level ?'0 0 0 20px':'0  50px')};
 `;
 
 const FlexContainer = styled.div` 
