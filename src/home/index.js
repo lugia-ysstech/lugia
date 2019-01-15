@@ -129,7 +129,7 @@ const MiddleWrapper = styled.div`
 const ModelOne = styled.div`
   width:500px;
   padding:180px 0 0 48px;
-  margin:0 30px;
+  margin:0 15px;
 `;
 
 
@@ -138,6 +138,12 @@ const H1 = styled.div`
   color: #ff5b00;
   font-family: 'Helvetica Neue';
   font-weight:800;
+  text-align: justify;
+  &::after{
+    content: '';
+    display: inline-block; 
+    padding-left: 100%;
+  }
  
 }
 `;
