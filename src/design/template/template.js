@@ -8,6 +8,7 @@ import * as React from 'react';
 import {Theme ,Anchor,Icon } from '@lugia/lugia-web';
 // import { Widget} from '@lugia/lugia-web/dist/consts/index';
 import Widget from '@lugia/lugia-web/dist/consts/index';
+import {go} from '@lugia/lugiax-router';
 import styled from 'styled-components';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 import Highlight from 'react-highlight';
@@ -126,7 +127,7 @@ const DesignCard = styled.div`
   flex-direction: column;
   align-items:center;
   box-shadow: 0 0 6px rgba(77,99,255,0.2);
- 
+ cursor:pointer;
  
 `;
 
@@ -178,6 +179,7 @@ const PantoneCardBox = styled.div.attrs({
   height:100%;
   transform:translateX(${props => props.left});
   transition: all 0.3s linear;
+  
 `;
 
 const PantoneCard = styled.div`
@@ -252,71 +254,8 @@ const getContentElement = (data:Object,titleElement,imgPosition:string,level?:Bo
   </ContentContainer>;
 };
 
-const getHtmlElement = (data:Object) => {
-  if(!data) return;
-  return  <DesignCardBox >
-    {data.map(item => {
-      const {text,url,desc} = item;
-      return <React.Fragment>
-        <DesignCard >
-          {url && <DesignCardImage  src={url}  />}
-          <DesignCardText>{text}</DesignCardText>
-          <DesignCardDesc>{desc}</DesignCardDesc>
 
-        </DesignCard>
-      </React.Fragment>;
-    })}
-  </DesignCardBox>;
-};
 
-const getElementWithPosition = (data:Array<Object>,level?:Boolean) => {
-  if(!data) return;
-  return <React.Fragment>
-    {
-      data.map((item,index) => {
-        let childElement ;
-        const {imgPosition,content,img,card,title} = item;
-        const titleElement = item.title && <Title id={'link-'+index} name={'link-'+index} imgPosition={imgPosition} level={level}> {level?'':<Titleline/>} {title} <Desc>{item.desc}</Desc> </Title>;
-        switch (imgPosition) {
-          case 'left':
-            childElement =
-              <FlexContainer>
-                {getImgElement(img,imgPosition,level)}
-                {getContentElement(content,titleElement,imgPosition,level)}
-              </FlexContainer>;
-            break;
-          case 'right':
-            childElement =
-              <FlexContainer>
-                {getContentElement(content,titleElement,imgPosition,level)}
-                {getImgElement(img,imgPosition,level)}
-              </FlexContainer>;
-            break;
-          case 'bottom':
-            childElement =
-              <React.Fragment>
-                {getContentElement(content,titleElement,imgPosition,level)}
-                {getImgElement(img,imgPosition,level)}
-              </React.Fragment>;
-            break;
-          default:
-            childElement =
-              <React.Fragment>
-                {getImgElement(img,imgPosition,level)}
-                {getContentElement(item.content,titleElement,imgPosition,level)}
-              </React.Fragment>;
-        }
-        return <React.Fragment>
-          {!level && <ContentBox>{titleElement}</ContentBox> }
-          {childElement}
-          {card && getHtmlElement(card)}
-
-        </React.Fragment>;
-      })
-    }
-
-  </React.Fragment>;
-};
 
 const getAnchorElement = (data:Object) => {
   return <AnchorContainer>
@@ -330,7 +269,6 @@ const getAnchorElement = (data:Object) => {
     </Anchor>
   </AnchorContainer>;
 };
-
 
 
 export default class Template extends React.Component<defProps, stateProps> {
@@ -356,10 +294,10 @@ export default class Template extends React.Component<defProps, stateProps> {
   }
   getElement =() => {
     const {dataSource:{children},dataSource,prev,next} = this.props;
-    const element = getElementWithPosition(children);
+    const element = this.getElementWithPosition(children);
 
     const {title,content,imgPosition,img,desc} = dataSource;
-    const  outSideElement = getElementWithPosition([{title,content,imgPosition,img,desc}],true);
+    const  outSideElement = this.getElementWithPosition([{title,content,imgPosition,img,desc}],true);
 
     const anchor = getAnchorElement(children);
     const {colorTheme} = children[0];
@@ -373,7 +311,6 @@ export default class Template extends React.Component<defProps, stateProps> {
         </ContentBox>
         {anchor}
       </FlexContainer>
-
     </React.Fragment>;
 
   };
@@ -415,6 +352,72 @@ export default class Template extends React.Component<defProps, stateProps> {
     </React.Fragment>;
   };
 
+  getElementWithPosition = (data:Array<Object>,level?:Boolean) => {
+    if(!data) return;
+    return <React.Fragment>
+      {
+        data.map((item,index) => {
+          let childElement ;
+          const {imgPosition,content,img,card,title} = item;
+          const titleElement = item.title && <Title id={'link-'+index} name={'link-'+index} imgPosition={imgPosition} level={level}> {level?'':<Titleline/>} {title} <Desc>{item.desc}</Desc> </Title>;
+          switch (imgPosition) {
+            case 'left':
+              childElement =
+                <FlexContainer>
+                  {getImgElement(img,imgPosition,level)}
+                  {getContentElement(content,titleElement,imgPosition,level)}
+                </FlexContainer>;
+              break;
+            case 'right':
+              childElement =
+                <FlexContainer>
+                  {getContentElement(content,titleElement,imgPosition,level)}
+                  {getImgElement(img,imgPosition,level)}
+                </FlexContainer>;
+              break;
+            case 'bottom':
+              childElement =
+                <React.Fragment>
+                  {getContentElement(content,titleElement,imgPosition,level)}
+                  {getImgElement(img,imgPosition,level)}
+                </React.Fragment>;
+              break;
+            default:
+              childElement =
+                <React.Fragment>
+                  {getImgElement(img,imgPosition,level)}
+                  {getContentElement(item.content,titleElement,imgPosition,level)}
+                </React.Fragment>;
+          }
+          return <React.Fragment>
+            {!level && <ContentBox>{titleElement}</ContentBox> }
+            {childElement}
+            {card && this.getHtmlElement(card)}
+
+          </React.Fragment>;
+        })
+      }
+
+    </React.Fragment>;
+  };
+
+  getHtmlElement = (data:Object) => {
+    if(!data) return;
+    return  <DesignCardBox >
+      {data.map(item => {
+        const {text,url,desc,link} = item;
+        return <React.Fragment>
+          <DesignCard onClick={e => this.cickToLink(link)}>
+            {url && <DesignCardImage  src={url}  />}
+            <DesignCardText>{text}</DesignCardText>
+            <DesignCardDesc>{desc}</DesignCardDesc>
+
+          </DesignCard>
+        </React.Fragment>;
+      })}
+    </DesignCardBox>;
+  };
+
   handleClick = (index:number) => {
     this.setState({
       current:index,
@@ -435,4 +438,7 @@ export default class Template extends React.Component<defProps, stateProps> {
     });
   };
 
+  cickToLink = (url:string) => {
+    url && go({ url });
+  }
 }
