@@ -53,7 +53,7 @@ const Content = styled.div`
   line-height:1.8;
   margin:${props => (props.margin || '0')};
   background:${props => (props.bash?'#f8f8f8':'transparent')};
-  padding:${props => (props.bash?'8px 16px':'0')};
+  padding:${props => (props.bash?'8px 16px':'0 50px 0 0')};
   border-radius:${props => (props.bash?'4px':'0')};
 `;
 
