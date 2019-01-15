@@ -9,15 +9,18 @@ class UploadDemo extends React.Component<any, any> {
   render() {
     const defaultProps4 = {
       listType: 'picture',
-      inputId: 'upload4'
+      inputId: 'upload4',
+      url: '/upload',
     };
     const defaultProps9 = {
       listType: 'area',
-      inputId: 'upload6'
+      inputId: 'upload6',
+      url: '/upload',
     };
     const defaultProps7 = {
       listType: 'default',
-      inputId: 'upload'
+      inputId: 'upload',
+      url: '/upload',
     };
     return (
       <div>
