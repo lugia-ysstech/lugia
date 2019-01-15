@@ -11,6 +11,7 @@ import Widget from '@lugia/lugia-web/dist/consts/index';
 import styled from 'styled-components';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 import Highlight from 'react-highlight';
+import FooterNav from '../../footer-nav';
 
 const { themeColor } = colorsFunc();
 const { Link } = Anchor;
@@ -354,7 +355,7 @@ export default class Template extends React.Component<defProps, stateProps> {
     );
   }
   getElement =() => {
-    const {dataSource:{children},dataSource} = this.props;
+    const {dataSource:{children},dataSource,prev,next} = this.props;
     const element = getElementWithPosition(children);
 
     const {title,content,imgPosition,img,desc} = dataSource;
@@ -368,6 +369,7 @@ export default class Template extends React.Component<defProps, stateProps> {
           {outSideElement}
           {element}
           {colorTheme && this.getColorThemeElement(colorTheme)}
+          <FooterNav prev={prev} next={next} />
         </ContentBox>
         {anchor}
       </FlexContainer>
