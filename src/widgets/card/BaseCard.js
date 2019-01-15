@@ -10,6 +10,7 @@ const Operation = styled.div`
   color: #4d63ff;
 `;
 export default class BaseCard extends React.Component<any, any> {
+  click = () => {};
   render() {
     return (
       <Wrapper>
@@ -17,7 +18,11 @@ export default class BaseCard extends React.Component<any, any> {
           title={'this is title'}
           description={'this is description'}
           shadow={'always'}
-          operation={<Operation>操作 </Operation>}
+          operation={
+            <Operation  onClick={this.click}>
+              操作
+            </Operation>
+          }
         />
       </Wrapper>
     );
