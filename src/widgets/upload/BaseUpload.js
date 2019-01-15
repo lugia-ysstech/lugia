@@ -1,6 +1,5 @@
 import React from 'react';
 import { Upload, Theme } from '@lugia/lugia-web';
-import styled from 'styled-components';
 
 class UploadDemo extends React.Component<any, any> {
   constructor(props: Object) {
@@ -9,28 +8,9 @@ class UploadDemo extends React.Component<any, any> {
 
   render() {
     const defaultProps = {
-      listType: 'default',
-      inputId: 'upload',
-      showFileList: true,
-      
-      multiple: true,
-      accessKey: ['uploadToken'],
-      data: {},
-      onChange: res => {
-      },
-      onSuccess: (res, fileList) => {
-      },
-      onComplete: res => {
-      },
-      onProgress: res => {
-      },
-      onFail: res => {
-      },
-    };
-    const defaultProps1 = {
       listType: 'button',
       inputId: 'upload1',
-
+      url: '/upload',
       multiple: true,
       showFileList: true,
       fileList: [
@@ -49,19 +29,10 @@ class UploadDemo extends React.Component<any, any> {
         },
       ],
     };
-    const defaultProps2 = {
-      listType: 'both',
-      inputId: 'upload2',
 
-      showFileList: true,
-      multiple: true,
-      onChange: res => {
-        console.log('cbk', res);
-      },
-    };
     return (
       <div>
-        <Upload {...defaultProps1} />
+        <Upload {...defaultProps} />
       </div>
     );
   }
