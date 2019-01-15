@@ -144,10 +144,12 @@ module.exports = param => {
   const DesignDocument = {
     introduce: {
       title: '',
-      content: [{ text: 'Lugia Design', margin: '0 0 0 30px', size: '24px', weight: 600 }],
-      img: [{ url: introduce }],
-      imgPosition: 'bottom',
+      content: [{ text: 'Lugia Design', margin: '0 0 30px 0', size: '24px', weight: 600 }],
       children: [
+        {
+          img: [{ url: introduce }],
+          imgPosition: 'left',
+        },
         {
           content: [
             { text: 'Lugia Design 是一套适合于金融后台前端应用使用的设计语言。' },
@@ -160,19 +162,19 @@ module.exports = param => {
         {
           title: '视觉交互',
           card: [
-            { text: '对齐原则', desc: 'Alignment', url: Alignment },
-            { text: '重复原则', desc: 'Repeat', url: Repeat },
-            { text: '组织性原则', desc: 'Proximity', url: Proximity },
-            { text: '层级性原则', desc: 'Hierarchy', url: Hierarchy }
+            { text: '对齐原则', desc: 'Alignment', url: Alignment ,link:'/design/alignment'},
+            { text: '重复原则', desc: 'Repeat', url: Repeat,link:'/design/repeat' },
+            { text: '组织性原则', desc: 'Proximity', url: Proximity,link:'/design/proximity' },
+            { text: '层级性原则', desc: 'Hierarchy', url: Hierarchy,link:'/design/hierarchy' }
           ]
         },
         {
           title: '体验交互',
           card: [
-            { text: '反馈原则', desc: 'Feedback', url: Feedback },
-            { text: '引导原则', desc: 'Guide', url: Guide },
-            { text: '易用性原则', desc: 'Accessibility', url: Accessibility },
-            { text: '减少跳转原则', desc: 'Reduce skip', url: Reduceskip }
+            { text: '反馈原则', desc: 'Feedback', url: Feedback ,link:'/design/feedback'},
+            { text: '引导原则', desc: 'Guide', url: Guide ,link:'/design/guide'},
+            { text: '易用性原则', desc: 'Accessibility', url: Accessibility ,link:'/design/accessibility'},
+            { text: '减少跳转原则', desc: 'Reduce skip', url: Reduceskip ,link:'/design/reduceskip'}
           ]
         },
 
