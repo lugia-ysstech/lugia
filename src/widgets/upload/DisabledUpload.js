@@ -1,14 +1,5 @@
 import React from 'react';
 import { Upload, Theme } from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts';
-import styled from 'styled-components';
-// import request from './request';
-
-const Title = styled.div`
-  font-size: 16px;
-  padding: 10px 0 0 10px;
-  border-top: 1px solid #ccc;
-`;
 
 class UploadDemo extends React.Component<any, any> {
   constructor(props: Object) {
@@ -22,19 +13,22 @@ class UploadDemo extends React.Component<any, any> {
       inputId: 'upload',
       showFileList: true,
       disabled: true,
+      url: '/upload',
     };
     const defaultProps9 = {
       listType: 'area',
       inputId: 'upload6',
       showFileList: true,
       disabled: true,
-      
+      url: '/upload',
+
     };
     const defaultProps8 = {
       listType: 'button',
       inputId: 'upload1',
       disabled: true,
       showFileList: true,
+      url: '/upload',
     };
     return (
       <div>
