@@ -241,7 +241,7 @@ module.exports = param => {
             { text: '顶对齐：', size: '12px', color: '#525466', weight: '600', margin: '20px 0 0' },
             { text: '适用于简易表单，让用户快速预览完成。', size: '12px', color: '#ccc' },
             { text: '左对齐：', size: '12px', color: '#525466', weight: '600' },
-            { text: '适用于填写布局复杂、有陌生数据、需谨填写；。', size: '12px', color: '#ccc' },
+            { text: '适用于填写布局复杂、有陌生数据、需谨填写。', size: '12px', color: '#ccc' },
             { text: '右对齐：', size: '12px', color: '#525466', weight: '600' },
             { text: '适用于稍复杂的表单。网页高度有限的情况。', size: '12px', color: '#ccc' },
           ],
@@ -286,7 +286,7 @@ module.exports = param => {
         {
           title: 'ICONS重复',
           content: [{ text: '在相同的数据下，icons元素保持统一。' }],
-          img: [{ url: repeatImg2, desc: '例如：使用搜索icons时，无论当前页面成为几级页面，搜索icons保持统一。' }],
+          img: [{ url: repeatImg2, desc: '例如：使用搜索icons时，无论当前页面成为几级页面，搜索icons保持统一' }],
           imgPosition: 'right',
         },
         {
@@ -315,7 +315,7 @@ module.exports = param => {
           content: [{
             text: '【布局】',
             weight: 600
-          }, { text: '纵向上通过8px（小型间距）、16px（中型间距）、24px（大型间距）三种规格来划分信息层次，在三种规格不适用的情况下，可以通过加减8px的倍数来拉开信息层次' }, { text: '横向上为了适用不同尺寸的屏幕，采用栅格布局来排布组件，从而保证布局的灵活性。' }],
+          }, { text: '纵向上通过8px（小型间距）、16px（中型间距）、24px（大型间距）三种规格来划分信息层次，在三种规格不适用的情况下，可以通过加减8px的倍数来拉开信息层次。' }, { text: '横向上为了适用不同尺寸的屏幕，采用栅格布局来排布组件，从而保证布局的灵活性。' }],
           img: [{ url: proximityImg1 }],
           imgPosition: 'right',
         },
@@ -368,7 +368,7 @@ module.exports = param => {
         {
           title: '大小区分',
           content: [{ text: '通过调整区块和元素排版、大小等方式来突出层次感，提高页面的易读性和节奏感。' }],
-          img: [{ url: hierarchyImg1, desc: '在整体布局中，通过卡片大小的变化，来区分信息传达的重点。' }],
+          img: [{ url: hierarchyImg1, desc: '在整体布局中，通过卡片大小的变化，来区分信息传达的重点' }],
           imgPosition: 'right',
         },
         {
@@ -440,7 +440,7 @@ module.exports = param => {
             { text: '2.弹窗的关闭方式应该是多元的，而不仅仅是右上角的关闭。比如：点击任意弹窗外空间，都可进行关闭。' },
             { text: '3.弹窗里不可有链接，不可进行页面跳转。' }
           ],
-          img: [{ url: feedbackImg2, desc: '点击任意弹窗外空间，都可进行关闭。' }],
+          img: [{ url: feedbackImg2, desc: '点击任意弹窗外空间，都可进行关闭' }],
           imgPosition: 'right',
         },
         {
@@ -600,8 +600,8 @@ module.exports = param => {
             { text: '【减少操作情况】', weight: 600 },
             { text: '减少可能出现的操作情况。' },
             { text: '副选单维持开放的条件：', margin: '10px 0 0 ' },
-            { text: '其一是使用者的游标，必须朝着副选单的方向行进；', size: '12px', color: '#92939e' },
-            { text: '其二是游标速度，必须维持在特定的最低限速之上。；', size: '12px', color: '#92939e' },
+            { text: '其一是使用者的游标，必须朝着副选单的方向行进。', size: '12px', color: '#92939e' },
+            { text: '其二是游标速度，必须维持在特定的最低限速之上。', size: '12px', color: '#92939e' },
           ],
           img: [{ url: accessibilityImg2 }],
           imgPosition: 'right',
@@ -859,7 +859,7 @@ module.exports = param => {
         {
           title: '圆角',
           content: [
-            { text: '基于人类视网膜对大自然形体的认知。巴罗（Barrow）神经学研究所完成的关于“角（corners）“的科学研究发现。”角的突显性感知与角的度数的线性变化，锐角比顿角产生更强的虚幻的突显性”' },
+            { text: '基于人类视网膜对大自然形体的认知。巴罗（Barrow）神经学研究所完成的关于“角（corners）“的科学研究发现。”角的突显性感知与角的度数的线性变化，锐角比顿角产生更强的虚幻的突显性”。' },
             { text: 'Lugia基于人类的生态特征，将圆角的规整运用到模块中。', margin: '20px 0 0' },
             { text: '·4px：通用组件中。', size: '12px', color: '#92939e', margin: '20px 0 0' },
             { text: '·全圆角：特殊组件情况。', size: '12px', color: '#92939e' },
