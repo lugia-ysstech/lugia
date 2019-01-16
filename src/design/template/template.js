@@ -20,7 +20,8 @@ const { Link } = Anchor;
 const Title = styled.div.attrs({
   size:props => (props.level?'24px':'18px'),
   margin:props => (props.level?props.imgPosition?'0 0 26px':'0 0 26px ':'0 0 20px'),
-  padding:props => (props.level?'0':'0 0 0 50px')
+  padding:props => (props.level?'0':'0 0 0 50px'),
+  background:props => (props.level?'transparent':themeColor),
 })` 
   font-size:${props => props.size};
   color:#0f1333;
@@ -28,6 +29,16 @@ const Title = styled.div.attrs({
   font-weight:600;
   // padding:${props => props.padding};
   margin:${props => props.margin};
+  &:before {
+    display:${props => (props.level?'none':'inline-block')} ;
+    content: ' ';
+    width: 4px;
+    height: 18px;
+    background: ${themeColor};
+    border-radius: 2px;
+    margin-right: 8px;
+    vertical-align: bottom;
+  }
 `;
 
 const Titleline = styled.span` 
@@ -359,7 +370,7 @@ export default class Template extends React.Component<defProps, stateProps> {
         data.map((item,index) => {
           let childElement ;
           const {imgPosition,content,img,card,title} = item;
-          const titleElement = item.title && <Title id={'link-'+index} name={'link-'+index} imgPosition={imgPosition} level={level}> {level?'':<Titleline/>} {title} <Desc>{item.desc}</Desc> </Title>;
+          const titleElement = item.title && <Title id={'link-'+index} name={'link-'+index} imgPosition={imgPosition} level={level}>  {title} <Desc>{item.desc}</Desc> </Title>;
           switch (imgPosition) {
             case 'left':
               childElement =
