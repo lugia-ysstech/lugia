@@ -32,8 +32,22 @@ const getEventPropsElement = (arr: Array<string>) => {
 };
 
 const getDefaultValue = (val: any) => {
-  if (val === undefined || val === null) return '——';
+  if (!val || val === 'undefined' || val === 'null') return '——';
   return val.toString();
+};
+
+const getPropsType = (type: any,propsType:Object) => {
+  if(!propsType || !(type in propsType)) return type;
+  let data = propsType[type];
+  let resArray = data;
+  if(!Array.isArray(data)){
+    resArray = [];
+    data= objectToArray(data);
+    data.forEach(item => {
+      resArray.push( item.name +'[' +item.type+']');
+    });
+  }
+  return type + ' (可选值: ' +resArray.toString() +')' ;
 };
 
 class Element extends React.Component<PropsType, StateType> {
@@ -61,14 +75,15 @@ class Element extends React.Component<PropsType, StateType> {
     );
   }
 
-  getProps = (type: string) => {
-    const { dataSource: { [ type ]: value } } = this.state;
+  getProps = (datatype: string) => {
+    const { dataSource: { [ datatype ]: value } } = this.state;
     const propsSource = objectToArray(value);
     if (propsSource.length <= 0) {
       return;
     }
-    const desc = type === 'props'? '属性': '事件';
-    const title = type === 'props' ? ['参数', '描述', '数据类型', '默认值'] : ['事件名称', '描述', '数据类型', '回调参数'];
+    const desc = datatype === 'props'? '属性': '事件';
+    const title = datatype === 'props' ? ['参数', '描述', '数据类型', '默认值'] : ['事件名称', '描述', '数据类型', '回调参数'];
+    const { dataSource: { type : propsType } } = this.state;
     return (
       <React.Fragment>
         <Title>
@@ -84,7 +99,7 @@ class Element extends React.Component<PropsType, StateType> {
             <Tr>
               <Td>{item.name}</Td>
               <Td>{item.desc}</Td>
-              <Td>{item.type || 'Function'}</Td>
+              <Td>{getPropsType(item.type,propsType) || 'Function'}</Td>
               <Td>{item.args ? getEventPropsElement(getEventProps(item.args)) : getDefaultValue(item.defaultValue)}</Td>
             </Tr>
           ))}
