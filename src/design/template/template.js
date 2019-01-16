@@ -39,17 +39,6 @@ const Title = styled.div.attrs({
   }
 `;
 
-const Titleline = styled.span` 
-  display:inline-block;
-  background: ${themeColor};
-  border-radius:2px;
-  margin-right:8px;
-  width:4px;
-  height:18px;
-  vertical-align:top;
-`;
-
-
 const Desc = styled.span`
   color:#92939e;
   font-size:18px; 
@@ -64,7 +53,7 @@ const Content = styled.div`
   line-height:1.8;
   margin:${props => (props.margin || '0')};
   background:${props => (props.bash?'#f8f8f8':'transparent')};
-  padding:${props => (props.bash?'8px 16px':'0 50px 0 0')};
+  padding:${props => (props.bash?'8px 16px':props.level?'0':'0 50px 0 0')};
   border-radius:${props => (props.bash?'4px':'0')};
 `;
 
@@ -252,7 +241,7 @@ const getContentElement = (data:Object,titleElement,imgPosition:string,level?:Bo
     {data.map(item => {
       const {text,size,color,margin,weight,url,bash,javascript} = item;
       return <React.Fragment>
-        <Content size={size} color={color} bash={bash} margin={margin} weight={weight} >
+        <Content size={size} color={color} bash={bash} margin={margin} weight={weight} level={level}>
           {javascript?<Highlight className="language-jsx">
             {text}
           </Highlight>:text}
