@@ -5,10 +5,8 @@
  * @flow
  */
 import * as React from 'react';
-import {Theme ,Anchor,Icon } from '@lugia/lugia-web';
-// import { Widget} from '@lugia/lugia-web/dist/consts/index';
-import Widget from '@lugia/lugia-web/dist/consts/index';
-import {go} from '@lugia/lugiax-router';
+import { Anchor, Icon, Theme } from '@lugia/lugia-web';
+import { go } from '@lugia/lugiax-router';
 import styled from 'styled-components';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 import Highlight from 'react-highlight';

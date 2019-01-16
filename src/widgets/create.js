@@ -146,12 +146,14 @@ async function getRouter (folderNames, cb = item => item.title) {
         return;
       }
     });
+    let index = 35;
     const router = Object.keys(catory2WidgetNames).map(key => {
       const widgets = catory2WidgetNames[ key ];
       const children = widgets && widgets.map(meta => {
         const { widgetName, floderName } = meta;
         return {
           widgetName,
+          sort: index++,
           floderName,
           value: getUrl(widgetName),
           text: cb(meta),
@@ -199,11 +201,12 @@ function getMenuRouter (data) {
   data.forEach(item => {
     const { children } = item;
     children && children.forEach(childs => {
-      const { value, text, floderName } = childs;
+      const { value, text, floderName, sort } = childs;
       res.push(`
       '${value}':
         {
           value: '${value}',
+          sort: ${sort},
           text: '${text}',
           exact: true,
           render: async () => {
@@ -325,9 +328,12 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
   const importInfoAndDemo = getImportInfoAndDemo(demos, config, folderName);
   const indexCode =
     `import  React from 'react';
-        import {Anchor,Grid} from '@lugia/lugia-web';
-        import EditTables from '../../edit-table'; 
-        ${ApiImport}
+     import {Anchor,Grid} from '@lugia/lugia-web';
+     import EditTables from '../../edit-table'; 
+     import FooterNav from '../../footer-nav';
+     import PageNavHoC from '../../common/PageNavHoC';
+     import widgetrouter from '../../router/widgetrouter';
+     ${ApiImport}
         import Demo from '../code-box';
         import Title from '../code-box/Title';
         ${importInfoAndDemo.importInfo} 
@@ -335,14 +341,16 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
         const { Link } = Anchor;
         const { Row,Col } = Grid;
         
-        export default class ComDemo extends React.Component {
+      export default PageNavHoC(widgetrouter, class ComDemo extends React.Component {
             render(){
+                const {next, prev} = this.props;
                 return(
                     <Row>
                         <Col span={20}>
                             <Title title={'${pageTitle}'} subTitle={'${subTitle}'} desc={'${pageDesc}'} />
                             ${importInfoAndDemo.demo}
                             ${ApiTable}
+                            <FooterNav prev={prev} next={next} />
                         </Col>
                         <Col span={4}>
                             <Anchor  slideType="line">
@@ -352,7 +360,7 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
                     </Row>
                 )
             }
-         }   
+         });   
         `;
   return indexCode;
 }
