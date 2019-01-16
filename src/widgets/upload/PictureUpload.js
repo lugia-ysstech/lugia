@@ -12,16 +12,19 @@ class UploadDemo extends React.Component<any, any> {
       inputId: 'upload3',
       size: 'large',
       multiple: true,
-      accept: 'image/*'
+      accept: 'image/*',
+      url: '/upload',
     };
     const defaultProps4 = {
       listType: 'picture',
-      inputId: 'upload4'
+      inputId: 'upload4',
+      url: '/upload',
     };
     const defaultProps5 = {
       listType: 'picture',
       inputId: 'upload5',
-      size: 'small'
+      size: 'small',
+      url: '/upload',
     };
     return (
       <div>
