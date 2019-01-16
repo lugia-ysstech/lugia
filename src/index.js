@@ -26,7 +26,7 @@ const App = createApp(
     }
   }
 );
-console.info(Highlight);
+
 render(() => {
   return <App />;
 }, 'root');

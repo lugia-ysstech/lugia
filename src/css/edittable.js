@@ -8,6 +8,8 @@
  */
 
 import styled from 'styled-components';
+import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
+const { themeColor } = colorsFunc();
 
 export const Table = styled.table`
   border-top: 1px solid #e8e8e8;
@@ -42,7 +44,18 @@ export const Title = styled.div`
   font-size: 18px;
   margin-top: 30px;
   margin-bottom: 20px;
+  &:before {
+    display: inline-block;
+    content: ' ';
+    width: 4px;
+    height: 18px;
+    background: ${themeColor};
+    border-radius: 2px;
+    margin-right: 8px;
+    vertical-align: bottom;
+  }
 `;
+
 // export const EditIcon = styled(Icon)`
 //   // color:${ props => props.mode?'#f8ac30':'#36384c'}
 // `;

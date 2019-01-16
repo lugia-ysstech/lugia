@@ -144,10 +144,12 @@ module.exports = param => {
   const DesignDocument = {
     introduce: {
       title: '',
-      content: [{ text: 'Lugia Design', margin: '0 0 0 30px', size: '24px', weight: 600 }],
-      img: [{ url: introduce }],
-      imgPosition: 'bottom',
+      content: [{ text: 'Lugia Design', margin: '0 0 30px 0', size: '24px', weight: 600 }],
       children: [
+        {
+          img: [{ url: introduce }],
+          imgPosition: 'left',
+        },
         {
           content: [
             { text: 'Lugia Design 是一套适合于金融后台前端应用使用的设计语言。' },
@@ -160,19 +162,19 @@ module.exports = param => {
         {
           title: '视觉交互',
           card: [
-            { text: '对齐原则', desc: 'Alignment', url: Alignment },
-            { text: '重复原则', desc: 'Repeat', url: Repeat },
-            { text: '组织性原则', desc: 'Proximity', url: Proximity },
-            { text: '层级性原则', desc: 'Hierarchy', url: Hierarchy }
+            { text: '对齐原则', desc: 'Alignment', url: Alignment ,link:'/design/alignment'},
+            { text: '重复原则', desc: 'Repeat', url: Repeat,link:'/design/repeat' },
+            { text: '组织性原则', desc: 'Proximity', url: Proximity,link:'/design/proximity' },
+            { text: '层级性原则', desc: 'Hierarchy', url: Hierarchy,link:'/design/hierarchy' }
           ]
         },
         {
           title: '体验交互',
           card: [
-            { text: '反馈原则', desc: 'Feedback', url: Feedback },
-            { text: '引导原则', desc: 'Guide', url: Guide },
-            { text: '易用性原则', desc: 'Accessibility', url: Accessibility },
-            { text: '减少跳转原则', desc: 'Reduce skip', url: Reduceskip }
+            { text: '反馈原则', desc: 'Feedback', url: Feedback ,link:'/design/feedback'},
+            { text: '引导原则', desc: 'Guide', url: Guide ,link:'/design/guide'},
+            { text: '易用性原则', desc: 'Accessibility', url: Accessibility ,link:'/design/accessibility'},
+            { text: '减少跳转原则', desc: 'Reduce skip', url: Reduceskip ,link:'/design/reduceskip'}
           ]
         },
 
@@ -204,7 +206,8 @@ module.exports = param => {
       content: [
         { text: '人类发展历史中，整齐是人类的心理的一种信号。例如生活中：把到处都是的衣服挂好，把书桌整理好，把桌椅对齐摆好。这事我们通过视觉感受反馈给人脑的一种信号，生活如此，荧幕上也亦如此。' },
         {
-          text: '在人类知觉过程中人们往往倾向于使知觉对象的直线继续成为直线，使曲线继续成为曲线。在页面设计中，将原色进行整齐对齐，既符合用户的认知特性，也能引导视觉流向。让用户更流畅地接收信息-摘自：“格式塔学派”中的连续性（law of Contunuity）',
+          text: '在人类知觉过程中人们往往倾向于使知觉对象的直线继续成为直线，使曲线继续成为曲线。在页面设计中，将原件进行整齐对齐，既符合用户的认知特性，也能引导视觉流向。让用户更流畅地接收信息。\n' +
+          '———摘自：“格式塔学派”中的连续性（law of Contunuity）',
           size: '12px',
           color: '#92939e',
           margin: '10px 0 0 '
@@ -238,7 +241,7 @@ module.exports = param => {
             { text: '顶对齐：', size: '12px', color: '#525466', weight: '600', margin: '20px 0 0' },
             { text: '适用于简易表单，让用户快速预览完成。', size: '12px', color: '#ccc' },
             { text: '左对齐：', size: '12px', color: '#525466', weight: '600' },
-            { text: '适用于填写布局复杂、有陌生数据、需谨填写；。', size: '12px', color: '#ccc' },
+            { text: '适用于填写布局复杂、有陌生数据、需谨填写。', size: '12px', color: '#ccc' },
             { text: '右对齐：', size: '12px', color: '#525466', weight: '600' },
             { text: '适用于稍复杂的表单。网页高度有限的情况。', size: '12px', color: '#ccc' },
           ],
@@ -283,7 +286,7 @@ module.exports = param => {
         {
           title: 'ICONS重复',
           content: [{ text: '在相同的数据下，icons元素保持统一。' }],
-          img: [{ url: repeatImg2, desc: '例如：使用搜索icons时，无论当前页面成为几级页面，搜索icons保持统一。' }],
+          img: [{ url: repeatImg2, desc: '例如：使用搜索icons时，无论当前页面成为几级页面，搜索icons保持统一' }],
           imgPosition: 'right',
         },
         {
@@ -294,7 +297,7 @@ module.exports = param => {
         },
         {
           title: '形状重复',
-          content: [{ text: '同级显示区域，线框保持形状重复，以让内容保持统一。' }],
+          content: [{ text: '同级显示区域，保持同级元素位置重复，让用户方便阅读信息。' }],
           img: [{ url: repeatImg4, desc: '形状重复示例' }],
           imgPosition: 'right',
         }
@@ -312,30 +315,30 @@ module.exports = param => {
           content: [{
             text: '【布局】',
             weight: 600
-          }, { text: '纵向上通过8px（小型间距）、16px（中型间距）、24px（大型间距）三种规格来划分信息层次，在三种规格不适用的情况下，可以通过加减8px的倍数来拉开信息层次' }, { text: '横向上为了适用不同尺寸的屏幕，采用栅格布局来排布组件，从而保证布局的灵活性。' }],
+          }, { text: '纵向上通过8px（小型间距）、16px（中型间距）、24px（大型间距）三种规格来划分信息层次，在三种规格不适用的情况下，可以通过加减8px的倍数来拉开信息层次。' }, { text: '横向上为了适用不同尺寸的屏幕，采用栅格布局来排布组件，从而保证布局的灵活性。' }],
           img: [{ url: proximityImg1 }],
           imgPosition: 'right',
         },
         {
-          content: [{ text: '【组件】', weight: 600 }, { text: '在各个组件内部，元素的横纵向间距也应该有所区分' }],
-          img: [{ url: proximityImg2, desc: '复选框排列' }],
+          content: [{ text: '【组件】', weight: 600 }, { text: '在各个组件内部，元素的横纵向间距也应该有所区分。' }],
+          img: [{ url: proximityImg5, desc: '复选框排列' }],
           imgPosition: 'right',
         },
         {
           title: '形式组织',
           content: [{ text: '【形状】', weight: 600 }, { text: '如果其它因素相同，那么相似的物体看起来归属于一组。因此在同一组织的信息中，文字以及图标大小都应统一。' }],
-          img: [{ url: proximityImg3, desc: '形式组织示例' }],
+          img: [{ url: proximityImg2, desc: '形式组织示例' }],
           imgPosition: 'right',
         },
         {
           content: [{ text: '【颜色】', weight: 600 }, { text: '在形状大小相同时，颜色的统一也会影响信息的组织性，并且颜色权重大于形状。' }],
-          img: [{ url: proximityImg4, desc: '颜色组织示例' }],
+          img: [{ url: proximityImg3, desc: '颜色组织示例' }],
           imgPosition: 'right',
         },
         {
           title: '视觉分割',
           content: [{ text: '【元素】', weight: 600 }, { text: '增加元素来拉开信息层次。' }],
-          img: [{ url: proximityImg5, desc: '元素分割示例' }],
+          img: [{ url: proximityImg4, desc: '元素分割示例' }],
           imgPosition: 'right',
         },
         {
@@ -365,7 +368,7 @@ module.exports = param => {
         {
           title: '大小区分',
           content: [{ text: '通过调整区块和元素排版、大小等方式来突出层次感，提高页面的易读性和节奏感。' }],
-          img: [{ url: hierarchyImg1, desc: '在整体布局中，通过卡片大小的变化，来区分信息传达的重点。' }],
+          img: [{ url: hierarchyImg1, desc: '在整体布局中，通过卡片大小的变化，来区分信息传达的重点' }],
           imgPosition: 'right',
         },
         {
@@ -396,7 +399,7 @@ module.exports = param => {
     },
     feedback: {
       title: '反馈',
-      content: [{ text: '在用户与界面发生交互行为时，页面要给予用户即使的反馈。避免让使用者进行没有必要的思考。以及让使用者有明确的方向感。' },
+      content: [{ text: '在用户与界面发生交互行为时，页面要给予用户及时的反馈。避免让使用者进行没有必要的思考，并且让使用者有明确的方向感。' },
         {
           text: '方向感：让用户无须思考就能得到一下信息：“我在页面的什么位置，这个页面上的重要信息是什么。我可以随时找回刚才的数据，我明确下一步要做什么。”',
           size: '12px',
@@ -416,11 +419,16 @@ module.exports = param => {
             { text: '3.每个页面仅使用一种主要按钮。不能同时使用多个，除非有一个很好的理由。比如：强调某一种功能。' },
             { text: '常规状态：设计要点，常规状态下的按钮，务必要看起来也像个按钮。', size: '12px', color: '#92939e', margin: '10px 0 0 ' },
             {
-              text: '焦点状态：提供一个感觉良好的视觉反馈。可以尝试一些视觉愉悦的状态切换动效。按下状态：可以加一些有实质用途的动效，同时达到令人愉悦的效果。',
+              text: '焦点状态：提供一个感觉良好的视觉反馈。可以尝试一些视觉愉悦的状态切换动效。',
               size: '12px',
               color: '#92939e'
             },
-            { text: '不激活状态：分两种：直接隐藏。或以不可点形式展示。各有利弊，按需选择。', size: '12px', color: '#92939e' },
+            {
+              text: '按下状态：可以加一些有实质用途的动效，同时达到令人愉悦的效果。',
+              size: '12px',
+              color: '#92939e'
+            },
+            { text: '不激活状态：分两种直接隐藏，或以不可点形式展示。各有利弊，按需选择。', size: '12px', color: '#92939e' },
           ],
           img: [{ url: feedbackImg1 }],
           imgPosition: 'right',
@@ -428,11 +436,11 @@ module.exports = param => {
         {
           title: '弹窗',
           content: [
-            { text: '1.当用户与软件发生行为时，部分可视区域可用弹窗形式给予反馈，在需要弹窗提示交互行为时候，应在设计上减轻弹窗比例。如果页面内容多到需要滚动，则改为跳转。' },
+            { text: '1.当用户与软件发生行为时，部分可视区域可用弹窗形式给予反馈，在需要弹窗提示交互行为时候，应在设计上减轻弹窗比例。如果页面内容多到需要滚动，则建议改为跳转。' },
             { text: '2.弹窗的关闭方式应该是多元的，而不仅仅是右上角的关闭。比如：点击任意弹窗外空间，都可进行关闭。' },
             { text: '3.弹窗里不可有链接，不可进行页面跳转。' }
           ],
-          img: [{ url: feedbackImg2, desc: '点击任意弹窗外空间，都可进行关闭。' }],
+          img: [{ url: feedbackImg2, desc: '点击任意弹窗外空间，都可进行关闭' }],
           imgPosition: 'right',
         },
         {
@@ -579,7 +587,7 @@ module.exports = param => {
           title: '减少肢体性',
           content: [
             { text: '【热键操作】', weight: 600 },
-            { text: '让使用者以最少的按钮操作，就能快速找到需要的信息' },
+            { text: '让使用者以最少的按钮操作，就能快速找到需要的信息。' },
             { text: '【减少距离】', weight: 600 },
             { text: '尽量把相关的选项放在接近的位置，以减少光标移动的距离。' },
           ],
@@ -592,8 +600,8 @@ module.exports = param => {
             { text: '【减少操作情况】', weight: 600 },
             { text: '减少可能出现的操作情况。' },
             { text: '副选单维持开放的条件：', margin: '10px 0 0 ' },
-            { text: '其一是使用者的游标，必须朝着副选单的方向行进；', size: '12px', color: '#92939e' },
-            { text: '其二是游标速度，必须维持在特定的最低限速之上。；', size: '12px', color: '#92939e' },
+            { text: '其一是使用者的游标，必须朝着副选单的方向行进。', size: '12px', color: '#92939e' },
+            { text: '其二是游标速度，必须维持在特定的最低限速之上。', size: '12px', color: '#92939e' },
           ],
           img: [{ url: accessibilityImg2 }],
           imgPosition: 'right',
@@ -735,7 +743,7 @@ module.exports = param => {
     },
     layout: {
       title: '布局',
-      content: [{ text: '空间布局是体系化视觉设计的起点和传统的平面设计不同之处在于。UI界面的布局空间要基于“动态、体系化”的角度出发展开。' },
+      content: [{ text: '空间布局是体系化视觉设计的起点和传统的平面设计不同之处在于UI界面的布局空间要基于“动态、体系化”的角度出发展开。' },
         { text: 'Lugia受到建筑界大师柯布西耶的模度思想的启发，基于“秩序之美”的原则，探索UI设计中的动态空间秩序，形成了Lugia的界面布局方式，为设计者构筑具备理性之美的布局空间创造了条件。' }
       ],
       desc: 'Layout',
@@ -851,7 +859,7 @@ module.exports = param => {
         {
           title: '圆角',
           content: [
-            { text: '基于人类视网膜对大自然形体的认知。巴罗（Barrow）神经学研究所完成的关于“角（corners）“的科学研究发现。”角的突显性感知与角的度数的线性变化，锐角比顿角产生更强的虚幻的突显性”' },
+            { text: '基于人类视网膜对大自然形体的认知。巴罗（Barrow）神经学研究所完成的关于“角（corners）“的科学研究发现。”角的突显性感知与角的度数的线性变化，锐角比顿角产生更强的虚幻的突显性”。' },
             { text: 'Lugia基于人类的生态特征，将圆角的规整运用到模块中。', margin: '20px 0 0' },
             { text: '·4px：通用组件中。', size: '12px', color: '#92939e', margin: '20px 0 0' },
             { text: '·全圆角：特殊组件情况。', size: '12px', color: '#92939e' },
@@ -1117,11 +1125,11 @@ module.exports = param => {
     lugia:{
       type:'document',
       title: 'Lugia Web of React',
-      content: [{ text: '一套基于 Lugia Design 的高品质 React 组件库，满足金融行业高性能组件的需求，适用于 Web 端。', margin: '0 0 0 30px'}],
+      content: [{ text: '一套基于 Lugia Design 的高品质 React 组件库，满足金融行业高性能组件的需求，适用于 Web 端。', margin: '0 0 30px'}],
       children: [
         {
           img: [{ url: introduce }],
-          imgPosition: 'top',
+          imgPosition: 'left',
 
         },
         {
@@ -1192,7 +1200,7 @@ module.exports = param => {
       type:'document',
       baseUrl:'/component',
       title: '快速上手',
-      content: [{ text: 'Lugia Web 旨在降低开发成本，提升开发质量，为前端开发人员赋能，让用户体验知性。', margin: '0 0 30px 30px' }],
+      content: [{ text: 'Lugia Web 旨在降低开发成本，提升开发质量，为前端开发人员赋能，让用户体验知性。', margin: '0 0 30px' }],
       children: [
         {
           title:'说在前面',
@@ -1300,7 +1308,7 @@ module.exports = param => {
       baseUrl:'/component',
       title: '项目实战',
       content: [{ text: '在复杂的项目中，你可能会用到 Redux 或者 dva 这样的数据流方案，同样，我们也推出了自己的状态管理工具 lugiax 来与 lugia-web 组件库\n' +
-        '搭配使用，同样，我们也推荐你在项目使用 lugiax。',margin: '0 50px 30px 30px' }],
+        '搭配使用，同样，我们也推荐你在项目使用 lugiax。',margin: '0 0 30px' }],
       children: [
         {
           title:'创建一个新应用',
@@ -1715,7 +1723,7 @@ module.exports = param => {
       type:'document',
       baseUrl:'/component',
       title: 'Lugiax',
-      content: [{ text: '一个基于 Redux 的前端状态管理工具。提供简单高效的全局状态管理方案、 基于 async/await 的异步操作、快捷的双向绑定。LugiaX 内置路由库，对 react-router 做了轻量封装，使用起来更加简单明了。',margin: '0 50px 30px 30px' }],
+      content: [{ text: '一个基于 Redux 的前端状态管理工具。提供简单高效的全局状态管理方案、 基于 async/await 的异步操作、快捷的双向绑定。LugiaX 内置路由库，对 react-router 做了轻量封装，使用起来更加简单明了。',margin: '0 0 30px' }],
       children: [
         {
           title:'设计思想',
