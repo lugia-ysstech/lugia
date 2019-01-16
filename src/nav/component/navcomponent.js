@@ -133,7 +133,6 @@ export default class Navcomponent extends React.Component<any, any> {
       },
     };
     const {current} = this.state;
-    console.log('current',current);
     return (
         <Header>
           <Logo src={logo} alt="" onClick={e => this.onTabClick('/home')}/>

@@ -30,7 +30,6 @@ const Block = styled.div`
 `;
 export default () => {
   const rout = createRoute(Router.routerConfig, PageLoading);
-  console.log(rout);
   return (
     <React.Fragment>
       <Container>
