@@ -302,12 +302,25 @@ const reminderData = [
   'lugia-icon-reminder_square_o',
   'lugia-icon-reminder_warning'
 ];
+
+
 const onHandleClick = iconClass => {
+  window.__iconClass__ = iconClass;
+  document.execCommand('copy');
   notification.open({
     icon: 'lugia-icon-reminder_check_circle',
-    title: `已复制 ${iconClass}`,
+    title: `已复制 ${iconClass}`
   });
 };
+
+document.addEventListener('copy', e => {
+  const cd = e.clipboardData;
+  cd.setData('text/plain', window.__iconClass__);
+  delete window.__iconClass__;
+  e.preventDefault();
+  return false;
+});
+
 export default class BaseIcon extends React.Component<any, any> {
   getIcon = iconClassArray => {
     let iconClass = '';
@@ -316,7 +329,7 @@ export default class BaseIcon extends React.Component<any, any> {
       return iconClass ? (
         <Icon
           iconClass={iconClass}
-          onClick={ () => {
+          onClick={() => {
             onHandleClick(v);
           }}
         />
@@ -344,7 +357,7 @@ export default class BaseIcon extends React.Component<any, any> {
         <h2>提示图标</h2>
         {this.getIcon(reminderData)}
         <h2>品牌图标</h2>
-        {this.getIcon(reminderData)}
+        {this.getIcon(logoData)}
       </Theme>
     );
   }
