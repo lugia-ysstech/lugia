@@ -48,25 +48,30 @@ const routerConfig = {
     render: async () => import('../design/page'),
     value: '/component/lugia',
     text: 'Lugia Design of React',
+    sort: 31,
   },
   '/component/quick-start':{
     exact: true,
     render: async () => import('../design/page'),
     value: '/component/quick-start',
     text: '快速上手',
+    sort: 32,
   },
   '/component/start-project':{
     exact: true,
     render: async () => import('../design/page'),
     value: '/component/start-project',
     text: '项目实战',
+    sort: 33,
   },
   '/component/lugiax': {
     exact: true,
     render: async () => import('../design/page'),
     value: '/component/lugiax',
-    text: 'Lugia Design of React',
+    text: 'lugiax使用',
+    sort: 34,
   },
+  ...widgetrouter,
   '/component/404': {
     exact: true,
     render: async () => import('../access/NotAccess'),
@@ -74,7 +79,6 @@ const routerConfig = {
     isHidden: true,
     text: '404',
   },
-  ...widgetrouter,
   NotFound: {
     isHidden: true,
     render: async () => {
@@ -92,7 +96,7 @@ const menuConfig = [
   { value: '/component/quick-start', text: '快速上手' },
   { value: '/component/start-project', text: '项目实战' },
   { value: '/component/lugiax', text: 'lugiax使用' },
-  { value: '在Lugia-mega中使用', text: '在Lugia-mega中使用' },
+  // { value: '在Lugia-mega中使用', text: '在Lugia-mega中使用' },
   {
     value: 'Components',
     text: 'Components',
@@ -106,11 +110,12 @@ const getDesignRoute = data => {
   data.forEach( item => {
     const {children} = item;
     children.forEach( items => {
-      const {value,text} = items;
+      const {value,text,sort} = items;
       rout[value] = {
         render: () => import('../design/page'),
         value,
         text,
+        sort,
       };
 
     });
@@ -127,10 +132,12 @@ const designConfig = [
       {
         value: '/design/introduce',
         text: '简介',
+        sort: 1,
       },
       {
         value: '/design/core',
         text: '设计核心观',
+        sort: 2,
       },
     ],
   },
@@ -141,34 +148,42 @@ const designConfig = [
       {
         value: '/design/alignment',
         text: '对齐',
+        sort: 3,
       },
       {
         value: '/design/repeat',
         text: '重复',
+        sort: 4,
       },
       {
         value: '/design/proximity',
         text: '组织性',
+        sort: 5,
       },
       {
         value: '/design/hierarchy',
         text: '层级性',
+        sort: 6,
       },
       {
         value: '/design/feedback',
         text: '反馈',
+        sort: 7,
       },
       {
         value: '/design/guide',
         text: '引导',
+        sort: 8,
       },
       {
         value: '/design/accessibility',
         text: '易用性',
+        sort: 9,
       },
       {
         value: '/design/reduceskip',
         text: '减少跳转',
+        sort: 10,
       },
     ],
   },
@@ -179,22 +194,27 @@ const designConfig = [
       {
         value: '/design/layout',
         text: '布局',
+        sort: 11,
       },
       {
         value: '/design/pattern',
         text: '样式',
+        sort: 12,
       },
       {
         value: '/design/color',
         text: '色彩',
+        sort: 13,
       },
       {
         value: '/design/font',
         text: '字体',
+        sort: 14,
       },
       {
         value: '/design/icon',
         text: '图标',
+        sort: 15,
       },
 
     ],
