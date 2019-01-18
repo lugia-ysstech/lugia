@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoute } from '@lugia/lugiax-router';
 import '@lugia/lugia-web/dist/css/global.css';
-import { Grid, Layout, Theme } from '@lugia/lugia-web';
+import { Grid, Layout, Theme,BackTop } from '@lugia/lugia-web';
 import Router from '../router';
 import Asides from '../menu';
 import styled from 'styled-components';
@@ -46,6 +46,7 @@ export default () => {
             </Col>
             <Col span={18} xl={{ span: 20 }}  xxl={{ span: 19 }}>
               <InnerContainer>{rout}</InnerContainer>
+              <BackTop/>
             </Col>
           </Row>
         </Col>
