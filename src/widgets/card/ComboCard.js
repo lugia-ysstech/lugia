@@ -46,8 +46,8 @@ class AmountCard extends React.Component<Object, Object> {
       <CardContainer>
         <Price>{'价格'}</Price>
         <PriceNum>
-          <PriceNum style={{ fontSize: 32 }}>{int}</PriceNum>
-          <PriceNum style={{ fontSize: 18 }}>{decimals}</PriceNum>
+          <PriceNum style={{ fontSize: 60 }}>{int}</PriceNum>
+          <PriceNum style={{ fontSize: 45 }}>{decimals}</PriceNum>
         </PriceNum>
         <Buy>{'购买'}</Buy>
       </CardContainer>
