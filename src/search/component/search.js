@@ -76,6 +76,30 @@ class SearchIcon extends React.Component<any> {
 }
 
 export default class Navcomponent extends React.Component<any, any> {
+  input: any;
+  constructor(props: Object) {
+    super(props);
+    this.input = React.createRef();
+  }
+  componentDidMount () {
+    window.addEventListener('keydown', event => {
+      //记得remove addEventListener
+      // console.log(this.input,this.input.current.getThemeTarget().input);
+      console.log('index');
+      const target = this.input.current && this.input.current.getThemeTarget().input;
+      // console.log('document.hasFocus()',target.hasFocus());
+      console.log(document.activeElement === target);
+      if(!(document.activeElement === target)){
+        target && target.focus();
+      }
+      // target && target.focus();
+      // console.log('keydown',event,event.key);
+      // this.input
+
+      // this.fetchRequest(event.key);
+    });
+
+  }
 
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
     const {searchInfo,result} = defProps;
@@ -114,7 +138,12 @@ export default class Navcomponent extends React.Component<any, any> {
             action={['focus']}
             popup={poup}
           >
-            <Input prefix={<SearchIcon />} onChange={this.handleInputChange} placeholder="在lugia中搜索" value={searchInfo}   />
+            <Input
+              ref={this.input}
+              prefix={<SearchIcon />}
+              onChange={this.handleInputChange}
+              placeholder="在lugia中搜索"
+              value={searchInfo}   />
           </Trigger>
 
         </Theme>
@@ -185,6 +214,8 @@ export default class Navcomponent extends React.Component<any, any> {
     console.log(res);
     go({ url: res });
   };
+  doSearch = () => {
 
+  };
 
 }

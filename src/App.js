@@ -4,7 +4,7 @@ import {Grid, Layout, Theme} from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import PageLoading from './pageloading';
 import Widgets from './widgets';
-
+import Mega from './mega';
 
 export const designRouter = {
   '/': {
@@ -32,6 +32,12 @@ export const designRouter = {
     text:'lugia-web',
     url:'/component',
     component: Widgets,
+  },
+  '/lugia-mega':{
+    value:'lugia-mega',
+    text:'lugia-mega',
+    url:'/lugia-mega',
+    component: Mega,
   },
   NotFound:{
     render: async () => {

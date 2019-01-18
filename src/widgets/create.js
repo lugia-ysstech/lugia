@@ -347,10 +347,12 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
                 return(
                     <Row>
                         <Col span={20}>
-                            <Title title={'${pageTitle}'} subTitle={'${subTitle}'} desc={'${pageDesc}'} />
-                            ${importInfoAndDemo.demo}
-                            ${ApiTable}
-                            <FooterNav prev={prev} next={next} />
+                          <div style={{paddingRight: '50px'}}>
+                              <Title title={'${pageTitle}'} subTitle={'${subTitle}'} desc={'${pageDesc}'} />
+                              ${importInfoAndDemo.demo}
+                              ${ApiTable}
+                              <FooterNav prev={prev} next={next} />
+                            </div>
                         </Col>
                         <Col span={4}>
                             <Anchor  slideType="line">
