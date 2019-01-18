@@ -18,10 +18,12 @@ import  React from 'react';
                 return(
                     <Row>
                         <Col span={20}>
-                            <Title title={'加载中'} subTitle={'Loading'} desc={'用于页面和区块的加载中状态'} />
-                            <Demo title={'基本'} titleID={'loading-0'} code={<code>{ 'import React from \'react\';\nimport { Loading } from \'@lugia/lugia-web\';\nexport default class BaseLoad extends React.Component {\n  render() {\n    return <Loading/>;\n  }\n}\n'}</code>} desc={'加载中基本用法'}  demo={<BaseLoad />}></Demo><Demo title={'放大'} titleID={'loading-1'} code={<code>{ 'import React from \'react\';\nimport { Loading } from \'@lugia/lugia-web\';\nexport default class ScaleLoad extends React.Component {\n  render() {\n    return <Loading scale />;\n  }\n}\n'}</code>} desc={'scale boolean,用来设置放大效果'}  demo={<ScaleLoad />}></Demo>
-                            <EditTables dataSource={LOADING} />
-                            <FooterNav prev={prev} next={next} />
+                          <div style={{paddingRight: '50px'}}>
+                              <Title title={'加载中'} subTitle={'Loading'} desc={'用于页面和区块的加载中状态'} />
+                              <Demo title={'基本'} titleID={'loading-0'} code={<code>{ 'import React from \'react\';\nimport { Loading } from \'@lugia/lugia-web\';\nexport default class BaseLoad extends React.Component {\n  render() {\n    return <Loading/>;\n  }\n}\n'}</code>} desc={'加载中基本用法'}  demo={<BaseLoad />}></Demo><Demo title={'放大'} titleID={'loading-1'} code={<code>{ 'import React from \'react\';\nimport { Loading } from \'@lugia/lugia-web\';\nexport default class ScaleLoad extends React.Component {\n  render() {\n    return <Loading scale />;\n  }\n}\n'}</code>} desc={'scale boolean,用来设置放大效果'}  demo={<ScaleLoad />}></Demo>
+                              <EditTables dataSource={LOADING} />
+                              <FooterNav prev={prev} next={next} />
+                            </div>
                         </Col>
                         <Col span={4}>
                             <Anchor  slideType="line">
