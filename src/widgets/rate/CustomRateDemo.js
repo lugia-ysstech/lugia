@@ -1,17 +1,6 @@
 import React from 'react';
 import { Rate, Theme } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
-import styled from 'styled-components';
-const TitleBox = styled.div`
-  position: relative;
-  padding: 10px;
-  font-size: 18px;
-  border-top: 1px solid #ccc;
-`;
-const TextBox = styled.span`
-  font-size: 14px;
-  color: #333;
-`;
 export default class RateDemo extends React.Component<any, any> {
   constructor(props: Object) {
     super(props);
@@ -29,11 +18,9 @@ export default class RateDemo extends React.Component<any, any> {
       allowHalf: true,
       classify: false,
       onClick: (e: Object, x: any) => {
-        console.log('onClick defaultProps2', x);
         this.setStateValue('defaultProps2', x.currentValue);
       },
       onChange: (e: Object, x: any) => {
-        console.log('onChange defaultProps2', x);
         this.setStateValue('defaultProps2', x.currentValue);
       }
     };
@@ -70,11 +57,9 @@ export default class RateDemo extends React.Component<any, any> {
         amazed: 'lugia-icon-financial_smile'
       },
       onClick: (e: Object, x: any) => {
-        console.log('onClick defaultProps5', x);
         this.setStateValue('defaultProps5', x.currentValue);
       },
       onChange: (e: Object, x: any) => {
-        console.log('onChange defaultProps5', x);
         this.setStateValue('defaultProps5', x.currentValue);
       }
     };
@@ -91,18 +76,15 @@ export default class RateDemo extends React.Component<any, any> {
         amazed: 'lugia-icon-financial_smile'
       },
       onClick: (e: Object, x: any) => {
-        console.log('onClick defaultProps6', x);
         this.setStateValue('defaultProps6', x.currentValue);
       },
       onChange: (e: Object, x: any) => {
-        console.log('onChange defaultProps6', x);
         this.setStateValue('defaultProps6', x.currentValue);
       }
     };
     return (
       <div>
         <Theme config={config}>
-          <TitleBox>自定义图标：</TitleBox>
           <Rate {...defaultProps2} character="好" />
           <Rate {...defaultProps4} />
           <Rate {...defaultProps5} />

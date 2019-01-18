@@ -7,7 +7,10 @@ import {
   Switch
 } from '@lugia/lugia-web';
 import styled from 'styled-components';
-
+const PopWrapper = styled.div`
+  margin-right: 10px;
+  display:inline-block;
+`;
 const Direction = styled(Button)``;
 export default class CoditionPopconfirm extends React.Component<any, any> {
   state = {
@@ -44,8 +47,10 @@ export default class CoditionPopconfirm extends React.Component<any, any> {
 
   render() {
     return (
-      <div style={{ margin: 20 }}>
-        <Switch defaultChecked onChange={this.changeCondition} />
+      <div >
+        <PopWrapper>
+        <Switch defaultChecked onChange={this.changeCondition} /></PopWrapper>
+        <PopWrapper> 
         <Popconfirm
           placement="top"
           title="确定要删除吗?"
@@ -57,7 +62,7 @@ export default class CoditionPopconfirm extends React.Component<any, any> {
           cancelText="取消"
         >
           <Direction type="primary">删除任务</Direction>
-        </Popconfirm>
+        </Popconfirm></PopWrapper>
       </div>
     );
   }

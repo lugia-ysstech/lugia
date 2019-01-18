@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Theme } from '@lugia/lugia-web';
+import { Icon, Theme, notification } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
 const directionData = [
   'lugia-icon-direction_arrow_down',
@@ -302,14 +302,37 @@ const reminderData = [
   'lugia-icon-reminder_square_o',
   'lugia-icon-reminder_warning'
 ];
-const onClick = () => {};
+
+
+const onHandleClick = iconClass => {
+  window.__iconClass__ = iconClass;
+  document.execCommand('copy');
+  notification.open({
+    icon: 'lugia-icon-reminder_check_circle',
+    title: `已复制 ${iconClass}`
+  });
+};
+
+document.addEventListener('copy', e => {
+  const cd = e.clipboardData;
+  cd.setData('text/plain', window.__iconClass__);
+  delete window.__iconClass__;
+  e.preventDefault();
+  return false;
+});
+
 export default class BaseIcon extends React.Component<any, any> {
   getIcon = iconClassArray => {
     let iconClass = '';
     const iconArray = iconClassArray.map(v => {
       iconClass = v;
       return iconClass ? (
-        <Icon iconClass={iconClass} onClick={onClick} />
+        <Icon
+          iconClass={iconClass}
+          onClick={() => {
+            onHandleClick(v);
+          }}
+        />
       ) : null;
     });
     return iconArray;
@@ -328,13 +351,13 @@ export default class BaseIcon extends React.Component<any, any> {
     return (
       <Theme config={view}>
         <h2>方向图标</h2>
-          {this.getIcon(directionData)}
+        {this.getIcon(directionData)}
         <h2>指示图标</h2>
-          {this.getIcon(finacialData)}
+        {this.getIcon(finacialData)}
         <h2>提示图标</h2>
-          {this.getIcon(reminderData)}
+        {this.getIcon(reminderData)}
         <h2>品牌图标</h2>
-          {this.getIcon(reminderData)}
+        {this.getIcon(logoData)}
       </Theme>
     );
   }

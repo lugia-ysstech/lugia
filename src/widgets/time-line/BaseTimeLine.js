@@ -1,6 +1,7 @@
 import React from 'react';
 import { TimeLine, Theme, Button, Icon, tabs } from '@lugia/lugia-web';
 import styled from 'styled-components';
+import Widget from '@lugia/lugia-web/dist/consts';
 const TimeLineItem = TimeLine.TimeLineItem;
 const Wrapper = styled.div`
   display: inline-block;
@@ -8,15 +9,9 @@ const Wrapper = styled.div`
 export default class BaseTimeLine extends React.Component<any, any> {
   render() {
     const view = {
-      long: {
-        height: 100,
-        width:200
+      [Widget.TimeLine]: {
+        height: 400,
       },
-      short: {
-        height: 20,
-        width:200
-      }
-      // viewClass={'short'}
     };
     return (
       <Theme config={view}>
