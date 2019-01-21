@@ -3,12 +3,10 @@ import { Slider } from '@lugia/lugia-web';
 import styled from 'styled-components';
 export const DemoList=styled.span`
   display:inline-block;
-  padding:0 100px;
+  padding-right:30px;
 `;
 export default class IconSlider extends React.Component {
   render() {
-    onchange = v => {
-    };
     return (
       <React.Fragment>
         <DemoList>
