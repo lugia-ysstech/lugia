@@ -12,6 +12,7 @@ import styled from 'styled-components';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 
 const Container = styled.div`
+  z-index: 9999999999999999;
   width:300px;
 `;
 
@@ -125,6 +126,7 @@ export default class Navcomponent extends React.Component<any, any> {
       },
       [Widget.Trigger]: {
         width:500,
+        zIndex: 9999999,
       },
 
     };
