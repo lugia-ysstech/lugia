@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const Title = styled.p`
   font-size: 24px;
-  color: #0f1333,
-  font-weight: 500;
-  margin-bottom: 26px;
+  color: #0f1333;
+  font-weight: 600;
+  margin-bottom: 12px;
 `;
 const SubTitle = styled.p`
   font-size: 18px;
@@ -14,9 +14,9 @@ const SubTitle = styled.p`
   display: inline-block;
 `;
 const Desc = styled.p`
-  font-size: 18px;
-  color: #a1a3b2;
-  margin-bottom: 30px;
+  font-size: 14px;
+  color: #525466;
+  margin-bottom: 40px;
 `;
 
 export default class TitleCom extends React.Component {

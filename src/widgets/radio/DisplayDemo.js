@@ -9,8 +9,17 @@ const data = [
 ];
 
 export default class RadioGroupDemo extends React.Component {
+    constructor(){
+        super();
+        this.state ={
+            value: 'apples'
+        };
+    }
     onChange = obj => {
         console.info('obj-demo', obj);
+        this.setState({
+          value: obj.newValue
+        });
     };
     render() {
         const radioView = {
@@ -25,7 +34,7 @@ export default class RadioGroupDemo extends React.Component {
                     onChange={this.onChange}
                     displayFiled="text"
                     valueField="value"
-                    value="apples"
+                    value={this.state.value}
                     styles="vertical"
                     displayValue="DisplayValue"
                     data={data}

@@ -3,7 +3,7 @@ import {Layout} from '@lugia/lugia-web';
 
 const { Header, Content, Footer, Aside } = Layout;
 const header = (
-    <div style={{ height: '60px', lineHeight: '60px', textAlign: 'center', background: '#381be5' }}>
+    <div style={{ height: '60px', lineHeight: '60px', textAlign: 'center', background: '#F0F2FF' }}>
         Header
     </div>
 );
@@ -13,7 +13,7 @@ const content = (
             height: '200px',
             lineHeight: '200px',
             textAlign: 'center',
-            background: '#0F89FF',
+            background: '#B7C0FF',
         }}
     >
         Content
@@ -25,7 +25,7 @@ const footer = (
             height: '60px',
             lineHeight: '60px',
             textAlign: 'center',
-            background: '#0f13ff',
+            background: '#E6E9FF',
         }}
     >
         Footer
