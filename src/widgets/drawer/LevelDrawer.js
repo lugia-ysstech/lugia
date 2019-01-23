@@ -31,6 +31,7 @@ export default class DrawerDemo extends React.Component {
                     <p>First contents...</p>
                     <p>First contents...</p>
                     <p>First contents...</p>
+                    <br/>
                     <Button type="primary" onClick={this.openDrawer(2)}>
                         Second Drawer
                     </Button>
@@ -38,6 +39,7 @@ export default class DrawerDemo extends React.Component {
                         <p>Second contents...</p>
                         <p>Second contents...</p>
                         <p>Second contents...</p>
+                        <br/>
                         <Button type="primary" onClick={this.openDrawer(3)}>
                             Three Drawer
                         </Button>

@@ -1,9 +1,10 @@
 import React from 'react';
-import {Layout} from '@lugia/lugia-web';
+import {Layout,Theme} from '@lugia/lugia-web';
+import Widget from '@lugia/lugia-web/dist/consts/index';
 
 const { Header, Content, Footer, Aside } = Layout;
 const header = (
-    <div style={{ height: '60px', lineHeight: '60px', textAlign: 'center', background: '#381be5' }}>
+    <div style={{ height: '60px', lineHeight: '60px', textAlign: 'center', background: '#F0F2FF' }}>
         Header
     </div>
 );
@@ -13,7 +14,7 @@ const content = (
             height: '200px',
             lineHeight: '200px',
             textAlign: 'center',
-            background: '#0F89FF',
+            background: '#B7C0FF',
         }}
     >
         Content
@@ -25,7 +26,7 @@ const footer = (
             height: '60px',
             lineHeight: '60px',
             textAlign: 'center',
-            background: '#0f13ff',
+            background: '#E6E9FF',
         }}
     >
         Footer
@@ -36,9 +37,11 @@ export default class LayoutDemo extends React.Component {
     render() {
         return (
             <Layout direction="row">
+              <Theme config={{ [Widget.Aside]: { backgroundColor: '#CCD4FF' } }}>
                 <Aside collapsible breakpoint={'lg'}>
                     <div>Aside</div>
                 </Aside>
+              </Theme>
                 <Layout>
                     <Header>{header}</Header>
                     <Content>{content}</Content>

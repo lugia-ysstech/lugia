@@ -11,7 +11,7 @@ import Highlight from 'react-highlight';
 
 const Wrap = styled.div`
   box-sizing: border-box;
-  margin-bottom: 30px
+  margin-bottom: 40px
 `;
 const Title = styled.div`
   font-size: 18px;
@@ -25,7 +25,7 @@ const Title = styled.div`
     content: ' ';
     width: 4px;
     height: 18px;
-    background: blue;
+    background: #4d63ff;
     border-radius: 2px;
     margin-right: 8px;
     vertical-align: bottom;
@@ -33,12 +33,16 @@ const Title = styled.div`
 `;
 const Desc = styled.div`
   font-size: 14px;
-  margin: 20px 0;
-  color: #36384c;
+  margin: 12px 0 20px 0;
+  color: #525466;
   box-sizing: border-box;
+  line-height: 1.5
 `;
 const DemoBox = styled.div`
   padding: 20px;
+
+`;
+const BoxWrap = styled.div`
   box-shadow: 0px 0px 6px rgba(102, 102, 102, 0.2);
   background: #fff;
   box-sizing: border-box;
@@ -48,11 +52,11 @@ const DemoBox = styled.div`
   }
 `;
 const CodeBox = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   box-sizing: border-box;
   display: ${props => (props.visible ? 'block' : 'none')};
   & > pre > code {
-    line-height: 1.5;
+    line-height: 1.2;
   }
 `;
 const VisibleCode = styled.div`
@@ -93,7 +97,10 @@ export default class extends React.Component {
       <Wrap>
         <Title id={titleID} name={titleID}>{title}</Title>
         <Desc>{desc}</Desc>
-        <DemoBox>{demo}</DemoBox>
+        <BoxWrap>
+        <DemoBox>
+          <div>{demo}</div>
+        </DemoBox>
 
         {visible ? <CodeBox visible={true}>
           <Highlight className="language-jsx">
@@ -111,6 +118,7 @@ export default class extends React.Component {
           />
           {textVisible ? (visible ? '隐藏代码' : '显示代码') : ''}
         </VisibleCode>
+        </BoxWrap>
       </Wrap>
     );
   }

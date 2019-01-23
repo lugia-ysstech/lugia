@@ -5,8 +5,8 @@ export default class NotificationDemo extends React.Component {
     placementOpen = placement => {
         notification.open({
             icon: 'lugia-icon-reminder_check_circle',
-            title: '今天天气很好！',
-            description: '因为今天的太阳很大。',
+            title: '恭喜！成功完成任务！',
+            description: '您今天的任务圆满完成，再接再厉。',
             placement,
         });
     };

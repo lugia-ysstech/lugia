@@ -23,6 +23,10 @@ module.exports =  {
         title: '垂直的CheckBox组',
         desc: '垂直的CheckBox组'
     },
+    CheckAllDemo: {
+        title: '全选',
+        desc: '实现全选效果'
+    },
     SomePropsDemo: {
         title: '设置指定字段',
         desc: '设置CheckBox的展示字段，设置CheckBox组value备用选项，value值不存在展示备用项'
