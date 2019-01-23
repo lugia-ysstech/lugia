@@ -1,22 +1,22 @@
 module.exports =  {
     BasicDemo: {
-        desc: '布局',
+        desc: '上中下布局',
         title: '通用布局'
     },
     LeftAsideDemo:{
-        title: '布局',
-        desc: '通用布局'
+        title: '顶部-侧边布局',
+        desc: '顶部-左侧边布局'
     },
     RightAsideDemo:{
         title: '布局',
-        desc: '通用布局'
+        desc: '顶部-右侧边布局'
     },
     AsideLeftDemo:{
-        title: '布局',
-        desc: '通用布局'
+        title: '左侧边布局',
+        desc: '侧边布局'
     },
     AsideRightDemo:{
-        title: '布局',
-        desc: '通用布局'
+        title: '右侧边布局',
+        desc: '侧边布局'
     }
 };
