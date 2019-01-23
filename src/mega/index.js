@@ -10,9 +10,12 @@ import {go} from '@lugia/lugiax-router';
 import { Grid , Icon} from '@lugia/lugia-web';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 
+import mac from '../../public/mega/mac.png';
+import windows from '../../public/mega/windows.png';
+import mega from '../../public/mega/2.png';
+
 const { themeColor } = colorsFunc();
 const { Row, Col } = Grid;
-
 const Block= styled.div`
 	width:100%;
   min-height:20px;
@@ -90,7 +93,7 @@ const Mac = styled.a`
 const MacLogo= styled.div`
   height:20px;
 	width:20px;
-	background:url(../../public/mega/mac.png) no-repeat;
+	background:url(${mac}) no-repeat;
 	display:inline-block;
 	vertical-align:middle;
 	margin-right:10px;
@@ -117,7 +120,7 @@ const Window= styled.a`
 const WindowLogo= styled.div`
   height:15px;
 	width:15px;
-	background:url(../../public/mega/windows.png) no-repeat;
+	background:url(${windows}) no-repeat;
 	display:inline-block;
 	vertical-align:middle;
 	margin-right:10px;
@@ -134,7 +137,7 @@ const Span= styled.span`
 const Foot= styled.div`
   height:280px;
 	width:100%;
-	background:url(../../public/mega/2.png) no-repeat ;
+	background:url(${mega}) no-repeat ;
 	background-size:100% 100%;  
 	position:absolute;
 	bottom:0;
