@@ -82,25 +82,6 @@ export default class Navcomponent extends React.Component<any, any> {
     super(props);
     this.input = React.createRef();
   }
-  componentDidMount () {
-    window.addEventListener('keydown', event => {
-      //记得remove addEventListener
-      // console.log(this.input,this.input.current.getThemeTarget().input);
-      console.log('index');
-      const target = this.input.current && this.input.current.getThemeTarget().input;
-      // console.log('document.hasFocus()',target.hasFocus());
-      console.log(document.activeElement === target);
-      if(!(document.activeElement === target)){
-        target && target.focus();
-      }
-      // target && target.focus();
-      // console.log('keydown',event,event.key);
-      // this.input
-
-      // this.fetchRequest(event.key);
-    });
-
-  }
 
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
     const {searchInfo,result} = defProps;
