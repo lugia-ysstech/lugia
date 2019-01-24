@@ -11,7 +11,8 @@ export default class BaseIcon extends React.Component<any, any> {
           right: 10,
           top: 10,
           bottom: 0
-        }
+        },
+        fontSize:20
       }
     };
     return (

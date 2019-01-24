@@ -344,9 +344,9 @@ export default class BaseIcon extends React.Component<any, any> {
           left: 10,
           right: 10,
           top: 10,
-          bottom: 0,
-          fontSize: 50,
-        }
+          bottom: 0
+        },
+        fontSize:20
       }
     };
     return (
