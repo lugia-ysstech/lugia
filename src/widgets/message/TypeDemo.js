@@ -8,13 +8,13 @@ export default class MessageDemo extends React.Component {
     render() {
         return (
             <div>
-                <Button onClick={this.showMessage('success')}>成功提示</Button>
+                <Button type="success" onClick={this.showMessage('success')}>成功提示</Button>
                 <br />
                 <br />
-                <Button onClick={this.showMessage('error')}>错误提示</Button>
+                <Button type="danger" onClick={this.showMessage('error')}>错误提示</Button>
                 <br />
                 <br />
-                <Button onClick={this.showMessage('warning')}>警告提示</Button>
+                <Button type="warning" onClick={this.showMessage('warning')}>警告提示</Button>
                 <br />
                 <br />
                 <Button onClick={this.showMessage('loading')}>加载提示</Button>

@@ -7,7 +7,7 @@ export default class MessageDemo extends React.Component {
     };
     render() {
         return (
-            <Button onClick={this.showMessage}>普通提示</Button>
+            <Button type="primary" onClick={this.showMessage}>普通提示</Button>
         );
     }
 }
