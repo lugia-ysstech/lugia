@@ -3,6 +3,10 @@ module.exports = {
     title: '基本',
     desc: '滑动输入条基本用法'
   },
+  InputSlider:{
+    title: '带输入框的Slider',
+    desc: '配合输入框使用'
+  },
   IconSlider: {
     title: '带有Icon风格的Slider',
     desc: '可以配置图标'
