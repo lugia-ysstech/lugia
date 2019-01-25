@@ -19,7 +19,7 @@ export default class BaseLoad extends React.Component {
   render() {
     return(
       <React.Fragment>
-        <Loading size={'small'} delay={3} loading={this.state.loading}>
+        <Loading size={'small'} delay={0.3} loading={this.state.loading}>
             <Alert
               message="Lugia 的诞生就是要树立金融行业大前端解决方案的标杆。
             我们提供的不仅仅是设计规范、开源组件库、可视化开发套件......而是将设计、开发、工程，
