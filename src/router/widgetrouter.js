@@ -9,140 +9,60 @@ export default {
             return import('../widgets/affix');
           },
         },
+      '/component/navmenu':
+        {
+          value: '/component/navmenu',
+          sort: 36,
+          text: 'NavMenu 导航菜单',
+          exact: true,
+          render: async () => {
+            return import('../widgets/navmenu');
+          },
+        },
+      '/component/pagination':
+        {
+          value: '/component/pagination',
+          sort: 37,
+          text: 'Pagination 分页',
+          exact: true,
+          render: async () => {
+            return import('../widgets/pagination');
+          },
+        },
+      '/component/steps':
+        {
+          value: '/component/steps',
+          sort: 38,
+          text: 'Steps 步骤条',
+          exact: true,
+          render: async () => {
+            return import('../widgets/steps');
+          },
+        },
       '/component/alert':
         {
           value: '/component/alert',
-          sort: 36,
+          sort: 39,
           text: 'Alert 警告提示',
           exact: true,
           render: async () => {
             return import('../widgets/alert');
           },
         },
-      '/component/amountinput':
-        {
-          value: '/component/amountinput',
-          sort: 37,
-          text: 'AmountInput 金额输入框',
-          exact: true,
-          render: async () => {
-            return import('../widgets/amount-input');
-          },
-        },
-      '/component/anchor':
-        {
-          value: '/component/anchor',
-          sort: 38,
-          text: 'Anchor 锚点',
-          exact: true,
-          render: async () => {
-            return import('../widgets/anchor');
-          },
-        },
-      '/component/autocomplete':
-        {
-          value: '/component/autocomplete',
-          sort: 39,
-          text: 'AutoComplete 自动完成',
-          exact: true,
-          render: async () => {
-            return import('../widgets/auto-complete');
-          },
-        },
-      '/component/backtop':
-        {
-          value: '/component/backtop',
-          sort: 40,
-          text: 'BackTop 回到顶部',
-          exact: true,
-          render: async () => {
-            return import('../widgets/back-top');
-          },
-        },
-      '/component/cascader':
-        {
-          value: '/component/cascader',
-          sort: 41,
-          text: 'Cascader 级联选择',
-          exact: true,
-          render: async () => {
-            return import('../widgets/cascader');
-          },
-        },
-      '/component/checkbox':
-        {
-          value: '/component/checkbox',
-          sort: 42,
-          text: 'CheckBox 多选框',
-          exact: true,
-          render: async () => {
-            return import('../widgets/checkbox');
-          },
-        },
-      '/component/collapse':
-        {
-          value: '/component/collapse',
-          sort: 43,
-          text: 'Collapse 折叠面板',
-          exact: true,
-          render: async () => {
-            return import('../widgets/collapse');
-          },
-        },
-      '/component/datepicker':
-        {
-          value: '/component/datepicker',
-          sort: 44,
-          text: 'DatePicker 日期选择器',
-          exact: true,
-          render: async () => {
-            return import('../widgets/date-picker');
-          },
-        },
       '/component/drawer':
         {
           value: '/component/drawer',
-          sort: 45,
+          sort: 40,
           text: 'Drawer 抽屉',
           exact: true,
           render: async () => {
             return import('../widgets/drawer');
           },
         },
-      '/component/dropmenu':
-        {
-          value: '/component/dropmenu',
-          sort: 46,
-          text: 'Dropmenu 下拉菜单',
-          exact: true,
-          render: async () => {
-            return import('../widgets/dropmenu');
-          },
-        },
-      '/component/input':
-        {
-          value: '/component/input',
-          sort: 47,
-          text: 'Input 文本输入框',
-          exact: true,
-          render: async () => {
-            return import('../widgets/input');
-          },
-        },
-      '/component/menu':
-        {
-          value: '/component/menu',
-          sort: 48,
-          text: 'Menu 菜单',
-          exact: true,
-          render: async () => {
-            return import('../widgets/menu');
-          },
-        },
       '/component/message':
         {
           value: '/component/message',
-          sort: 49,
+          sort: 41,
           text: 'Message 全局提示',
           exact: true,
           render: async () => {
@@ -152,7 +72,7 @@ export default {
       '/component/modal':
         {
           value: '/component/modal',
-          sort: 50,
+          sort: 42,
           text: 'Modal 对话框',
           exact: true,
           render: async () => {
@@ -162,47 +82,137 @@ export default {
       '/component/notification':
         {
           value: '/component/notification',
-          sort: 51,
+          sort: 43,
           text: 'Notification 通知提醒框',
           exact: true,
           render: async () => {
             return import('../widgets/notification');
           },
         },
-      '/component/numberinput':
+      '/component/popconfirm':
         {
-          value: '/component/numberinput',
-          sort: 52,
-          text: 'NumberInput 数字输入框',
+          value: '/component/popconfirm',
+          sort: 44,
+          text: 'Popconfirm 气泡确认框',
           exact: true,
           render: async () => {
-            return import('../widgets/number-input');
-          },
-        },
-      '/component/pagination':
-        {
-          value: '/component/pagination',
-          sort: 53,
-          text: 'Pagination 分页',
-          exact: true,
-          render: async () => {
-            return import('../widgets/pagination');
+            return import('../widgets/popconfirm');
           },
         },
       '/component/progress':
         {
           value: '/component/progress',
-          sort: 54,
+          sort: 45,
           text: 'Progress 进度条',
           exact: true,
           render: async () => {
             return import('../widgets/progress');
           },
         },
+      '/component/skeleton':
+        {
+          value: '/component/skeleton',
+          sort: 46,
+          text: 'Skeleton 加载占位符',
+          exact: true,
+          render: async () => {
+            return import('../widgets/skeleton');
+          },
+        },
+      '/component/amountinput':
+        {
+          value: '/component/amountinput',
+          sort: 47,
+          text: 'AmountInput 金额输入框',
+          exact: true,
+          render: async () => {
+            return import('../widgets/amount-input');
+          },
+        },
+      '/component/autocomplete':
+        {
+          value: '/component/autocomplete',
+          sort: 48,
+          text: 'AutoComplete 自动完成',
+          exact: true,
+          render: async () => {
+            return import('../widgets/auto-complete');
+          },
+        },
+      '/component/cascader':
+        {
+          value: '/component/cascader',
+          sort: 49,
+          text: 'Cascader 级联选择',
+          exact: true,
+          render: async () => {
+            return import('../widgets/cascader');
+          },
+        },
+      '/component/checkbox':
+        {
+          value: '/component/checkbox',
+          sort: 50,
+          text: 'CheckBox 多选框',
+          exact: true,
+          render: async () => {
+            return import('../widgets/checkbox');
+          },
+        },
+      '/component/datepicker':
+        {
+          value: '/component/datepicker',
+          sort: 51,
+          text: 'DatePicker 日期选择器',
+          exact: true,
+          render: async () => {
+            return import('../widgets/date-picker');
+          },
+        },
+      '/component/dropmenu':
+        {
+          value: '/component/dropmenu',
+          sort: 52,
+          text: 'Dropmenu 下拉菜单',
+          exact: true,
+          render: async () => {
+            return import('../widgets/dropmenu');
+          },
+        },
+      '/component/input':
+        {
+          value: '/component/input',
+          sort: 53,
+          text: 'Input 文本输入框',
+          exact: true,
+          render: async () => {
+            return import('../widgets/input');
+          },
+        },
+      '/component/menu':
+        {
+          value: '/component/menu',
+          sort: 54,
+          text: 'Menu 菜单',
+          exact: true,
+          render: async () => {
+            return import('../widgets/menu');
+          },
+        },
+      '/component/numberinput':
+        {
+          value: '/component/numberinput',
+          sort: 55,
+          text: 'NumberInput 数字输入框',
+          exact: true,
+          render: async () => {
+            return import('../widgets/number-input');
+          },
+        },
       '/component/radio':
         {
           value: '/component/radio',
-          sort: 55,
+          sort: 56,
           text: 'Radio 单选框',
           exact: true,
           render: async () => {
@@ -212,7 +222,7 @@ export default {
       '/component/rate':
         {
           value: '/component/rate',
-          sort: 56,
+          sort: 57,
           text: 'Rate 评分',
           exact: true,
           render: async () => {
@@ -222,7 +232,7 @@ export default {
       '/component/select':
         {
           value: '/component/select',
-          sort: 57,
+          sort: 58,
           text: 'Select 选择器',
           exact: true,
           render: async () => {
@@ -232,7 +242,7 @@ export default {
       '/component/slider':
         {
           value: '/component/slider',
-          sort: 58,
+          sort: 59,
           text: 'Slider 滑动输入条',
           exact: true,
           render: async () => {
@@ -242,21 +252,11 @@ export default {
       '/component/switch':
         {
           value: '/component/switch',
-          sort: 59,
+          sort: 60,
           text: 'Switch 开关',
           exact: true,
           render: async () => {
             return import('../widgets/switch');
-          },
-        },
-      '/component/table':
-        {
-          value: '/component/table',
-          sort: 60,
-          text: 'Table 表格',
-          exact: true,
-          render: async () => {
-            return import('../widgets/table');
           },
         },
       '/component/timepicker':
@@ -309,130 +309,30 @@ export default {
             return import('../widgets/upload');
           },
         },
-      '/component/avatar':
+      '/component/anchor':
         {
-          value: '/component/avatar',
+          value: '/component/anchor',
           sort: 66,
-          text: 'Avatar 头像',
+          text: 'Anchor 锚点',
           exact: true,
           render: async () => {
-            return import('../widgets/avatar');
+            return import('../widgets/anchor');
           },
         },
-      '/component/badge':
+      '/component/backtop':
         {
-          value: '/component/badge',
+          value: '/component/backtop',
           sort: 67,
-          text: 'Badge 徽标数',
+          text: 'BackTop 回到顶部',
           exact: true,
           render: async () => {
-            return import('../widgets/badge');
-          },
-        },
-      '/component/card':
-        {
-          value: '/component/card',
-          sort: 68,
-          text: 'Card 卡片',
-          exact: true,
-          render: async () => {
-            return import('../widgets/card');
-          },
-        },
-      '/component/carousel':
-        {
-          value: '/component/carousel',
-          sort: 69,
-          text: 'Carousel 走马灯',
-          exact: true,
-          render: async () => {
-            return import('../widgets/carousel');
-          },
-        },
-      '/component/popover':
-        {
-          value: '/component/popover',
-          sort: 70,
-          text: 'Popover 气泡卡片',
-          exact: true,
-          render: async () => {
-            return import('../widgets/popover');
-          },
-        },
-      '/component/tabs':
-        {
-          value: '/component/tabs',
-          sort: 71,
-          text: 'Tabs 标签页',
-          exact: true,
-          render: async () => {
-            return import('../widgets/tabs');
-          },
-        },
-      '/component/tag':
-        {
-          value: '/component/tag',
-          sort: 72,
-          text: 'Tag 标签',
-          exact: true,
-          render: async () => {
-            return import('../widgets/tag');
-          },
-        },
-      '/component/timeline':
-        {
-          value: '/component/timeline',
-          sort: 73,
-          text: 'Timeline 时间轴',
-          exact: true,
-          render: async () => {
-            return import('../widgets/time-line');
-          },
-        },
-      '/component/tooltip':
-        {
-          value: '/component/tooltip',
-          sort: 74,
-          text: 'Tooltip 文字提示',
-          exact: true,
-          render: async () => {
-            return import('../widgets/tooltip');
-          },
-        },
-      '/component/breadcrumb':
-        {
-          value: '/component/breadcrumb',
-          sort: 75,
-          text: 'Breadcrumb 面包屑',
-          exact: true,
-          render: async () => {
-            return import('../widgets/breadcrumb');
-          },
-        },
-      '/component/button':
-        {
-          value: '/component/button',
-          sort: 76,
-          text: 'Button 按钮',
-          exact: true,
-          render: async () => {
-            return import('../widgets/button');
-          },
-        },
-      '/component/icon':
-        {
-          value: '/component/icon',
-          sort: 77,
-          text: 'Icon 图标',
-          exact: true,
-          render: async () => {
-            return import('../widgets/icon');
+            return import('../widgets/back-top');
           },
         },
       '/component/divider':
         {
           value: '/component/divider',
-          sort: 78,
+          sort: 68,
           text: 'Divider 分割线',
           exact: true,
           render: async () => {
@@ -442,17 +342,157 @@ export default {
       '/component/loading':
         {
           value: '/component/loading',
-          sort: 79,
+          sort: 69,
           text: 'Loading 加载中',
           exact: true,
           render: async () => {
             return import('../widgets/loading');
           },
         },
+      '/component/avatar':
+        {
+          value: '/component/avatar',
+          sort: 70,
+          text: 'Avatar 头像',
+          exact: true,
+          render: async () => {
+            return import('../widgets/avatar');
+          },
+        },
+      '/component/badge':
+        {
+          value: '/component/badge',
+          sort: 71,
+          text: 'Badge 徽标数',
+          exact: true,
+          render: async () => {
+            return import('../widgets/badge');
+          },
+        },
+      '/component/card':
+        {
+          value: '/component/card',
+          sort: 72,
+          text: 'Card 卡片',
+          exact: true,
+          render: async () => {
+            return import('../widgets/card');
+          },
+        },
+      '/component/carousel':
+        {
+          value: '/component/carousel',
+          sort: 73,
+          text: 'Carousel 走马灯',
+          exact: true,
+          render: async () => {
+            return import('../widgets/carousel');
+          },
+        },
+      '/component/collapse':
+        {
+          value: '/component/collapse',
+          sort: 74,
+          text: 'Collapse 折叠面板',
+          exact: true,
+          render: async () => {
+            return import('../widgets/collapse');
+          },
+        },
+      '/component/popover':
+        {
+          value: '/component/popover',
+          sort: 75,
+          text: 'Popover 气泡卡片',
+          exact: true,
+          render: async () => {
+            return import('../widgets/popover');
+          },
+        },
+      '/component/table':
+        {
+          value: '/component/table',
+          sort: 76,
+          text: 'Table 表格',
+          exact: true,
+          render: async () => {
+            return import('../widgets/table');
+          },
+        },
+      '/component/tabs':
+        {
+          value: '/component/tabs',
+          sort: 77,
+          text: 'Tabs 标签页',
+          exact: true,
+          render: async () => {
+            return import('../widgets/tabs');
+          },
+        },
+      '/component/tag':
+        {
+          value: '/component/tag',
+          sort: 78,
+          text: 'Tag 标签',
+          exact: true,
+          render: async () => {
+            return import('../widgets/tag');
+          },
+        },
+      '/component/timeline':
+        {
+          value: '/component/timeline',
+          sort: 79,
+          text: 'Timeline 时间轴',
+          exact: true,
+          render: async () => {
+            return import('../widgets/time-line');
+          },
+        },
+      '/component/tooltip':
+        {
+          value: '/component/tooltip',
+          sort: 80,
+          text: 'Tooltip 文字提示',
+          exact: true,
+          render: async () => {
+            return import('../widgets/tooltip');
+          },
+        },
+      '/component/breadcrumb':
+        {
+          value: '/component/breadcrumb',
+          sort: 81,
+          text: 'Breadcrumb 面包屑',
+          exact: true,
+          render: async () => {
+            return import('../widgets/breadcrumb');
+          },
+        },
+      '/component/button':
+        {
+          value: '/component/button',
+          sort: 82,
+          text: 'Button 按钮',
+          exact: true,
+          render: async () => {
+            return import('../widgets/button');
+          },
+        },
+      '/component/icon':
+        {
+          value: '/component/icon',
+          sort: 83,
+          text: 'Icon 图标',
+          exact: true,
+          render: async () => {
+            return import('../widgets/icon');
+          },
+        },
       '/component/grid':
         {
           value: '/component/grid',
-          sort: 80,
+          sort: 84,
           text: 'Grid 栅格',
           exact: true,
           render: async () => {
@@ -462,50 +502,10 @@ export default {
       '/component/layout':
         {
           value: '/component/layout',
-          sort: 81,
+          sort: 85,
           text: 'Layout 布局',
           exact: true,
           render: async () => {
             return import('../widgets/layout');
-          },
-        },
-      '/component/navmenu':
-        {
-          value: '/component/navmenu',
-          sort: 82,
-          text: 'NavMenu 导航菜单',
-          exact: true,
-          render: async () => {
-            return import('../widgets/navmenu');
-          },
-        },
-      '/component/steps':
-        {
-          value: '/component/steps',
-          sort: 83,
-          text: 'Steps 步骤条',
-          exact: true,
-          render: async () => {
-            return import('../widgets/steps');
-          },
-        },
-      '/component/popconfirm':
-        {
-          value: '/component/popconfirm',
-          sort: 84,
-          text: 'Popconfirm 气泡确认框',
-          exact: true,
-          render: async () => {
-            return import('../widgets/popconfirm');
-          },
-        },
-      '/component/skeleton':
-        {
-          value: '/component/skeleton',
-          sort: 85,
-          text: 'Skeleton 加载占位符',
-          exact: true,
-          render: async () => {
-            return import('../widgets/skeleton');
           },
         } };
