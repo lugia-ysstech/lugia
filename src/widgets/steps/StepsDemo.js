@@ -21,7 +21,7 @@ const StepContent = styled.div`
   margin-top: 10px;
   border: 1px solid #ccc;
   height: 200px;
-  width: 450px;
+  width: 400px;
   font-size:12px;
   background：#e8e8e8;
   border-radius:4px;
@@ -67,7 +67,7 @@ export default class StepsDemo extends React.Component<Object, Object> {
       : '';
     const view = {
       [Widget.Steps]: {
-        width: 1400
+        width: 400
       }
     };
     return (

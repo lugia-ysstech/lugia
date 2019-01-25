@@ -16,12 +16,8 @@ export default class TypeSteps extends React.Component<any, any> {
   render() {
     const view = {
       [Widget.Steps]: {
-        width: 1000
+        width: 400
       },
-      [Widget.Step]: {
-        width: 350,
-        height: 100
-      }
     };
     return (
       <Theme config={view}>
