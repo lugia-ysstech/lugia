@@ -1,22 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Steps, Button, Theme } from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts';
 const Step = Steps.Step;
 const VWrapper = styled.div`
   text-align: left;
-  margin: 50px;
+  margin-left: 50px;
   display: inline-block;
 `;
 export default class OrientationSteps extends React.Component<any, any> {
   render() {
-    const view = {
-      [Widget.Steps]: {
-        width: 400
-      },
-    };
     return (
-      <Theme config={view}>
+    <div>
         <VWrapper>
           <Steps orientation="vertical" stepType="simple" size="normal">
             <Step title="step1" stepStatus="finish" content="content1" />
@@ -72,7 +66,7 @@ export default class OrientationSteps extends React.Component<any, any> {
             <Step title="step3" stepStatus="next" isDashed={true} />
           </Steps>
         </VWrapper>
-      </Theme>
+      </div>
     );
   }
 }

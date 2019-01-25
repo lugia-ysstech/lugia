@@ -11,10 +11,7 @@ export default class SizeSteps extends React.Component<any, any> {
   render() {
     const view = {
       [Widget.Steps]: {
-        width: 900
-      },
-      [Widget.Step]: {
-        width: 300
+        width: 600
       },
     };
     return (
