@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { Steps, Button, Theme } from '@lugia/lugia-web';
 const Step = Steps.Step;
 const VWrapper = styled.div`
-  text-align: left;
-  margin-left: 50px;
+  margin-left: 150px;
   display: inline-block;
 `;
 export default class OrientationSteps extends React.Component<any, any> {
