@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Widget from '@lugia/lugia-web/dist/consts';
 
 const Wrapper = styled.div`
-  margin-top: 50px;
   display: inline-block;
 `;
 const CardWrapper = styled.div`
@@ -34,33 +33,6 @@ export default class TypeCard extends React.Component<any, any> {
     };
     return (
       <Wrapper>
-        <Theme config={view}>
-          <Card
-            title={<div>{'this is title'}</div>}
-            description={[
-              <div>{'this is description'}</div>,
-              <div>{'this is description'}</div>,
-              <div>{'this is description'}</div>,
-              <div>{'this is description'}</div>
-            ]}
-            shadow={'always'}
-          />
-        </Theme>
-        <CardWrapper>
-          <Theme config={avatar}>
-            <Wrapper>
-              <Card
-                type={'avatar'}
-                title={'this is title'}
-                description={'this is description'}
-                avatar={
-                  'https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=7878a9471d38534398c28f73f27adb1b/738b4710b912c8fc8e9cace6f1039245d68821a9.jpg'
-                }
-                shadow={'hover'}
-              />
-            </Wrapper>
-          </Theme>
-        </CardWrapper>
         <CardWrapper>
           <Theme config={avatar}>
             <Wrapper>
@@ -70,7 +42,7 @@ export default class TypeCard extends React.Component<any, any> {
                 description={'this is description'}
                 imageOrientation={'vertical'}
                 avatar={
-                  'https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=7878a9471d38534398c28f73f27adb1b/738b4710b912c8fc8e9cace6f1039245d68821a9.jpg'
+                  'http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/4d4bd6db04b1c6015acf4c933607956a9f2d62a1/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/Bitmap2.png'
                 }
                 shadow={'hover'}
               />
@@ -78,18 +50,19 @@ export default class TypeCard extends React.Component<any, any> {
           </Theme>
         </CardWrapper>
         <CardWrapper>
-          <Wrapper>
-            <Card
-              type={'image'}
-              title={'this is title'}
-              imageOrientation={'horizontal'}
-              description={'this is description'}
-              image={
-                'https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=4f88e0c6b3de9c82b268f1dd0de8eb6f/f9198618367adab4973d1fbc8bd4b31c8601e464.jpg'
-              }
-              shadow={'hover'}
-            />
-          </Wrapper>
+          <Theme config={avatar}>
+            <Wrapper>
+              <Card
+                type={'avatar'}
+                title={'this is title'}
+                description={'this is description'}
+                avatar={
+                  'http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/4d4bd6db04b1c6015acf4c933607956a9f2d62a1/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/Bitmap2.png'
+                }
+                shadow={'hover'}
+              />
+            </Wrapper>
+          </Theme>
         </CardWrapper>
         <CardWrapper>
           <Theme config={cardImage}>
@@ -100,11 +73,25 @@ export default class TypeCard extends React.Component<any, any> {
               title={'this is title'}
               description={'this is description'}
               image={
-                'https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=4f88e0c6b3de9c82b268f1dd0de8eb6f/f9198618367adab4973d1fbc8bd4b31c8601e464.jpg'
+                'http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/2eac1a340185301d24d6fac426aebd9abe6dea0e/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/18081548404150_.pic_hd.jpg'
               }
               shadow={'hover'}
             />
           </Theme>
+        </CardWrapper>
+        <CardWrapper>
+          <Wrapper>
+            <Card
+              type={'image'}
+              title={'this is title'}
+              imageOrientation={'horizontal'}
+              description={'this is description'}
+              image={
+                'http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/2eac1a340185301d24d6fac426aebd9abe6dea0e/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/18081548404150_.pic_hd.jpg'
+              }
+              shadow={'hover'}
+            />
+          </Wrapper>
         </CardWrapper>
       </Wrapper>
     );
