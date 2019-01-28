@@ -1,6 +1,8 @@
 import React from 'react';
 import { Icon, Theme, notification } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
+import styled from 'styled-components';
+
 const directionData = [
   'lugia-icon-direction_arrow_down',
   'lugia-icon-direction_arrow_left',
@@ -302,7 +304,26 @@ const reminderData = [
   'lugia-icon-reminder_square_o',
   'lugia-icon-reminder_warning'
 ];
-
+const IconWrapper = styled.div`
+  display: inline-block;
+  &:hover {
+    background: #4d63ff;
+    transform: scale(1.2);
+  }
+  
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  margin: 5px;
+  border-radius: 4px;
+  background-color: white;
+`;
+const IconDemo = styled(Icon)`
+  font-size: 36px;
+  margin: 5px;
+  &:hover {
+    color: white;
+  }
+`;
 
 const onHandleClick = iconClass => {
   window.__iconClass__ = iconClass;
@@ -327,12 +348,14 @@ export default class BaseIcon extends React.Component<any, any> {
     const iconArray = iconClassArray.map(v => {
       iconClass = v;
       return iconClass ? (
-        <Icon
-          iconClass={iconClass}
-          onClick={() => {
-            onHandleClick(v);
-          }}
-        />
+        <IconWrapper>
+          <IconDemo
+            iconClass={iconClass}
+            onClick={() => {
+              onHandleClick(v);
+            }}
+          />
+        </IconWrapper>
       ) : null;
     });
     return iconArray;
@@ -344,9 +367,9 @@ export default class BaseIcon extends React.Component<any, any> {
           left: 10,
           right: 10,
           top: 10,
-          bottom: 0
+          bottom: 10
         },
-        fontSize:20
+        fontSize: 36
       }
     };
     return (
