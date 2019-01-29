@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@lugia/lugia-web": "^1.0.82",
+    "@lugia/lugia-web": "^1.0.85",
     "@lugia/lugiax": "^1.0.5",
     "@lugia/lugiax-router": "^1.0.7",
     "@lugia/mega-scripts": "^1.2.0",
+    "clipboard": "^2.0.4",
     "highlight.js": "^9.13.1",
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",

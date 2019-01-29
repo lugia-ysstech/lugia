@@ -2,6 +2,7 @@ import React from 'react';
 import { Icon, Theme, notification } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
+import Copy from '../code-box/Copy';
 
 const directionData = [
   'lugia-icon-direction_arrow_down',
@@ -325,23 +326,6 @@ const IconDemo = styled(Icon)`
   }
 `;
 
-const onHandleClick = iconClass => {
-  window.__iconClass__ = iconClass;
-  document.execCommand('copy');
-  notification.open({
-    icon: 'lugia-icon-reminder_check_circle',
-    title: `已复制 ${iconClass}`
-  });
-};
-
-document.addEventListener('copy', e => {
-  const cd = e.clipboardData;
-  cd.setData('text/plain', window.__iconClass__);
-  delete window.__iconClass__;
-  e.preventDefault();
-  return false;
-});
-
 export default class BaseIcon extends React.Component<any, any> {
   getIcon = iconClassArray => {
     let iconClass = '';
@@ -352,7 +336,7 @@ export default class BaseIcon extends React.Component<any, any> {
           <IconDemo
             iconClass={iconClass}
             onClick={() => {
-              onHandleClick(v);
+              this.copy.copy(v);
             }}
           />
         </IconWrapper>
@@ -374,6 +358,7 @@ export default class BaseIcon extends React.Component<any, any> {
     };
     return (
       <Theme config={view}>
+        <Copy ref={cmp => (this.copy = cmp)}/>
         <h2>方向图标</h2>
         {this.getIcon(directionData)}
         <h2>指示图标</h2>
