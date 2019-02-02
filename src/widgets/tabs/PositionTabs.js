@@ -7,7 +7,6 @@ const TabPane = Tabs.TabPane;
 
 const Wrapper = styled.div`
   text-align: left;
-  margin-top: 50px;
   display: inline-block;
 `;
 const defaultData = [
@@ -52,7 +51,6 @@ export default class PositionTabs extends React.Component<any, any> {
     const view = {
       [Widget.Tabs]: {
         width: 500,
-        height: 200
       }
     };
 

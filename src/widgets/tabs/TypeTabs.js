@@ -7,7 +7,6 @@ const TabPane = Tabs.TabPane;
 
 const Wrapper = styled.div`
   text-align: left;
-  margin-top: 50px;
   display: inline-block;
 `;
 export const hasActivityKeyData = [
@@ -57,7 +56,6 @@ export default class TypeTabs extends React.Component<any, any> {
     const view = {
       [Widget.Tabs]: {
         width: 500,
-        height: 200
       }
     };
 
