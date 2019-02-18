@@ -18,11 +18,10 @@ const data = [
   },
 ];
 const CheckAll = styled.div`
-  padding: 20px;
-  border-bottom: 1px solid #ccc;
+  padding: 6px;
 `;
 const Items = styled.div`
-  padding: 10px 20px;
+  padding: 10px 6px;
 `;
 
 export default class extends React.Component {
