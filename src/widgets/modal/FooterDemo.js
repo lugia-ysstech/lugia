@@ -31,6 +31,7 @@ export default class ModalDemo extends React.Component {
                         </Button>,
                     ]}
                     title="这是标题！"
+                    onCancel={this.buttonClick}
                 >
                     这是内容！
                 </Modal>
