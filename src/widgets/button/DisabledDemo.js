@@ -6,11 +6,16 @@ const Empty = styled.span`
   display: inline-block;
   width: 10px;
 `;
+const Wrap = styled.div`
+  & > button {
+    margin-bottom: 10px;
+  }  
+`;
 
 export default class ButtonDemo extends React.Component<any, any> {
     render() {
         return (
-            <div>
+            <Wrap>
                 <Button disabled>Default</Button>
                 <Empty />
                 <Button type="primary" disabled>
@@ -28,7 +33,7 @@ export default class ButtonDemo extends React.Component<any, any> {
                 <Button type="danger" disabled>
                     danger
                 </Button>
-            </div>
+            </Wrap>
         );
     }
 }

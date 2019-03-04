@@ -13,8 +13,8 @@ export default class BackTopDemo extends React.Component {
     render() {
         const view = {
             [Widget.BackTop]: {
-                color: 'red',
-                backgroundColor: 'orange',
+                color: '#fff',
+                backgroundColor: '#4d63ff',
             },
         };
         return (
