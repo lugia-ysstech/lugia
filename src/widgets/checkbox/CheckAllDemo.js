@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import {Checkbox} from '@lugia/lugia-web';
 
-const CheckBoxGroup = Checkbox.Group;
+const CheckboxGroup = Checkbox.Group;
 const data = [
   {
     text: 'Apple',
@@ -65,7 +65,7 @@ export default class extends React.Component {
           </Checkbox>
         </CheckAll>
         <Items>
-          <CheckBoxGroup data={data} value={value} onChange={this.handleChange} />
+          <CheckboxGroup data={data} value={value} onChange={this.handleChange} />
         </Items>
       </div>
     );

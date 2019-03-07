@@ -1,8 +1,7 @@
 import React from 'react';
 import {Checkbox} from '@lugia/lugia-web';
 
-const CheckBoxGroup = Checkbox.Group;
-const CheckBoxButton = Checkbox.Button;
+const CheckboxGroup = Checkbox.Group;
 const options = [
     { label: 'check1', value: '11', name: '1' },
     { label: 'check2', value: '22', name: '2' },
@@ -24,7 +23,7 @@ export default class CheckBoxDemo extends React.Component {
     render() {
         return (
             <div>
-                <CheckBoxGroup
+                <CheckboxGroup
                     onChange={this.handleChange}
                     data={options}
                     value={this.state.newValue}
