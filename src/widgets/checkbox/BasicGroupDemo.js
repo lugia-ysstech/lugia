@@ -1,7 +1,7 @@
 import React from 'react';
 import {Checkbox} from '@lugia/lugia-web';
 
-const CheckBoxGroup = Checkbox.Group;
+const CheckboxGroup = Checkbox.Group;
 
 export default class CheckBoxDemo extends React.Component {
     constructor(props) {
@@ -17,13 +17,13 @@ export default class CheckBoxDemo extends React.Component {
     render() {
         return (
             <div>
-                <CheckBoxGroup onChange={this.handleChange} value={this.state.newValue}>
+                <CheckboxGroup onChange={this.handleChange} value={this.state.newValue}>
                     <Checkbox value="11" disabled>
                         CheckBox1
                     </Checkbox>
                     <Checkbox value="22">CheckBox2</Checkbox>
                     <Checkbox value="33">CheckBox3</Checkbox>
-                </CheckBoxGroup>
+                </CheckboxGroup>
             </div>
         );
     }
