@@ -397,16 +397,15 @@ function fixFolderName (folderName) {
 
 function getAPITable (folderName, childrenWidget) {
   let importInfo = '', demo = '';
+  const fixeMoudleName = fixFolderName(folderName);
+  importInfo = `import ${fixeMoudleName} from '@lugia/lugia-web/dist/${folderName}/lugia.${folderName}.zh-CN.json';`;
+  demo = `<EditTables dataSource={${fixeMoudleName}} />`;
   if (childrenWidget) {
     childrenWidget.forEach(item => {
       const fixeMoudleName = fixFolderName(item);
       importInfo = `${importInfo} import ${fixeMoudleName} from '@lugia/lugia-web/dist/${folderName}/lugia.${item}.zh-CN.json';`;
       demo = `${demo}<EditTables dataSource={${fixeMoudleName}} />`;
     });
-  } else {
-    const fixeMoudleName = fixFolderName(folderName);
-    importInfo = `import ${fixeMoudleName} from '@lugia/lugia-web/dist/${folderName}/lugia.${folderName}.zh-CN.json';`;
-    demo = `<EditTables dataSource={${fixeMoudleName}} />`;
   }
   return { importInfo, demo };
 }
