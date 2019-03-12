@@ -4,24 +4,24 @@ module.exports =  {
         title: '基本'
     },
     LimitedCheckBox:{
-        title: '受限的CheckBox',
-        desc: '受限的CheckBox'
+        title: '受限的Checkbox',
+        desc: '受限的Checkbox'
     },
     DisabledCheckBox:{
-        title: '禁用的CheckBox',
-        desc: '禁用的CheckBox'
+        title: '禁用的Checkbox',
+        desc: '禁用的Checkbox'
     },
     ThemeCheckBox:{
         title: '可配置主题',
         desc: '根据需要配置主题，可配置 color'
     },
     BasicGroupDemo: {
-        title: 'CheckBox 组',
-        desc: '一组CheckBox，组合使用'
+        title: 'Checkbox 组',
+        desc: '一组Checkbox，组合使用'
     },
     VerticalGroupDemo: {
-        title: '垂直的CheckBox组',
-        desc: '垂直的CheckBox组'
+        title: '垂直的Checkbox组',
+        desc: '垂直的Checkbox组'
     },
     CheckAllDemo: {
         title: '全选',
@@ -29,22 +29,22 @@ module.exports =  {
     },
     SomePropsDemo: {
         title: '设置指定字段',
-        desc: '设置CheckBox的展示字段，设置CheckBox组value备用选项，value值不存在展示备用项'
+        desc: '设置Checkbox的展示字段，设置Checkbox组value备用选项，value值不存在展示备用项'
     },
     SomeLimitedPropsDemo: {
-        title: '受限的CheckBox',
-        desc: '受限的CheckBox,可根据回调函数更改受限字段'
+        title: '受限的Checkbox',
+        desc: '受限的Checkbox,可根据回调函数更改受限字段'
     },
     ButtonPropsDemo: {
-        title: '按钮CheckBox组',
+        title: '按钮Checkbox组',
         desc: '按钮形状的多选框'
     },
     ButtonLimitedDemo: {
-        title: '受限按钮CheckBox组',
-        desc: '受限的按钮CheckBox组'
+        title: '受限按钮Checkbox组',
+        desc: '受限的按钮Checkbox组'
     },
     DisplayValueGroup: {
-        title: '按钮CheckBox组取消项',
-        desc: '按钮CheckBox组的取消项展示'
+        title: '按钮Checkbox组取消项',
+        desc: '按钮Checkbox组的取消项展示'
     }
 };
