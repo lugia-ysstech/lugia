@@ -55,7 +55,7 @@ export default class PrefixInput extends React.Component<any, any> {
     return (
       <Wrapper>
         <InputWrapper>
-          <Input viewClass="register" suffix={<ClearIcon />} />
+          <Input viewClass="register" prefix={<SearchIcon />} />
         </InputWrapper>
         <InputWrapper>
           <Input

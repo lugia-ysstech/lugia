@@ -10,7 +10,7 @@ export default class BaseTimeLine extends React.Component<any, any> {
   render() {
     const view = {
       [Widget.TimeLine]: {
-        height: 400,
+        // height: 200,
       },
     };
     return (
