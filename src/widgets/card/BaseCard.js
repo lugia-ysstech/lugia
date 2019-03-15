@@ -15,8 +15,8 @@ export default class BaseCard extends React.Component<any, any> {
     return (
       <Wrapper>
         <Card
-          title={'this is title'}
-          description={'this is description'}
+          title={'This is title'}
+          description={'This is description'}
           shadow={'always'}
           operation={
             <Operation  onClick={this.click}>
