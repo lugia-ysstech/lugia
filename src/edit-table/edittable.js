@@ -106,8 +106,8 @@ class Element extends React.Component<PropsType, StateType> {
                 <Td>{getPropsType(item.type,propsType) || 'Function'}</Td>
                 <Td>{item.args ? getEventPropsElement(getEventProps(item.args)) : getDefaultValue(item.defaultValue)}</Td>
               </Tr>
-          ); 
-})}
+            );
+          })}
         </Table>
       </React.Fragment>
     );
