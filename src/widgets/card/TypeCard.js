@@ -25,6 +25,16 @@ export default class TypeCard extends React.Component<any, any> {
         height: 80
       }
     };
+    const hAvatar = {
+      [Widget.Avatar]: {
+        width: 80,
+        height: 80
+      },
+      [Widget.Card]: {
+        width: 200,
+        height: 230
+      }
+    };
     const cardImage = {
       [Widget.CardImage]: {
         width: 200,
@@ -33,66 +43,72 @@ export default class TypeCard extends React.Component<any, any> {
     };
     return (
       <Wrapper>
-        <CardWrapper>
-          <Theme config={avatar}>
-            <Wrapper>
+        <div style={{ display: 'inline-flex' }}>
+          <CardWrapper>
+            <Theme config={hAvatar}>
+              <Wrapper>
+                <Card
+                  type={'avatar'}
+                  title={'This is title'}
+                  description={'This is description'}
+                  imageOrientation={'vertical'}
+                  avatar={
+                    'http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/4d4bd6db04b1c6015acf4c933607956a9f2d62a1/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/Bitmap2.png'
+                  }
+                  shadow={'hover'}
+                />
+              </Wrapper>
+            </Theme>
+          </CardWrapper>
+
+          <CardWrapper>
+            <Theme config={cardImage}>
               <Card
-                type={'avatar'}
-                title={'this is title'}
-                description={'this is description'}
+                viewClass={'cardImage'}
+                type={'image'}
                 imageOrientation={'vertical'}
-                avatar={
-                  'http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/4d4bd6db04b1c6015acf4c933607956a9f2d62a1/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/Bitmap2.png'
+                title={'This is title'}
+                description={'This is description'}
+                image={
+                  'http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/2eac1a340185301d24d6fac426aebd9abe6dea0e/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/18081548404150_.pic_hd.jpg'
                 }
                 shadow={'hover'}
               />
-            </Wrapper>
-          </Theme>
-        </CardWrapper>
-        <CardWrapper>
-          <Theme config={avatar}>
+            </Theme>
+          </CardWrapper>
+        </div>
+        <br />
+        <div style={{ display: 'inline-flex' }}>
+          <CardWrapper>
+            <Theme config={avatar}>
+              <Wrapper>
+                <Card
+                  type={'avatar'}
+                  title={'This is title'}
+                  description={'This is description'}
+                  avatar={
+                    'http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/4d4bd6db04b1c6015acf4c933607956a9f2d62a1/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/Bitmap2.png'
+                  }
+                  shadow={'hover'}
+                />
+              </Wrapper>
+            </Theme>
+          </CardWrapper>
+          <CardWrapper>
             <Wrapper>
               <Card
-                type={'avatar'}
-                title={'this is title'}
-                description={'this is description'}
-                avatar={
-                  'http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/4d4bd6db04b1c6015acf4c933607956a9f2d62a1/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/Bitmap2.png'
+                type={'image'}
+                title={'This is title'}
+                imageOrientation={'horizontal'}
+                description={'This is description'}
+                image={
+                  'http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/2eac1a340185301d24d6fac426aebd9abe6dea0e/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/18081548404150_.pic_hd.jpg'
                 }
                 shadow={'hover'}
               />
             </Wrapper>
-          </Theme>
-        </CardWrapper>
-        <CardWrapper>
-          <Theme config={cardImage}>
-            <Card
-              viewClass={'cardImage'}
-              type={'image'}
-              imageOrientation={'vertical'}
-              title={'this is title'}
-              description={'this is description'}
-              image={
-                'http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/2eac1a340185301d24d6fac426aebd9abe6dea0e/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/18081548404150_.pic_hd.jpg'
-              }
-              shadow={'hover'}
-            />
-          </Theme>
-        </CardWrapper>
-        <CardWrapper>
-          <Wrapper>
-            <Card
-              type={'image'}
-              title={'this is title'}
-              imageOrientation={'horizontal'}
-              description={'this is description'}
-              image={
-                'http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/2eac1a340185301d24d6fac426aebd9abe6dea0e/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/18081548404150_.pic_hd.jpg'
-              }
-              shadow={'hover'}
-            />
-          </Wrapper>
-        </CardWrapper>
+          </CardWrapper>
+        </div>
       </Wrapper>
     );
   }

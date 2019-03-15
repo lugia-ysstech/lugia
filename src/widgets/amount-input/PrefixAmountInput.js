@@ -17,7 +17,7 @@ export default class PrefixAmountInput extends React.Component<any, any> {
         <AmountInput amountPrefix="¥" />
       </InputWrapper>
       <InputWrapper>
-        <AmountInput amountPrefix="$" />
+        <AmountInput amountPrefix="$" transform={false} />
       </InputWrapper>
     </Wrapper>);
   }

@@ -12,17 +12,17 @@ module.exports ={
   SizeInput: {
     title: '尺寸',
     desc: '三种不同尺寸的输入框',
-    path: './SizeNumberInput'
+    path: './SizeInput'
   },
   DisableInput: {
     title: '禁用状态',
     desc: '点击切换禁用状态',
-    path: './DisabledNumberInput'
+    path: './DisableInput'
   },
   PrefixInput: {
     title: '前缀后缀组合',
     desc: '结合不同前缀,后缀的组件配合使用',
-    path: './RangeNumberInput'
+    path: './PrefixInput'
   },
   TransformInput: {
     title: '格式化',
@@ -31,7 +31,7 @@ module.exports ={
   },
   ValidateTypeInput: {
     title: '校验',
-    desc: "三种不同风格校验 ,(校验输入值是否含有',').",
+    desc: "三种不同风格校验(校验输入值是否含有',')。",
     path: './ValidateTypeInput'
   },
 };
