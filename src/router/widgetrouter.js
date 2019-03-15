@@ -153,7 +153,7 @@ export default {
         {
           value: '/component/checkbox',
           sort: 50,
-          text: 'CheckBox 多选框',
+          text: 'Checkbox 多选框',
           exact: true,
           render: async () => {
             return import('../widgets/checkbox');
@@ -443,7 +443,7 @@ export default {
         {
           value: '/component/timeline',
           sort: 79,
-          text: 'Timeline 时间轴',
+          text: 'TimeLine 时间轴',
           exact: true,
           render: async () => {
             return import('../widgets/time-line');
