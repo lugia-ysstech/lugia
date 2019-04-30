@@ -287,7 +287,7 @@ const LineRow = styled.div`
   position:absolute;
   top:55%;
   opacity:0;
-  animation: ${slideToRight} 1s 1s cubic-bezier(.57,.12,.35,.59) forwards;
+  animation: ${slideToRightAnimation} ;
 `;
 
 const LineRight = styled.div`
@@ -295,7 +295,7 @@ const LineRight = styled.div`
   right:15px;
   width:1px;
   background:#e8e8e8;
-  animation: ${spendLine} 1s ease forwards;
+  animation: ${spendLineAnimation} ;
 `;
 
 
@@ -317,7 +317,7 @@ const DesignCard = styled.div`
   align-items:center;
   box-shadow: 0 0 40px rgba(77,99,255,0.2);
   opacity:0;
-  animation: ${slideToRight} 1s 1s cubic-bezier(.57,.12,.35,.59) forwards;
+  animation: ${slideToRightAnimation} ;
 `;
 
 
@@ -354,7 +354,7 @@ const SquareRight = styled.div`
   width:22px;
   background:#4d63ff;
   border-radius:22px;
-  animation: ${slideDown} .3s 1s cubic-bezier(.57,.12,.35,.59) forwards;
+  animation: ${slideDownAnimation} ;
 `;
 
 const SolutionCard = styled.div`
