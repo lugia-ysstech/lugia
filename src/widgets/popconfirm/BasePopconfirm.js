@@ -30,10 +30,10 @@ const DirectionButtonButtonBottomWrapper = styled.div`
   white-space: nowrap;
   display: inline-block;
 `;
-const ToolTipHWrapper = ToolTipBaseWrapper.extend`
+const ToolTipHWrapper = styled(ToolTipBaseWrapper)`
   margin-right: 10px;
 `;
-const ToolTipVWrapper = ToolTipBaseWrapper.extend`
+const ToolTipVWrapper = styled(ToolTipBaseWrapper)`
   margin-top: 10px;
 `;
 export default class BasePopconfirm extends React.Component<any, any> {
