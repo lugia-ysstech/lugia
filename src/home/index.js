@@ -6,7 +6,7 @@
  */
 import * as React from 'react';
 import { Alert , Theme,Grid,Input ,Icon} from '@lugia/lugia-web';
-import styled , { keyframes } from 'styled-components';
+import styled , { css,keyframes } from 'styled-components';
 import {go} from '@lugia/lugiax-router';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 import Widget from '@lugia/lugia-web/dist/consts/index';
@@ -225,13 +225,17 @@ const slideToRight = keyframes`
   }
 `;
 
+const slideToRightAnimation = css`
+    ${slideToRight} 1s 1s cubic-bezier(.57,.12,.35,.59) forwards;
+  `;
+
 const Design = styled.div`
   font-size: 30px;
   color: #000033;
   transform-origin:0;
   padding:0 0 0 50px;
   opacity:0;
-  animation: ${slideToRight} 1s 1s cubic-bezier(.57,.12,.35,.59) forwards;
+  animation: ${slideToRightAnimation} ;
 `;
 
 const slideDown = keyframes`
@@ -243,6 +247,9 @@ const slideDown = keyframes`
   }
 `;
 
+const slideDownAnimation = css`
+    ${slideDown} .3s 1s cubic-bezier(.57,.12,.35,.59) forward;
+  `;
 const Square = styled.div`
   position:absolute;
   left:10px;
@@ -250,7 +257,7 @@ const Square = styled.div`
   width:22px;
   background:#4d63ff;
   border-radius:22px;
-  animation: ${slideDown} .3s 1s cubic-bezier(.57,.12,.35,.59) forwards;
+  animation: ${slideDownAnimation} ;
 `;
 
 const spendLine = keyframes`
@@ -262,12 +269,15 @@ const spendLine = keyframes`
   }
 `;
 
+const spendLineAnimation = css`
+    ${spendLine} 1s ease forwards;
+  `;
 const Line = styled.div`
   position:absolute;
   left:20px;
   width:1px;
   background:#e8e8e8;
-  animation: ${spendLine} 1s ease forwards;
+  animation: ${spendLineAnimation} ;
 `;
 
 const LineRow = styled.div`
