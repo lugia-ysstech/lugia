@@ -14,7 +14,7 @@
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-highlight": "^0.12.0",
-    "styled-components": "3.4.9"
+    "styled-components": "4.2.0"
   },
   "scripts": {
     "lintfix": "eslint --fix ./src",
