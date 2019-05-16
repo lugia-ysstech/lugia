@@ -1,6 +1,6 @@
 {
   "name": "lugia-site",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "@lugia/lugia-web": "^1.0.110-10",
