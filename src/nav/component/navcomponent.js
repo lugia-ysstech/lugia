@@ -10,7 +10,7 @@ import {  Theme } from '@lugia/lugia-web';
 import '../../css/menu.css';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
-import styled , { keyframes } from 'styled-components';
+import styled , { css,keyframes } from 'styled-components';
 import { designRouter } from '../../App';
 import logo from '../../../public/lugia-logo.png';
 import Search from '../../search';
@@ -37,6 +37,10 @@ const slideToRight = keyframes`
   }
 `;
 
+const slideToRightAnimation = css`
+    ${slideToRight} 0.2s cubic-bezier(.57,.12,.35,.59) forwards;
+  `;
+
 const TabPane = styled.span`
   font-size:16px;
   color:${props => (props.active?themeColor:'#36384d')};
@@ -53,7 +57,7 @@ const TabPane = styled.span`
     height:2px;
     border-radius:2px;
     background:${themeColor};
-    animation: ${slideToRight} 0.2s cubic-bezier(.57,.12,.35,.59) forwards;
+    animation: ${slideToRightAnimation} ;
   }
 `;
 
