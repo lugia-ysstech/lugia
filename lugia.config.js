@@ -13,5 +13,7 @@ export default {
   ],
   applyWebpack(webpackConfig, { webpack, mega }) {
     return webpackConfig;
-  }
+  },
+  dllDependenciesExcludes: ['@lugia/lugia-web']
+
 };

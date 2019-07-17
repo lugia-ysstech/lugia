@@ -3,18 +3,17 @@
   "version": "1.0.1",
   "private": true,
   "dependencies": {
-    "@lugia/lugia-web": "^1.0.110-10",
+    "@lugia/lugia-web": "^1.1.0-1",
     "@lugia/lugiax": "^1.0.6",
     "@lugia/lugiax-router": "^1.0.8",
-    "@lugia/mega-scripts": "^1.3.33",
     "clipboard": "^2.0.4",
     "highlight.js": "^9.13.1",
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-highlight": "^0.12.0",
-    "styled-components": "3.4.9"
+    "styled-components": "4.2.0"
   },
   "scripts": {
     "lintfix": "eslint --fix ./src",
@@ -27,6 +26,7 @@
     "reset-flow-typed": "npx shx rm -rf flow-typed/npm && flow-typed install --overwrite || true"
   },
   "devDependencies": {
+    "@lugia/mega-scripts": "^1.3.33",
     "babel-jest": "23.4.2",
     "babel-plugin-import": "^1.11.0",
     "enzyme": "3.3.0",
@@ -34,6 +34,6 @@
     "flow": "^0.2.3",
     "flow-bin": "^0.87.0",
     "flow-typed": "^2.5.1",
-    "react-test-renderer": "16.5.2"
+    "react-test-renderer": "^16.8.6"
   }
 }

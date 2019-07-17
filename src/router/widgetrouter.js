@@ -508,4 +508,4 @@ export default {
           render: async () => {
             return import('../widgets/layout');
           },
-        } };
+        }, }

@@ -15,12 +15,12 @@ import FooterNav from '../../footer-nav';
 const { themeColor } = colorsFunc();
 const { Link } = Anchor;
 
-const Title = styled.div.attrs({
+const Title = styled.div.attrs( props => ({
   size:props => (props.level?'24px':'18px'),
   margin:props => (props.level?props.imgPosition?'0 0 26px':'0 0 26px ':'0 0 20px'),
   padding:props => (props.level?'0':'0 0 0 50px'),
   background:props => (props.level?'transparent':themeColor),
-})` 
+}))` 
   font-size:${props => props.size};
   color:#0f1333;
   line-height:1;
@@ -77,10 +77,10 @@ const ImageContainer = styled.div`
  padding:${props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'0 50px':props.level ?'0 50px':'0')};
 `;
 
-const Image = styled.img.attrs({
+const Image = styled.img.attrs(props => ({
   width:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'100%':props.level ?'510px':'436px'),
   margin:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'20px 0':'0'),
-})` 
+}))` 
   margin:${props => props.margin};
   max-width:${props => props.width};
   width:auto;
@@ -92,10 +92,10 @@ const InnerImage = styled.img`
 `;
 
 
-const ImageDesc = styled.div.attrs({
+const ImageDesc = styled.div.attrs(props => ({
   padding:props => (props.imgPosition === 'right' || props.imgPosition === 'left' ?'10px  0':''),
   align:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'center':'right'),
-})` 
+}))` 
   color:#525466;
   font-size:12px;
   line-height:1;
@@ -169,10 +169,10 @@ const PantoneBox = styled.div`
   overflow:hidden;
 `;
 
-const PantoneCardBox = styled.div.attrs({
+const PantoneCardBox = styled.div.attrs( props => ({
   width:props => (props.width+'px' || '10000px'),
   left:props => (-(props.left * 146 +10) +'px')
-})`
+}))`
   width: ${props => props.width};
   height:100%;
   transform:translateX(${props => props.left});
@@ -224,13 +224,13 @@ type stateProps={
 const getImgElement = (data:Object,imgPosition:string,level?:Boolean) => {
   if(!data) return;
   return <React.Fragment>
-      {data.map(item => {
-        return <ImageContainer level={level} imgPosition={imgPosition}>
-          <Image imgPosition={imgPosition} src={item.url}  level={level} />
-          <ImageDesc imgPosition={imgPosition}>{item.desc}</ImageDesc>
-        </ImageContainer>;
-      })}
-    </React.Fragment>;
+    {data.map(item => {
+      return <ImageContainer level={level} imgPosition={imgPosition}>
+        <Image imgPosition={imgPosition} src={item.url}  level={level} />
+        <ImageDesc imgPosition={imgPosition}>{item.desc}</ImageDesc>
+      </ImageContainer>;
+    })}
+  </React.Fragment>;
 
 };
 
@@ -245,7 +245,7 @@ const getContentElement = (data:Object,titleElement,imgPosition:string,level?:Bo
           {javascript?<Highlight className="language-jsx">
             {text}
           </Highlight>:text}
-          </Content>
+        </Content>
         {url && <InnerImage  src={url}  />}
       </React.Fragment>;
     })}
@@ -261,7 +261,7 @@ const getAnchorElement = (data:Object) => {
       {data.map((item,index) => {
         const {title} = item;
         return <React.Fragment>
-            {title &&<Link title={title} href={'#link-'+index} />}
+          {title &&<Link title={title} href={'#link-'+index} />}
         </React.Fragment>;
       })}
     </Anchor>
@@ -271,7 +271,7 @@ const getAnchorElement = (data:Object) => {
 
 export default class Template extends React.Component<defProps, stateProps> {
 
-  static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
+  static getDerivedStateFromProps(defProps: defProps, stateProps: stateProps) {
     if (!stateProps) {
       return {
         current:0,
