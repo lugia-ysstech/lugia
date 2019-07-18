@@ -1,7 +1,6 @@
 import React from 'react';
 import { Upload, Theme } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
-import { getBorderRadius, getBorder ,getBoxShadow} from '@lugia/theme-utils';
 import styled from 'styled-components';
 const Text=styled.span`
   display:inline-block;
@@ -10,24 +9,38 @@ const Text=styled.span`
 const Box=styled.div`
   margin-bottom:10px;
 `;
-export default class ThemeUploadButtonType extends React.Component<any, any> {
+export default class ThemeUploadLiType extends React.Component<any, any> {
   render(){
     const defaultProps = {
-      areaType: 'button',
-    };
-    const defaultPropsBoth = {
       areaType: 'both',
+      url: '/upload',
+      showFileList: true,
+      fileList: [
+        {
+          id: 1,
+          name: '文件11111.jpg',
+          status: 'done',
+          url: 'http://img05.tooopen.com/images/20150602/tooopen_sy_128223296629.jpg',
+        },
+        { id: 2, name: '文件666.doc', status: 'fail' },
+        {
+          id: 3,
+          name: '文件11111.jpg',
+          status: 'done',
+          url: 'http://img05.tooopen.com/images/20150602/tooopen_sy_128223296629.jpg',
+        },
+      ],
     };
     /*
     *
-    *  "normal": [["background"], ["width"], ["height"], ["boxShadow"], ["border"], ["opacity"]],
-          "hover": [["background"], ["boxShadow"], ["border"], ["opacity"]],
+    * "normal": [["width"],["height"],["background"], ["border"],["color"]],
+          "hover": [["border"],["background"],["color"]],
           "clicked": [],
-          "disabled": [["background"], ["border"]]
+          "disabled": [["background"],["color"]]
     * */
     const configNormal={
       [Widget.Upload]:{
-        UploadButtonType:{
+        UploadLiType:{
           normal:{
             width:400,
             height:100,
@@ -56,19 +69,18 @@ export default class ThemeUploadButtonType extends React.Component<any, any> {
                 color:'green'
               }
             },
-            boxShadow: getBoxShadow('0 -3px 6px 0 #ad1d45'),
             color:'yellow',
-            opacity:0.5
+            fontSize:30
           }
         }
       }
     };
     const configHover={
       [Widget.Upload]:{
-        UploadButtonType:{
+        UploadLiType:{
           hover:{
             background:{
-              color:'green'
+              color:'red'
             },
             border:{
               top:{
@@ -92,91 +104,46 @@ export default class ThemeUploadButtonType extends React.Component<any, any> {
                 color:'green'
               }
             },
-            boxShadow: getBoxShadow('0 -3px 6px 0 #ad1d45'),
-            color:'blue',
-            width:500,
-            height:600,
-            fontSize:30
+            color:'blue'
           },
-
+          width:500,
+          height:600,
+          fontSize:30
         }
       }
 
     };
     const configDisabled={[Widget.Upload]:{
-        UploadButtonType:{
+        UploadLiType:{
           disabled:{
             background:{
               color:'red'
             },
             color:'blue',
-            border:{
-              top:{
-                width:1,
-                style:'solid',
-                color:'blue'
-              },
-              right:{
-                width:1,
-                style:'solid',
-                color:'blue'
-              },
-              bottom:{
-                width:1,
-                style:'solid',
-                color:'blue'
-              },
-              left:{
-                width:1,
-                style:'solid',
-                color:'green'
-              }
-            },
-            boxShadow: getBoxShadow('0 -3px 6px 0 #ad1d45'),
             width:500,
-            height:100,
+            height:50,
             fontSize:30
           },
         }
       }};
     return (
       <div>
-        <p> button</p>
         <Box>
           <Theme config={configNormal}>
-            <Text>normal:width,height,background,border,boxShadow,opacity</Text>
-            <Upload {...defaultProps}/>
+          <Text>normal:width,height,background,border,color</Text>
+          <Upload {...defaultProps}/>
           </Theme>
         </Box>
         <Box>
           <Theme config={configHover}>
-            <Text>hover</Text>
+            <Text>hover:background,border,color:<i style={{color:'blue'}}>blue</i></Text>
             <Upload {...defaultProps}/>
           </Theme>
         </Box>
         <Box>
           <Theme config={configDisabled}>
-            <Text>disabled</Text>
+            <Text>disabled:background,color</Text>
             <Upload {...defaultProps} disabled/>
-          </Theme>
-        </Box>
-        <p> both</p>
-        <Box>
-          <Theme config={configNormal}>
-            <Text>normal:width,height,background,border,boxShadow,opacity</Text>
-            <Upload {...defaultPropsBoth}/>
-          </Theme>
-        </Box>
-        <Box>
-          <Theme config={configHover}>
-            <Text>hover</Text>
-            <Upload {...defaultPropsBoth}/>
-          </Theme>
-        </Box>
-        <Box>
-          <Theme config={configDisabled}>
-            <Text>disabled</Text>
-            <Upload {...defaultPropsBoth} disabled/>
           </Theme>
         </Box>
       </div>
