@@ -16,10 +16,10 @@ const { themeColor } = colorsFunc();
 const { Link } = Anchor;
 
 const Title = styled.div.attrs( props => ({
-  size:props => (props.level?'24px':'18px'),
-  margin:props => (props.level?props.imgPosition?'0 0 26px':'0 0 26px ':'0 0 20px'),
-  padding:props => (props.level?'0':'0 0 0 50px'),
-  background:props => (props.level?'transparent':themeColor),
+  size:props.level?'24px':'18px',
+  margin:props.level?props.imgPosition?'0 0 26px':'0 0 26px ':'0 0 20px',
+  padding: props.level?'0':'0 0 0 50px',
+  background:props.level?'transparent':themeColor,
 }))` 
   font-size:${props => props.size};
   color:#0f1333;
@@ -78,8 +78,8 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img.attrs(props => ({
-  width:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'100%':props.level ?'510px':'436px'),
-  margin:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'20px 0':'0'),
+  width:props.imgPosition === 'top' || props.imgPosition === 'bottom'?'100%':props.level ?'510px':'436px',
+  margin:props.imgPosition === 'top' || props.imgPosition === 'bottom'?'20px 0':'0',
 }))` 
   margin:${props => props.margin};
   max-width:${props => props.width};
@@ -93,8 +93,8 @@ const InnerImage = styled.img`
 
 
 const ImageDesc = styled.div.attrs(props => ({
-  padding:props => (props.imgPosition === 'right' || props.imgPosition === 'left' ?'10px  0':''),
-  align:props => (props.imgPosition === 'top' || props.imgPosition === 'bottom'?'center':'right'),
+  padding:props.imgPosition === 'right' || props.imgPosition === 'left' ?'10px  0':'',
+  align:props.imgPosition === 'top' || props.imgPosition === 'bottom'?'center':'right',
 }))` 
   color:#525466;
   font-size:12px;
@@ -170,8 +170,8 @@ const PantoneBox = styled.div`
 `;
 
 const PantoneCardBox = styled.div.attrs( props => ({
-  width:props => (props.width+'px' || '10000px'),
-  left:props => (-(props.left * 146 +10) +'px')
+  width:props.width+'px' || '10000px',
+  left:-(props.left * 146 +10) +'px'
 }))`
   width: ${props => props.width};
   height:100%;
@@ -316,7 +316,7 @@ export default class Template extends React.Component<defProps, stateProps> {
   getColorThemeElement = (data:Object) => {
     if(!data) return;
     const length = data.length;
-    const width = 166*length +10;
+    const width = 166*length +10 ;
     const {handleClick,clickToPrevOrNext} = this;
     const {current,index} = this.state;
 

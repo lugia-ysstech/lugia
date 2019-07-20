@@ -10,10 +10,14 @@ import {Theme ,Icon,Input,Trigger} from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import styled from 'styled-components';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
+import { getBorderRadius, getBorder,getBoxShadow } from '@lugia/theme-utils';
 
 const Container = styled.div`
   z-index: 9999999999999999;
-  width:300px;
+  background: #fff;
+  box-shadow: 0 0 5px #ccc;
+  padding:10px 0;
+  border-radius: 4px;
 `;
 
 const Type = styled.div`
@@ -100,10 +104,45 @@ export default class Navcomponent extends React.Component<any, any> {
   render() {
     const InputStyle = {
       [Widget.Input]: {
-        borderSize:{top:0,right:0,bottom:1,left:0},
-        borderColor:'#ccc',
-        margin: {top:0,right:0,bottom:0,left:38},
-        width:150
+        Container:{
+          normal:{
+            margin: {top:0,right:0,bottom:0,left:38}
+          }
+
+        },
+        Input:{
+          normal:{
+            border: {
+              bottom: {color: "#ccc", style: "solid", width: 1},
+              top: 'none',
+              left: 'none',
+              right: 'none',
+
+            },
+            margin: {top:0,right:0,bottom:0,left:38},
+            width:150
+          },
+          hover:{
+            border: {
+              bottom: {color: "#ccc", style: "solid", width: 1},
+              top: 'none',
+              left: 'none',
+              right: 'none',
+
+            },
+          },
+          focus:{
+            border: {
+              bottom: {color: themeColor, style: "solid", width: 1},
+              top: 'none',
+              left: 'none',
+              right: 'none',
+
+            },
+          }
+
+        }
+
       },
       [Widget.Trigger]: {
         width:500,
@@ -117,7 +156,7 @@ export default class Navcomponent extends React.Component<any, any> {
         <Theme config={InputStyle}>
           <Trigger
             offsetX={120}
-            offsetY={1}
+            offsetY={0}
             action={['focus']}
             popup={poup}
           >
@@ -194,7 +233,6 @@ export default class Navcomponent extends React.Component<any, any> {
   };
   linkToUrl = (res:string) => {
     this.handleInputChange(null);
-    console.log(res);
     go({ url: res });
   };
   doSearch = () => {

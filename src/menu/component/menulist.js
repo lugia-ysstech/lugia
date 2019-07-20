@@ -12,6 +12,10 @@ import Router from '../../router';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import { bindTo, connect } from '@lugia/lugiax';
 import styled from 'styled-components';
+import { getBorderRadius, getBorder,getBoxShadow } from '@lugia/theme-utils';
+
+import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
+const { themeColor } = colorsFunc();
 
 const getMenuItems = (data:Object) => {
   const arr =[];
@@ -119,16 +123,40 @@ export default class MenuList extends React.Component<any, any> {
     const {height} = this.state;
     const config = {
       [Widget.Navmenu]: {
-        width:250,
-        height: height || 500,
+        Tree:{
+          TreeWrap:{
+            normal:{
+              height: height || 500,
+              width: 250,
+              boxShadow: getBoxShadow('none')
+            }
+          },
+          TreeItem:{
+            Text:{
+              hover:{
+                color: themeColor,
+              }
+            },
+            SelectedText:{
+              normal:{
+                background:{
+                  color: themeColor
+                },
+                color: '#fff',
+                borderRadius: getBorderRadius(35)
+              }
+            }
+          }
+        }
       },
     };
     const {routerType,fixed} = this.state;
     return (
       <Container fixed={fixed} height={height}>
         {
-          <Theme config={config}>
             <Navmenu
+              autoHeight={false}
+            theme={config}
               inlineType={'ellipse'}
               mode={'inline'}
               data={getMenuItems(Router[routerType])}
@@ -136,7 +164,6 @@ export default class MenuList extends React.Component<any, any> {
               inlineExpandAll={true}
               onSelect={this.onSelect}
             />
-          </Theme>
         }
       </Container>
     );
