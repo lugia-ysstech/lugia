@@ -34,7 +34,7 @@ export default class ThemeWindowContainer extends React.Component<any, any> {
             width:600,
             height:400,
             color:'red',
-            background:'green',
+            background:{color:'green'},
             border:{
               top:{
                 width:1,

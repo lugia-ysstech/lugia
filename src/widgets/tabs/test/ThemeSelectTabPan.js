@@ -39,7 +39,7 @@ export default class ThemeSelectTabPan extends React.Component<any, any> {
           SelectTabPan:{
             normal:{
               color:'red',
-              background:'green',
+              background:{color:'green'},
               border:{
                 top:{
                   width:1,
