@@ -3,52 +3,46 @@ import { Upload, Theme } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import { getBorderRadius, getBorder ,getBoxShadow} from '@lugia/theme-utils';
 import styled from 'styled-components';
-const Text=styled.span`
-  display:inline-block;
+const Text=styled.p`
   padding:10px;
 `;
 const Box=styled.div`
   margin-bottom:10px;
 `;
-export default class ThemeUploadButtonType extends React.Component<any, any> {
+export default class ThemeUploadAreaType extends React.Component<any, any> {
   render(){
     const defaultProps = {
-      areaType: 'button',
-    };
-    const defaultPropsBoth = {
-      areaType: 'both',
+      areaType: 'area',
     };
     /*
     *
-    *  "normal": [["background"], ["width"], ["height"], ["boxShadow"], ["border"], ["opacity"]],
-          "hover": [["background"], ["boxShadow"], ["border"], ["opacity"]],
+    *"normal": [["width"], ["height"], ["fontSize"],["color"]],
+          "hover": [],
           "clicked": [],
-          "disabled": [["background"], ["border"]]
+          "disabled": [["color"]]
     * */
     const configNormal={
       [Widget.Upload]:{
-        UploadButtonType:{
+        UploadAreaType:{
           normal:{
-            width:400,
-            height:100,
             background:{
-              color:'red'
+              color:'green'
             },
             border:{
               top:{
                 width:1,
                 style:'solid',
-                color:'green'
+                color:'blue'
               },
               right:{
                 width:1,
                 style:'solid',
-                color:'green'
+                color:'blue'
               },
               bottom:{
                 width:1,
                 style:'solid',
-                color:'green'
+                color:'blue'
               },
               left:{
                 width:1,
@@ -57,15 +51,17 @@ export default class ThemeUploadButtonType extends React.Component<any, any> {
               }
             },
             boxShadow: getBoxShadow('0 -3px 6px 0 #ad1d45'),
+            width:400,
+            height:300,
             color:'yellow',
-            opacity:0.5
+            fontSize:30,
           }
         }
       }
     };
     const configHover={
       [Widget.Upload]:{
-        UploadButtonType:{
+        UploadAreaType:{
           hover:{
             background:{
               color:'green'
@@ -93,18 +89,17 @@ export default class ThemeUploadButtonType extends React.Component<any, any> {
               }
             },
             boxShadow: getBoxShadow('0 -3px 6px 0 #ad1d45'),
-            color:'blue',
-            width:500,
-            height:600,
-            fontSize:30
+            color:'blue'
           },
-
+          width:500,
+          height:600,
+          fontSize:30
         }
       }
 
     };
     const configDisabled={[Widget.Upload]:{
-        UploadButtonType:{
+        UploadAreaType:{
           disabled:{
             background:{
               color:'red'
@@ -141,10 +136,9 @@ export default class ThemeUploadButtonType extends React.Component<any, any> {
       }};
     return (
       <div>
-        <p> button</p>
         <Box>
           <Theme config={configNormal}>
-            <Text>normal:width,height,background,border,boxShadow,opacity</Text>
+            <Text>normal</Text>
             <Upload {...defaultProps}/>
           </Theme>
         </Box>
@@ -158,25 +152,6 @@ export default class ThemeUploadButtonType extends React.Component<any, any> {
           <Theme config={configDisabled}>
             <Text>disabled</Text>
             <Upload {...defaultProps} disabled/>
-          </Theme>
-        </Box>
-        <p> both</p>
-        <Box>
-          <Theme config={configNormal}>
-            <Text>normal:width,height,background,border,boxShadow,opacity</Text>
-            <Upload {...defaultPropsBoth}/>
-          </Theme>
-        </Box>
-        <Box>
-          <Theme config={configHover}>
-            <Text>hover</Text>
-            <Upload {...defaultPropsBoth}/>
-          </Theme>
-        </Box>
-        <Box>
-          <Theme config={configDisabled}>
-            <Text>disabled</Text>
-            <Upload {...defaultPropsBoth} disabled/>
           </Theme>
         </Box>
       </div>
