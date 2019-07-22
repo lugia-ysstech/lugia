@@ -1019,7 +1019,7 @@ module.exports = param => {
         },
         {
           content: [
-            { text: '英文字体优先级：Helvetica Neue、Helvetica、Arialc', margin: '20px 0 0' },
+            { text: '英文字体优先级：Helvetica Neue、Helvetica、Arial', margin: '20px 0 0' },
           ],
           img: [{ url: fontImg5}],
           imgPosition: 'bottom',
