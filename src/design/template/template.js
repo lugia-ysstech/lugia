@@ -53,8 +53,9 @@ const Content = styled.div`
   line-height:1.8;
   margin:${props => (props.margin || '0')};
   background:${props => (props.bash?'#f8f8f8':'transparent')};
-  padding:${props => (props.bash?'8px 16px':props.level?'0':'0 50px 0 0')};
+  padding:${props => (props.inline?'0 4px':props.bash?'8px 16px':props.level?'0':'0 50px 0 0')};
   border-radius:${props => (props.bash?'4px':'0')};
+  display:${props => (props.inline?'inline-block':'block')};
 `;
 
 const ContentBox = styled.div` 
@@ -239,12 +240,14 @@ const getContentElement = (data:Object,titleElement,imgPosition:string,level?:Bo
   return  <ContentContainer level={level} imgPosition={imgPosition}>
     {level && titleElement}
     {data.map(item => {
-      const {text,size,color,margin,weight,url,bash,javascript} = item;
+      const {text,size,color,margin,weight,url,bash,javascript, inline,link,renderHtml} = item;
+      const reg = /<a.*?>(.*?)<\/a>/g;
+      console.log('------------',item,link);
       return <React.Fragment>
-        <Content size={size} color={color} bash={bash} margin={margin} weight={weight} level={level}>
-          {javascript?<Highlight className="language-jsx">
+        <Content inline={inline} size={size} color={color} bash={bash} margin={margin} weight={weight} level={level}>
+          {javascript?<Highlight className="language-jsx" innerHTML={renderHtml}>
             {text}
-          </Highlight>:text}
+          </Highlight>: link?<a target={'_blank'} href={link}>{text}</a>:text}
         </Content>
         {url && <InnerImage  src={url}  />}
       </React.Fragment>;
@@ -384,7 +387,7 @@ export default class Template extends React.Component<defProps, stateProps> {
               childElement =
                 <React.Fragment>
                   {getImgElement(img,imgPosition,level)}
-                  {getContentElement(item.content,titleElement,imgPosition,level)}
+                  {getContentElement(content,titleElement,imgPosition,level)}
                 </React.Fragment>;
           }
           return <React.Fragment>

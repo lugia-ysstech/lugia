@@ -163,6 +163,7 @@ export default class MenuList extends React.Component<any, any> {
               value={this.state.current}
               inlineExpandAll={true}
               onSelect={this.onSelect}
+              step={60}
             />
         }
       </Container>

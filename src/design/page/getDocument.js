@@ -1160,14 +1160,17 @@ module.exports = param => {
         {
           title: '版本',
           content: [
-            { text: '稳定版：[1.0.0](https://www.npmjs.com/package/lugia-web)', margin: '12px 0 30px' },
+            { text: '稳定版：', margin: '12px 0 0', inline:true },
+            { text: `[1.0.0]` ,link:'https://www.npmjs.com/package/lugia-web', inline:true, margin: '0 0 30px' },
           ]
         },
         {
           title: '安装',
           content: [
             { text: '我们推荐使用 npm 或 yarn 来进行安装，不仅方便，也可放心在生产环境打包部署。' },
-            { text: '安装之前，你需要安装 [nrm](https://www.npmjs.com/package/nrm) 来管理你的 `npm` 源信息。' },
+            { text: '安装之前，你需要安装 ', inline:true },
+            { text: `[nrm]` ,link:'https://www.npmjs.com/package/nrm', inline:true },
+            { text: '来管理你的 `npm` 源信息。',  inline:true },
             {text:'安装\n' +
               '  $ npm install -g nrm\n' +
               '查看版本\n' +
@@ -1210,10 +1213,17 @@ module.exports = param => {
         {
           title:'说在前面',
           content: [
-            { text: '在开始之前，我们推荐先学习 [React](http://facebook.github.io/react/) 和 [ES2015](https://babeljs.io/docs/en/learn),并且配置了 [Node.js](https://nodejs.org/en/) v8 版本及以上。\n' +
-              '如果你刚开始学习前端或者 React，将 UI 框架作为你的第一步可能不是最好的主意。' , margin: '0 0 30px'},
+            // { text: `在开始之前，我们推荐先学习[React](http://facebook.github.io/react/) 和 [ES2015](https://babeljs.io/docs/en/learn),并且配置了 [Node.js](https://nodejs.org/en/) v8 版本及以上。\n' +
+            //   '如果你刚开始学习前端或者 React，将 UI 框架作为你的第一步可能不是最好的主意。` },
+            { text: `在开始之前，我们推荐先学习`, inline:true},
+            { text: `[React]` ,link:'http://facebook.github.io/react/', inline:true},
+            { text: `和` , inline:true},
+            { text: `[ES2015]` ,link:'https://babeljs.io/docs/en/learn', inline:true},
+            { text: `并且配置了` , inline:true},
+            { text: `[Node.js]` , link:'https://nodejs.org/en/', inline:true},
+            { text: ` v8 版本及以上。` , inline:true},
+            { text: `如果你刚开始学习前端或者 React，将 UI 框架作为你的第一步可能不是最好的主意。` , margin: '0 0 30px', inline:true},
           ],
-
         },
         {
           title: '创建一个本地实例',
@@ -1249,10 +1259,11 @@ module.exports = param => {
               'Use @lugia/lugiax、@lugia/lugia-web、@lugia/lugiax-router\n' +
               '\n' +
               ' dva\n' +
-              'Use [dva](https://github.com/dvajs/dva)\n' +
+              'Use <a href="https://github.com/dvajs/dva">[dva]</a>\n' +
               '\n' +
               ' cra\n' +
-              'create-react-app',bash:true, margin: '0 0 30px',javascript:true}
+              'create-react-app',bash:true, margin: '0 0 30px',javascript:true,renderHtml:true},
+
           ]
         },
 
@@ -1347,7 +1358,9 @@ module.exports = param => {
             {text: '启动项目：' , margin: '0 0 30px'},
             {text:'## 运行\n' +
               '$ yarn start',bash:true, margin: '0 0 30px',javascript:true},
-            {text: '在浏览器的 [http://localhost:8000](http://localhost:8000)， 你会看到 mega 的欢迎界面。' , margin: '0 0 30px'},
+            {text: '在浏览器的 ' , inline:true },
+            { text: `[http://localhost:8000]` ,link:'http://localhost:8000', inline:true },
+            { text: '你会看到 mega 的欢迎界面。',  inline:true , margin: '0 0 30px'},
           ],
           img: [{ url: welcome }],
           imgPosition: 'bottom',
@@ -1733,7 +1746,11 @@ module.exports = param => {
         {
           title:'设计思想',
           content: [
-            {text: '基于`redux` + `redux-saga` 封装出更加简单的状态管理工具。我们引入了 `mutation` 的概念（`mutation` + `state`）， 简化了 `redux`。lugiax 的 state 是 不可变类型的数据， 可参看 [Immutable ](https://facebook.github.io/immutable-js/docs/#/)； Immutable数据一旦创建，就不能更改。而 `mutation` 就是修改 `state` 的唯一途径。state 被修改后， 并不会通知全局来进行更新，而是通知所绑定的对应的 Component 来进行更新。' ,margin: '0 0 30px'},
+            {text: '基于`redux` + `redux-saga` 封装出更加简单的状态管理工具。我们引入了 `mutation` 的概念（`mutation` + `state`）， 简化了 `redux`。' , inline:true},
+            {text: 'lugiax 的 state 是 不可变类型的数据， 可参看' , inline:true},
+            { text: ` [Immutable] ； ` ,link:'https://facebook.github.io/immutable-js/docs/#/', inline:true },
+            { text: 'Immutable数据一旦创建，就不能更改。',  inline:true },
+            { text: '而 `mutation` 就是修改 `state` 的唯一途径。state 被修改后， 并不会通知全局来进行更新，而是通知所绑定的对应的 Component 来进行更新。',  margin: '0 0 30px'},
             {text: 'state',weight:600, margin: '0 0 5px'},
             {text: '`state` 是单独的，每个 model 都有自己的 `state`，并且是不可变类型的',margin: '0 0 5px'},
             {text: 'mutation',weight:600, margin: '0 0 10px'},

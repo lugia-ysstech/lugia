@@ -10,9 +10,19 @@ import {go} from '@lugia/lugiax-router';
 import { Grid , Icon} from '@lugia/lugia-web';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 
+import Headers from '../nav';
+
 import mac from '../../public/mega/mac.png';
 import windows from '../../public/mega/windows.png';
 import mega from '../../public/mega/2.png';
+import megaImg from './mega.png';
+import jobPipe from './jobPipe.png';
+import program from './program.png';
+import foot from './foot.png';
+import page from './page.png';
+import wuliao from './wuliao.png';
+import developTool from './developTool.png';
+import model from './model.png';
 
 const { themeColor } = colorsFunc();
 const { Row, Col } = Grid;
@@ -21,69 +31,102 @@ const Block= styled.div`
   min-height:20px;
 `;
 
+const Container = styled.div`
+ width: ${props => (props.width ? typeof(props.width) === 'string'? props.width: `${props.width}px` : '')};
+ margin: ${props => (props.margin ? `${props.margin}` : '0')};
+	
+`;
+const ContainerRight = styled.div`
+	width: 540px;
+	margin: 0 0 0  70px; 
+	text-align: left;
+`;
 const Wrapper = styled.div`
 	width:100%;	
-	transform:translateY(30%);
+`;
+
+const FlexBox = styled.div`
+	width:100%;	
+	margin: ${props => (props.margin ? `${props.margin}` : '0')};
 	display:flex;
-	flex-direction:column;
+	flex-direction:row;
 	align-items:center;
 	justify-content:center;
-`;
-const Header = styled.div`
- height:60px;
-	width:1000px;	
-`;
-
-const Logo = styled.div`
-  height: 50px;
-  line-height: 50px;
-  color:${themeColor};
-  font-size: 18px;
-  vertica-align: middle;
-  margin-top: 70px;
-  text-align:center;
-  cursor:pointer;
-`;
-
-
-const Return = styled(Icon)`
-  vertical-align: middle !important;
-  margin:0 6px;
+	flex-wrap: wrap;
 `;
 
 const Main = styled.div`
-  height:300px;
-	width:1000px;
+  min-height:430px;
+	padding: 89px 0 0 0;
+`;
+
+const DownLoadBox = styled.div`
+  padding: 34px 0 0;
+  display:flex;
+	flex-direction:row;
+`;
+
+const MidBlock = styled.div`
+  text-align: center;
 `;
 
 const Tittle1 = styled.p`
- font-size:40px;
-	color:#50575d;
+  font-size:26px;
+  line-height:37px;
+	color:#000066;
 	font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
-	margin-left:263px;
-	margin-top:100px;
-	font-weight: 500;
+	font-weight: bold;
 `;
 
 const Tittle2 = styled.p`
-  font-size:28px;
-	color:#747e90;
+  font-size:20px;
+  line-height:28px;
+	color:#747E90;
 	font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
-	margin-left:345px;
-	margin-top:20px;
+	margin-top: 20px;
 `;
+const Tittle3 = styled.p`
+  font-size:36px;
+  line-height:28px;
+	color:#000066;
+	font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
+	margin-top:16px;
+	font-weight: bold;
+`;
+const Tittle4 = styled.div`
+  text-align: left;
+  font-size:26px;
+  line-height:26px;
+	color:#000066;
+	font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
+	position: relative;
+	&::before {
+	  content:'';
+	  display: inline-block;
+	  width: 20px;
+	  height: 20px;
+	  border-radius: 50%;
+	  background: ${themeColor};
+	  position: absolute;
+	  top: 4px;
+	  left: -30px;
+	}
+`;
+
+const Img = styled.img`
+  margin: 30px 0;
+  width: ${props => (props.width ? `${props.width}px` : '')}
+`;
+
 
 const Mac = styled.a`
   display:inline-block;
-  height:48px;
-	width:220px;
-	position:absolute;
+  height:32px;
+	width:148px;
 	background-color:#000;
-	border-radius: 6px;
-	margin-left:260px;
-	margin-top:68px;
+	border-radius: 32px;
 	text-align:center;
-	line-height:48px;
+	line-height:32px;
 	transition:0.2s;
 	&:hover {
     background-color:#333;
@@ -101,16 +144,14 @@ const MacLogo= styled.div`
 
 const Window= styled.a`
   display:inline-block;
-  height:48px;
-	width:220px;
-	position:absolute;
+  height:32px;
+	width:148px;
 	background-color:#4d63ff;
-	border-radius: 6px;
-	margin-left:526px;
-	margin-top:68px;
+	border-radius: 32px;
+	margin-left:6px;
 	transition:0.2s;
 	text-align:center;
-	line-height:48px;
+	line-height:32px;
 	&:hover {
 	background-color:#384ddd;
 }
@@ -127,7 +168,7 @@ const WindowLogo= styled.div`
 `;
 
 const Span= styled.span`
-  font-size:18px;
+  font-size:14px;
 	color:#fff;
 	font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
 	text-align: center;
@@ -135,12 +176,11 @@ const Span= styled.span`
 `;
 
 const Foot= styled.div`
-  height:280px;
+  height:252px;
 	width:100%;
-	background:url(${mega}) no-repeat ;
-	background-size:100% 100%;  
-	position:absolute;
-	bottom:0;
+	background:url(${foot}) no-repeat ;
+	background-size:100% 90%;  
+	background-position-y: 25px;
 `;
 
 
@@ -152,35 +192,95 @@ export default class Mega extends React.Component {
       <React.Fragment>
 
         <Row>
-          <Col span={5} xl={{ span: 4 }}  xxl={{ span: 5 }}>
+          <Col span={5} xl={{ span: 4 }}  xxl={{ span: 4 }}>
             <Block> </Block>
           </Col>
-          <Col span={14} xl={{ span: 16 }}  xxl={{ span: 14 }}>
-            <Wrapper>
-
-              <Main>
-                <Tittle1>欢迎使用Lugia-mega组建库</Tittle1>
-                <Tittle2>请选择您要安装的操作系统</Tittle2>
-                <Mac href="#">
-                  <MacLogo />
-                  <Span>点击下载mac版</Span>
-                </Mac>
-                <Window href="#">
-                  <WindowLogo />
-                  <Span>点击下载window版</Span>
-                </Window>
-              </Main>
-              <Header onClick={e => {
-                go({ url:'/home' });
-              }}>
-                <Logo><Return iconClass="lugia-icon-direction_Left"/>返回lugia官网</Logo>
-              </Header>
-            </Wrapper>
+          <Col span={14} xl={{ span: 16 }}  xxl={{ span: 16 }}>
+            <Headers />
           </Col>
-          <Col span={5} xl={{ span: 4 }}  xxl={{ span: 5 }}>
+          <Col span={5} xl={{ span: 4 }}  xxl={{ span: 4 }}>
             <Block > </Block>
           </Col>
         </Row>
+        <Wrapper>
+          <Row>
+            <Col span={5} xl={{ span: 4 }}  xxl={{ span: 4 }}>
+              <Block> </Block>
+            </Col>
+            <Col span={14} xl={{ span: 16 }}  xxl={{ span: 16 }}>
+              <Main>
+                <Tittle1>欢迎使用Lugia-mega组建库</Tittle1>
+                <Tittle2>请选择您要安装的操作系统</Tittle2>
+                <DownLoadBox>
+                  <Mac href="#">
+                    <MacLogo />
+                    <Span>mac版本</Span>
+                  </Mac>
+                  <Window href="#">
+                    <WindowLogo />
+                    <Span>window版本</Span>
+                  </Window>
+                </DownLoadBox>
+
+              </Main>
+              <MidBlock>
+                <Tittle3>Lugia Mega</Tittle3>
+                <Tittle2>标准、高效、开箱即用的前端可视化开发工具</Tittle2>
+                <FlexBox margin={'50px 0 120px'}>
+                  <Container>
+                    <img src={megaImg} alt=""/>
+                  </Container>
+                  <ContainerRight>
+                    <Tittle4>工作流</Tittle4>
+                    <Tittle2>重塑项目开发流程，不同职位的产出成果可以直接迭代复用，从而满足云原生大前端的快速迭代开发需求。</Tittle2>
+                    <Img src={jobPipe} alt=""/>
+
+                    <Tittle4>愿景</Tittle4>
+                    <Tittle2>降低开发成本，提高前端开发质量，提升用户体验。</Tittle2>
+
+                  </ContainerRight>
+                </FlexBox>
+                <Tittle3>功能点</Tittle3>
+                <FlexBox>
+                  <Container  width={'27%'}  margin={'10px 35px'}>
+                    <Img src={program} alt="" width={120}/>
+                    <Tittle1>项目管理</Tittle1>
+                    <Tittle2>对符合 lugia-mega 规范的前端项目进行管理</Tittle2>
+                  </Container>
+
+                  <Container  width={'27%'}  margin={'10px 35px'}>
+                    <Img src={page} alt="" width={120}/>
+                    <Tittle1>页面设计器</Tittle1>
+                    <Tittle2>通过对所需物料的拖拽、组合等方式来完成整个页面设计稿</Tittle2>
+                  </Container>
+
+                  <Container  width={'27%'}  margin={'10px 35px'}>
+                    <Img src={wuliao} alt="" width={120}/>
+                    <Tittle1>物料体系</Tittle1>
+                    <Tittle2>物料体系是 lugia-mega 重要的生产力要素</Tittle2>
+                  </Container>
+
+                  <Container  width={'27%'} margin={'10px 35px'}>
+                    <Img src={developTool} alt="" width={120}/>
+                    <Tittle1>开发工具链</Tittle1>
+                    <Tittle2>提供开发现代单页应用需要的所有环境，是 lugia-mega 组成部分的链接器</Tittle2>
+                  </Container>
+
+                  <Container  width={'27%'} margin={'10px 35px'}>
+                    <Img src={model} alt="" width={120}/>
+                    <Tittle1>模型规范</Tittle1>
+                    <Tittle2>模型规范分离了用户视图和业务逻辑，lugia-mega 可以复用已有项目的业务模型</Tittle2>
+                  </Container>
+
+                </FlexBox>
+              </MidBlock>
+            </Col>
+            <Col span={5} xl={{ span: 4 }}  xxl={{ span: 4 }}>
+              <Block > </Block>
+            </Col>
+          </Row>
+
+        </Wrapper>
         <Foot />
       </React.Fragment>
     );
