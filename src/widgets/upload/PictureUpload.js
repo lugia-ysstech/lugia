@@ -1,5 +1,10 @@
 import React from 'react';
 import { Upload, Theme } from '@lugia/lugia-web';
+import styled from "styled-components";
+
+const Title = styled.div`
+    margin: 10px 0;
+`;
 
 class UploadDemo extends React.Component<any, any> {
   constructor(props: Object) {
@@ -7,29 +12,33 @@ class UploadDemo extends React.Component<any, any> {
   }
 
   render() {
+    const defaultProps1 = {
+      areaType: 'picture',
+      inputId: 'upload1',
+      size: 'small',
+      url: '/upload',
+    };
+    const defaultProps2 = {
+      areaType: 'picture',
+      inputId: 'upload2',
+      url: '/upload',
+    };
     const defaultProps3 = {
-      listType: 'picture',
+      areaType: 'picture',
       inputId: 'upload3',
       size: 'large',
       multiple: true,
       accept: 'image/*',
       url: '/upload',
     };
-    const defaultProps4 = {
-      listType: 'picture',
-      inputId: 'upload4',
-      url: '/upload',
-    };
-    const defaultProps5 = {
-      listType: 'picture',
-      inputId: 'upload5',
-      size: 'small',
-      url: '/upload',
-    };
+
     return (
       <div>
-        <Upload {...defaultProps5} />
-        <Upload {...defaultProps4} />
+        <Title>size：small</Title>
+        <Upload {...defaultProps1} />
+        <Title>size：default</Title>
+        <Upload {...defaultProps2} />
+        <Title>size：large</Title>
         <Upload {...defaultProps3} />
       </div>
     );
