@@ -40,7 +40,7 @@ export default class testDemo extends React.Component<any, any> {
           <Limit/>
           <H2>Multiple</H2>
           <Multiple/>
-          <H2>ListType</H2>
+          <H2>AreaType</H2>
           <AreaType/>
           <H2>AutoUpload</H2>
           <AutoUpload/>
