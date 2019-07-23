@@ -9,7 +9,6 @@ import styled from 'styled-components';
 const NavMenuWrap = styled.div`
   display: inline-block;
   margin: 10px;
-  overflow: hidden;
 `;
 
 const data = [
@@ -85,7 +84,7 @@ export default class DefaultBreadcrumb extends React.Component<any, any> {
         <Navmenu data={data} inlineType={'ellipse'} />
       </NavMenuWrap>,
       <NavMenuWrap>
-        <Navmenu data={data} theme={'dark'} inlineType={'ellipse'} />
+        <Navmenu data={data} themeStyle={'dark'} inlineType={'ellipse'} />
       </NavMenuWrap>
     ];
   }
