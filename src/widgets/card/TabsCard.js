@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Theme, Tabs } from '@lugia/lugia-web';
 import styled from 'styled-components';
-
+import Widget from "@lugia/lugia-web/dist/consts";
 const Wrapper = styled.div`
   display: inline-block;
 `;
@@ -15,11 +15,13 @@ const Operation = styled.div`
 
 export default class TabsCard extends React.Component<Object, Object> {
   render() {
-    const combo = {
-      register: {
-        width: 500,
-        height: 300
-      }
+
+    const tabsCard = {
+      [Widget.Card]: {
+        Container: {
+          normal: { width: 400, height: 240 },
+        },
+      },
     };
     const defaultData = [
       {
@@ -36,7 +38,7 @@ export default class TabsCard extends React.Component<Object, Object> {
       }
     ];
     return (
-      <Theme config={combo}>
+      <Theme config={tabsCard}>
         <Wrapper>
           <Card
             operation={<Operation>操作</Operation>}
