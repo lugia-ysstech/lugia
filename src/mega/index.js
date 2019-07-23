@@ -12,9 +12,10 @@ import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 
 import Headers from '../nav';
 
+
 import mac from '../../public/mega/mac.png';
 import windows from '../../public/mega/windows.png';
-import mega from '../../public/mega/2.png';
+import banner from './banner.png';
 import megaImg from './mega.png';
 import jobPipe from './jobPipe.png';
 import program from './program.png';
@@ -37,7 +38,7 @@ const Container = styled.div`
 	
 `;
 const ContainerRight = styled.div`
-	width: 540px;
+	width: 480px;
 	margin: 0 0 0  70px; 
 	text-align: left;
 `;
@@ -55,9 +56,13 @@ const FlexBox = styled.div`
 	flex-wrap: wrap;
 `;
 
+
 const Main = styled.div`
-  min-height:430px;
-	padding: 89px 0 0 0;
+  min-height:520px;
+	padding: 120px 0 0 0;
+	background:url(${banner}) no-repeat;
+	background-position: bottom right;
+  margin: 0 0 80px;
 `;
 
 const DownLoadBox = styled.div`
@@ -71,7 +76,7 @@ const MidBlock = styled.div`
 `;
 
 const Tittle1 = styled.p`
-  font-size:26px;
+  font-size:18px;
   line-height:37px;
 	color:#000066;
 	font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
@@ -79,14 +84,23 @@ const Tittle1 = styled.p`
 `;
 
 const Tittle2 = styled.p`
-  font-size:20px;
+  font-size:14px;
   line-height:28px;
 	color:#747E90;
 	font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
-	margin-top: 20px;
+	margin-top: 10px;
 `;
 const Tittle3 = styled.p`
-  font-size:36px;
+  font-size:26px;
+  line-height:28px;
+	color:#000066;
+	font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
+	margin-top:16px;
+	font-weight: bold;
+`;
+
+const Tittle5 = styled.p`
+  font-size:32px;
   line-height:28px;
 	color:#000066;
 	font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
@@ -95,21 +109,21 @@ const Tittle3 = styled.p`
 `;
 const Tittle4 = styled.div`
   text-align: left;
-  font-size:26px;
-  line-height:26px;
+  font-size:18px;
+  line-height:18px;
 	color:#000066;
 	font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
 	position: relative;
 	&::before {
 	  content:'';
 	  display: inline-block;
-	  width: 20px;
-	  height: 20px;
+	  width: 14px;
+	  height: 14px;
 	  border-radius: 50%;
 	  background: ${themeColor};
 	  position: absolute;
-	  top: 4px;
-	  left: -30px;
+	  top: 3px;
+	  left: -20px;
 	}
 `;
 
@@ -190,26 +204,15 @@ export default class Mega extends React.Component {
 
     return (
       <React.Fragment>
-
-        <Row>
-          <Col span={5} xl={{ span: 4 }}  xxl={{ span: 4 }}>
-            <Block> </Block>
-          </Col>
-          <Col span={14} xl={{ span: 16 }}  xxl={{ span: 16 }}>
-            <Headers />
-          </Col>
-          <Col span={5} xl={{ span: 4 }}  xxl={{ span: 4 }}>
-            <Block > </Block>
-          </Col>
-        </Row>
         <Wrapper>
           <Row>
-            <Col span={5} xl={{ span: 4 }}  xxl={{ span: 4 }}>
+            <Col span={5} xl={{ span: 4 }}  xxl={{ span: 3 }}>
               <Block> </Block>
             </Col>
-            <Col span={14} xl={{ span: 16 }}  xxl={{ span: 16 }}>
+            <Col span={14} xl={{ span: 16 }}  xxl={{ span: 18 }}>
+              <Headers />
               <Main>
-                <Tittle1>欢迎使用Lugia-mega组建库</Tittle1>
+                <Tittle5>欢迎使用Lugia-mega组建库</Tittle5>
                 <Tittle2>请选择您要安装的操作系统</Tittle2>
                 <DownLoadBox>
                   <Mac href="#">
@@ -275,7 +278,7 @@ export default class Mega extends React.Component {
                 </FlexBox>
               </MidBlock>
             </Col>
-            <Col span={5} xl={{ span: 4 }}  xxl={{ span: 4 }}>
+            <Col span={5} xl={{ span: 4 }}  xxl={{ span: 3 }}>
               <Block > </Block>
             </Col>
           </Row>
