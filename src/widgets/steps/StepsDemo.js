@@ -3,49 +3,41 @@ import styled from 'styled-components';
 import Widget from '@lugia/lugia-web/dist/consts';
 import { Steps, Button, Theme } from '@lugia/lugia-web';
 const Step = Steps.Step;
-const stepsData = [
+
+const steps = [
   {
     title: 'First',
-    content: 'First-content'
+    description: 'First-content',
   },
   {
     title: 'Second',
-    content: 'Second-content'
+    description: 'Second-content',
   },
   {
     title: 'Last',
-    content: 'Third-content'
-  }
+    description: 'Third-content',
+  },
 ];
-const StepContent = styled.div`
-  margin-top: 10px;
+const StepDescription = styled.div`
+  width: 600px;
+  margin-top: 50px;
   border: 1px solid #ccc;
-  height: 200px;
-  width: 400px;
-  font-size:12px;
-  background：#e8e8e8;
-  border-radius:4px;
-  position:relative;
+  height: 100px;
+`;
+const Warpper = styled.div`
+  margin-left: 50px;
 `;
 const ButtonContainer = styled.div`
-  display: inline-block;
-  margin-top: 20px;
-  margin-right: 8px;
+  margin-bottom: 30px;
 `;
-const ContentText = styled.div`
-  margin-top: 10px;
-  text-align: center;
-  color: #666;
-  font-size: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  position: relative;
-`;
+
+
+
 export default class StepsDemo extends React.Component<Object, Object> {
   constructor(props) {
     super(props);
     this.state = {
-      currentStepNumber: 1
+      currentStepNumber: 1,
     };
   }
   next() {
@@ -62,37 +54,35 @@ export default class StepsDemo extends React.Component<Object, Object> {
     const { currentStepNumber } = this.state;
     const matchCurrentNumber = currentStepNumber > 0 && currentStepNumber <= 3;
     const theCurrentStepNumber = matchCurrentNumber ? currentStepNumber : 1;
-    const content = matchCurrentNumber
-      ? stepsData[theCurrentStepNumber - 1].content
-      : '';
+    const description = matchCurrentNumber ? steps[theCurrentStepNumber - 1].content : '';
     const view = {
       [Widget.Steps]: {
-        width: 400
-      }
+        StepsOutContainer: {
+          normal: {
+            width: 600,
+          },
+        },
+      },
     };
     return (
-      <div>
+      <Warpper>
         <Theme config={view}>
-          <Steps
-            currentStepNumber={currentStepNumber}
-            stepType={'simple'}
-            size={'normal'}
-          >
-            {stepsData.map((item, i) => <Step title={item.title} />)}
-          </Steps>
-          <StepContent>{<ContentText>{content}</ContentText>}</StepContent>
           <ButtonContainer>
             <Button type="primary" onClick={() => this.pre()}>
-              上一步
+              pre
             </Button>
-          </ButtonContainer>
-          <ButtonContainer>
             <Button type="primary" onClick={() => this.next()}>
-              下一步
+              Next
             </Button>
           </ButtonContainer>
+          <Steps currentStepNumber={currentStepNumber} stepType={'simple'} size={'normal'}>
+            {steps.map((item, i) => (
+              <Step  title={item.title} />
+            ))}
+          </Steps>
+          <StepDescription>{description}</StepDescription>
         </Theme>
-      </div>
+      </Warpper>
     );
   }
 }

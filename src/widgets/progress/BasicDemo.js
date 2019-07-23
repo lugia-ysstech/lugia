@@ -7,7 +7,7 @@ export default class ProgressDemo extends React.Component {
             <div>
                 <Progress percent={30} />
                 <br/>
-                <Progress percent={50} status="active" />
+                <Progress percent={50} active />
                 <br/>
                 <Progress percent={70} status="error" />
                 <br/>

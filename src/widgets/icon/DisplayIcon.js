@@ -318,13 +318,7 @@ const IconWrapper = styled.div`
   border-radius: 4px;
   background-color: white;
 `;
-const IconDemo = styled(Icon)`
-  font-size: 36px;
-  margin: 5px;
-  &:hover {
-    color: white;
-  }
-`;
+
 
 export default class BaseIcon extends React.Component<any, any> {
   getIcon = iconClassArray => {
@@ -333,7 +327,7 @@ export default class BaseIcon extends React.Component<any, any> {
       iconClass = v;
       return iconClass ? (
         <IconWrapper>
-          <IconDemo
+          <Icon
             iconClass={iconClass}
             onClick={() => {
               this.copy.copy(v);
@@ -347,13 +341,20 @@ export default class BaseIcon extends React.Component<any, any> {
   render() {
     const view = {
       [Widget.Icon]: {
-        margin: {
-          left: 10,
-          right: 10,
-          top: 10,
-          bottom: 10
-        },
-        fontSize: 36
+        Icon: {
+          normal: {
+            margin: {
+              left: 10,
+              right: 10,
+              top: 10,
+              bottom: 0
+            },
+            fontSize: 36
+          },
+          hover: {
+            color: 'white',
+          },
+        }
       }
     };
     return (
