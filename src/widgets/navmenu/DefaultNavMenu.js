@@ -87,7 +87,7 @@ export default class DefaultBreadcrumb extends React.Component<any, any> {
       </NavMenuWrap>,
       <NavMenuWrap>
         <Theme config={{ [Widget.Navmenu]: { height: 400 } }}>
-          <Navmenu data={data} theme={'dark'} />
+          <Navmenu data={data} themeStyle={'dark'} />
         </Theme>
       </NavMenuWrap>
     ];
