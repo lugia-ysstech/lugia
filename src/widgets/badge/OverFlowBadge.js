@@ -1,6 +1,7 @@
 import React from 'react';
 import { Badge, Theme } from '@lugia/lugia-web';
 import styled from 'styled-components';
+import Widget from "@lugia/lugia-web/dist/consts";
 
 const Wrapper = styled.div`
 `;
@@ -13,17 +14,23 @@ const Box = styled.div`
 export default class OverFlowBadge extends React.Component<any, any> {
 
   render () {
+    const dot = {
+      [Widget.Badge]: {
+        BadgeNumber: {
+          normal: { position: { top: -5, right: -5 } }
+        }
+      }
+    };
     return (
       <Wrapper>
-        <Badge overFlow={9} count={8}>
+        <Theme config={dot}>
+        <Badge overFlow={99} count={98}>
           <Box/>
         </Badge>
-        <Badge overFlow={99} count={88}>
+        <Badge overFlow={99} count={100}>
           <Box/>
         </Badge>
-        <Badge overFlow={999} count={888}>
-          <Box/>
-        </Badge>
+        </Theme>
       </Wrapper>);
   }
 }
