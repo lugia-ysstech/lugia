@@ -1,7 +1,6 @@
-import React from 'react';
-import { Tooltip, Theme,Button } from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts';
-import styled from 'styled-components';
+import React from "react";
+import { Tooltip, Theme, Button } from "@lugia/lugia-web";
+import styled from "styled-components";
 const buttonWidth = 80;
 const DirectionButton = styled(Button)`
   width: ${buttonWidth}px;
@@ -27,35 +26,17 @@ const DirectionBottomWrapper = styled.div`
   white-space: nowrap;
   display: inline-block;
 `;
-const ToolTipHWrapper = ToolTipBaseWrapper.extend`
+const ToolTipHWrapper = styled(ToolTipBaseWrapper)`
   margin-right: 10px;
 `;
-const ToolTipVWrapper = ToolTipBaseWrapper.extend`
+const ToolTipVWrapper = styled(ToolTipBaseWrapper)`
   margin-top: 10px;
 `;
 export default class BaseTooltip extends React.Component<any, any> {
-  constructor(props: any) {
-    super(props);
-    this.state = { value: '' };
-  }
-
-  onChange = ({ newValue: value }: any) => {
-    this.setState({ value });
-  };
-
   render() {
     const text = <span>prompt text</span>;
-    const config = {
-      [Widget.Tooltip]: {
-        color: '#fff',
-        fontColor: '#000',
-      },
-      [Widget.Button]: {
-        width: buttonWidth,
-      },
-    };
     return (
-      <Theme config={config}>
+      <div>
         <DirectionTopWrapper>
           <ToolTipHWrapper>
             <Tooltip placement="topLeft" title={text}>
@@ -124,7 +105,7 @@ export default class BaseTooltip extends React.Component<any, any> {
             </Tooltip>
           </ToolTipHWrapper>
         </DirectionBottomWrapper>
-      </Theme>
+      </div>
     );
   }
 }
