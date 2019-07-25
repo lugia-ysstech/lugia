@@ -57,13 +57,6 @@ export default class TypeSteps extends React.Component<any, any> {
             <Step title="step3" stepStatus="next" isDashed={true} />
           </Steps>
         </Wrapper>
-        <Wrapper>
-          <Steps orientation="horizontal" stepType={'dot'}>
-            <Step title="step1" stepStatus="finish" />
-            <Step title="step2" stepStatus="process" />
-            <Step title="step3" stepStatus="next" />
-          </Steps>
-        </Wrapper>
       </Theme>
     );
   }
