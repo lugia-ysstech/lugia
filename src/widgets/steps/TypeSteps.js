@@ -25,15 +25,13 @@ export default class TypeSteps extends React.Component<any, any> {
           <Steps orientation="horizontal" size={'normal'} desAlign={'center'}>
             <Step
               title="step1"
-              description={'description1'}
               stepStatus="finish"
             />
             <Step
               title="step2"
-              description={'description2'}
               stepStatus="process"
             />
-            <Step title="step3" description={'description3'} stepStatus="next" />
+            <Step title="step3" stepStatus="next" />
           </Steps>
         </Wrapper>
         <Wrapper>
@@ -45,9 +43,9 @@ export default class TypeSteps extends React.Component<any, any> {
         </Wrapper>
         <Wrapper>
           <Steps orientation="horizontal" stepType={'icon'} size={'mini'}>
-            <Step icon={'lugia-icon-financial_cloud'} stepStatus="finish" />
-            <Step icon={'lugia-icon-financial_cloud'} stepStatus="process" />
-            <Step icon={'lugia-icon-financial_cloud'} stepStatus="next" />
+            <Step icon={'lugia-icon-financial_cloud'} title="step1" stepStatus="finish" />
+            <Step icon={'lugia-icon-financial_cloud'} title="step2" stepStatus="process" />
+            <Step icon={'lugia-icon-financial_cloud'} title="step3" stepStatus="next" />
           </Steps>
         </Wrapper>
         <Wrapper>
