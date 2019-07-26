@@ -6,29 +6,28 @@ const Step = Steps.Step;
 
 const steps = [
   {
-    title: "First",
-    description: "First-content"
+    title: "First Step",
+    description: "First Step Content"
   },
   {
-    title: "Second",
-    description: "Second-content"
+    title: "Second Step",
+    description: "Second  Step Content"
   },
   {
-    title: "Last",
-    description: "Third-content"
+    title: "Last Step",
+    description: "Third  Step Content"
   }
 ];
 const StepDescription = styled.div`
   width: 400px;
-  margin-top: 30px;
+  margin-top: 40px;
   border: 1px solid #ccc;
   height: 100px;
+  text-align: center;
+  padding-top: 20px;
 `;
 const Warpper = styled.div`
   margin-left: 50px;
-`;
-const ButtonContainer = styled.div`
-  margin-bottom: 30px;
 `;
 
 export default class StepsDemo extends React.Component<Object, Object> {
@@ -91,19 +90,18 @@ export default class StepsDemo extends React.Component<Object, Object> {
           <Steps
             currentStepNumber={currentStepNumber}
             stepType={"simple"}
+            desAlign={'center'}
             size={"normal"}
           >
             {steps.map((item, i) => <Step title={item.title} />)}
           </Steps>
           <StepDescription>{description}</StepDescription>
-          <ButtonContainer>
-            <Button type="primary" onClick={() => this.pre()}>
-              上一步
-            </Button>
-            <Button theme={button} type="primary" onClick={() => this.next()}>
-              下一步
-            </Button>
-          </ButtonContainer>
+          <Button type="primary" onClick={() => this.pre()}>
+            上一步
+          </Button>
+          <Button theme={button} type="primary" onClick={() => this.next()}>
+            下一步
+          </Button>
         </Theme>
       </Warpper>
     );
