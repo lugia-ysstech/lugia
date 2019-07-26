@@ -2,6 +2,8 @@ import React from "react";
 import { Card, Theme } from "@lugia/lugia-web";
 import styled from "styled-components";
 import Widget from "@lugia/lugia-web/dist/consts";
+import avatarImgSrc from "../../../public/card-avatar-circle.png";
+import cardImgSrc from "../../../public/card.jpg";
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -37,8 +39,7 @@ export default class TypeCard extends React.Component<any, any> {
         CardTitle: {
           normal: {
             width: 100,
-            height: 20,
-
+            height: 20
           }
         },
         CardOperation: {
@@ -59,7 +60,7 @@ export default class TypeCard extends React.Component<any, any> {
         CardImageContainer: {
           normal: {
             width: 160,
-            height: 100,
+            height: 100
           }
         },
         CardImage: {
@@ -113,7 +114,7 @@ export default class TypeCard extends React.Component<any, any> {
               width: 80,
               height: 80,
               margin: {
-                top: 10,
+                top: 10
               }
             }
           }
@@ -131,9 +132,7 @@ export default class TypeCard extends React.Component<any, any> {
                   title={"This is title"}
                   description={"This is description"}
                   imageOrientation={"vertical"}
-                  avatar={
-                    "http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/4d4bd6db04b1c6015acf4c933607956a9f2d62a1/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/Bitmap2.png"
-                  }
+                  avatar={avatarImgSrc}
                   shadow={"hover"}
                 />
               </Wrapper>
@@ -148,9 +147,7 @@ export default class TypeCard extends React.Component<any, any> {
                 imageOrientation={"vertical"}
                 title={"This is title"}
                 description={"This is description"}
-                image={
-                  "http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/2eac1a340185301d24d6fac426aebd9abe6dea0e/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/18081548404150_.pic_hd.jpg"
-                }
+                image={cardImgSrc}
                 shadow={"hover"}
               />
             </Theme>
@@ -165,9 +162,7 @@ export default class TypeCard extends React.Component<any, any> {
                   type={"avatar"}
                   title={"This is title"}
                   description={"This is description"}
-                  avatar={
-                    "http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/4d4bd6db04b1c6015acf4c933607956a9f2d62a1/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/Bitmap2.png"
-                  }
+                  avatar={avatarImgSrc}
                   shadow={"hover"}
                 />
               </Wrapper>
@@ -181,9 +176,7 @@ export default class TypeCard extends React.Component<any, any> {
                   title={"This is title"}
                   imageOrientation={"horizontal"}
                   description={"This is description"}
-                  image={
-                    "http://192.168.102.73:8081/BigFrontend/Work/ued/lugia/raw/2eac1a340185301d24d6fac426aebd9abe6dea0e/lugiaweb%E7%BB%84%E4%BB%B6/%E5%8D%A1%E7%89%87/18081548404150_.pic_hd.jpg"
-                  }
+                  image={cardImgSrc}
                   shadow={"hover"}
                 />
               </Wrapper>
