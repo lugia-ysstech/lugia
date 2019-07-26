@@ -49,12 +49,12 @@ export default class BasePopconfirm extends React.Component<any, any> {
   render() {
     const text = '确定删除这个选项吗?';
     const config = {
-      [Widget.Popover]: {
-        color: '#fef0ef',
-        fontColor: '#000'
-      },
       [Widget.Button]: {
-        width: buttonWidth
+        Container: {
+          normal: {
+            width: buttonWidth
+          }
+        }
       }
     };
     return (
