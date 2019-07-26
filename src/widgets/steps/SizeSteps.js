@@ -5,7 +5,6 @@ import Widget from '@lugia/lugia-web/dist/consts';
 const Step = Steps.Step;
 const Wrapper = styled.div`
   margin-bottom: 50px;
-  display: inline-block;
 `;
 export default class SizeSteps extends React.Component<any, any> {
   render() {
