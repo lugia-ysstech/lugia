@@ -1,10 +1,9 @@
-import React from 'react';
-import { Popover, Theme, Button } from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts';
-import styled from 'styled-components';
+import React from "react";
+import { Popover, Theme, Button } from "@lugia/lugia-web";
+import Widget from "@lugia/lugia-web/dist/consts";
+import styled from "styled-components";
 
-const Wrapper = styled.div`
-`;
+const Wrapper = styled.div``;
 const buttonWidth = 80;
 const DirectionButton = styled(Button)`
   width: ${buttonWidth}px;
@@ -39,7 +38,7 @@ const ToolTipVWrapper = styled(ToolTipBaseWrapper)`
 export default class BasePopover extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
-    this.state = { value: '' };
+    this.state = { value: "" };
   }
 
   onChange = ({ newValue: value }: any) => {
@@ -48,22 +47,22 @@ export default class BasePopover extends React.Component<any, any> {
 
   render() {
     const config = {
-      [Widget.Popover]: {
-        color: '#fef0ef',
-        fontColor: '#000'
-      },
       [Widget.Button]: {
-        width: buttonWidth
+        Container: {
+          normal: {
+            width: buttonWidth
+          }
+        }
       }
     };
-    const text = 'this is title ';
-    const description = 'this is description';
+    const text = "this is title ";
+    const description = "this is description";
     return (
       <Wrapper>
         <Theme config={config}>
           <DirectionButtonTopWrapper>
             <ToolTipHWrapper>
-              <Popover placement="topLeft" title={text} action={'click'}>
+              <Popover placement="topLeft" title={text} action={"click"}>
                 <DirectionButton type="primary">TL</DirectionButton>
               </Popover>
             </ToolTipHWrapper>
