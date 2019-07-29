@@ -2,12 +2,8 @@ import React from 'react';
 import { Theme, Tabs, Select } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
-
-const TabPane = Tabs.TabPane;
-
 const Wrapper = styled.div`
-  text-align: left;
-  display: inline-block;
+  margin:10px 0;
 `;
 const defaultData = [
   {
@@ -69,8 +65,9 @@ export default class PositionTabs extends React.Component<any, any> {
     };
     return (
       <Theme config={view}>
-        <Select displayField={'label'} data={data} onSelect={handleSelect} />
         <Wrapper>
+          <Select displayField={'label'} data={data} onSelect={handleSelect} />
+        </Wrapper>
           <Tabs
             titleType={'line'}
             tabPosition={this.state.tabPosition}
@@ -78,7 +75,6 @@ export default class PositionTabs extends React.Component<any, any> {
             onNextClick={onNextClick}
             data={defaultData}
           />
-        </Wrapper>
       </Theme>
     );
   }

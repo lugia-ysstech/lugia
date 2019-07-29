@@ -5,11 +5,15 @@ import styled from 'styled-components';
 const TextBox = styled.span`
   font-size: 14px;
   color: #333;
+  margin: 0 6px;
 `;
 export default class RateDemo extends React.Component<any, any> {
   constructor(props: Object) {
     super(props);
-    this.state = {};
+    this.state = {
+      defaultProps:3,
+      defaultProps7:0
+    };
   }
   render() {
     const config = {
@@ -23,20 +27,20 @@ export default class RateDemo extends React.Component<any, any> {
       allowHalf: false,
       classify: false,
       onClick: (e: Object, x: any) => {
-        this.setStateValue('defaultProps', x.currentValue);
+        this.setStateValue('defaultProps', x.newValue);
       },
       onChange: (e: Object, x: any) => {
-        this.setStateValue('defaultProps', x.currentValue);
+        this.setStateValue('defaultProps', x.newValue);
       }
     };
     const defaultProps7 = {
       count: 5,
       allowHalf: true,
       onClick: (e: Object, x: any) => {
-        this.setStateValue('defaultProps7', x.currentValue);
+        this.setStateValue('defaultProps7', x.newValue);
       },
       onChange: (e: Object, x: any) => {
-        this.setStateValue('defaultProps7', x.currentValue);
+        this.setStateValue('defaultProps7', x.newValue);
       }
     };
     return (

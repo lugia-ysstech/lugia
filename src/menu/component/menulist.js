@@ -120,14 +120,15 @@ export default class MenuList extends React.Component<any, any> {
   };
 
   render() {
-    const {height} = this.state;
+    const {height } = this.state;
     const config = {
       [Widget.Navmenu]: {
         Tree:{
           TreeWrap:{
             normal:{
-              height: height || 500,
-              width: 250,
+              // height: height || 500,
+              width: 270,
+              height,
               boxShadow: getBoxShadow('none')
             }
           },

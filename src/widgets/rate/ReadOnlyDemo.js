@@ -2,20 +2,16 @@ import React from 'react';
 import { Rate, Theme } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
-const TitleBox = styled.div`
-  position: relative;
-  padding: 10px;
-  font-size: 18px;
-  border-top: 1px solid #ccc;
-`;
+
 const TextBox = styled.span`
   font-size: 14px;
   color: #333;
+  margin: 0 6px;
 `;
 export default class RateDemo extends React.Component<any, any> {
   constructor(props: Object) {
     super(props);
-    this.state = {};
+    this.state = {config:3.5};
   }
   render() {
     const rate = {

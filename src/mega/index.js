@@ -221,7 +221,7 @@ export default class Mega extends React.Component {
                   </Mac>
                   <Window href="#">
                     <WindowLogo />
-                    <Span>window版本</Span>
+                    <Span>windows版本</Span>
                   </Window>
                 </DownLoadBox>
 
