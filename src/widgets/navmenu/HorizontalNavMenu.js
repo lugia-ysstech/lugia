@@ -7,6 +7,7 @@ import Widget from "@lugia/lugia-web/dist/consts";
 import styled from "styled-components";
 
 const NavMenuWrap = styled.div`
+  display: inline-block;
   margin: 10px;
 `;
 
@@ -78,10 +79,10 @@ export default class DefaultBreadcrumb extends React.Component<any, any> {
   render() {
     return [
       <NavMenuWrap>
-        <Navmenu data={data} mode={"vertical"} />
+        <Navmenu data={data} mode={"horizontal"} />
       </NavMenuWrap>,
       <NavMenuWrap>
-        <Navmenu data={data} mode={"vertical"} themeStyle={"dark"} />
+        <Navmenu data={data} mode={"horizontal"} themeStyle={"dark"} />
       </NavMenuWrap>
     ];
   }
