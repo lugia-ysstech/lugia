@@ -1,6 +1,7 @@
 import React from "react";
 import { Tooltip, Theme, Button } from "@lugia/lugia-web";
 import styled from "styled-components";
+import Widget from "@lugia/lugia-web/dist/consts";
 const buttonWidth = 80;
 const DirectionButton = styled(Button)`
   width: ${buttonWidth}px;
@@ -35,8 +36,18 @@ const ToolTipVWrapper = styled(ToolTipBaseWrapper)`
 export default class BaseTooltip extends React.Component<any, any> {
   render() {
     const text = <span>prompt text</span>;
+    const config = {
+      [Widget.Button]: {
+        Container: {
+          normal: {
+            width: buttonWidth
+          }
+        }
+      }
+    };
     return (
       <div>
+        <Theme config={config}>
         <DirectionTopWrapper>
           <ToolTipHWrapper>
             <Tooltip placement="topLeft" title={text}>
@@ -105,6 +116,7 @@ export default class BaseTooltip extends React.Component<any, any> {
             </Tooltip>
           </ToolTipHWrapper>
         </DirectionBottomWrapper>
+        </Theme>
       </div>
     );
   }
