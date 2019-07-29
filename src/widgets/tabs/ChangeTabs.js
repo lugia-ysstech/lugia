@@ -1,5 +1,10 @@
 import React from 'react';
 import { Theme, Tabs, Button } from '@lugia/lugia-web';
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  margin:10px 0;
+`;
 
 const TabPane = Tabs.TabPane;
 export const hasActivityKeyData = [
@@ -82,9 +87,12 @@ export default class ChangeTabs extends React.Component<any, any> {
     const { data } = this.state;
     return (
       <div>
-        <Button style={{ width: 200 }} onClick={this.change} type={'primary'}>
-          {'点击修改标签内容'}
-        </Button>
+        <Wrapper>
+          <Button style={{ width: 200 }} onClick={this.change} type={'primary'}>
+            {'点击修改标签内容'}
+          </Button>
+        </Wrapper>
+
         <Tabs
           tabType={'card'}
           pagedType={'single'}

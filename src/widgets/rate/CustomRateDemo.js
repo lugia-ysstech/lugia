@@ -1,6 +1,11 @@
 import React from 'react';
 import { Rate, Theme } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
+import styled from "styled-components";
+const TitleBox = styled.div`
+  font-size: 14px;
+  margin: 10px  0;
+`;
 export default class RateDemo extends React.Component<any, any> {
   constructor(props: Object) {
     super(props);
@@ -85,9 +90,13 @@ export default class RateDemo extends React.Component<any, any> {
     return (
       <div>
         <Theme config={config}>
+          <TitleBox>文字评分</TitleBox>
           <Rate {...defaultProps2} character="好" />
+          <TitleBox>分级评分 低分值样式</TitleBox>
           <Rate {...defaultProps4} />
+          <TitleBox>分级评分 正常样式</TitleBox>
           <Rate {...defaultProps5} />
+          <TitleBox>分级评分  高分值样式</TitleBox>
           <Rate {...defaultProps6} />
         </Theme>
       </div>
