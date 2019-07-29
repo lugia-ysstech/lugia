@@ -14,11 +14,10 @@ import Navcomponent from './component/navcomponent';
 const NavList = connect(
   nav,
   state => {
-    return { current: state.nav.get('current') };
+    return { current: state.get('current') };
   },
   mutations => {
-    const { nav } = mutations;
-    return { onTabClick: nav.onTabClick};
+    return { onTabClick: mutations.onTabClick};
   }
 )(Navcomponent);
 
