@@ -15,11 +15,10 @@ import MenuList from './component/menulist';
 const NavmenuList = connect(
   menu,
   state => {
-    return { current: state.menu.get('current') };
+    return { current: state.get('current') };
   },
   mutations => {
-    const { menu } = mutations;
-    return { onSelect: menu.onSelect};
+    return { onSelect: mutations.onSelect};
   }
 )(MenuList);
 

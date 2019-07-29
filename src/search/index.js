@@ -15,15 +15,15 @@ const SearchComponent = connect(
   search,
   state => {
     return {
-      searchInfo: state.search.get('searchInfo'),
-      result: state.search.get('result'),
+      searchInfo: state.get('searchInfo'),
+      result: state.get('result'),
     };
   },
   mutations => {
     const { search } = mutations;
     return {
-      handleInputChange: search.handleInputChange,
-      fetchRequest: search.asyncFetchRequest
+      handleInputChange: mutations.handleInputChange,
+      fetchRequest: mutations.asyncFetchRequest
     };
   }
 )(SearchElement);
