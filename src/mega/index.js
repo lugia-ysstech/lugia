@@ -170,6 +170,14 @@ const Window= styled.a`
 	background-color:#384ddd;
 }
 `;
+const DownLoad= styled.a`
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  margin-left: 8px;
+  box-shadow: 0px 1px 7px 0px rgba(77,104,255,.3);
+  border-radius: 100%;
+`;
 
 
 const WindowLogo= styled.div`
@@ -182,6 +190,13 @@ const WindowLogo= styled.div`
 `;
 
 const Span= styled.span`
+  font-size:14px;
+	color:#fff;
+	font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
+	text-align: center;
+	vertical-align:middle;
+`;
+const IconSpan= styled.span`
   font-size:14px;
 	color:#fff;
 	font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
@@ -223,6 +238,22 @@ export default class Mega extends React.Component {
                     <WindowLogo />
                     <Span>windows版本</Span>
                   </Window>
+                  <DownLoad href="#">
+                    <IconSpan>
+                      <Icon iconClass='lugia-icon-financial_pdf' theme={{
+                      icon: {
+                        Icon: {
+                          normal: {
+                            font:{
+                              size: 18,
+                            },
+                            margin: 6,
+                            color: '#4d63ff'
+                          }
+                        }
+                      }
+                    }} viewClass={'icon'}/></IconSpan>
+                  </DownLoad>
                 </DownLoadBox>
 
               </Main>
