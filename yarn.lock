@@ -898,7 +898,7 @@
 
 "@babel/runtime-corejs2@^7.2.0":
   version "7.5.5"
-  resolved "https://registry.npm.taobao.org/@babel/runtime-corejs2/download/@babel/runtime-corejs2-7.5.5.tgz?cache=0&sync_timestamp=1563398510575&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime-corejs2%2Fdownload%2F%40babel%2Fruntime-corejs2-7.5.5.tgz#c3214c08ef20341af4187f1c9fbdc357fbec96b2"
+  resolved "http://219.141.235.71:18081/repository/lugia-group/@babel/runtime-corejs2/-/runtime-corejs2-7.5.5.tgz#c3214c08ef20341af4187f1c9fbdc357fbec96b2"
   integrity sha1-wyFMCO8gNBr0GH8cn73DV/vslrI=
   dependencies:
     core-js "^2.6.5"
@@ -920,7 +920,7 @@
 
 "@babel/runtime@^7.4.5":
   version "7.5.5"
-  resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.5.5.tgz?cache=0&sync_timestamp=1563398515522&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
+  resolved "http://219.141.235.71:18081/repository/lugia-group/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
   integrity sha1-dPulbTXvvspEQJHHhQzNSU/S8TI=
   dependencies:
     regenerator-runtime "^0.13.2"
@@ -1221,10 +1221,10 @@
     babel-plugin-transform-dynamic-import "2.1.0"
     babel-plugin-transform-react-remove-prop-types "0.4.20"
 
-"@lugia/css@^1.0.17":
-  version "1.0.17"
-  resolved "http://192.168.102.79:5001/@lugia/css/download/@lugia/css-1.0.17.tgz#77a7b6bd7f377a7748524e123b3b6af8978ef5cd"
-  integrity sha1-d6e2vX83endIUk4SOztq+JeO9c0=
+"@lugia/css@1.0.18", "@lugia/css@^1.0.18":
+  version "1.0.18"
+  resolved "http://192.168.102.79:5001/@lugia/css/download/@lugia/css-1.0.18.tgz#41980fa070285d3073de1b2a6db114564355cc34"
+  integrity sha1-QZgPoHAoXTBz3hsqbbEUVkNVzDQ=
   dependencies:
     "@babel/runtime" "^7.4.5"
     decamelize "^3.2.0"
@@ -1250,20 +1250,21 @@
     redux-immutable "^4.0.0"
     redux-saga "^0.16.0"
 
-"@lugia/lugia-web@^1.1.0-27":
-  version "1.1.0-27"
-  resolved "http://192.168.102.79:5001/@lugia/lugia-web/download/@lugia/lugia-web-1.1.0-27.tgz#a5e8b5f0975f3a252d9c93e772d045eabc613c5b"
-  integrity sha1-pei18JdfOiUtnJPnctBF6rxhPFs=
+"@lugia/lugia-web@^1.1.0-52":
+  version "1.1.0-52"
+  resolved "http://192.168.102.79:5001/@lugia/lugia-web/download/@lugia/lugia-web-1.1.0-52.tgz#7dc405248d6ec5b401567244565850e80955e2ea"
+  integrity sha1-fcQFJI1uxbQBVnJEVlhQ6AlV4uo=
   dependencies:
-    "@lugia/css" "^1.0.17"
-    "@lugia/math" "^1.0.7"
-    "@lugia/object-utils" "^1.0.11"
-    "@lugia/theme-config" "1.0.32"
-    "@lugia/theme-core" "1.0.32"
-    "@lugia/theme-css-hoc" "1.0.56"
-    "@lugia/theme-hoc" "1.0.43"
+    "@lugia/css" "1.0.18"
+    "@lugia/math" "1.0.8"
+    "@lugia/object-utils" "1.0.14"
+    "@lugia/ramada" "1.0.2"
+    "@lugia/theme-config" "1.0.35"
+    "@lugia/theme-core" "1.0.35"
+    "@lugia/theme-css-hoc" "1.0.62"
+    "@lugia/theme-hoc" "1.0.46"
     "@lugia/theme-hoc-devtools" "1.0.7"
-    "@lugia/theme-utils" "1.0.6"
+    "@lugia/theme-utils" "1.0.7"
     "@lugia/type-utils" "^1.0.4"
     babel-polyfill "6.26.0"
     classnames "2.2.5"
@@ -1293,39 +1294,39 @@
     "@babel/runtime" "^7.4.3"
     "@lugia/devtools-conversion" "^1.0.2"
 
-"@lugia/lugiax-core@^1.0.5":
-  version "1.0.5"
-  resolved "http://192.168.102.79:5001/@lugia/lugiax-core/download/@lugia/lugiax-core-1.0.5.tgz#b478d036b6e4047c7a55e57a087cc21927e914fe"
-  integrity sha1-tHjQNrbkBHx6VeV6CHzCGSfpFP4=
+"@lugia/lugiax-core@^1.0.9":
+  version "1.0.9"
+  resolved "http://192.168.102.79:5001/@lugia/lugiax-core/download/@lugia/lugiax-core-1.0.9.tgz#2514222d313c302d77e893141777236c6a19207b"
+  integrity sha1-JRQiLTE8MC136JMUF3cjbGoZIHs=
   dependencies:
     immutable "^3.8.2"
     redux "^4.0.0"
     redux-immutable "^4.0.0"
     redux-saga "^0.16.0"
 
-"@lugia/lugiax-router@^1.0.8":
-  version "1.0.8"
-  resolved "http://192.168.102.79:5001/@lugia/lugiax-router/download/@lugia/lugiax-router-1.0.8.tgz#9def1c18b9a26563fc6bea07cec44cd4d0e0f5e5"
-  integrity sha1-ne8cGLmiZWP8a+oHzsRM1NDg9eU=
+"@lugia/lugiax-router@^1.0.16":
+  version "1.0.16"
+  resolved "http://192.168.102.79:5001/@lugia/lugiax-router/download/@lugia/lugiax-router-1.0.16.tgz#59b701dfe567fb98f2d3c63c368dea865ac24699"
+  integrity sha1-WbcB3+Vn+5jy08Y8No3qhlrCRpk=
   dependencies:
-    "@lugia/lugiax-core" "^1.0.5"
+    "@lugia/lugiax" "^1.0.13"
     connected-react-router "^4.4.1"
     react-loadable "^5.5.0"
     react-redux "^5.0.7"
     react-router "^4.3.1"
 
-"@lugia/lugiax@^1.0.6":
-  version "1.0.6"
-  resolved "http://192.168.102.79:5001/@lugia/lugiax/download/@lugia/lugiax-1.0.6.tgz#089b513d5c38a17bcb7531492ab70c44a4f5f1ef"
-  integrity sha1-CJtRPVw4oXvLdTFJKrcMRKT18e8=
+"@lugia/lugiax@^1.0.13":
+  version "1.0.13"
+  resolved "http://192.168.102.79:5001/@lugia/lugiax/download/@lugia/lugiax-1.0.13.tgz#ef64c03f056e1ab44271f154605eb32486cad7e4"
+  integrity sha1-72TAPwVuGrRCcfFUYF6zJIbK1+Q=
   dependencies:
-    "@lugia/lugiax-core" "^1.0.5"
+    "@lugia/lugiax-core" "^1.0.9"
     immutable "^3.8.2"
 
-"@lugia/math@^1.0.7":
-  version "1.0.7"
-  resolved "http://192.168.102.79:5001/@lugia/math/download/@lugia/math-1.0.7.tgz#902aa881d8321aec1051ec0c386dd930348ce92e"
-  integrity sha1-kCqogdgyGuwQUewMOG3ZMDSM6S4=
+"@lugia/math@1.0.8":
+  version "1.0.8"
+  resolved "http://192.168.102.79:5001/@lugia/math/download/@lugia/math-1.0.8.tgz#c82818fc22bbfd2d98d33ac1ad39ab165116e8ef"
+  integrity sha1-yCgY/CK7/S2Y0zrBrTmrFlEW6O8=
   dependencies:
     "@babel/runtime" "^7.4.5"
 
@@ -1502,19 +1503,19 @@
     webpack-merge "^4.2.1"
     webpack-parallel-uglify-plugin "^1.1.0"
 
-"@lugia/object-utils@^1.0.11":
-  version "1.0.11"
-  resolved "http://192.168.102.79:5001/@lugia/object-utils/download/@lugia/object-utils-1.0.11.tgz#378d05ae3e2cee420f3424fc46b2e0c2e2ee01ed"
-  integrity sha1-N40Frj4s7kIPNCT8RrLgwuLuAe0=
+"@lugia/object-utils@1.0.14", "@lugia/object-utils@^1.0.14":
+  version "1.0.14"
+  resolved "http://192.168.102.79:5001/@lugia/object-utils/download/@lugia/object-utils-1.0.14.tgz#ba6906a6c03bcfdeaa3240b5d739399ded65fee3"
+  integrity sha1-umkGpsA7z96qMkC11zk5ne1l/uM=
   dependencies:
     "@babel/runtime" "^7.4.5"
     deepmerge "^3.2.0"
     is-plain-object "^3.0.0"
 
-"@lugia/ramada@^1.0.1":
-  version "1.0.1"
-  resolved "http://192.168.102.79:5001/@lugia/ramada/download/@lugia/ramada-1.0.1.tgz#24e81b17f83796ab29a192db0134a5aae86c9d1f"
-  integrity sha1-JOgbF/g3lqspoZLbATSlquhsnR8=
+"@lugia/ramada@1.0.2", "@lugia/ramada@^1.0.2":
+  version "1.0.2"
+  resolved "http://192.168.102.79:5001/@lugia/ramada/download/@lugia/ramada-1.0.2.tgz#a5e8e4fd1681ff85849688e6f70b72a312c6ad26"
+  integrity sha1-pejk/RaB/4WElojm9wtyoxLGrSY=
   dependencies:
     "@babel/runtime" "^7.4.5"
 
@@ -1526,34 +1527,34 @@
     shell-quote "^1.6.1"
     ws "^3.3.1"
 
-"@lugia/theme-config@1.0.32":
-  version "1.0.32"
-  resolved "http://192.168.102.79:5001/@lugia/theme-config/download/@lugia/theme-config-1.0.32.tgz#0d7e9d3f585fe84424f4184990d4142f9b8fa70d"
-  integrity sha1-DX6dP1hf6EQk9BhJkNQUL5uPpw0=
+"@lugia/theme-config@1.0.35":
+  version "1.0.35"
+  resolved "http://192.168.102.79:5001/@lugia/theme-config/download/@lugia/theme-config-1.0.35.tgz#11df27095260aba82caf18fb5d7684bb9b76a4d1"
+  integrity sha1-Ed8nCVJgq6gsrxj7XXaEu5t2pNE=
   dependencies:
     "@babel/runtime" "^7.4.5"
-    "@lugia/theme-core" "^1.0.32"
+    "@lugia/theme-core" "^1.0.35"
     prop-types "^15.7.2"
 
-"@lugia/theme-core@1.0.32", "@lugia/theme-core@^1.0.32":
-  version "1.0.32"
-  resolved "http://192.168.102.79:5001/@lugia/theme-core/download/@lugia/theme-core-1.0.32.tgz#1f7931a697eecc3991cded52a11867f43eb5a6f5"
-  integrity sha1-H3kxppfuzDmRze1SoRhn9D61pvU=
+"@lugia/theme-core@1.0.35", "@lugia/theme-core@^1.0.35":
+  version "1.0.35"
+  resolved "http://192.168.102.79:5001/@lugia/theme-core/download/@lugia/theme-core-1.0.35.tgz#1ff5ea206604889bb724434878fe6d7215b59bad"
+  integrity sha1-H/XqIGYEiJu3JENIeP5tchW1m60=
   dependencies:
     "@babel/runtime" "^7.4.5"
-    "@lugia/object-utils" "^1.0.11"
+    "@lugia/object-utils" "^1.0.14"
 
-"@lugia/theme-css-hoc@1.0.56":
-  version "1.0.56"
-  resolved "http://192.168.102.79:5001/@lugia/theme-css-hoc/download/@lugia/theme-css-hoc-1.0.56.tgz#7021d69aeebf29c49e928679c65bc4885e0391d0"
-  integrity sha1-cCHWmu6/KcSekoZ5xlvEiF4DkdA=
+"@lugia/theme-css-hoc@1.0.62":
+  version "1.0.62"
+  resolved "http://192.168.102.79:5001/@lugia/theme-css-hoc/download/@lugia/theme-css-hoc-1.0.62.tgz#3c38c7c0ebdc42e3d4509da65ccd1b12342a6ce3"
+  integrity sha1-PDjHwOvcQuPUUJ2mXM0bEjQqbOM=
   dependencies:
     "@babel/runtime" "^7.4.5"
-    "@lugia/css" "^1.0.17"
-    "@lugia/object-utils" "^1.0.11"
-    "@lugia/ramada" "^1.0.1"
-    "@lugia/theme-core" "^1.0.32"
-    "@lugia/theme-utils" "^1.0.6"
+    "@lugia/css" "^1.0.18"
+    "@lugia/object-utils" "^1.0.14"
+    "@lugia/ramada" "^1.0.2"
+    "@lugia/theme-core" "^1.0.35"
+    "@lugia/theme-utils" "^1.0.7"
     decamelize "^3.2.0"
 
 "@lugia/theme-hoc-devtools@1.0.7", "@lugia/theme-hoc-devtools@^1.0.7":
@@ -1563,23 +1564,23 @@
   dependencies:
     "@lugia/react-devtools-core" "^1.0.3"
 
-"@lugia/theme-hoc@1.0.43":
-  version "1.0.43"
-  resolved "http://192.168.102.79:5001/@lugia/theme-hoc/download/@lugia/theme-hoc-1.0.43.tgz#a225e442097693c898d60f5a3f6fb06a56ee1035"
-  integrity sha1-oiXkQgl2k8iY1g9aP2+walbuEDU=
+"@lugia/theme-hoc@1.0.46":
+  version "1.0.46"
+  resolved "http://192.168.102.79:5001/@lugia/theme-hoc/download/@lugia/theme-hoc-1.0.46.tgz#1f22f1db0171459cf3f807a957533d4162b5892d"
+  integrity sha1-HyLx2wFxRZzz+AepV1M9QWK1iS0=
   dependencies:
     "@babel/runtime" "^7.4.5"
-    "@lugia/object-utils" "^1.0.11"
-    "@lugia/theme-core" "^1.0.32"
+    "@lugia/object-utils" "^1.0.14"
+    "@lugia/theme-core" "^1.0.35"
     "@lugia/theme-hoc-devtools" "^1.0.7"
 
-"@lugia/theme-utils@1.0.6", "@lugia/theme-utils@^1.0.6":
-  version "1.0.6"
-  resolved "http://192.168.102.79:5001/@lugia/theme-utils/download/@lugia/theme-utils-1.0.6.tgz#528e8e4c147a47b835577c872c246b206d8f7ef2"
-  integrity sha1-Uo6OTBR6R7g1V3yHLCRrIG2PfvI=
+"@lugia/theme-utils@1.0.7", "@lugia/theme-utils@^1.0.7":
+  version "1.0.7"
+  resolved "http://192.168.102.79:5001/@lugia/theme-utils/download/@lugia/theme-utils-1.0.7.tgz#1ae88cc755d1e177bbd60a347e58801f6653be4c"
+  integrity sha1-GuiMx1XR4Xe71go0fliAH2ZTvkw=
   dependencies:
     "@babel/runtime" "^7.4.5"
-    "@lugia/css" "^1.0.17"
+    "@lugia/css" "^1.0.18"
 
 "@lugia/type-utils@^1.0.4":
   version "1.0.4"
@@ -3942,7 +3943,7 @@ core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.7:
 
 core-js@^2.6.5:
   version "2.6.9"
-  resolved "https://registry.npm.taobao.org/core-js/download/core-js-2.6.9.tgz?cache=0&sync_timestamp=1560599811627&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
+  resolved "http://219.141.235.71:18081/repository/lugia-group/core-js/-/core-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
   integrity sha1-a0shRiDINBUuF5Mjcn/Bl0GwhPI=
 
 core-js@^3.0.0:
@@ -4325,7 +4326,7 @@ decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2, decamelize@^1.2.0:
 
 decamelize@^3.2.0:
   version "3.2.0"
-  resolved "https://registry.npm.taobao.org/decamelize/download/decamelize-3.2.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdecamelize%2Fdownload%2Fdecamelize-3.2.0.tgz#84b8e8f4f8c579f938e35e2cc7024907e0090851"
+  resolved "http://219.141.235.71:18081/repository/lugia-group/decamelize/-/decamelize-3.2.0.tgz#84b8e8f4f8c579f938e35e2cc7024907e0090851"
   integrity sha1-hLjo9PjFefk4414sxwJJB+AJCFE=
   dependencies:
     xregexp "^4.2.4"
@@ -4419,7 +4420,7 @@ deep-is@~0.1.3:
 
 deepmerge@^3.2.0:
   version "3.3.0"
-  resolved "https://registry.npm.taobao.org/deepmerge/download/deepmerge-3.3.0.tgz#d3c47fd6f3a93d517b14426b0628a17b0125f5f7"
+  resolved "http://219.141.235.71:18081/repository/lugia-group/deepmerge/-/deepmerge-3.3.0.tgz#d3c47fd6f3a93d517b14426b0628a17b0125f5f7"
   integrity sha1-08R/1vOpPVF7FEJrBiihewEl9fc=
 
 default-require-extensions@^1.0.0:
@@ -7525,7 +7526,7 @@ is-plain-object@^2.0.1, is-plain-object@^2.0.3, is-plain-object@^2.0.4:
 
 is-plain-object@^3.0.0:
   version "3.0.0"
-  resolved "https://registry.npm.taobao.org/is-plain-object/download/is-plain-object-3.0.0.tgz#47bfc5da1b5d50d64110806c199359482e75a928"
+  resolved "http://219.141.235.71:18081/repository/lugia-group/is-plain-object/-/is-plain-object-3.0.0.tgz#47bfc5da1b5d50d64110806c199359482e75a928"
   integrity sha1-R7/F2htdUNZBEIBsGZNZSC51qSg=
   dependencies:
     isobject "^4.0.0"
@@ -7669,7 +7670,7 @@ isobject@^3.0.0, isobject@^3.0.1:
 
 isobject@^4.0.0:
   version "4.0.0"
-  resolved "https://registry.npm.taobao.org/isobject/download/isobject-4.0.0.tgz#3f1c9155e73b192022a80819bacd0343711697b0"
+  resolved "http://219.141.235.71:18081/repository/lugia-group/isobject/-/isobject-4.0.0.tgz#3f1c9155e73b192022a80819bacd0343711697b0"
   integrity sha1-PxyRVec7GSAiqAgZus0DQ3EWl7A=
 
 isomorphic-fetch@^2.1.1, isomorphic-fetch@^2.2.1:
@@ -14537,7 +14538,7 @@ xmlhttprequest-ssl@~1.5.4:
 
 xregexp@^4.2.4:
   version "4.2.4"
-  resolved "https://registry.npm.taobao.org/xregexp/download/xregexp-4.2.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fxregexp%2Fdownload%2Fxregexp-4.2.4.tgz#02a4aea056d65a42632c02f0233eab8e4d7e57ed"
+  resolved "http://219.141.235.71:18081/repository/lugia-group/xregexp/-/xregexp-4.2.4.tgz#02a4aea056d65a42632c02f0233eab8e4d7e57ed"
   integrity sha1-AqSuoFbWWkJjLALwIz6rjk1+V+0=
   dependencies:
     "@babel/runtime-corejs2" "^7.2.0"
