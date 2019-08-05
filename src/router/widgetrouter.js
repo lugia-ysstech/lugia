@@ -13,7 +13,7 @@ export default {
         {
           value: '/component/navmenu',
           sort: 36,
-          text: 'NavMenu 导航菜单',
+          text: 'Navmenu 导航菜单',
           exact: true,
           render: async () => {
             return import('../widgets/navmenu');
