@@ -22,7 +22,6 @@ export default class HalfRateDemo extends React.Component<any, any> {
     const config = {
       count: 5,
       max: 10,
-      value: 7,
       disabled: false,
       allowHalf: true,
       classify: false,
@@ -36,7 +35,7 @@ export default class HalfRateDemo extends React.Component<any, any> {
     return (
       <div>
         <Theme config={rate}>
-          <Rate {...config} />
+          <Rate {...config} value={this.state.config}/>
           <TextBox>{this.state.config} 分</TextBox>
         </Theme>
       </div>

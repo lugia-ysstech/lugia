@@ -19,10 +19,9 @@ export default class RateDemo extends React.Component<any, any> {
     const config = {
       [Widget.Rate]: { fontSize: '18px' }
     };
-    const defaultProps = {
+    const defaultPropsConfig = {
       count: 10,
       max: 10,
-      value: 3,
       disabled: false,
       allowHalf: false,
       classify: false,
@@ -33,7 +32,7 @@ export default class RateDemo extends React.Component<any, any> {
         this.setStateValue('defaultProps', x.newValue);
       }
     };
-    const defaultProps7 = {
+    const defaultProps7Config = {
       count: 5,
       allowHalf: true,
       onClick: (e: Object, x: any) => {
@@ -43,18 +42,19 @@ export default class RateDemo extends React.Component<any, any> {
         this.setStateValue('defaultProps7', x.newValue);
       }
     };
+    const {defaultProps,defaultProps7} = this.state;
     return (
       <div>
         <div>
           <div>
             <Rate />
           </div>
-          <Rate {...defaultProps7} />
-          <TextBox>{this.state.defaultProps7} 颗星</TextBox>
+          <Rate {...defaultProps7Config} value={defaultProps7} />
+          <TextBox>{defaultProps7} 颗星</TextBox>
         </div>
         <Theme config={config}>
-          <Rate {...defaultProps} />
-          <TextBox>{this.state.defaultProps} 颗星</TextBox>
+          <Rate {...defaultPropsConfig} value={defaultProps} />
+          <TextBox>{defaultProps} 颗星</TextBox>
         </Theme>
       </div>
     );
