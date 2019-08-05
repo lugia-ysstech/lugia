@@ -5,6 +5,7 @@ tmp
 .idea
 lib
 dist
+dll
 coverage
 yarn-error.log
 npm-debug.log*
