@@ -27,11 +27,11 @@ export default () => {
         <Col span={24}  xl={{ span: 22 }}  xxl={{ span: 20 }}>
           <Headers />
           <Row>
-            <Col span={6}  xl={{ span: 4 }}  xxl={{ span: 5 }}>
+            <Col span={6}  xl={{ span: 5 }}  xxl={{ span: 5 }}>
               <Asides />
               {block}
             </Col>
-            <Col span={18} xl={{ span: 20 }}  xxl={{ span: 19 }}>
+            <Col span={18} xl={{ span: 18 }}  xxl={{ span: 19 }}>
               {rout}
             </Col>
           </Row>
