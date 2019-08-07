@@ -1,6 +1,6 @@
 import widgets from './widgets';
 import widgetrouter from './widgetrouter';
-import { Redirect } from '@lugia/lugiax-router/target/lib';
+import { Redirect } from '@lugia/lugiax-router';
 import React from 'react';
 
 const getMenuConfig = data => {
