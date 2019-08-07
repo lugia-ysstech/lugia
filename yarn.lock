@@ -1038,7 +1038,7 @@
     immutable "^3.8.2"
     yargs "^13.2.2"
 
-"@lugia/lugia-web@^1.1.0-52":
+"@lugia/lugia-web@^1.1.1":
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/@lugia/lugia-web/download/@lugia/lugia-web-1.1.1.tgz#6bf0a08b033aab10fc0377be5313d46614b62956"
   integrity sha1-a/CgiwM6qxD8A3e+UxPUZhS2KVY=
