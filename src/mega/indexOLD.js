@@ -159,7 +159,7 @@ export default class Mega extends React.Component {
             <Wrapper>
 
               <Main>
-                <Tittle1>欢迎使用Lugia-mega组建库</Tittle1>
+                <Tittle1>欢迎使用Lugia-mega</Tittle1>
                 <Tittle2>请选择您要安装的操作系统</Tittle2>
                 <Mac href="#">
                   <MacLogo />
