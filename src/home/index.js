@@ -439,7 +439,7 @@ export default class Pages extends React.Component<any, any> {
               <ModelOne>
                 <H1>LUGIA DESIGN</H1>
                 <H2>BORN FOR FINANCE</H2>
-                <Text>Lugia的诞生就是要树立金融行业组件化的标杆。我们不仅仅创造了一套属于金融行业的开源组件设计器，而是将设计、代码，变成一种专属语言，一种跨时代的组件规范。</Text>
+                <Text>Lugia的诞生就是要树立中后台组件化的标杆。我们不仅仅创造了一套属于通用的开源组件及其设计器，而是将设计、代码，变成一种专属语言，一种跨时代的组件规范。</Text>
                 <ButtonContainer>
                   <Button active onClick={e => this.linkToUrl('/component/affix')}>开始使用</Button>
                   <Button onClick={e => this.linkToUrl('/design/introduce')}>设计指南</Button>
