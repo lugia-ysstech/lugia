@@ -21,7 +21,7 @@ module.exports={
   },
   TimeDateDemo:{
     title: '日期时间选择',
-    desc: '通过showTime属性，为组建内部创建TimePicker,使得日期组件可以选择时间'
+    desc: '通过showTime属性，为组件内部创建TimePicker,使得日期组件可以选择时间'
   },
   DisabledDemo:{
     title: '禁用',
