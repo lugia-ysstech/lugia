@@ -1,2 +1,12 @@
-node_modules
+.DS_Store
+tmp
+/node_modules
+/.history
 .idea
+lib
+dist
+dll
+coverage
+yarn-error.log
+npm-debug.log*
+.changelog

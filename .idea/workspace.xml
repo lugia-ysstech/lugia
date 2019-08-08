@@ -266,16 +266,10 @@
     </option>
   </component>
   <component name="RunManager" selected="Node.js.tt.js">
-    <configuration name="create.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="src/widgets/create.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration name="generate.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/widgets/generate.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration name="tt.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/tt.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration name="create" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="create.js" type="NodeJSConfigurationType" factoryName="Node.js" nameIsGenerated="true" path-to-js-file="src/widgets/create.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="generate.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/widgets/generate.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="tt.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/tt.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="create" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -283,8 +277,13 @@
       </scripts>
       <node-interpreter value="project" />
       <envs />
-      <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Node.js.create.js" />
+      <item itemvalue="Node.js.generate.js" />
+      <item itemvalue="Node.js.tt.js" />
+      <item itemvalue="npm.create" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="npm.create" />
