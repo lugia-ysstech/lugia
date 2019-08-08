@@ -218,10 +218,10 @@ export default class Mega extends React.Component {
       <React.Fragment>
         <Wrapper>
           <Row>
-            <Col span={5} xl={{ span: 4 }} xxl={{ span: 3 }}>
+            <Col span={5} xl={{ span: 1 }} xxl={{ span: 3 }}>
               <Block> </Block>
             </Col>
-            <Col span={14} xl={{ span: 16 }} xxl={{ span: 18 }}>
+            <Col span={14} xl={{ span: 22 }} xxl={{ span: 18 }}>
               <Headers />
               <Main>
                 <Tittle5>欢迎使用 Lugia Mega</Tittle5>
@@ -270,7 +270,7 @@ export default class Mega extends React.Component {
                     <Tittle2>
                       重塑项目开发流程，不同职位的产出成果可以直接迭代复用，从而满足云原生大前端的快速迭代开发需求。
                     </Tittle2>
-                    <Img src={jobPipe} alt="" />
+                    <Img src={jobPipe} alt="" width={486} />
 
                     <Tittle4>愿景</Tittle4>
                     <Tittle2>
@@ -320,7 +320,7 @@ export default class Mega extends React.Component {
                 </FlexBox>
               </MidBlock>
             </Col>
-            <Col span={5} xl={{ span: 4 }} xxl={{ span: 3 }}>
+            <Col span={5} xl={{ span: 1 }} xxl={{ span: 3 }}>
               <Block> </Block>
             </Col>
           </Row>

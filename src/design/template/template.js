@@ -242,7 +242,6 @@ const getContentElement = (data:Object,titleElement,imgPosition:string,level?:Bo
     {data.map(item => {
       const {text,size,color,margin,weight,url,bash,javascript, inline,link,renderHtml} = item;
       const reg = /<a.*?>(.*?)<\/a>/g;
-      console.log('------------',item,link);
       return <React.Fragment>
         <Content inline={inline} size={size} color={color} bash={bash} margin={margin} weight={weight} level={level}>
           {javascript?<Highlight className="language-jsx" innerHTML={renderHtml}>
