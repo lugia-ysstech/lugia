@@ -118,7 +118,7 @@ export default class Navcomponent extends React.Component<any, any> {
 
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
 
-    const path = '/'+window.location.pathname.match(/[^/]+/)[0];
+    const path = '/'+window.location.hash.match(/[^(#|\/)]+/)[0];
     if (!stateProps) {
       return {
         current:path,
