@@ -1793,29 +1793,26 @@ module.exports = param => {
             {text:'import lugiax from "@lugia/lugiax";\n' +
               'const userModel = lugiax.register({\n' +
               '  model: \'user\',\n' +
-              '  state: {name: \'user\'},\n' +
+              '  state: {name: \'userName\'},\n' +
               '  mutations: {}\n' +
               '});\n' +
               'const loginModel = lugiax.register({\n' +
               '  model: \'login\',\n' +
-              '  state: {login: \' \'},\n' +
+              '  state: {login: \'login\'},\n' +
               '  mutations: {}\n' +
               '});\n' +
               '\n' +
-              'lugiax.getState().get(\'user\').get(\'name\'); // user',bash:true, margin: '0 0 30px',javascript:true},
-
-
-
+              'userModel.getState().get(\'user\').get(\'name\'); // userName\n' +
+              'loginModel.getState().get(\'login\').get(\'login\'); // login',bash:true, margin: '0 0 30px',javascript:true},
           ],
         },
         {
           title: 'lugiax API',
           content: [
             {text: 'lugiax.register',weight:600},
-            {text: 'params:', margin: '0 0 5px'},
             {text:'{\n' +
               '  model: \'\', // string 模块名称（必填），值必须唯一否则将会报错；\n' +
-              '  state: {}，//组件的初始状态 类型为非 null & 非 undefined即可\n' +
+              '  state: {}, //组件的初始状态 类型为非 null & 非 undefined即可\n' +
               '  mutations:{ // 本模型对外提供的一系列业务操作\n' +
               '    sync: {\n' +
               '      doSomethings() { // 一个同步操作} // Function\n' +
@@ -1825,7 +1822,7 @@ module.exports = param => {
               '    } \n' +
               '  }\n' +
               '}',bash:true, margin: '0 0 30px',javascript:true},
-            {text: 'returned:', margin: '0 0 5px'},
+            {text: 'mutations:', margin: '0 0 5px'},
             {text:'{\n' +
               '  mutations:{ //供React组件或其它Model的Action进行调用的触发更新 state 的方法。 \n' +
               '    doSomethings,  // Function\n' +
@@ -1839,10 +1836,65 @@ module.exports = param => {
               '    return { data: state.data, };\n' +
               '  },\n' +
               '  mutations => {\n' +
-              '    const { todo, } = mutations;\n' +
-              '    return { delItem: todo.delTask, };\n' +
+              '    return { delItem: mutations.delTask, };\n' +
               '  }\n' +
               ')(List);\n',bash:true, margin: '0 0 30px',javascript:true},
+            {text: 'connect 多个model:', margin: '0 0 5px'},
+            {text:'lugiax.connect(\n' +
+              '  [todo,user], // 模块名称（必填）\n' +
+              '  state => {\n' +
+              '    const [todo, user] = state\n' +
+              '    return { data: todo.get(\'data\'),name: user.get(\'name\') };\n' +
+              '  },\n' +
+              '  mutations => {\n' +
+              '    const [todo, user] = mutations;\n' +
+              '    return { delItem: todo.delTask, addName: user.addName };\n' +
+              '  }\n' +
+              ')(Component);',bash:true, margin: '0 0 30px',javascript:true},
+            {text: '操作 model State 中具体某个属性值:', margin: '0 0 5px'},
+            {text:'{\n' +
+              '  model: \'user\', \n' +
+              '  state: {\n' +
+              '    user: {\n' +
+              '      guo: {age: 18}\n' +
+              '    }\n' +
+              '  },\n' +
+              '  mutations:{\n' +
+              '    addUser(states, params){\n' +
+              '      const {name, age} = params;\n' +
+              '      return state.setIn([\'user\',name,\'age\'],age)\n' +
+              '    },\n' +
+              '    deleteUser(states, params){\n' +
+              '      const {name} = params;\n' +
+              '      return state.deleteIn([\'user\',name])\n' +
+              '    }\n' +
+              '  }\n' +
+              '};\n' +
+              '  \n' +
+              'lugiax.connect(\n' +
+              '  user, // 模块名称（必填）\n' +
+              '  state => {\n' +
+              '    const name = \'guo\';\n' +
+              '    return { age: state.getIn([\'user\',name,\'age\']) };\n' +
+              '  },\n' +
+              '  mutations => {}\n' +
+              ')(Component);',bash:true, margin: '0 0 30px',javascript:true},
+            {text: '通过setIn 、getIn 、deleteIn 等api来操作state中深层嵌套的值。',margin: '0 0 5px'},
+            {text: '小提示：',margin: '0 0 5px'},
+            {text: '向 深层次的state 中setIn 某个属性的时候，如果该属性为一个对象，比如给 user 设置一个 name 为 li 的\n' +
+              'age，你可能会这样设置(此处为mutations部分的代码)：',margin: '0 0 5px'},
+            {text:'mutations:{\n' +
+              '      addUser(states, params){\n' +
+              '          const {name, age} = params;\n' +
+              '          const theAge = {age};\n' +
+              '          return state.setIn([\'user\',name],theAge)\n' +
+              '      }\n' +
+              '  }',bash:true, margin: '0 0 30px',javascript:true},
+            {text: '这样，你在后面操作 li 的age 的时候，会抛出 Immutable 的路径错误信息，' , inline:true},
+            {text: '因为直接设置对象的话，Immutable 丢失了路径信息，' , inline:true},
+            {text: '所以要向上面例子中，填写完整的path路径进行设置。' , inline:true},
+            {text: '更多 API 请参照 ' , inline:true},
+            { text: ` [Immutable]` ,link:'https://facebook.github.io/immutable-js/docs/#/', inline:true },
             {text: 'lugiax.bind',weight:600},
             {text: '双向绑定，需要指定 `mutation`，不能动态生成 `mutation` 。',margin: '0 0 5px'},
             {text:'const mutations = {\n' +
@@ -1871,7 +1923,6 @@ module.exports = param => {
               '    },\n' +
               '  }\n' +
               ')(InputTask //Component 组件)',bash:true, margin: '0 0 30px',javascript:true},
-
             {text: 'lugiax.bindTo',weight:600},
             {text: '双向绑定，并且可以动态生成 `mutation`。',margin: '0 0 5px'},
             {text:'lugiax.bindTo(\n' +
