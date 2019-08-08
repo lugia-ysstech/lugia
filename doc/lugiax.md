@@ -61,28 +61,27 @@ const getAsyncResult = new Promise((resolve,reject) => {
 import lugiax from "@lugia/lugiax";
 const userModel = lugiax.register({
   model: 'user',
-  state: {name: 'user'},
+  state: {name: 'userName'},
   mutations: {}
 });
 const loginModel = lugiax.register({
   model: 'login',
-  state: {login: ' '},
+  state: {login: 'login'},
   mutations: {}
 });
 
-lugiax.getState().get('user').get('name'); // user
+userModel.getState().get('user').get('name'); // userName
+loginModel.getState().get('login').get('login'); // login
 ```
 
 ## lugiax API
 
 ### lugiax.register
 
-params:
-
 ```javascript
 {
   model: '', // string 模块名称（必填），值必须唯一否则将会报错；
-  state: {}，//组件的初始状态 类型为非 null & 非 undefined即可
+  state: {}, //组件的初始状态 类型为非 null & 非 undefined即可
   mutations:{ // 本模型对外提供的一系列业务操作
     sync: {
       doSomethings() { // 一个同步操作} // Function
@@ -94,7 +93,7 @@ params:
 }
 ```
 
-returned:
+mutations:
 
 ```javascript
 {
@@ -114,11 +113,77 @@ lugiax.connect(
     return { data: state.data, };
   },
   mutations => {
-    const { todo, } = mutations;
-    return { delItem: todo.delTask, };
+    return { delItem: mutations.delTask, };
   }
-)(List);
+)(Component);
 ```
+
+connect 多个model:
+
+```javascript
+lugiax.connect(
+  [todo,user], // 模块名称（必填）
+  state => {
+    const [todo, user] = state
+    return { data: todo.get('data'),name: user.get('name') };
+  },
+  mutations => {
+    const [todo, user] = mutations;
+    return { delItem: todo.delTask, addName: user.addName };
+  }
+)(Component);
+```
+
+操作 model State 中具体某个属性值:
+
+``` javascript
+{
+  model: 'user', 
+  state: {
+    user: {
+      guo: {age: 18}
+    }
+  },
+  mutations:{
+    addUser(states, params){
+      const {name, age} = params;
+      return state.setIn(['user',name,'age'],age)
+    },
+    deleteUser(states, params){
+      const {name} = params;
+      return state.deleteIn(['user',name])
+    }
+  }
+};
+  
+lugiax.connect(
+  user, // 模块名称（必填）
+  state => {
+    const name = 'guo';
+    return { age: state.getIn(['user',name,'age']) };
+  },
+  mutations => {}
+)(Component);
+```
+通过setIn 、getIn 、deleteIn 等api来操作state中深层嵌套的值。
+
+小提示：
+
+向 深层次的state 中setIn 某个属性的时候，如果该属性为一个对象，比如给 user 设置一个 name 为 li 的
+age，你可能会这样设置(此处为mutations部分的代码)：
+```javascript
+  mutations:{
+      addUser(states, params){
+          const {name, age} = params;
+          const theAge = {age};
+          return state.setIn(['user',name],theAge)
+      }
+  }
+```
+
+这样，你在后面操作 li 的age 的时候，会抛出 Immutable 的路径错误信息，因为直接设置对象的话，
+Immutable 丢失了路径信息，所以要向上面例子中，填写完整的path路径进行设置。
+更多 API 请参照 [Immutable ](https://facebook.github.io/immutable-js/docs/#/)
 
 ### lugiax.bind
 
