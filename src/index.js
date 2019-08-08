@@ -1,12 +1,12 @@
 import React from 'react';
-import { createBrowserHistory } from 'history';
+import { createHashHistory } from 'history';
 import { createApp, go, render } from '@lugia/lugiax-router';
 import '@lugia/lugia-web/dist/css/global.css';
 import Main from './App';
 import 'highlight.js/styles/atom-one-light.css';
 import PageLoading from './pageloading';
 import Highlight from 'react-highlight';
-const history = createBrowserHistory();
+const history = createHashHistory();
 const App = createApp(
   {
     '/': {

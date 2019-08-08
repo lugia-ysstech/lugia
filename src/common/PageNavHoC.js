@@ -23,7 +23,7 @@ export default (objRouter: Object, Target: any) => {
   return class Pages extends React.Component<any, any> {
 
     static getDerivedStateFromProps (defProps: DefProps, stateProps: StateProps) {
-      const path = window.location.pathname;
+      const path = window.location.hash.match(/[^#]+/g)[0];
       if (!stateProps) {
         return {
           path,
