@@ -32,8 +32,8 @@ const TemlpateNav = PageNavHoC({}, Temlpate);
 export default class Pages extends React.Component<any, any> {
 
   static getDerivedStateFromProps (defProps: DefProps, stateProps: StateProps) {
-    const path = window.location.pathname;
-    const pathType = path.match(/[^/]+/g)[ 1 ];
+    const path = window.location.hash;
+    const pathType = path.match(/[^/]+/g)[2];
     if (!stateProps) {
       return {
         pathType,
