@@ -1,7 +1,806 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21fcbec9-245f-4483-977f-2a196ba0b0a0" name="Default Changelist" comment="" />
+    <list default="true" id="21fcbec9-245f-4483-977f-2a196ba0b0a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lugia-web-demo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/0.72276ea3.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.7157fedd.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/10.dae16641.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/11.b95a1931.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/12.01528573.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13.ba46a96f.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/14.b94bdef4.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/15.13419458.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/16.b7b003f5.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/17.5adb5e67.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/18.ce3e3cba.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/19.ec58cb59.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.eac155f9.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/20.f8973541.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/21.edfb9c93.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/22.38636992.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/23.b4de43da.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/24.fe270a20.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/25.1babd77f.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/26.ec35db77.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/27.173d5159.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/28.605bde2b.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/29.132b78ba.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.1dddfdf5.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/30.9f483d39.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/31.e0baf224.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/32.ddc7f061.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/33.b7785999.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/34.3a3517d0.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/35.cb47070e.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/36.124c05f5.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/37.11ffda5c.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/38.52f9fe2d.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/39.2ec5a4bc.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4.21804554.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/40.db9ba5ef.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/41.95e48883.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/42.99f3ef5a.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/43.f628beab.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/44.79b29a22.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/45.5b1adf2c.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/46.5365f97f.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/47.e89462c0.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/48.7d174c0a.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/49.3e4aab08.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/5.b073aa5a.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/50.822e02c3.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/51.01326b55.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/52.2da62afa.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/53.31b82a68.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/54.0dcb2cb5.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6.473d0152.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/7.710ae7f3.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/8.50d0e49f.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/9.8a23b4f4.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessibility/accessibility_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessibility/accessibility_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessibility/accessibility_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessibility/accessibility_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessibility/accessibility_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessibility/accessibility_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessibility/accessibility_img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessibility/accessibility_img7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessibility/accessibility_img8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/align/align_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/align/align_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/align/align_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/align/align_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/align/align_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/align/align_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/align/align_img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/avatar-jiaxin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/card-avatar-circle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/card.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_alice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_binghan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_binghuo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_bingjing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_dream.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_guangxian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_hengxing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_huixing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_huorong.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_jiguang.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_kejilan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_lucky.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_manor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_nature.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_rongxue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_science.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_taixian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_alice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_binghan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_binghuo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_bingjing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_dream.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_guangxian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_hengxing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_huixing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_huorong.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_jiguang.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_kejilan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_lucky.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_manor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_nature.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_rongxue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_science.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_taixian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_violet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_warm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_yinyun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_theme_zhaoxia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_violet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_warm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_yinyun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/color/color_img_zhaoxia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/component.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/design-core-img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/design-core-img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/design/accessibility.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/design/alignment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/design/feedback.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/design/guide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/design/hierarchy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/design/lugia-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/design/proximity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/design/reduceskip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/design/repeat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/0.72276ea3.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/1.7157fedd.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/10.dae16641.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/11.b95a1931.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/12.01528573.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/13.ba46a96f.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/14.b94bdef4.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/15.13419458.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/16.b7b003f5.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/17.5adb5e67.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/18.ce3e3cba.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/19.ec58cb59.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/2.eac155f9.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/20.f8973541.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/21.edfb9c93.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/22.38636992.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/23.b4de43da.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/24.fe270a20.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/25.1babd77f.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/26.ec35db77.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/27.173d5159.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/28.605bde2b.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/29.132b78ba.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/3.1dddfdf5.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/30.9f483d39.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/31.e0baf224.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/32.ddc7f061.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/33.b7785999.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/34.3a3517d0.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/35.cb47070e.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/36.124c05f5.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/37.11ffda5c.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/38.52f9fe2d.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/39.2ec5a4bc.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/4.21804554.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/40.db9ba5ef.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/41.95e48883.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/42.99f3ef5a.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/43.f628beab.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/44.79b29a22.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/45.5b1adf2c.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/46.5365f97f.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/47.e89462c0.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/48.7d174c0a.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/49.3e4aab08.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/5.b073aa5a.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/50.822e02c3.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/51.01326b55.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/52.2da62afa.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/53.31b82a68.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/54.0dcb2cb5.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/6.473d0152.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/7.710ae7f3.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/8.50d0e49f.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/9.8a23b4f4.async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/accessibility/accessibility_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/accessibility/accessibility_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/accessibility/accessibility_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/accessibility/accessibility_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/accessibility/accessibility_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/accessibility/accessibility_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/accessibility/accessibility_img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/accessibility/accessibility_img7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/accessibility/accessibility_img8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/align/align_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/align/align_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/align/align_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/align/align_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/align/align_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/align/align_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/align/align_img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/avatar-jiaxin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/card-avatar-circle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/card.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_alice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_binghan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_binghuo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_bingjing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_dream.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_guangxian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_hengxing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_huixing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_huorong.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_jiguang.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_kejilan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_lucky.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_manor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_nature.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_rongxue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_science.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_taixian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_alice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_binghan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_binghuo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_bingjing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_dream.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_guangxian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_hengxing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_huixing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_huorong.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_jiguang.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_kejilan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_lucky.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_manor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_nature.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_rongxue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_science.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_taixian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_violet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_warm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_yinyun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_theme_zhaoxia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_violet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_warm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_yinyun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/color/color_img_zhaoxia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/component.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/design-core-img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/design-core-img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/design/accessibility.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/design/alignment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/design/feedback.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/design/guide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/design/hierarchy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/design/lugia-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/design/proximity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/design/reduceskip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/design/repeat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/feedback/feedback_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/feedback/feedback_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/feedback/feedback_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/feedback/feedback_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/feedback/feedback_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/feedback/feedback_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/feedback/feedback_img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/feedback/feedback_img7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/feedback/feedback_img8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/PingFangSC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/arial.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/font_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/font_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/font_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/font_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/font_img4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/font_img5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/font_img6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/helvetica.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/helveticaneue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/hiaginosans.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/font/yahei.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/guide/guide_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/guide/guide_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/guide/guide_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/guide/guide_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/guide/guide_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/guide/guide_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/guide/guide_img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/guide/guide_img7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/hierarchy/hierarchy_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/hierarchy/hierarchy_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/hierarchy/hierarchy_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/hierarchy/hierarchy_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/home/design.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/home/pic1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/home/pic2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/home/pic3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/home/pic4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/home/pic5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/home/sense.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/home/view.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/icon/icon_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/icon/icon_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/icon/icon_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/icon/icon_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/icon/icon_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/icon/icon_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.eb6c8613.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.ff753089.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lan-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lan2-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/layout/layout_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/layout/layout_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/layout/layout_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/layout/layout_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/layout/layout_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/layout/layout_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/loading/loading9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/logo_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lugia-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mega/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mega/Rectangle 2 Copy 15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mega/Rectangle 2 Copy 16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mega/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mega/mac.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mega/windows.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pattern/pattern_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pattern/pattern_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pattern/pattern_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pattern/pattern_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pattern/pattern_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pattern/pattern_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/proximity/proximity_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/proximity/proximity_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/proximity/proximity_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/proximity/proximity_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/proximity/proximity_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/proximity/proximity_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/proximity/proximity_img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/reduceskip/reduceskip_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/reduceskip/reduceskip_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/reduceskip/reduceskip_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/reduceskip/reduceskip_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/reduceskip/reduceskip_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/reduceskip/reduceskip_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/reduceskip/reduceskip_img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/reduceskip/reduceskip_img7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/reduceskip/reduceskip_img8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/repeat/repeat_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/repeat/repeat_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/repeat/repeat_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/repeat/repeat_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/repeat/repeat_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/route-welcome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/site/logo_a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/site/logo_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/404.e693212e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/accessibility.d05ca805.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/accessibility_img.60a3d9be.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/accessibility_img1.cee8cd61.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/accessibility_img2.2b829fb3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/accessibility_img3.9435b1fd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/accessibility_img4.70980601.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/accessibility_img5.93f2fcdf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/accessibility_img6.528c435d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/accessibility_img7.7fedcd1a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/accessibility_img8.9ae5d413.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/align_img.91b1f94a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/align_img1.5b094eff.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/align_img2.4caf030b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/align_img3.d0204ddd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/align_img4.f8f50f22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/alignment.8fc84b76.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/avatar-jiaxin.c7f5707f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/banner.3c031b32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/card-avatar-circle.65535088.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/card.30db306d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img.eb57ca96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_alice.f48df1bd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_binghan.1f150285.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_binghuo.a70a4064.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_bingjing.0397fce0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_dream.5c677da5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_guangxian.71bd8b74.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_hengxing.1905a4e6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_huixing.1c1bcf09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_huorong.e929f0bb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_jiguang.99a06cf1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_kejilan.1d4f8d80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_lucky.73c807ac.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_manor.1d4c5b90.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_nature.3ba0e413.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_rongxue.1a24040b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_science.2201373c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_taixian.d2db8fc8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_violet.a62c7733.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_warm.f0dddcff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_yinyun.d1e98530.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/color_img_theme_zhaoxia.7a7d381b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/design-core-img1.ecd193c7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/design-core-img2.58b10538.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/design.81b3acd0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/developTool.84f17f9c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/feedback.cf1d905e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/feedback_img.7e662b10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/feedback_img1.9305a9a3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/feedback_img2.ef9e78b5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/feedback_img3.7c4f3147.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/feedback_img4.404d904a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/feedback_img5.18be2ea7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/feedback_img6.89694c93.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/feedback_img7.3d2e2360.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/feedback_img8.d841c95a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/font_img.b5a3e91b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/font_img1.18e7244e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/font_img2.e054bd66.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/font_img3.649f73ed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/font_img4.3f0e4397.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/font_img5.16af5748.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/font_img6.f803b26e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/foot.b07cfbaf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/guide.a45c7aa4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/guide_img.1a9725ae.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/guide_img1.07b82aa6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/guide_img2.7ebfc30a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/guide_img3.bb912d8e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/guide_img4.ea18f871.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/guide_img5.f45c5449.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/guide_img6.24d0e856.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/guide_img7.995edf6d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/hierarchy.7259fbd9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/hierarchy_img.f478c34c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/hierarchy_img1.2793c272.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/hierarchy_img2.2a954d10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/hierarchy_img3.7cefb5d2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/icon_img.4d0db91b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/icon_img1.435c2b73.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/icon_img2.3dcf8fd9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/icon_img3.3ab32d76.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/icon_img4.1bac6140.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/icon_img5.784fab76.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/jobPipe.a84bcfe6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/layout_img.3bf38745.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/layout_img1.6ed561de.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/layout_img2.38c25103.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/layout_img3.918cec78.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/layout_img4.1462d87f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/layout_img5.19d8ab04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/lugia-icon.4968ebc5.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/lugia-icon.9556d32e.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/lugia-icon.97e33f29.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/lugia-icon.bb2b3d22.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/lugia-icon.f6b87e2a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/lugia-logo.3376ef06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/mega.9cac02e1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/model.8c90711d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/page.254ceac2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pattern_img.14e081ed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pattern_img1.32989397.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pattern_img2.20e00fe9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pattern_img3.812c188f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pattern_img4.8bd06a98.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pattern_img5.43227db7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pic1.47a30464.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pic2.39ee4aa7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pic3.2250d8dc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pic4.2b0fe086.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/pic5.32e5f3a7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/program.de5c3007.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/proximity.c8cc83d9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/proximity_img.3ccb8959.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/proximity_img1.f1955bf6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/proximity_img6.4259471e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/reduceskip.69446169.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/reduceskip_img.efe168ea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/reduceskip_img1.636bb8bc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/reduceskip_img2.830319fb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/reduceskip_img3.57a17c0b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/reduceskip_img4.8b486376.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/reduceskip_img5.de6d8f33.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/reduceskip_img6.10532307.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/reduceskip_img7.c8318616.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/reduceskip_img8.5a6862ab.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/repeat.85529f3d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/repeat_img.a438db0c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/repeat_img1.18203dfc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/repeat_img2.3fb6b11e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/repeat_img3.8b50d133.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/repeat_img4.2cf2a0a1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/route-welcome.cb88faaf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/sense.487bbeb1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/view.1fb0c7af.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/welcome.a9fa6a3b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/static/wuliao.495ea2bd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/vendors.2234ef10.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/vendors.296affa0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/welcome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dll/DevDLL.dependencies.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dll/DevDLL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dll/DevDLL.manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/feedback_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/feedback_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/feedback_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/feedback_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/feedback_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/feedback_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/feedback_img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/feedback_img7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/feedback_img8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/PingFangSC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/arial.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/font_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/font_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/font_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/font_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/font_img4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/font_img5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/font_img6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/helvetica.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/helveticaneue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/hiaginosans.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/yahei.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/guide_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/guide_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/guide_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/guide_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/guide_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/guide_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/guide_img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide/guide_img7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hierarchy/hierarchy_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hierarchy/hierarchy_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hierarchy/hierarchy_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hierarchy/hierarchy_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/design.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/pic1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/pic2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/pic3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/pic4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/pic5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/sense.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/view.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon/icon_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon/icon_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon/icon_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon/icon_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon/icon_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon/icon_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.eb6c8613.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.ff753089.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lan-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lan2-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/layout_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/layout_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/layout_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/layout_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/layout_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/layout_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loading/loading9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logo_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lugia-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mega/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mega/Rectangle 2 Copy 15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mega/Rectangle 2 Copy 16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mega/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mega/mac.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mega/windows.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern/pattern_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern/pattern_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern/pattern_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern/pattern_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern/pattern_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern/pattern_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proximity/proximity_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proximity/proximity_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proximity/proximity_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proximity/proximity_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proximity/proximity_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proximity/proximity_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proximity/proximity_img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reduceskip/reduceskip_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reduceskip/reduceskip_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reduceskip/reduceskip_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reduceskip/reduceskip_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reduceskip/reduceskip_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reduceskip/reduceskip_img5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reduceskip/reduceskip_img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reduceskip/reduceskip_img7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reduceskip/reduceskip_img8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/repeat/repeat_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/repeat/repeat_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/repeat/repeat_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/repeat/repeat_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/repeat/repeat_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/route-welcome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/logo_a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/logo_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/404.e693212e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/accessibility.d05ca805.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/accessibility_img.60a3d9be.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/accessibility_img1.cee8cd61.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/accessibility_img2.2b829fb3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/accessibility_img3.9435b1fd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/accessibility_img4.70980601.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/accessibility_img5.93f2fcdf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/accessibility_img6.528c435d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/accessibility_img7.7fedcd1a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/accessibility_img8.9ae5d413.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/align_img.91b1f94a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/align_img1.5b094eff.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/align_img2.4caf030b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/align_img3.d0204ddd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/align_img4.f8f50f22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/alignment.8fc84b76.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/avatar-jiaxin.c7f5707f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/banner.3c031b32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/card-avatar-circle.65535088.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/card.30db306d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img.eb57ca96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_alice.f48df1bd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_binghan.1f150285.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_binghuo.a70a4064.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_bingjing.0397fce0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_dream.5c677da5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_guangxian.71bd8b74.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_hengxing.1905a4e6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_huixing.1c1bcf09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_huorong.e929f0bb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_jiguang.99a06cf1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_kejilan.1d4f8d80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_lucky.73c807ac.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_manor.1d4c5b90.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_nature.3ba0e413.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_rongxue.1a24040b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_science.2201373c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_taixian.d2db8fc8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_violet.a62c7733.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_warm.f0dddcff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_yinyun.d1e98530.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/color_img_theme_zhaoxia.7a7d381b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/design-core-img1.ecd193c7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/design-core-img2.58b10538.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/design.81b3acd0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/developTool.84f17f9c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/feedback.cf1d905e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/feedback_img.7e662b10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/feedback_img1.9305a9a3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/feedback_img2.ef9e78b5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/feedback_img3.7c4f3147.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/feedback_img4.404d904a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/feedback_img5.18be2ea7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/feedback_img6.89694c93.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/feedback_img7.3d2e2360.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/feedback_img8.d841c95a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/font_img.b5a3e91b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/font_img1.18e7244e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/font_img2.e054bd66.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/font_img3.649f73ed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/font_img4.3f0e4397.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/font_img5.16af5748.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/font_img6.f803b26e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/foot.b07cfbaf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/guide.a45c7aa4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/guide_img.1a9725ae.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/guide_img1.07b82aa6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/guide_img2.7ebfc30a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/guide_img3.bb912d8e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/guide_img4.ea18f871.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/guide_img5.f45c5449.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/guide_img6.24d0e856.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/guide_img7.995edf6d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/hierarchy.7259fbd9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/hierarchy_img.f478c34c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/hierarchy_img1.2793c272.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/hierarchy_img2.2a954d10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/hierarchy_img3.7cefb5d2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon_img.4d0db91b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon_img1.435c2b73.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon_img2.3dcf8fd9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon_img3.3ab32d76.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon_img4.1bac6140.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon_img5.784fab76.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/jobPipe.a84bcfe6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/layout_img.3bf38745.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/layout_img1.6ed561de.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/layout_img2.38c25103.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/layout_img3.918cec78.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/layout_img4.1462d87f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/layout_img5.19d8ab04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lugia-icon.4968ebc5.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lugia-icon.9556d32e.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lugia-icon.97e33f29.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lugia-icon.bb2b3d22.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lugia-icon.f6b87e2a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lugia-logo.3376ef06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/mega.9cac02e1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/model.8c90711d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/page.254ceac2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pattern_img.14e081ed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pattern_img1.32989397.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pattern_img2.20e00fe9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pattern_img3.812c188f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pattern_img4.8bd06a98.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pattern_img5.43227db7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pic1.47a30464.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pic2.39ee4aa7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pic3.2250d8dc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pic4.2b0fe086.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pic5.32e5f3a7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/program.de5c3007.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/proximity.c8cc83d9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/proximity_img.3ccb8959.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/proximity_img1.f1955bf6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/proximity_img6.4259471e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/reduceskip.69446169.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/reduceskip_img.efe168ea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/reduceskip_img1.636bb8bc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/reduceskip_img2.830319fb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/reduceskip_img3.57a17c0b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/reduceskip_img4.8b486376.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/reduceskip_img5.de6d8f33.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/reduceskip_img6.10532307.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/reduceskip_img7.c8318616.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/reduceskip_img8.5a6862ab.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/repeat.85529f3d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/repeat_img.a438db0c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/repeat_img1.18203dfc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/repeat_img2.3fb6b11e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/repeat_img3.8b50d133.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/repeat_img4.2cf2a0a1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/route-welcome.cb88faaf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/sense.487bbeb1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/view.1fb0c7af.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/welcome.a9fa6a3b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/wuliao.495ea2bd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors.2234ef10.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendors.296affa0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcome.png" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -13,17 +812,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="units.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/node_modules/@lugia/css/lib/units.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="39" column="51" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -86,7 +875,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="pages" />
       </map>
     </option>
   </component>
@@ -171,6 +960,7 @@
     <option name="width" value="1890" />
     <option name="height" value="1035" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -197,7 +987,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -273,12 +1063,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f622b27f-4e74-45f1-addf-c9a93bc3a777" name="Default" comment="" />
       <created>1565271183343</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1565271183343</updated>
       <workItem from="1565271184544" duration="3975000" />
+      <workItem from="1565279209295" duration="245000" />
     </task>
     <task id="LOCAL-00001" summary="* update&#10;  update router">
       <created>1565275163040</created>
@@ -291,7 +1081,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166220000" />
+    <option name="totallyTimeSpent" value="166547000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -303,27 +1093,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Event Log" sideWeight="0.5005285" side_tool="true" visible="true" weight="0.43896976" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010571" side_tool="true" visible="true" weight="0.50391936" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info id="npm" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.4989429" visible="true" weight="0.50391936" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" sideWeight="0.49947146" visible="true" weight="0.43896976" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49841437" weight="0.43896976" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="npm" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.53012687" weight="0.32922733" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,6 +1127,51 @@
         <option value="3" />
         <option value="1" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection>
+                  <UserGroup>
+                    <option name="users">
+                      <list>
+                        <option value="origin/masterUpload" />
+                      </list>
+                    </option>
+                  </UserGroup>
+                </collection>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="pages" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -432,29 +1267,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/common/PageNavHoC.js" />
     <entry file="file://$PROJECT_DIR$/src/design/page/index.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@lugia/lugia-web/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="133" column="6" selection-start-line="133" selection-start-column="6" selection-end-line="133" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@lugia/lugia-web/dist/badge/lugia.badge.zh-CN.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@lugia/lugia-web/dist/breadcrumb/lugia.breadcrumb.zh-CN.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@lugia/lugia-web/dist/css/queryInput.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/highlight.js/lib/languages/xquery.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@lugia/lugia-web/package.json" />
+    <entry file="file://$PROJECT_DIR$/node_modules/@lugia/lugia-web/dist/badge/lugia.badge.zh-CN.json" />
+    <entry file="file://$PROJECT_DIR$/node_modules/@lugia/lugia-web/dist/breadcrumb/lugia.breadcrumb.zh-CN.json" />
+    <entry file="file://$PROJECT_DIR$/node_modules/@lugia/lugia-web/dist/css/queryInput.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/highlight.js/lib/languages/xquery.js" />
     <entry file="file://$PROJECT_DIR$/src/widgets/loading/BaseLoad.js" />
     <entry file="file://$PROJECT_DIR$/src/widgets/loading/config.js" />
     <entry file="file://$PROJECT_DIR$/src/widgets/date-picker/PresetRangeDemo.js" />
@@ -463,21 +1280,13 @@
     <entry file="file://$PROJECT_DIR$/src/design/page/document.js" />
     <entry file="file://$PROJECT_DIR$/public/mega/mac.png" />
     <entry file="file://$PROJECT_DIR$/tt.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/node-fetch/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="132" column="13" selection-start-line="132" selection-start-column="13" selection-end-line="132" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/node-fetch/index.js" />
     <entry file="file://$PROJECT_DIR$/src/widgets/create.js" />
     <entry file="file://$PROJECT_DIR$/src/widgets/icon/BaseIcon.js" />
     <entry file="file://$PROJECT_DIR$/src/widgets/icon/DisplayIcon.js" />
     <entry file="file://$PROJECT_DIR$/src/search/component/search.js" />
     <entry file="file://$PROJECT_DIR$/src/widgets/code-box/Copy.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/clipboard/dist/clipboard.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/clipboard/dist/clipboard.js" />
     <entry file="file://$PROJECT_DIR$/lugia.config.js" />
     <entry file="file://$PROJECT_DIR$/src/router/search.js" />
     <entry file="file://$PROJECT_DIR$/src/widgets/transfer/LimitedTreeDemo.js" />
@@ -504,13 +1313,7 @@
     <entry file="file://$PROJECT_DIR$/src/widgets/date-picker/config.js" />
     <entry file="file://$PROJECT_DIR$/src/widgets/date-picker/index.js" />
     <entry file="file://$PROJECT_DIR$/src/mega/index.js" />
-    <entry file="file://$PROJECT_DIR$/CNAME">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/CNAME" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -518,12 +1321,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@lugia/css/lib/units.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="39" column="51" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@lugia/css/lib/units.js" />
   </component>
 </project>
