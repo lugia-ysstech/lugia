@@ -86,11 +86,11 @@ function getScrollTop(): number {
 export default class MenuList extends React.Component<any, any> {
 
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
-    const path = window.location.pathname;
-    const pathFilter = path.match(/[^/]+/g);
+    const path = window.location.hash;
+    const pathFilter = path.match(/[^#]+/g)[0].match(/[^/]+/g);
     const pathType = pathFilter[0]==='design'?'designConfig':'menuConfig';
     const defaultUrl = Router[pathType][0].children?Router[pathType][0].children[0].value:Router[pathType][0].value;
-    const defCurrent = pathFilter.length>1 ?path:defaultUrl;
+    const defCurrent = pathFilter.length>1 ?'/'+pathFilter.join('/'):defaultUrl;
     if (!stateProps) {
       return {
         current:defCurrent,
@@ -157,7 +157,7 @@ export default class MenuList extends React.Component<any, any> {
         {
             <Navmenu
               autoHeight={false}
-            theme={config}
+              theme={config}
               inlineType={'ellipse'}
               mode={'inline'}
               data={getMenuItems(Router[routerType])}
