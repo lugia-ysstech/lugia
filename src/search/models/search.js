@@ -24,7 +24,7 @@ export default lugiax.register({
     },
     async:{
       async fetchRequest(state, inParam){
-        const resp = await fetch('/api/search',
+        const resp = await fetch('http://219.141.235.67:9100/api/search',
           {
             method: 'Post',
             body: JSON.stringify({ q: inParam }),
