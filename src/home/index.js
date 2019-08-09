@@ -5,11 +5,10 @@
  * @flow
  */
 import * as React from 'react';
-import { Alert , Theme,Grid,Input ,Icon} from '@lugia/lugia-web';
-import styled , { css,keyframes } from 'styled-components';
+import {Alert, Theme, Grid, Input, Icon} from '@lugia/lugia-web';
+import styled, {css, keyframes} from 'styled-components';
 import {go} from '@lugia/lugiax-router';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
-import Widget from '@lugia/lugia-web/dist/consts/index';
 import Footer from '../footer';
 import Search from '../search';
 
@@ -23,9 +22,9 @@ import sense from '../../public/home/sense.png';
 import design from '../../public/home/design.png';
 import view from '../../public/home/view.png';
 
-const { themeColor } = colorsFunc();
+const {themeColor} = colorsFunc();
 
-const { Row, Col } = Grid;
+const {Row, Col} = Grid;
 
 
 const Wrapper = styled.div`
@@ -125,7 +124,6 @@ const MiddleWrapper = styled.div`
 `;
 
 
-
 const ModelOne = styled.div`
   width:500px;
   padding:180px 0 0 48px;
@@ -139,11 +137,6 @@ const H1 = styled.div`
   font-family: 'Helvetica Neue';
   font-weight:800;
   text-align: justify;
-  &::after{
-    content: '';
-    display: inline-block; 
-    padding-left: 100%;
-  }
  
 }
 `;
@@ -174,15 +167,15 @@ const Text = styled.div`
 `;
 
 const ButtonContainer = styled.div`
-  width:266px;
+  width:388px;
   display:flex;
   justify-content: space-between;
 `;
 
 const Button = styled.div.attrs({
-  bgcolor:props => (props.active?'#4d63ff':'transparent'),
-  color:props => (props.active?'#fff':'#000033'),
-  border:props => (props.active?'1px solid transparent':'1px solid #000033'),
+  bgcolor: props => (props.active ? '#4d63ff' : 'transparent'),
+  color: props => (props.active ? '#fff' : '#000033'),
+  border: props => (props.active ? '1px solid transparent' : '1px solid #000033'),
 })`
   width:122px;
   height:40px;
@@ -196,14 +189,69 @@ const Button = styled.div.attrs({
   color:${props => props.color};
   border:${props => props.border};
   &:hover{
-    color:${props => (props.active?'#fff':'#4d63ff')};
+    color:${props => (props.active ? '#fff' : '#4d63ff')};
     border: 1px solid #4d63ff;
     box-shadow: 0 0 7px rgba(77,99,255,0.4);
   }
   &:active{
-    color:${props => (props.active?'#fff':'#3d4ecc')};
+    color:${props => (props.active ? '#fff' : '#3d4ecc')};
     border: 1px solid #3d4ecc;
-    background:${props => (props.active?'#3d4ecc':'transparent')} ;
+    background:${props => (props.active ? '#3d4ecc' : 'transparent')} ;
+  }
+`;
+
+const GitIconContainer = styled.a`
+  width:96px;
+  height:40px;
+  display: block;
+  text-align:center;
+  line-height:38px;
+  display:flex;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #000;
+  align-items: center;
+`;
+
+const GitIcon = styled.div`
+  width:36px;
+  height:36px;
+  font-size:21px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 0 rgba(51,51,51,0.30);
+  text-align:center;
+  line-height:42px;
+  &:hover{
+    color:${themeColor};
+  }
+`;
+
+const GitStar = styled.div`
+  width:50px;
+  height:30px;
+  font-size:14px;
+  font-weight: bold;
+  border-radius: 4px;
+  background: #f2f2f2;
+  text-align:center;
+  line-height:30px;
+  position:relative;
+  &:hover{
+    color:${themeColor};
+  }
+  &:before{
+    content:'';
+    display: block;
+    position:absolute;
+    z-index: -1;
+    left: -12px;
+    top: 7px;
+    width:0px;
+    height:0px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid #f2f2f2;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
   }
 `;
 
@@ -248,7 +296,7 @@ const slideDown = keyframes`
 `;
 
 const slideDownAnimation = css`
-    ${slideDown} .3s 1s cubic-bezier(.57,.12,.35,.59) forward;
+    ${slideDown} .3s 1s cubic-bezier(.57,.12,.35,.59) forwards;
   `;
 const Square = styled.div`
   position:absolute;
@@ -290,12 +338,25 @@ const LineRow = styled.div`
   animation: ${slideToRightAnimation} ;
 `;
 
+const spendLineRight = keyframes`
+  0% {
+    height:0px;
+  }
+  100% {
+    height:1100px;
+  }
+`;
+
+const spendLineRightAnimation = css`
+    ${spendLineRight} 1s ease forwards;
+  `;
+
 const LineRight = styled.div`
   position:absolute;
   right:15px;
   width:1px;
   background:#e8e8e8;
-  animation: ${spendLineAnimation} ;
+  animation: ${spendLineRightAnimation} ;
 `;
 
 
@@ -402,12 +463,10 @@ const SearchBox = styled.div`
 `;
 
 export default class Pages extends React.Component<any, any> {
-
   static getDerivedStateFromProps(defProps: any, stateProps: any) {
 
     if (!stateProps) {
       return {
-
       };
     }
     return {
@@ -415,19 +474,24 @@ export default class Pages extends React.Component<any, any> {
     };
   }
 
-  render() {
+  constructor(props) {
+    super(props);
+    this.asyncGetStar();
+  }
 
+  render() {
+    const {stars} = this.state;
     return (
       <React.Fragment>
         <Row>
-          <Col span={5} xl={{ span: 4 }}  xxl={{ span: 5 }}>
+          <Col span={5} xl={{span: 4}} xxl={{span: 5}}>
             <Wrapper> </Wrapper>
           </Col>
-          <Col span={14} xl={{ span: 16 }}  xxl={{ span: 14 }}>
+          <Col span={14} xl={{span: 16}} xxl={{span: 14}}>
             <MiddleWrapper>
-              <Line />
+              <Line/>
               <Head>
-                <Logo src={logo} alt="" />
+                <Logo src={logo} alt=""/>
                 <SearchBox><Search/></SearchBox>
                 <HeadRight>
                   <Language>English</Language>
@@ -443,6 +507,10 @@ export default class Pages extends React.Component<any, any> {
                 <ButtonContainer>
                   <Button active onClick={e => this.linkToUrl('/component/affix')}>开始使用</Button>
                   <Button onClick={e => this.linkToUrl('/design/introduce')}>设计指南</Button>
+                  <GitIconContainer href={'https://github.com/lugia-ysstech/lugia'} target={'_blank'}>
+                    <GitIcon> <Icon iconClass={'lugia-icon-logo_github'}></Icon> </GitIcon>
+                    <GitStar>{stars}</GitStar>
+                  </GitIconContainer>
                 </ButtonContainer>
               </ModelOne>
               <ModelTwo>
@@ -451,41 +519,45 @@ export default class Pages extends React.Component<any, any> {
                 <LineRow/>
                 <DesignCardBox>
                   <DesignCard>
-                    <CardImg src={sense} />
+                    <CardImg src={sense}/>
                     <CardTitle>设计价值观</CardTitle>
                     <Button active onClick={e => this.linkToUrl('/design/core')}>开始使用</Button>
                   </DesignCard>
                   <DesignCard>
-                    <CardImg src={design} />
+                    <CardImg src={design}/>
                     <CardTitle>设计原则</CardTitle>
-                    <Button active  onClick={e => this.linkToUrl('/design/alignment')}>开始使用</Button>
+                    <Button active onClick={e => this.linkToUrl('/design/alignment')}>开始使用</Button>
                   </DesignCard>
                   <DesignCard>
-                    <CardImg src={view} />
+                    <CardImg src={view}/>
                     <CardTitle>视觉原则</CardTitle>
-                    <Button active  onClick={e => this.linkToUrl('/design/layout')}>开始使用</Button>
+                    <Button active onClick={e => this.linkToUrl('/design/layout')}>开始使用</Button>
                   </DesignCard>
                 </DesignCardBox>
-                <LineRight/>
               </ModelTwo>
+              <LineRight/>
               <ModelThird>
-                <BgImg3 src={pic3} />
-                <BgImg4 src={pic4} />
+                <BgImg3 src={pic3}/>
+                <BgImg4 src={pic4}/>
 
                 <TextBox>
                   <SquareRight/>
                   <SolutionCard>
                     <H2 color="#fff">Lugia Design</H2>
-                    <Text color="#fff">大道至简的设计规范。对于设计来说，知性 可以同时定义为 “ 形式上的优美和极致 ” 和 “ 科学上的精确和简洁 ”，我们相信知性的设计，实现了二者的完美契合。</Text>
+                    <Text color="#fff">大道至简的设计规范。对于设计来说，知性 可以同时定义为 “ 形式上的优美和极致 ” 和 “ 科学上的精确和简洁
+                      ”，我们相信知性的设计，实现了二者的完美契合。</Text>
                     <ButtonCard onClick={e => this.linkToUrl('/design/introduce')}>开始使用</ButtonCard>
                   </SolutionCard>
                   <Design>解决方案</Design>
-                  <SolutionH2 margin={'36px 0 20px'} onClick={e => this.linkToUrl('/lugiax')} >LugiaX</SolutionH2>
-                  <Text>一个基于 Redux 的前端状态管理工具。提供简单高效的全局状态管理方案、 基于 async/await 的异步操作、快捷的双向绑定。LugiaX 内置路由库，对 react-router 做了轻量封装，使用起来更加简单明了。</Text>
+                  <SolutionH2 margin={'36px 0 20px'} onClick={e => this.linkToUrl('/lugiax')}>LugiaX</SolutionH2>
+                  <Text>一个基于 Redux 的前端状态管理工具。提供简单高效的全局状态管理方案、 基于 async/await 的异步操作、快捷的双向绑定。LugiaX 内置路由库，对 react-router
+                    做了轻量封装，使用起来更加简单明了。</Text>
                   <SolutionH2 onClick={e => this.linkToUrl('/component')}>Lugia Web</SolutionH2>
                   <Text>一套基于 Lugia Design 的高品质 React 组件库，满足金融行业高性能组件的需求，适用于 Web 端。</Text>
                   <SolutionH2 onClick={e => this.linkToUrl('/lugia-mega')}>Lugia Mega</SolutionH2>
-                  <Text >标准、高效、开箱即用的前端可视化开发工具。Lugia Mega 是一个无需环境搭建、快速上手的跨平台桌面应用（Mac 和 Windows）。为开发人员提供可视化、屏蔽底层、元信息式的开发方式。帮助设计师、产品经理快速设计原型，成果可以直接让开发人员使用。Lugia Mega 贯穿了整个项目的生命周期，让您极速构建前端应用、轻松管理所有项目。</Text>
+                  <Text>标准、高效、开箱即用的前端可视化开发工具。Lugia Mega 是一个无需环境搭建、快速上手的跨平台桌面应用（Mac 和
+                    Windows）。为开发人员提供可视化、屏蔽底层、元信息式的开发方式。帮助设计师、产品经理快速设计原型，成果可以直接让开发人员使用。Lugia Mega
+                    贯穿了整个项目的生命周期，让您极速构建前端应用、轻松管理所有项目。</Text>
 
                 </TextBox>
 
@@ -493,23 +565,36 @@ export default class Pages extends React.Component<any, any> {
               <Footer/>
             </MiddleWrapper>
           </Col>
-          <Col span={5} xl={{ span: 4 }}  xxl={{ span: 5 }}>
-            <Wrapper > </Wrapper>
+          <Col span={5} xl={{span: 4}} xxl={{span: 5}}>
+            <Wrapper> </Wrapper>
           </Col>
         </Row>
-        <BgImg1 />
-        <BgImg2 />
-        <BgImg5 />
+        <BgImg1/>
+        <BgImg2/>
+        <BgImg5/>
 
       </React.Fragment>
     );
   }
 
-  linkToUrl = (target:string) => {
-
-    target && go({ url:target });
-
+  linkToUrl = (target: string) => {
+    target && go({url: target});
   };
+
+  async asyncGetStar() {
+    const result =  await fetch('https://api.github.com/repos/lugia-ysstech/lugia',
+      {
+        method: 'GET',
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+      }).then(response => (response.json())).then(data => {
+      return data;
+    });
+    const {stargazers_count} = result;
+    this.setState({
+      stars:stargazers_count
+    });
+  }
+
 
 
 }

@@ -54,7 +54,7 @@ const FlexBox = styled.div`
   margin: ${props => (props.margin ? `${props.margin}` : "0")};
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   flex-wrap: wrap;
 `;
@@ -116,17 +116,6 @@ const Tittle4 = styled.div`
   color: #000066;
   font-family: Gotham, Helvetica Neue, Helvetica, Arial, " sans-serif";
   position: relative;
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: ${themeColor};
-    position: absolute;
-    top: 3px;
-    left: -20px;
-  }
 `;
 
 const Img = styled.img`
@@ -159,16 +148,18 @@ const MacLogo = styled.div`
 
 const Window = styled.a`
   display: inline-block;
-  height: 32px;
-  width: 148px;
+  width: ${props => (props.width? `${props.width}px`: '148px')};
+  line-height: ${props => (props.lineHeight? `${props.lineHeight}px`: '32px')};
+  height: ${props => (props.height? `${props.height}px`: '32px')};
   background-color: #4d63ff;
+  background-image: linear-gradient(-90deg, #8093FF 0%,  #4D68FF 100%);
   border-radius: 32px;
   margin-left: 6px;
   transition: 0.2s;
   text-align: center;
-  line-height: 32px;
   &:hover {
-    background-color: #384ddd;
+    background-image: linear-gradient(-90deg, #8093FF 0%,  #3D53CC 100%);
+    background-color: #3D53CC;
   }
 `;
 const DownLoad = styled.a`
@@ -190,7 +181,7 @@ const WindowLogo = styled.div`
 `;
 
 const Span = styled.span`
-  font-size: 14px;
+  font-size: ${ props => (props.font?`${props.font}px`: '14px')};
   color: #fff;
   font-family: Gotham, Helvetica Neue, Helvetica, Arial, " sans-serif";
   text-align: center;
@@ -227,11 +218,11 @@ export default class Mega extends React.Component {
                 <Tittle5>欢迎使用 Lugia Mega</Tittle5>
                 <Tittle2>请选择您要安装的操作系统</Tittle2>
                 <DownLoadBox>
-                  <Mac href="https://github.com/lugia-ysstech/lugia/releases/download/v1.1.1/LugiaMega-1.1.1.dmg">
+                  <Mac href="https://lugia.oss-cn-beijing.aliyuncs.com/download/v1.1.2/LugiaMega-1.1.2.dmg">
                     <MacLogo />
                     <Span>mac版本</Span>
                   </Mac>
-                  <Window href="https://github.com/lugia-ysstech/lugia/releases/download/v1.1.1/LugiaMega.Setup.1.1.1.exe">
+                  <Window href="https://lugia.oss-cn-beijing.aliyuncs.com/download/v1.1.2/LugiaMega%20Setup%201.1.2.exe">
                     <WindowLogo />
                     <Span>windows版本</Span>
                   </Window>
@@ -259,7 +250,11 @@ export default class Mega extends React.Component {
                 </DownLoadBox>
               </Main>
               <MidBlock>
-                <Tittle3>Lugia Mega</Tittle3>
+                <Tittle3>Lugia Mega
+                  <Window width={73} height={24} lineHeight={22} href="https://github.com/lugia-ysstech/lugia/releases" target='_blank'>
+                    <Span font={12}>查看日志</Span>
+                  </Window>
+                </Tittle3>
                 <Tittle2>标准、高效、开箱即用的前端可视化开发工具</Tittle2>
                 <FlexBox margin={"50px 0 120px"}>
                   <Container>
@@ -279,6 +274,7 @@ export default class Mega extends React.Component {
                   </ContainerRight>
                 </FlexBox>
                 <Tittle3>功能点</Tittle3>
+                <Tittle2>Functional point</Tittle2>
                 <FlexBox>
                   <Container width={"27%"} margin={"10px 35px"}>
                     <Img src={program} alt="" width={120} />
