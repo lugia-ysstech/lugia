@@ -1161,7 +1161,7 @@ module.exports = param => {
           title: '版本',
           content: [
             { text: '稳定版：', margin: '12px 0 0', inline:true },
-            { text: `[1.0.0]` ,link:'https://www.npmjs.com/package/lugia-web', inline:true, margin: '0 0 30px' },
+            { text: `[1.1.2]` ,link:'https://www.npmjs.com/package/@lugia/lugia-web', inline:true, margin: '0 0 30px' },
           ]
         },
         {
