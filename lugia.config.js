@@ -1,19 +1,19 @@
 export default {
   disableCSSModules: true,
   cssModulesWithAffix: true,
-  publicPath: "/",
+  publicPath: 'https://lugia.oss-cn-beijing.aliyuncs.com/',
   extraBabelIncludes: [/decamelize/],
   extraBabelPlugins: [
     [
-      "import",
+      'import',
       {
-        libraryName: "@lugia/lugia-web",
-        libraryDirectory: "dist"
+        libraryName: '@lugia/lugia-web',
+        libraryDirectory: 'dist'
       }
     ]
   ],
   applyWebpack(webpackConfig, { webpack, mega }) {
     return webpackConfig;
   },
-  dllDependenciesExcludes: ["@lugia/lugia-web"]
+  dllDependenciesExcludes: ['@lugia/lugia-web']
 };
