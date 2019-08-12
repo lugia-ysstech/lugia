@@ -1748,8 +1748,8 @@ module.exports = param => {
           content: [
             {text: '基于`redux` + `redux-saga` 封装出更加简单的状态管理工具。我们引入了 `mutation` 的概念（`mutation` + `state`）， 简化了 `redux`。' , inline:true},
             {text: 'lugiax 的 state 是 不可变类型的数据， 可参看' , inline:true},
-            { text: ` [Immutable] ； ` ,link:'https://facebook.github.io/immutable-js/docs/#/', inline:true },
-            { text: 'Immutable数据一旦创建，就不能更改。',  inline:true },
+            { text: ` [Immutable] ` ,link:'https://facebook.github.io/immutable-js/docs/#/', inline:true },
+            { text: ' ；Immutable数据一旦创建，就不能更改。',  inline:true },
             { text: '而 `mutation` 就是修改 `state` 的唯一途径。state 被修改后， 并不会通知全局来进行更新，而是通知所绑定的对应的 Component 来进行更新。',  margin: '0 0 30px'},
             {text: 'state',weight:600, margin: '0 0 5px'},
             {text: '`state` 是单独的，每个 model 都有自己的 `state`，并且是不可变类型的',margin: '0 0 5px'},
