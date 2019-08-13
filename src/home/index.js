@@ -167,7 +167,7 @@ const Text = styled.div`
 `;
 
 const ButtonContainer = styled.div`
-  width:388px;
+  width:400px;
   display:flex;
   justify-content: space-between;
 `;
@@ -201,7 +201,6 @@ const Button = styled.div.attrs({
 `;
 
 const GitIconContainer = styled.a`
-  width:96px;
   height:40px;
   display: block;
   text-align:center;
@@ -221,13 +220,14 @@ const GitIcon = styled.div`
   box-shadow: 0 0 6px 0 rgba(51,51,51,0.30);
   text-align:center;
   line-height:42px;
+  margin-right: 10px;
   &:hover{
     color:${themeColor};
   }
 `;
 
 const GitStar = styled.div`
-  width:50px;
+  padding: 0 10px;
   height:30px;
   font-size:14px;
   font-weight: bold;
@@ -509,7 +509,7 @@ export default class Pages extends React.Component<any, any> {
                   <Button onClick={e => this.linkToUrl('/design/introduce')}>设计指南</Button>
                   <GitIconContainer href={'https://github.com/lugia-ysstech/lugia'} target={'_blank'}>
                     <GitIcon> <Icon iconClass={'lugia-icon-logo_github'}></Icon> </GitIcon>
-                    <GitStar>{stars}</GitStar>
+                    <GitStar>Star {stars}</GitStar>
                   </GitIconContainer>
                 </ButtonContainer>
               </ModelOne>
