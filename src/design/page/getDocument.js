@@ -1239,7 +1239,7 @@ module.exports = param => {
               '$ yarn global add @lugia/mega\n' +
               '\n' +
               '查看版本\n' +
-              '$ mega -v\n' +
+              '$ mega -V\n' +
               '1.0.3\n' +
               '\n' +
               '帮助\n' +
