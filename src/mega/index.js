@@ -252,7 +252,7 @@ export default class Mega extends React.Component {
               <MidBlock>
                 <Tittle3>Lugia Mega
                   <Window width={73} height={24} lineHeight={22} href="https://github.com/lugia-ysstech/lugia/releases" target='_blank'>
-                    <Span font={12}>查看日志</Span>
+                    <Span font={12}>更新日志</Span>
                   </Window>
                 </Tittle3>
                 <Tittle2>标准、高效、开箱即用的前端可视化开发工具</Tittle2>
