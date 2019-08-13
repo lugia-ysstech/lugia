@@ -10,6 +10,7 @@
     "highlight.js": "^9.13.1",
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
+    "marked": "^0.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-highlight": "^0.12.0",

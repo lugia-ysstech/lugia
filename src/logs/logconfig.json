@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "value": "更新日志 ",
+      "text": "更新日志 ",
+      "describe": true,
+      "children": [
+        {
+          "value": "lugia ",
+          "text": "lugia ",
+          "api":"https://api.github.com/repos/lugia-ysstech/lugia"
+        },
+        {
+          "value": "lugia-web ",
+          "text": "lugia-web ",
+          "api":"https://api.github.com/repos/lugia-ysstech/lugia-web"
+        },
+        {
+          "value": "lugia-mega ",
+          "text": "lugia-mega ",
+          "api":"https://api.github.com/repos/lugia-ysstech/lugia-mega"
+        },
+        {
+          "value": "lugiaX ",
+          "text": "lugiaX ",
+          "api":"https://api.github.com/repos/lugia-ysstech/lugiax"
+        },
+        {
+          "value": "lugia-admin ",
+          "text": "lugia-admin ",
+          "api":"https://api.github.com/repos/lugia-ysstech/lugia-admin"
+        },
+        {
+          "value": "lugia-devtools ",
+          "text": "lugia-devtools ",
+          "api":"https://api.github.com/repos/lugia-ysstech/lugia-devtools"
+        },
+        {
+          "value": "lugia-libs ",
+          "text": "lugia-libs ",
+          "api":"https://api.github.com/repos/lugia-ysstech/lugia-libs"
+        }
+      ]
+    }
+  ]
+}

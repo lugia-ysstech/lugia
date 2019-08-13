@@ -39,6 +39,12 @@ export const designRouter = {
     url:'/lugia-mega',
     component: Mega,
   },
+  '/logs':{
+    value:'更新日志',
+    text:'更新日志',
+    url:'/logs',
+    render: () => import('./logs'),
+  },
   NotFound:{
     render: async () => {
       return () => <Redirect to={'/home'}/>;
