@@ -20,7 +20,6 @@ const SearchComponent = connect(
     };
   },
   mutations => {
-    const { search } = mutations;
     return {
       handleInputChange: mutations.handleInputChange,
       fetchRequest: mutations.asyncFetchRequest

@@ -6,9 +6,7 @@
  */
 import React from 'react';
 import { go } from '@lugia/lugiax-router';
-import {  Theme } from '@lugia/lugia-web';
 import '../../css/menu.css';
-import Widget from '@lugia/lugia-web/dist/consts/index';
 import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 import styled , { css,keyframes } from 'styled-components';
 import { designRouter } from '../../App';
@@ -16,8 +14,6 @@ import logo from '../../../public/lugia-logo.png';
 import Search from '../../search';
 
 const { themeColor } = colorsFunc();
-// const TabPane = Tabs.TabPane;
-
 
 const Wrapper = styled.div`
   text-align: left;
@@ -130,12 +126,6 @@ export default class Navcomponent extends React.Component<any, any> {
   }
 
   render() {
-    const view = {
-      [Widget.Tabs]: {
-        width: 340,
-        height: 60,
-      },
-    };
     const {current} = this.state;
     return (
         <Header>
@@ -146,13 +136,11 @@ export default class Navcomponent extends React.Component<any, any> {
             <Language>|</Language>
             <ThemeColor/>
           </HeadRight>
-          <Theme config={view}>
           <Wrapper>
             <TabBox>
               {this.getchildren(designRouter,current)}
             </TabBox>
           </Wrapper>
-          </Theme>
 
         </Header>
     );
@@ -165,8 +153,10 @@ export default class Navcomponent extends React.Component<any, any> {
   getchildren = (router,current) => {
     const arr =[];
     for(const i in router){
-      const {isHidden,text,url} = router[i];
+
+      const {isHidden} = router[i];
       if(!isHidden){
+        const {text,url} = router[i];
         arr.push(<TabPane title={text} active={current === url} onClick={e => this.onTabClick(url)}>{text}</TabPane>);
       }
     }
