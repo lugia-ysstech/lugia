@@ -8,11 +8,11 @@ export default class CheckBoxDemo extends React.Component {
         return (
             <div>
                 <Collapse defaultActiveValue={'1'}>
-                    <Panel value="1" header="LUGIA">
+                    <Panel value="1" title="LUGIA">
                         <div>PanelContent...</div>
                         <div>PanelContent...</div>
                     </Panel>
-                    <Panel value="2" header="LUGIA">
+                    <Panel value="2" title="LUGIA">
                         <div>PanelContent...</div>
                         <div>PanelContent...</div>
                     </Panel>
