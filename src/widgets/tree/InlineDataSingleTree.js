@@ -3,66 +3,66 @@
  * create by szfeng
  *
  */
-import * as React from "react";
-import { Tree, Theme } from "@lugia/lugia-web";
-import Widget from "@lugia/lugia-web/dist/consts";
+import * as React from 'react'
+import { Tree, Theme } from '@lugia/lugia-web'
+import Widget from '@lugia/lugia-web/dist/consts'
 
 const data = [
   {
-    value: "Components",
-    text: "Components",
+    value: 'Components',
+    text: 'Components',
     children: [
       {
-        value: "General",
-        text: "General",
+        value: 'General',
+        text: 'General',
         children: [
           {
-            value: "Button",
-            text: "Button",
-            icon: "lugia-icon-financial_add_pic",
+            value: 'Button',
+            text: 'Button',
+            icon: 'lugia-icon-financial_add_pic',
             disabled: true
           },
-          { value: "Icon", text: "Icon", icon: "lugia-icon-financial_archive" }
+          { value: 'Icon', text: 'Icon', icon: 'lugia-icon-financial_archive' }
         ]
       },
 
       {
-        value: "Layout",
-        text: "Layout",
+        value: 'Layout',
+        text: 'Layout',
         children: [
-          { value: "Grid", text: "Grid", disabled: true },
-          { value: "Layout", text: "Layout" }
+          { value: 'Grid', text: 'Grid', disabled: true },
+          { value: 'Layout', text: 'Layout' }
         ]
       },
 
       {
-        value: "Navigation",
-        text: "Navigation",
+        value: 'Navigation',
+        text: 'Navigation',
         children: [
-          { value: "Affix", text: "Affix" },
-          { value: "Breadcrumb", text: "Breadcrumb" },
-          { value: "Dropdown", text: "Dropdown" },
-          { value: "Menu", text: "Menu" },
-          { value: "Pagination", text: "Pagination" },
-          { value: "Steps", text: "Steps" }
+          { value: 'Affix', text: 'Affix' },
+          { value: 'Breadcrumb', text: 'Breadcrumb' },
+          { value: 'Dropdown', text: 'Dropdown' },
+          { value: 'Menu', text: 'Menu' },
+          { value: 'Pagination', text: 'Pagination' },
+          { value: 'Steps', text: 'Steps' }
         ]
       },
 
       {
-        value: "Data Entry",
-        text: "Data Entry",
+        value: 'Data Entry',
+        text: 'Data Entry',
         children: [
-          { value: "AutoComplete", text: "AutoComplete" },
-          { value: "Cascader", text: "Cascader" },
-          { value: "Checkbox", text: "Checkbox" },
-          { value: "DatePicker", text: "DatePicker" },
-          { value: "Form", text: "Form" },
-          { value: "Input", text: "Input" }
+          { value: 'AutoComplete', text: 'AutoComplete' },
+          { value: 'Cascader', text: 'Cascader' },
+          { value: 'Checkbox', text: 'Checkbox' },
+          { value: 'DatePicker', text: 'DatePicker' },
+          { value: 'Form', text: 'Form' },
+          { value: 'Input', text: 'Input' }
         ]
       }
     ]
   }
-];
+]
 
 export default class InlineDataSingleTree extends React.Component<
   Object,
@@ -77,7 +77,7 @@ export default class InlineDataSingleTree extends React.Component<
           }
         }
       }
-    };
+    }
 
     return (
       <Tree
@@ -85,9 +85,9 @@ export default class InlineDataSingleTree extends React.Component<
         autoHeight
         data={data}
         translateTreeData={true}
-        valueField={"value"}
-        displayField={"text"}
+        valueField={'value'}
+        displayField={'text'}
       />
-    );
+    )
   }
 }
