@@ -3,9 +3,9 @@
  * create by szfeng
  *
  */
-import * as React from 'react'
-import { Tree, Theme } from '@lugia/lugia-web'
-import Widget from '@lugia/lugia-web/dist/consts'
+import * as React from 'react';
+import { Tree, Theme } from '@lugia/lugia-web';
+import Widget from '@lugia/lugia-web/dist/consts';
 
 const data = [
   { value: '1', text: '选项 1' },
@@ -56,7 +56,7 @@ const data = [
   { value: '2', text: '选项 2' },
   { value: '2.1', text: '选项 2.1', pid: '2', path: '2', isLeaf: true },
   { value: '2.2', text: '选项 2.2', pid: '2', path: '2', isLeaf: true }
-]
+];
 
 export default class DefaultTree extends React.Component<Object, Object> {
   render() {
@@ -68,7 +68,7 @@ export default class DefaultTree extends React.Component<Object, Object> {
           }
         }
       }
-    }
+    };
 
     return (
       <Tree
@@ -77,6 +77,6 @@ export default class DefaultTree extends React.Component<Object, Object> {
         igronSelectField={'notCanSelect'}
         autoHeight
       />
-    )
+    );
   }
 }
