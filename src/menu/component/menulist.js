@@ -54,11 +54,17 @@ const getMenuItems = (data:Object) => {
 
 
 const Container = styled.div`
-  padding:${props => (props.fixed?'0':'42px 0 10px')};
+  padding:${props => (props.fixed?'0':props.padding?props.padding:'42px 0 10px')};
   position:${props => (props.fixed?'fixed':'relative')};
   top:0;
   width:260px;
   height:${props => (props.height+'px')}
+`;
+
+const MenuBox = styled.div`
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 `;
 
 type DefProps={
@@ -88,6 +94,7 @@ export default class MenuList extends React.Component<any, any> {
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
     const path = window.location.hash;
     const pathFilter = path.match(/[^#]+/g)[0].match(/[^/]+/g);
+    console.log('pathFilter',pathFilter);
     const pathType = pathFilter[0]==='design'?'designConfig':'menuConfig';
     const defaultUrl = Router[pathType][0].children?Router[pathType][0].children[0].value:Router[pathType][0].value;
     const defCurrent = pathFilter.length>1 ?'/'+pathFilter.join('/'):defaultUrl;
@@ -120,20 +127,25 @@ export default class MenuList extends React.Component<any, any> {
   };
 
   render() {
+    const {width = 270,padding = {} ,isMobile=false,data} = this.props;
     const {height } = this.state;
     const config = {
       [Widget.Navmenu]: {
         Tree:{
           TreeWrap:{
             normal:{
-              // height: height || 500,
-              width: 270,
+              width,
               height,
               boxShadow: getBoxShadow('none')
             }
           },
           TreeItem:{
             Text:{
+              normal:{
+                font:{
+                  size: 15
+                }
+              },
               hover:{
                 color: themeColor,
               }
@@ -142,6 +154,9 @@ export default class MenuList extends React.Component<any, any> {
               normal:{
                 background:{
                   color: themeColor
+                },
+                font:{
+                  size: 15
                 },
                 color: '#fff',
                 borderRadius: getBorderRadius(35)
@@ -152,21 +167,32 @@ export default class MenuList extends React.Component<any, any> {
       },
     };
     const {routerType,fixed} = this.state;
+    const defaultData = data || getMenuItems(Router[routerType]);
     return (
-      <Container fixed={fixed} height={height}>
-        {
-            <Navmenu
-              autoHeight={false}
-              theme={config}
-              inlineType={'ellipse'}
-              mode={'inline'}
-              data={getMenuItems(Router[routerType])}
-              value={this.state.current}
-              inlineExpandAll={true}
-              onSelect={this.onSelect}
-              step={60}
-            />
-        }
+      <Container fixed={fixed} height={height} padding={padding}>
+        {isMobile?<MenuBox >
+          <Navmenu
+            autoHeight={isMobile}
+            theme={config}
+            inlineType={'ellipse'}
+            mode={'inline'}
+            data={defaultData}
+            value={this.state.current}
+            inlineExpandAll={true}
+            onSelect={this.onSelect}
+            step={60}
+          />
+        </MenuBox>:<Navmenu
+          autoHeight={false}
+          theme={config}
+          inlineType={'ellipse'}
+          mode={'inline'}
+          data={getMenuItems(Router[routerType])}
+          value={this.state.current}
+          inlineExpandAll={true}
+          onSelect={this.onSelect}
+          step={60}
+        /> }
       </Container>
     );
   }

@@ -19,7 +19,8 @@ export const Table = styled.table`
   background: #fff;
   font-family: '微软雅黑';
   font-size: 14px;
-  width:100%;
+  width: ${props => props.width?props.width:'100%'};
+  min-width: 570px;
 `;
 
 export const Tr = styled.tr`
@@ -44,6 +45,7 @@ export const Title = styled.div`
   font-size: 18px;
   margin-top: 30px;
   margin-bottom: 20px;
+  text-align: left;
   &:before {
     display: inline-block;
     content: ' ';

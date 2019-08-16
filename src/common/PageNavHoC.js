@@ -6,6 +6,8 @@
  */
 import * as React from 'react';
 import routerInfo from '../router';
+import PageLoading from "../pageloading";
+import {designRouterMobile} from "../App";
 
 const { designRouter, routerConfig } = routerInfo;
 type DefProps = {
@@ -16,6 +18,15 @@ type StateProps = {
   current?: string,
   pathType: string
 }
+let isMobile = false;
+const u = window.navigator.userAgent.toLowerCase();
+if(u.indexOf('iphone') > -1 || u.indexOf('android') > -1 ||  u.indexOf('ipad') > -1){
+  const _query_url = location.search;
+  if(_query_url.indexOf('ismobile') < 0){
+    isMobile = true;
+  }
+}
+
 
 
 export default (objRouter: Object, Target: any) => {
@@ -40,7 +51,7 @@ export default (objRouter: Object, Target: any) => {
       const sort = objRouter[ path ].sort;
       const prev = (sort - 1) > 0 && this.getUrlByUrl(sort - 1) || {};
       const next = this.getUrlByUrl(sort + 1) || {};
-      return <Target prev={prev} next={next} {...this.props}/>;
+      return <Target prev={prev} next={next} {...this.props} isMobile={isMobile}/>;
     }
 
 
