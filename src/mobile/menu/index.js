@@ -33,7 +33,7 @@ export default (props) => {
     },
   };
   this.drawer = React.createRef();
-  const {setOverflow} = props;
+  const {setOverflow, ignoreGo, onSelect} = props;
   const [drawerVisible, updateDrawerVisible] = useState(false);
   const [overflow, updateOverflowState] = useState(false);
   setOverflow && setOverflow(overflow);
@@ -50,7 +50,7 @@ export default (props) => {
           <Theme config={view}>
             <Drawer placement={'left'} onClose={onClick} closable visible={drawerVisible} ref={node => (this.drawer = node)} >
               {
-                drawerVisible?<Asides data={data} width={250} padding={{top:0,left:0,right:0,bottom:0}} isMobile={true} />:''
+                drawerVisible?<Asides data={data} width={250} padding={{top:0,left:0,right:0,bottom:0}} isMobile={true} ignoreGo onSelect={onSelect}/>:''
               }
 
             </Drawer>
