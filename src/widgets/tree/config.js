@@ -30,10 +30,23 @@ module.exports = {
       '通过指定translateTreeData：true,组件内部将嵌套数据自动转换成Tree型展开数据,可通过disabled指定禁选的项。注意需要指定valueField和displayField',
     path: './InlineSingleTree'
   },
+
   InlineDataMutlipleTree: {
     title: '嵌套数据的多选Tree',
     desc:
       '通过指定translateTreeData：true,组件内部将嵌套数据自动转换成Tree型展开数据,可通过disabled指定禁选的项,通过mutliple生成多选Tree。注意需要指定valueField和displayField',
     path: './InlineMutlipleTree'
+  },
+
+  SuffixTree: {
+    title: '自定义后缀图标的Tree',
+    desc: '通过renderSuffix回调函数, 可以自定义后缀图标',
+    path: './SuffixTree'
+  },
+
+  ShowMenuTree: {
+    title: '右键显示菜单的Tree',
+    desc: '通过onRightClick事件, 展示自定义菜单',
+    path: './ShowMenuTree'
   }
 };

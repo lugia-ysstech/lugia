@@ -71,21 +71,24 @@ export default class InlineDataMutlipleTree extends React.Component<
   render() {
     const config = {
       [Widget.Tree]: {
-        height: 520,
-        width: 300
+        TreeWrap: {
+          normal: {
+            width: 300
+          }
+        }
       }
     };
+
     return (
-      <Theme config={config}>
-        <Tree
-          autoHeight
-          data={data}
-          mutliple
-          translateTreeData={true}
-          valueField={'value'}
-          displayField={'text'}
-        />
-      </Theme>
+      <Tree
+        theme={config}
+        autoHeight
+        data={data}
+        mutliple
+        translateTreeData={true}
+        valueField={'value'}
+        displayField={'text'}
+      />
     );
   }
 }
