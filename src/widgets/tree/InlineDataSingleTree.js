@@ -3,9 +3,9 @@
  * create by szfeng
  *
  */
-import * as React from 'react'
-import { Tree, Theme } from '@lugia/lugia-web'
-import Widget from '@lugia/lugia-web/dist/consts'
+import * as React from 'react';
+import { Tree, Theme } from '@lugia/lugia-web';
+import Widget from '@lugia/lugia-web/dist/consts';
 
 const data = [
   {
@@ -62,7 +62,7 @@ const data = [
       }
     ]
   }
-]
+];
 
 export default class InlineDataSingleTree extends React.Component<
   Object,
@@ -77,7 +77,7 @@ export default class InlineDataSingleTree extends React.Component<
           }
         }
       }
-    }
+    };
 
     return (
       <Tree
@@ -88,6 +88,6 @@ export default class InlineDataSingleTree extends React.Component<
         valueField={'value'}
         displayField={'text'}
       />
-    )
+    );
   }
 }

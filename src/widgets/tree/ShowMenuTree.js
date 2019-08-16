@@ -3,22 +3,22 @@
  * create by szfeng
  *
  */
-import * as React from 'react'
-import { Tree, Icon, Theme } from '@lugia/lugia-web'
-import Widget from '@lugia/lugia-web/dist/consts'
-import styled from 'styled-components'
+import * as React from 'react';
+import { Tree, Icon, Theme } from '@lugia/lugia-web';
+import Widget from '@lugia/lugia-web/dist/consts';
+import styled from 'styled-components';
 
 const IconBox = styled.div`
   margin: 0 4px;
-`
+`;
 
 const getCSS = props => {
-  const { visible, clientX, clientY } = props
+  const { visible, clientX, clientY } = props;
 
   return !visible
     ? 'display: none; opacity: 0'
-    : `display: block; left: ${clientX}px; top: ${clientY}px; opacity: 1`
-}
+    : `display: block; left: ${clientX}px; top: ${clientY}px; opacity: 1`;
+};
 
 const MenuBox = styled.div`
   position: fixed;
@@ -27,7 +27,7 @@ const MenuBox = styled.div`
   background: #fff;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
   ${getCSS}
-`
+`;
 
 const Item = styled.div`
   width: 100%;
@@ -41,7 +41,7 @@ const Item = styled.div`
   &:hover {
     background: rgba(77, 99, 255, 0.1);
   }
-`
+`;
 
 const data = [
   { value: '1', text: '选项 1' },
@@ -92,58 +92,58 @@ const data = [
   { value: '2', text: '选项 2' },
   { value: '2.1', text: '选项 2.1', pid: '2', path: '2', isLeaf: true },
   { value: '2.2', text: '选项 2.2', pid: '2', path: '2', isLeaf: true }
-]
+];
 
 export default class DefaultTree extends React.Component<Object, Object> {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       visible: false,
       clientX: 0,
       clientY: 0,
       start: 0
-    }
+    };
   }
 
   componentDidMount() {
-    document.addEventListener('click', this._handleClick)
-    document.addEventListener('scroll', this._handleScroll)
+    document.addEventListener('click', this._handleClick);
+    document.addEventListener('scroll', this._handleScroll);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('click', this._handleClick)
-    document.removeEventListener('scroll', this._handleScroll)
+    document.removeEventListener('click', this._handleClick);
+    document.removeEventListener('scroll', this._handleScroll);
   }
 
   _handleClick = (event: Object) => {
-    const { visible } = this.state
+    const { visible } = this.state;
     if (visible) {
-      this.setState({ visible: false })
+      this.setState({ visible: false });
     }
-  }
+  };
 
   _handleScroll = (event: Object) => {
-    const { visible } = this.state
+    const { visible } = this.state;
     if (visible) {
-      this.setState({ visible: false })
+      this.setState({ visible: false });
     }
-  }
+  };
 
   getTriggerMenu(isLeaf: boolean) {
     return isLeaf
       ? [
           <Item
             onContextMenu={e => {
-              e.preventDefault()
-              return
+              e.preventDefault();
+              return;
             }}
           >
             叶子结点选项1
           </Item>,
           <Item
             onContextMenu={e => {
-              e.preventDefault()
-              return
+              e.preventDefault();
+              return;
             }}
           >
             叶子结点选项2
@@ -152,39 +152,39 @@ export default class DefaultTree extends React.Component<Object, Object> {
       : [
           <Item
             onContextMenu={e => {
-              e.preventDefault()
-              return
+              e.preventDefault();
+              return;
             }}
           >
             父级节点选项1
           </Item>,
           <Item
             onContextMenu={e => {
-              e.preventDefault()
-              return
+              e.preventDefault();
+              return;
             }}
           >
             父级节点选项2
           </Item>
-        ]
+        ];
   }
 
   onRightClick = (target: Object) => {
-    const { event, item } = target
-    const { notCanSelect, isLeaf } = item
+    const { event, item } = target;
+    const { notCanSelect, isLeaf } = item;
     if (notCanSelect) {
-      return
+      return;
     }
-    this.isLeaf = isLeaf
-    const { clientX, clientY } = event
+    this.isLeaf = isLeaf;
+    const { clientX, clientY } = event;
 
     this.setState({
       visible: true,
       clientX,
       clientY,
       item
-    })
-  }
+    });
+  };
 
   render() {
     const config = {
@@ -196,9 +196,9 @@ export default class DefaultTree extends React.Component<Object, Object> {
           }
         }
       }
-    }
-    const { visible, clientX, clientY } = this.state
-    const menu = this.getTriggerMenu(this.isLeaf)
+    };
+    const { visible, clientX, clientY } = this.state;
+    const menu = this.getTriggerMenu(this.isLeaf);
     return [
       <Tree
         data={data}
@@ -213,6 +213,6 @@ export default class DefaultTree extends React.Component<Object, Object> {
       <MenuBox visible={visible} clientX={clientX} clientY={clientY}>
         {menu}
       </MenuBox>
-    ]
+    ];
   }
 }

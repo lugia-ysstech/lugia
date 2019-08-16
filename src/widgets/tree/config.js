@@ -49,4 +49,4 @@ module.exports = {
     desc: '通过onRightClick事件, 展示自定义菜单',
     path: './ShowMenuTree'
   }
-}
+};

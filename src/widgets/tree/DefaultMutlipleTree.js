@@ -3,9 +3,9 @@
  * create by ligx
  *
  */
-import * as React from 'react'
-import { Tree, Theme } from '@lugia/lugia-web'
-import Widget from '@lugia/lugia-web/dist/consts'
+import * as React from 'react';
+import { Tree, Theme } from '@lugia/lugia-web';
+import Widget from '@lugia/lugia-web/dist/consts';
 
 const data = [
   { value: '1', text: '选项 1' },
@@ -56,7 +56,7 @@ const data = [
   { value: '2', text: '选项 2' },
   { value: '2.1', text: '选项 2.1', pid: '2', path: '2', isLeaf: true },
   { value: '2.2', text: '选项 2.2', pid: '2', path: '2', isLeaf: true }
-]
+];
 
 export default class DefaultMutlipleTree extends React.Component<
   Object,
@@ -71,7 +71,7 @@ export default class DefaultMutlipleTree extends React.Component<
           }
         }
       }
-    }
+    };
     return (
       <Tree
         theme={config}
@@ -80,6 +80,6 @@ export default class DefaultMutlipleTree extends React.Component<
         data={data}
         igronSelectField={'notCanSelect'}
       />
-    )
+    );
   }
 }
