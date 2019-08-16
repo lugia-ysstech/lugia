@@ -343,22 +343,24 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
         
       export default PageNavHoC(widgetrouter, class ComDemo extends React.Component {
             render(){
-                const {next, prev} = this.props;
+                const {next, prev, isMobile = false} = this.props;
+                const span = isMobile ? 24 : 20;
+                const style = isMobile ? {} : {paddingRight: '50px'};
                 return(
                     <Row>
-                        <Col span={20}>
-                          <div style={{paddingRight: '50px'}}>
+                        <Col span={span}>
+                          <div style={style}>
                               <Title title={'${pageTitle}'} subTitle={'${subTitle}'} desc={'${pageDesc}'} />
                               ${importInfoAndDemo.demo}
                               ${ApiTable}
                               <FooterNav prev={prev} next={next} />
                             </div>
                         </Col>
-                        <Col span={4}>
+                        {!isMobile && <Col span={4}>
                             <Anchor  slideType="line">
                                 ${importInfoAndDemo.link}
                             </Anchor>
-                        </Col>
+                        </Col>}
                     </Row>
                 )
             }
