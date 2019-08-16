@@ -53,41 +53,66 @@ export const designRouter = {
   }
 
 };
-const rout = createRoute(designRouter, PageLoading);
+export const designRouterMobile = {
+  '/': {
+    exact: true,
+    render: async () => import('./mobile/home'),
+    value: '/home',
+    isHidden: true,
+  },
+  '/home':{
+    value:'首页',
+    text:'首页',
+    url:'/home',
+    render: () => import('./mobile/home'),
+    // exact: true,
+  },
+  '/design':{
+    value:'设计指南',
+    text:'设计指南',
+    url:'/design',
+    render: () => import('./mobile/design'),
 
-const footer = (
-  <div
-    style={{
-      height: '60px',
-      lineHeight: '60px',
-      textAlign: 'center',
-      background: '#0f13ff',
-    }}
-  >
-    Footer
-  </div>
-);
+  },
+  '/component':{
+    value:'lugia-web',
+    text:'lugia-web',
+    url:'/component',
+    render: () => import('./mobile/widgets'),
+  },
+  '/lugia-mega':{
+    value:'lugia-mega',
+    text:'lugia-mega',
+    url:'/lugia-mega',
+    render: () => import('./mobile/mega'),
+  },
+  '/logs':{
+    value:'更新日志',
+    text:'更新日志',
+    url:'/logs',
+    render: () => import('./mobile/logs'),
+  },
+  NotFound:{
+    render: async () => {
+      return () => <Redirect to={'/home'}/>;
+    },
+    isHidden: true,
+  }
 
-const block = (
-  <div style={{ height: '60px'}}>
-  </div>
-);
+};
+let rout = createRoute(designRouter, PageLoading);
+
+const u = window.navigator.userAgent.toLowerCase();
+if(u.indexOf('iphone') > -1 || u.indexOf('android') > -1 ||  u.indexOf('ipad') > -1){
+  const _query_url = location.search;
+  if(_query_url.indexOf('ismobile') < 0){
+    console.log('ismobile');
+    rout = createRoute(designRouterMobile, PageLoading);
+  }
+}
+
 
 export default () => {
-  const layoutView = {
-    [Widget.Content]: {
-      width:'100%',
-      padding: {
-        top: 20,
-        bottom: 20,
-        left: 20,
-        right: 10,
-      },
-      bordeLeftWidth:1,
-      bordeLeftColor:'#cccccc',
-      bordeLeftStyle:'solid'
-    },
-  };
 
   return (
     <React.Fragment>

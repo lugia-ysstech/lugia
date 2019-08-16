@@ -143,8 +143,8 @@ module.exports = param => {
   } = param;
   const DesignDocument = {
     introduce: {
-      title: '',
-      content: [{ text: 'Lugia Design', margin: '0 0 30px 0', size: '24px', weight: 600 }],
+      title: 'Lugia Design',
+      content: [],
       children: [
         {
           img: [{ url: introduce }],

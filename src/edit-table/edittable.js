@@ -1,8 +1,17 @@
 import * as React from 'react';
 import { Args, Table, Td, Title, Tr } from '../css/edittable';
+import styled from "styled-components";
+
+
+const TableContainer = styled.div`
+  width:100%;
+  overflow:auto;
+`;
+
 
 type PropsType = {
-  dataSource: Object
+  dataSource: Object,
+  style:Object;
 };
 
 type StateType = {};
@@ -76,7 +85,7 @@ class Element extends React.Component<PropsType, StateType> {
   }
 
   getProps = (datatype: string) => {
-    const { dataSource: { [ datatype ]: value } } = this.state;
+    const { dataSource: { [ datatype ]: value } ,style:{width} = {}} = this.state;
     const propsSource = objectToArray(value);
     if (propsSource.length <= 0) {
       return;
@@ -89,26 +98,29 @@ class Element extends React.Component<PropsType, StateType> {
         <Title>
           {this.state.dataSource.title}组件{desc}说明如下：
         </Title>
-        <Table>
-          <Tr>
-            {title.map(item => (
-              <Td>{item}</Td>
-            ))}
-          </Tr>
-          {propsSource.map(item => {
-            if(item.designOnly){
-              return null;
-            }
-            return (
-              <Tr>
-                <Td>{item.name}</Td>
-                <Td>{item.desc}</Td>
-                <Td>{getPropsType(item.type,propsType) || 'Function'}</Td>
-                <Td>{item.args ? getEventPropsElement(getEventProps(item.args)) : getDefaultValue(item.defaultValue)}</Td>
-              </Tr>
-            );
-          })}
-        </Table>
+        <TableContainer>
+          <Table width={width}>
+            <Tr>
+              {title.map(item => (
+                <Td>{item}</Td>
+              ))}
+            </Tr>
+            {propsSource.map(item => {
+              if(item.designOnly){
+                return null;
+              }
+              return (
+                <Tr>
+                  <Td>{item.name}</Td>
+                  <Td>{item.desc}</Td>
+                  <Td>{getPropsType(item.type,propsType) || 'Function'}</Td>
+                  <Td>{item.args ? getEventPropsElement(getEventProps(item.args)) : getDefaultValue(item.defaultValue)}</Td>
+                </Tr>
+              );
+            })}
+          </Table>
+        </TableContainer>
+
       </React.Fragment>
     );
   };

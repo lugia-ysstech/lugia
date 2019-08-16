@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   text-align: center;
-  min-height:500px;
+  min-height: ${props => props.height?props.height+'px':'500px'};
   position:relative;
   z-index:3;
 `;
@@ -25,9 +25,9 @@ const CopyRight = styled.div`
 export default class Footer extends React.Component {
 
   render() {
-
+    const {height} = this.props;
     return (
-      <Wrapper>
+      <Wrapper height={height}>
         <CopyRight>
           Copyright @ 2001-2019 Ysstech,All Rights Reserved 粤ICP备05050184号
         </CopyRight>
