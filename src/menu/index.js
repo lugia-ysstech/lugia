@@ -24,11 +24,11 @@ const NavmenuList = connect(
 
 
 export default (props) => {
-  const {width,padding,isMobile,data} = props;
+  const {width,padding,isMobile,data, ignoreGo, onSelect} = props;
   return (
     <Affix>
       {
-        <NavmenuList width={width} padding={padding} isMobile={isMobile} data={data} />
+        <NavmenuList width={width} padding={padding} isMobile={isMobile} data={data} ignoreGo onSelect={onSelect}/>
       }
     </Affix>
   );

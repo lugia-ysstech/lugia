@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { Icon,BackTop ,Navmenu,Theme} from "@lugia/lugia-web";
-import colorsFunc from "@lugia/lugia-web/dist/css/stateColor";
-import HeaderNav from "../nav";
-import { getBorderRadius, getBorder,getBoxShadow } from '@lugia/theme-utils';
-import navMenuData from "../../logs/logconfig";
+import React from 'react';
+import styled from 'styled-components';
+import { BackTop } from '@lugia/lugia-web';
+import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
+import HeaderNav from '../nav';
+import navMenuData from '../../logs/logconfig';
 import Asides from '../menu';
+
 const marked = require('marked');
 
 const { themeColor } = colorsFunc();
@@ -232,7 +232,7 @@ export default class UpdateLog extends React.Component<any, any> {
     return (
       <OutContainer>
         <HeaderNav />
-        <Asides data={navMenuData.data}/>
+        <Asides data={navMenuData.data} ignoreGo onSelect={this.onSelect}/>
         <Container>
           <Title>{name}</Title>
           <Text> {description} </Text>
