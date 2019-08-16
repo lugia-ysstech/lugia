@@ -28,7 +28,7 @@ export default (props) => {
   return (
     <Affix>
       {
-        <NavmenuList width={width} padding={padding} isMobile={isMobile} data={data} ignoreGo onSelect={onSelect}/>
+        <NavmenuList width={width} padding={padding} isMobile={isMobile} data={data} ignoreGo={ignoreGo} onSelect={onSelect}/>
       }
     </Affix>
   );
