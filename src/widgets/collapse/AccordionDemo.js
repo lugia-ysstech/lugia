@@ -9,19 +9,19 @@ export default class CheckBoxDemo extends React.Component {
         return (
             <div>
                 <Collapse defaultActiveValue={'1'} accordion>
-                    <Panel value="1" header="LUGIA">
+                    <Panel value="1" title="LUGIA">
                         <div>PanelContent...</div>
                         <div>PanelContent...</div>
                     </Panel>
-                    <Panel value="2" header="LUGIA">
+                    <Panel value="2" title="LUGIA">
                         <div>PanelContent...</div>
                         <div>PanelContent...</div>
                     </Panel>
-                    <Panel value="3" header="LUGIA">
+                    <Panel value="3" title="LUGIA">
                         <div>PanelContent...</div>
                         <div>PanelContent...</div>
                     </Panel>
-                    <Panel value="4" header="LUGIA">
+                    <Panel value="4" title="LUGIA">
                         <div>PanelContent...</div>
                         <div>PanelContent...</div>
                     </Panel>
