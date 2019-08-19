@@ -14,10 +14,7 @@ const OutContainer = styled.div`
   width:100%;
   height:100%;
   padding: 0 20px;
-<<<<<<< HEAD
   position: ${props => props.overflow?'fixed':''}
-=======
->>>>>>> lugia/master
  
 `;
 
@@ -211,12 +208,8 @@ export default class UpdateLog extends React.Component<any, any> {
     this.state={
       fetchApi:defaultFetchApi,
       current: navMenuData.data[0].children[0].value,
-<<<<<<< HEAD
       drawerVisible:false,
       overflow:false
-=======
-      drawerVisible:false
->>>>>>> lugia/master
     }
   }
   componentDidMount () {
@@ -237,19 +230,11 @@ export default class UpdateLog extends React.Component<any, any> {
 
 
   render () {
-<<<<<<< HEAD
     const {releases=[],name,description,overflow} = this.state;
     return (
       <OutContainer  overflow={overflow}>
         <HeaderNav />
         <Asides data={navMenuData.data} ignoreGo onSelect={this.onSelect} setOverflow={(res) => this.setOverflow(res)} />
-=======
-    const {releases=[],name,description} = this.state;
-    return (
-      <OutContainer>
-        <HeaderNav />
-        <Asides data={navMenuData.data} ignoreGo onSelect={this.onSelect}/>
->>>>>>> lugia/master
         <Container>
           <Title>{name}</Title>
           <Text> {description} </Text>
@@ -293,14 +278,11 @@ export default class UpdateLog extends React.Component<any, any> {
     });
     this.getReleasesData(fetchApi);
   };
-<<<<<<< HEAD
   setOverflow = (res) => {
     this.setState({
       overflow:res
     });
   };
-=======
->>>>>>> lugia/master
 
   async getReleasesData(fetchApi){
     const result = await fetch(fetchApi+'/releases',
