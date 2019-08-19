@@ -45,13 +45,17 @@ const Title = styled.div`
   text-align:right;
   padding:0 16px 0 0;
 `;
-const Li = styled.div`
+const UL = styled.ul`
+`;
+const Li = styled.li`
   display:flex;
   width:500px;
   padding:0 16px;
   line-height:1.5;
   margin:8px 0;
   cursor:pointer;
+  background: ${props => props.active?'rgba(77, 99, 255,0.1)':''}
+  
 `;
 const LiLeft = styled.div`
   width:156px;  
@@ -92,7 +96,9 @@ export default class Navcomponent extends React.Component<any, any> {
     if (!stateProps) {
       return {
         searchInfo,
-        result
+        result,
+        current: null,
+        totalLi: 0
       };
     }
     return {
@@ -100,6 +106,15 @@ export default class Navcomponent extends React.Component<any, any> {
       result: 'searchInfo' in defProps?result:stateProps.result,
     };
   }
+
+  componentDidMount () {
+    document.addEventListener('keydown', this.addKeyUpListener);
+  }
+  componentWillUnmount(){
+    document.removeEventListener('keydown', this.addKeyUpListener);
+
+  }
+
 
   render() {
     const InputStyle = {
@@ -141,7 +156,8 @@ export default class Navcomponent extends React.Component<any, any> {
             },
           }
 
-        }
+        },
+        InputPrefix: { normal: { fontSize: 14 } },
 
       },
       [Widget.Trigger]: {
@@ -173,25 +189,52 @@ export default class Navcomponent extends React.Component<any, any> {
     );
   }
 
-  getPopEement =(data:Object) => {
-    const child = [] ;
+  getPopElementData =(data:Object) => {
+    let keyIndex = 0;
+    const newData = {};
     for(const i in data){
+      const arr = [];
+      data[i].forEach( (item,index) => {
+        if(index < 10){
+          keyIndex +=1;
+          arr.push({...item,keyIndex});
+        }
+      });
+      newData[i] = arr;
+    }
+    const {totalLi} = this.state;
+    if(totalLi !== keyIndex){
+      this.setState({
+        totalLi:keyIndex
+      })
+    }
+    return newData;
+  };
+
+  getPopElement =(data:Object) => {
+    const child = [] ;
+    const {current } = this.state;
+    const filterData = this.getPopElementData(data);
+    for(const i in filterData){
       child.push(
         <React.Fragment>
           <Type >
             <TypeLine/>
             {i}
           </Type>
-        {
-          data[i].map((item, index) => (
-            <React.Fragment>
-              {index <= 10 && <Li>
-              <LiLeft onClick={e => this.linkToUrl(item.url.split('#')[0])}> <Title>{item.owner}</Title> </LiLeft>
-              <LiRight onClick={e => this.linkToUrl(item.url)}>{item.content}</LiRight>
-            </Li>}
-            </React.Fragment>
-        ))
-        }
+          <UL>
+            {
+              filterData[i].map( item => (
+                <React.Fragment>
+                  <Li active={current === item.keyIndex} url={item.url} onMouseMove={() => this.setCurrent(item.keyIndex)}>
+                    <LiLeft onClick={e => this.linkToUrl(item.url.split('#')[0])}> <Title>{item.owner}</Title> </LiLeft>
+                    <LiRight onClick={e => this.linkToUrl(item.url)}>{item.content}</LiRight>
+                  </Li>
+                </React.Fragment>
+              ))
+            }
+          </UL>
+
         </React.Fragment>
       );
 
@@ -206,11 +249,12 @@ export default class Navcomponent extends React.Component<any, any> {
       </React.Fragment>
     );
   };
+
   getPopup = () => {
     const {result} = this.state;
       return (
-        <Container>
-          {result && this.getPopEement(result)}
+        <Container onMouseOut={() => this.setCurrent(null)}>
+          {result && this.getPopElement(result)}
         </Container>
       );
 
@@ -232,11 +276,57 @@ export default class Navcomponent extends React.Component<any, any> {
     fetchRequest && fetchRequest(newValue);
   };
   linkToUrl = (res:string) => {
+    if(!res){
+      return;
+    }
     this.handleInputChange(null);
     go({ url: res });
+    this.setState({
+      current:null
+    })
   };
-  doSearch = () => {
+  setCurrent = (value) => {
+
+    const {current} = this.state;
+    if(current !== value){
+      this.setState({
+        current:value
+      });
+    }
 
   };
+
+  addKeyUpListener = (e) => {
+    const {current,totalLi} = this.state;
+    let currentValue = current;
+    switch(e.keyCode) {
+      case 38:
+        currentValue = current<=1? 1 :current -1;
+        break;
+      case 40:
+        currentValue = current>=totalLi? totalLi :current +1;
+        break;
+      case 13:
+        const {result} = this.state;
+        const filterData = this.getPopElementData(result);
+        let url = null;
+        for(const i in filterData){
+          filterData[i].forEach( item => {
+            if(item.keyIndex  === currentValue){
+              url = item.url;
+            }
+          });
+        }
+        this.linkToUrl(url);
+        break;
+      default:
+        break;
+    }
+    if(currentValue !== current){
+      this.setState({
+        current:currentValue
+      })
+    }
+  }
 
 }
