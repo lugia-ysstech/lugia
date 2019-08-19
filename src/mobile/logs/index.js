@@ -14,6 +14,7 @@ const OutContainer = styled.div`
   width:100%;
   height:100%;
   padding: 0 20px;
+  position: ${props => props.overflow?'fixed':''}
  
 `;
 
@@ -207,7 +208,8 @@ export default class UpdateLog extends React.Component<any, any> {
     this.state={
       fetchApi:defaultFetchApi,
       current: navMenuData.data[0].children[0].value,
-      drawerVisible:false
+      drawerVisible:false,
+      overflow:false
     }
   }
   componentDidMount () {
@@ -228,11 +230,11 @@ export default class UpdateLog extends React.Component<any, any> {
 
 
   render () {
-    const {releases=[],name,description} = this.state;
+    const {releases=[],name,description,overflow} = this.state;
     return (
-      <OutContainer>
+      <OutContainer  overflow={overflow}>
         <HeaderNav />
-        <Asides data={navMenuData.data} ignoreGo onSelect={this.onSelect}/>
+        <Asides data={navMenuData.data} ignoreGo onSelect={this.onSelect} setOverflow={(res) => this.setOverflow(res)} />
         <Container>
           <Title>{name}</Title>
           <Text> {description} </Text>
@@ -275,6 +277,11 @@ export default class UpdateLog extends React.Component<any, any> {
       current:value
     });
     this.getReleasesData(fetchApi);
+  };
+  setOverflow = (res) => {
+    this.setState({
+      overflow:res
+    });
   };
 
   async getReleasesData(fetchApi){

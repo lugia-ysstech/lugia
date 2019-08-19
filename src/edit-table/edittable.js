@@ -112,7 +112,7 @@ class Element extends React.Component<PropsType, StateType> {
               return (
                 <Tr>
                   <Td>{item.name}</Td>
-                  <Td>{item.desc}</Td>
+                  <Td width={160}>{item.desc}</Td>
                   <Td>{getPropsType(item.type,propsType) || 'Function'}</Td>
                   <Td>{item.args ? getEventPropsElement(getEventProps(item.args)) : getDefaultValue(item.defaultValue)}</Td>
                 </Tr>
