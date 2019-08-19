@@ -15,10 +15,7 @@ const InnerContainer = styled.div`
   width:100%;
   padding:0 20px ;
   text-align: center;
-<<<<<<< HEAD
   overflow-x: hidden;
-=======
->>>>>>> lugia/master
 `;
 
 

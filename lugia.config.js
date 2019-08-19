@@ -1,7 +1,7 @@
 export default {
   disableCSSModules: true,
   cssModulesWithAffix: true,
-  publicPath: 'https://lugia.oss-cn-beijing.aliyuncs.com/',
+  publicPath: '/',
   extraBabelIncludes: [/decamelize/],
   extraBabelPlugins: [
     [
