@@ -15,7 +15,6 @@ const Wrapper = styled.div`
   text-align: right;
   margin:50px 0;
   position:relative;
-  z-index:3;
 `;
 
 const Container = styled.span`

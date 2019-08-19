@@ -33,6 +33,7 @@ export const Td = styled.td`
   vertical-align:middle;
   line-height:24px;
   max-width:242px;
+  min-width:${props => props.width?props.width+'px':''};
   color:${props => (props.mode?'#f8ac30':'#36384c')}
 `;
 

@@ -36,6 +36,15 @@ export default (props) => {
   const {setOverflow, ignoreGo, onSelect} = props;
   const [drawerVisible, updateDrawerVisible] = useState(false);
   const [overflow, updateOverflowState] = useState(false);
+<<<<<<< HEAD
+
+  const onClick = (e) => {
+    updateDrawerVisible(!drawerVisible);
+    updateOverflowState(!overflow);
+    setOverflow && setOverflow(!overflow);
+  };
+
+=======
   setOverflow && setOverflow(overflow);
   const onClick = (e) => {
     updateDrawerVisible(!drawerVisible);
@@ -43,6 +52,7 @@ export default (props) => {
   };
 
 
+>>>>>>> lugia/master
   const {data} = props;
   return (
     <React.Fragment>
@@ -50,7 +60,14 @@ export default (props) => {
           <Theme config={view}>
             <Drawer placement={'left'} onClose={onClick} closable visible={drawerVisible} ref={node => (this.drawer = node)} >
               {
+<<<<<<< HEAD
+                drawerVisible?<Asides data={data} width={250} padding={{top:0,left:0,right:0,bottom:0}} isMobile={true} ignoreGo={ignoreGo} onSelect={(target) => {
+                  onClick();
+                  onSelect && onSelect(target) ;
+                }}/>:''
+=======
                 drawerVisible?<Asides data={data} width={250} padding={{top:0,left:0,right:0,bottom:0}} isMobile={true} ignoreGo={ignoreGo} onSelect={onSelect}/>:''
+>>>>>>> lugia/master
               }
 
             </Drawer>
