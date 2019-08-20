@@ -15,6 +15,7 @@ const InnerContainer = styled.div`
   width:100%;
   padding:0 20px ;
   text-align: center;
+  overflow-x: hidden;
 `;
 
 

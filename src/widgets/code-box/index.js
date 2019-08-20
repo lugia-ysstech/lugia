@@ -54,6 +54,7 @@ const BoxWrap = styled.div`
 const CodeBox = styled.div`
   font-size: 14px;
   box-sizing: border-box;
+  text-align: left;
   display: ${props => (props.visible ? 'block' : 'none')};
   & > pre > code {
     line-height: 1.2;

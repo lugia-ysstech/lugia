@@ -91,7 +91,6 @@ export default class MenuList extends React.Component<any, any> {
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
     const path = window.location.hash;
     const pathFilter = path.match(/[^#]+/g)[0].match(/[^/]+/g);
-    console.log("pathFilter", pathFilter);
     const pathType = pathFilter[0] === "design" ? "designConfig" : "menuConfig";
     const defaultUrl = Router[pathType][0].children
       ? Router[pathType][0].children[0].value
