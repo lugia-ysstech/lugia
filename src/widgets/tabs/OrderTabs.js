@@ -1,5 +1,6 @@
 import React from 'react';
 import { Theme, Tabs } from '@lugia/lugia-web';
+import Widget from "@lugia/lugia-web/dist/consts/index";
 
 const TabPane = Tabs.TabPane;
 export const hasActivityKeyDefaultData = [
@@ -16,25 +17,37 @@ export const hasActivityKeyDefaultData = [
 ];
 export default class OrderTabs extends React.Component<any, any> {
   onAddClick = () => {
-    const activityKey = `newTab${hasActivityKeyDefaultData.length++}`;
     const item = {
-      title: 'New Tab',
-      content: 'Content of new Tab',
-      activityKey
+      title: `Tab${hasActivityKeyDefaultData.length + 1}`,
+      content: `Content of new Tab${hasActivityKeyDefaultData.length + 1}`,
+      activityKey:`Tab${hasActivityKeyDefaultData.length + 1}`
     };
-    return item;
+    hasActivityKeyDefaultData.push(item);
   };
   onDeleteClick = (activityKey: string) => {};
   render() {
+    const view = {
+      [Widget.Tabs]: {
+        TitleContainer: {
+          normal: {
+            width: 326
+          },
+        }
+      },
+    };
     return (
       <div>
-        <Tabs
-          tabType={'card'}
-          pagedType={'single'}
-          onAddClick={this.onAddClick}
-          onDeleteClick={this.onDeleteClick}
-          defaultData={hasActivityKeyDefaultData}
-        />
+        <Theme config={view}>
+          <Tabs
+            tabType={'card'}
+            pagedType={'single'}
+            onAddClick={this.onAddClick}
+            onDeleteClick={this.onDeleteClick}
+            defaultData={hasActivityKeyDefaultData}
+            showAddBtn={true}
+          />
+        </Theme>
+
       </div>
     );
   }
