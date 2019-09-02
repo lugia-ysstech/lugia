@@ -46,7 +46,11 @@ export default class PositionTabs extends React.Component<any, any> {
   render() {
     const view = {
       [Widget.Tabs]: {
-        width: 500,
+        ContentBlock: {
+          normal: {
+            width: '88%'
+          },
+        }
       }
     };
 
@@ -61,7 +65,7 @@ export default class PositionTabs extends React.Component<any, any> {
 
     const handleSelect = obj => {
       const { newValue } = obj;
-      this.setState({ tabPosition: newValue.toString() });
+      this.setState({ tabPosition: newValue });
     };
     return (
       <Theme config={view}>

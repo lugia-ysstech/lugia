@@ -55,8 +55,12 @@ export default class PagedTypeTabs extends React.Component<any, any> {
   render() {
     const view = {
       [Widget.Tabs]: {
-        width: 500,
-      }
+        TitleContainer: {
+          normal: {
+            width: 290
+          },
+        }
+      },
     };
 
     const onPreClick = e => {};
