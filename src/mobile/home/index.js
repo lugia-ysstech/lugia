@@ -409,6 +409,19 @@ const CardTitle = styled.div`
   text-align: center;
 `;
 
+
+const VideoBox = styled.div`
+ width: 100%;
+ height: 288px;
+ padding: 25px 20px;
+ & > iframe{
+    width:100%;
+    height:100%;
+    z-index: 10;
+ }
+`;
+
+
 const ModelThird = styled.div`
   width:100%;
   padding: 45px 0 0;
@@ -573,6 +586,10 @@ export default class Pages extends React.Component<any, any> {
 
             </DesignCardBox>
           </ModelTwo>
+          <VideoBox>
+            <iframe src="//player.bilibili.com/player.html?aid=67434572&cid=116925497&page=1" scrolling="no"
+                    border="0" frameBorder="no" framespacing="0" allowFullScreen="true" />
+          </VideoBox>
           <ModelThird>
             <Design>解决方案</Design>
             <Square/>

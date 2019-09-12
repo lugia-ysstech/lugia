@@ -1038,10 +1038,10 @@
     immutable "^3.8.2"
     yargs "^13.2.2"
 
-"@lugia/lugia-web@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@lugia/lugia-web/-/lugia-web-1.1.4.tgz#890416ef02cfd968557c9d4a4ffcbc38796d234c"
-  integrity sha512-6PRyDS3u3BFTce0TRCogM4wjyQ4DluDfTTPtpiiv71zxmZ1J9WaPB1Jo/AJlCMfGdNfZcbfvm+S/gMZYe77MJw==
+"@lugia/lugia-web@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.npm.taobao.org/@lugia/lugia-web/download/@lugia/lugia-web-1.1.7.tgz?cache=0&sync_timestamp=1568275400158&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugia-web%2Fdownload%2F%40lugia%2Flugia-web-1.1.7.tgz#0a87727da9fe4aa33818c7faddd094805bcbd9b5"
+  integrity sha1-Codyfan+SqM4GMf63dCUgFvL2bU=
   dependencies:
     "@lugia/css" "^1.0.18"
     "@lugia/math" "^1.0.8"
