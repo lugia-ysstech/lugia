@@ -343,7 +343,7 @@ const spendLineRight = keyframes`
     height:0px;
   }
   100% {
-    height:1100px;
+    height:1800px;
   }
 `;
 
@@ -393,9 +393,22 @@ const CardTitle = styled.div`
   text-align: center;
 `;
 
+const VideoBox = styled.div`
+ width:1068px;
+ height: 601px;
+ margin: 118px 0 56px;
+ position: relative;
+ z-index: 10;
+ 
+ & > iframe{
+    width:100%;
+    height:100%;
+ }
+`;
+
 const ModelThird = styled.div`
   width:100%;
-  padding:226px 50px 0 53% ;
+  padding:120px 50px 0 53% ;
   position:relative;
   min-height:800px;
   position:relative;
@@ -411,7 +424,7 @@ const TextBox = styled.div`
 const SquareRight = styled.div`
   position:absolute;
   right:5px;
-  top:220px;
+  top:110px;
   width:22px;
   background:#4d63ff;
   border-radius:22px;
@@ -536,6 +549,10 @@ export default class Pages extends React.Component<any, any> {
                 </DesignCardBox>
               </ModelTwo>
               <LineRight/>
+              <VideoBox>
+                <iframe src="//player.bilibili.com/player.html?aid=67434572&cid=116925497&page=1" scrolling="no"
+                        border="0" frameBorder="no" framespacing="0" allowFullScreen="true" />
+              </VideoBox>
               <ModelThird>
                 <BgImg3 src={pic3}/>
                 <BgImg4 src={pic4}/>
