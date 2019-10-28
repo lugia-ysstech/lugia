@@ -33,7 +33,7 @@ export default class Pages extends React.Component<any, any> {
 
   static getDerivedStateFromProps (defProps: DefProps, stateProps: StateProps) {
     const path = window.location.hash;
-    const pathType = path.match(/[^/]+/g)[2];
+    const pathType = path.match(/[^/]+/g)[2].match(/[^#]+/g)[0];
     if (!stateProps) {
       return {
         pathType,
