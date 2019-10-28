@@ -258,12 +258,13 @@ const getContentElement = (data:Object,titleElement,imgPosition:string,level?:Bo
 
 
 const getAnchorElement = (data:Object) => {
+  const path = window.location.hash.match(/[^#]+/g)[0];
   return <AnchorContainer>
     <Anchor slideType="line">
       {data.map((item,index) => {
         const {title} = item;
         return <React.Fragment>
-          {title &&<Link title={title} href={'#link-'+index} />}
+          {title &&<Link title={title} href={'#'+ path + '#link-'+index} />}
         </React.Fragment>;
       })}
     </Anchor>
@@ -439,6 +440,7 @@ export default class Template extends React.Component<defProps, stateProps> {
   };
 
   cickToLink = (url:string) => {
+    console.log('url',url);
     url && go({ url });
   }
 }

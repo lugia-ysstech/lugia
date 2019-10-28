@@ -42,6 +42,9 @@ const getEventPropsElement = (arr: Array<string>) => {
 
 const getDefaultValue = (val: any) => {
   if (!val || val === 'undefined' || val === 'null') return '——';
+  if(Array.isArray(val)){
+    return JSON.stringify(val);
+  }
   return val.toString();
 };
 

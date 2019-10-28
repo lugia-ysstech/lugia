@@ -47,7 +47,9 @@ export default (objRouter: Object, Target: any) => {
 
 
     render () {
-      const { path } = this.state;
+      let { path } = this.state;
+      const index = path.lastIndexOf("\/");
+      path = index ===path.length -1? path.substring(0,index):path;
       const sort = objRouter[ path ].sort;
       const prev = (sort - 1) > 0 && this.getUrlByUrl(sort - 1) || {};
       const next = this.getUrlByUrl(sort + 1) || {};
