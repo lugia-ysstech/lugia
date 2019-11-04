@@ -5,6 +5,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const prettier = require('prettier');
 const documents = require('../design/page/getDocument')({});
 
 createDemoRouter();
@@ -274,7 +275,17 @@ async function createDemoPage () {
         return;
       }
       try {
-        await fs.writeFileSync(getPath(`${folderName}/index.js`), demoPageContent);
+        await fs.writeFileSync(getPath(`${folderName}/index.js`), prettier.format(demoPageContent), {
+          useTabs: false,
+          printWidth: 80,
+          tabWidth: 2,
+          singleQuote: false,
+          trailingComma: 'none',
+          bracketSpacing: true,
+          jsxBracketSameLine: false,
+          parser: 'babel',
+          semi: true
+        });
       } catch (err) {
         console.log('(%d) %s 写入文件失败  X', pos, folderName);
         return;
@@ -342,6 +353,16 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
         const { Row,Col } = Grid;
         
       export default PageNavHoC(widgetrouter, class ComDemo extends React.Component {
+            handleLinkClick = (e, href) => {
+              if (href) {
+                const name = href.slice(1);
+                const anchorElement = document.getElementById(name);
+                if (anchorElement) {
+                  anchorElement.scrollIntoView({ block: 'start', behavior: 'smooth' });
+                }
+              }
+            };
+            
             render(){
                 const {next, prev, isMobile = false} = this.props;
                 const span = isMobile ? 24 : 20;
@@ -357,7 +378,7 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
                             </div>
                         </Col>
                         {!isMobile && <Col span={4}>
-                            <Anchor  slideType="line">
+                            <Anchor  slideType="line" onClick={this.handleLinkClick} useHref={false}>
                                 ${importInfoAndDemo.link}
                             </Anchor>
                         </Col>}
