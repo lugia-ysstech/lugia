@@ -11,7 +11,6 @@
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
     "marked": "^0.7.0",
-    "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-highlight": "^0.12.0",
@@ -36,6 +35,7 @@
     "flow": "^0.2.3",
     "flow-bin": "^0.87.0",
     "flow-typed": "^2.5.1",
+    "prettier": "^1.18.2",
     "react-test-renderer": "^16.8.6"
   }
 }
