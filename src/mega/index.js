@@ -218,18 +218,18 @@ export default class Mega extends React.Component {
                 <Tittle5>欢迎使用 Lugia Mega</Tittle5>
                 <Tittle2>请选择您要安装的操作系统</Tittle2>
                 <DownLoadBox>
-                  <Mac href="https://lugia.oss-cn-beijing.aliyuncs.com/download/LugiaMega-1.1.3.dmg">
+                  <Mac href="#DownLoadMac">
                     <MacLogo />
                     <Span>mac版本</Span>
                   </Mac>
-                  <Window href="https://lugia.oss-cn-beijing.aliyuncs.com/download/LugiaMega%20Setup%201.1.3.exe">
+                  <Window href="#DownLoadWindows">
                     <WindowLogo />
                     <Span>windows版本</Span>
                   </Window>
-                  <DownLoad href="https://github.com/lugia-ysstech/lugia/raw/master/doc/lugia-v1.1.0-%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%20%E4%B8%AD%E6%96%87%EF%BC%88%E7%AE%80%EF%BC%89.pdf">
+                  <DownLoad href="#DownLoadWindows">
                     <IconSpan>
                       <Icon
-                        iconClass="lugia-icon-financial_pdf"
+                        iconClass="#DownPdf"
                         theme={{
                           icon: {
                             Icon: {

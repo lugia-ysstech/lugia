@@ -1,7 +1,9 @@
+const config = require('./lugia.config.json');
+
 export default {
+  ...config,
   disableCSSModules: true,
   cssModulesWithAffix: true,
-  publicPath: 'https://lugia.oss-cn-beijing.aliyuncs.com/',
   extraBabelIncludes: [/decamelize/],
   extraBabelPlugins: [
     [
