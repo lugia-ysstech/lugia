@@ -39,9 +39,9 @@ async function spawn(args, msg) {
 async function uploadOSS(target, source) {
   const client = OSS({
     region: 'oss-cn-beijing',
-    accessKeyId: 'LTAI4FmBW1mgwc1qHxFJBkbo',
-    accessKeySecret: 'oizZeBdKB2rueS2jqmBJtZhdWuEoKk',
-    bucket: 'lugia',
+    accessKeyId: 'aaa',
+    accessKeySecret: 'aaa',
+    bucket: 'aaa',
     timeout: '60s'
   });
   await client.putStream(target, fs.createReadStream(source));
