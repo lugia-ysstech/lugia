@@ -309,10 +309,20 @@ export default {
             return import('../widgets/upload');
           },
         },
+      '/component/window':
+        {
+          value: '/component/window',
+          sort: 66,
+          text: 'Window 窗体',
+          exact: true,
+          render: async () => {
+            return import('../widgets/window');
+          },
+        },
       '/component/anchor':
         {
           value: '/component/anchor',
-          sort: 66,
+          sort: 67,
           text: 'Anchor 锚点',
           exact: true,
           render: async () => {
@@ -322,7 +332,7 @@ export default {
       '/component/backtop':
         {
           value: '/component/backtop',
-          sort: 67,
+          sort: 68,
           text: 'BackTop 回到顶部',
           exact: true,
           render: async () => {
@@ -332,7 +342,7 @@ export default {
       '/component/divider':
         {
           value: '/component/divider',
-          sort: 68,
+          sort: 69,
           text: 'Divider 分割线',
           exact: true,
           render: async () => {
@@ -342,7 +352,7 @@ export default {
       '/component/loading':
         {
           value: '/component/loading',
-          sort: 69,
+          sort: 70,
           text: 'Loading 加载中',
           exact: true,
           render: async () => {
@@ -352,7 +362,7 @@ export default {
       '/component/avatar':
         {
           value: '/component/avatar',
-          sort: 70,
+          sort: 71,
           text: 'Avatar 头像',
           exact: true,
           render: async () => {
@@ -362,7 +372,7 @@ export default {
       '/component/badge':
         {
           value: '/component/badge',
-          sort: 71,
+          sort: 72,
           text: 'Badge 徽标数',
           exact: true,
           render: async () => {
@@ -372,7 +382,7 @@ export default {
       '/component/card':
         {
           value: '/component/card',
-          sort: 72,
+          sort: 73,
           text: 'Card 卡片',
           exact: true,
           render: async () => {
@@ -382,7 +392,7 @@ export default {
       '/component/carousel':
         {
           value: '/component/carousel',
-          sort: 73,
+          sort: 74,
           text: 'Carousel 走马灯',
           exact: true,
           render: async () => {
@@ -392,7 +402,7 @@ export default {
       '/component/collapse':
         {
           value: '/component/collapse',
-          sort: 74,
+          sort: 75,
           text: 'Collapse 折叠面板',
           exact: true,
           render: async () => {
@@ -402,7 +412,7 @@ export default {
       '/component/popover':
         {
           value: '/component/popover',
-          sort: 75,
+          sort: 76,
           text: 'Popover 气泡卡片',
           exact: true,
           render: async () => {
@@ -412,7 +422,7 @@ export default {
       '/component/table':
         {
           value: '/component/table',
-          sort: 76,
+          sort: 77,
           text: 'Table 表格',
           exact: true,
           render: async () => {
@@ -422,7 +432,7 @@ export default {
       '/component/tabs':
         {
           value: '/component/tabs',
-          sort: 77,
+          sort: 78,
           text: 'Tabs 标签页',
           exact: true,
           render: async () => {
@@ -432,7 +442,7 @@ export default {
       '/component/tag':
         {
           value: '/component/tag',
-          sort: 78,
+          sort: 79,
           text: 'Tag 标签',
           exact: true,
           render: async () => {
@@ -442,7 +452,7 @@ export default {
       '/component/timeline':
         {
           value: '/component/timeline',
-          sort: 79,
+          sort: 80,
           text: 'TimeLine 时间轴',
           exact: true,
           render: async () => {
@@ -452,7 +462,7 @@ export default {
       '/component/tooltip':
         {
           value: '/component/tooltip',
-          sort: 80,
+          sort: 81,
           text: 'Tooltip 文字提示',
           exact: true,
           render: async () => {
@@ -462,7 +472,7 @@ export default {
       '/component/breadcrumb':
         {
           value: '/component/breadcrumb',
-          sort: 81,
+          sort: 82,
           text: 'Breadcrumb 面包屑',
           exact: true,
           render: async () => {
@@ -472,7 +482,7 @@ export default {
       '/component/button':
         {
           value: '/component/button',
-          sort: 82,
+          sort: 83,
           text: 'Button 按钮',
           exact: true,
           render: async () => {
@@ -482,7 +492,7 @@ export default {
       '/component/icon':
         {
           value: '/component/icon',
-          sort: 83,
+          sort: 84,
           text: 'Icon 图标',
           exact: true,
           render: async () => {
@@ -492,7 +502,7 @@ export default {
       '/component/grid':
         {
           value: '/component/grid',
-          sort: 84,
+          sort: 85,
           text: 'Grid 栅格',
           exact: true,
           render: async () => {
@@ -502,7 +512,7 @@ export default {
       '/component/layout':
         {
           value: '/component/layout',
-          sort: 85,
+          sort: 86,
           text: 'Layout 布局',
           exact: true,
           render: async () => {
