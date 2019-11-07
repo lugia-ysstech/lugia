@@ -257,20 +257,6 @@ const getContentElement = (data:Object,titleElement,imgPosition:string,level?:Bo
 
 
 
-const getAnchorElement = (data:Object) => {
-  const path = window.location.hash.match(/[^#]+/g)[0];
-  return <AnchorContainer>
-    <Anchor slideType="line">
-      {data.map((item,index) => {
-        const {title} = item;
-        return <React.Fragment>
-          {title &&<Link title={title} href={'#'+ path + '#link-'+index} />}
-        </React.Fragment>;
-      })}
-    </Anchor>
-  </AnchorContainer>;
-};
-
 
 export default class Template extends React.Component<defProps, stateProps> {
 
@@ -300,7 +286,7 @@ export default class Template extends React.Component<defProps, stateProps> {
     const {title,content,imgPosition,img,desc} = dataSource;
     const  outSideElement = this.getElementWithPosition([{title,content,imgPosition,img,desc}],true);
 
-    const anchor = getAnchorElement(children);
+    const anchor = this.getAnchorElement(children);
     const {colorTheme} = children[0];
     return <React.Fragment>
       <FlexContainer>
@@ -315,6 +301,31 @@ export default class Template extends React.Component<defProps, stateProps> {
     </React.Fragment>;
 
   };
+
+  getAnchorElement = (data:Object) => {
+    const path = window.location.hash.match(/[^#]+/g)[0];
+    return <AnchorContainer>
+      <Anchor slideType="line" onClick={this.handleLinkClick} useHref={false}  >
+        {data.map((item,index) => {
+          const {title} = item;
+          return <React.Fragment>
+            {title &&<Link title={title} href={'#link-'+index} />}
+          </React.Fragment>;
+        })}
+      </Anchor>
+    </AnchorContainer>;
+  };
+
+  handleLinkClick = (e, href) => {
+    if (href) {
+      const name = href.slice(1);
+      const anchorElement = document.getElementById(name);
+      if (anchorElement) {
+        anchorElement.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      }
+    }
+  };
+
 
   getColorThemeElement = (data:Object) => {
     if(!data) return;

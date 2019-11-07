@@ -1038,12 +1038,22 @@
     immutable "^3.8.2"
     yargs "^13.2.2"
 
-"@lugia/lugia-web@^1.1.7":
-  version "1.1.7"
-  resolved "https://registry.npm.taobao.org/@lugia/lugia-web/download/@lugia/lugia-web-1.1.7.tgz?cache=0&sync_timestamp=1568275400158&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40lugia%2Flugia-web%2Fdownload%2F%40lugia%2Flugia-web-1.1.7.tgz#0a87727da9fe4aa33818c7faddd094805bcbd9b5"
-  integrity sha1-Codyfan+SqM4GMf63dCUgFvL2bU=
+"@lugia/listener@^1.0.2":
+  version "1.0.3"
+  resolved "https://registry.npm.taobao.org/@lugia/listener/download/@lugia/listener-1.0.3.tgz#487497fd23bdc2dc1244c37a0b00d9f223f85247"
+  integrity sha1-SHSX/SO9wtwSRMN6CwDZ8iP4Ukc=
+  dependencies:
+    "@babel/runtime" "^7.4.5"
+    events "^3.0.0"
+    rxjs "^6.3.3"
+
+"@lugia/lugia-web@^1.1.8":
+  version "1.1.8"
+  resolved "https://registry.npmjs.org/@lugia/lugia-web/-/lugia-web-1.1.8.tgz#a4af87e482ce7e153f0e786f5432688de968baa4"
+  integrity sha512-4XaPP+n7s/gm+OFn5Rssu0FzMJbB1r5YFDtTzz+NqCx2A9Bp9P1CFenfUeiX63gWtyyIc64bSFZcsPEeuViZuQ==
   dependencies:
     "@lugia/css" "^1.0.18"
+    "@lugia/listener" "^1.0.2"
     "@lugia/math" "^1.0.8"
     "@lugia/object-utils" "^1.0.14"
     "@lugia/ramada" "^1.0.2"
@@ -10683,6 +10693,13 @@ rxjs@^5.5.6:
   dependencies:
     symbol-observable "1.0.1"
 
+rxjs@^6.3.3:
+  version "6.5.3"
+  resolved "https://registry.npm.taobao.org/rxjs/download/rxjs-6.5.3.tgz#510e26317f4db91a7eb1de77d9dd9ba0a4899a3a"
+  integrity sha1-UQ4mMX9NuRp+sd532d2boKSJmjo=
+  dependencies:
+    tslib "^1.9.0"
+
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://registry.npm.taobao.org/safe-buffer/download/safe-buffer-5.1.2.tgz?cache=0&sync_timestamp=1562377642757&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsafe-buffer%2Fdownload%2Fsafe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
@@ -11974,7 +11991,7 @@ tryer@^1.0.0:
   resolved "https://registry.npm.taobao.org/tryer/download/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
   integrity sha1-8shUBoALmw90yfdGW4HqrSQSUvg=
 
-tslib@^1.8.0, tslib@^1.8.1:
+tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.10.0"
   resolved "https://registry.npm.taobao.org/tslib/download/tslib-1.10.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha1-w8GflZc/sKYpc/sJ2Q2WHuQ+XIo=
