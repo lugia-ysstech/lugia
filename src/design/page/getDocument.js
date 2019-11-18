@@ -139,6 +139,7 @@ module.exports = param => {
     iconImg5,
     welcome,
     component,
+    createApp,
     routewelcome
   } = param;
   const DesignDocument = {
@@ -1236,7 +1237,7 @@ module.exports = param => {
           title: '1.安装脚手架工具',
           content: [
             {text:'安装\n' +
-              '$ yarn global add @lugia/mega\n' +
+              '$ npm install -g @lugia/mega\n' +
               '\n' +
               '查看版本\n' +
               '$ mega -V\n' +
@@ -1271,10 +1272,10 @@ module.exports = param => {
           title: '下面我们来安装脚手架',
           content: [
             { text: '安装', bash:true,weight: 600},
-            { text: '$ yarn global add @lugia/mega', bash:true,javascript:true},
+            { text: '$ npm install -g @lugia/mega', bash:true,javascript:true},
             { text: '安装成功后，运行', bash:true,weight: 600},
             { text: 'mega create lugia-web-demo lugiax', bash:true,javascript:true},
-            { text: '![安装成功](./img/create-app.png)', bash:true},
+            { text: `![安装成功] <div><img src='${createApp}' style="width: 90%"></div>`, bash:true, javascript:true,renderHtml:true},
             { text: '到这里，一个了不起的项目已经安装成功了。', margin: '0 0 30px' ,bash:true},
           ]
         },

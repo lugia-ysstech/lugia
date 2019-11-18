@@ -226,10 +226,10 @@ export default class Mega extends React.Component {
                     <WindowLogo />
                     <Span>windows版本</Span>
                   </Window>
-                  <DownLoad href="#DownLoadWindows">
+                  <DownLoad href="https://asyllabear.gitbook.io/lugia-mega-manual/" target='_blank'>
                     <IconSpan>
                       <Icon
-                        iconClass="#DownPdf"
+                        iconClass="lugia-icon-financial_pdf"
                         theme={{
                           icon: {
                             Icon: {
