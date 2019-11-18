@@ -137,6 +137,7 @@ import iconImg4 from '../../../public/icon/icon_img4.jpg';
 import iconImg5 from '../../../public/icon/icon_img5.jpg';
 import welcome from '../../../public/welcome.png';
 import component from '../../../public/component.png';
+import createApp from '../../../public/create-app.png';
 import routewelcome from '../../../public/route-welcome.png';
 
 
@@ -280,5 +281,6 @@ export default {
   iconImg5,
   welcome,
   component,
+  createApp,
   routewelcome
 };
