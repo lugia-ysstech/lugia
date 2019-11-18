@@ -26,6 +26,7 @@ export default class ModalDemo extends React.Component {
         setTimeout(() => {
             this.setState({
                 visible: false,
+                confirmLoading: false
             });
         }, 3000);
     };
