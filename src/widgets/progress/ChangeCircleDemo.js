@@ -17,9 +17,9 @@ export default class ProgressDemo extends React.Component {
             }
         } else {
             res -= 10;
-          if( res < 0){
-            res = 0;
-          }
+            if( res < 0){
+              res = 0;
+            }
         }
         this.setState({
             percent: res,
