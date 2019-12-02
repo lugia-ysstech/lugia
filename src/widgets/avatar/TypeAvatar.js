@@ -16,13 +16,21 @@ export default class TypeAvatar extends React.Component<any, any> {
     return (
       <Theme config={view}>
         <Wrapper>
-          <Avatar shape={"circle"} src={avatarSrc} />
-          <Avatar shape={"circle"} name={"lugia"} />
-          <Avatar shape={"circle"} icon={"lugia-icon-financial_user"} />
+          <Avatar shape={"circle"} type="img" src={avatarSrc} />
+          <Avatar shape={"circle"} type="text" name={"lugia"} />
+          <Avatar
+            shape={"circle"}
+            type="icon"
+            icon={"lugia-icon-financial_user"}
+          />
           <br />
-          <Avatar shape={"square"} src={avatarSrc} />
-          <Avatar shape={"square"} name={"lugia"} />
-          <Avatar shape={"square"} icon={"lugia-icon-financial_user"} />
+          <Avatar shape={"square"} type="img" src={avatarSrc} />
+          <Avatar shape={"square"} type="text" name={"lugia"} />
+          <Avatar
+            shape={"square"}
+            type={"icon"}
+            icon={"lugia-icon-financial_user"}
+          />
         </Wrapper>
       </Theme>
     );
