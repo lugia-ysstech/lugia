@@ -4,11 +4,6 @@ module.exports = {
     desc: '可以添加标题,内容,操作等...',
     path: './BaseCard'
   },
-  ShadowCard: {
-    title: '卡片阴影',
-    desc: '可以选着一直显示,和 hover 显示',
-    path: './ShadowCard'
-  },
   TypeCard: {
     title: '卡片风格',
     desc: '可以添加图片,头像等 可以是水平风格,也可以是垂直风格',
