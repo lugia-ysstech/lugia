@@ -3,14 +3,16 @@ import { Icon, Theme } from "@lugia/lugia-web";
 import Widget from "@lugia/lugia-web/dist/consts";
 import styled from "styled-components";
 import Copy from "../code-box/Copy";
+import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
+const { themeColor,defaultColor } = colorsFunc();
 
 const IconWrapper = styled.div`
   display: inline-block;
   &:hover {
-    background: #4d63ff;
+    background: ${themeColor};
     transform: scale(1.2);
     > i {
-      color: white;
+      color: ${defaultColor};
     }
   }
 
@@ -18,7 +20,7 @@ const IconWrapper = styled.div`
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
   margin: 5px;
   border-radius: 4px;
-  background-color: white;
+  background-color: ${defaultColor};
 `;
 export default class BaseIcon extends React.Component<any, any> {
   render() {
