@@ -9,6 +9,9 @@ const IconWrapper = styled.div`
   &:hover {
     background: #4d63ff;
     transform: scale(1.2);
+    > i {
+      color: white;
+    }
   }
 
   cursor: pointer;
