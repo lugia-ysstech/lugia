@@ -16,7 +16,7 @@ export default class BaseBadge extends React.Component<any, any> {
       [Widget.Badge]: {
         BadgeDot: {
           normal: {
-            position: { top: -5, right: 2 }
+            position: { top: -5, right: -5 }
           }
         },
         BadgeNumber: {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Badge, Theme } from "@lugia/lugia-web";
 import styled from "styled-components";
-import Widget from '@lugia/lugia-web/dist/consts';
+import Widget from "@lugia/lugia-web/dist/consts";
 
 const Wrapper = styled.div``;
 const Box = styled.div`
@@ -16,7 +16,7 @@ export default class BaseBadge extends React.Component<any, any> {
       [Widget.Badge]: {
         BadgeDot: {
           normal: {
-            position: { top: -5, right: 2 },
+            position: { top: -5, right: -5 }
           }
         },
         BadgeNumber: {
@@ -27,7 +27,7 @@ export default class BaseBadge extends React.Component<any, any> {
     return (
       <Wrapper>
         <Theme config={dot}>
-          <Badge  >
+          <Badge>
             <Box />
           </Badge>
           <Badge count={5}>
