@@ -18,7 +18,7 @@ export default class ColorBadge extends React.Component<any, any> {
             green: {
               BadgeDot: {
                 normal: {
-                  position: { top: -5, right: 2 },
+                  position: { top: -5, right: -5 },
                   background: { color: "green" }
                 }
               }
@@ -34,7 +34,7 @@ export default class ColorBadge extends React.Component<any, any> {
             purple: {
               BadgeDot: {
                 normal: {
-                  position: { top: -5, right: 2 },
+                  position: { top: -5, right: -5 },
                   background: { color: "purple" }
                 }
               }
@@ -50,7 +50,7 @@ export default class ColorBadge extends React.Component<any, any> {
             yellow: {
               BadgeDot: {
                 normal: {
-                  position: { top: -5, right: 2 },
+                  position: { top: -5, right: -5 },
                   background: { color: "yellow" }
                 }
               }
@@ -66,7 +66,7 @@ export default class ColorBadge extends React.Component<any, any> {
             blue: {
               BadgeDot: {
                 normal: {
-                  position: { top: -5, right: 2 },
+                  position: { top: -5, right: -5 },
                   background: { color: "blue" }
                 }
               }
