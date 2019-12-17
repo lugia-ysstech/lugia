@@ -45,7 +45,6 @@ export default class TabsCard extends React.Component<Object, Object> {
             viewClass={'register'}
             type={'combo'}
             content={<TabsWrapper> <Tabs data={defaultData} /></TabsWrapper>}
-            shadow={'hover'}
           />
         </Wrapper>
       </Theme>

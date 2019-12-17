@@ -11,6 +11,7 @@ const Price = styled.div`
   text-align: center;
   font-size: 16px;
   color: #666;
+  margin-top: 36px;
   margin-bottom: 26px;
   width: 100%;
 `;
@@ -60,7 +61,7 @@ export default class ComboCard extends React.Component<Object, Object> {
     const combo = {
       [Widget.Card]: {
         Container: {
-          normal: { width: 200, height: 220 }
+          normal: { width: 220, height: 280 }
         }
       }
     };
@@ -71,7 +72,6 @@ export default class ComboCard extends React.Component<Object, Object> {
           viewClass={"vertical"}
           type={"combo"}
           content={<AmountCard />}
-          shadow={"hover"}
         />
       </Theme>
     );
