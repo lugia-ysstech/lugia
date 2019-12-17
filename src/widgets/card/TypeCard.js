@@ -19,20 +19,20 @@ export default class TypeCard extends React.Component<any, any> {
       [Widget.Card]: {
         Container: {
           normal: {
-            width: 200,
+            width: 160,
             height: 220,
             opacity: 0.8
           }
         },
         CardImageContainer: {
           normal: {
-            width: 200,
+            width: 160,
             height: 150
           }
         },
         CardImage: {
           normal: {
-            width: 200,
+            width: 160,
             height: 130
           }
         },
@@ -44,37 +44,31 @@ export default class TypeCard extends React.Component<any, any> {
         },
         CardContent: {
           normal: {
-            padding:0
-        }
-        },
-        CardOperation: {
-          normal: {
-            color: "blue"
+            padding: 0
           }
-        }
+        },
       }
     };
     const imageHCard = {
       [Widget.Card]: {
         Container: {
           normal: {
-            width: 280,
-            height: 140
-          }
+            width: 360,
+            height: 140,
+          },
         },
         CardImageContainer: {
           normal: {
-            width: 160,
-            height: 100
-          }
+            width: 200,
+          },
         },
         CardImage: {
           normal: {
-            width: 100,
-            height: 140
-          }
-        }
-      }
+            width: 160,
+            height: 140,
+          },
+        },
+      },
     };
     const avatarVCard = {
       [Widget.Card]: {
@@ -117,11 +111,11 @@ export default class TypeCard extends React.Component<any, any> {
             width: 160,
             height: 100,
             padding: {
-              top:10,
-                      left:10,
+              top: 10,
+              left: 10
             }
           }
-        },
+        }
       }
     };
     return (
@@ -136,7 +130,6 @@ export default class TypeCard extends React.Component<any, any> {
                   description={"This is description"}
                   imageOrientation={"vertical"}
                   avatar={avatarImgSrc}
-                  shadow={"hover"}
                 />
               </Wrapper>
             </Theme>
@@ -151,7 +144,6 @@ export default class TypeCard extends React.Component<any, any> {
                 title={"This is title"}
                 description={"This is description"}
                 image={cardImgSrc}
-                shadow={"hover"}
               />
             </Theme>
           </CardWrapper>
@@ -166,7 +158,6 @@ export default class TypeCard extends React.Component<any, any> {
                   title={"This is title"}
                   description={"This is description"}
                   avatar={avatarImgSrc}
-                  shadow={"hover"}
                 />
               </Wrapper>
             </Theme>
@@ -180,7 +171,6 @@ export default class TypeCard extends React.Component<any, any> {
                   imageOrientation={"horizontal"}
                   description={"This is description"}
                   image={cardImgSrc}
-                  shadow={"hover"}
                 />
               </Wrapper>
             </Theme>
