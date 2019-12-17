@@ -24,7 +24,7 @@ export default class OrderTabs extends React.Component<any, any> {
     };
     hasActivityKeyDefaultData.push(item);
   };
-  onDeleteClick = (activityKey: string) => {};
+  onDeleteClick = (activityKey: string) => {console.log('activityKey',activityKey)};
   render() {
     const view = {
       [Widget.Tabs]: {
@@ -42,9 +42,10 @@ export default class OrderTabs extends React.Component<any, any> {
             tabType={'card'}
             pagedType={'single'}
             onAddClick={this.onAddClick}
-            onDeleteClick={this.onDeleteClick}
+            onDelete={this.onDeleteClick}
             defaultData={hasActivityKeyDefaultData}
             showAddBtn={true}
+            showDeleteBtn={true}
           />
         </Theme>
 

@@ -1169,29 +1169,9 @@ module.exports = param => {
           title: '安装',
           content: [
             { text: '我们推荐使用 npm 或 yarn 来进行安装，不仅方便，也可放心在生产环境打包部署。' },
-            { text: '安装之前，你需要安装 ', inline:true },
-            { text: `[nrm]` ,link:'https://www.npmjs.com/package/nrm', inline:true },
-            { text: '来管理你的 `npm` 源信息。',  inline:true },
-            {text:'安装\n' +
-              '  $ npm install -g nrm\n' +
-              '查看版本\n' +
-              '  $ nrm -V',bash:true, margin: '0 0 30px',javascript:true},
-            { text: '安装成功后，你需要配置 `lugia` 私服：' },
-            {text:'  $ nrm add lugia http://192.168.102.79:5001/\n' +
-              '  $ nrm use lugia\n' +
-              '  $ nrm ls',bash:true, margin: '0 0 30px',javascript:true},
-            { text: '运行完命令后，你会看到，`npm` 源指向了 `lugia`。' },
-            {text:'  npm ---- https://registry.npmjs.org/\n' +
-              '  cnpm --- http://r.cnpmjs.org/\n' +
-              '  taobao - https://registry.npm.taobao.org/\n' +
-              '  nj ----- https://registry.nodejitsu.com/\n' +
-              '  rednpm - http://registry.mirror.cqupt.edu.cn/\n' +
-              '  npmMirror  https://skimdb.npmjs.com/registry/\n' +
-              '  edunpm - http://registry.enpmjs.org/\n' +
-              '* lugia -- http://192.168.102.79:5001/',bash:true, margin: '0 0 30px',javascript:true},
-            { text: '这样，你就可以尽情享用 `lugia-web` 了。' },
             {text:'  $ npm install @lugia/lugia-web --save\n' +
               '  $ yarn add @lugia/lugia-web\n',bash:true, margin: '0 0 30px',javascript:true},
+            { text: '这样，你就可以尽情享用 `lugia-web` 了。',margin: '0 0 30px' },
           ]
         },
         {

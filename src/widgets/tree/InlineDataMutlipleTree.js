@@ -30,8 +30,7 @@ const data = [
         value: 'Layout',
         text: 'Layout',
         children: [
-          { value: 'Grid', text: 'Grid', disabled: true },
-          { value: 'Layout', text: 'Layout' }
+          { value: 'Grid', text: 'Grid', disabled: true }
         ]
       },
 

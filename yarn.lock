@@ -1047,7 +1047,7 @@
     events "^3.0.0"
     rxjs "^6.3.3"
 
-"@lugia/lugia-web@^1.1.8":
+"@lugia/lugia-web@1.1.8":
   version "1.1.8"
   resolved "https://registry.npmjs.org/@lugia/lugia-web/-/lugia-web-1.1.8.tgz#a4af87e482ce7e153f0e786f5432688de968baa4"
   integrity sha512-4XaPP+n7s/gm+OFn5Rssu0FzMJbB1r5YFDtTzz+NqCx2A9Bp9P1CFenfUeiX63gWtyyIc64bSFZcsPEeuViZuQ==
