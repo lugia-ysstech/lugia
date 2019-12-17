@@ -120,7 +120,7 @@ export default PageNavHoC(
                 title={"按钮类型"}
                 titleID={"radio-8"}
                 code={
-                  <code>{`import React from \'react\';\nimport {Radio} from \'@lugia/lugia-web\';\n\nconst RadioButton = Radio.Button;\nconst RadioGroup = Radio.Group;\n\nexport default class RadioDemo extends React.Component {\n    onChange = obj => {\n        console.info(\'obj-demo\', obj);\n    };\n    render() {\n        return (\n            <div>\n                <RadioGroup childType=\"button\" onChange={this.onChange} defaultValue=\"1\">\n                    <RadioButton value=\"1\">CheckBox1</RadioButton>\n                    <RadioButton value=\"2\">CheckBox2</RadioButton>\n                    <RadioButton value=\"3\">CheckBox3</RadioButton>\n                </RadioGroup>\n            </div>\n        );\n    }\n}\n`}</code>
+                  <code>{`import React from \'react\';\nimport {Radio} from \'@lugia/lugia-web\';\n\nconst RadioButton = Radio.Button;\nconst RadioGroup = Radio.Group;\n\nexport default class RadioDemo extends React.Component {\n    onChange = obj => {\n        console.info(\'obj-demo\', obj);\n    };\n    render() {\n        return (\n            <div>\n                <RadioGroup childType=\"button\" onChange={this.onChange} defaultValue=\"1\">\n                    <RadioButton value=\"1\">Radio1</RadioButton>\n                    <RadioButton value=\"2\">Radio2</RadioButton>\n                    <RadioButton value=\"3\">Radio3</RadioButton>\n                </RadioGroup>\n            </div>\n        );\n    }\n}\n`}</code>
                 }
                 desc={"按钮类型的 RadioGroup，配置 childType 为 button "}
                 demo={<ButtonDemo />}
