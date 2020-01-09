@@ -75,3 +75,5 @@ Lugia Mega 是整套大前端生态技术解决方案对外输出的主要承载
 我们的QQ交流群：685510159
 
 
+
+| IE10+, Edge                                                                                                                                                                                                     | last 2 versions                                                                                                                                                                                                   | last 2 versions                                                                                                                                                                                               | last 2 versions                                                                                                                                                                                               | last 2 versions                                                                                                                                                                                           |
