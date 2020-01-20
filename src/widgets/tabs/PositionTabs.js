@@ -6,77 +6,53 @@ const Wrapper = styled.div`
   margin:10px 0;
 `;
 const defaultData = [
-  {
-    title: 'Tab1',
-    content: 'content of Tab1'
-  },
-  {
-    title: 'Tab2',
-    content: 'content of Tab2'
-  },
-  {
-    title: 'Tab3',
-    content: 'content of Tab3'
-  },
-  {
-    title: 'Tab4',
-    content: 'content of Tab4'
-  },
-  {
-    title: 'Tab5',
-    content: 'content of Tab5'
-  },
-  {
-    title: 'Tab6',
-    content: 'content of Tab6'
-  },
-  {
-    title: 'Tab7',
-    content: 'content of Tab7'
-  },
-  {
-    title: 'Tab8',
-    content: 'content of Tab8'
-  }
+  { title: 'Tab1', content: 'content of Tab1', value:'1'},
+  { title: 'Tab2', content: 'content of Tab2', value:'2'},
+  { title: 'Tab3', content: 'content of Tab3', value:'3'},
+  { title: 'Tab4', content: 'content of Tab4', value:'4'},
+  { title: 'Tab5', content: 'content of Tab5', value:'5'},
+  { title: 'Tab6', content: 'content of Tab6', value:'6'},
+  { title: 'Tab7', content: 'content of Tab7', value:'7'},
+  { title: 'Tab8', content: 'content of Tab8', value:'8'}
 ];
+
+const selectData = [
+  { label: 'top', value: 'top' },
+  { label: 'bottom', value: 'bottom' },
+  { label: 'left', value: 'left' },
+  { label: 'right', value: 'right' }
+];
+
+const themeConfig = {
+  [Widget.Select]: {
+    Container: {
+      normal: {
+        width: 300
+      },
+    }
+  }
+};
+
 export default class PositionTabs extends React.Component<any, any> {
   state = {
     tabPosition: 'top'
   };
+
+  handleSelect = obj => {
+    const { newValue } = obj;
+    this.setState({ tabPosition: newValue });
+  };
+
   render() {
-    const view = {
-      [Widget.Tabs]: {
-        ContentBlock: {
-          normal: {
-            width: '88%'
-          },
-        }
-      }
-    };
-
-    const onPreClick = e => {};
-    const onNextClick = e => {};
-    const data = [
-      { label: 'top', value: 'top' },
-      { label: 'bottom', value: 'bottom' },
-      { label: 'left', value: 'left' },
-      { label: 'right', value: 'right' }
-    ];
-
-    const handleSelect = obj => {
-      const { newValue } = obj;
-      this.setState({ tabPosition: newValue });
-    };
+    const {tabPosition} = this.state;
     return (
-      <Theme config={view}>
+      <Theme config={themeConfig}>
         <Wrapper>
-          <Select displayField={'label'} data={data} onSelect={handleSelect} />
+          <Select displayField={'label'} data={selectData} defaultValue={tabPosition} onSelect={this.handleSelect} />
         </Wrapper>
           <Tabs
             titleType={'line'}
-            tabPosition={this.state.tabPosition}
-            onPreClick={onPreClick}
-            onNextClick={onNextClick}
+            tabPosition={tabPosition}
             data={defaultData}
           />
       </Theme>

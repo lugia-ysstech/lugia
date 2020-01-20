@@ -3,87 +3,65 @@ import { Theme, Tabs, Select } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';
 import styled from 'styled-components';
 
-const TabPane = Tabs.TabPane;
-
 const Wrapper = styled.div`
-  text-align: left;
-  display: inline-block;
+
+  margin: 10px 0;
 `;
-export const hasActivityKeyData = [
-  {
-    title: 'Tab1',
-    content: <div>content of Tab1</div>,
-    activityKey: '0'
-  },
-  {
-    title: 'Tab2',
-    content: <div>content of Tab2</div>,
-    activityKey: '1'
-  },
-  {
-    activityKey: '2',
-    title: 'Tab3',
-    content: <div>content of Tab3</div>
-  },
-  {
-    activityKey: '3',
-    title: 'Tab4',
-    content: <div>content of Tab4</div>
-  },
-  {
-    activityKey: '4',
-    title: 'Tab5',
-    content: <div>content of Tab5</div>
-  },
-  {
-    activityKey: '5',
-    title: 'Tab6',
-    content: <div>content of Tab6</div>
-  },
-  {
-    activityKey: '6',
-    title: 'Tab7',
-    content: <div>content of Tab7</div>
-  },
-  {
-    activityKey: '7',
-    title: 'Tab8',
-    content: <div>content of Tab8</div>
-  }
+const Title = styled.div`
+   margin: 0 0 20px;
+`;
+
+const defaultData = [
+  { title: 'Tab1', content: 'content of Tab1', value:'1'},
+  { title: 'Tab2', content: 'content of Tab2', value:'2'},
+  { title: 'Tab3', content: 'content of Tab3', value:'3'},
+  { title: 'Tab4', content: 'content of Tab4', value:'4'},
+  { title: 'Tab5', content: 'content of Tab5', value:'5'},
+  { title: 'Tab6', content: 'content of Tab6', value:'6'},
+  { title: 'Tab7', content: 'content of Tab7', value:'7'},
+  { title: 'Tab8', content: 'content of Tab8', value:'8'},
+  { title: 'Tab9', content: 'content of Tab9', value:'9'},
+  { title: 'Tab10', content: 'content of Tab10', value:'10'},
+  { title: 'Tab11', content: 'content of Tab11', value:'11'},
+  { title: 'Tab12', content: 'content of Tab12', value:'12'},
+  { title: 'Tab13', content: 'content of Tab13', value:'13'}
 ];
+
 export default class PagedTypeTabs extends React.Component<any, any> {
+
+  onPreClick = res => { console.log('onPreClick',res) };
+  onNextClick = res => { console.log('onNextClick',res) };
+
   render() {
     const view = {
       [Widget.Tabs]: {
-        TitleContainer: {
+        Container: {
           normal: {
-            width: 290
+            width: 330
           },
         }
       },
     };
 
-    const onPreClick = e => {};
-    const onNextClick = e => {};
     return (
       <Theme config={view}>
           <Wrapper>
+            <Title>单个翻页类型</Title>
             <Tabs
-              tabType={'card'}
               pagedType={'single'}
-              data={hasActivityKeyData}
-              onPreClick={onPreClick}
-              onNextClick={onNextClick}
+              data={defaultData}
+              onPreClick={this.onPreClick}
+              onNextClick={this.onNextClick}
             />
           </Wrapper>
-          <br />
+
           <Wrapper>
+            <Title>整页翻页类型</Title>
             <Tabs
-              tabType={'card'}
               pagedType={'page'}
-              data={hasActivityKeyData}
-              onPreClick={onPreClick}
-              onNextClick={onNextClick}
+              data={defaultData}
+              onPreClick={this.onPreClick}
+              onNextClick={this.onNextClick}
             />
         </Wrapper>
       </Theme>
