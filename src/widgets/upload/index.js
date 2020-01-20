@@ -7,9 +7,8 @@ import widgetrouter from "../../router/widgetrouter";
 import UPLOAD from "@lugia/lugia-web/dist/upload/lugia.upload.zh-CN.json";
 import Demo from "../code-box";
 import Title from "../code-box/Title";
-const BaseUpload = require("./BaseUpload").default;
-const FileListUpload = require("./FileListUpload").default;
 const CustomUpload = require("./CustomUpload").default;
+const FileListUpload = require("./FileListUpload").default;
 const PictureUpload = require("./PictureUpload").default;
 const DisabledUpload = require("./DisabledUpload").default;
 
@@ -43,13 +42,13 @@ export default PageNavHoC(
                 desc={"上传组件,可通过文件选择和拖拽上传"}
               />
               <Demo
-                title={"按钮"}
+                title={"多种风格"}
                 titleID={"upload-0"}
                 code={
-                  <code>{`import React from \'react\';\nimport { Upload, Theme } from \'@lugia/lugia-web\';\n\nclass UploadDemo extends React.Component<any, any> {\n  constructor(props: Object) {\n    super(props);\n  }\n\n  render() {\n    const defaultProps = {\n      inputId: \'upload1\',\n      url: \'/upload\',\n      multiple: true,\n    };\n\n    return (\n      <div>\n        <Upload {...defaultProps} />\n      </div>\n    );\n  }\n}\n\nexport default UploadDemo;\n`}</code>
+                  <code>{`import React from \'react\';\nimport { Upload, Theme, Button } from \'@lugia/lugia-web\';\nimport styled from \"styled-components\";\n\nconst Title = styled.div\`\n    margin: 10px 0;\n\`;\n\nclass UploadDemo extends React.Component<any, any> {\n  constructor(props: Object) {\n    super(props);\n  }\n\n  render() {\n    const defaultProps = {\n      areaType: \'default\',\n      inputId: \'defaultUpload\',\n      url: \'/upload\',\n    };\n    const bothProps = {\n      areaType: \'both\',\n      inputId: \'bothUpload\',\n      url: \'/upload\',\n    };\n    const buttonProps = {\n      areaType: \'button\',\n      inputId: \'buttonUpload\',\n      url: \'/upload\',\n    };\n    const pictureProps = {\n      areaType: \'picture\',\n      inputId: \'pictureUpload\',\n      url: \'/upload\',\n    };\n    const areaProps = {\n      areaType: \'area\',\n      inputId: \'areaUpload\',\n      url: \'/upload\',\n    };\n    const customProps = {\n      areaType: \'custom\',\n      inputId: \'customUpload\',\n      url: \'/upload\'\n    };\n\n    return (\n      <div>\n        <Title>默认上传</Title>\n        <Upload {...defaultProps} />\n        <Title>带按钮的默认上传</Title>\n        <Upload {...bothProps} />\n        <Title>按钮上传</Title>\n        <Upload {...buttonProps} />\n        <Title>图片上传</Title>\n        <Upload {...pictureProps} />\n        <Title>区域上传</Title>\n        <Upload {...areaProps} />\n        <Title>自定义上传</Title>\n        <Upload {...customProps} userDefine={ <Button circle icon=\"lugia-icon-financial_download\" />  } />\n\n      </div>\n    );\n  }\n}\n\nexport default UploadDemo;\n`}</code>
                 }
-                desc={"点击按钮上传"}
-                demo={<BaseUpload />}
+                desc={"多种风格上传,按钮,区域,图片等"}
+                demo={<CustomUpload />}
               ></Demo>
               <Demo
                 title={"文件列表"}
@@ -61,17 +60,8 @@ export default PageNavHoC(
                 demo={<FileListUpload />}
               ></Demo>
               <Demo
-                title={"多种风格"}
-                titleID={"upload-2"}
-                code={
-                  <code>{`import React from \'react\';\nimport { Upload, Theme } from \'@lugia/lugia-web\';\nimport styled from \"styled-components\";\n\nconst Title = styled.div\`\n    margin: 10px 0;\n\`;\n\n\nclass UploadDemo extends React.Component<any, any> {\n  constructor(props: Object) {\n    super(props);\n  }\n\n  render() {\n    const defaultProps1 = {\n      areaType: \'default\',\n      inputId: \'upload\',\n      url: \'/upload\',\n    };\n    const defaultProps2 = {\n      areaType: \'both\',\n      inputId: \'upload\',\n      url: \'/upload\',\n    };\n    const defaultProps3 = {\n      areaType: \'button\',\n      inputId: \'upload\',\n      url: \'/upload\',\n    };\n    const defaultProps4 = {\n      areaType: \'picture\',\n      inputId: \'upload4\',\n      url: \'/upload\',\n    };\n    const defaultProps5 = {\n      areaType: \'area\',\n      inputId: \'upload6\',\n      url: \'/upload\',\n    };\n\n    return (\n      <div>\n        <Title>默认上传</Title>\n        <Upload {...defaultProps1} />\n        <Title>带按钮的默认上传</Title>\n        <Upload {...defaultProps2} />\n        <Title>按钮上传</Title>\n        <Upload {...defaultProps3} />\n        <Title>图片上传</Title>\n        <Upload {...defaultProps4} />\n        <Title>区域上传</Title>\n        <Upload {...defaultProps5} />\n\n      </div>\n    );\n  }\n}\n\nexport default UploadDemo;\n`}</code>
-                }
-                desc={"多种风格上传,按钮,区域,图片等"}
-                demo={<CustomUpload />}
-              ></Demo>
-              <Demo
                 title={"图片"}
-                titleID={"upload-3"}
+                titleID={"upload-2"}
                 code={
                   <code>{`import React from \'react\';\nimport { Upload, Theme } from \'@lugia/lugia-web\';\nimport styled from \"styled-components\";\n\nconst Title = styled.div\`\n    margin: 10px 0;\n\`;\n\nclass UploadDemo extends React.Component<any, any> {\n  constructor(props: Object) {\n    super(props);\n  }\n\n  render() {\n    const defaultProps1 = {\n      areaType: \'picture\',\n      inputId: \'upload1\',\n      size: \'small\',\n      url: \'/upload\',\n    };\n    const defaultProps2 = {\n      areaType: \'picture\',\n      inputId: \'upload2\',\n      url: \'/upload\',\n    };\n    const defaultProps3 = {\n      areaType: \'picture\',\n      inputId: \'upload3\',\n      size: \'large\',\n      multiple: true,\n      accept: \'image/*\',\n      url: \'/upload\',\n    };\n\n    return (\n      <div>\n        <Title>size：small</Title>\n        <Upload {...defaultProps1} />\n        <Title>size：default</Title>\n        <Upload {...defaultProps2} />\n        <Title>size：large</Title>\n        <Upload {...defaultProps3} />\n      </div>\n    );\n  }\n}\n\nexport default UploadDemo;\n`}</code>
                 }
@@ -80,7 +70,7 @@ export default PageNavHoC(
               ></Demo>
               <Demo
                 title={"禁用"}
-                titleID={"upload-4"}
+                titleID={"upload-3"}
                 code={
                   <code>{`import React from \'react\';\nimport { Upload, Theme } from \'@lugia/lugia-web\';\nimport styled from \"styled-components\";\n\nconst Title = styled.div\`\n    margin: 10px 0;\n\`;\n\nclass UploadDemo extends React.Component<any, any> {\n  constructor(props: Object) {\n    super(props);\n    this.state = {};\n  }\n\n  render() {\n    const defaultProps1 = {\n      areaType: \'default\',\n      inputId: \'upload\',\n      showFileList: true,\n      disabled: true,\n      url: \'/upload\',\n    };\n    const defaultProps2 = {\n      areaType: \'both\',\n      inputId: \'upload\',\n      showFileList: true,\n      disabled: true,\n      url: \'/upload\',\n    };\n    const defaultProps3 = {\n      areaType: \'button\',\n      inputId: \'upload2\',\n      showFileList: true,\n      disabled: true,\n      url: \'/upload\',\n\n    };\n    const defaultProps4 = {\n      areaType: \'area\',\n      inputId: \'upload3\',\n      disabled: true,\n      showFileList: true,\n      url: \'/upload\',\n    };\n    const defaultProps5 = {\n      areaType: \'picture\',\n      inputId: \'upload4\',\n      disabled: true,\n      showFileList: true,\n      url: \'/upload\',\n    };\n    return (\n      <div>\n        <Title>areaType: default</Title>\n        <Upload {...defaultProps1} />\n        <Title>areaType: both</Title>\n        <Upload {...defaultProps2} />\n        <Title>areaType: button</Title>\n        <Upload {...defaultProps3} />\n        <Title>areaType: area</Title>\n        <Upload {...defaultProps4} />\n        <Title>areaType: picture</Title>\n        <Upload {...defaultProps5} />\n      </div>\n    );\n  }\n\n}\n\nexport default UploadDemo;\n`}</code>
                 }
@@ -98,11 +88,10 @@ export default PageNavHoC(
                 onClick={this.handleLinkClick}
                 useHref={false}
               >
-                <Link title={"按钮"} href={"#upload-0"} />
+                <Link title={"多种风格"} href={"#upload-0"} />
                 <Link title={"文件列表"} href={"#upload-1"} />
-                <Link title={"多种风格"} href={"#upload-2"} />
-                <Link title={"图片"} href={"#upload-3"} />
-                <Link title={"禁用"} href={"#upload-4"} />
+                <Link title={"图片"} href={"#upload-2"} />
+                <Link title={"禁用"} href={"#upload-3"} />
               </Anchor>
             </Col>
           )}

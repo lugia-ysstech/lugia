@@ -12,34 +12,32 @@ class UploadDemo extends React.Component<any, any> {
   }
 
   render() {
-    const defaultProps1 = {
+    const smallPictureProps = {
       areaType: 'picture',
       inputId: 'upload1',
       size: 'small',
       url: '/upload',
     };
-    const defaultProps2 = {
+    const defaultPictureProps = {
       areaType: 'picture',
       inputId: 'upload2',
       url: '/upload',
     };
-    const defaultProps3 = {
+    const largePictureProps = {
       areaType: 'picture',
       inputId: 'upload3',
       size: 'large',
-      multiple: true,
-      accept: 'image/*',
       url: '/upload',
     };
 
     return (
       <div>
         <Title>size：small</Title>
-        <Upload {...defaultProps1} />
+        <Upload {...smallPictureProps} />
         <Title>size：default</Title>
-        <Upload {...defaultProps2} />
+        <Upload {...defaultPictureProps} />
         <Title>size：large</Title>
-        <Upload {...defaultProps3} />
+        <Upload {...largePictureProps} />
       </div>
     );
   }
