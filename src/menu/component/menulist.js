@@ -130,7 +130,7 @@ export default class MenuList extends React.Component<any, any> {
     const config = {
       [Widget.Navmenu]: {
         Tree: {
-          TreeWrap: {
+          Container: {
             normal: {
               width,
               height,

@@ -99,7 +99,7 @@ class Element extends React.Component<PropsType, StateType> {
     return (
       <React.Fragment>
         <Title>
-          {this.state.dataSource.title}组件{desc}说明如下：
+          {this.state.dataSource.title}组件{`<${this.state.dataSource.widgetName}>`} {desc}说明如下：
         </Title>
         <TableContainer>
           <Table width={width}>
@@ -117,7 +117,7 @@ class Element extends React.Component<PropsType, StateType> {
                   <Td>{item.name}</Td>
                   <Td width={160}>{item.desc}</Td>
                   <Td>{getPropsType(item.type,propsType) || 'Function'}</Td>
-                  <Td>{item.args ? getEventPropsElement(getEventProps(item.args)) : getDefaultValue(item.defaultValue)}</Td>
+                  <Td>{item.args ? getEventPropsElement(getEventProps(item.args)) : getDefaultValue(item.propsDefaultValue)}</Td>
                 </Tr>
               );
             })}
