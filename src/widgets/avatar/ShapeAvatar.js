@@ -7,7 +7,14 @@ export default class ShapeAvatar extends React.Component<any, any> {
   render() {
     const view = {
       [Widget.Avatar]: {
-        Container: { normal: { background: { color: "#e2e2e2" }, margin: 10,width:50,height:50 } }
+        Container: {
+          normal: {
+            background: { color: "#e2e2e2" },
+            margin: 10,
+            width: 50,
+            height: 50
+          }
+        }
       }
     };
     return (

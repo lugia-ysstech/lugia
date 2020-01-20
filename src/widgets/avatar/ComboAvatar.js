@@ -11,49 +11,64 @@ export default class ComboAvatar extends React.Component<any, any> {
         Container: { normal: { background: { color: "#e2e2e2" }, margin: 6 } }
       },
       [Widget.Badge]: {
-        BadgeDot: {
+        Badge: {
           normal: {
-            position: { right: 5, top: 3 }
+            position: { right: 2, top: 2 }
           }
-        }
-      },
-      [Widget.NumberTurn]: {
-        normal: {
-          position: { right: -8, top: 2}
         }
       }
     };
-    const register = {
+    const circle = {
       [Widget.Badge]: {
-        BadgeDot: {
+        Badge: {
           normal: {
-            position: { right: 8, top: 8 }
+            position: { right: 2, top: -2 }
+          }
+        }
+      }
+    };
+    const numBadge = {
+      [Widget.Badge]: {
+        Badge: {
+          normal: {
+            position: { right: -2, top: -7 }
           }
         }
       }
     };
     return (
-      <Theme config={view}>
-        <Wrapper>
+      <Wrapper>
+        <Theme config={view}>
           <Badge dot={true}>
             <Avatar shape={"square"} size={"large"} name={"lugia"} />
           </Badge>
-          <Theme config={view}>
-            <Theme config={register}>
-              <Badge dot={true}>
-                <Avatar icon={"lugia-icon-financial_user"} size={"large"} />
-              </Badge>
-            </Theme>
-            <br />
-            <Badge count={10}>
-              <Avatar shape={"square"} size={"large"} name={"lugia"} />
-            </Badge>
-            <Badge viewClass="register" count={10}>
-              <Avatar icon={"lugia-icon-financial_user"} size={"large"} />
-            </Badge>
-          </Theme>
-        </Wrapper>
-      </Theme>
+        </Theme>
+
+        <Theme config={circle}>
+          <Badge dot={true}>
+            <Avatar
+              type="icon"
+              icon={"lugia-icon-financial_user"}
+              size={"large"}
+            />
+          </Badge>
+        </Theme>
+        <br />
+        <Theme config={view}>
+          <Badge count={10}>
+            <Avatar shape={"square"} size={"large"} name={"lugia"} />
+          </Badge>
+        </Theme>
+        <Theme config={numBadge}>
+          <Badge count={10}>
+            <Avatar
+              type="icon"
+              icon={"lugia-icon-financial_user"}
+              size={"large"}
+            />
+          </Badge>
+        </Theme>
+      </Wrapper>
     );
   }
 }
