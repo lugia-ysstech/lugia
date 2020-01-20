@@ -16,7 +16,7 @@ module.exports = {
   },
   PagedTypeTabs: {
     title: '翻页类型',
-    desc: '可以配置标签页翻页类型,默认是单个, 可以设置为整页',
+    desc: '当页签数量超过显示区可容纳数量时，会出现翻页按钮。可以配置标签页翻页类型,默认是单个,可以设置为整页',
     path: './PagedTypeTabs'
   },
   OrderTabs: {
@@ -26,7 +26,7 @@ module.exports = {
   },
   ChangeTabs: {
     title: '修改配置标签',
-    desc: '可以自定义配置标签数据',
+    desc: '可以自定义配置标签内容',
     path: './ChangeTabs'
   }
 };

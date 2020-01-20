@@ -1,106 +1,95 @@
 import React from 'react';
-import { Theme, Tabs, Button } from '@lugia/lugia-web';
+import { Theme, Tabs, Button,Icon } from '@lugia/lugia-web';
 import styled from "styled-components";
+import Widget from '@lugia/lugia-web/dist/consts';
 
-const Wrapper = styled.div`
-  margin:10px 0;
+const CustomHome = styled.div`
+  width: 40px;
+`;
+const CustomTitle = styled.div`
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 120px;
+`;
+const CustomContent = styled.div`
+  padding: 20px;
 `;
 
-const TabPane = Tabs.TabPane;
-export const hasActivityKeyData = [
+const defaultHome = [
   {
-    title: 'Tab1',
-    content: <div>content of Tab1</div>,
-    activityKey: '0'
-  },
-  {
-    title: 'Tab2',
-    content: <div>content of Tab2</div>,
-    activityKey: '1'
-  },
-  {
-    activityKey: '2',
-    title: 'Tab3',
-    content: <div>content of Tab3</div>
-  },
-  {
-    activityKey: '3',
-    title: 'Tab4',
-    content: <div>content of Tab4</div>
-  },
-  {
-    activityKey: '4',
-    title: 'Tab5',
-    content: <div>content of Tab5</div>
-  },
-  {
-    activityKey: '5',
-    title: 'Tab6',
-    content: <div>content of Tab6</div>
-  },
-  {
-    activityKey: '6',
-    title: 'Tab7',
-    content: <div>content of Tab7</div>
-  },
-  {
-    activityKey: '7',
-    title: 'Tab8',
-    content: <div>content of Tab8</div>
+    title: <CustomHome> <Icon iconClass={"lugia-icon-financial_home"} /></CustomHome>,
+    content: <CustomContent>content of Home</CustomContent>,
+    value: '0'
   }
 ];
-export default class ChangeTabs extends React.Component<any, any> {
-  state = {
-    data: hasActivityKeyData,
-    activeKey: '0'
-  };
-  change = (e: Object) => {
-    hasActivityKeyData[0] = {
-      title: 1000000000000,
-      content: 1000000000,
-      activityKey: '0'
-    };
-    this.setState({ data: hasActivityKeyData });
-  };
-  onAddClick = () => {
-    const data = this.state.data;
-    const activityKey = `newTab${this.state.data.length++}`;
-    data.push({
-      title: 'New Tab',
-      content: 'Content of new Tab',
-      activityKey
-    });
-    this.setState({ data });
-  };
 
-  onDeleteClick = (activityKey: string) => {
-    const { data } = this.state;
-    let newdata = [];
-    if (data.length > 1) {
-      newdata = data.filter(child => {
-        return child.activityKey !== activityKey;
-      });
-    }
-    this.setState({ data: newdata });
-  };
+const getRandom = (limit:number) => {
+  return Math.floor(Math.random() * limit);
+};
+const getData = () => {
+  const defaultData = [];
+  for(let i = 0;i< 5;i++){
+    const valueNumber = getRandom(100);
+    const valueNumberAfter = getRandom(20);
+    const title = `Tab${valueNumber}${valueNumberAfter}`;
+    const item = {
+      title: <CustomTitle>{title}</CustomTitle> ,
+      content: <CustomContent>Content of new {title}</CustomContent>  ,
+      value:title
+    };
+    defaultData.push(item)
+  }
+  return defaultHome.concat(defaultData);
+};
+
+const themeConfig = {
+  [Widget.Tabs]: {
+    TabHeader: {
+      DefaultTabPan: {
+        normal: {
+          padding: {
+            left: 0,
+            right: 0,
+            top:0,
+            bottom:0
+          },
+        },
+
+      },
+    },
+  },
+};
+export default class ChangeTabs extends React.Component<any, any> {
+  constructor() {
+    super();
+    this.state = {
+      data:getData()
+    };
+  }
+
   render() {
+
     const { data } = this.state;
     return (
       <div>
-        <Wrapper>
-          <Button style={{ width: 200 }} onClick={this.change} type={'primary'}>
-            {'点击修改标签内容'}
-          </Button>
-        </Wrapper>
+        <Theme config={themeConfig}>
+          <Tabs
+            tabType={'line'}
+            data={data}
+          />
+          <Tabs
+            tabType={'card'}
+            data={data}
+          />
+          <Tabs
+            tabType={'window'}
+            data={data}
+          />
+        </Theme>
 
-        <Tabs
-          tabType={'card'}
-          pagedType={'single'}
-          data={data}
-          onAddClick={this.onAddClick}
-          onDeleteClick={this.onDeleteClick}
-        />
       </div>
     );
+
   }
 }

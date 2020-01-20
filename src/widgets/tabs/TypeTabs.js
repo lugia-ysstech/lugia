@@ -1,105 +1,71 @@
 import React from 'react';
-import { Theme, Tabs, Select } from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts';
+import {  Tabs, Select } from '@lugia/lugia-web';
 import styled from 'styled-components';
 
-const TabPane = Tabs.TabPane;
-
 const Wrapper = styled.div`
-  text-align: left;
   display: inline-block;
 `;
-export const hasActivityKeyData = [
-  {
-    title: 'Tab1',
-    content: <div>content of Tab1</div>,
-    activityKey: '0'
-  },
-  {
-    title: 'Tab2',
-    content: <div>content of Tab2</div>,
-    activityKey: '1'
-  },
-  {
-    activityKey: '2',
-    title: 'Tab3',
-    content: <div>content of Tab3</div>
-  },
-  {
-    activityKey: '3',
-    title: 'Tab4',
-    content: <div>content of Tab4</div>
-  },
-  {
-    activityKey: '4',
-    title: 'Tab5',
-    content: <div>content of Tab5</div>
-  },
-  {
-    activityKey: '5',
-    title: 'Tab6',
-    content: <div>content of Tab6</div>
-  },
-  {
-    activityKey: '6',
-    title: 'Tab7',
-    content: <div>content of Tab7</div>
-  },
-  {
-    activityKey: '7',
-    title: 'Tab8',
-    content: <div>content of Tab8</div>
-  }
+
+const TabsWrapper = styled.div`
+  margin: 0 0 20px;
+`;
+
+const Title = styled.div`
+   margin: 0 0 10px;
+`;
+
+const defaultData = [
+  { title: 'Tab1', content: 'content of Tab1', value:'1'},
+  { title: 'Tab2', content: 'content of Tab2', value:'2'},
+  { title: 'Tab3', content: 'content of Tab3', value:'3'},
+  { title: 'Tab4', content: 'content of Tab4', value:'4'},
+  { title: 'Tab5', content: 'content of Tab5', value:'5'},
+  { title: 'Tab6', content: 'content of Tab6', value:'6'},
+  { title: 'Tab7', content: 'content of Tab7', value:'7'},
+  { title: 'Tab8', content: 'content of Tab8', value:'8'}
 ];
+
 export default class TypeTabs extends React.Component<any, any> {
   render() {
-    const view = {
-      [Widget.Tabs]: {
-        width: 500,
-      }
-    };
-
-    const onPreClick = e => {};
-    const onNextClick = e => {};
-    const onDelClick = e => {};
-
-    const onAddClick = e => {
-      const newTabs = {
-        title: 'new Tabs',
-        content: 'new Tabs content'
-      };
-      return newTabs;
-    };
     return (
-      <Theme config={view}>
         <Wrapper>
-          <br />
-          <Wrapper>
+          <TabsWrapper>
+            <Title>线性风格</Title>
+            <Tabs
+              tabType={'line'}
+              pagedType={'single'}
+              data={defaultData}
+            />
+          </TabsWrapper>
+          <TabsWrapper>
+            <Title>分隔线(仅支持线性风格)</Title>
+            <Tabs
+              tabType={'line'}
+              pagedType={'single'}
+              showDividerLine={true}
+              data={defaultData}
+            />
+          </TabsWrapper>
+
+          <TabsWrapper>
+            <Title>卡片风格</Title>
             <Tabs
               tabType={'card'}
               pagedType={'single'}
-              data={hasActivityKeyData}
-              onPreClick={onPreClick}
-              onNextClick={onNextClick}
-              onDelClick={onDelClick}
-              onAddClick={onAddClick}
+              data={defaultData}
             />
-          </Wrapper>
-          <br />
-          <br />
-          <Wrapper>
+          </TabsWrapper>
+
+          <TabsWrapper>
+            <Title>窗口风格</Title>
             <Tabs
               tabType={'window'}
               pagedType={'page'}
-              data={hasActivityKeyData}
-              onPreClick={onPreClick}
-              onNextClick={onNextClick}
-              onDelClick={onDelClick}
-              onAddClick={onAddClick}
+              data={defaultData}
             />
-          </Wrapper>
+          </TabsWrapper>
+
         </Wrapper>
-      </Theme>
     );
   }
 }
