@@ -11,9 +11,4 @@ module.exports =  {
         title: '手风琴',
         desc: '手风琴模式，只能打开一个面板'
     },
-    ThemeDemo: {
-        title: '配置主题',
-        desc: '为折叠面板配置主题，可配置 width margin 和 Panel 的 borderSize 属性'
-    }
-
 };
