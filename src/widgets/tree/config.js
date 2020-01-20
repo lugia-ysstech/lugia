@@ -50,10 +50,16 @@ module.exports = {
     path: "./ShowMenuTree"
   },
 
-  DragTree: {
-    title: "树的拖拽",
+  SingleDragTree: {
+    title: "单棵树拖拽",
+    desc: "通过设置draggable：true,可实现树节点的换位。",
+    path: "./SingleDragTree"
+  },
+
+  MultipleDragTree: {
+    title: "树的分组拖拽",
     desc:
-      "通过设置draggable：true,可实现树节点的换位。通过设置groupKey属性，可实现树与树的节点交互位置（只有两个tree的groupKey必须一致）",
-    path: "./DragTree"
+      "通过设置groupKey属性，可实现树与树的节点交互位置（两个tree的groupKey必须一致）",
+    path: "./MultipleDragTree"
   }
 };
