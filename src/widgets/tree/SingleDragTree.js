@@ -4,9 +4,9 @@ import Widget from "@lugia/lugia-web/dist/consts";
 
 const config = {
   [Widget.Tree]: {
-    TreeWrap: {
+    Container: {
       normal: {
-        width: 500
+        width: 250
       }
     }
   }
@@ -39,31 +39,6 @@ const nestedData = [
     ]
   }
 ];
-const delayeringData = [
-  { value: "0", text: "北京分行" },
-  { value: "0.0", text: "朝阳支行办事处", pid: "0", path: "0" },
-  {
-    value: "0.0.0",
-    text: "朝阳支行办事处-1",
-    pid: "0.0",
-    path: "0/0.0",
-    isLeaf: true,
-    notCanSelect1: true
-  },
-  {
-    value: "0.0.1",
-    text: "朝阳支行办事处-2",
-    pid: "0.0",
-    path: "0/0.0",
-    isLeaf: true
-  },
-  { value: "0.1", text: "海淀支行办事处", pid: "0", path: "0", isLeaf: true },
-  { value: "0.2", text: "石景山支行办事处", pid: "0", path: "0", isLeaf: true },
-  { value: "1", text: "天津分行" },
-  { value: "1.0", text: "和平支行办事处", pid: "1", path: "1", isLeaf: true },
-  { value: "1.1", text: "河东支行办事处", pid: "1", path: "1", isLeaf: true },
-  { value: "1.2", text: "南开支行办事处", pid: "1", path: "1", isLeaf: true }
-];
 
 const switchIconNames = {
   open: "lugia-icon-direction_down",
@@ -73,8 +48,7 @@ export default class DragSingleTree extends React.Component<> {
   constructor(props) {
     super(props);
     this.state = {
-      nestedData,
-      delayeringData
+      nestedData
     };
   }
   recursion = (data, key, callback) => {
@@ -135,193 +109,21 @@ export default class DragSingleTree extends React.Component<> {
     this.setState({ info: [...info] });
   };
 
-  onDropOfDelayering = dragData => {
-    const { delayeringData: metadata } = this.state;
-    let {
-      dragInfo: { dargCurrentIndex, dargNextIndex, dargPreIndex } = {},
-      targetInfo: { dropPosition, targetParentIndex, targetCurrentIndex },
-      dropToGap,
-      translateTreeData
-    } = dragData;
-    if (translateTreeData) return;
-    let dragObj = [];
-    const dragCurrentData = metadata[dargCurrentIndex];
-    const dragPreData = metadata[dargPreIndex];
-    const dragNextdata = metadata[dargNextIndex];
-    if (
-      dragNextdata &&
-      dragCurrentData.pid !== dragNextdata.pid &&
-      dragPreData &&
-      dragCurrentData.pid !== dragPreData.pid
-    ) {
-      dragPreData.isLeaf = true;
-    }
-    if (!dragNextdata && dragCurrentData.pid !== dragPreData.pid) {
-      dragPreData.isLeaf = true;
-    }
-    const deleteCount = this.calculationDragCount(dargCurrentIndex);
-    dragObj = metadata.splice(dargCurrentIndex, deleteCount);
-    targetCurrentIndex =
-      targetCurrentIndex >= dargCurrentIndex
-        ? targetCurrentIndex - deleteCount
-        : targetCurrentIndex;
-    targetParentIndex =
-      targetParentIndex >= dargCurrentIndex
-        ? targetParentIndex - deleteCount
-        : targetParentIndex;
-    if (dropToGap) {
-      if (dropPosition === "top") {
-        this.dragTargetToTopHandler(
-          targetCurrentIndex,
-          dragObj,
-          targetParentIndex
-        );
-      } else {
-        this.dragTargetToBottomHandler(
-          targetCurrentIndex,
-          dragObj,
-          targetParentIndex
-        );
-      }
-    } else {
-      this.dragTargetToInHandler(targetCurrentIndex, dragObj);
-    }
-    this.setState({ delayeringData: [...metadata] });
-  };
-
-  dragTargetToTopHandler(targetIndex, InsertNodeinfos, targetParentIndex) {
-    const { delayeringData: metadata } = this.state;
-    const { pid: targetPid = "" } = metadata[targetIndex];
-    metadata.splice(targetIndex, 0, ...InsertNodeinfos);
-    let nextPathArray = [];
-    if (targetPid) {
-      const updataItem = metadata[targetParentIndex];
-      updataItem.isLeaf = false;
-      nextPathArray = updataItem.path
-        ? [updataItem.path, updataItem.value]
-        : [updataItem.value];
-    }
-    this.updataDataPath({
-      pid: targetPid,
-      deleteCount: InsertNodeinfos.length,
-      fixTargetCurrentIndex: targetIndex,
-      nextPathArray
-    });
-  }
-
-  dragTargetToBottomHandler(
-    targetIndex,
-    InsertNodeinfos = [],
-    targetParentIndex
-  ) {
-    const { delayeringData: metadata } = this.state;
-    const count = this.calculationDragCount(targetIndex);
-    const { pid: targetPid = "" } = metadata[targetIndex];
-    metadata.splice(targetIndex + count, 0, ...InsertNodeinfos);
-    let nextPathArray = [];
-    if (targetPid) {
-      const updataItem = metadata[targetParentIndex];
-      updataItem.isLeaf = false;
-      nextPathArray = updataItem.path
-        ? [updataItem.path, updataItem.value]
-        : [updataItem.value];
-    }
-    this.updataDataPath({
-      pid: targetPid,
-      deleteCount: InsertNodeinfos.length,
-      fixTargetCurrentIndex: targetIndex + count,
-      nextPathArray
-    });
-  }
-
-  dragTargetToInHandler(targetIndex, InsertNodeinfos = []) {
-    const { delayeringData: metadata } = this.state;
-    metadata.splice(targetIndex + 1, 0, ...InsertNodeinfos);
-    const { value = "" } = metadata[targetIndex];
-    let nextPathArray = [];
-    const updataItem = metadata[targetIndex];
-    updataItem.isLeaf = false;
-    nextPathArray = updataItem.path
-      ? [updataItem.path, updataItem.value]
-      : [updataItem.value];
-    this.updataDataPath({
-      pid: value,
-      deleteCount: InsertNodeinfos.length,
-      fixTargetCurrentIndex: targetIndex + 1,
-      nextPathArray
-    });
-  }
-
-  calculationDragCount(dargCurrentIndex) {
-    const { delayeringData: metadata } = this.state;
-    let deleteCount = 1;
-    for (let i = dargCurrentIndex + 1, max = metadata.length; i < max; i++) {
-      const tem = metadata[i];
-      const { path = "" } = tem;
-      const pidArray = path.split("/");
-      if (pidArray.indexOf(metadata[dargCurrentIndex].value) === -1) {
-        break;
-      }
-      deleteCount += 1;
-    }
-    return deleteCount;
-  }
-
-  updataDataPath(parameter) {
-    const { delayeringData: metadata } = this.state;
-    const {
-      pid,
-      deleteCount,
-      fixTargetCurrentIndex,
-      nextPathArray
-    } = parameter;
-    const startIndex = fixTargetCurrentIndex;
-    const endIndex = fixTargetCurrentIndex + deleteCount;
-    let prePathArray = [];
-    for (let i = startIndex; i < endIndex; i++) {
-      const tem = metadata[i];
-      if (i === startIndex) {
-        tem.pid = pid;
-        prePathArray = tem.path ? tem.path.split("/") : [];
-        tem.path = nextPathArray.join("/");
-      } else {
-        const currentPathArray = tem.path ? tem.path.split("/") : [];
-        currentPathArray.splice(0, prePathArray.length);
-        tem.path = nextPathArray.concat(currentPathArray).join("/");
-      }
-    }
-  }
-
   render() {
-    const { nestedData = [], delayeringData = [] } = this.state;
+    const { nestedData = [] } = this.state;
     return (
       <div>
-        <div style={{ display: "flex", flex: 1 }}>
-          <div style={{ flex: 1 }}>
-            <Tree
-              data={nestedData}
-              expandAll
-              theme={config}
-              translateTreeData
-              draggable
-              parentIsHighlight
-              onDrop={this.onDropOfnested}
-              switchIconNames={switchIconNames}
-            />
-          </div>
-          <div style={{ flex: 1 }}>
-            <Tree
-              data={delayeringData}
-              expandAll
-              theme={config}
-              autoHeight
-              draggable
-              parentIsHighlight
-              onDrop={this.onDropOfDelayering}
-              switchIconNames={switchIconNames}
-            />
-          </div>
-        </div>
+        <Tree
+          data={nestedData}
+          expandAll
+          theme={config}
+          translateTreeData
+          autoHeight
+          draggable
+          parentIsHighlight
+          onDrop={this.onDropOfnested}
+          switchIconNames={switchIconNames}
+        />
       </div>
     );
   }

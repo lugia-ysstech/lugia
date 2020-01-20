@@ -51,9 +51,15 @@ module.exports = {
   },
 
   SingleDragTree: {
-    title: "单棵树拖拽",
-    desc: "通过设置draggable：true,可实现树节点的换位。",
+    title: "不带滚动条的拖拽树",
+    desc: "通过设置draggable：true和autoHeight,可实现不带滚动条的树节点换位。",
     path: "./SingleDragTree"
+  },
+
+  ScrollBarDragTree: {
+    title: "带滚动条的拖拽树",
+    desc: "通过设置draggable：true,可实现带滚动条的树节点的换位。",
+    path: "./ScrollBarDragTree"
   },
 
   MultipleDragTree: {

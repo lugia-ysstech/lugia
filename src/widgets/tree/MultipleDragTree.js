@@ -4,9 +4,9 @@ import Widget from "@lugia/lugia-web/dist/consts";
 
 const config = {
   [Widget.Tree]: {
-    TreeWrap: {
+    Container: {
       normal: {
-        width: 500
+        width: 200
       }
     }
   }
