@@ -1,9 +1,8 @@
-import React from 'react';
-import { NumberInput } from '@lugia/lugia-web';
-import styled from 'styled-components';
+import React from "react";
+import { NumberInput } from "@lugia/lugia-web";
+import styled from "styled-components";
 
-const Wrapper = styled.div`
-`;
+const Wrapper = styled.div``;
 export default class PrecisionNumberInput extends React.Component<any, any> {
   render() {
     return (
