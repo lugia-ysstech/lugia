@@ -34,4 +34,9 @@ module.exports ={
     desc: "三种不同风格校验(校验输入值是否含有',')。",
     path: './ValidateTypeInput'
   },
+  Textarea: {
+    title: '段落文本输入框',
+    desc: "适用于输入文字段落",
+    path: './Textarea'
+  },
 };
