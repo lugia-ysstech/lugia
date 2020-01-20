@@ -24,8 +24,10 @@ export default class ChangeBadge extends React.Component<any, any> {
   };
   render() {
     const config = {
-      [Widget.NumberTurn]: {
-        normal: { position: { top: -5, right: -5 } }
+      [Widget.Badge]: {
+        Badge: {
+          normal: { position: { top: -5, right: -5 } }
+        }
       }
     };
     return (

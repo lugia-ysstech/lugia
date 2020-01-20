@@ -16,7 +16,7 @@ export default class ClickBadge extends React.Component<any, any> {
   render () {
     const dot = {
       [Widget.Badge]: {
-        BadgeDot: {
+        Badge: {
           normal: {
             position: { top: -5, right: -5 }
           }
