@@ -13,21 +13,21 @@ class UploadDemo extends React.Component<any, any> {
   }
 
   render() {
-    const defaultProps1 = {
+    const defaultProps = {
       areaType: 'default',
       inputId: 'upload',
       showFileList: true,
       disabled: true,
       url: '/upload',
     };
-    const defaultProps2 = {
+    const bothProps = {
       areaType: 'both',
       inputId: 'upload',
       showFileList: true,
       disabled: true,
       url: '/upload',
     };
-    const defaultProps3 = {
+    const buttonProps = {
       areaType: 'button',
       inputId: 'upload2',
       showFileList: true,
@@ -35,14 +35,14 @@ class UploadDemo extends React.Component<any, any> {
       url: '/upload',
 
     };
-    const defaultProps4 = {
+    const areaProps = {
       areaType: 'area',
       inputId: 'upload3',
       disabled: true,
       showFileList: true,
       url: '/upload',
     };
-    const defaultProps5 = {
+    const pictureProps = {
       areaType: 'picture',
       inputId: 'upload4',
       disabled: true,
@@ -52,15 +52,15 @@ class UploadDemo extends React.Component<any, any> {
     return (
       <div>
         <Title>areaType: default</Title>
-        <Upload {...defaultProps1} />
+        <Upload {...defaultProps} />
         <Title>areaType: both</Title>
-        <Upload {...defaultProps2} />
+        <Upload {...bothProps} />
         <Title>areaType: button</Title>
-        <Upload {...defaultProps3} />
+        <Upload {...buttonProps} />
         <Title>areaType: area</Title>
-        <Upload {...defaultProps4} />
+        <Upload {...areaProps} />
         <Title>areaType: picture</Title>
-        <Upload {...defaultProps5} />
+        <Upload {...pictureProps} />
       </div>
     );
   }

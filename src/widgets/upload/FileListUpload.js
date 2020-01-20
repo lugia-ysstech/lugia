@@ -7,7 +7,7 @@ class UploadDemo extends React.Component<any, any> {
   }
 
   render() {
-    const defaultProps8 = {
+    const buttonProps = {
       areaType: 'button',
       inputId: 'upload1',
       showFileList: true,
@@ -19,7 +19,7 @@ class UploadDemo extends React.Component<any, any> {
     };
     return (
       <div>
-        <Upload {...defaultProps8} />
+        <Upload {...buttonProps} />
       </div>
     );
   }

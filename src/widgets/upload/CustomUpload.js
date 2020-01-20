@@ -1,11 +1,10 @@
 import React from 'react';
-import { Upload, Theme } from '@lugia/lugia-web';
+import { Upload, Theme, Button } from '@lugia/lugia-web';
 import styled from "styled-components";
 
 const Title = styled.div`
     margin: 10px 0;
 `;
-
 
 class UploadDemo extends React.Component<any, any> {
   constructor(props: Object) {
@@ -13,44 +12,51 @@ class UploadDemo extends React.Component<any, any> {
   }
 
   render() {
-    const defaultProps1 = {
+    const defaultProps = {
       areaType: 'default',
-      inputId: 'upload',
+      inputId: 'defaultUpload',
       url: '/upload',
     };
-    const defaultProps2 = {
+    const bothProps = {
       areaType: 'both',
-      inputId: 'upload',
+      inputId: 'bothUpload',
       url: '/upload',
     };
-    const defaultProps3 = {
+    const buttonProps = {
       areaType: 'button',
-      inputId: 'upload',
+      inputId: 'buttonUpload',
       url: '/upload',
     };
-    const defaultProps4 = {
+    const pictureProps = {
       areaType: 'picture',
-      inputId: 'upload4',
+      inputId: 'pictureUpload',
       url: '/upload',
     };
-    const defaultProps5 = {
+    const areaProps = {
       areaType: 'area',
-      inputId: 'upload6',
+      inputId: 'areaUpload',
       url: '/upload',
+    };
+    const customProps = {
+      areaType: 'custom',
+      inputId: 'customUpload',
+      url: '/upload'
     };
 
     return (
       <div>
         <Title>默认上传</Title>
-        <Upload {...defaultProps1} />
+        <Upload {...defaultProps} />
         <Title>带按钮的默认上传</Title>
-        <Upload {...defaultProps2} />
+        <Upload {...bothProps} />
         <Title>按钮上传</Title>
-        <Upload {...defaultProps3} />
+        <Upload {...buttonProps} />
         <Title>图片上传</Title>
-        <Upload {...defaultProps4} />
+        <Upload {...pictureProps} />
         <Title>区域上传</Title>
-        <Upload {...defaultProps5} />
+        <Upload {...areaProps} />
+        <Title>自定义上传</Title>
+        <Upload {...customProps} userDefine={ <Button circle icon="lugia-icon-financial_download" />  } />
 
       </div>
     );
