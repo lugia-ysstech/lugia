@@ -1,5 +1,5 @@
 import React from 'react';
-import { Upload, Theme, Button } from '@lugia/lugia-web';
+import { Upload,  Button } from '@lugia/lugia-web';
 import styled from "styled-components";
 
 const Title = styled.div`
@@ -12,11 +12,6 @@ class UploadDemo extends React.Component<any, any> {
   }
 
   render() {
-    const defaultProps = {
-      areaType: 'default',
-      inputId: 'defaultUpload',
-      url: '/upload',
-    };
     const bothProps = {
       areaType: 'both',
       inputId: 'bothUpload',
@@ -45,8 +40,6 @@ class UploadDemo extends React.Component<any, any> {
 
     return (
       <div>
-        <Title>默认上传</Title>
-        <Upload {...defaultProps} />
         <Title>带按钮的默认上传</Title>
         <Upload {...bothProps} />
         <Title>按钮上传</Title>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Upload, Theme } from '@lugia/lugia-web';
+import { Upload } from '@lugia/lugia-web';
 
 class UploadDemo extends React.Component<any, any> {
   constructor(props: Object) {
@@ -9,12 +9,12 @@ class UploadDemo extends React.Component<any, any> {
   render() {
     const buttonProps = {
       areaType: 'button',
-      inputId: 'upload1',
+      inputId: 'buttonUpload',
       showFileList: true,
       url: '/upload',
       fileList: [
-        { id: 1, name: '文件11111.jpg', status: 'done' },
-        { id: 2, name: '文件666.doc', status: 'fail' }
+        { id: 1, name: '上传完成的图片.jpg', status: 'done' },
+        { id: 2, name: '上传失败的文档.doc', status: 'fail' }
       ]
     };
     return (

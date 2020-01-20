@@ -1,5 +1,5 @@
 import React from 'react';
-import { Upload, Theme } from '@lugia/lugia-web';
+import { Upload } from '@lugia/lugia-web';
 import styled from "styled-components";
 
 const Title = styled.div`

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Upload, Theme } from '@lugia/lugia-web';
+import { Upload } from '@lugia/lugia-web';
 
 class UploadDemo extends React.Component<any, any> {
   constructor(props: Object) {
@@ -8,7 +8,7 @@ class UploadDemo extends React.Component<any, any> {
 
   render() {
     const defaultProps = {
-      inputId: 'upload1',
+      inputId: 'defaultUpload',
       url: '/upload',
       multiple: true,
     };

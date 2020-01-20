@@ -1,5 +1,10 @@
 module.exports = {
 
+  BaseUpload: {
+    title: '默认上传',
+    desc: '默认的上传组件风格',
+    path: './BaseUpload'
+  },
   CustomUpload: {
     title: '多种风格',
     desc: '多种风格上传,按钮,区域,图片等',
@@ -12,7 +17,7 @@ module.exports = {
   },
   PictureUpload: {
     title: '图片上传',
-    desc: '多种图片尺寸上传',
+    desc: '多种图片上传尺寸',
     path: './PictureUpload'
   },
   DisabledUpload: {
