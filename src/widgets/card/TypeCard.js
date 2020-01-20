@@ -24,12 +24,6 @@ export default class TypeCard extends React.Component<any, any> {
             opacity: 0.8
           }
         },
-        CardImageContainer: {
-          normal: {
-            width: 160,
-            height: 150
-          }
-        },
         CardImage: {
           normal: {
             width: 160,
@@ -46,29 +40,24 @@ export default class TypeCard extends React.Component<any, any> {
           normal: {
             padding: 0
           }
-        },
+        }
       }
     };
     const imageHCard = {
       [Widget.Card]: {
         Container: {
           normal: {
-            width: 360,
-            height: 140,
-          },
-        },
-        CardImageContainer: {
-          normal: {
-            width: 200,
-          },
+            width: 260,
+            height: 140
+          }
         },
         CardImage: {
           normal: {
             width: 160,
-            height: 140,
-          },
-        },
-      },
+            height: 140
+          }
+        }
+      }
     };
     const avatarVCard = {
       [Widget.Card]: {
@@ -78,18 +67,8 @@ export default class TypeCard extends React.Component<any, any> {
             height: 220
           }
         },
-        CardAvatarContainer: {
-          normal: {
-            width: 160,
-            height: 100,
-            padding: {
-              top: 20
-            }
-          }
-        },
-
         CardAvatar: {
-          SrcAvatar: {
+          Container: {
             normal: {
               width: 80,
               height: 80
@@ -106,13 +85,15 @@ export default class TypeCard extends React.Component<any, any> {
             height: 140
           }
         },
-        CardAvatarContainer: {
-          normal: {
-            width: 160,
-            height: 100,
-            padding: {
-              top: 10,
-              left: 10
+        CardAvatar: {
+          Container: {
+            normal: {
+              width: 160,
+              height: 100,
+              padding: {
+                top: 10,
+                left: 10
+              }
             }
           }
         }

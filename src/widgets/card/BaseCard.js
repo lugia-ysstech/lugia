@@ -10,10 +10,7 @@ export default class BaseCard extends React.Component<any, any> {
   render() {
     return (
       <Wrapper>
-        <Card
-          title={'This is title'}
-          description={'This is description'}
-        />
+        <Card title={"This is title"} description={"This is description"} />
       </Wrapper>
     );
   }
