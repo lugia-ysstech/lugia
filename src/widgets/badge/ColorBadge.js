@@ -16,7 +16,7 @@ export default class ColorBadge extends React.Component<any, any> {
         <Theme
           config={{
             green: {
-              BadgeDot: {
+              Badge: {
                 normal: {
                   position: { top: -5, right: -5 },
                   background: { color: "green" }
@@ -32,7 +32,7 @@ export default class ColorBadge extends React.Component<any, any> {
         <Theme
           config={{
             purple: {
-              BadgeDot: {
+              Badge: {
                 normal: {
                   position: { top: -5, right: -5 },
                   background: { color: "purple" }
@@ -48,7 +48,7 @@ export default class ColorBadge extends React.Component<any, any> {
         <Theme
           config={{
             yellow: {
-              BadgeDot: {
+              Badge: {
                 normal: {
                   position: { top: -5, right: -5 },
                   background: { color: "yellow" }
@@ -64,7 +64,7 @@ export default class ColorBadge extends React.Component<any, any> {
         <Theme
           config={{
             blue: {
-              BadgeDot: {
+              Badge: {
                 normal: {
                   position: { top: -5, right: -5 },
                   background: { color: "blue" }
