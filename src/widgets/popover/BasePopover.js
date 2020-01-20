@@ -36,15 +36,6 @@ const ToolTipVWrapper = styled(ToolTipBaseWrapper)`
   margin-top: 10px;
 `;
 export default class BasePopover extends React.Component<any, any> {
-  constructor(props: any) {
-    super(props);
-    this.state = { value: "" };
-  }
-
-  onChange = ({ newValue: value }: any) => {
-    this.setState({ value });
-  };
-
   render() {
     const config = {
       [Widget.Button]: {

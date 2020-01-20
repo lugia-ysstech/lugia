@@ -20,7 +20,8 @@ export default class ButtonDemo extends React.Component {
                 <Button type="primary">Primary</Button><Empty />
                 <Button type="success">Success</Button><Empty />
                 <Button type="warning">Warning</Button><Empty />
-                <Button type="danger">Danger</Button>
+                <Button type="danger">Danger</Button><Empty />
+                <Button type="link">Link</Button>
             </Wrap>
         );
     }

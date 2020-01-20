@@ -1,6 +1,6 @@
-import React from 'react';
-import { Popconfirm, Theme, Button, Input, Icon } from '@lugia/lugia-web';
-import styled from 'styled-components';
+import React from "react";
+import { Popconfirm, Theme, Button, Input, Icon } from "@lugia/lugia-web";
+import styled from "styled-components";
 const Direction = styled(Button)``;
 const Wrapper = styled.div``;
 const IconWrapper = styled.div`
@@ -10,37 +10,28 @@ const IconWrapper = styled.div`
 `;
 const HintIcon: Object = styled(Icon)`
   color: white;
-  font-size:14px;
+  font-size: 14px;
 `;
 const PopWrapper = styled.div`
   margin-right: 10px;
   display: inline-block;
 `;
 export default class TypePopconfirm extends React.Component<any, any> {
-  constructor(props: any) {
-    super(props);
-    this.state = { value: '' };
-  }
-
-  onChange = ({ newValue: value }: any) => {
-    this.setState({ value });
-  };
-
   render() {
-    const text = '确定删除这个选项吗?';
+    const text = "确定删除这个选项吗?";
     return (
       <Wrapper>
         <PopWrapper>
           <Popconfirm
             placement="top"
             title={text}
-            action={'click'}
+            action={"click"}
             cancelText="No"
             okText="yes"
             okType="danger"
             icon={
-              <IconWrapper style={{ background: 'orange' }}>
-                <HintIcon iconClass={'lugia-icon-reminder_exclamation'} />
+              <IconWrapper style={{ background: "orange" }}>
+                <HintIcon iconClass={"lugia-icon-reminder_exclamation"} />
               </IconWrapper>
             }
           >
@@ -51,15 +42,15 @@ export default class TypePopconfirm extends React.Component<any, any> {
           <Popconfirm
             placement="top"
             title={text}
-            action={'click'}
+            action={"click"}
             cancelText="No"
             okText="yes"
             okType="danger"
             icon={
-              <IconWrapper style={{ background: '#f22735' }}>
+              <IconWrapper style={{ background: "#f22735" }}>
                 <HintIcon
-                  style={{ color: 'white' }}
-                  iconClass={'lugia-icon-reminder_question'}
+                  style={{ color: "white" }}
+                  iconClass={"lugia-icon-reminder_question"}
                 />
               </IconWrapper>
             }

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Input } from '@lugia/lugia-web';
+import React from "react";
+import { Input } from "@lugia/lugia-web";
 
 export default class DefaultValueInput extends React.Component<any, any> {
   render() {

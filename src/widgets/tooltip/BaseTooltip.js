@@ -48,74 +48,74 @@ export default class BaseTooltip extends React.Component<any, any> {
     return (
       <div>
         <Theme config={config}>
-        <DirectionTopWrapper>
-          <ToolTipHWrapper>
-            <Tooltip placement="topLeft" title={text}>
-              <DirectionButton type="primary">TL</DirectionButton>
-            </Tooltip>
-          </ToolTipHWrapper>
-          <ToolTipHWrapper>
-            <Tooltip placement="top" title={text}>
-              <DirectionButton type="primary">Top</DirectionButton>
-            </Tooltip>
-          </ToolTipHWrapper>
-          <ToolTipHWrapper>
-            <Tooltip placement="topRight" title={text}>
-              <DirectionButton type="primary">TR</DirectionButton>
-            </Tooltip>
-          </ToolTipHWrapper>
-        </DirectionTopWrapper>
-        <DirectionLeftWrapper>
-          <ToolTipVWrapper>
-            <Tooltip placement="leftTop" title={text}>
-              <DirectionButton type="primary">LT</DirectionButton>
-            </Tooltip>
-          </ToolTipVWrapper>
-          <ToolTipVWrapper>
-            <Tooltip placement="left" title={text}>
-              <DirectionButton type="primary">Left</DirectionButton>
-            </Tooltip>
-          </ToolTipVWrapper>
-          <ToolTipVWrapper>
-            <Tooltip placement="leftBottom" title={text}>
-              <DirectionButton type="primary">LB</DirectionButton>
-            </Tooltip>
-          </ToolTipVWrapper>
-        </DirectionLeftWrapper>
-        <DirectionRightWrapper>
-          <ToolTipVWrapper>
-            <Tooltip placement="rightTop" title={text}>
-              <DirectionButton type="primary">RT</DirectionButton>
-            </Tooltip>
-          </ToolTipVWrapper>
-          <ToolTipVWrapper>
-            <Tooltip placement="right" title={text}>
-              <DirectionButton type="primary">Right</DirectionButton>
-            </Tooltip>
-          </ToolTipVWrapper>
-          <ToolTipVWrapper>
-            <Tooltip placement="rightBottom" title={text}>
-              <DirectionButton type="primary">RB</DirectionButton>
-            </Tooltip>
-          </ToolTipVWrapper>
-        </DirectionRightWrapper>
-        <DirectionBottomWrapper>
-          <ToolTipHWrapper>
-            <Tooltip placement="bottomLeft" title={text}>
-              <DirectionButton type="primary">BL</DirectionButton>
-            </Tooltip>
-          </ToolTipHWrapper>
-          <ToolTipHWrapper>
-            <Tooltip placement="bottom" title={text}>
-              <DirectionButton type="primary">Bottom</DirectionButton>
-            </Tooltip>
-          </ToolTipHWrapper>
-          <ToolTipHWrapper>
-            <Tooltip placement="bottomRight" title={text}>
-              <DirectionButton type="primary">BR</DirectionButton>
-            </Tooltip>
-          </ToolTipHWrapper>
-        </DirectionBottomWrapper>
+          <DirectionTopWrapper>
+            <ToolTipHWrapper>
+              <Tooltip placement="topLeft" title={text}>
+                <DirectionButton type="primary">TL</DirectionButton>
+              </Tooltip>
+            </ToolTipHWrapper>
+            <ToolTipHWrapper>
+              <Tooltip placement="top" title={text}>
+                <DirectionButton type="primary">Top</DirectionButton>
+              </Tooltip>
+            </ToolTipHWrapper>
+            <ToolTipHWrapper>
+              <Tooltip placement="topRight" title={text}>
+                <DirectionButton type="primary">TR</DirectionButton>
+              </Tooltip>
+            </ToolTipHWrapper>
+          </DirectionTopWrapper>
+          <DirectionLeftWrapper>
+            <ToolTipVWrapper>
+              <Tooltip placement="leftTop" title={text}>
+                <DirectionButton type="primary">LT</DirectionButton>
+              </Tooltip>
+            </ToolTipVWrapper>
+            <ToolTipVWrapper>
+              <Tooltip placement="left" title={text}>
+                <DirectionButton type="primary">Left</DirectionButton>
+              </Tooltip>
+            </ToolTipVWrapper>
+            <ToolTipVWrapper>
+              <Tooltip placement="leftBottom" title={text}>
+                <DirectionButton type="primary">LB</DirectionButton>
+              </Tooltip>
+            </ToolTipVWrapper>
+          </DirectionLeftWrapper>
+          <DirectionRightWrapper>
+            <ToolTipVWrapper>
+              <Tooltip placement="rightTop" title={text}>
+                <DirectionButton type="primary">RT</DirectionButton>
+              </Tooltip>
+            </ToolTipVWrapper>
+            <ToolTipVWrapper>
+              <Tooltip placement="right" title={text}>
+                <DirectionButton type="primary">Right</DirectionButton>
+              </Tooltip>
+            </ToolTipVWrapper>
+            <ToolTipVWrapper>
+              <Tooltip placement="rightBottom" title={text}>
+                <DirectionButton type="primary">RB</DirectionButton>
+              </Tooltip>
+            </ToolTipVWrapper>
+          </DirectionRightWrapper>
+          <DirectionBottomWrapper>
+            <ToolTipHWrapper>
+              <Tooltip placement="bottomLeft" title={text}>
+                <DirectionButton type="primary">BL</DirectionButton>
+              </Tooltip>
+            </ToolTipHWrapper>
+            <ToolTipHWrapper>
+              <Tooltip placement="bottom" title={text}>
+                <DirectionButton type="primary">Bottom</DirectionButton>
+              </Tooltip>
+            </ToolTipHWrapper>
+            <ToolTipHWrapper>
+              <Tooltip placement="bottomRight" title={text}>
+                <DirectionButton type="primary">BR</DirectionButton>
+              </Tooltip>
+            </ToolTipHWrapper>
+          </DirectionBottomWrapper>
         </Theme>
       </div>
     );

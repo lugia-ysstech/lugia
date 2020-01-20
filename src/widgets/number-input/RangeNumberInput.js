@@ -1,9 +1,9 @@
-import React from 'react';
-import { NumberInput } from '@lugia/lugia-web';
-import styled from 'styled-components';
+import React from "react";
+import { NumberInput } from "@lugia/lugia-web";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
-  display:inline-block;
+  display: inline-block;
 `;
 const InputWrapper = styled.div`
   margin-right: 10px;

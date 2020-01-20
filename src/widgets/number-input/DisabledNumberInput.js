@@ -1,5 +1,5 @@
-import React from 'react';
-import { NumberInput, Button } from '@lugia/lugia-web';
+import React from "react";
+import { NumberInput, Button } from "@lugia/lugia-web";
 
 export default class DisabledNumberInput extends React.Component<any, any> {
   state = {
