@@ -7,10 +7,6 @@ module.exports =  {
         title: '禁用状态',
         desc: 'Radio 不可用'
     },
-    ThemeDemo: {
-        title: 'Radio 配置主题',
-        desc: 'Radio 配置主题，可配置 width color margin'
-    },
     BasicGroupDemo: {
         title: '单选按钮组',
         desc: '单选按钮组'
@@ -26,10 +22,6 @@ module.exports =  {
     DisplayDemo: {
         title: '设置 DisplayValue',
         desc: '设置 value备选项，value 找不到时作为取消项展示备选项'
-    },
-    ThemeGroupDemo: {
-        title: '配置 Theme',
-        desc: '为 RadioGroup 配置主题，可配置 width color '
     },
     ButtonDemo: {
         title: '按钮类型',
