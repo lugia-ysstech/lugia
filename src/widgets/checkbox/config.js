@@ -11,10 +11,6 @@ module.exports =  {
         title: '禁用的Checkbox',
         desc: '禁用的Checkbox'
     },
-    ThemeCheckBox:{
-        title: '可配置主题',
-        desc: '根据需要配置主题，可配置 color'
-    },
     BasicGroupDemo: {
         title: 'Checkbox 组',
         desc: '一组Checkbox，组合使用'
