@@ -27,8 +27,4 @@ module.exports =  {
         title: '自定义图标',
         desc: '自定义图标的警告提示'
     },
-    ThemeDemo: {
-        title: '可配置theme属性',
-        desc: '根据需要单独配置警告提示样式，可配置 width color'
-    }
 };
