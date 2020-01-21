@@ -10,6 +10,13 @@ import '../css/menu.css';
 import { connect } from '@lugia/lugiax';
 import search from './models/search';
 import SearchElement from './component/search';
+import styled from "styled-components";
+
+
+const SearchContainer = styled.div`
+ line-height: 1rem;
+ margin-top: 15px;
+`;
 
 const SearchComponent = connect(
   search,
@@ -30,8 +37,8 @@ const SearchComponent = connect(
 
 export default () => {
   return (
-    <div >
+    <SearchContainer >
       <SearchComponent />
-    </div>
+    </SearchContainer>
   );
 };
