@@ -1,7 +1,7 @@
-import React from "react";
-import { Input } from "@lugia/lugia-web";
-import styled from "styled-components";
-import { fixControlledValue } from "@lugia/lugia-web/dist/utils";
+import React from 'react';
+import { Input } from '@lugia/lugia-web';
+import styled from 'styled-components';
+import { fixControlledValue } from '@lugia/lugia-web/dist/utils';
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -19,11 +19,11 @@ class ValidateInput extends React.Component<any, any> {
 
   static getDerivedStateFromProps(nextProps: Object, preState: Object) {
     let { value } = nextProps;
-    const hasValueInprops = "value" in nextProps;
+    const hasValueInprops = 'value' in nextProps;
     value = fixControlledValue(value);
     if (!preState) {
       return {
-        value: hasValueInprops ? value : ""
+        value: hasValueInprops ? value : ''
       };
     }
     if (hasValueInprops) {
@@ -38,7 +38,7 @@ class ValidateInput extends React.Component<any, any> {
   render() {
     const { validateType } = this.props;
     const value = this.state.value;
-    const validateStatus = value.indexOf(",") === -1 ? "success" : "error";
+    const validateStatus = value.indexOf(',') === -1 ? 'success' : 'error';
     return (
       <Input
         onChange={this.onChange}
@@ -55,12 +55,12 @@ export class TopInput extends React.Component<any, any> {
 
   static getDerivedStateFromProps(nextProps: Object, preState: Object) {
     let { value } = nextProps;
-    const hasValueInprops = "value" in nextProps;
+    const hasValueInprops = 'value' in nextProps;
     value = fixControlledValue(value);
     if (!preState) {
       return {
-        value: hasValueInprops ? value : "",
-        validateStatus: "success"
+        value: hasValueInprops ? value : '',
+        validateStatus: 'success'
       };
     }
     if (hasValueInprops) {
@@ -74,7 +74,7 @@ export class TopInput extends React.Component<any, any> {
   };
   onBlur = (event: UIEvent) => {
     const validateStatus =
-      this.state.value.indexOf(",") === -1 ? "success" : "error";
+      this.state.value.indexOf(',') === -1 ? 'success' : 'error';
     this.setState({ validateStatus });
   };
   render() {
@@ -93,7 +93,7 @@ export class TopInput extends React.Component<any, any> {
 export default class ValidateTypeInput extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
-    this.state = { value: "" };
+    this.state = { value: '' };
   }
 
   onChange = ({ newValue: value }: any) => {
@@ -107,21 +107,21 @@ export default class ValidateTypeInput extends React.Component<any, any> {
           <TopInput
             viewClass="register"
             validateType="top"
-            onChange={onChange("limit")}
+            onChange={onChange('limit')}
           />
         </InputWrapper>
         <InputWrapper>
           <TopInput
             viewClass="register"
             validateType="bottom"
-            onChange={onChange("limit")}
+            onChange={onChange('limit')}
           />
         </InputWrapper>
         <InputWrapper>
           <TopInput
             viewClass="register"
             validateType="inner"
-            onChange={onChange("limit")}
+            onChange={onChange('limit')}
           />
         </InputWrapper>
       </Wrapper>

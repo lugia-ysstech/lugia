@@ -1,6 +1,6 @@
-import React from "react";
-import { Input } from "@lugia/lugia-web";
-import styled from "styled-components";
+import React from 'react';
+import { Input } from '@lugia/lugia-web';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -13,7 +13,7 @@ const onChange = cmpName => (value: any) => {};
 export default class SizeInput extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
-    this.state = { value: "" };
+    this.state = { value: '' };
   }
 
   onChange = ({ newValue: value }: any) => {
@@ -24,13 +24,13 @@ export default class SizeInput extends React.Component<any, any> {
     return (
       <Wrapper>
         <InputWrapper>
-          <Input size={"small"} placeholder={"请填写金额"} />
+          <Input size={'small'} placeholder={'请填写金额'} />
         </InputWrapper>
         <InputWrapper>
-          <Input size={"default"} placeholder={"请填写金额"} />
+          <Input size={'default'} placeholder={'请填写金额'} />
         </InputWrapper>
         <InputWrapper>
-          <Input size={"large"} placeholder={"请填写金额"} />
+          <Input size={'large'} placeholder={'请填写金额'} />
         </InputWrapper>
       </Wrapper>
     );
