@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Steps, Button, Theme } from '@lugia/lugia-web';
+import React from "react";
+import styled from "styled-components";
+import { Steps } from "@lugia/lugia-web";
 const Step = Steps.Step;
 const VWrapper = styled.div`
   margin-left: 150px;
@@ -9,7 +9,7 @@ const VWrapper = styled.div`
 export default class OrientationSteps extends React.Component<any, any> {
   render() {
     return (
-    <div>
+      <div>
         <VWrapper>
           <Steps orientation="vertical" stepType="simple" size="normal">
             <Step title="step1" stepStatus="finish" content="content1" />
@@ -25,7 +25,7 @@ export default class OrientationSteps extends React.Component<any, any> {
           </Steps>
         </VWrapper>
         <VWrapper>
-          <Steps orientation="vertical" stepType={'dot'}>
+          <Steps orientation="vertical" stepType={"dot"}>
             <Step title="step1" stepStatus="finish" />
             <Step title="step2" stepStatus="process" isDashed={true} />
             <Step title="step3" stepStatus="next" isDashed={true} />
