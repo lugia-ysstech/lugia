@@ -1,30 +1,22 @@
-import React from 'react';
-import { TimeLine, Theme, Button, Icon, tabs } from '@lugia/lugia-web';
-import styled from 'styled-components';
-import Widget from '@lugia/lugia-web/dist/consts';
+import React from "react";
+import { TimeLine } from "@lugia/lugia-web";
+import styled from "styled-components";
 const TimeLineItem = TimeLine.TimeLineItem;
 const Wrapper = styled.div`
   display: inline-block;
 `;
 export default class BaseTimeLine extends React.Component<any, any> {
   render() {
-    const view = {
-      [Widget.TimeLine]: {
-        // height: 200,
-      },
-    };
     return (
-      <Theme config={view}>
-          <Wrapper>
-            <TimeLine>
-              <TimeLineItem  time="2018-01-01" />
-              <TimeLineItem time="2018-01-02" />
-              <TimeLineItem time="2018-01-03" />
-              <TimeLineItem  time="2018-01-04" />
-              <TimeLineItem time="2018-01-05" />
-            </TimeLine>
-          </Wrapper>
-      </Theme>
+      <Wrapper>
+        <TimeLine>
+          <TimeLineItem time="2018-01-01" />
+          <TimeLineItem time="2018-01-02" />
+          <TimeLineItem time="2018-01-03" />
+          <TimeLineItem time="2018-01-04" />
+          <TimeLineItem time="2018-01-05" />
+        </TimeLine>
+      </Wrapper>
     );
   }
 }
