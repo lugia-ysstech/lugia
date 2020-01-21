@@ -1,7 +1,7 @@
-import React from 'react';
-import { Input, Icon } from '@lugia/lugia-web';
-import styled from 'styled-components';
-import Widget from '@lugia/lugia-web/dist/consts';
+import React from "react";
+import { Input, Icon } from "@lugia/lugia-web";
+import styled from "styled-components";
+import Widget from "@lugia/lugia-web/dist/consts";
 
 const Wrapper = styled.div`
   display: inline-block;

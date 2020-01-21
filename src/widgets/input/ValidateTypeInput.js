@@ -12,42 +12,6 @@ const InputWrapper = styled.div`
   display: inline-block;
 `;
 const onChange = cmpName => (value: any) => {};
-class ValidateInput extends React.Component<any, any> {
-  constructor(props: any) {
-    super(props);
-  }
-
-  static getDerivedStateFromProps(nextProps: Object, preState: Object) {
-    let { value } = nextProps;
-    const hasValueInprops = 'value' in nextProps;
-    value = fixControlledValue(value);
-    if (!preState) {
-      return {
-        value: hasValueInprops ? value : ''
-      };
-    }
-    if (hasValueInprops) {
-      return { value };
-    }
-  }
-  onChange = ({ newValue: value }: any) => {
-    this.setState({ value });
-    this.props.onChange({ newValue: value });
-  };
-
-  render() {
-    const { validateType } = this.props;
-    const value = this.state.value;
-    const validateStatus = value.indexOf(',') === -1 ? 'success' : 'error';
-    return (
-      <Input
-        onChange={this.onChange}
-        validateType={validateType}
-        validateStatus={validateStatus}
-      />
-    );
-  }
-}
 export class TopInput extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
