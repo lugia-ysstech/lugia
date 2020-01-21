@@ -4,10 +4,10 @@
  *
  */
 
-import * as React from 'react';
-import { Select, Theme } from '@lugia/lugia-web';
-import styled from 'styled-components';
-import Widget from '@lugia/lugia-web/dist/consts/index';
+import * as React from "react";
+import { Select, Theme } from "@lugia/lugia-web";
+import styled from "styled-components";
+import Widget from "@lugia/lugia-web/dist/consts/index";
 
 const SelectWrap = styled.div`
   margin: 10px;
@@ -16,46 +16,53 @@ const SelectWrap = styled.div`
 
 const data = [
   {
-    value: 'lugia-A',
-    text: '杰尼龟',
+    value: "lugia-A",
+    text: "杰尼龟",
     disabled: true
   },
   {
-    value: 'lugia-B',
-    text: '火恐龙'
+    value: "lugia-B",
+    text: "火恐龙"
   },
   {
-    value: 'lugia-C',
-    text: '绿毛虫'
+    value: "lugia-C",
+    text: "绿毛虫"
   },
   {
-    value: 'lugia-D',
-    text: '独角虫'
+    value: "lugia-D",
+    text: "独角虫"
   },
   {
-    value: 'lugia-E',
-    text: '皮卡丘'
+    value: "lugia-E",
+    text: "皮卡丘"
   }
 ];
 export default class LimitSingleSelect extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ['lugia-C', 'lugia-E'],
-      displayValue: ['绿毛虫', '皮卡丘']
+      value: ["lugia-C", "lugia-E"],
+      displayValue: ["绿毛虫", "皮卡丘"]
     };
   }
   render() {
     const config = {
-      [Widget.Select]: { width: 500, autoHeight: true, height: 200 }
+      [Widget.Select]: {
+        Container: {
+          normal: {
+            width: 250,
+            height: 30
+          }
+        }
+      }
     };
     const { value, displayValue } = this.state;
     return (
       <Theme config={config}>
         <SelectWrap>
           <Select
-            valueField={'value'}
-            displayField={'text'}
+            valueField={"value"}
+            displayField={"text"}
             data={data}
             value={value}
             mutliple
