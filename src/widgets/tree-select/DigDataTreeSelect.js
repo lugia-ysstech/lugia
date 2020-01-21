@@ -55,7 +55,16 @@ function getNumberKey() {
 
 export default class DefaultTreeSelect extends React.Component<any, any> {
   render() {
-    const config = { [Widget.TreeSelect]: { width: 300, height: 300 } };
+    const config = {
+      [Widget.TreeSelect]: {
+        Container: {
+          normal: {
+            width: 300,
+            height: 30
+          }
+        }
+      }
+    };
     return (
       <Theme config={config}>
         <TreeSelect
