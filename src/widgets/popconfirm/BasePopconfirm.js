@@ -1,10 +1,9 @@
-import React from 'react';
-import { Popconfirm, Theme, Button } from '@lugia/lugia-web';
-import styled from 'styled-components';
-import Widget from '@lugia/lugia-web/dist/consts';
+import React from "react";
+import { Popconfirm, Theme, Button } from "@lugia/lugia-web";
+import styled from "styled-components";
+import Widget from "@lugia/lugia-web/dist/consts";
 
-const Wrapper = styled.div`
-`;
+const Wrapper = styled.div``;
 const buttonWidth = 80;
 const DirectionButton = styled(Button)`
   width: ${buttonWidth}px;
@@ -37,17 +36,8 @@ const ToolTipVWrapper = styled(ToolTipBaseWrapper)`
   margin-top: 10px;
 `;
 export default class BasePopconfirm extends React.Component<any, any> {
-  constructor(props: any) {
-    super(props);
-    this.state = { value: '' };
-  }
-
-  onChange = ({ newValue: value }: any) => {
-    this.setState({ value });
-  };
-
   render() {
-    const text = '确定删除这个选项吗?';
+    const text = "确定删除这个选项吗?";
     const config = {
       [Widget.Button]: {
         Container: {
@@ -62,7 +52,7 @@ export default class BasePopconfirm extends React.Component<any, any> {
         <Theme config={config}>
           <DirectionButtonButtonTopWrapper>
             <ToolTipHWrapper>
-              <Popconfirm placement="topLeft" title={text} action={'click'}>
+              <Popconfirm placement="topLeft" title={text} action={"click"}>
                 <DirectionButton type="primary">TL</DirectionButton>
               </Popconfirm>
             </ToolTipHWrapper>
