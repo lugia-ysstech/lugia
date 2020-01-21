@@ -1,6 +1,6 @@
-import React from 'react';
-import { Popover, Theme, Button } from '@lugia/lugia-web';
-import styled from 'styled-components';
+import React from "react";
+import { Popover, Button } from "@lugia/lugia-web";
+import styled from "styled-components";
 const Direction = styled(Button)``;
 export default class InnerClosePopover extends React.Component<any, any> {
   state = {
@@ -18,7 +18,7 @@ export default class InnerClosePopover extends React.Component<any, any> {
   };
 
   render() {
-    const description = 'this is description';
+    const description = "this is description";
     return (
       <Popover
         placement="top"
@@ -26,7 +26,7 @@ export default class InnerClosePopover extends React.Component<any, any> {
         action="click"
         visible={this.state.visible}
         onVisibleChange={this.handleVisibleChange}
-        clear={'lugia-icon-reminder_close'}
+        clear={"lugia-icon-reminder_close"}
         description={[<div>{description}</div>]}
         onClearClick={this.hide}
       >
