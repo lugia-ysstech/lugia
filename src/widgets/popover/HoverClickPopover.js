@@ -1,5 +1,5 @@
 import React from 'react';
-import { Popover, Theme, Button } from '@lugia/lugia-web';
+import { Popover, Button } from '@lugia/lugia-web';
 import styled from 'styled-components';
 const Direction = styled(Button)``;
 export default class HoverClickPopover extends React.Component<any, any> {
