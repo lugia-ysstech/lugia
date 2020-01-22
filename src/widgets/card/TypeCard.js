@@ -26,7 +26,7 @@ export default class TypeCard extends React.Component<any, any> {
         },
         CardImage: {
           normal: {
-            width: 160,
+            width: '100%',
             height: 130
           }
         },
@@ -54,7 +54,7 @@ export default class TypeCard extends React.Component<any, any> {
         CardImage: {
           normal: {
             width: 160,
-            height: 140
+            height: '100%'
           }
         }
       }
@@ -70,8 +70,10 @@ export default class TypeCard extends React.Component<any, any> {
         CardAvatar: {
           Container: {
             normal: {
-              width: 80,
-              height: 80
+              margin:{
+                top:20,
+                bottom:20
+              }
             }
           }
         }
@@ -82,17 +84,18 @@ export default class TypeCard extends React.Component<any, any> {
         Container: {
           normal: {
             width: 260,
-            height: 140
+            height: 140,
+            padding:{
+              top:20
+            }
           }
         },
         CardAvatar: {
           Container: {
             normal: {
-              width: 160,
-              height: 100,
-              padding: {
+              margin: {
                 top: 10,
-                left: 10
+                left: 20
               }
             }
           }
