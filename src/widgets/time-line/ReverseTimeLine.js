@@ -1,5 +1,5 @@
 import React from "react";
-import { TimeLine } from "@lugia/lugia-web";
+import { TimeLine ,Button} from "@lugia/lugia-web";
 const TimeLineItem = TimeLine.TimeLineItem;
 export default class ReverseTimeLine extends React.Component<Object, Object> {
   state = {

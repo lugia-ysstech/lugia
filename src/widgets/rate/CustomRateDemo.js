@@ -1,6 +1,5 @@
 import React from 'react';
-import { Rate, Theme } from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts';
+import { Rate } from '@lugia/lugia-web';
 import styled from "styled-components";
 const TitleBox = styled.div`
   font-size: 14px;
@@ -12,24 +11,22 @@ export default class RateDemo extends React.Component<any, any> {
     this.state = {};
   }
   render() {
-    const config = {
-      [Widget.Rate]: { fontSize: '18px' }
-    };
-    const defaultProps2 = {
+
+    const characterProps = {
       count: 5,
       max: 5,
       value: 3.5,
       disabled: false,
       allowHalf: true,
       classify: false,
-      onClick: (e: Object, x: any) => {
-        this.setStateValue('defaultProps2', x.currentValue);
+      onClick: res => {
+        this.setStateValue("characterProps", "value", res.newValue);
       },
-      onChange: (e: Object, x: any) => {
-        this.setStateValue('defaultProps2', x.currentValue);
+      onChange: res => {
+        this.setStateValue("characterProps", "value", res.newValue);
       }
     };
-    const defaultProps4 = {
+    const lowProps = {
       count: 5,
       max: 5,
       value: 2,
@@ -41,15 +38,14 @@ export default class RateDemo extends React.Component<any, any> {
         danger: 'lugia-icon-financial_sad',
         amazed: 'lugia-icon-financial_smile'
       },
-      className: 'cccc',
-      onClick: (e: Object, x: any) => {
-        this.setStateValue('defaultProps4', x.currentValue);
+      onClick: res => {
+        this.setStateValue("lowProps", "value", res.newValue);
       },
-      onChange: (e: Object, x: any) => {
-        this.setStateValue('defaultProps4', x.currentValue);
+      onChange: res => {
+        this.setStateValue("lowProps", "value", res.newValue);
       }
     };
-    const defaultProps5 = {
+    const defaultProps = {
       count: 5,
       max: 5,
       value: 3,
@@ -61,14 +57,14 @@ export default class RateDemo extends React.Component<any, any> {
         danger: 'lugia-icon-financial_sad',
         amazed: 'lugia-icon-financial_smile'
       },
-      onClick: (e: Object, x: any) => {
-        this.setStateValue('defaultProps5', x.currentValue);
+      onClick: res => {
+        this.setStateValue("defaultProps", "value", res.newValue);
       },
-      onChange: (e: Object, x: any) => {
-        this.setStateValue('defaultProps5', x.currentValue);
+      onChange: res => {
+        this.setStateValue("defaultProps", "value", res.newValue);
       }
     };
-    const defaultProps6 = {
+    const highProps = {
       count: 5,
       max: 5,
       value: 4,
@@ -80,25 +76,25 @@ export default class RateDemo extends React.Component<any, any> {
         danger: 'lugia-icon-financial_sad',
         amazed: 'lugia-icon-financial_smile'
       },
-      onClick: (e: Object, x: any) => {
-        this.setStateValue('defaultProps6', x.currentValue);
+      onClick: res => {
+        this.setStateValue("highProps", "value", res.newValue);
       },
-      onChange: (e: Object, x: any) => {
-        this.setStateValue('defaultProps6', x.currentValue);
+      onChange: res => {
+        this.setStateValue("highProps", "value", res.newValue);
       }
     };
     return (
       <div>
-        <Theme config={config}>
+
           <TitleBox>文字评分</TitleBox>
-          <Rate {...defaultProps2} character="好" />
+          <Rate {...characterProps} character="好" />
           <TitleBox>分级评分 低分值样式</TitleBox>
-          <Rate {...defaultProps4} />
+          <Rate {...lowProps} />
           <TitleBox>分级评分 正常样式</TitleBox>
-          <Rate {...defaultProps5} />
+          <Rate {...defaultProps} />
           <TitleBox>分级评分  高分值样式</TitleBox>
-          <Rate {...defaultProps6} />
-        </Theme>
+          <Rate {...highProps} />
+
       </div>
 
     );
