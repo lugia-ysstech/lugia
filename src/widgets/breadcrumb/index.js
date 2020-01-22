@@ -74,7 +74,7 @@ export default PageNavHoC(
                 title={"routes生成Breadcrumb"}
                 titleID={"breadcrumb-3"}
                 code={
-                  <code>{`/**\n * create by szfeng\n */\nimport React from \'react\';\nimport { Breadcrumb } from \'@lugia/lugia-web\';\n\nconst routes = [\n  {\n    path: \'index\',\n    title: \'首页\'\n  },\n  {\n    path: \'first\',\n    title: \'一级面包屑\'\n  },\n  {\n    path: \'second:id\',\n    title: \'二级面包屑:id\'\n  },\n  {\n    path: \'third\',\n    title: \'四级面包屑\'\n  }\n];\n\nexport default class RoutesBreadcrumb extends React.Component<any, any> {\n  render() {\n    return <Breadcrumb routes={routes} params={{ id: \'params\' }} />;\n  }\n}\n`}</code>
+                  <code>{`/**\n * create by szfeng\n */\nimport React from \"react\";\nimport { Breadcrumb } from \"@lugia/lugia-web\";\n\nconst routes = [\n  {\n    path: \"index\",\n    title: \"首页\"\n  },\n  {\n    path: \"first\",\n    title: \"一级面包屑\",\n    icons: {\n      prefixIconClass: \"lugia-icon-logo_chrome\",\n      suffixIconClass: \"lugia-icon-logo_dropbox\"\n    }\n  },\n  {\n    path: \"second:id\",\n    title: \"二级面包屑:id\"\n  },\n  {\n    path: \"third\",\n    title: \"四级面包屑\"\n  }\n];\n\nexport default class RoutesBreadcrumb extends React.Component<any, any> {\n  render() {\n    return <Breadcrumb routes={routes} params={{ id: \"params\" }} />;\n  }\n}\n`}</code>
                 }
                 desc={"通过传入routes数据使用,可以通过params传入参数"}
                 demo={<RoutesBreadcrumb />}

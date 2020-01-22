@@ -10,7 +10,6 @@ import Title from "../code-box/Title";
 const BasicDemo = require("./BasicDemo").default;
 const LimitedDemo = require("./LimitedDemo").default;
 const SearchDemo = require("./SearchDemo").default;
-const ThemeDemo = require("./ThemeDemo").default;
 const TreeDemo = require("./TreeDemo").default;
 const LimitedTreeDemo = require("./LimitedTreeDemo").default;
 const DisplayTreeDemo = require("./DisplayTreeDemo").default;
@@ -69,17 +68,8 @@ export default PageNavHoC(
                 demo={<SearchDemo />}
               ></Demo>
               <Demo
-                title={"可配置 Theme"}
-                titleID={"transfer-3"}
-                code={
-                  <code>{`import React from \'react\';\nimport {Transfer, Theme} from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts/index\';\n\nconst data = [\n    { text: \'选项1\', value: \'选项1\', disabled: false },\n    { text: \'选项2\', value: \'选项2\', disabled: false },\n    { text: \'选项3\', value: \'选项3\', disabled: false },\n    { text: \'选项4\', value: \'选项4\', disabled: false },\n    { text: \'选项5\', value: \'选项5\', disabled: true },\n    { text: \'选项6\', value: \'选项6\', disabled: false },\n    { text: \'选项7\', value: \'选项7\', disabled: false },\n    { text: \'选项8\', value: \'选项8\', disabled: false },\n    { text: \'选项9\', value: \'选项9\', disabled: false },\n    { text: \'选项0\', value: \'选项0\', disabled: true },\n    { text: \'选项10\', value: \'选项10\', disabled: true },\n];\n\nexport default class TransferDemo extends React.Component {\n    render() {\n        const TransferView = {\n            [Widget.Transfer]: {\n                height: 400,\n            },\n        };\n        return (\n            <div>\n                <Theme config={TransferView}>\n                    <Transfer\n                        data={data}\n                        showSearch\n                        defaultSourceSelectedKeys={[\'选项5\']}\n                        defaultTargetSelectedKeys={[\'选项2\']}\n                        defaultValue={[\'选项2\', \'选项3\', \'选项4\']}\n                    />\n                </Theme>\n            </div>\n        );\n    }\n}\n`}</code>
-                }
-                desc={"穿梭框配置 Theme，可配置 height 来决定面板的高度"}
-                demo={<ThemeDemo />}
-              ></Demo>
-              <Demo
                 title={"树形穿梭框"}
-                titleID={"transfer-4"}
+                titleID={"transfer-3"}
                 code={
                   <code>{`import React from \'react\';\nimport {Transfer} from \'@lugia/lugia-web\';\n\nconst treeData = [\n    { text: \'1\', value: \'1\' },\n    {\n        text: \'2\',\n        value: \'2\',\n        children: [\n            {\n                text: \'2.1\',\n                value: \'2.1\',\n                children: [{ text: \'2.1.1\', value: \'2.1.1\' }, { text: \'2.1.2\', value: \'2.1.2\' }],\n            },\n            {\n                text: \'2.2\',\n                value: \'2.2\',\n                children: [{ text: \'2.2.1\', value: \'2.2.1\' }, { text: \'2.2.2\', value: \'2.2.2\' }],\n            },\n        ],\n    },\n];\n\nexport default class TransferDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <Transfer\n                    data={treeData}\n                    type=\"tree\"\n                    showSearch\n                />\n            </div>\n        );\n    }\n}\n`}</code>
                 }
@@ -88,7 +78,7 @@ export default PageNavHoC(
               ></Demo>
               <Demo
                 title={"受限的树形穿梭框"}
-                titleID={"transfer-5"}
+                titleID={"transfer-4"}
                 code={
                   <code>{`import React from \'react\';\nimport {Transfer} from \'@lugia/lugia-web\';\n\nconst treeData = [\n    { text: \'1\', value: \'1\' },\n    {\n        text: \'2\',\n        value: \'2\',\n        children: [\n            {\n                text: \'2.1\',\n                value: \'2.1\',\n                children: [{ text: \'2.1.1\', value: \'2.1.1\' }, { text: \'2.1.2\', value: \'2.1.2\' }],\n            },\n            {\n                text: \'2.2\',\n                value: \'2.2\',\n                children: [{ text: \'2.2.1\', value: \'2.2.1\' }, { text: \'2.2.2\', value: \'2.2.2\' }],\n            },\n        ],\n    },\n];\n\nexport default class TransferDemo extends React.Component {\n    render() {\n        return (\n            <Transfer\n                data={treeData}\n                type=\"tree\"\n                sourceSelectedKeys={[\'2.2.1\']}\n                targetSelectedKeys={[\'2.1.1\']}\n                value={[\'2.1.1\']}\n                showSearch\n            />\n        );\n    }\n}\n`}</code>
                 }
@@ -97,7 +87,7 @@ export default PageNavHoC(
               ></Demo>
               <Demo
                 title={"树形穿梭框取消项"}
-                titleID={"transfer-6"}
+                titleID={"transfer-5"}
                 code={
                   <code>{`import React from \'react\';\nimport {Transfer} from \'@lugia/lugia-web\';\n\nconst treeData = [\n    { text: \'1\', value: \'1\' },\n    {\n        text: \'2\',\n        value: \'2\',\n        children: [\n            {\n                text: \'2.1\',\n                value: \'2.1\',\n                children: [{ text: \'2.1.1\', value: \'2.1.1\' }, { text: \'2.1.2\', value: \'2.1.2\' }],\n            },\n            {\n                text: \'2.2\',\n                value: \'2.2\',\n                children: [{ text: \'2.2.1\', value: \'2.2.1\' }, { text: \'2.2.2\', value: \'2.2.2\' }],\n            },\n        ],\n    },\n];\n\nexport default class TransferDemo extends React.Component {\n    render() {\n        return (\n            <Transfer\n                data={treeData}\n                type=\"tree\"\n                defaultSourceSelectedKeys={[\'2.2.1\']}\n                defaultTargetSelectedKeys={[\'2.1.1\']}\n                defaultValue={[\'3.1\', \'3.2\', \'2.1.1\']}\n                showSearch\n                defaultDisplayValue={[\'dis1\', \'dis2\', \'2.1.1\']}\n            />\n        );\n    }\n}\n`}</code>
                 }
@@ -106,9 +96,9 @@ export default PageNavHoC(
               ></Demo>
               <Demo
                 title={"树形穿梭框Theme"}
-                titleID={"transfer-7"}
+                titleID={"transfer-6"}
                 code={
-                  <code>{`import React from \'react\';\nimport {Transfer, Theme} from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts/index\';\n\nconst treeData = [\n    { text: \'1\', value: \'1\' },\n    {\n        text: \'2\',\n        value: \'2\',\n        children: [\n            {\n                text: \'2.1\',\n                value: \'2.1\',\n                children: [{ text: \'2.1.1\', value: \'2.1.1\' }, { text: \'2.1.2\', value: \'2.1.2\' }],\n            },\n            {\n                text: \'2.2\',\n                value: \'2.2\',\n                children: [{ text: \'2.2.1\', value: \'2.2.1\' }, { text: \'2.2.2\', value: \'2.2.2\' }],\n            },\n        ],\n    },\n];\n\nexport default class TransferDemo extends React.Component {\n    render() {\n        const TransferView = {\n            [Widget.Transfer]: {\n                height: 400,\n            },\n        };\n        return (\n            <div>\n                <Theme config={TransferView}>\n                    <Transfer\n                        data={treeData}\n                        type=\"tree\"\n                        defaultSourceSelectedKeys={[\'2.2.1\']}\n                        defaultTargetSelectedKeys={[\'2.1.1\']}\n                        defaultValue={[\'3.1\', \'3.2\', \'2.1.1\']}\n                        showSearch\n                        defaultDisplayValue={[\'dis1\', \'dis2\', \'2.1.1\']}\n                    />\n                </Theme>\n            </div>\n        );\n    }\n}\n`}</code>
+                  <code>{`import React from \"react\";\nimport { Transfer, Theme } from \"@lugia/lugia-web\";\nimport Widget from \"@lugia/lugia-web/dist/consts/index\";\n\nconst treeData = [\n  { text: \"1\", value: \"1\" },\n  {\n    text: \"2\",\n    value: \"2\",\n    children: [\n      {\n        text: \"2.1\",\n        value: \"2.1\",\n        children: [\n          { text: \"2.1.1\", value: \"2.1.1\" },\n          { text: \"2.1.2\", value: \"2.1.2\" }\n        ]\n      },\n      {\n        text: \"2.2\",\n        value: \"2.2\",\n        children: [\n          { text: \"2.2.1\", value: \"2.2.1\" },\n          { text: \"2.2.2\", value: \"2.2.2\" }\n        ]\n      }\n    ]\n  }\n];\n\nexport default class TransferDemo extends React.Component {\n  render() {\n    const TransferView = {\n      [Widget.Transfer]: {\n        TransferWrap: {\n          normal: {\n            height: 400\n          }\n        }\n      }\n    };\n    return (\n      <div>\n        <Theme config={TransferView}>\n          <Transfer\n            data={treeData}\n            type=\"tree\"\n            defaultSourceSelectedKeys={[\"2.2.1\"]}\n            defaultTargetSelectedKeys={[\"2.1.1\"]}\n            defaultValue={[\"3.1\", \"3.2\", \"2.1.1\"]}\n            showSearch\n            defaultDisplayValue={[\"dis1\", \"dis2\", \"2.1.1\"]}\n          />\n        </Theme>\n      </div>\n    );\n  }\n}\n`}</code>
                 }
                 desc={"树形穿梭框配置 Theme，可配置 height 来决定面板的高度"}
                 demo={<TreeTreeDemo />}
@@ -127,11 +117,10 @@ export default PageNavHoC(
                 <Link title={"基本"} href={"#transfer-0"} />
                 <Link title={"受控的穿梭框"} href={"#transfer-1"} />
                 <Link title={"带搜索框"} href={"#transfer-2"} />
-                <Link title={"可配置 Theme"} href={"#transfer-3"} />
-                <Link title={"树形穿梭框"} href={"#transfer-4"} />
-                <Link title={"受限的树形穿梭框"} href={"#transfer-5"} />
-                <Link title={"树形穿梭框取消项"} href={"#transfer-6"} />
-                <Link title={"树形穿梭框Theme"} href={"#transfer-7"} />
+                <Link title={"树形穿梭框"} href={"#transfer-3"} />
+                <Link title={"受限的树形穿梭框"} href={"#transfer-4"} />
+                <Link title={"树形穿梭框取消项"} href={"#transfer-5"} />
+                <Link title={"树形穿梭框Theme"} href={"#transfer-6"} />
               </Anchor>
             </Col>
           )}

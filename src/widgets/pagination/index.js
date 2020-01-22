@@ -46,7 +46,7 @@ export default PageNavHoC(
                 title={"基本用法"}
                 titleID={"pagination-0"}
                 code={
-                  <code>{`import React from \'react\';\nimport {Pagination} from \'@lugia/lugia-web\';\n\nexport default class PaginationDemo extends React.Component {\n  render() {\n    return (\n      <Pagination defaultCurrent={1} total={50} />\n    );\n  }\n}\n`}</code>
+                  <code>{`import React from \"react\";\nimport { Pagination } from \"@lugia/lugia-web\";\n\nexport default class PaginationDemo extends React.Component {\n  render() {\n    return <Pagination defaultCurrent={1} total={50} />;\n  }\n}\n`}</code>
                 }
                 desc={"最简单的用法"}
                 demo={<BasicDemo />}
@@ -55,7 +55,7 @@ export default PageNavHoC(
                 title={"更多分页"}
                 titleID={"pagination-1"}
                 code={
-                  <code>{`import React from \'react\';\nimport {Pagination} from \'@lugia/lugia-web\';\n\nexport default class PaginationDemo extends React.Component {\n  render() {\n    return (\n      <Pagination defaultCurrent={6} total={500} />\n    );\n  }\n}\n`}</code>
+                  <code>{`import React from \"react\";\nimport { Pagination } from \"@lugia/lugia-web\";\n\nexport default class PaginationDemo extends React.Component {\n  render() {\n    return <Pagination defaultCurrent={6} total={500} />;\n  }\n}\n`}</code>
                 }
                 desc={"更多分页"}
                 demo={<MoreTotalDemo />}
@@ -64,7 +64,7 @@ export default PageNavHoC(
                 title={"改变每页条数"}
                 titleID={"pagination-2"}
                 code={
-                  <code>{`import React from \'react\';\nimport {Pagination} from \'@lugia/lugia-web\';\n\nexport default class PaginationDemo extends React.Component {\n  onShowSizeChange = (current, pageSize) => {\n    console.log(current, pageSize);\n  };\n  render() {\n    return (\n      <Pagination showSizeChanger onShowSizeChange={this.onShowSizeChange} defaultCurrent={3} total={500} />\n    );\n  }\n}\n`}</code>
+                  <code>{`import React from \"react\";\nimport { Pagination } from \"@lugia/lugia-web\";\n\nexport default class PaginationDemo extends React.Component {\n  onShowSizeChange = (current, pageSize) => {\n    console.log(current, pageSize);\n  };\n  render() {\n    return (\n      <Pagination\n        showSizeChanger\n        onShowSizeChange={this.onShowSizeChange}\n        defaultCurrent={3}\n        total={500}\n      />\n    );\n  }\n}\n`}</code>
                 }
                 desc={"显示改变每页条数"}
                 demo={<SizeChangeDemo />}
@@ -73,7 +73,7 @@ export default PageNavHoC(
                 title={"快速跳转"}
                 titleID={"pagination-3"}
                 code={
-                  <code>{`import React from \'react\';\nimport {Pagination} from \'@lugia/lugia-web\';\n\nexport default class PaginationDemo extends React.Component {\n  onChange = pageNumber => {\n    console.log(pageNumber);\n  };\n  render() {\n    return (\n      <Pagination showQuickJumper defaultCurrent={2} total={500} onChange={this.onChange} />\n    );\n  }\n}\n`}</code>
+                  <code>{`import React from \"react\";\nimport { Pagination } from \"@lugia/lugia-web\";\n\nexport default class PaginationDemo extends React.Component {\n  onChange = pageNumber => {\n    console.log(pageNumber);\n  };\n  render() {\n    return (\n      <Pagination\n        showQuickJumper\n        defaultCurrent={2}\n        total={500}\n        onChange={this.onChange}\n      />\n    );\n  }\n}\n`}</code>
                 }
                 desc={"快速跳转至某页"}
                 demo={<JumperDemo />}
@@ -82,7 +82,7 @@ export default PageNavHoC(
                 title={"简洁分页"}
                 titleID={"pagination-4"}
                 code={
-                  <code>{`import React from \'react\';\nimport {Pagination} from \'@lugia/lugia-web\';\n\nexport default class PaginationDemo extends React.Component {\n  render() {\n    return (\n      <Pagination simple defaultCurrent={2} total={50} />\n    );\n  }\n}\n`}</code>
+                  <code>{`import React from \"react\";\nimport { Pagination } from \"@lugia/lugia-web\";\n\nexport default class PaginationDemo extends React.Component {\n  render() {\n    return <Pagination simple defaultCurrent={2} total={50} />;\n  }\n}\n`}</code>
                 }
                 desc={"更加简洁的分页"}
                 demo={<SimpleDemo />}

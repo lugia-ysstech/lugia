@@ -14,7 +14,6 @@ const CustomClosableDemo = require("./CustomClosableDemo").default;
 const DescType = require("./DescType").default;
 const IconDemo = require("./IconDemo").default;
 const CustomIconDemo = require("./CustomIconDemo").default;
-const ThemeDemo = require("./ThemeDemo").default;
 
 const { Link } = Anchor;
 const { Row, Col } = Grid;
@@ -108,15 +107,6 @@ export default PageNavHoC(
                 desc={"自定义图标的警告提示"}
                 demo={<CustomIconDemo />}
               ></Demo>
-              <Demo
-                title={"可配置theme属性"}
-                titleID={"alert-7"}
-                code={
-                  <code>{`import * as React from \'react\';\nimport {Alert, Theme} from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts/index\';\n\nexport default class AlertDemo extends React.Component {\n  render() {\n    const view = {\n      [Widget.Alert]: {\n        width: 200,\n        color: \'#ffa500\',\n      },\n    };\n    return (\n      <div>\n        <Theme config={view}>\n          <Alert message=\"Alert-info\" />\n        </Theme>\n        <br />\n        <Theme config={view}>\n          <Alert showIcon message=\"Alert-info\" />\n        </Theme>\n        <br />\n        <Theme config={view}>\n          <Alert showIcon closable closeText=\"ok\" message=\"Alert-info\" />\n        </Theme>\n      </div>\n    );\n  }\n}\n`}</code>
-                }
-                desc={"根据需要单独配置警告提示样式，可配置 width color"}
-                demo={<ThemeDemo />}
-              ></Demo>
               <EditTables dataSource={ALERT} />
               <FooterNav prev={prev} next={next} />
             </div>
@@ -135,7 +125,6 @@ export default PageNavHoC(
                 <Link title={"辅助性文字介绍"} href={"#alert-4"} />
                 <Link title={"带图标"} href={"#alert-5"} />
                 <Link title={"自定义图标"} href={"#alert-6"} />
-                <Link title={"可配置theme属性"} href={"#alert-7"} />
               </Anchor>
             </Col>
           )}

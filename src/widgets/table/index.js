@@ -6,12 +6,14 @@ import PageNavHoC from "../../common/PageNavHoC";
 import widgetrouter from "../../router/widgetrouter";
 import TABLE from "@lugia/lugia-web/dist/table/lugia.table.zh-CN.json";
 import COLUMN from "@lugia/lugia-web/dist/table/lugia.column.zh-CN.json";
+import SELECTOPTIONS from "@lugia/lugia-web/dist/table/lugia.selectOptions.zh-CN.json";
 import Demo from "../code-box";
 import Title from "../code-box/Title";
 const BasicDemo = require("./BasicDemo").default;
 const ExpandedRowRenderDemo = require("./ExpandedRowRenderDemo").default;
 const MergeDemo = require("./MergeDemo").default;
 const TreeDemo = require("./TreeDemo").default;
+const CheckDemo = require("./CheckDemo").default;
 
 const { Link } = Anchor;
 const { Row, Col } = Grid;
@@ -78,8 +80,18 @@ export default PageNavHoC(
                 }
                 demo={<TreeDemo />}
               ></Demo>
+              <Demo
+                title={"有选择项的 Table"}
+                titleID={"table-4"}
+                code={
+                  <code>{`import * as React from \"react\";\nimport { Table } from \"@lugia/lugia-web\";\n\nconst columns = [\n  {\n    title: \"Name\",\n    dataIndex: \"name\",\n    key: \"name\"\n  },\n  {\n    title: \"Age\",\n    dataIndex: \"age\",\n    key: \"age\"\n  },\n  {\n    title: \"Address\",\n    dataIndex: \"address\",\n    key: \"address\"\n  },\n  {\n    title: \"Operations\",\n    dataIndex: \"\",\n    key: \"operatio ns\",\n    render: () => <a href=\"#\">Delete</a>\n  }\n];\n\nconst data = [\n  { name: \"Jack\", age: 28, address: \"some where\", key: \"1\" },\n  { name: \"Rose\", age: 36, address: \"some where\", key: \"2\" },\n  { name: \"Rook\", age: 22, address: \"some where\", key: \"3\" },\n  { name: \"Lise\", age: 33, address: \"some where\", key: \"4\" }\n];\n\nexport default class TableDemo extends React.Component {\n  constructor() {\n    super();\n    this.state = {\n      selectRowKeys: [\"1\"]\n    };\n  }\n\n  selectChange = (selectRowKeys: string, records: Object) => {\n    console.log(\"selectRowKeys\", selectRowKeys, \"records\", records);\n    this.setState({\n      selectRowKeys\n    });\n  };\n  render() {\n    return (\n      <div>\n        <Table\n          columns={columns}\n          data={data}\n          selectOptions={{\n            onChange: this.selectChange,\n            selectRowKeys: this.state.selectRowKeys,\n            setCheckboxProps(record) {\n              return { disabled: record.name === \"Jack\" };\n            },\n            width: 60\n          }}\n          expandedRowRender={record => <p>{record.name}</p>}\n        />\n      </div>\n    );\n  }\n}\n`}</code>
+                }
+                desc={"有选择项的 Table，可以获取 选中行的keys"}
+                demo={<CheckDemo />}
+              ></Demo>
               <EditTables dataSource={TABLE} />
               <EditTables dataSource={COLUMN} />
+              <EditTables dataSource={SELECTOPTIONS} />
               <FooterNav prev={prev} next={next} />
             </div>
           </Col>
@@ -94,6 +106,7 @@ export default PageNavHoC(
                 <Link title={"可展开的Table"} href={"#table-1"} />
                 <Link title={"可合并的Table"} href={"#table-2"} />
                 <Link title={"树形数据的 Table"} href={"#table-3"} />
+                <Link title={"有选择项的 Table"} href={"#table-4"} />
               </Anchor>
             </Col>
           )}
