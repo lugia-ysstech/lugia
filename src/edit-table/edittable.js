@@ -26,10 +26,16 @@ const objectToArray = (obj: Object) => {
 };
 
 
-const getEventProps = (args: Object) => {
+const getEventProps = (args: Object,propsType:Object) => {
+
   const result = [];
   args.forEach(item => {
-    result.push(item.name + ' : ' + item.type + ' (' + item.desc + ')');
+    const {type} = item;
+    let resType = '';
+    if(type in propsType){
+      resType = propsType[type].toString();
+    }
+    result.push(item.name + ' : ' + type + ':'+resType + ' (' + item.desc + ')');
   });
   return result;
 };
@@ -42,14 +48,16 @@ const getEventPropsElement = (arr: Array<string>) => {
 
 const getDefaultValue = (val: any) => {
   if (!val || val === 'undefined' || val === 'null') return '——';
-  if(Array.isArray(val)){
+  if(Array.isArray(val) || typeof val !== 'string'){
     return JSON.stringify(val);
   }
   return val.toString();
 };
 
 const getPropsType = (type: any,propsType:Object) => {
-  if(!propsType || !(type in propsType)) return type;
+  if(!propsType || !(type in propsType)) {
+    return type;
+  }
   let data = propsType[type];
   let resArray = data;
   if(!Array.isArray(data)){
@@ -117,7 +125,7 @@ class Element extends React.Component<PropsType, StateType> {
                   <Td>{item.name}</Td>
                   <Td width={320}>{item.desc}</Td>
                   <Td>{getPropsType(item.type,propsType) || 'Function'}</Td>
-                  <Td>{item.args ? getEventPropsElement(getEventProps(item.args)) : getDefaultValue(item.propsDefaultValue)}</Td>
+                  <Td>{item.args ? getEventPropsElement(getEventProps(item.args,propsType)) : getDefaultValue(item.propsDefaultValue)}</Td>
                 </Tr>
               );
             })}
