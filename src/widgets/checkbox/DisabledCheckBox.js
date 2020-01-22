@@ -6,6 +6,7 @@ export default class CheckBoxDemo extends React.Component {
         return (
             <div>
                 <Checkbox disabled>CheckBox</Checkbox>
+                <br/>
                 <Checkbox checked disabled>
                     CheckBox
                 </Checkbox>

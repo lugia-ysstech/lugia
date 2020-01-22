@@ -1,6 +1,5 @@
 import React from 'react';
-import { Rate, Theme } from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts';
+import { Rate} from '@lugia/lugia-web';
 import styled from 'styled-components';
 
 const TextBox = styled.span`
@@ -11,12 +10,9 @@ const TextBox = styled.span`
 export default class RateDemo extends React.Component<any, any> {
   constructor(props: Object) {
     super(props);
-    this.state = {config:3.5};
+    this.state = {value:3.5};
   }
   render() {
-    const rate = {
-      [Widget.Rate]: { fontSize: '18px' }
-    };
     const config = {
       count: 5,
       max: 5,
@@ -24,17 +20,18 @@ export default class RateDemo extends React.Component<any, any> {
       disabled: true,
       allowHalf: true,
       className: 'cccc',
-      onClick: (e: Object, x: any) => {},
-      onChange: (e: Object, x: any) => {
-        this.setStateValue('config', x.currentValue);
+      onClick: res => {
+        this.setStateValue("value",  res.newValue);
+      },
+      onChange: res => {
+        this.setStateValue("value", res.newValue);
       }
     };
+    const {value} = this.state;
     return (
       <div>
-        <Theme config={rate}>
           <Rate {...config} character="好" />
-          <TextBox>{this.state.config} 颗星</TextBox>
-        </Theme>
+          <TextBox>{value} 颗星</TextBox>
       </div>
     );
   }

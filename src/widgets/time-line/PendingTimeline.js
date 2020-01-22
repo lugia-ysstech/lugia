@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { TimeLine} from "@lugia/lugia-web";
+import { TimeLine, Icon} from "@lugia/lugia-web";
 const TimeLineItem = TimeLine.TimeLineItem;
 
 const Wrapper = styled.div`
