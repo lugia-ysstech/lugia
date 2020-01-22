@@ -10,14 +10,11 @@ import Title from "../code-box/Title";
 const BasicDemo = require("./BasicDemo").default;
 const SmallDemo = require("./SmallDemo").default;
 const InsideDemo = require("./InsideDemo").default;
-const ThemeLineDemo = require("./ThemeLineDemo").default;
 const ChangeLineDemo = require("./ChangeLineDemo").default;
 const CircleDemo = require("./CircleDemo").default;
 const CircleSmallDemo = require("./CircleSmallDemo").default;
 const ChangeCircleDemo = require("./ChangeCircleDemo").default;
-const ThemeCircleDemo = require("./ThemeCircleDemo").default;
 const DashboardDemo = require("./DashboardDemo").default;
-const ThemeDashboardDemo = require("./ThemeDashboardDemo").default;
 
 const { Link } = Anchor;
 const { Row, Col } = Grid;
@@ -76,17 +73,8 @@ export default PageNavHoC(
                 demo={<InsideDemo />}
               ></Demo>
               <Demo
-                title={"配置主题"}
-                titleID={"progress-3"}
-                code={
-                  <code>{`import React from \'react\';\nimport {Progress, Theme} from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts/index\';\n\nexport default class ProgressDemo extends React.Component {\n    render() {\n        const view = {\n            [Widget.Progress]: {\n                color: \'red\',\n                width: 200,\n                height: 18,\n            },\n        };\n        return (\n            <div>\n                <Theme config={view}>\n                    <Progress percent={30} showType=\"inside\" />\n                </Theme>\n                <br/>\n                <Theme config={view}>\n                    <Progress percent={30} />\n                </Theme>\n            </div>\n        );\n    }\n}\n`}</code>
-                }
-                desc={"可配置主题的线性进度条，可配置 color width height"}
-                demo={<ThemeLineDemo />}
-              ></Demo>
-              <Demo
                 title={"动态展示"}
-                titleID={"progress-4"}
+                titleID={"progress-3"}
                 code={
                   <code>{`import React from \'react\';\nimport {Progress, Button} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    constructor() {\n        super();\n        this.state = {\n            percent: 30,\n        };\n    }\n    handleClick = type => {\n        let res = this.state.percent;\n        if (type === \'add\') {\n            res += 10;\n            if( res>100 ){\n              res = 100;\n            }\n        } else {\n            res -= 10;\n            if( res < 0){\n              res = 0;\n            }\n        }\n        this.setState({\n            percent: res,\n        });\n    };\n    render() {\n        return (\n            <div>\n                <Progress percent={this.state.percent} status=\"active\" />\n                <br/>\n                <Button onClick={() => this.handleClick(\'add\')}>+10</Button>&nbsp;&nbsp;\n                <Button onClick={() => this.handleClick(\'sub\')}>-10</Button>\n            </div>\n        );\n    }\n}\n`}</code>
                 }
@@ -95,7 +83,7 @@ export default PageNavHoC(
               ></Demo>
               <Demo
                 title={"圆形进度条"}
-                titleID={"progress-5"}
+                titleID={"progress-4"}
                 code={
                   <code>{`import React from \'react\';\nimport {Progress} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <Progress type=\"circle\" percent={0} />\n                <br/>\n                <Progress type=\"circle\" status=\"error\" percent={50} />\n                <br/>\n                <Progress type=\"circle\" status=\"success\" percent={100} />\n            </div>\n        );\n    }\n}\n`}</code>
                 }
@@ -104,7 +92,7 @@ export default PageNavHoC(
               ></Demo>
               <Demo
                 title={"小型圆形进度条"}
-                titleID={"progress-6"}
+                titleID={"progress-5"}
                 code={
                   <code>{`import React from \'react\';\nimport {Progress} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <Progress type=\"circle\" size=\"small\" percent={0} />\n                <br/>\n                <Progress type=\"circle\" size=\"small\" status=\"error\" percent={50} />\n                <br/>\n                <Progress type=\"circle\" size=\"small\" status=\"success\" percent={100} />\n            </div>\n        );\n    }\n}\n`}</code>
                 }
@@ -113,7 +101,7 @@ export default PageNavHoC(
               ></Demo>
               <Demo
                 title={"小型圆形进度条"}
-                titleID={"progress-7"}
+                titleID={"progress-6"}
                 code={
                   <code>{`import React from \'react\';\nimport {Progress, Button} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    constructor() {\n        super();\n        this.state = {\n            percent: 30,\n        };\n    }\n    handleClick = type => {\n        let res = this.state.percent;\n        if (type === \'add\') {\n            res += 10;\n            if( res>100 ){\n              res = 100;\n            }\n        } else {\n            res -= 10;\n            if( res < 0){\n              res = 0;\n            }\n        }\n        this.setState({\n            percent: res,\n        });\n    };\n    render() {\n        return (\n            <div>\n                <Progress type=\"circle\" percent={this.state.percent} />\n                <br/>\n                <Button onClick={() => this.handleClick(\'add\')}>+10</Button>&nbsp;\n                <Button onClick={() => this.handleClick(\'sub\')}>-10</Button>\n            </div>\n        );\n    }\n}\n`}</code>
                 }
@@ -121,31 +109,13 @@ export default PageNavHoC(
                 demo={<ChangeCircleDemo />}
               ></Demo>
               <Demo
-                title={"圆形进度条配置主题"}
-                titleID={"progress-8"}
-                code={
-                  <code>{`import React from \'react\';\nimport {Progress, Theme} from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts/index\';\n\nexport default class ProgressDemo extends React.Component {\n\n    render() {\n        const CircleView = {\n            [Widget.Progress]: {\n                color: \'red\',\n            },\n        };\n        return (\n            <div>\n                <Theme config={CircleView}>\n                    <Progress type=\"circle\" percent={30} />\n                </Theme>\n            </div>\n        );\n    }\n}\n`}</code>
-                }
-                desc={"可配置主题圆形进度条，可配置 color"}
-                demo={<ThemeCircleDemo />}
-              ></Demo>
-              <Demo
                 title={"仪表盘"}
-                titleID={"progress-9"}
+                titleID={"progress-7"}
                 code={
                   <code>{`import React from \'react\';\nimport {Progress} from \'@lugia/lugia-web\';\n\nexport default class ProgressDemo extends React.Component {\n    render() {\n        return (\n            <div>\n                <Progress type=\"dashboard\" percent={50} />\n                <br/>\n                <Progress type=\"dashboard\" percent={100} />\n                <br/>\n                <Progress type=\"dashboard\" status=\"error\" percent={40} />\n                <br/>\n                <Progress type=\"dashboard\" status=\"success\" percent={80} />\n            </div>\n        );\n    }\n}\n`}</code>
                 }
                 desc={"仪表盘样式的进度条"}
                 demo={<DashboardDemo />}
-              ></Demo>
-              <Demo
-                title={"仪表盘主题"}
-                titleID={"progress-10"}
-                code={
-                  <code>{`import React from \'react\';\nimport {Progress, Theme} from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts/index\';\n\nexport default class ProgressDemo extends React.Component {\n\n    render() {\n        const CircleView = {\n            [Widget.Progress]: {\n                color: \'red\',\n            },\n        };\n        return (\n            <div>\n                <Theme config={CircleView}>\n                    <Progress type=\"dashboard\" percent={30} />\n                </Theme>\n            </div>\n        );\n    }\n}\n`}</code>
-                }
-                desc={"可配置主题仪表盘样式的进度条，可配置 color"}
-                demo={<ThemeDashboardDemo />}
               ></Demo>
               <EditTables dataSource={PROGRESS} />
               <FooterNav prev={prev} next={next} />
@@ -161,14 +131,11 @@ export default PageNavHoC(
                 <Link title={"进度条"} href={"#progress-0"} />
                 <Link title={"小型进度条"} href={"#progress-1"} />
                 <Link title={"内容内置"} href={"#progress-2"} />
-                <Link title={"配置主题"} href={"#progress-3"} />
-                <Link title={"动态展示"} href={"#progress-4"} />
-                <Link title={"圆形进度条"} href={"#progress-5"} />
+                <Link title={"动态展示"} href={"#progress-3"} />
+                <Link title={"圆形进度条"} href={"#progress-4"} />
+                <Link title={"小型圆形进度条"} href={"#progress-5"} />
                 <Link title={"小型圆形进度条"} href={"#progress-6"} />
-                <Link title={"小型圆形进度条"} href={"#progress-7"} />
-                <Link title={"圆形进度条配置主题"} href={"#progress-8"} />
-                <Link title={"仪表盘"} href={"#progress-9"} />
-                <Link title={"仪表盘主题"} href={"#progress-10"} />
+                <Link title={"仪表盘"} href={"#progress-7"} />
               </Anchor>
             </Col>
           )}

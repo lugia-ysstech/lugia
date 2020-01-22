@@ -72,7 +72,7 @@ export default PageNavHoC(
                 title={"垂直方向"}
                 titleID={"divider-3"}
                 code={
-                  <code>{`import React from \'react\';\nimport { Divider } from \'@lugia/lugia-web\';\nimport styled from \'styled-components\';\n\nconst Wrapper = styled.div\`\n\`;\nexport default class VerticalDivider extends React.Component<any, any> {\n  render() {\n    return (\n      <Wrapper>\n        <div style={{ height: 20 }}>\n          text\n          <Divider type=\"vertical\" />\n          text\n          <Divider type=\"vertical\" />\n          text\n          <Divider type=\"vertical\" />\n          text\n          <Divider type=\"vertical\" />\n          text\n        </div>\n      </Wrapper>\n    );\n  }\n}\n`}</code>
+                  <code>{`import React from \"react\";\nimport { Divider } from \"@lugia/lugia-web\";\nimport styled from \"styled-components\";\n\nconst Wrapper = styled.div\`\n  height: 20;\n\`;\nexport default class VerticalDivider extends React.Component<any, any> {\n  render() {\n    return (\n      <Wrapper>\n        <div style={{ height: 20 }}>\n          text\n          <Divider type=\"vertical\" />\n          text\n          <Divider type=\"vertical\" />\n          text\n          <Divider type=\"vertical\" />\n          text\n          <Divider type=\"vertical\" />\n          text\n        </div>\n      </Wrapper>\n    );\n  }\n}\n`}</code>
                 }
                 desc={"可以设置给一行内容设置垂直方向分割线"}
                 demo={<VerticalDivider />}
