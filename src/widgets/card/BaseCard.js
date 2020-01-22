@@ -1,17 +1,29 @@
 import React from "react";
 import { Card, Theme } from "@lugia/lugia-web";
-import styled from "styled-components";
+import Widget from '@lugia/lugia-web/dist/consts/index';
 
-const Wrapper = styled.div`
-  display: inline-block;
-`;
+const themeConfig = {
+  [Widget.Card]: {
+    Container: {
+      normal: {
+        width: 300,
+      },
+    },
+    CardContent: {
+      normal: {
+        padding: {
+          bottom: 10
+        },
+      },
+    },
+  },
+};
 export default class BaseCard extends React.Component<any, any> {
-  click = () => {};
   render() {
     return (
-      <Wrapper>
+      <Theme config={themeConfig}>
         <Card title={"This is title"} description={"This is description"} />
-      </Wrapper>
+      </Theme>
     );
   }
 }
