@@ -32,7 +32,7 @@ const getEventProps = (args: Object,propsType:Object) => {
   args.forEach(item => {
     const {type} = item;
     let resType = '';
-    if(type in propsType){
+    if(propsType && type in propsType){
       resType = propsType[type].toString();
     }
     result.push(item.name + ' : ' + type + ':'+resType + ' (' + item.desc + ')');
