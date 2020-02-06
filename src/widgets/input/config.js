@@ -31,7 +31,7 @@ module.exports ={
   },
   ValidateTypeInput: {
     title: '校验',
-    desc: "三种不同风格校验(校验输入值是否含有',')。",
+    desc: "三种不同风格校验(校验输入值是否含有'a')。",
     path: './ValidateTypeInput'
   },
 };
