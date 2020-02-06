@@ -19,7 +19,8 @@ export default class ChangeBadge extends React.Component<any, any> {
   }
 
   click = type => () => {
-    const count = type === "plus" ? this.state.count + 1 : this.state.count - 1;
+    const newCount = type === 'plus' ? this.state.count + 1 : this.state.count - 1;
+    const count = newCount <= 0 ? 0 : newCount > 100 ? 100 : newCount;
     this.setState({ count });
   };
   render() {
