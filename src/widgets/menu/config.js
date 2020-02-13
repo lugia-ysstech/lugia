@@ -1,7 +1,3 @@
-/**
- * create by szfeng
- */
-
 module.exports = {
   SingleMenu: {
     title: '单选菜单',

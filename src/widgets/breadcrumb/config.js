@@ -1,7 +1,3 @@
-/**
- * create by szfeng
- */
-
 module.exports = {
   DefaultBreadcrumb: {
     title: '基本用法',

@@ -1,6 +1,3 @@
-/**
- * create by szfeng
- */
 import React from "react";
 import { Breadcrumb } from "@lugia/lugia-web";
 

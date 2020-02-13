@@ -1,8 +1,3 @@
-/**
- *
- * create by szfeng
- *
- */
 import React from "react";
 import { Cascader, Theme } from "@lugia/lugia-web";
 import Widget from "@lugia/lugia-web/dist/consts";
@@ -37,10 +32,7 @@ const data = [
       {
         value: "Layout",
         text: "Layout",
-        children: [
-          { value: "Grid", text: "Grid" },
-          { value: "Layout", text: "Layout" }
-        ]
+        children: [{ value: "Grid", text: "Grid" }]
       },
 
       {

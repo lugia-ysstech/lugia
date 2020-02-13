@@ -52,7 +52,7 @@ export default class extends React.Component<any, any> {
 
             <Box>
               <Dropmenu action={"hover"} menus={menu}>
-                <Dropmenu.Button>Hover arrow</Dropmenu.Button>
+                <Dropmenu.Button>Hover me</Dropmenu.Button>
               </Dropmenu>
             </Box>
 
@@ -66,7 +66,7 @@ export default class extends React.Component<any, any> {
 
             <Box>
               <Dropmenu menus={menu}>
-                <Dropmenu.Button type="primary">Click arrow</Dropmenu.Button>
+                <Dropmenu.Button type="primary">Click me</Dropmenu.Button>
               </Dropmenu>
             </Box>
           </Container>
@@ -88,7 +88,11 @@ export default class extends React.Component<any, any> {
             </Box>
 
             <Box>
-              <Dropmenu menus={menu} text={"Hover right"}></Dropmenu>
+              <Dropmenu
+                menus={menu}
+                text={"Hover right"}
+                action={"hover"}
+              ></Dropmenu>
             </Box>
 
             <Box>

@@ -1,7 +1,3 @@
-/**
- * create by szfeng
- *
- */
 import { Tag } from '@lugia/lugia-web';
 import styled from 'styled-components';
 import React from 'react';

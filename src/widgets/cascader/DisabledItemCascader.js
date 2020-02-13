@@ -1,8 +1,3 @@
-/**
- *
- * create by szfeng
- *
- */
 import React from "react";
 import { Cascader, Theme } from "@lugia/lugia-web";
 import Widget from "@lugia/lugia-web/dist/consts";
