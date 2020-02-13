@@ -1,8 +1,3 @@
-/**
- *
- * create by szfeng
- *
- */
 import * as React from 'react';
 import { Tree, Theme, Input } from '@lugia/lugia-web';
 import Widget from '@lugia/lugia-web/dist/consts';

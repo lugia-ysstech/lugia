@@ -1,7 +1,3 @@
-/**
- * create by szfeng
- */
-
 module.exports = {
   HorizontalNavMenu: {
     title: "水平导航导航",

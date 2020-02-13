@@ -1,8 +1,3 @@
-/**
- *
- * create by szfeng
- *
- */
 import React from 'react';
 import { AutoComplete } from '@lugia/lugia-web';
 

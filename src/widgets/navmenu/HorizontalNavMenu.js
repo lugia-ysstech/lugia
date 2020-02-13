@@ -1,6 +1,3 @@
-/**
- * create by szfeng
- */
 import React from "react";
 import { Navmenu, Theme } from "@lugia/lugia-web";
 import Widget from "@lugia/lugia-web/dist/consts";
@@ -58,7 +55,7 @@ const data = [
         describe: true,
         children: [
           { value: "Affix", text: "Affix" },
-          { value: "Breadcrumb", text: "Breadcrumb" }
+          { value: "tag", text: "tag" }
         ]
       },
 
@@ -67,7 +64,7 @@ const data = [
         text: "Data Entry",
         describe: true,
         children: [
-          { value: "AutoComplete", text: "AutoComplete" },
+          { value: "rate", text: "rate" },
           { value: "Cascader", text: "Cascader" }
         ]
       }

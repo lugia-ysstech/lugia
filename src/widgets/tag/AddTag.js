@@ -1,7 +1,3 @@
-/**
- * create by szfeng
- *
- */
 import Widget from '@lugia/lugia-web/dist/consts/index';
 import { Theme, Tag, Input, Icon } from '@lugia/lugia-web';
 import styled from 'styled-components';

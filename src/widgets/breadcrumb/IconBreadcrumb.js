@@ -1,6 +1,3 @@
-/**
- * create by szfeng
- */
 import React from 'react';
 import { Breadcrumb, Icon } from '@lugia/lugia-web';
 import styled from 'styled-components';
