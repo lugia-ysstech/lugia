@@ -5,6 +5,7 @@ import { fixControlledValue } from "@lugia/lugia-web/dist/utils";
 
 const Wrapper = styled.div`
   display: inline-block;
+  margin-right: 10px;
 `;
 
 const onChange = cmpName => (value: any) => {};
