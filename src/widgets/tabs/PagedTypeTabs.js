@@ -37,8 +37,15 @@ export default class PagedTypeTabs extends React.Component<any, any> {
       [Widget.Tabs]: {
         Container: {
           normal: {
-            width: 330
+            width: 348
           },
+        },
+        TabHeader: {
+          DefaultTabPan: {
+            normal: {
+              width: 100
+            },
+          }
         }
       },
     };
