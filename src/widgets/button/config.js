@@ -33,6 +33,6 @@ module.exports =  {
     },
     ThemeDemo: {
         title: '配置主题',
-        desc: '根据需要配置主题，可配置 width margin color'
+        desc: '根据需要配置主题'
     }
 };
