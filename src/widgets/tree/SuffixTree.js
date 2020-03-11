@@ -80,7 +80,7 @@ export default class DefaultTree extends React.Component<Object, Object> {
         autoHeight
         expandAll
         onSelect={this.onSelect}
-        renderSuffix={this.renderSuffix}
+        renderSuffixItems={this.renderSuffix}
         shape={'round'}
       />
     );

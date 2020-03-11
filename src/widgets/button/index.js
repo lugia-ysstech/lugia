@@ -122,9 +122,9 @@ export default PageNavHoC(
                 title={"配置主题"}
                 titleID={"button-8"}
                 code={
-                  <code>{`import * as React from \'react\';\nimport {Button,Theme} from \'@lugia/lugia-web\';\nimport Widget from \'@lugia/lugia-web/dist/consts/index\';\n\nexport default class ButtonDemo extends React.Component<any, any> {\n\n    render() {\n        const view = {\n            [Widget.Button]: {\n                width: 100,\n            },\n            register: {\n                width: 300,\n                margin: 10,\n                color: \'red\',\n            },\n        };\n        return (\n            <div>\n                <Theme config={view}>\n                    <Button viewClass=\"register\">Button</Button>\n                </Theme>\n            </div>\n        );\n    }\n}\n`}</code>
+                  <code>{`import * as React from \"react\";\nimport { Button, Theme } from \"@lugia/lugia-web\";\nimport Widget from \"@lugia/lugia-web/dist/consts/index\";\n\nexport default class ButtonDemo extends React.Component<any, any> {\n  render() {\n    const view = {\n      [Widget.Button]: {\n        Container: {\n          normal: {\n            width: 100,\n            height: 50,\n            padding: 9,\n            margin: 10,\n            background: { color: \"orange\" }\n          }\n        }\n      }\n    };\n    return (\n      <div>\n        <Theme config={view}>\n          <Button>Button</Button>\n        </Theme>\n      </div>\n    );\n  }\n}\n`}</code>
                 }
-                desc={"根据需要配置主题，可配置 width margin color"}
+                desc={"根据需要配置主题"}
                 demo={<ThemeDemo />}
               ></Demo>
               <EditTables dataSource={BUTTON} />

@@ -1,7 +1,4 @@
-/**
- * 
- * create by wangcuixia
- */
+
 module.exports={
   BaseDemo:{
     title: '基本',

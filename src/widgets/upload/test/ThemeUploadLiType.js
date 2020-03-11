@@ -31,13 +31,6 @@ export default class ThemeUploadLiType extends React.Component<any, any> {
         },
       ],
     };
-    /*
-    *
-    * "normal": [["width"],["height"],["background"], ["border"],["color"]],
-          "hover": [["border"],["background"],["color"]],
-          "clicked": [],
-          "disabled": [["background"],["color"]]
-    * */
     const configNormal={
       [Widget.Upload]:{
         UploadLiType:{

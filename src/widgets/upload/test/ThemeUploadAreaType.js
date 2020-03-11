@@ -14,13 +14,7 @@ export default class ThemeUploadAreaType extends React.Component<any, any> {
     const defaultProps = {
       areaType: 'area',
     };
-    /*
-    *
-    *"normal": [["width"], ["height"], ["fontSize"],["color"]],
-          "hover": [],
-          "clicked": [],
-          "disabled": [["color"]]
-    * */
+
     const configNormal={
       [Widget.Upload]:{
         UploadAreaType:{

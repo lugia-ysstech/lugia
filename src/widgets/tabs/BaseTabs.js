@@ -25,7 +25,8 @@ export default class BaseTabs extends React.Component<any, any> {
         <Tabs
           titleType={"line"}
           tabPosition={"top"}
-          data={defaultData}
+          defaultData={defaultData}
+          showAddBtn showDeleteBtn
         />
         <Tabs
           titleType={"line"}

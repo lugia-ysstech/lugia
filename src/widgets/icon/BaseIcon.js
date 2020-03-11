@@ -3,6 +3,7 @@ import { Icon, Theme } from "@lugia/lugia-web";
 import Widget from "@lugia/lugia-web/dist/consts";
 import styled from "styled-components";
 import Copy from "../code-box/Copy";
+
 import colorsFunc from "@lugia/lugia-web/dist/css/stateColor";
 const { themeColor, defaultColor } = colorsFunc();
 

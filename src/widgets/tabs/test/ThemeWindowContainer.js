@@ -16,12 +16,7 @@ const H2 = styled.p`
   line-height:50px;
   font-size:14px;
 `;
-/*
-"normal": [["background"], ["padding"], ["border"], ["borderRadius"], ["opacity"]],
-          "hover": [],
-          "clicked": [],
-          "disabled": []
-* */
+
 export default class ThemeWindowContainer extends React.Component<any, any> {
   render(){
     const props={

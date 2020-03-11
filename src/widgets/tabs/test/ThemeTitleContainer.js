@@ -16,20 +16,13 @@ const H2 = styled.p`
   line-height:50px;
   font-size:14px;
 `;
-/*
-"normal": [["width"]],
-      "hover": [],
-      "clicked": [],
-      "disabled": []
-* */
+
 export default class ThemeTitleContainer extends React.Component<any, any> {
   render(){
     const propsCard={
       tabType:'card'
     };
-    const propsWindow={
-      tabType:'window'
-    };
+
     const configNormal={
       [Widget.Tabs]:{
         TitleContainer:{
@@ -122,42 +115,7 @@ export default class ThemeTitleContainer extends React.Component<any, any> {
         }
       }
     };
-    const configDisabled={
-      [Widget.Tabs]:{
-        TabHeader:{
-          SelectTabPan:{
-            disabled:{
-              color:'blue'
-            }
-          }
-        }
 
-      }
-    };
-    const configActive={
-      [Widget.Tabs]:{
-        TabHeader:{
-          SelectTabPan:{
-            active:{
-              color:'yellow'
-            }
-          }
-        }
-
-      }
-    };
-    const configFocus={
-      [Widget.Tabs]:{
-        TabHeader:{
-          SelectTabPan:{
-            focus:{
-              color:'pink'
-            }
-          }
-        }
-
-      }
-    };
     return (
       <div>
         <H2>normal-card</H2>

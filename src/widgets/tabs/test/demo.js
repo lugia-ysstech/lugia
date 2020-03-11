@@ -42,8 +42,6 @@ export default class testDemo extends React.Component<any, any> {
           <H1>props</H1>
           <H2>tabPosition</H2>
           <TabPosition/>
-          {/*<H2>disabled</H2>*/}
-          {/*<Disabled/>*/}
           <H2>data</H2>
           <Data/>
           <H2>tabType</H2>
@@ -54,8 +52,6 @@ export default class testDemo extends React.Component<any, any> {
           <IsSelect/>
           <H2>TalPanel</H2>
           <TalPanel/>
-          {/*<H2>showAddBtn</H2>*/}
-          {/*<ShowAddBtn/>*/}
           <H2>forceRender</H2>
           <ForceRender/>
           <H2>TabPanelEvent</H2>
