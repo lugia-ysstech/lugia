@@ -16,12 +16,7 @@ const H2 = styled.p`
   line-height:50px;
   font-size:14px;
 `;
-/*
-"normal": [["width"]],
-      "hover": [],
-      "clicked": [],
-      "disabled": []
-* */
+
 export default class ThemeBorderStyle extends React.Component<any, any> {
   render(){
     const propsCard={

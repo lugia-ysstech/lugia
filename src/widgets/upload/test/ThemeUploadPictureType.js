@@ -14,13 +14,6 @@ export default class ThemeUploadPictureType extends React.Component<any, any> {
     const defaultProps = {
       areaType: 'picture',
     };
-    /*
-    *
-    "normal": [["width"], ["height"], ["opacity"], ["border"]],
-          "hover": [["background"], ["opacity"], ["border"]],
-          "clicked": [],
-          "disabled": [["background"], ["color"], ["border"]]
-    * */
     const configNormal={
       [Widget.Upload]:{
         UploadPictureType:{

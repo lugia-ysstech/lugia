@@ -56,8 +56,15 @@ export default class BigDataTree extends React.Component {
 
   render() {
     const config = {
+      [Widget.Input]: {
+        Container: {
+          normal: {
+            width: 300
+          }
+        }
+      },
       [Widget.Tree]: {
-        TreeWrap: {
+        Container: {
           normal: {
             width: 300,
             height: 400
@@ -67,14 +74,14 @@ export default class BigDataTree extends React.Component {
     };
     const { query } = this.state;
 
-    return [
-      <Input
-        value={query}
-        placeholder={'请输入查询条件'}
-        onChange={this.onChange}
-      />,
-      <Tree query={query} theme={config} data={bigTree} expandAll mutliple />
-    ];
+    return <Theme config={config}>
+        <Input
+          value={query}
+          placeholder={'请输入查询条件'}
+          onChange={this.onChange}
+        />
+        <Tree query={query}  data={bigTree} expandAll mutliple />
+      </Theme>;
   }
 
   onChange = target => {

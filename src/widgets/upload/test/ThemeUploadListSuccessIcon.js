@@ -30,13 +30,7 @@ export default class ThemeUploadListSuccessIcon extends React.Component<any, any
         },
       ],
     };
-    /*
-    *
-    * "normal": [["color"]],
-          "hover": [],
-          "clicked": [],
-          "disabled": []
-    * */
+
     const configNormal={
       [Widget.Upload]:{
         UploadListSuccessIcon:{

@@ -15,6 +15,7 @@ const DisableInput = require("./DisableInput").default;
 const PrefixInput = require("./PrefixInput").default;
 const TransformInput = require("./TransformInput").default;
 const ValidateTypeInput = require("./ValidateTypeInput").default;
+const Textarea = require("./Textarea").default;
 
 const { Link } = Anchor;
 const { Row, Col } = Grid;
@@ -103,10 +104,19 @@ export default PageNavHoC(
                 title={"校验"}
                 titleID={"input-6"}
                 code={
-                  <code>{`import React from \'react\';\nimport { Input } from \'@lugia/lugia-web\';\nimport styled from \'styled-components\';\nimport { fixControlledValue } from \'@lugia/lugia-web/dist/utils\';\n\nconst Wrapper = styled.div\`\n  display: inline-block;\n\`;\n\nconst InputWrapper = styled.div\`\n  margin-right: 10px;\n  display: inline-block;\n\`;\nconst onChange = cmpName => (value: any) => {};\nexport class TopInput extends React.Component<any, any> {\n  constructor(props: any) {\n    super(props);\n  }\n\n  static getDerivedStateFromProps(nextProps: Object, preState: Object) {\n    let { value } = nextProps;\n    const hasValueInprops = \'value\' in nextProps;\n    value = fixControlledValue(value);\n    if (!preState) {\n      return {\n        value: hasValueInprops ? value : \'\',\n        validateStatus: \'success\'\n      };\n    }\n    if (hasValueInprops) {\n      return { value };\n    }\n  }\n  onChange = (param: any) => {\n    const { newValue: value } = param;\n    this.setState({ value });\n    this.props.onChange({ newValue: value });\n  };\n  onBlur = (event: UIEvent) => {\n    const validateStatus =\n      this.state.value.indexOf(\',\') === -1 ? \'success\' : \'error\';\n    this.setState({ validateStatus });\n  };\n  render() {\n    const { validateType } = this.props;\n    return (\n      <Input\n        onBlur={this.onBlur}\n        onChange={this.onChange}\n        validateType={validateType}\n        validateStatus={this.state.validateStatus}\n      />\n    );\n  }\n}\n\nexport default class ValidateTypeInput extends React.Component<any, any> {\n  constructor(props: any) {\n    super(props);\n    this.state = { value: \'\' };\n  }\n\n  onChange = ({ newValue: value }: any) => {\n    this.setState({ value });\n  };\n\n  render() {\n    return (\n      <Wrapper>\n        <InputWrapper>\n          <TopInput\n            viewClass=\"register\"\n            validateType=\"top\"\n            onChange={onChange(\'limit\')}\n          />\n        </InputWrapper>\n        <InputWrapper>\n          <TopInput\n            viewClass=\"register\"\n            validateType=\"bottom\"\n            onChange={onChange(\'limit\')}\n          />\n        </InputWrapper>\n        <InputWrapper>\n          <TopInput\n            viewClass=\"register\"\n            validateType=\"inner\"\n            onChange={onChange(\'limit\')}\n          />\n        </InputWrapper>\n      </Wrapper>\n    );\n  }\n}\n`}</code>
+                  <code>{`import React from \"react\";\nimport { Input, Theme } from \"@lugia/lugia-web\";\nimport styled from \"styled-components\";\nimport { fixControlledValue } from \"@lugia/lugia-web/dist/utils\";\n\nconst Wrapper = styled.div\`\n  display: inline-block;\n  margin-right: 10px;\n\`;\n\nconst onChange = cmpName => (value: any) => {};\n\nexport class ValidateInput extends React.Component<any, any> {\n  constructor(props: any) {\n    super(props);\n  }\n\n  static getDerivedStateFromProps(nextProps: Object, preState: Object) {\n    let { value } = nextProps;\n    const hasValueInprops = \"value\" in nextProps;\n    value = fixControlledValue(value);\n    if (!preState) {\n      return {\n        value: hasValueInprops ? value : \"\"\n      };\n    }\n    if (hasValueInprops) {\n      return { value };\n    }\n  }\n  onChange = ({ newValue: value }: any) => {\n    this.setState({ value });\n    this.props.onChange({ newValue: value });\n  };\n\n  render() {\n    const { validateType } = this.props;\n    const value = this.state.value;\n    const validateStatus = value.indexOf(\"a\") === -1 ? \"success\" : \"error\";\n\n    return (\n      <Input\n        onChange={this.onChange}\n        validateType={validateType}\n        validateStatus={validateStatus}\n      />\n    );\n  }\n}\nexport class TopInput extends React.Component<any, any> {\n  constructor(props: any) {\n    super(props);\n  }\n\n  static getDerivedStateFromProps(nextProps: Object, preState: Object) {\n    let { value } = nextProps;\n    const hasValueInprops = \"value\" in nextProps;\n    value = fixControlledValue(value);\n    if (!preState) {\n      return {\n        value: hasValueInprops ? value : \"\",\n        validateStatus: \"success\"\n      };\n    }\n    if (hasValueInprops) {\n      return { value };\n    }\n  }\n  onChange = (param: any) => {\n    const { newValue: value } = param;\n    this.props.onChange({ newValue: value });\n    const validateStatus = value.indexOf(\"a\") === -1 ? \"success\" : \"error\";\n    this.setState({ value, validateStatus });\n  };\n  render() {\n    const { validateType } = this.props;\n    return (\n      <Input\n        onChange={this.onChange}\n        validateType={validateType}\n        validateStatus={this.state.validateStatus}\n      />\n    );\n  }\n}\n\nexport default class ValidateTypeInput extends React.Component<any, any> {\n  constructor(props: any) {\n    super(props);\n    this.state = { value: \"\" };\n  }\n\n  onChange = ({ newValue: value }: any) => {\n    this.setState({ value });\n  };\n\n  render() {\n    return (\n      <Wrapper>\n        <Wrapper>\n          <TopInput validateType=\"top\" onChange={onChange(\"limit\")} />\n        </Wrapper>\n        <Wrapper>\n          <ValidateInput validateType=\"bottom\" onChange={onChange(\"limit\")} />\n        </Wrapper>\n        <Wrapper>\n          <ValidateInput validateType=\"inner\" onChange={onChange(\"limit\")} />\n        </Wrapper>\n      </Wrapper>\n    );\n  }\n}\n`}</code>
                 }
-                desc={"三种不同风格校验(校验输入值是否含有',')。"}
+                desc={"三种不同风格校验(校验输入值是否含有'a')。"}
                 demo={<ValidateTypeInput />}
+              ></Demo>
+              <Demo
+                title={"段落文本输入框"}
+                titleID={"input-7"}
+                code={
+                  <code>{`import React from \"react\";\nimport { Input } from \"@lugia/lugia-web\";\nconst Textarea = Input.Textarea;\n\nexport default class BaseInput extends React.Component<any, any> {\n  constructor(props: any) {\n    super(props);\n    this.state = { value: \"\" };\n  }\n\n  onChange = ({ newValue: value }: any) => {\n    this.setState({ value });\n  };\n\n  render() {\n    return <Textarea value={this.state.value} onChange={this.onChange} />;\n  }\n}\n`}</code>
+                }
+                desc={"适用于输入文字段落"}
+                demo={<Textarea />}
               ></Demo>
               <EditTables dataSource={INPUT} />
               <EditTables dataSource={TEXTAREA} />
@@ -127,6 +137,7 @@ export default PageNavHoC(
                 <Link title={"前缀后缀组合"} href={"#input-4"} />
                 <Link title={"格式化"} href={"#input-5"} />
                 <Link title={"校验"} href={"#input-6"} />
+                <Link title={"段落文本输入框"} href={"#input-7"} />
               </Anchor>
             </Col>
           )}

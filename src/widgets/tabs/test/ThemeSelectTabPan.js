@@ -15,12 +15,7 @@ const H2 = styled.p`
   line-height:50px;
   font-size:14px;
 `;
-/*
-* "normal": [["color"], ["background"], ["border"], ["margin"], ["padding"], ["font"], ["opacity"]],
-      "hover": [["color"], ["background"], ["border"], ["font"], ["opacity"]],
-      "clicked": [],
-      "disabled": []
-* */
+
 export default class ThemeSelectTabPan extends React.Component<any, any> {
   render(){
     const children=[

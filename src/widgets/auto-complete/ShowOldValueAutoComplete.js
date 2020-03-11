@@ -1,5 +1,6 @@
 import React from 'react';
-import { AutoComplete } from '@lugia/lugia-web';
+import { AutoComplete ,Theme} from '@lugia/lugia-web';
+import Widget from "@lugia/lugia-web/dist/consts/index";
 
 const data = [
   'Nikcy Romero',
@@ -42,12 +43,22 @@ export default class ShowOldAutoComplete extends React.Component {
   }
   render() {
     return (
+      <Theme
+        config={{
+          [Widget.AutoComplete]: {
+            Container: {
+              normal: { width: 300 }
+            }
+          }
+        }}
+      >
       <AutoComplete
         data={this.state.menuData}
         onChange={this.onChange}
         placeholder={'请输入'}
         showOldValue={true}
       />
+      </Theme>
     );
   }
 

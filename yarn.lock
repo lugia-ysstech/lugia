@@ -1047,10 +1047,10 @@
     events "^3.0.0"
     rxjs "^6.3.3"
 
-"@lugia/lugia-web@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npm.taobao.org/@lugia/lugia-web/download/@lugia/lugia-web-1.2.0.tgz#a86f31464c3e48b2ed595bbf90ec9b6362019b2d"
-  integrity sha1-qG8xRkw+SLLtWVu/kOybY2IBmy0=
+"@lugia/lugia-web@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/@lugia/lugia-web/-/lugia-web-1.2.1.tgz#9829591596643255e411d1521345542d3014c42f"
+  integrity sha512-3amYL90c9gSxmFH7JkmIeSFuyj33l5qEdsZL6t9XBGW6UI3G6jLVS3p5Cy29iE9BJfJnKFjrS25MSO+3Yd46Hg==
   dependencies:
     "@lugia/css" "^1.0.19"
     "@lugia/listener" "^1.0.4"
@@ -1059,8 +1059,8 @@
     "@lugia/ramada" "^1.0.3"
     "@lugia/theme-config" "^1.0.36"
     "@lugia/theme-core" "^1.0.36"
-    "@lugia/theme-css-hoc" "^1.0.63"
-    "@lugia/theme-hoc" "^1.0.48"
+    "@lugia/theme-css-hoc" "^1.0.64"
+    "@lugia/theme-hoc" "1.0.49"
     "@lugia/theme-hoc-devtools" "^1.0.8"
     "@lugia/theme-utils" "^1.0.8"
     "@lugia/type-utils" "^1.0.6"
@@ -1316,10 +1316,10 @@
     "@babel/runtime" "^7.4.5"
     "@lugia/object-utils" "^1.0.15"
 
-"@lugia/theme-css-hoc@^1.0.63":
-  version "1.0.63"
-  resolved "https://registry.npmjs.org/@lugia/theme-css-hoc/-/theme-css-hoc-1.0.63.tgz#1c61ef1fde1fdc18755d386596d0b74dad593f3d"
-  integrity sha512-XjQbmQ5iWiwyM8oLEnlv0akxcwRju8+KgAvFgxvh+MUd3nHAYL7iqXbafSFXiN1bEC8KulO/ETCAXh1463shIw==
+"@lugia/theme-css-hoc@^1.0.64":
+  version "1.0.64"
+  resolved "https://registry.npmjs.org/@lugia/theme-css-hoc/-/theme-css-hoc-1.0.64.tgz#de3109ccf76e1a8c91f6f3d59a52bfaffb09324f"
+  integrity sha512-TC90lQzrJ7CrRvMoRtiGaCyqLtJrCLMGL0dHJI7NsP/FGog3FnhVvV4eEy4zR2poHsK/vhiRSbBC+Md82GEXYA==
   dependencies:
     "@babel/runtime" "^7.4.5"
     "@lugia/css" "^1.0.19"
@@ -1336,10 +1336,10 @@
   dependencies:
     "@lugia/react-devtools-core" "^1.0.3"
 
-"@lugia/theme-hoc@^1.0.48":
-  version "1.0.48"
-  resolved "https://registry.npmjs.org/@lugia/theme-hoc/-/theme-hoc-1.0.48.tgz#a1557271dfb91986a43954824a33cda4d39f53c6"
-  integrity sha512-kSMtX24JMO0NISnyhBRWPH1xqlHp/IG+OdlIkYt8xj3WsbHGaIEOOBzrzxiNPbVzElsXEbznJU9qKykGe8bONQ==
+"@lugia/theme-hoc@1.0.49":
+  version "1.0.49"
+  resolved "https://registry.npmjs.org/@lugia/theme-hoc/-/theme-hoc-1.0.49.tgz#21db4d55f0fa56eef4092d4287b47771baccbcd3"
+  integrity sha512-9VgAqbFCEmUZu2Y33tTFJqEscTC/R0d/IM8FAuZNFjMclKFA6mBk0eXVik5szcM0vtFBFcCX7OB+WeXQndW9Ow==
   dependencies:
     "@babel/runtime" "^7.4.5"
     "@lugia/object-utils" "^1.0.15"

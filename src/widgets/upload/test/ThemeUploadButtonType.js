@@ -18,13 +18,6 @@ export default class ThemeUploadButtonType extends React.Component<any, any> {
     const defaultPropsBoth = {
       areaType: 'both',
     };
-    /*
-    *
-    *  "normal": [["background"], ["width"], ["height"], ["boxShadow"], ["border"], ["opacity"]],
-          "hover": [["background"], ["boxShadow"], ["border"], ["opacity"]],
-          "clicked": [],
-          "disabled": [["background"], ["border"]]
-    * */
     const configNormal={
       [Widget.Upload]:{
         UploadButtonType:{

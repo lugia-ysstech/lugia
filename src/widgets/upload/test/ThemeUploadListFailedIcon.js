@@ -30,13 +30,7 @@ export default class ThemeUploadListFailedIcon extends React.Component<any, any>
         },
       ],
     };
-    /*
-    *
-    * "normal": [["color"]],
-          "hover": [],
-          "clicked": [],
-          "disabled": []
-    * */
+
     const configNormal={
       [Widget.Upload]:{
         UploadListFailedIcon:{

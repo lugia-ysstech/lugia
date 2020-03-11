@@ -45,7 +45,7 @@ export default PageNavHoC(
                 title={"基本用法"}
                 titleID={"breadcrumb-0"}
                 code={
-                  <code>{`/**\n * create by szfeng\n */\nimport React from \'react\';\nimport { Breadcrumb } from \'@lugia/lugia-web\';\n\nexport default class DefaultBreadcrumb extends React.Component<any, any> {\n  render() {\n    return (\n      <Breadcrumb>\n        <Breadcrumb.Item href=\"breadcrumb\">首页</Breadcrumb.Item>\n        <Breadcrumb.Item href=\"breadcrumb\">二级面包屑</Breadcrumb.Item>\n        <Breadcrumb.Item href=\"breadcrumb\">三级面包屑</Breadcrumb.Item>\n        <Breadcrumb.Item>四级面包屑</Breadcrumb.Item>\n      </Breadcrumb>\n    );\n  }\n}\n`}</code>
+                  <code>{`import React from \'react\';\nimport { Breadcrumb } from \'@lugia/lugia-web\';\n\nexport default class DefaultBreadcrumb extends React.Component<any, any> {\n  render() {\n    return (\n      <Breadcrumb>\n        <Breadcrumb.Item href=\"breadcrumb\">首页</Breadcrumb.Item>\n        <Breadcrumb.Item href=\"breadcrumb\">二级面包屑</Breadcrumb.Item>\n        <Breadcrumb.Item href=\"breadcrumb\">三级面包屑</Breadcrumb.Item>\n        <Breadcrumb.Item>四级面包屑</Breadcrumb.Item>\n      </Breadcrumb>\n    );\n  }\n}\n`}</code>
                 }
                 desc={
                   "通过Breadcrumb.Item使用,使用href属性跳转页面,href传入的是完整的路径"
@@ -56,7 +56,7 @@ export default PageNavHoC(
                 title={"带图标的Breadcrumb"}
                 titleID={"breadcrumb-1"}
                 code={
-                  <code>{`/**\n * create by szfeng\n */\nimport React from \'react\';\nimport { Breadcrumb, Icon } from \'@lugia/lugia-web\';\nimport styled from \'styled-components\';\n\nconst CommonIcon = styled(Icon)\`\n    margin-right: 5px;\n\`;\n\nexport default class IconBreadcrumb extends React.Component<any, any> {\n  render() {\n    return (\n      <Breadcrumb>\n        <Breadcrumb.Item href=\"component/breadcrumb\">\n          <CommonIcon iconClass=\"lugia-icon-logo_windows\" />\n          <span>首页</span>\n        </Breadcrumb.Item>\n        <Breadcrumb.Item href=\"component/breadcrumb\">\n          <CommonIcon iconClass=\"lugia-icon-logo_lugia\" />\n          <span>二级面包屑</span>\n        </Breadcrumb.Item>\n        <Breadcrumb.Item href=\"component/breadcrumb\">\n          <CommonIcon iconClass=\"lugia-icon-logo_twitter\" />\n          <span>三级面包屑</span>\n        </Breadcrumb.Item>\n        <Breadcrumb.Item>\n          <CommonIcon iconClass=\"lugia-icon-logo_codepen_ciecle\" />\n          <span>四级面包屑</span>\n        </Breadcrumb.Item>\n      </Breadcrumb>\n    );\n  }\n}\n`}</code>
+                  <code>{`import React from \'react\';\nimport { Breadcrumb, Icon } from \'@lugia/lugia-web\';\nimport styled from \'styled-components\';\n\nconst CommonIcon = styled(Icon)\`\n    margin-right: 5px;\n\`;\n\nexport default class IconBreadcrumb extends React.Component<any, any> {\n  render() {\n    return (\n      <Breadcrumb>\n        <Breadcrumb.Item href=\"component/breadcrumb\">\n          <CommonIcon iconClass=\"lugia-icon-logo_windows\" />\n          <span>首页</span>\n        </Breadcrumb.Item>\n        <Breadcrumb.Item href=\"component/breadcrumb\">\n          <CommonIcon iconClass=\"lugia-icon-logo_lugia\" />\n          <span>二级面包屑</span>\n        </Breadcrumb.Item>\n        <Breadcrumb.Item href=\"component/breadcrumb\">\n          <CommonIcon iconClass=\"lugia-icon-logo_twitter\" />\n          <span>三级面包屑</span>\n        </Breadcrumb.Item>\n        <Breadcrumb.Item>\n          <CommonIcon iconClass=\"lugia-icon-logo_codepen_ciecle\" />\n          <span>四级面包屑</span>\n        </Breadcrumb.Item>\n      </Breadcrumb>\n    );\n  }\n}\n`}</code>
                 }
                 desc={"配合Icon使用,生成图标"}
                 demo={<IconBreadcrumb />}
@@ -65,7 +65,7 @@ export default PageNavHoC(
                 title={"分隔符"}
                 titleID={"breadcrumb-2"}
                 code={
-                  <code>{`/**\n * create by szfeng\n */\nimport React from \'react\';\nimport { Breadcrumb } from \'@lugia/lugia-web\';\n\nexport default class SeparatorBreadcrumb extends React.Component<any, any> {\n  render() {\n    return (\n      <Breadcrumb separator={\'>\'}>\n        <Breadcrumb.Item href=\"breadcrumb\">首页</Breadcrumb.Item>\n        <Breadcrumb.Item href=\"breadcrumb\">二级面包屑</Breadcrumb.Item>\n        <Breadcrumb.Item href=\"breadcrumb\">三级面包屑</Breadcrumb.Item>\n        <Breadcrumb.Item>四级面包屑</Breadcrumb.Item>\n      </Breadcrumb>\n    );\n  }\n}\n`}</code>
+                  <code>{`import React from \'react\';\nimport { Breadcrumb } from \'@lugia/lugia-web\';\n\nexport default class SeparatorBreadcrumb extends React.Component<any, any> {\n  render() {\n    return (\n      <Breadcrumb separator={\'>\'}>\n        <Breadcrumb.Item href=\"breadcrumb\">首页</Breadcrumb.Item>\n        <Breadcrumb.Item href=\"breadcrumb\">二级面包屑</Breadcrumb.Item>\n        <Breadcrumb.Item href=\"breadcrumb\">三级面包屑</Breadcrumb.Item>\n        <Breadcrumb.Item>四级面包屑</Breadcrumb.Item>\n      </Breadcrumb>\n    );\n  }\n}\n`}</code>
                 }
                 desc={"可以自定义分隔符"}
                 demo={<SeparatorBreadcrumb />}
@@ -74,7 +74,7 @@ export default PageNavHoC(
                 title={"routes生成Breadcrumb"}
                 titleID={"breadcrumb-3"}
                 code={
-                  <code>{`/**\n * create by szfeng\n */\nimport React from \"react\";\nimport { Breadcrumb } from \"@lugia/lugia-web\";\n\nconst routes = [\n  {\n    path: \"index\",\n    title: \"首页\"\n  },\n  {\n    path: \"first\",\n    title: \"一级面包屑\",\n    icons: {\n      prefixIconClass: \"lugia-icon-logo_chrome\",\n      suffixIconClass: \"lugia-icon-logo_dropbox\"\n    }\n  },\n  {\n    path: \"second:id\",\n    title: \"二级面包屑:id\"\n  },\n  {\n    path: \"third\",\n    title: \"四级面包屑\"\n  }\n];\n\nexport default class RoutesBreadcrumb extends React.Component<any, any> {\n  render() {\n    return <Breadcrumb routes={routes} params={{ id: \"params\" }} />;\n  }\n}\n`}</code>
+                  <code>{`import React from \"react\";\nimport { Breadcrumb } from \"@lugia/lugia-web\";\n\nconst routes = [\n  {\n    path: \"index\",\n    title: \"首页\"\n  },\n  {\n    path: \"first\",\n    title: \"一级面包屑\",\n    icons: {\n      prefixIconClass: \"lugia-icon-logo_chrome\",\n      suffixIconClass: \"lugia-icon-logo_dropbox\"\n    }\n  },\n  {\n    path: \"second:id\",\n    title: \"二级面包屑:id\"\n  },\n  {\n    path: \"third\",\n    title: \"四级面包屑\"\n  }\n];\n\nexport default class RoutesBreadcrumb extends React.Component<any, any> {\n  render() {\n    return <Breadcrumb routes={routes} params={{ id: \"params\" }} />;\n  }\n}\n`}</code>
                 }
                 desc={"通过传入routes数据使用,可以通过params传入参数"}
                 demo={<RoutesBreadcrumb />}

@@ -16,12 +16,7 @@ const H2 = styled.p`
   line-height:50px;
   font-size:14px;
 `;
-/*
-* "normal": [["width"], ["height"], ["opacity"], ["background"], ["border"], ["boxShadow"], ["color"], ["fontSize"]],
-  "hover": [["width"], ["height"], ["opacity"], ["background"], ["border"], ["boxShadow"], ["color"], ["fontSize"]],
-  "clicked": [],
-  "disabled": []
-* */
+
 export default class ThemeCardAddButton extends React.Component<any, any> {
   render(){
     const props={
