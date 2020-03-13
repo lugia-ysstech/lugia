@@ -6,6 +6,10 @@ import { fixControlledValue } from "@lugia/lugia-web/dist/utils";
 const Wrapper = styled.div`
   display: inline-block;
   margin-right: 10px;
+  margin-top: 10px;
+`;
+const OutWrapper = styled.div`
+  display: flex;
 `;
 
 const onChange = cmpName => (value: any) => {};
@@ -96,7 +100,7 @@ export default class ValidateTypeInput extends React.Component<any, any> {
 
   render() {
     return (
-      <Wrapper>
+      <OutWrapper>
         <Wrapper>
           <TopInput validateType="top" onChange={onChange("limit")} />
         </Wrapper>
@@ -106,7 +110,7 @@ export default class ValidateTypeInput extends React.Component<any, any> {
         <Wrapper>
           <ValidateInput validateType="inner" onChange={onChange("limit")} />
         </Wrapper>
-      </Wrapper>
+      </OutWrapper>
     );
   }
 }
