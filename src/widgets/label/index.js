@@ -41,7 +41,7 @@ export default PageNavHoC(
                 title={"基础使用"}
                 titleID={"label-0"}
                 code={
-                  <code>{`import React from \"react\";\nimport { Label } from \"@lugia/lugia-web\";\n\nexport default class BasicLabel extends React.Component<any, any> {\n\n  render() {\n    return <React.Fragment>\n      <Label>这是一个文本组件</Label>\n    </React.Fragment>;\n  }\n}\n`}</code>
+                  <code>{`import React from \"react\";\nimport { Label } from \"@lugia/lugia-web\";\n\nexport default class BasicLabel extends React.Component<any, any> {\n\n  render() {\n    return <React.Fragment>\n      <Label onClick={this.onClick}>这是一个文本组件</Label>\n    </React.Fragment>;\n  }\n  onClick = () => {\n    console.log(\'clickLabel\');\n  }\n}\n`}</code>
                 }
                 desc={"基础Label的用法"}
                 demo={<BasicLabel />}
