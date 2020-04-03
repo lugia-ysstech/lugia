@@ -337,21 +337,23 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
   const { importInfo: ApiImport, demo: ApiTable } = getAPITable(folderName, childrenWidget);
   const { title: pageTitle, subTitle, desc: pageDesc } = pageInfo;
   const importInfoAndDemo = getImportInfoAndDemo(demos, config, folderName);
+  const { demo: ThemeTable } = getThemeConfig(folderName, childrenWidget);
   const indexCode =
     `import  React from 'react';
      import {Anchor,Grid} from '@lugia/lugia-web';
-     import EditTables from '../../edit-table'; 
+     import EditTables from '../../edit-table';
+     import EditTheme from '../../edit-theme';
      import FooterNav from '../../footer-nav';
      import PageNavHoC from '../../common/PageNavHoC';
      import widgetrouter from '../../router/widgetrouter';
      ${ApiImport}
         import Demo from '../code-box';
         import Title from '../code-box/Title';
-        ${importInfoAndDemo.importInfo} 
-        
+        ${importInfoAndDemo.importInfo}
+
         const { Link } = Anchor;
         const { Row,Col } = Grid;
-        
+
       export default PageNavHoC(widgetrouter, class ComDemo extends React.Component {
             handleLinkClick = (e, href) => {
               if (href) {
@@ -362,7 +364,7 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
                 }
               }
             };
-            
+
             render(){
                 const {next, prev, isMobile = false} = this.props;
                 const span = isMobile ? 24 : 20;
@@ -374,6 +376,7 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
                               <Title title={'${pageTitle}'} subTitle={'${subTitle}'} desc={'${pageDesc}'} />
                               ${importInfoAndDemo.demo}
                               ${ApiTable}
+                              ${ThemeTable}
                               <FooterNav prev={prev} next={next} />
                             </div>
                         </Col>
@@ -385,7 +388,7 @@ function getContent (demos, config, folderName, pageInfo, childrenWidget) {
                     </Row>
                 )
             }
-         });   
+         });
         `;
   return indexCode;
 }
@@ -431,4 +434,16 @@ function getAPITable (folderName, childrenWidget) {
     });
   }
   return { importInfo, demo };
+}
+
+function getThemeConfig (folderName, childrenWidget) {
+  const fixeMoudleName = fixFolderName(folderName);
+  let demo = `<EditTheme dataSource={${fixeMoudleName}}/>`;
+  if (childrenWidget) {
+    childrenWidget.forEach(item => {
+      const fixeMoudleName = fixFolderName(item);
+      demo = `${demo}<EditTheme dataSource={${fixeMoudleName}}/>`
+    })
+  }
+  return { demo };
 }
