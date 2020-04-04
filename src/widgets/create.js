@@ -438,12 +438,14 @@ function getAPITable (folderName, childrenWidget) {
 
 function getThemeConfig (folderName, childrenWidget) {
   const fixeMoudleName = fixFolderName(folderName);
-  let demo = `<EditTheme dataSource={${fixeMoudleName}}/>`;
+  let datas = [];
+  datas.push(fixeMoudleName)
   if (childrenWidget) {
     childrenWidget.forEach(item => {
       const fixeMoudleName = fixFolderName(item);
-      demo = `${demo}<EditTheme dataSource={${fixeMoudleName}}/>`
+      datas.push(fixeMoudleName);
     })
   }
+  demo = `<EditTheme dataSource={{${datas.join(',')}}}/>`
   return { demo };
 }

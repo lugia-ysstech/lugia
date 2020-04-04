@@ -1,15 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Title } from '../css/edittable';
-import {Icon, Navmenu, Theme} from '@lugia/lugia-web';
+import { Icon, Navmenu } from '@lugia/lugia-web';
 import Widget from "@lugia/lugia-web/dist/consts/index";
-import { getBorderRadius, getBorder, getBoxShadow } from "@lugia/theme-utils";
+import { getBorderRadius, getBoxShadow } from "@lugia/theme-utils";
 import Highlight from "react-highlight";
 
 const Wrap = styled.div`
   box-sizing: border-box;
-  box-shadow:  ${props => (props.visible ? '0 2px 6px 0 rgba(0,0,0,0.20)' : 'none')};
-  margin-bottom: ${props => (props.visible ? '2px' : '0')};
 `;
 const ThemeTitle = styled.div`
   font-size: 14px;
@@ -24,8 +22,9 @@ const StateTitle = styled.div`
   padding: 12px 7px 12px 17px;
   color: #393A4F;
   font-size: 14px;
-  background: ${props => (props.visible ? '#F8F8F8' : '#fff')};
+  background: ${props => (props.bgColor)};
   cursor: pointer;
+  box-shadow:  ${props => (props.visible ? '0 2px 6px 0 rgba(0,0,0,0.20)' : 'none')};
 `;
 const CodeBox = styled.div`
   font-size: 14px;
@@ -48,10 +47,6 @@ const VisibleCode = styled.div`
   color: #a1a3b3;
   transition: all 0.3s linear;
   box-sizing: border-box;
-  // &:hover {
-  //   color: #4d63ff;
-  //   background: #f2f5ff;
-  // }
 `;
 const Icons = styled(Icon)`
   font-size: 14px;
@@ -67,15 +62,15 @@ const Text  = styled.span`
 const BoxWrap = styled.div`
   background: #fff;
   box-sizing: border-box;
+  box-shadow:  ${props => (props.visible ? '0 2px 6px 0 rgba(0,0,0,0.20)' : 'none')};
+  margin-bottom: ${props => (props.visible ? '2px' : '0')};
 `;
 type PropsType = {
-  dataSource: Object,
-  themeConfigData?: Array,
-  menuData?: Array
+  dataSource: Object
 };
 type StateType = {
-  themeConfigData?: Array,
-  menuData?: Array
+  themeConfigData: Array,
+  menuData: Array,
 };
 const getConfigData = (obj: Object) => {
   const keys = Object.keys(obj);
@@ -108,19 +103,14 @@ const getMenuData = (themeValue: Object, title: String, name: String) => {
     const keys = Object.keys(configData);
     let themeTitle = '';
     obj['children'] = [];
-    keys.forEach(item => {
-      if ('theme' in configData[item]) {
-        flag = true;
-      }
-    })
+    flag = Object.values(configData).some((item) => 'theme' in item)
     if (flag) {
       keys.forEach(item => {
         themeTitle = configData[item].name ? configData[item].name : item;
         obj['children'] = obj['children'].concat(getMenuData(configData[item], themeTitle, `${name}-${item}`));
       })
     } else {
-      const themeKeys = Object.keys(configData)
-      themeKeys.forEach(item => {
+      keys.forEach(item => {
         themeConfig.push(getConfigData(configData[item], name))
       })
        obj['themeConfig'] = themeConfig;
@@ -148,36 +138,43 @@ const getCurrentThemeData = (data: Object) => {
    } else {
      themeData = getCurrentThemeData(data['children'][0]);
    }
-   // themeData[0].visible = true;
+   themeData[0].visible = true;
    return themeData;
+}
+const getData = (dataSource: Object) => {
+   let menuData = [];
+   for (const [key, value] of Object.entries(dataSource)) {
+     const {title: title, widgetName: name, designInfo: designValue} = value;
+     if (key === 'theme') {
+       menuData = menuData.concat(getMenuData(value, title, name));
+     }
+     if (designValue) {
+        for (const [key, itemValue] of Object.entries(designValue)) {
+          menuData = menuData.concat(getMenuData(itemValue, itemValue.title, key));
+        }
+     }
+   }
+   return menuData;
 }
 class Element extends React.Component<> {
   constructor(props) {
     super(props);
   }
   static getDerivedStateFromProps (defProps: PropsType, stateProps: StateType) {
-    const {dataSource: {theme: value, designInfo: designValue, title: title, widgetName: name}} = defProps;
-    let menuData = [];
-    if (value) {
-      menuData = getMenuData({'theme': value}, title, name);
-    }
-    if (designValue) {
-      for (const [key, value] of Object.entries(designValue)) {
-        menuData = menuData.concat(getMenuData(value, value.title, key));
-      }
-    }
-    const defCurrent = getCurrentThemeData(menuData[0]);
+    const { dataSource } = defProps;
+    const menuData = getData(dataSource);
+    const defThemeConfigData = getCurrentThemeData(menuData[0]);
     if (!stateProps) {
       return {
-        dataSource: defProps.dataSource,
+        dataSource: dataSource,
         menuData: menuData,
-        themeConfigData: defCurrent
+        themeConfigData: defThemeConfigData
       };
     }
-    const { dataSource } = stateProps;
     return {
-      dataSource: 'dataSource' in defProps ? defProps.dataSource : dataSource,
-      menuData: 'menuData' in stateProps ? stateProps.menuData : defProps.menuData
+      dataSource: 'dataSource' in stateProps ? dataSource.dataSource : defProps.dataSource,
+      menuData: 'menuData' in stateProps ? stateProps.menuData : [],
+      themeConfigData: 'themeConfigData' in stateProps ? stateProps.themeConfigData : []
     };
   }
   render () {
@@ -250,14 +247,12 @@ class Element extends React.Component<> {
     const {menuData, themeConfigData} = this.state;
     return (
       <React.Fragment>
-        <Title>可配置Theme</Title>
-        <Theme>
-          {menuData.length > 0 ?
-            <Navmenu theme={MenuStyle} data={menuData} mode={"horizontal"} onChange={this.onChange}></Navmenu>
-            : '暂无可配置项！'
-          }
+          {themeConfigData ?
+            <Wrap>
+              <Title>可配置Theme</Title>
+              <Navmenu theme={MenuStyle} data={menuData} mode={"horizontal"} onChange={this.onChange}></Navmenu>
+            </Wrap> : ''}
           {this.getTheme(themeConfigData)}
-        </Theme>
       </React.Fragment>
     )
   }
@@ -267,23 +262,23 @@ class Element extends React.Component<> {
     }
      return (
        <React.Fragment>
-         {data.map((item) => {
+         {data.map((item, key) => {
            return (
              <Wrap>
-                <ThemeTitle onClick={() => this.handleClick(item, event)} mBottom={item.visible ? '16px' : '0'}>
+                <ThemeTitle onClick={() => this.handleClick(key)} mBottom={item.visible ? '16px' : '0'}>
                   <Icons
                     iconClass={item.visible ? 'lugia-icon-direction_up' : 'lugia-icon-direction_down'}
                   />
                   {item.name}
                 </ThemeTitle>
-                {item.visible ? this.getConfigStyle(item.configStyles) : ''}
+                {item.visible ? this.getConfigStyle(item.configStyles, key) : ''}
              </Wrap>
            )
          })}
        </React.Fragment>
      )
   }
-  getConfigStyle = (data: Array) => {
+  getConfigStyle = (data: Array, key: number) => {
     if (!data) {
       return;
     }
@@ -291,14 +286,14 @@ class Element extends React.Component<> {
       <React.Fragment>
         {data.map((item, index)=> {
           return (
-             <Wrap visible={item.visible}>
-              <StateTitle visible={index % 2 === 0 ? true : false}>
+             <Wrap>
+              <StateTitle visible={item.visible} bgColor={index % 2 === 0 ? '#F8F8F8' : '#fff'} onClick={() => this.handleClick(index, key)}>
                  <Text>"{item.name}"</Text>
                 {item.show ?
-                  <Icons onClick={() => this.handleClick(item)} iconClass={item.visible ? 'lugia-icon-direction_up' : 'lugia-icon-direction_down'} pullLeft={'right'}></Icons>
+                  <Icons iconClass={item.visible ? 'lugia-icon-direction_up' : 'lugia-icon-direction_down'} pullLeft={'right'}></Icons>
                   : <Icons iconClass={'lugia-icon-reminder_minus'} pullLeft={'right'}></Icons>}
               </StateTitle>
-               {item.visible ? <BoxWrap>
+               {item.visible ? <BoxWrap visible={item.visible}>
                  <CodeBox>
                    {/*<Highlight className="javascript-jsx">{toText(JSON.stringify(item.value))}</Highlight>*/}
                    <pre>{toText(JSON.stringify(item.value))}</pre>
@@ -313,13 +308,16 @@ class Element extends React.Component<> {
       </React.Fragment>
     )
   }
-  handleClick = (el: Object) => {
-    const {visible} = el;
-    el.visible = !visible;
+  handleClick = (index: number, key: number) => {
+    const {themeConfigData} = this.state;
+    const visible =  key >= 0 ? themeConfigData[key]['configStyles'][index].visible : themeConfigData[index].visible;
+    if (key >= 0) {
+      themeConfigData[key]['configStyles'][index].visible = !visible;
+    } else {
+      themeConfigData[index].visible = !visible;
+    }
     this.setState({
-      el: {
-        visible: !visible
-      }
+      themeConfigData
     })
   }
   onChange = (value) => {
