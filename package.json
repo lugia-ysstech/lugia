@@ -3,9 +3,9 @@
   "version": "1.0.1",
   "private": true,
   "dependencies": {
-    "@lugia/lugia-web": "^1.2.1",
-    "@lugia/lugiax": "^1.0.13",
-    "@lugia/lugiax-router": "^1.0.16",
+    "@lugia/lugia-web": "^1.2.2",
+    "@lugia/lugiax": "^1.1.7",
+    "@lugia/lugiax-router": "1.0.16",
     "clipboard": "^2.0.4",
     "highlight.js": "^9.13.1",
     "history": "^4.7.2",
@@ -27,7 +27,7 @@
     "reset-flow-typed": "npx shx rm -rf flow-typed/npm && flow-typed install --overwrite || true"
   },
   "devDependencies": {
-    "@lugia/mega-scripts": "^1.3.53",
+    "@lugia/mega-scripts": "^1.4.21",
     "ali-oss": "^6.1.1",
     "babel-jest": "23.4.2",
     "babel-plugin-import": "^1.11.0",
