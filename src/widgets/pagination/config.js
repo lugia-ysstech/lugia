@@ -20,11 +20,11 @@ module.exports = {
     desc: "更加简洁的分页"
   },
   AlignDemo: {
-    title: "简洁分页",
-    desc: "更加简洁的分页"
+    title: "对齐方向",
+    desc: "可以配置分页对齐的方向，默认在左边"
   },
   BlockListDemo: {
-    title: "简洁分页",
-    desc: "更加简洁的分页"
+    title: "分页展示的内容",
+    desc: "可以配置分页展示的内容和顺序"
   }
 };
