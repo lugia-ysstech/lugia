@@ -47,6 +47,10 @@ const VisibleCode = styled.div`
   color: #a1a3b3;
   transition: all 0.3s linear;
   box-sizing: border-box;
+  &:hover {
+    color: #4d63ff;
+    background: #f2f5ff;
+  }
 `;
 const Icons = styled(Icon)`
   font-size: 14px;
@@ -72,31 +76,33 @@ type StateType = {
   themeConfigData: Array,
   menuData: Array,
 };
-const getConfigData = (obj: Object) => {
-  const keys = Object.keys(obj);
+const getThemeConfigData = (obj: Object) => {
   let newObj = {
     configStyles: [],
     visible: false
   }
-  keys.forEach(item => {
-    newObj['configStyles'].push({
-      value: {
-        [item]: obj[item]
-      },
-      name: item,
-      show: Array.isArray(obj[item]) ? (obj[item].length > 0 ? true : false) : false,
-      visible: false
-    });
-  })
+  for (const [key, value] of Object.entries(obj)) {
+    if (key !== 'name' && key !== 'desc') {
+      newObj['configStyles'].push({
+        value: {
+          [key]: value
+        },
+        name: key,
+        show: Array.isArray(value) ? (value.length > 0 ? true : false) : false,
+        visible: false
+      });
+    }
+  }
   newObj = Object.assign(newObj, obj);
   return newObj;
 }
-const getMenuData = (themeValue: Object, title: String, name: String) => {
+const getItemMenuData = (themeValue: Object, title: String, name: String) => {
   let menuData = [];
   let flag = false;
   let obj = {
       value: name,
-      text: title };
+      text: title
+  };
   let themeConfig = [];
   if ('theme' in themeValue) {
     const configData = themeValue['theme'];
@@ -107,16 +113,16 @@ const getMenuData = (themeValue: Object, title: String, name: String) => {
     if (flag) {
       keys.forEach(item => {
         themeTitle = configData[item].name ? configData[item].name : item;
-        obj['children'] = obj['children'].concat(getMenuData(configData[item], themeTitle, `${name}-${item}`));
+        obj['children'] = obj['children'].concat(getItemMenuData(configData[item], themeTitle, `${name}-${item}`));
       })
     } else {
       keys.forEach(item => {
-        themeConfig.push(getConfigData(configData[item], name))
+        themeConfig.push(getThemeConfigData(configData[item], name))
       })
        obj['themeConfig'] = themeConfig;
     }
   } else {
-    themeConfig.push(getConfigData(themeValue, name))
+    themeConfig.push(getThemeConfigData(themeValue, name))
     obj['themeConfig'] = themeConfig;
   }
   menuData.push(obj);
@@ -128,7 +134,7 @@ const toText = (str) => {
   }
   return str.replace(/^\{/g, '').replace(/\}$/g, '').replace(/\:\[/g, ':[\n\n\t').replace(/\],/g, '],\n\n\t').replace(/\]]/g, ']\n\n]');
 }
-const getCurrentThemeData = (data: Object) => {
+const getCurrentThemeConfig = (data: Object) => {
    let themeData = null;
    if (!data) {
      return;
@@ -136,34 +142,34 @@ const getCurrentThemeData = (data: Object) => {
    if ('themeConfig' in data) {
      themeData = data['themeConfig'];
    } else {
-     themeData = getCurrentThemeData(data['children'][0]);
+     themeData = getCurrentThemeConfig(data['children'][0]);
    }
    themeData[0].visible = true;
    return themeData;
 }
-const getData = (dataSource: Object) => {
+const  getMenuData = (dataSource: Object) => {
    let menuData = [];
-   for (const [key, value] of Object.entries(dataSource)) {
-     const {title: title, widgetName: name, designInfo: designValue} = value;
-     if (key === 'theme') {
-       menuData = menuData.concat(getMenuData(value, title, name));
+   for (const value of Object.values(dataSource)) {
+     const {title: title, widgetName: name, designInfo: designValue, theme: themeValue} = value;
+     if (themeValue) {
+       menuData = menuData.concat(getItemMenuData(value, title, name));
      }
      if (designValue) {
         for (const [key, itemValue] of Object.entries(designValue)) {
-          menuData = menuData.concat(getMenuData(itemValue, itemValue.title, key));
+          menuData = menuData.concat(getItemMenuData(itemValue, itemValue.title, key));
         }
      }
    }
    return menuData;
 }
-class Element extends React.Component<> {
+class EditTheme extends React.Component<> {
   constructor(props) {
     super(props);
   }
   static getDerivedStateFromProps (defProps: PropsType, stateProps: StateType) {
     const { dataSource } = defProps;
-    const menuData = getData(dataSource);
-    const defThemeConfigData = getCurrentThemeData(menuData[0]);
+    const menuData = getMenuData(dataSource);
+    const defThemeConfigData = getCurrentThemeConfig(menuData[0]);
     if (!stateProps) {
       return {
         dataSource: dataSource,
@@ -251,7 +257,7 @@ class Element extends React.Component<> {
             <Wrap>
               <Title>可配置Theme</Title>
               <Navmenu theme={MenuStyle} data={menuData} mode={"horizontal"} onChange={this.onChange}></Navmenu>
-            </Wrap> : ''}
+            </Wrap> : null}
           {this.getTheme(themeConfigData)}
       </React.Fragment>
     )
@@ -271,14 +277,14 @@ class Element extends React.Component<> {
                   />
                   {item.name}
                 </ThemeTitle>
-                {item.visible ? this.getConfigStyle(item.configStyles, key) : ''}
+                {item.visible ? this.getStyleConfig(item.configStyles, key) : null}
              </Wrap>
            )
          })}
        </React.Fragment>
      )
   }
-  getConfigStyle = (data: Array, key: number) => {
+  getStyleConfig = (data: Array, key: number) => {
     if (!data) {
       return;
     }
@@ -295,8 +301,7 @@ class Element extends React.Component<> {
               </StateTitle>
                {item.visible ? <BoxWrap visible={item.visible}>
                  <CodeBox>
-                   {/*<Highlight className="javascript-jsx">{toText(JSON.stringify(item.value))}</Highlight>*/}
-                   <pre>{toText(JSON.stringify(item.value))}</pre>
+                   <Highlight className="javascript-jsx">{toText(JSON.stringify(item.value))}</Highlight>
                  </CodeBox>
                  <VisibleCode>
                     <Icons iconClass='lugia-icon-finacial_hide_code'/>
@@ -321,10 +326,13 @@ class Element extends React.Component<> {
     })
   }
   onChange = (value) => {
+    const newThemeConfigData = value.newItem.themeConfig;
+    newThemeConfigData.length > 0 && newThemeConfigData.forEach((item, index) => {
+      index === 0 ? item.visible = true : item.visible = false;
+    })
     this.setState({
-      themeConfigData: value.newItem.themeConfig
+      themeConfigData: newThemeConfigData
     })
   }
 }
-
-export default Element;
+export default EditTheme;
