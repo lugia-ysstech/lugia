@@ -1,6 +1,9 @@
 import React from "react";
 import { Pagination } from "@lugia/lugia-web";
-
+import styled from "styled-components";
+const Wrapper = styled.div`
+  height: 30px;
+`;
 export default class PaginationDemo extends React.Component {
   onShowSizeChange = (current, pageSize) => {
     console.log(current, pageSize);
@@ -9,7 +12,7 @@ export default class PaginationDemo extends React.Component {
     return (
       <div>
         <br />
-        <div>分页 展示在左边 默认在左边</div>
+        <Wrapper>分页 展示在左边 默认在左边</Wrapper>
         <Pagination
           showSizeChanger
           defaultCurrent={2}
@@ -18,7 +21,7 @@ export default class PaginationDemo extends React.Component {
           onShowSizeChange={this.onShowSizeChange}
         />
         <br />
-        <div>分页 展示在右边 </div>
+        <Wrapper>分页 展示在右边 </Wrapper>
         <Pagination
           align={"Right"}
           showSizeChanger
