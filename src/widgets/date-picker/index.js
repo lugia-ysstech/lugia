@@ -1,6 +1,7 @@
 import React from "react";
 import { Anchor, Grid } from "@lugia/lugia-web";
 import EditTables from "../../edit-table";
+import EditTheme from "../../edit-theme";
 import FooterNav from "../../footer-nav";
 import PageNavHoC from "../../common/PageNavHoC";
 import widgetrouter from "../../router/widgetrouter";
@@ -130,6 +131,9 @@ export default PageNavHoC(
               <EditTables dataSource={WEEK} />
               <EditTables dataSource={WEEKS} />
               <EditTables dataSource={RANGE} />
+              <EditTheme
+                dataSource={{ DATEPICKER, MONTH, YEAR, WEEK, WEEKS, RANGE }}
+              />
               <FooterNav prev={prev} next={next} />
             </div>
           </Col>

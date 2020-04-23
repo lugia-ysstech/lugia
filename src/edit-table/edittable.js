@@ -31,11 +31,19 @@ const getEventProps = (args: Object,propsType:Object) => {
   const result = [];
   args.forEach(item => {
     const {type} = item;
-    let resType = '';
+    let resType ;
     if(propsType && type in propsType){
-      resType = propsType[type].toString();
+      const argument = propsType[type];
+      resType = Array.isArray(argument)? propsType[type].toString():JSON.stringify(argument);
     }
-    result.push(item.name + ' : ' + type + ':'+resType + ' (' + item.desc + ')');
+
+    let str = '';
+    if(resType){
+      str = `(${resType}): ${type} (${item.desc})`;
+    }else{
+      str = `${item.name} : ${type} (${item.desc})`;
+    }
+    result.push(str);
   });
   return result;
 };
