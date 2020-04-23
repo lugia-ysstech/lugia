@@ -1,6 +1,7 @@
 import React from "react";
 import { Anchor, Grid } from "@lugia/lugia-web";
 import EditTables from "../../edit-table";
+import EditTheme from "../../edit-theme";
 import FooterNav from "../../footer-nav";
 import PageNavHoC from "../../common/PageNavHoC";
 import widgetrouter from "../../router/widgetrouter";
@@ -12,6 +13,8 @@ const MoreTotalDemo = require("./MoreTotalDemo").default;
 const SizeChangeDemo = require("./SizeChangeDemo").default;
 const JumperDemo = require("./JumperDemo").default;
 const SimpleDemo = require("./SimpleDemo").default;
+const AlignDemo = require("./AlignDemo").default;
+const BlockListDemo = require("./BlockListDemo").default;
 
 const { Link } = Anchor;
 const { Row, Col } = Grid;
@@ -87,7 +90,26 @@ export default PageNavHoC(
                 desc={"更加简洁的分页"}
                 demo={<SimpleDemo />}
               ></Demo>
+              <Demo
+                title={"对齐方向"}
+                titleID={"pagination-5"}
+                code={
+                  <code>{`import React from \"react\";\nimport { Pagination } from \"@lugia/lugia-web\";\nimport styled from \"styled-components\";\nconst Wrapper = styled.div\`\n  height: 30px;\n\`;\nexport default class PaginationDemo extends React.Component {\n  onShowSizeChange = (current, pageSize) => {\n    console.log(current, pageSize);\n  };\n  render() {\n    return (\n      <div>\n        <br />\n        <Wrapper>分页 展示在左边 默认在左边</Wrapper>\n        <Pagination\n          showSizeChanger\n          defaultCurrent={2}\n          total={400}\n          onChange={this.onChange}\n          onShowSizeChange={this.onShowSizeChange}\n        />\n        <br />\n        <Wrapper>分页 展示在右边 </Wrapper>\n        <Pagination\n          align={\"Right\"}\n          showSizeChanger\n          defaultCurrent={2}\n          total={400}\n          onChange={this.onChange}\n          onShowSizeChange={this.onShowSizeChange}\n        />\n      </div>\n    );\n  }\n}\n`}</code>
+                }
+                desc={"可以配置分页对齐的方向，默认在左边"}
+                demo={<AlignDemo />}
+              ></Demo>
+              <Demo
+                title={"分页展示的内容"}
+                titleID={"pagination-6"}
+                code={
+                  <code>{`import React from \"react\";\nimport { Pagination } from \"@lugia/lugia-web\";\nimport styled from \"styled-components\";\nconst Wrapper = styled.div\`\n  height: 30px;\n\`;\nexport default class PaginationDemo extends React.Component {\n  onShowSizeChange = (current, pageSize) => {\n    console.log(current, pageSize);\n  };\n  render() {\n    return (\n      <div>\n        <Wrapper>分页 展示分页列表和快速跳转</Wrapper>\n        <Pagination\n          blockList={[\"Page\", \"PageInput\"]}\n          isShowTotalData\n          showQuickJumper\n          showSizeChanger\n          defaultCurrent={2}\n          total={400}\n          onChange={this.onChange}\n          onShowSizeChange={this.onShowSizeChange}\n        />\n        <br />\n        <Wrapper>分页 展示分页列表，总计数据和快速跳转</Wrapper>\n        <Pagination\n          blockList={[\"Page\", \"Total\", \"PageInput\"]}\n          isShowTotalData\n          showQuickJumper\n          showSizeChanger\n          defaultCurrent={2}\n          total={400}\n          onChange={this.onChange}\n          onShowSizeChange={this.onShowSizeChange}\n        />\n        <br />\n        <Wrapper>分页 展示分页列表，快速跳转，总计数据和展示条数下拉框</Wrapper>\n        <Pagination\n          blockList={[\"Page\", \"PageInput\", \"Total\", \"PageSize\"]}\n          isShowTotalData\n          showQuickJumper\n          showSizeChanger\n          defaultCurrent={2}\n          total={400}\n          onChange={this.onChange}\n          onShowSizeChange={this.onShowSizeChange}\n        />\n      </div>\n    );\n  }\n}\n`}</code>
+                }
+                desc={"可以配置分页展示的内容和顺序"}
+                demo={<BlockListDemo />}
+              ></Demo>
               <EditTables dataSource={PAGINATION} />
+              <EditTheme dataSource={{ PAGINATION }} />
               <FooterNav prev={prev} next={next} />
             </div>
           </Col>
@@ -103,6 +125,8 @@ export default PageNavHoC(
                 <Link title={"改变每页条数"} href={"#pagination-2"} />
                 <Link title={"快速跳转"} href={"#pagination-3"} />
                 <Link title={"简洁分页"} href={"#pagination-4"} />
+                <Link title={"对齐方向"} href={"#pagination-5"} />
+                <Link title={"分页展示的内容"} href={"#pagination-6"} />
               </Anchor>
             </Col>
           )}

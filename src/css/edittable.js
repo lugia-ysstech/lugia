@@ -28,14 +28,14 @@ export const Tr = styled.tr`
 `;
 
 export const Td = styled.td`
-  padding:15px 20px;
+  padding:15px 15px;
   min-height:48px;
   vertical-align:middle;
   line-height:24px;
   max-width:242px;
   word-break: break-word;
   min-width:${props => props.width?props.width+'px':''};
-  color:${props => (props.mode?'#f8ac30':'#36384c')}
+  color:${props => (props.mode?'#f8ac30':'#36384c')};
 `;
 
 export const Args = styled.div`

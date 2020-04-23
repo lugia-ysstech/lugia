@@ -1,6 +1,7 @@
 import React from "react";
 import { Anchor, Grid } from "@lugia/lugia-web";
 import EditTables from "../../edit-table";
+import EditTheme from "../../edit-theme";
 import FooterNav from "../../footer-nav";
 import PageNavHoC from "../../common/PageNavHoC";
 import widgetrouter from "../../router/widgetrouter";
@@ -118,6 +119,7 @@ export default PageNavHoC(
               <EditTables dataSource={GRID} />
               <EditTables dataSource={COL} />
               <EditTables dataSource={ROW} />
+              <EditTheme dataSource={{ GRID, COL, ROW }} />
               <FooterNav prev={prev} next={next} />
             </div>
           </Col>
