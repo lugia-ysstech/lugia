@@ -5,9 +5,11 @@
  * @flow
  */
 
-const { removeSync, writeJSON, readJSON } = require('fs-extra');
+const { writeJSON, removeSync } = require('fs-extra');
 const crossSpawn = require('@lugia/mega-utils/lib/crossSpawn');
 const path = require('path');
+const ossConfig = require('./oss');
+const { version, megaIDE } = require('./version');
 const replace = require('replace-in-file');
 const OSS = require('ali-oss');
 const fs = require('fs');
@@ -36,14 +38,8 @@ async function spawn(args, msg) {
   });
 }
 
+const client = OSS(ossConfig);
 async function uploadOSS(target, source) {
-  const client = OSS({
-    region: 'a',
-    accessKeyId: 'b',
-    accessKeySecret: 'c',
-    bucket: 'd',
-    timeout: '60s'
-  });
   await client.putStream(target, fs.createReadStream(source));
 }
 
@@ -83,7 +79,7 @@ async function getDirections(path) {
 
 async function publish(param) {
   const dist = path.join(__dirname, '../dist');
-  // removeSync(dist);
+  removeSync(dist);
   console.info('清空打包目录');
 
   const { base, version } = param;
@@ -93,8 +89,8 @@ async function publish(param) {
     publicPath: `https://lugia.oss-cn-beijing.aliyuncs.com/lugia-site/${version}/`
   });
   //
-  // await spawn(['run', 'create'], '创建门户');
-  // await spawn(['build'], '开始构建门户');
+  await spawn(['run', 'create'], '创建门户');
+  await spawn(['build'], '开始构建门户');
 
   const getDistPath = target => path.join(dist, target);
   const indexJS = getDistPath('index.*.js');
@@ -117,7 +113,7 @@ async function publish(param) {
 
   const getAliBasePath = target => path.join('lugia-site', version, target);
 
-  for(let i = 0;i < jsFiles.length; i++){
+  for (let i = 0; i < jsFiles.length; i++) {
     const file = jsFiles[i];
     const target = getDistPath(file);
     await uploadOSS(getAliBasePath(file), target);
@@ -129,7 +125,7 @@ async function publish(param) {
   console.info('上传CSS文件');
   const cssFiles = await getFiles(dist, '**/*.css');
 
-  for(let i = 0;i < cssFiles.length; i++){
+  for (let i = 0; i < cssFiles.length; i++) {
     const file = cssFiles[i];
     const target = getDistPath(file);
     await uploadOSS(getAliBasePath(file), target);
@@ -156,11 +152,10 @@ async function publish(param) {
 }
 
 publish({
-  mac: 'https://lugia.oss-cn-beijing.aliyuncs.com/download/LugiaMega-1.1.4.dmg',
+  mac: `https://lugia.oss-cn-beijing.aliyuncs.com/download/LugiaMega-${megaIDE}.dmg`,
   base: 'https://lugia.oss-cn-beijing.aliyuncs.com/',
-  win:
-    'https://lugia.oss-cn-beijing.aliyuncs.com/download/LugiaMega%20Setup%201.1.4.exe',
+  win: `https://lugia.oss-cn-beijing.aliyuncs.com/download/LugiaMega%20Setup%20${megaIDE}.exe`,
   pdf:
     'https://lugia.oss-cn-beijing.aliyuncs.com/download/lugiav1.1.0-%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%20%E4%B8%AD%E6%96%87%EF%BC%88%E7%AE%80%EF%BC%89.pdf',
-  version: '1.2.0'
+  version
 });
