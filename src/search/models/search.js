@@ -6,11 +6,12 @@
  *
  * @flow
  */
-import lugiax from '@lugia/lugiax';
-
-const model = 'search';
+import lugiax from "@lugia/lugiax";
+import { groupBy } from "ramda";
+import searchData from "../../router/search";
+const model = "search";
 const state = {
-  searchInfo: null,
+  searchInfo: null
 };
 export default lugiax.register({
   model,
@@ -18,23 +19,25 @@ export default lugiax.register({
   mutations: {
     sync: {
       handleInputChange(state, inParam) {
-        return state.set('searchInfo', inParam);
-
-      },
+        return state.set("searchInfo", inParam);
+      }
     },
-    async:{
-      async fetchRequest(state, inParam){
-        const resp = await fetch('http://219.141.235.67:9100/api/search',
-          {
-            method: 'Post',
-            body: JSON.stringify({ q: inParam }),
-            headers: new Headers({ 'Content-Type': 'application/json' }),
-          }).then(response => (response.json())).then(data => {
-            return data;
-          });
-        const res = await resp;
-        return state.set('result', res);
+    async: {
+      async fetchRequest(state, q) {
+        const res = groupBy(item => {
+          return item.type;
+        })(
+          searchData
+            .filter(item => {
+              const { content } = item;
+              return content.toUpperCase().indexOf(q.toUpperCase()) !== -1;
+            })
+            .sort((a, b) => a.power - b.power)
+        );
+
+        console.info(res);
+        return state.set("result", res);
       }
     }
-  },
+  }
 });
