@@ -5,16 +5,16 @@
  * @flow
  */
 import React from "react";
-import { go, Link } from "@lugia/lugiax-router";
-import { Button, Menu, Navmenu, Theme } from "@lugia/lugia-web";
+import { go } from "@lugia/lugiax-router";
+import { Navmenu } from "@lugia/lugia-web";
 import "../../css/menu.css";
 import Router from "../../router";
 import Widget from "@lugia/lugia-web/dist/consts/index";
-import { bindTo, connect } from "@lugia/lugiax";
 import styled from "styled-components";
-import { getBorderRadius, getBorder, getBoxShadow } from "@lugia/theme-utils";
+import { getBorderRadius, getBoxShadow } from "@lugia/theme-utils";
 
 import colorsFunc from "@lugia/lugia-web/dist/css/stateColor";
+
 const { themeColor } = colorsFunc();
 
 const getMenuItems = (data: Object) => {
@@ -57,7 +57,25 @@ const Container = styled.div`
   position: ${props => (props.fixed ? "fixed" : "relative")};
   top: 0;
   width: 260px;
+  ${props => (props.mobile ? "" : "overflow-y: scroll;overflow-x: hidden;")}
   height: ${props => props.height + "px"};
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: transparent;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: #ccc;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
 `;
 
 const MenuBox = styled.div`
@@ -118,7 +136,7 @@ export default class MenuList extends React.Component<any, any> {
   }
 
   getWindowHeight = () => {
-    const viewHeight = document.body.clientHeight - 122;
+    const viewHeight = document.body.clientHeight - 60;
     this.setState({
       height: viewHeight
     });
@@ -184,7 +202,7 @@ export default class MenuList extends React.Component<any, any> {
           </MenuBox>
         ) : (
           <Navmenu
-            autoHeight={false}
+            autoHeight={true}
             theme={config}
             inlineType={"ellipse"}
             mode={"inline"}

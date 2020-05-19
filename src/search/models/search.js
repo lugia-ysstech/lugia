@@ -24,6 +24,7 @@ export default lugiax.register({
     },
     async: {
       async fetchRequest(state, q) {
+        q = q || "";
         const res = groupBy(item => {
           return item.type;
         })(
