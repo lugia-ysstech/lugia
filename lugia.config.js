@@ -1,5 +1,10 @@
-const config = require('./lugia.config.json');
+let config = require('./lugia.config.json');
 
+if (process.env.NODE_ENV === 'development') {
+  config = {
+    publicPath: '/'
+  };
+}
 export default {
   ...config,
   disableCSSModules: true,
