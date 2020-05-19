@@ -24,14 +24,13 @@ export default lugiax.register({
     },
     async: {
       async fetchRequest(state, q) {
-        q = q || "";
         const res = groupBy(item => {
           return item.type;
         })(
           searchData
             .filter(item => {
               const { content } = item;
-              return content.toUpperCase().indexOf(q.toUpperCase()) !== -1;
+              return q && content.toUpperCase().indexOf(q.toUpperCase()) !== -1;
             })
             .sort((a, b) => a.power - b.power)
         );
