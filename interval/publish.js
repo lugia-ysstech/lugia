@@ -63,6 +63,7 @@ async function getFiles(path, fileExt) {
     );
   });
 }
+
 async function getDirections(path) {
   return await new Promise((resolve, reject) => {
     glob(
@@ -79,6 +80,7 @@ async function getDirections(path) {
     );
   });
 }
+
 async function publish(param) {
   const dist = path.join(__dirname, '../dist');
   // removeSync(dist);
@@ -90,7 +92,8 @@ async function publish(param) {
   await writeJSON(target, {
     publicPath: `https://lugia.oss-cn-beijing.aliyuncs.com/lugia-site/${version}/`
   });
-
+  //
+  // await spawn(['run', 'create'], '创建门户');
   // await spawn(['build'], '开始构建门户');
 
   const getDistPath = target => path.join(dist, target);
@@ -113,21 +116,25 @@ async function publish(param) {
   const jsFiles = await getFiles(dist, '**/*.js');
 
   const getAliBasePath = target => path.join('lugia-site', version, target);
-  jsFiles.forEach(async file => {
+
+  for(let i = 0;i < jsFiles.length; i++){
+    const file = jsFiles[i];
     const target = getDistPath(file);
     await uploadOSS(getAliBasePath(file), target);
     console.info(`${target} done!`);
-  });
+  }
+
   console.info('上传JS文件 done');
 
   console.info('上传CSS文件');
   const cssFiles = await getFiles(dist, '**/*.css');
 
-  cssFiles.forEach(async file => {
+  for(let i = 0;i < cssFiles.length; i++){
+    const file = cssFiles[i];
     const target = getDistPath(file);
     await uploadOSS(getAliBasePath(file), target);
     console.info(`${target} done!`);
-  });
+  }
 
   console.info('上传JS文件 done');
 
