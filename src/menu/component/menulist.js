@@ -4,16 +4,16 @@
  *
  * @flow
  */
-import React from "react";
-import { go } from "@lugia/lugiax-router";
-import { Navmenu } from "@lugia/lugia-web";
-import "../../css/menu.css";
-import Router from "../../router";
-import Widget from "@lugia/lugia-web/dist/consts/index";
-import styled from "styled-components";
-import { getBorderRadius, getBoxShadow } from "@lugia/theme-utils";
+import React from 'react';
+import { go } from '@lugia/lugiax-router';
+import { Navmenu } from '@lugia/lugia-web';
+import '../../css/menu.css';
+import Router from '../../router';
+import Widget from '@lugia/lugia-web/dist/consts/index';
+import styled from 'styled-components';
+import { getBorderRadius, getBoxShadow } from '@lugia/theme-utils';
 
-import colorsFunc from "@lugia/lugia-web/dist/css/stateColor";
+import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
 
 const { themeColor } = colorsFunc();
 
@@ -53,12 +53,12 @@ const getMenuItems = (data: Object) => {
 
 const Container = styled.div`
   padding: ${props =>
-    props.fixed ? "0" : props.padding ? props.padding : "42px 0 10px"};
-  position: ${props => (props.fixed ? "fixed" : "relative")};
+  props.fixed ? '0' : props.padding ? props.padding : '42px 0 10px'};
+  position: ${props => (props.fixed ? 'fixed' : 'relative')};
   top: 0;
   width: ${props => `${props.width || 260}px`};
-  ${props => (props.mobile ? "" : "overflow-y: scroll;overflow-x: hidden;")}
-  height: ${props => props.height + "px"};
+  ${props => (props.mobile ? '' : 'overflow-y: scroll;overflow-x: hidden;')}
+  height: ${props => props.height + 'px'};
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -97,7 +97,7 @@ function getScrollTop(): number {
   let scrollPos;
   if (window.pageYOffset) {
     scrollPos = window.pageYOffset;
-  } else if (document.compatMode && document.compatMode != "BackCompat") {
+  } else if (document.compatMode && document.compatMode != 'BackCompat') {
     scrollPos = document.documentElement && document.documentElement.scrollTop;
   } else if (document.body) {
     scrollPos = document.body.scrollTop;
@@ -106,15 +106,21 @@ function getScrollTop(): number {
 }
 
 export default class MenuList extends React.Component<any, any> {
+  constructor(props) {
+    super(props);
+    this.canFixed = true;
+    this.canCancelFixed = false;
+  }
+
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
     const path = window.location.hash;
     const pathFilter = path.match(/[^#]+/g)[0].match(/[^/]+/g);
-    const pathType = pathFilter[0] === "design" ? "designConfig" : "menuConfig";
+    const pathType = pathFilter[0] === 'design' ? 'designConfig' : 'menuConfig';
     const defaultUrl = Router[pathType][0].children
       ? Router[pathType][0].children[0].value
       : Router[pathType][0].value;
     const defCurrent =
-      pathFilter.length > 1 ? "/" + pathFilter.join("/") : defaultUrl;
+      pathFilter.length > 1 ? '/' + pathFilter.join('/') : defaultUrl;
     if (!stateProps) {
       return {
         current: defCurrent,
@@ -122,14 +128,14 @@ export default class MenuList extends React.Component<any, any> {
       };
     }
     return {
-      current: "current" in defProps ? defCurrent : stateProps.current,
-      routerType: "routerType" in stateProps ? stateProps.routerType : pathType
+      current: 'current' in defProps ? defCurrent : stateProps.current,
+      routerType: 'routerType' in stateProps ? stateProps.routerType : pathType
     };
   }
 
   componentDidMount() {
     this.getWindowHeight();
-    window.addEventListener("scroll", this.addWindowListener);
+    window.addEventListener('scroll', this.addWindowListener);
     window.onresize = () => {
       this.getWindowHeight();
     };
@@ -145,6 +151,7 @@ export default class MenuList extends React.Component<any, any> {
   render() {
     const { width = 270, padding = {}, isMobile = false, data } = this.props;
     const { height } = this.state;
+
     const config = {
       [Widget.NavMenu]: {
         Tree: {
@@ -152,7 +159,7 @@ export default class MenuList extends React.Component<any, any> {
             normal: {
               width,
               height,
-              boxShadow: getBoxShadow("none")
+              boxShadow: getBoxShadow('none')
             }
           },
           TreeItem: {
@@ -177,7 +184,7 @@ export default class MenuList extends React.Component<any, any> {
                 font: {
                   size: 15
                 },
-                color: "#fff",
+                color: '#fff',
                 borderRadius: getBorderRadius(35)
               }
             }
@@ -194,8 +201,8 @@ export default class MenuList extends React.Component<any, any> {
             <Navmenu
               autoHeight={isMobile}
               theme={config}
-              inlineType={"ellipse"}
-              mode={"inline"}
+              inlineType={'ellipse'}
+              mode={'inline'}
               data={defaultData}
               value={this.state.current}
               inlineExpandAll={true}
@@ -207,8 +214,8 @@ export default class MenuList extends React.Component<any, any> {
           <Navmenu
             autoHeight={true}
             theme={config}
-            inlineType={"ellipse"}
-            mode={"inline"}
+            inlineType={'ellipse'}
+            mode={'inline'}
             data={getMenuItems(Router[routerType])}
             value={this.state.current}
             inlineExpandAll={true}
@@ -219,6 +226,7 @@ export default class MenuList extends React.Component<any, any> {
       </Container>
     );
   }
+
   onSelect = res => {
     const { onSelect, ignoreGo } = this.props;
     onSelect && onSelect(res);
@@ -231,12 +239,23 @@ export default class MenuList extends React.Component<any, any> {
 
   addWindowListener = () => {
     const scrollTop = getScrollTop();
-    let fix = false;
+
     if (scrollTop >= 80) {
-      fix = true;
+      if (this.canFixed) {
+        this.canFixed = false;
+        this.canCancelFixed = true;
+        this.setState({
+          fixed: true
+        });
+      }
+    } else {
+      if (this.canCancelFixed) {
+        this.canFixed = true;
+        this.canCancelFixed = false;
+        this.setState({
+          fixed: false
+        });
+      }
     }
-    this.setState({
-      fixed: fix
-    });
   };
 }
