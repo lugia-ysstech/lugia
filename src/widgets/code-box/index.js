@@ -111,7 +111,7 @@ export default class extends React.Component {
           onMouseLeave={this.mouseOver}
         >
           <Icons
-            iconClass={visible ? 'lugia-icon-financial_code' : 'lugia-icon-finacial_hide_code'}
+            iconClass={visible ? 'lugia-icon-financial_code' : 'lugia-icon-financial_hide_code'}
           />
           {textVisible ? (visible ? '隐藏代码' : '显示代码') : ''}
         </VisibleCode>
