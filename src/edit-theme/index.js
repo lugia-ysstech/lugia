@@ -304,7 +304,7 @@ class EditTheme extends React.Component<> {
                    <Highlight className="javascript-jsx">{toText(JSON.stringify(item.value))}</Highlight>
                  </CodeBox>
                  <VisibleCode>
-                    <Icons iconClass='lugia-icon-finacial_hide_code'/>
+                    <Icons iconClass='lugia-icon-financial_hide_code'/>
                  </VisibleCode>
                </BoxWrap> : null}
             </Wrap>

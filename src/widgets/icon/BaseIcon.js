@@ -35,7 +35,7 @@ export default class BaseIcon extends React.Component<any, any> {
               top: 10,
               bottom: 10
             },
-            fontSize: 36
+            fontSize: 22
           },
           hover: {
             color: "white"
@@ -49,7 +49,7 @@ export default class BaseIcon extends React.Component<any, any> {
         <Copy ref={cmp => (this.copy = cmp)} />
         <IconWrapper>
           <Icon
-            iconClass={"lugia-icon-financial_unlock"}
+            iconClass={"lugia-icon-direction_Center_alignment"}
             onClick={() => {
               this.copy.copy("lugia-icon-financial_unlock");
             }}

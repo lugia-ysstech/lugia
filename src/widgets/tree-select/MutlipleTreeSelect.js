@@ -70,6 +70,7 @@ export default class MutlipleTreeSelect extends React.Component<any, any> {
         <TreeSelect
           data={data}
           onlySelectLeaf
+          pathSeparator={'/'}
           igronSelectField="notCanSelect"
           expandAll
           mutliple

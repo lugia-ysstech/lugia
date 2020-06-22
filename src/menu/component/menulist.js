@@ -56,7 +56,7 @@ const Container = styled.div`
     props.fixed ? "0" : props.padding ? props.padding : "42px 0 10px"};
   position: ${props => (props.fixed ? "fixed" : "relative")};
   top: 0;
-  width: 260px;
+  width: ${props => `${props.width || 260}px`};
   ${props => (props.mobile ? "" : "overflow-y: scroll;overflow-x: hidden;")}
   height: ${props => props.height + "px"};
 
@@ -146,7 +146,7 @@ export default class MenuList extends React.Component<any, any> {
     const { width = 270, padding = {}, isMobile = false, data } = this.props;
     const { height } = this.state;
     const config = {
-      [Widget.Navmenu]: {
+      [Widget.NavMenu]: {
         Tree: {
           Container: {
             normal: {
@@ -163,7 +163,10 @@ export default class MenuList extends React.Component<any, any> {
                 }
               },
               hover: {
-                color: themeColor
+                color: themeColor,
+                font: {
+                  size: 15
+                }
               }
             },
             SelectedText: {
@@ -185,7 +188,7 @@ export default class MenuList extends React.Component<any, any> {
     const { routerType, fixed } = this.state;
     const defaultData = data || getMenuItems(Router[routerType]);
     return (
-      <Container fixed={fixed} height={height} padding={padding}>
+      <Container width={width} fixed={fixed} height={height} padding={padding}>
         {isMobile ? (
           <MenuBox>
             <Navmenu
