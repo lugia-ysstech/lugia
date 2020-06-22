@@ -79,6 +79,7 @@ export default class InlineDataMutlipleTree extends React.Component<
         autoHeight
         data={data}
         mutliple
+        pathSeparator={'/'}
         translateTreeData={true}
         valueField={'value'}
         displayField={'text'}

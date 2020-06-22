@@ -79,6 +79,7 @@ export default class DefaultTree extends React.Component<Object, Object> {
         igronSelectField={'notCanSelect'}
         autoHeight
         expandAll
+        pathSeparator={'/'}
         onSelect={this.onSelect}
         renderSuffixItems={this.renderSuffix}
         shape={'round'}

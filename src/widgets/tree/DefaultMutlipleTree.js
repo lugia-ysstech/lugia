@@ -72,6 +72,7 @@ export default class DefaultMutlipleTree extends React.Component<
         theme={config}
         autoHeight
         mutliple
+        pathSeparator={'/'}
         data={data}
         igronSelectField={'notCanSelect'}
       />

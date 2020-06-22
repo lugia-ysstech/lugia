@@ -80,7 +80,7 @@ export default class BigDataTree extends React.Component {
           placeholder={'请输入查询条件'}
           onChange={this.onChange}
         />
-        <Tree query={query}  data={bigTree} expandAll mutliple />
+        <Tree query={query}  pathSeparator={'/'}  data={bigTree} expandAll mutliple />
       </Theme>;
   }
 

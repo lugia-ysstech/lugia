@@ -69,6 +69,7 @@ export default class DefaultTree extends React.Component<Object, Object> {
       <Tree
         theme={config}
         data={data}
+        pathSeparator={'/'}
         igronSelectField={'notCanSelect'}
         autoHeight
       />
