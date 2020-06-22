@@ -10,14 +10,17 @@ const history = createHashHistory();
 const App = createApp(
   {
     '/': {
-      component: Main
+      component: Main,
+      verify() {
+        return true;
+      }
     }
   },
   history,
   {
     loading:  PageLoading,
     async onBeforeGo({ url }) {
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
       if (url === '/nowPower') {
         await go({ url: '/404' });
         return false;

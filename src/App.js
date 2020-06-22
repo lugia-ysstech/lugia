@@ -12,6 +12,9 @@ export const designRouter = {
     render: async () => import('./home'),
     value: '/home',
     isHidden: true,
+    verify() {
+      return true;
+    },
   },
   '/home':{
     value:'首页',
@@ -32,6 +35,9 @@ export const designRouter = {
     text:'lugia-web',
     url:'/component',
     component: Widgets,
+    verify() {
+      return true;
+    },
   },
   '/lugia-mega':{
     value:'lugia-mega',
@@ -59,6 +65,9 @@ export const designRouterMobile = {
     render: async () => import('./mobile/home'),
     value: '/home',
     isHidden: true,
+    verify() {
+      return true;
+    },
   },
   '/home':{
     value:'首页',
@@ -79,6 +88,9 @@ export const designRouterMobile = {
     text:'lugia-web',
     url:'/component',
     render: () => import('./mobile/widgets'),
+    verify() {
+      return true;
+    }
   },
   '/lugia-mega':{
     value:'lugia-mega',
