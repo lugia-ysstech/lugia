@@ -8,7 +8,6 @@ class UploadDemo extends React.Component<any, any> {
 
   render() {
     const buttonProps = {
-      areaType: 'button',
       inputId: 'buttonUpload',
       showFileList: true,
       url: '/upload',

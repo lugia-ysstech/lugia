@@ -200,6 +200,7 @@ export default class DefaultTree extends React.Component<Object, Object> {
         theme={config}
         igronSelectField={'notCanSelect'}
         autoHeight
+        pathSeparator={'/'}
         expandAll
         onSelect={this.onSelect}
         shape={'round'}

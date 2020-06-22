@@ -237,6 +237,7 @@ export default class DragSingleTree extends React.Component<> {
           expandAll
           theme={config}
           draggable
+          pathSeparator={'/'}
           parentIsHighlight
           onDrop={this.onDropOfDelayering}
           switchIconNames={switchIconNames}

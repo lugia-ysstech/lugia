@@ -991,10 +991,17 @@
   resolved "https://registry.npm.taobao.org/@emotion/unitless/download/@emotion/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha1-dyESkcGQCnALinjPr9oxYNdpSe0=
 
-"@lugia/babel-preset-mega@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.npm.taobao.org/@lugia/babel-preset-mega/download/@lugia/babel-preset-mega-1.1.2.tgz#07b5a7527181c5ae7cef5eea8a0670dfa9441297"
-  integrity sha1-B7WnUnGBxa58717qigZw36lEEpc=
+"@lugia/array-utils@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@lugia/array-utils/-/array-utils-1.0.2.tgz#34d364b94d2919b6ec891124c84157a07b28211d"
+  integrity sha512-WFUd8McDHDGAsdfreQ8vsFFVvJK9MzBIjMroscJ+s/d5sUwa68QKdEe8zBjxkXsiIaQlltED5FpqFPERfFwMeg==
+  dependencies:
+    tslib "^1.11.1"
+
+"@lugia/babel-preset-mega@^1.2.0-alpha.0":
+  version "1.2.0-alpha.0"
+  resolved "https://registry.npmjs.org/@lugia/babel-preset-mega/-/babel-preset-mega-1.2.0-alpha.0.tgz#29de84cba4a4a3c7199d18bf0f828d35f3b0aeee"
+  integrity sha512-8TG/7+Lyv7vPWzrsBhOl0vDOsgwtE2lmQUWv/lZxaAdH6wIqgJS169kyndZoScWuv4XUxivAP9qHMg66opU6xg==
   dependencies:
     "@babel/core" "7.4.3"
     "@babel/plugin-proposal-class-properties" "7.4.0"
@@ -1028,7 +1035,7 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/css@^1.0.23", "@lugia/css@^1.0.24":
+"@lugia/css@^1.0.24":
   version "1.0.24"
   resolved "https://registry.npm.taobao.org/@lugia/css/download/@lugia/css-1.0.24.tgz#1716bcf1fa9fbb1255d8c08c43a4d9738d629454"
   integrity sha1-Fxa88fqfuxJV2MCMQ6TZc41ilFQ=
@@ -1036,25 +1043,6 @@
     "@types/debug" "^4.1.5"
     debug "^4.1.1"
     tslib "^1.11.1"
-
-"@lugia/devtools-conversion@^1.0.35":
-  version "1.0.38"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-conversion/download/@lugia/devtools-conversion-1.0.38.tgz#6d643b2379c6354a9ff02245c9fa4f91522f40a1"
-  integrity sha1-bWQ7I3nGNUqf8CJFyfpPkVIvQKE=
-  dependencies:
-    "@lugia/devtools-core" "^1.0.16"
-    "@lugia/lugiad-core" "^1.0.5"
-
-"@lugia/devtools-core@^1.0.16":
-  version "1.0.16"
-  resolved "https://registry.npm.taobao.org/@lugia/devtools-core/download/@lugia/devtools-core-1.0.16.tgz#40dd3f48a96defc9a38676720eb06a983814e35b"
-  integrity sha1-QN0/SKlt78mjhnZyDrBqmDgU41s=
-  dependencies:
-    chai "^4.1.2"
-    immutable "^3.8.2"
-    redux "^4.0.0"
-    redux-immutable "^4.0.0"
-    redux-saga "^0.16.0"
 
 "@lugia/devtools-material@^1.0.40":
   version "1.0.40"
@@ -1067,9 +1055,17 @@
 
 "@lugia/dict@^1.0.4":
   version "1.0.4"
-  resolved "https://registry.npm.taobao.org/@lugia/dict/download/@lugia/dict-1.0.4.tgz#b030f62020c0c847e1ee439731cbaf4de16df7f4"
+  resolved "http://192.168.102.79:5001/@lugia%2fdict/-/dict-1.0.4.tgz#b030f62020c0c847e1ee439731cbaf4de16df7f4"
   integrity sha1-sDD2ICDAyEfh7kOXMcuvTeFt9/Q=
   dependencies:
+    tslib "^1.11.1"
+
+"@lugia/geometry@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.npmjs.org/@lugia/geometry/-/geometry-1.0.6.tgz#d1e38a4894aee330928d62e89fe7268bff11b57b"
+  integrity sha512-24eZRFv36WzwY/GDbO4kqyQ45bhs/pz/SG/y5jq0C385Z6CvuyW2Cdc2WZQsbtbaJs7odvGKvbsSgxchRI4JRQ==
+  dependencies:
+    "@lugia/math" "^1.0.10"
     tslib "^1.11.1"
 
 "@lugia/listener@^1.0.5":
@@ -1082,20 +1078,19 @@
     rxjs "^6.3.3"
     tslib "^1.11.1"
 
-"@lugia/lugia-web@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.npm.taobao.org/@lugia/lugia-web/download/@lugia/lugia-web-1.2.3.tgz#7ec6a0580a2f9e795c5fc221ff4087fad24bb4b5"
-  integrity sha1-fsagWAovnnlcX8Ih/0CH+tJLtLU=
+"@lugia/lugia-web@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.npmjs.org/@lugia/lugia-web/-/lugia-web-1.2.4.tgz#d2dec006f6c0085bb1ce645556f388be68347874"
+  integrity sha512-RvlxCO+YHoZgNm+bBEZWdi1kCXZ8nH1I10TJO+Vta2nivlQkm3Or3NDGszFtazbQHG2nVfI5jylVhHJMkcsCOw==
   dependencies:
-    "@lugia/css" "^1.0.23"
+    "@lugia/css" "^1.0.24"
     "@lugia/listener" "^1.0.5"
     "@lugia/math" "^1.0.10"
-    "@lugia/object-utils" "^1.0.16"
+    "@lugia/object-utils" "^1.0.19"
     "@lugia/ramada" "^1.0.5"
-    "@lugia/theme-config" "^1.1.3"
-    "@lugia/theme-css-hoc" "^1.1.9"
-    "@lugia/theme-hoc" "^1.1.3"
-    "@lugia/theme-utils" "^1.1.6"
+    "@lugia/theme-css-hoc" "^1.1.17"
+    "@lugia/theme-hoc" "^1.1.8"
+    "@lugia/theme-utils" "^1.1.8"
     "@lugia/type-utils" "^1.0.6"
     babel-polyfill "6.26.0"
     classnames "2.2.5"
@@ -1117,21 +1112,116 @@
     react-error-overlay "1.0.9"
     warning "3.0.0"
 
-"@lugia/lugiad-core@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiad-core/download/@lugia/lugiad-core-1.0.5.tgz#1bab9e8aef7481e9893b3b72e6e6199e3e8a0df7"
-  integrity sha1-G6ueiu90gemJOzty5uYZnj6KDfc=
+"@lugia/lugiad-compiler-types@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@lugia/lugiad-compiler-types/-/lugiad-compiler-types-1.0.2.tgz#53a371d7d377c2dc83c8397d251136bcc5d01104"
+  integrity sha512-ky079V0khDp10aVXYDoITh/yoCBcsxRTNsDlYOb8SAnFPUcnPCiIxbgBJHZP+NA9dGOvrXl2qowVwOkokFefpA==
   dependencies:
-    chai "^4.1.2"
+    "@lugia/lugiad-types" "^1.0.2"
 
-"@lugia/lugiad-loader@^1.2.16":
-  version "1.2.16"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiad-loader/download/@lugia/lugiad-loader-1.2.16.tgz#982ba44b441d37835090e51432cb159e56f72c69"
-  integrity sha1-mCukS0QdN4NQkOUUMssVnlb3LGk=
+"@lugia/lugiad-compiler@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@lugia/lugiad-compiler/-/lugiad-compiler-1.0.2.tgz#67ba4449dd68ecad3e426d1f44c2882fe993938b"
+  integrity sha512-++KnWTQ5DM9/6CN0byM5dbSplTH+mYUlb2BP55EZQyhJjy7f2xBxWCLOWaA1vAXKbSWmCT+cwfmGIh0nqLtltA==
+  dependencies:
+    "@lugia/array-utils" "^1.0.2"
+    "@lugia/geometry" "^1.0.6"
+    "@lugia/lugiad" "^1.0.3"
+    "@lugia/lugiad-compiler-types" "^1.0.2"
+    "@lugia/lugiad-runtime-lib" "^1.0.2"
+    tslib "^1.11.1"
+
+"@lugia/lugiad-loader@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.npmjs.org/@lugia/lugiad-loader/-/lugiad-loader-1.3.0.tgz#7b7216e03a49b80bc081fd60e282f6a0791291c3"
+  integrity sha512-eh1RD3Cqo96xWPYr189fBuk/c/HEVmzkdxHEAvE/F1sGPXVMDEwBZhTtyfwuCHB4SrxpJ81arFwXYEtNOFOS6g==
   dependencies:
     "@babel/runtime" "^7.4.3"
-    "@lugia/devtools-conversion" "^1.0.35"
+    "@lugia/lugiad-runtime" "^1.0.2"
     loader-utils "1.2.3"
+
+"@lugia/lugiad-runtime-lib@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@lugia/lugiad-runtime-lib/-/lugiad-runtime-lib-1.0.2.tgz#f57811c6ad790f8bfd671898a27772ede32bab77"
+  integrity sha512-QwTdsddsprcS1JpXQzBwgR9m4gAI5fJkFCgff/wvDuQwQncE5U9mTlKNgk5jXcb4NpMjC+xLmaC7QTnJsCaCAg==
+  dependencies:
+    tslib "^1.11.1"
+
+"@lugia/lugiad-runtime@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@lugia/lugiad-runtime/-/lugiad-runtime-1.0.2.tgz#4ab7dd7cbf7061623f7c3ce6c0d2f72f33b94172"
+  integrity sha512-xh7v91qXRw3MnUoysycnKX+FvU25GpLmNcEtZlRc1w8GWjDNpBmTOb+VO7IuOa6RAlVFZy7U3A78X/dsguWuMw==
+  dependencies:
+    "@lugia/lugiad-compiler" "^1.0.2"
+    "@lugia/lugiad-compiler-types" "^1.0.2"
+    "@lugia/lugiad-types" "^1.0.2"
+    "@lugia/lugiadc-render" "^1.0.2"
+    "@lugia/lugiadc-render-react-plugin" "^1.0.2"
+    "@lugia/lugiadc-render-types" "^1.0.2"
+    tslib "^1.11.1"
+
+"@lugia/lugiad-types@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@lugia/lugiad-types/-/lugiad-types-1.0.2.tgz#e932f7036e419e52a2c4da940b727cf9e6ba0acb"
+  integrity sha512-NyZL/Yz9jCqSseM/RxNHldO5HkOzo5n9GgKwfuq6x7iut9T3h5tDnp//4keSU33aM8ksYafwtn7iYUQxVHAJzg==
+
+"@lugia/lugiad@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@lugia/lugiad/-/lugiad-1.0.3.tgz#ce57cc8979397fe25160f81d5cd6b829a1899ae7"
+  integrity sha512-6X4j58v5Zf6zYCjkOV8tA296SJWPGKgMpSxlyDoZfh6KpiOd/TtLRrJCG+zfs9eqNJczRukHqVoEN8la9kNosg==
+  dependencies:
+    "@lugia/lugiad-types" "^1.0.2"
+    tslib "^1.11.1"
+
+"@lugia/lugiadc-render-lib@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@lugia/lugiadc-render-lib/-/lugiadc-render-lib-1.0.2.tgz#8efa2244c3decaafc2d1ed4962f62b4f3721a7ea"
+  integrity sha512-I8ZzZlVR/rh8VNm1g33iYsJtZhbDNttGEqQ/c4lBD+8vkmWYZupoajQVMK24jjK37Hvg+mWYKKh817BAObrHsg==
+  dependencies:
+    "@lugia/lugiad-compiler-types" "^1.0.2"
+    "@lugia/lugiad-runtime-lib" "^1.0.2"
+    "@lugia/lugiad-types" "^1.0.2"
+    "@lugia/lugiadc-render-types" "^1.0.2"
+    "@types/prettier" "^2.0.0"
+    prettier "^2.0.5"
+    tslib "^1.11.1"
+
+"@lugia/lugiadc-render-react-plugin@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@lugia/lugiadc-render-react-plugin/-/lugiadc-render-react-plugin-1.0.2.tgz#737c2b77a9a23a5624f2770fbeb790b3d8d76f19"
+  integrity sha512-oEwch9OWustco7UvXM90/wIzrh8MKFucC8MbQmghldgFcUvCXe1gdUCwoF16Kd1heEPM89vM3a9p2CT2Zwcwqw==
+  dependencies:
+    "@lugia/lugiad-compiler-types" "^1.0.2"
+    "@lugia/lugiad-runtime-lib" "^1.0.2"
+    "@lugia/lugiad-types" "^1.0.2"
+    "@lugia/lugiadc-render-lib" "^1.0.2"
+    "@lugia/lugiadc-render-types" "^1.0.2"
+    "@lugia/object-utils" "^1.0.16"
+    tslib "^1.11.1"
+
+"@lugia/lugiadc-render-types@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@lugia/lugiadc-render-types/-/lugiadc-render-types-1.0.2.tgz#d9f2c187613a0141e7ddc34fae396ca788df07db"
+  integrity sha512-z4jw/sF4zoy3Qw8hMkxLAxjDLn4XgHracs96pUGl0Bm5qduQALR4+6piqYTtwtRJN5FWSOyhnC82o0FbAvBYDg==
+  dependencies:
+    "@lugia/lugiad-compiler-types" "^1.0.2"
+
+"@lugia/lugiadc-render@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@lugia/lugiadc-render/-/lugiadc-render-1.0.2.tgz#47e28c428d1bcbb59bedf4baf5d7e625f318b98b"
+  integrity sha512-Obe/bYuSdQJPx/JTIV0Wrc0UJ9HKQoAHan3/BdrRTOGwNX+lwCwUkWP8r7IEn92QXe9dElTo2lhuXa58B0SoWA==
+  dependencies:
+    "@lugia/geometry" "^1.0.6"
+    "@lugia/lugiad" "^1.0.3"
+    "@lugia/lugiad-compiler" "^1.0.2"
+    "@lugia/lugiad-compiler-types" "^1.0.2"
+    "@lugia/lugiad-runtime-lib" "^1.0.2"
+    "@lugia/lugiad-types" "^1.0.2"
+    "@lugia/lugiadc-render-lib" "^1.0.2"
+    "@lugia/lugiadc-render-types" "^1.0.2"
+    "@types/prettier" "^2.0.0"
+    prettier "^2.0.5"
+    tslib "^1.11.1"
 
 "@lugia/lugiax-common@^1.0.1":
   version "1.0.1"
@@ -1158,21 +1248,19 @@
     is-plain-object "^3.0.0"
     shortid "^2.2.15"
 
-"@lugia/lugiax-router@1.0.16":
-  version "1.0.16"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiax-router/download/@lugia/lugiax-router-1.0.16.tgz#53b33f819c18a988210a122ca0ea631638811147"
-  integrity sha1-U7M/gZwYqYghChIsoOpjFjiBEUc=
+"@lugia/lugiax-router@^1.1.12":
+  version "1.1.12"
+  resolved "https://registry.npmjs.org/@lugia/lugiax-router/-/lugiax-router-1.1.12.tgz#dda370e5901e15cceff4ee81d11c4afc99e88b10"
+  integrity sha512-poVdKZP2hPC4t2Ugnc+VqJjRYflo1A9bKoAzDViRjJz8V5V8GtSrNPlIxOilylQGHaHfNg9KfX/ipwY1xY7MQw==
   dependencies:
-    "@lugia/lugiax" "^1.0.13"
-    connected-react-router "^4.4.1"
+    "@lugia/lugiax" "^1.1.9"
     react-loadable "^5.5.0"
-    react-redux "^5.0.7"
     react-router "^4.3.1"
 
-"@lugia/lugiax@^1.0.13", "@lugia/lugiax@^1.1.7":
+"@lugia/lugiax@^1.1.9":
   version "1.1.9"
-  resolved "https://registry.npm.taobao.org/@lugia/lugiax/download/@lugia/lugiax-1.1.9.tgz#aa77280379939826e073cd66a5f5410d20f73803"
-  integrity sha1-qncoA3mTmCbgc81mpfVBDSD3OAM=
+  resolved "https://registry.npmjs.org/@lugia/lugiax/-/lugiax-1.1.9.tgz#aa77280379939826e073cd66a5f5410d20f73803"
+  integrity sha512-KBimkvo94cganSa//w4G/VozfjaxeoS4QYWWur77FtIVoGFA3JnoKgo5N5QuIxnHdUjzIzlFQlH/4oByU8Nt6Q==
   dependencies:
     "@lugia/combine" "^1.0.2"
     "@lugia/lugiax-core" "^1.1.5"
@@ -1187,13 +1275,13 @@
   dependencies:
     tslib "^1.11.1"
 
-"@lugia/mega-config@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.npm.taobao.org/@lugia/mega-config/download/@lugia/mega-config-1.2.1.tgz#1321774202aae5bfb6c9a8ada41e142bf84c3696"
-  integrity sha1-EyF3QgKq5b+2yaitpB4UK/hMNpY=
+"@lugia/mega-config@^1.3.0-alpha.0":
+  version "1.3.0-alpha.0"
+  resolved "https://registry.npmjs.org/@lugia/mega-config/-/mega-config-1.3.0-alpha.0.tgz#03da5b8af8d5760c1b20d52ee1adfdeb600001b4"
+  integrity sha512-hp0adNwZXEPz7bJO6TKW6I7PvWUEfj0JIrU8MG/YjPHfGtLcdP+Kh7zBaVpTPwSIaV0gpeOHJqj5pxFTG7Q+Tw==
   dependencies:
     "@babel/runtime" "^7.1.5"
-    "@lugia/mega-utils" "^1.5.1"
+    "@lugia/mega-utils" "^1.6.0-alpha.0"
     assert "^1.4.1"
     chalk "^2.4.1"
     chokidar "^2.0.4"
@@ -1202,19 +1290,19 @@
     lodash.isequal "^4.5.0"
     requireindex "^1.2.0"
 
-"@lugia/mega-scripts@^1.4.21":
-  version "1.4.21"
-  resolved "https://registry.npm.taobao.org/@lugia/mega-scripts/download/@lugia/mega-scripts-1.4.21.tgz#c4803d1821577f05ac782056f0de9377bfeba231"
-  integrity sha1-xIA9GCFXfwWseCBW8N6Td7/rojE=
+"@lugia/mega-scripts@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/@lugia/mega-scripts/-/mega-scripts-1.5.0.tgz#df74b773781aac171ed63dfd50170b844b2a3846"
+  integrity sha512-kaK9I9c6T9+Qkd6ufaqZ8Ll6joLMskh6z1lvt87crir4EtDntchqGXayCbq0w0b5ZCx4dudd4e4IYKXYjLIqgg==
   dependencies:
     "@babel/core" "7.4.3"
     "@babel/runtime" "^7.1.5"
-    "@lugia/babel-preset-mega" "^1.1.2"
-    "@lugia/devtools-conversion" "^1.0.35"
+    "@lugia/babel-preset-mega" "^1.2.0-alpha.0"
     "@lugia/devtools-material" "^1.0.40"
-    "@lugia/mega-config" "^1.2.1"
-    "@lugia/mega-utils" "^1.5.1"
-    "@lugia/mega-webpack" "^1.4.20"
+    "@lugia/lugiad-runtime" "^1.0.2"
+    "@lugia/mega-config" "^1.3.0-alpha.0"
+    "@lugia/mega-utils" "^1.6.0-alpha.0"
+    "@lugia/mega-webpack" "^1.5.0"
     babel-plugin-add-module-exports "^1.0.0"
     body-parser "^1.18.3"
     browser-sync "^2.26.3"
@@ -1239,10 +1327,10 @@
     xlsx "^0.14.0"
     yargs "^12.0.2"
 
-"@lugia/mega-utils@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.npm.taobao.org/@lugia/mega-utils/download/@lugia/mega-utils-1.5.1.tgz#6cc7d6a3ebbc24590310d588eb468c7a849e7e31"
-  integrity sha1-bMfWo+u8JFkDENWI60aMeoSefjE=
+"@lugia/mega-utils@^1.6.0-alpha.0":
+  version "1.6.0-alpha.0"
+  resolved "https://registry.npmjs.org/@lugia/mega-utils/-/mega-utils-1.6.0-alpha.0.tgz#ae5a3f88c091638e72c875d80e01301e500d29a6"
+  integrity sha512-P0TTlNYWijFbYLFSjuaBVOJJAGFfryxLKWA8Fg8hyPtaE9YJ2qO5nMO4Vmsq31RIZgv+zY/tLrJTtdOiM8rYSQ==
   dependencies:
     "@babel/plugin-transform-modules-commonjs" "^7.4.3"
     "@babel/register" "^7.4.0"
@@ -1270,16 +1358,16 @@
     username "^4.1.0"
     which "^1.3.1"
 
-"@lugia/mega-webpack@^1.4.20":
-  version "1.4.20"
-  resolved "https://registry.npm.taobao.org/@lugia/mega-webpack/download/@lugia/mega-webpack-1.4.20.tgz#c64a33cba35c1bfd4f1b970aaeca2637731e512d"
-  integrity sha1-xkozy6NcG/1PG5cKrsomN3MeUS0=
+"@lugia/mega-webpack@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/@lugia/mega-webpack/-/mega-webpack-1.5.0.tgz#759f2f182d9e7316c503a2daaf1c704ca32fd1ed"
+  integrity sha512-gWzu3PlSIiEDq8NCxxwvrYB6dpvlSPUEWfidoAZXbWpqrfh0/KyCIhXjg3dlchh+FbuxrzlTNgGB7OI+Kh/4Mg==
   dependencies:
     "@babel/core" "7.1.5"
     "@babel/runtime" "^7.5.5"
-    "@lugia/babel-preset-mega" "^1.1.2"
-    "@lugia/lugiad-loader" "^1.2.16"
-    "@lugia/mega-utils" "^1.5.1"
+    "@lugia/babel-preset-mega" "^1.2.0-alpha.0"
+    "@lugia/lugiad-loader" "^1.3.0"
+    "@lugia/mega-utils" "^1.6.0-alpha.0"
     assert "^1.4.1"
     autoprefixer "^8.6.5"
     awesome-typescript-loader "^3.5.0"
@@ -1335,10 +1423,10 @@
     webpack-merge "^4.2.1"
     webpack-parallel-uglify-plugin "^1.1.0"
 
-"@lugia/object-utils@^1.0.16":
-  version "1.0.16"
-  resolved "https://registry.npm.taobao.org/@lugia/object-utils/download/@lugia/object-utils-1.0.16.tgz#957a1a843c661c54aed0ee79f4fa2a50800d17ee"
-  integrity sha1-lXoahDxmHFSu0O559PoqUIANF+4=
+"@lugia/object-utils@^1.0.16", "@lugia/object-utils@^1.0.19":
+  version "1.0.19"
+  resolved "https://registry.npmjs.org/@lugia/object-utils/-/object-utils-1.0.19.tgz#87b00d483133b4b86981bbd9fbaaabde9245f503"
+  integrity sha512-boQtyntfMe6ccJHfQ1boMz7hc4JkWhT/UrMLcNiIflQuypEIIRprv45vQyS4HoKn5T2qnbWLI+Vg7h0Ouy0Z1Q==
   dependencies:
     "@babel/runtime" "^7.4.5"
     deepmerge "^3.2.0"
@@ -1352,63 +1440,59 @@
   dependencies:
     "@babel/runtime" "^7.4.5"
 
-"@lugia/theme-config@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.npm.taobao.org/@lugia/theme-config/download/@lugia/theme-config-1.1.3.tgz#32481692f536a255afc57f2e532aad5140a7ced5"
-  integrity sha1-MkgWkvU2olWvxX8uUyqtUUCnztU=
+"@lugia/theme-config@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.npmjs.org/@lugia/theme-config/-/theme-config-1.1.5.tgz#1d4536aadc92854396501a5afe1893090c6a8b9c"
+  integrity sha512-rpS7DiTEDXjxpknUqVM1etqMvz7LIH3rbkNd7ECrHMahyTmGA9i/PTqFhgIr/acAuFMLXBOfPrGjYmP1Id5HHQ==
   dependencies:
     "@babel/runtime" "^7.4.5"
-    "@lugia/theme-core" "^1.1.3"
     "@types/react" "^16.9.27"
     "@types/react-test-renderer" "^16.9.2"
     prop-types "^15.7.2"
 
-"@lugia/theme-core@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.npm.taobao.org/@lugia/theme-core/download/@lugia/theme-core-1.1.3.tgz#5c9ce9727d5361e13fd2eaf86aa3e1e3aa97ea4f"
-  integrity sha1-XJzpcn1TYeE/0ur4aqPh46qX6k8=
+"@lugia/theme-core@^1.1.9":
+  version "1.1.9"
+  resolved "https://registry.npmjs.org/@lugia/theme-core/-/theme-core-1.1.9.tgz#5ff8b8917c1b0c7fca9985d31bff02e2bd5294f6"
+  integrity sha512-Nf9KCgTORnCn/Tw/Li3R+ZQqPlhHGWlLIGqdLUgmx2arIq9U7WKyfUjUJ2yUiiot/kJVV+NnLyUq7nNCPggCvA==
   dependencies:
     "@babel/runtime" "^7.4.5"
-    "@lugia/object-utils" "^1.0.16"
+    "@lugia/object-utils" "^1.0.19"
     "@types/react" "^16.9.32"
     debug "^4.1.1"
     tslib "^1.11.1"
 
-"@lugia/theme-css-hoc@^1.1.9":
-  version "1.1.10"
-  resolved "https://registry.npm.taobao.org/@lugia/theme-css-hoc/download/@lugia/theme-css-hoc-1.1.10.tgz#a94d24a6932de3a37dc757c49ca0eb8fe019f953"
-  integrity sha1-qU0kppMt46N9x1fEnKDrj+AZ+VM=
+"@lugia/theme-css-hoc@^1.1.17":
+  version "1.1.17"
+  resolved "https://registry.npmjs.org/@lugia/theme-css-hoc/-/theme-css-hoc-1.1.17.tgz#d4b7ff6127df85d530fe5c69a89876158aa9288a"
+  integrity sha512-wQkiYHhpTdUo7oS2QXwfCumvh4B97fjmuVuxO5LzYNEc/uQ6AadyW7lglheqmuKaK4ldzZiEr5ZmxcYYNL77jw==
   dependencies:
     "@babel/runtime" "^7.4.5"
     "@lugia/css" "^1.0.24"
-    "@lugia/object-utils" "^1.0.16"
+    "@lugia/object-utils" "^1.0.19"
     "@lugia/ramada" "^1.0.5"
-    "@lugia/theme-core" "^1.1.3"
-    "@lugia/theme-utils" "^1.1.7"
+    "@lugia/theme-utils" "^1.1.8"
     "@types/react" "^16.9.32"
     "@types/styled-components" "^4.4.3"
     tslib "^1.11.1"
 
-"@lugia/theme-hoc@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.npm.taobao.org/@lugia/theme-hoc/download/@lugia/theme-hoc-1.1.3.tgz#f1a430fb9bf298a81b1dafe9a0515e27084e9eba"
-  integrity sha1-8aQw+5vymKgbHa/poFFeJwhOnro=
+"@lugia/theme-hoc@^1.1.8":
+  version "1.1.8"
+  resolved "https://registry.npmjs.org/@lugia/theme-hoc/-/theme-hoc-1.1.8.tgz#4375abd08bf28b07357f98b08462df989636251a"
+  integrity sha512-0bAcvtVxUuiOAC2tiBZpOWFNrPARJF6F4d3kOlGsTGVbkwkO5DUwXIav/XfDdl2oiiPiYh6o0vjF6QlBykq7Mw==
   dependencies:
     "@babel/runtime" "^7.4.5"
-    "@lugia/object-utils" "^1.0.16"
-    "@lugia/theme-core" "^1.1.3"
+    "@lugia/object-utils" "^1.0.19"
     "@types/react" "^16.9.32"
     "@types/styled-components" "^5.0.1"
     tslib "^1.11.1"
 
-"@lugia/theme-utils@^1.1.6", "@lugia/theme-utils@^1.1.7":
-  version "1.1.7"
-  resolved "https://registry.npm.taobao.org/@lugia/theme-utils/download/@lugia/theme-utils-1.1.7.tgz#541dd0def773b7ed80a04fc60d35bc68acebba00"
-  integrity sha1-VB3Q3vdzt+2AoE/GDTW8aKzrugA=
+"@lugia/theme-utils@^1.1.8":
+  version "1.1.8"
+  resolved "http://192.168.102.79:5001/@lugia%2ftheme-utils/-/theme-utils-1.1.8.tgz#7375354767bea7f301066c5385db1875f756ef6e"
+  integrity sha1-c3U1R2e+p/MBBmxThdsYdfdW724=
   dependencies:
     "@babel/runtime" "^7.4.5"
     "@lugia/css" "^1.0.24"
-    "@lugia/dict" "^1.0.4"
     tslib "^1.11.1"
 
 "@lugia/type-utils@^1.0.6":
@@ -1555,6 +1639,11 @@
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-14.0.1.tgz#5d93e0a099cd0acd5ef3d5bde3c086e1f49ff68c"
   integrity sha1-XZPgoJnNCs1e89W948CG4fSf9ow=
 
+"@types/prettier@^2.0.0":
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/@types/prettier/-/prettier-2.0.1.tgz#b6e98083f13faa1e5231bfa3bdb1b0feff536b6d"
+  integrity sha512-boy4xPNEtiw6N3abRhBi/e7hNvy3Tt8E9ZRAQrwAGzoCGZS/1wjo9KY7JHhnfnEsG5wSjDbymCozUM9a3ea7OQ==
+
 "@types/prop-types@*":
   version "15.7.3"
   resolved "https://registry.npm.taobao.org/@types/prop-types/download/@types/prop-types-15.7.3.tgz?cache=0&sync_timestamp=1588201545972&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fprop-types%2Fdownload%2F%40types%2Fprop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
@@ -1569,7 +1658,7 @@
 
 "@types/react-test-renderer@^16.9.2":
   version "16.9.2"
-  resolved "https://registry.npm.taobao.org/@types/react-test-renderer/download/@types/react-test-renderer-16.9.2.tgz#e1c408831e8183e5ad748fdece02214a7c2ab6c5"
+  resolved "http://192.168.102.79:5001/@types%2freact-test-renderer/-/react-test-renderer-16.9.2.tgz#e1c408831e8183e5ad748fdece02214a7c2ab6c5"
   integrity sha1-4cQIgx6Bg+WtdI/ezgIhSnwqtsU=
   dependencies:
     "@types/react" "*"
@@ -2080,11 +2169,6 @@ assert@^1.1.1, assert@^1.4.1:
   dependencies:
     object-assign "^4.1.1"
     util "0.10.3"
-
-assertion-error@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/assertion-error/download/assertion-error-1.1.0.tgz#e60b6b0e8f301bd97e5375215bda406c85118c0b"
-  integrity sha1-5gtrDo8wG9l+U3UhW9pAbIURjAs=
 
 assign-symbols@^1.0.0:
   version "1.0.0"
@@ -3175,18 +3259,6 @@ cfb@^1.1.2:
     crc-32 "~1.2.0"
     printj "~1.1.2"
 
-chai@^4.1.2:
-  version "4.2.0"
-  resolved "https://registry.npm.taobao.org/chai/download/chai-4.2.0.tgz#760aa72cf20e3795e84b12877ce0e83737aa29e5"
-  integrity sha1-dgqnLPION5XoSxKHfODoNzeqKeU=
-  dependencies:
-    assertion-error "^1.1.0"
-    check-error "^1.0.2"
-    deep-eql "^3.0.1"
-    get-func-name "^2.0.0"
-    pathval "^1.1.0"
-    type-detect "^4.0.5"
-
 chainsaw@~0.1.0:
   version "0.1.0"
   resolved "https://registry.npm.taobao.org/chainsaw/download/chainsaw-0.1.0.tgz#5eab50b28afe58074d0d58291388828b5e5fbc98"
@@ -3236,11 +3308,6 @@ charenc@~0.0.1:
   version "0.0.2"
   resolved "https://registry.npm.taobao.org/charenc/download/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
   integrity sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=
-
-check-error@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/check-error/download/check-error-1.0.2.tgz#574d312edd88bb5dd8912e9286dd6c0aed4aac82"
-  integrity sha1-V00xLt2Iu13YkS6Sht1sCu1KrII=
 
 check-types@^7.3.0:
   version "7.4.0"
@@ -3723,15 +3790,6 @@ connect@3.6.6:
     finalhandler "1.1.0"
     parseurl "~1.3.2"
     utils-merge "1.0.1"
-
-connected-react-router@^4.4.1:
-  version "4.5.0"
-  resolved "https://registry.npm.taobao.org/connected-react-router/download/connected-react-router-4.5.0.tgz#b6f021cc284a244fbee70e16e5ff0f2a4613e3d3"
-  integrity sha1-tvAhzChKJE++5w4W5f8PKkYT49M=
-  dependencies:
-    immutable "^3.8.1"
-    redux-seamless-immutable "^0.4.0"
-    seamless-immutable "^7.1.3"
 
 console-browserify@^1.1.0:
   version "1.2.0"
@@ -4243,13 +4301,6 @@ decompress@^4.2.0:
     make-dir "^1.0.0"
     pify "^2.3.0"
     strip-dirs "^2.0.0"
-
-deep-eql@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npm.taobao.org/deep-eql/download/deep-eql-3.0.1.tgz#dfc9404400ad1c8fe023e7da1df1c147c4b444df"
-  integrity sha1-38lARACtHI/gI+faHfHBR8S0RN8=
-  dependencies:
-    type-detect "^4.0.0"
 
 deep-equal@^1.0.1:
   version "1.1.1"
@@ -6130,11 +6181,6 @@ get-caller-file@^2.0.1:
   resolved "https://registry.npm.taobao.org/get-caller-file/download/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
   integrity sha1-T5RBKoLbMvNuOwuXQfipf+sDH34=
 
-get-func-name@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npm.taobao.org/get-func-name/download/get-func-name-2.0.0.tgz#ead774abee72e20409433a066366023dd6887a41"
-  integrity sha1-6td0q+5y4gQJQzoGY2YCPdaIekE=
-
 get-proxy@^2.0.0:
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/get-proxy/download/get-proxy-2.1.0.tgz#349f2b4d91d44c4d4d4e9cba2ad90143fac5ef93"
@@ -6847,7 +6893,7 @@ image-size@~0.5.0:
   resolved "https://registry.npm.taobao.org/image-size/download/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
   integrity sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=
 
-immutable@^3, immutable@^3.8.1, immutable@^3.8.2:
+immutable@^3, immutable@^3.8.2:
   version "3.8.2"
   resolved "https://registry.npm.taobao.org/immutable/download/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
   integrity sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
@@ -9428,11 +9474,6 @@ path-type@^3.0.0:
   dependencies:
     pify "^3.0.0"
 
-pathval@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/pathval/download/pathval-1.1.0.tgz#b942e6d4bde653005ef6b71361def8727d0645e0"
-  integrity sha1-uULm1L3mUwBe9rcTYd74cn0GReA=
-
 pause-stream@~0.0.11:
   version "0.0.11"
   resolved "https://registry.npm.taobao.org/pause-stream/download/pause-stream-0.0.11.tgz#fe5a34b0cbce12b5aa6a2b403ee2e73b602f1445"
@@ -9897,6 +9938,11 @@ prettier@^1.16.4, prettier@^1.18.2:
   version "1.19.1"
   resolved "https://registry.npm.taobao.org/prettier/download/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
   integrity sha1-99f1/4qc2HKnvkyhQglZVqYHl8s=
+
+prettier@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
+  integrity sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
 
 pretty-bytes@^4.0.2:
   version "4.0.2"
@@ -10502,7 +10548,7 @@ react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-i
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
 
-react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
+react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npm.taobao.org/react-lifecycles-compat/download/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha1-TxonOv38jzSIqMUWv9p4+HI1I2I=
@@ -10513,24 +10559,6 @@ react-loadable@^5.5.0:
   integrity sha1-WCJRZ509qGwyquLI5onFnxGW2MQ=
   dependencies:
     prop-types "^15.5.0"
-
-react-redux@^5.0.7:
-  version "5.1.2"
-  resolved "https://registry.npm.taobao.org/react-redux/download/react-redux-5.1.2.tgz#b19cf9e21d694422727bf798e934a916c4080f57"
-  integrity sha1-sZz54h1pRCJye/eY6TSpFsQID1c=
-  dependencies:
-    "@babel/runtime" "^7.1.2"
-    hoist-non-react-statics "^3.3.0"
-    invariant "^2.2.4"
-    loose-envify "^1.1.0"
-    prop-types "^15.6.1"
-    react-is "^16.6.0"
-    react-lifecycles-compat "^3.0.0"
-
-react-router-redux@^4.0.0:
-  version "4.0.8"
-  resolved "https://registry.npm.taobao.org/react-router-redux/download/react-router-redux-4.0.8.tgz#227403596b5151e182377dab835b5d45f0f8054e"
-  integrity sha1-InQDWWtRUeGCN32rg1tdRfD4BU4=
 
 react-router@^4.3.1:
   version "4.3.1"
@@ -10684,23 +10712,10 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^1.0.0"
 
-redux-immutable@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npm.taobao.org/redux-immutable/download/redux-immutable-4.0.0.tgz#3a1a32df66366462b63691f0e1dc35e472bbc9f3"
-  integrity sha1-Ohoy32Y2ZGK2NpHw4dw15HK7yfM=
-
 redux-saga@^0.16.0:
   version "0.16.2"
   resolved "https://registry.npm.taobao.org/redux-saga/download/redux-saga-0.16.2.tgz#993662e86bc945d8509ac2b8daba3a8c615cc971"
   integrity sha1-mTZi6GvJRdhQmsK42ro6jGFcyXE=
-
-redux-seamless-immutable@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npm.taobao.org/redux-seamless-immutable/download/redux-seamless-immutable-0.4.0.tgz#b50f8680ecc5ef04021551267f78fa1ffd3cf985"
-  integrity sha1-tQ+GgOzF7wQCFVEmf3j6H/08+YU=
-  dependencies:
-    react-router-redux "^4.0.0"
-    seamless-immutable "^7.1.2"
 
 redux@^4.0.0:
   version "4.0.5"
@@ -11193,11 +11208,6 @@ sdk-base@^2.0.1:
   integrity sha1-ukAonovfJy7RHdnql+r5jgNtJMY=
   dependencies:
     get-ready "~1.0.0"
-
-seamless-immutable@^7.1.2, seamless-immutable@^7.1.3:
-  version "7.1.4"
-  resolved "https://registry.npm.taobao.org/seamless-immutable/download/seamless-immutable-7.1.4.tgz#6e9536def083ddc4dea0207d722e0e80d0f372f8"
-  integrity sha1-bpU23vCD3cTeoCB9ci4OgNDzcvg=
 
 seek-bzip@^1.0.5:
   version "1.0.5"
@@ -12557,11 +12567,6 @@ type-check@~0.3.2:
   integrity sha1-WITKtRLPHTVeP7eE8wgEsrUg23I=
   dependencies:
     prelude-ls "~1.1.2"
-
-type-detect@^4.0.0, type-detect@^4.0.5:
-  version "4.0.8"
-  resolved "https://registry.npm.taobao.org/type-detect/download/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
-  integrity sha1-dkb7XxiHHPu3dJ5pvTmmOI63RQw=
 
 type-fest@^0.11.0:
   version "0.11.0"

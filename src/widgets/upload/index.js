@@ -65,7 +65,7 @@ export default PageNavHoC(
                 title={"文件列表"}
                 titleID={"upload-2"}
                 code={
-                  <code>{`import React from \'react\';\nimport { Upload } from \'@lugia/lugia-web\';\n\nclass UploadDemo extends React.Component<any, any> {\n  constructor(props: Object) {\n    super(props);\n  }\n\n  render() {\n    const buttonProps = {\n      areaType: \'button\',\n      inputId: \'buttonUpload\',\n      showFileList: true,\n      url: \'/upload\',\n      fileList: [\n        { id: 1, name: \'上传完成的图片.jpg\', status: \'done\' },\n        { id: 2, name: \'上传失败的文档.doc\', status: \'fail\' }\n      ]\n    };\n    return (\n      <div>\n        <Upload {...buttonProps} />\n      </div>\n    );\n  }\n}\n\nexport default UploadDemo;\n`}</code>
+                  <code>{`import React from \'react\';\nimport { Upload } from \'@lugia/lugia-web\';\n\nclass UploadDemo extends React.Component<any, any> {\n  constructor(props: Object) {\n    super(props);\n  }\n\n  render() {\n    const buttonProps = {\n      inputId: \'buttonUpload\',\n      showFileList: true,\n      url: \'/upload\',\n      fileList: [\n        { id: 1, name: \'上传完成的图片.jpg\', status: \'done\' },\n        { id: 2, name: \'上传失败的文档.doc\', status: \'fail\' }\n      ]\n    };\n    return (\n      <div>\n        <Upload {...buttonProps} />\n      </div>\n    );\n  }\n}\n\nexport default UploadDemo;\n`}</code>
                 }
                 desc={"显示文件列表"}
                 demo={<FileListUpload />}

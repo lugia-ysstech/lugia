@@ -78,6 +78,7 @@ export default class InlineDataSingleTree extends React.Component<
         theme={config}
         autoHeight
         data={data}
+        pathSeparator={'/'}
         translateTreeData={true}
         valueField={'value'}
         displayField={'text'}
