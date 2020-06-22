@@ -72,7 +72,3 @@ Lugia Mega 是整套大前端生态技术解决方案对外输出的主要承载
 我们的QQ交流群：685510159
 ![image](https://lugia.oss-cn-beijing.aliyuncs.com/other/QQ%E7%BE%A4.png)
 
-微信交流群
-![image](https://lugia.oss-cn-beijing.aliyuncs.com/other/%E5%BE%AE%E4%BF%A1%E7%BE%A4.png)
-
-
