@@ -159,13 +159,13 @@ export default class MenuList extends React.Component<any, any> {
             Text: {
               normal: {
                 font: {
-                  size: 15
+                  size: 14
                 }
               },
               hover: {
                 color: themeColor,
                 font: {
-                  size: 15
+                  size: 14
                 }
               }
             },
