@@ -5,6 +5,7 @@ const Step = Steps.Step;
 const Wrapper = styled.div`
   text-align: left;
   margin-bottom: 50px;
+  margin-right: 50px;
 `;
 export default class BaseSteps extends React.Component<any, any> {
   render() {
