@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "private": true,
   "dependencies": {
-    "@lugia/lugia-web": "^1.2.4",
+    "@lugia/lugia-web": "1.2.5-alpha.1",
     "@lugia/lugiax": "^1.1.9",
     "@lugia/lugiax-router": "^1.1.12",
     "clipboard": "^2.0.4",
@@ -12,8 +12,8 @@
     "isomorphic-fetch": "^2.2.1",
     "marked": "^0.7.0",
     "ramda": "^0.27.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-highlight": "^0.12.0",
     "styled-components": "4.2.0"
   },
