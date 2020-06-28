@@ -110,27 +110,18 @@ export default class MenuList extends React.Component<any, any> {
     super(props);
     this.canFixed = true;
     this.canCancelFixed = false;
-  }
-
-  static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
     const path = window.location.hash;
     const pathFilter = path.match(/[^#]+/g)[0].match(/[^/]+/g);
-    const pathType = pathFilter[0] === 'design' ? 'designConfig' : 'menuConfig';
+    const pathType = pathFilter[0] === "design" ? "designConfig" : "menuConfig";
     const defaultUrl = Router[pathType][0].children
       ? Router[pathType][0].children[0].value
       : Router[pathType][0].value;
-    const defCurrent =
-      pathFilter.length > 1 ? '/' + pathFilter.join('/') : defaultUrl;
-    if (!stateProps) {
-      return {
-        current: defCurrent,
-        routerType: pathType
-      };
-    }
-    return {
-      current: 'current' in defProps ? defCurrent : stateProps.current,
-      routerType: 'routerType' in stateProps ? stateProps.routerType : pathType
-    };
+    this.defCurrent =
+      pathFilter.length > 1 ? "/" + pathFilter.join("/") : defaultUrl;
+    this.routerType = pathType;
+    const {routerType = this.routerType} = this.props;
+    this.defaultData = getMenuItems(Router[routerType]);
+    this.state = {};
   }
 
   componentDidMount() {
@@ -141,15 +132,35 @@ export default class MenuList extends React.Component<any, any> {
     };
   }
 
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    const {routerType: nextRouterType} = nextProps;
+    const {routerType} = this.props;
+    if(routerType !== nextRouterType){
+      this.defaultData = getMenuItems(Router[nextRouterType]);
+    }
+
+    return true;
+  }
+
   getWindowHeight = () => {
     const viewHeight = document.body.clientHeight - 60;
+    const {height} = this.state;
+    if(height === viewHeight){
+      return;
+    }
     this.setState({
       height: viewHeight
     });
   };
 
   render() {
-    const { width = 270, padding = {}, isMobile = false, data } = this.props;
+    const {
+      width = 270,
+      padding = {},
+      isMobile = false,
+      data,
+      current = this.defCurrent,
+    } = this.props;
     const { height } = this.state;
 
     const config = {
@@ -192,8 +203,7 @@ export default class MenuList extends React.Component<any, any> {
         }
       }
     };
-    const { routerType, fixed } = this.state;
-    const defaultData = data || getMenuItems(Router[routerType]);
+    const { fixed } = this.state;
     return (
       <Container width={width} fixed={fixed} height={height} padding={padding}>
         {isMobile ? (
@@ -203,8 +213,8 @@ export default class MenuList extends React.Component<any, any> {
               theme={config}
               inlineType={'ellipse'}
               mode={'inline'}
-              data={defaultData}
-              value={this.state.current}
+              data={data || this.defaultData}
+              value={current}
               inlineExpandAll={true}
               onSelect={this.onSelect}
               step={60}
@@ -216,7 +226,7 @@ export default class MenuList extends React.Component<any, any> {
             theme={config}
             inlineType={'ellipse'}
             mode={'inline'}
-            data={getMenuItems(Router[routerType])}
+            data={this.defaultData}
             value={this.state.current}
             inlineExpandAll={true}
             onSelect={this.onSelect}
@@ -237,6 +247,14 @@ export default class MenuList extends React.Component<any, any> {
     go({ url: urls });
   };
 
+  setFixed = fixed => {
+    const {fixed: stateFixed} = this.state;
+    if(stateFixed === fixed){
+      return;
+    }
+    this.setState({fixed});
+  };
+
   addWindowListener = () => {
     const scrollTop = getScrollTop();
 
@@ -244,17 +262,13 @@ export default class MenuList extends React.Component<any, any> {
       if (this.canFixed) {
         this.canFixed = false;
         this.canCancelFixed = true;
-        this.setState({
-          fixed: true
-        });
+        this.setFixed(true);
       }
     } else {
       if (this.canCancelFixed) {
         this.canFixed = true;
         this.canCancelFixed = false;
-        this.setState({
-          fixed: false
-        });
+        this.setFixed(false);
       }
     }
   };
