@@ -1078,10 +1078,10 @@
     rxjs "^6.3.3"
     tslib "^1.11.1"
 
-"@lugia/lugia-web@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.npmjs.org/@lugia/lugia-web/-/lugia-web-1.2.4.tgz#d2dec006f6c0085bb1ce645556f388be68347874"
-  integrity sha512-RvlxCO+YHoZgNm+bBEZWdi1kCXZ8nH1I10TJO+Vta2nivlQkm3Or3NDGszFtazbQHG2nVfI5jylVhHJMkcsCOw==
+"@lugia/lugia-web@1.2.5-alpha.1":
+  version "1.2.5-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lugia/lugia-web/-/lugia-web-1.2.5-alpha.1.tgz#baa0ca12cca27ecb0f2c4936030d361d3444e3c3"
+  integrity sha512-taAMIDXmAD9gIt19dKg5xd1/GhKCX8sHRhQE/zxa0IOOCuOXaxWKwdLJNcfDg3pwzMRzWTLlT8Z6frQi7Bwq+A==
   dependencies:
     "@lugia/css" "^1.0.24"
     "@lugia/listener" "^1.0.5"
@@ -1089,7 +1089,7 @@
     "@lugia/object-utils" "^1.0.19"
     "@lugia/ramada" "^1.0.5"
     "@lugia/theme-css-hoc" "^1.1.17"
-    "@lugia/theme-hoc" "^1.1.8"
+    "@lugia/theme-hoc" "^1.1.9"
     "@lugia/theme-utils" "^1.1.8"
     "@lugia/type-utils" "^1.0.6"
     babel-polyfill "6.26.0"
@@ -1475,10 +1475,10 @@
     "@types/styled-components" "^4.4.3"
     tslib "^1.11.1"
 
-"@lugia/theme-hoc@^1.1.8":
-  version "1.1.8"
-  resolved "https://registry.npmjs.org/@lugia/theme-hoc/-/theme-hoc-1.1.8.tgz#4375abd08bf28b07357f98b08462df989636251a"
-  integrity sha512-0bAcvtVxUuiOAC2tiBZpOWFNrPARJF6F4d3kOlGsTGVbkwkO5DUwXIav/XfDdl2oiiPiYh6o0vjF6QlBykq7Mw==
+"@lugia/theme-hoc@^1.1.9":
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/@lugia/theme-hoc/-/theme-hoc-1.1.9.tgz#cc2bb0b1857b0aae2cfa12cd3a44fb7255c42c03"
+  integrity sha512-SGWL/gY4UYtpFAlhS5oj6asHXoalhx58HqA2k3GrWCy5B9krzKm093aFDrsXCSEfwl1nStbKRYw7ttCmwU+0Uw==
   dependencies:
     "@babel/runtime" "^7.4.5"
     "@lugia/object-utils" "^1.0.19"
@@ -10509,10 +10509,10 @@ react-dev-utils@^5.0.3:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@^16.8.6:
+react-dom@^16.13.1:
   version "16.13.1"
-  resolved "https://registry.npm.taobao.org/react-dom/download/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
-  integrity sha1-wb03MxoEhsB47lTEdAcgmTsuDn8=
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
+  integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -10583,10 +10583,10 @@ react-test-renderer@^16.0.0-0, react-test-renderer@^16.8.6:
     react-is "^16.8.6"
     scheduler "^0.19.1"
 
-react@^16.8.6:
+react@^16.13.1:
   version "16.13.1"
-  resolved "https://registry.npm.taobao.org/react/download/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
-  integrity sha1-LoGIIvGpdDEiwGPWQQ2FweOv5I4=
+  resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
+  integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
