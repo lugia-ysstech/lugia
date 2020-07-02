@@ -18,7 +18,7 @@ export default class InnerClosePopover extends React.Component<any, any> {
   };
 
   render() {
-    const description = "this is description";
+    const description = "this is long description this is long description";
     return (
       <Popover
         placement="top"
@@ -27,8 +27,15 @@ export default class InnerClosePopover extends React.Component<any, any> {
         visible={this.state.visible}
         onVisibleChange={this.handleVisibleChange}
         clear={"lugia-icon-reminder_close"}
-        description={[<div>{description}</div>]}
+        description={[
+          <div>
+            <div>{description}</div>
+            <div>{description}</div>
+            <div>{description}</div>
+          </div>
+        ]}
         onClearClick={this.hide}
+        showClearButton
       >
         <Direction type="primary">内部关闭</Direction>
       </Popover>
