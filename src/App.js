@@ -16,13 +16,6 @@ export const designRouter = {
       return true;
     },
   },
-  '/home':{
-    value:'首页',
-    text:'首页',
-    url:'/home',
-    render: () => import('./home'),
-    // exact: true,
-  },
   '/design':{
     value:'设计指南',
     text:'设计指南',
@@ -51,6 +44,12 @@ export const designRouter = {
     url:'/logs',
     render: () => import('./logs'),
   },
+  '/lugia-archive':{
+    value:'lugia-archive',
+    text:'lugia-archive',
+    url:'/lugia-archive',
+    render: () => import('./archive')
+  },
   NotFound:{
     render: async () => {
       return () => <Redirect to={'/home'}/>;
@@ -68,13 +67,6 @@ export const designRouterMobile = {
     verify() {
       return true;
     },
-  },
-  '/home':{
-    value:'首页',
-    text:'首页',
-    url:'/home',
-    render: () => import('./mobile/home'),
-    // exact: true,
   },
   '/design':{
     value:'设计指南',
@@ -103,6 +95,12 @@ export const designRouterMobile = {
     text:'更新日志',
     url:'/logs',
     render: () => import('./mobile/logs'),
+  },
+  '/lugia-archive':{
+    value:'lugia-archive',
+    text:'lugia-archive',
+    url:'/lugia-archive',
+    render: () => import('./archive')
   },
   NotFound:{
     render: async () => {
