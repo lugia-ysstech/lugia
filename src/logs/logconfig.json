@@ -16,11 +16,6 @@
           "api":"https://api.github.com/repos/lugia-ysstech/lugia-web"
         },
         {
-          "value": "lugia-mega ",
-          "text": "lugia-mega ",
-          "api":"https://api.github.com/repos/lugia-ysstech/lugia-mega"
-        },
-        {
           "value": "lugiaX ",
           "text": "lugiaX ",
           "api":"https://api.github.com/repos/lugia-ysstech/lugiax"

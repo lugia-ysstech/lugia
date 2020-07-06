@@ -1,7 +1,5 @@
 import React from 'react';
 import {createRoute, Redirect} from '@lugia/lugiax-router';
-import {Grid, Layout, Theme} from '@lugia/lugia-web';
-import Widget from '@lugia/lugia-web/dist/consts/index';
 import PageLoading from './pageloading';
 import Widgets from './widgets';
 import Mega from './mega';
@@ -15,6 +13,13 @@ export const designRouter = {
     verify() {
       return true;
     },
+  },
+  '/home':{
+    value:'首页',
+    text:'首页',
+    url:'/home',
+    isHidden: true,
+    render: () => import('./home'),
   },
   '/design':{
     value:'设计指南',
@@ -44,10 +49,10 @@ export const designRouter = {
     url:'/logs',
     render: () => import('./logs'),
   },
-  '/lugia-archive':{
+  '/doc':{
     value:'lugia-archive',
-    text:'lugia-archive',
-    url:'/lugia-archive',
+    text:'获取文档',
+    url:'/doc',
     render: () => import('./archive')
   },
   NotFound:{
@@ -67,6 +72,13 @@ export const designRouterMobile = {
     verify() {
       return true;
     },
+  },
+  '/home':{
+    value:'首页',
+    text:'首页',
+    url:'/home',
+    isHidden: true,
+    render: () => import('./mobile/home'),
   },
   '/design':{
     value:'设计指南',
@@ -96,10 +108,10 @@ export const designRouterMobile = {
     url:'/logs',
     render: () => import('./mobile/logs'),
   },
-  '/lugia-archive':{
+  '/doc':{
     value:'lugia-archive',
     text:'lugia-archive',
-    url:'/lugia-archive',
+    url:'/doc',
     render: () => import('./archive')
   },
   NotFound:{
