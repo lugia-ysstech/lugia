@@ -24,14 +24,14 @@ export const designRouter = {
   '/design':{
     value:'设计指南',
     text:'设计指南',
-    url:'/design',
+    url:'/design/introduce',
     render: () => import('./design'),
 
   },
   '/component':{
     value:'lugia-web',
     text:'lugia-web',
-    url:'/component',
+    url:'/component/lugia',
     component: Widgets,
     verify() {
       return true;

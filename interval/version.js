@@ -5,6 +5,6 @@
  * @flow
  */
 module.exports = {
-  version: '1.2.16',
-  megaIDE: '1.2.4-beta.7'
+  version: '1.2.22',
+  megaIDE: '1.3.0'
 };
