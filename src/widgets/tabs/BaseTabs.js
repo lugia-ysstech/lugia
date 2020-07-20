@@ -4,9 +4,7 @@ import styled from "styled-components";
 
 const TabPane = Tabs.TabPane;
 
-const Wrapper = styled.div`
-  display: inline-block;
-`;
+export const Wrapper = styled.div``;
 
 const defaultData = [
   {title: "Tab1", content: "content of Tab1"},
