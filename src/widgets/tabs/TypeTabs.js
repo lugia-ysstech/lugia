@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Tabs, Select } from '@lugia/lugia-web';
+import {Tabs} from '@lugia/lugia-web';
 import styled from 'styled-components';
 
 const Wrapper = styled.div``;
