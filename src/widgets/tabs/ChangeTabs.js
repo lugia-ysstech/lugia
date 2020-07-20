@@ -1,5 +1,5 @@
 import React from 'react';
-import { Theme, Tabs, Button,Icon } from '@lugia/lugia-web';
+import { Theme, Tabs, Icon } from '@lugia/lugia-web';
 import styled from "styled-components";
 import Widget from '@lugia/lugia-web/dist/consts';
 
