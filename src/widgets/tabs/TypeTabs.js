@@ -2,9 +2,7 @@ import React from 'react';
 import {  Tabs, Select } from '@lugia/lugia-web';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  display: inline-block;
-`;
+const Wrapper = styled.div``;
 
 const TabsWrapper = styled.div`
   margin: 0 0 20px;
