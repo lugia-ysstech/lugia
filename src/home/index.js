@@ -28,6 +28,8 @@ import logoIntroduction from "../../public/home/logo-introduction.png";
 import designValue from "../../public/home/design-value.png";
 import designPrinciple from "../../public/home/design-principle.png";
 import visualPrinciple from "../../public/home/visual-principle.png";
+import staticBulb from "../../public/home/static-bulb.png";
+import staticLeaf from "../../public/home/static-leaf.png";
 import pic3 from "../../public/home/pic3.png";
 import pic4 from "../../public/home/pic4.png";
 import sense from "../../public/home/sense.png";
@@ -127,10 +129,25 @@ const SloganWrap = styled.div`
   align-items: center;
   padding-top: 140px;
 `;
-const ImgWrap = styled.img`
+const SloganImgWrap = styled.div`
+  position: relative;
+`;
+const SloganImg = styled.img`
   width: 647px;
   height: 96px;
   margin-bottom: 50px;
+`;
+const BulbWrap = styled.img`
+  width: 35px;
+  position: absolute;
+  left: 267px;
+  top: 0px;
+`;
+const LeafWrap = styled.img`
+  width: 41px;
+  position: absolute;
+  right: -10px;
+  top: 54px;
 `;
 
 const LugiaIntroduction = styled.div`
@@ -722,7 +739,12 @@ export default class Pages extends React.Component<any, any> {
               </HeadIndex>
             </Head>
             <SloganWrap>
-              <ImgWrap src={slogan} alt="搭你所想,见你所愿" />
+              <SloganImgWrap>
+                <SloganImg src={slogan} alt="搭你所想,见你所愿" />
+                <BulbWrap src={staticBulb} />
+                <LeafWrap src={staticLeaf} />
+              </SloganImgWrap>
+
               <Theme config={startButtonTheme}>
                 <Button
                   type="primary"
@@ -810,7 +832,6 @@ export default class Pages extends React.Component<any, any> {
             </ItemWrap>
             <ItemWrap>
               <ItemTitle>新增功能</ItemTitle>
-              {/*<ItemContent>*/}
               <VideoBoxWrap>
                 <VideoBox>
                   <iframe
@@ -823,8 +844,6 @@ export default class Pages extends React.Component<any, any> {
                   />
                 </VideoBox>
               </VideoBoxWrap>
-
-              {/*</ItemContent>*/}
             </ItemWrap>
           </Col>
           <Col span={1} md={{ span: 1 }} xl={{ span: 2 }} xxl={{ span: 3 }}>
@@ -835,13 +854,13 @@ export default class Pages extends React.Component<any, any> {
         <div style={{ height: "600px", background: "transparent" }}></div>
 
         {/*old*/}
-        <Row>
+        {/*<Row>
           <Col span={5} xl={{ span: 4 }} xxl={{ span: 5 }}>
             <Wrapper> </Wrapper>
           </Col>
           <Col span={14} xl={{ span: 16 }} xxl={{ span: 14 }}>
             <MiddleWrapper>
-              {/*<Line />*/}
+              <Line />
               <Head>
                 <Logo src={logo} alt="" />
                 <SearchBox>
@@ -987,7 +1006,7 @@ export default class Pages extends React.Component<any, any> {
           <Col span={5} xl={{ span: 4 }} xxl={{ span: 5 }}>
             <Wrapper> </Wrapper>
           </Col>
-        </Row>
+        </Row>*/}
       </React.Fragment>
     );
   }
