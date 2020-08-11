@@ -328,7 +328,7 @@ export default class Pages extends React.Component<any, any> {
             <Theme config={startTheme}>
               <Button
                 type="primary"
-                onClick={() => this.linkToUrl("/component/affix")}
+                onClick={() => linkToUrl("/component/affix")}
               >
                 开始使用
               </Button>
@@ -408,7 +408,7 @@ export default class Pages extends React.Component<any, any> {
                   </TextCard>
                   <TextCard>
                     <TextCardContent>
-                      <SolutionH2 onClick={() => linkToUrl("/component")}>
+                      <SolutionH2 onClick={() => linkToUrl("/component/lugia")}>
                         Lugia Web
                       </SolutionH2>
                       <TextContent>
@@ -416,10 +416,9 @@ export default class Pages extends React.Component<any, any> {
                         组件库，满足金融行业高性能组件的需求，适用于 Web 端。
                       </TextContent>
                     </TextCardContent>
-
                     <Button
                       type="primary"
-                      onClick={() => linkToUrl("/component")}
+                      onClick={() => linkToUrl("/component/lugia")}
                     >
                       开始使用
                     </Button>
