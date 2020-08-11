@@ -252,7 +252,10 @@ const startTheme = {
     Container: {
       normal: {
         width: 200,
-        height: 40
+        height: 40,
+        background: {
+          image: "linear-gradient(0deg, #4D68FF 0%, #8093FF 100%)"
+        }
       }
     },
     ButtonText: {
@@ -269,7 +272,10 @@ const solutionTheme = {
     Container: {
       normal: {
         width: "100%",
-        height: 40
+        height: 40,
+        background: {
+          image: "linear-gradient(-180deg, #84A1FF 0%, #4D68FF 100%)"
+        }
       }
     },
     ButtonText: {
