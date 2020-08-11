@@ -256,6 +256,11 @@ const startTheme = {
         background: {
           image: "linear-gradient(0deg, #4D68FF 0%, #8093FF 100%)"
         }
+      },
+      active: {
+        background: {
+          image: "linear-gradient(0deg, #394DBF 0%, #8093FF 100%)"
+        }
       }
     },
     ButtonText: {
@@ -275,6 +280,11 @@ const solutionTheme = {
         height: 40,
         background: {
           image: "linear-gradient(-180deg, #84A1FF 0%, #4D68FF 100%)"
+        }
+      },
+      active: {
+        background: {
+          image: "linear-gradient(-180deg, #84A1FF 0%, #394DBF 98%)"
         }
       }
     },
