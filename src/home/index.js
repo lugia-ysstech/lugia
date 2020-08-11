@@ -29,12 +29,15 @@ import designValue from "../../public/home/design-value.png";
 import designPrinciple from "../../public/home/design-principle.png";
 import visualPrinciple from "../../public/home/visual-principle.png";
 import staticBulb from "../../public/home/static-bulb.png";
+import dynamicBulb from "../../public/home/dynamic-bulb.gif";
 import staticLeaf from "../../public/home/static-leaf.png";
-import pic3 from "../../public/home/pic3.png";
+import dynamicLeaf from "../../public/home/dynamic-leaf.gif";
+
+/*import pic3 from "../../public/home/pic3.png";
 import pic4 from "../../public/home/pic4.png";
 import sense from "../../public/home/sense.png";
 import design from "../../public/home/design.png";
-import view from "../../public/home/view.png";
+import view from "../../public/home/view.png";*/
 
 import banner from "../../public/home/banner.png";
 
@@ -63,12 +66,12 @@ const Head = styled.div`
   line-height: 80px;
 `;
 
-const HeadRight = styled.div`
+/*const HeadRight = styled.div`
   float: right;
   display: flex;
   align-items: center;
   margin-leftborder: 1px solid blue;
-`;
+`;*/
 
 const SearchBox = styled.div`
   height: 100%;
@@ -131,23 +134,41 @@ const SloganWrap = styled.div`
 `;
 const SloganImgWrap = styled.div`
   position: relative;
+  &:hover {
+    & > div:nth-child(2) {
+      background: url(${dynamicBulb});
+      background-size: 100% auto;
+    }
+    & > div:nth-child(3) {
+      background: url(${dynamicLeaf}) no-repeat -10px -16px;
+      background-size: 130% auto;
+    }
+  }
 `;
 const SloganImg = styled.img`
   width: 647px;
   height: 96px;
   margin-bottom: 50px;
 `;
-const BulbWrap = styled.img`
-  width: 35px;
+const BulbWrap = styled.div`
+  width: 50px;
+  height: 52px;
+  background: url(${staticBulb});
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
   left: 267px;
   top: 0px;
 `;
-const LeafWrap = styled.img`
-  width: 41px;
+const LeafWrap = styled.div`
+  width: 45px;
+  height: 33px;
+  background: url(${staticLeaf});
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
-  right: -10px;
-  top: 54px;
+  right: -14px;
+  top: 52px;
 `;
 
 const LugiaIntroduction = styled.div`
@@ -252,7 +273,7 @@ const Logo = styled.img`
   margin: 24px 0 0 0;
   float: left;
 `;
-
+/*
 const Language = styled.span`
   margin: 0 10px 0 0;
   color: #999;
@@ -405,9 +426,9 @@ const spendLineRight = keyframes`
 
 const spendLineRightAnimation = css`
   ${spendLineRight} 1s ease forwards;
-`;
+`;*/
 
-const LineRight = styled.div`
+/*const LineRight = styled.div`
   position: absolute;
   right: 15px;
   width: 1px;
@@ -507,7 +528,7 @@ const ButtonCard = styled.div`
   &:active {
     color: #3d4ecc;
   }
-`;
+`;*/
 
 const TabsBlock = styled.div`
   font-family: PingFangSC-Regular;
@@ -538,7 +559,7 @@ const TabsBlockDetail = styled.div`
 const VideoBoxWrap = styled.div`
   width: 100%;
   height: 0;
-  padding-bottom: 75%;
+  padding-bottom: 56.25%;
   margin-top: 38px;
   position: relative;
 `;
@@ -741,8 +762,8 @@ export default class Pages extends React.Component<any, any> {
             <SloganWrap>
               <SloganImgWrap>
                 <SloganImg src={slogan} alt="搭你所想,见你所愿" />
-                <BulbWrap src={staticBulb} />
-                <LeafWrap src={staticLeaf} />
+                <BulbWrap />
+                <LeafWrap />
               </SloganImgWrap>
 
               <Theme config={startButtonTheme}>
