@@ -249,6 +249,7 @@ const Logo = styled.img`
   height: 34px;
   margin: 24px 0 0 0;
   float: left;
+  cursor: pointer;
 `;
 
 const TabsBlock = styled.div`
@@ -472,7 +473,7 @@ export default class Pages extends React.Component<any, any> {
           </Col>
           <Col span={22} md={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 18 }}>
             <Head title="head">
-              <Logo src={logo} alt="" />
+              <Logo src={logo} alt="" onClick={() => linkToUrl("/home")} />
               <SearchBox>
                 <Search />
               </SearchBox>
