@@ -48,12 +48,18 @@ const BannerImg = styled.div`
 const Head = styled.div`
   height: 80px;
   line-height: 80px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const SearchBox = styled.div`
   height: 100%;
   padding-top: 10px;
   float: left;
+`;
+const GuideWrap = styled.div`
+  width: 100%;
+  height: 100%;
 `;
 
 const GitIconContainer = styled.a`
@@ -477,6 +483,29 @@ export default class Pages extends React.Component<any, any> {
               <SearchBox>
                 <Search />
               </SearchBox>
+              <GuideWrap>
+                <Row>
+                  <Col
+                    span={0}
+                    lg={{ span: 0 }}
+                    xl={{ span: 24 }}
+                    xxl={{ span: 24 }}
+                  >
+                    <HeadIndex onClick={() => linkToUrl("/logs")}>
+                      更新日志
+                    </HeadIndex>
+                    <HeadIndex onClick={() => linkToUrl("/lugia-mega")}>
+                      lugia-mega
+                    </HeadIndex>
+                    <HeadIndex onClick={() => linkToUrl("/component")}>
+                      lugia-web
+                    </HeadIndex>
+                    <HeadIndex onClick={() => linkToUrl("/component/affix")}>
+                      设计指南
+                    </HeadIndex>
+                  </Col>
+                </Row>
+              </GuideWrap>
 
               <GitIconContainer
                 href={"https://github.com/lugia-ysstech/lugia"}
@@ -488,17 +517,6 @@ export default class Pages extends React.Component<any, any> {
                 </GitIcon>
                 <GitStar>{stars}</GitStar>
               </GitIconContainer>
-
-              <HeadIndex onClick={() => linkToUrl("/logs")}>更新日志</HeadIndex>
-              <HeadIndex onClick={() => linkToUrl("/lugia-mega")}>
-                lugia-mega
-              </HeadIndex>
-              <HeadIndex onClick={() => linkToUrl("/component")}>
-                lugia-web
-              </HeadIndex>
-              <HeadIndex onClick={() => linkToUrl("/component/affix")}>
-                设计指南
-              </HeadIndex>
             </Head>
             <SloganWrap>
               <SloganImgWrap>
