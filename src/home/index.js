@@ -65,7 +65,6 @@ const GuideWrap = styled.div`
 const GitIconContainer = styled.a`
   height: 80px;
   width: 90px;
-  float: right;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -190,6 +189,9 @@ const ItemWrap = styled.div`
   width: 100%;
   margin-top: 90px;
 `;
+const SolutionItemWrap = styled(ItemWrap)`
+  margin-top: 60px;
+`;
 const ItemTitle = styled.div`
   width: 100%;
   height: 33px;
@@ -213,12 +215,9 @@ const ItemTitle = styled.div`
 const ItemContent = styled.div`
   width: 100%;
   margin-top: 38px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 `;
 const ContentCard = styled.div`
-  width: calc((100% - 60px) / 3);
+  width: 100%;
   height: 180px;
   position: relative;
   background: ${props => (props.bgColor ? props.bgColor : "#feecb8")};
@@ -249,6 +248,13 @@ const ContentCardStart = styled.div`
   &:hover {
     color: #8c9dff;
   }
+`;
+const SolutionItemContent = styled.div`
+  width: 100%;
+  margin-top: 38px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 const Logo = styled.img`
@@ -564,42 +570,57 @@ export default class Pages extends React.Component<any, any> {
             <ItemWrap>
               <ItemTitle>设计指南</ItemTitle>
               <ItemContent>
-                <ContentCard bgColor="#FEECB8">
-                  <ContentCardImg src={designValue} />
-                  <ContentCardTitleWrap>
-                    <ContentCardTitle>设计价值观</ContentCardTitle>
-                    <ContentCardStart onClick={() => linkToUrl("/design/core")}>
-                      开始使用 >>
-                    </ContentCardStart>
-                  </ContentCardTitleWrap>
-                </ContentCard>
-                <ContentCard bgColor="#EBEDFF">
-                  <ContentCardImg src={designPrinciple} />
-                  <ContentCardTitleWrap>
-                    <ContentCardTitle>设计原则</ContentCardTitle>
-                    <ContentCardStart
-                      onClick={() => linkToUrl("/design/alignment")}
-                    >
-                      开始使用 >>
-                    </ContentCardStart>
-                  </ContentCardTitleWrap>
-                </ContentCard>
-                <ContentCard bgColor="#E0F0FF">
-                  <ContentCardImg src={visualPrinciple} />
-                  <ContentCardTitleWrap>
-                    <ContentCardTitle>视觉原则</ContentCardTitle>
-                    <ContentCardStart
-                      onClick={() => linkToUrl("/design/layout")}
-                    >
-                      开始使用 >>
-                    </ContentCardStart>
-                  </ContentCardTitleWrap>
-                </ContentCard>
+                <Row
+                  gutter={[
+                    { xs: 30, sm: 30, md: 30, xl: 30, xxl: 30, lg: 30 },
+                    { xs: 30, sm: 30, md: 30, xl: 30, xxl: 30, lg: 30 }
+                  ]}
+                >
+                  <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
+                    <ContentCard bgColor="#FEECB8">
+                      <ContentCardImg src={designValue} />
+                      <ContentCardTitleWrap>
+                        <ContentCardTitle>设计价值观</ContentCardTitle>
+                        <ContentCardStart
+                          onClick={() => linkToUrl("/design/core")}
+                        >
+                          开始使用 >>
+                        </ContentCardStart>
+                      </ContentCardTitleWrap>
+                    </ContentCard>
+                  </Col>
+                  <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
+                    <ContentCard bgColor="#EBEDFF">
+                      <ContentCardImg src={designPrinciple} />
+                      <ContentCardTitleWrap>
+                        <ContentCardTitle>设计原则</ContentCardTitle>
+                        <ContentCardStart
+                          onClick={() => linkToUrl("/design/alignment")}
+                        >
+                          开始使用 >>
+                        </ContentCardStart>
+                      </ContentCardTitleWrap>
+                    </ContentCard>
+                  </Col>
+                  <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
+                    <ContentCard bgColor="#E0F0FF">
+                      <ContentCardImg src={visualPrinciple} />
+                      <ContentCardTitleWrap>
+                        <ContentCardTitle>视觉原则</ContentCardTitle>
+                        <ContentCardStart
+                          onClick={() => linkToUrl("/design/layout")}
+                        >
+                          开始使用 >>
+                        </ContentCardStart>
+                      </ContentCardTitleWrap>
+                    </ContentCard>
+                  </Col>
+                </Row>
               </ItemContent>
             </ItemWrap>
-            <ItemWrap>
+            <SolutionItemWrap>
               <ItemTitle>解决方案</ItemTitle>
-              <ItemContent>
+              <SolutionItemContent>
                 <Theme config={tabsTheme}>
                   <Tabs
                     data={solutionData}
@@ -608,8 +629,8 @@ export default class Pages extends React.Component<any, any> {
                     tabPosition={"left"}
                   />
                 </Theme>
-              </ItemContent>
-            </ItemWrap>
+              </SolutionItemContent>
+            </SolutionItemWrap>
             <ItemWrap>
               <ItemTitle>新增功能</ItemTitle>
               <VideoBoxWrap>
