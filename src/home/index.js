@@ -417,10 +417,14 @@ const tabsTheme = {
         height: 280
       }
     },
+    TitleContainer: {
+      normal: {
+        width: "20%"
+      }
+    },
     TabHeader: {
       DefaultTabPan: {
         normal: {
-          width: 300,
           height: 70
         }
       },
@@ -551,7 +555,7 @@ export default class Pages extends React.Component<any, any> {
                   </ContentCardTitleWrap>
                 </ContentCard>
                 <ContentCard bgColor="#EBEDFF">
-                  <ContentCardImg src={designPrinciple}/>
+                  <ContentCardImg src={designPrinciple} />
                   <ContentCardTitleWrap>
                     <ContentCardTitle>设计原则</ContentCardTitle>
                     <ContentCardStart
@@ -562,7 +566,7 @@ export default class Pages extends React.Component<any, any> {
                   </ContentCardTitleWrap>
                 </ContentCard>
                 <ContentCard bgColor="#E0F0FF">
-                  <ContentCardImg src={visualPrinciple}/>
+                  <ContentCardImg src={visualPrinciple} />
                   <ContentCardTitleWrap>
                     <ContentCardTitle>视觉原则</ContentCardTitle>
                     <ContentCardStart
