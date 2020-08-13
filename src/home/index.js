@@ -135,8 +135,8 @@ const SloganImgWrap = styled.div`
   position: relative;
   &:hover {
     & > div:nth-child(2) {
-      background: url(${dynamicBulb});
-      background-size: 100% auto;
+      background: url(${dynamicBulb}) no-repeat 3px 20px;
+      background-size: 75% auto;
     }
     & > div:nth-child(3) {
       background: url(${dynamicLeaf}) no-repeat -10px -16px;
@@ -150,14 +150,13 @@ const SloganImg = styled.img`
   margin-bottom: 50px;
 `;
 const BulbWrap = styled.div`
-  width: 50px;
-  height: 52px;
-  background: url(${staticBulb});
-  background-size: contain;
-  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+  background: url(${staticBulb}) no-repeat 6px bottom;
+  background-size: auto 65%;
   position: absolute;
-  left: 267px;
-  top: 0px;
+  left: 262px;
+  bottom: 97px;
 `;
 const LeafWrap = styled.div`
   width: 45px;
