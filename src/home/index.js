@@ -135,7 +135,7 @@ const SloganImgWrap = styled.div`
   position: relative;
   &:hover {
     & > div:nth-child(2) {
-      background: url(${dynamicBulb}) no-repeat 3px 20px;
+      background: url(${dynamicBulb}) no-repeat -2px 20px;
       background-size: 75% auto;
     }
     & > div:nth-child(3) {
@@ -144,9 +144,27 @@ const SloganImgWrap = styled.div`
     }
   }
 `;
+const MinSloganImgWrap = styled.div`
+  position: relative;
+  &:hover {
+    & > div:nth-child(2) {
+      background: url(${dynamicBulb}) no-repeat -2px 14px;
+      background-size: 75% auto;
+    }
+    & > div:nth-child(3) {
+      background: url(${dynamicLeaf}) no-repeat -7px -11px;
+      background-size: 130% auto;
+    }
+  }
+`;
 const SloganImg = styled.img`
   width: 650px;
   height: 96px;
+  margin-bottom: 50px;
+`;
+const MinSloganImg = styled.img`
+  width: 480px;
+  height: 70px;
   margin-bottom: 50px;
 `;
 const BulbWrap = styled.div`
@@ -158,6 +176,15 @@ const BulbWrap = styled.div`
   left: 262px;
   bottom: 97px;
 `;
+const MinBulbWrap = styled.div`
+  width: 59px;
+  height: 59px;
+  background: url(${staticBulb}) no-repeat 6px bottom;
+  background-size: auto 65%;
+  position: absolute;
+  left: 193px;
+  bottom: 85px;
+`;
 const LeafWrap = styled.div`
   width: 45px;
   height: 33px;
@@ -167,6 +194,16 @@ const LeafWrap = styled.div`
   position: absolute;
   right: -14px;
   top: 52px;
+`;
+const MinLeafWrap = styled.div`
+  width: 33px;
+  height: 24px;
+  background: url(${staticLeaf});
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: -10px;
+  top: 38px;
 `;
 
 const LugiaIntroduction = styled.div`
@@ -544,12 +581,34 @@ export default class Pages extends React.Component<any, any> {
               </GitIconContainer>
             </Head>
             <SloganWrap>
-              <SloganImgWrap>
-                <SloganImg src={slogan} alt="搭你所想,见你所愿" />
-                <BulbWrap />
-                <LeafWrap />
-              </SloganImgWrap>
-
+              <Row>
+                <Col
+                  span={0}
+                  sm={{ span: 0 }}
+                  md={{ span: 24 }}
+                  xl={{ span: 24 }}
+                  xxl={{ span: 24 }}
+                >
+                  <SloganImgWrap>
+                    <SloganImg src={slogan} alt="搭你所想,见你所愿" />
+                    <BulbWrap />
+                    <LeafWrap />
+                  </SloganImgWrap>
+                </Col>
+                <Col
+                  span={0}
+                  sm={{ span: 24 }}
+                  md={{ span: 0 }}
+                  xl={{ span: 0 }}
+                  xxl={{ span: 0 }}
+                >
+                  <MinSloganImgWrap>
+                    <MinSloganImg src={slogan} alt="搭你所想,见你所愿" />
+                    <MinBulbWrap />
+                    <MinLeafWrap />
+                  </MinSloganImgWrap>
+                </Col>
+              </Row>
               <Theme config={startButtonTheme}>
                 <Button
                   type="primary"
