@@ -98,15 +98,16 @@ const ContentWrap = styled.div`
 `;
 
 const H1 = styled.div`
-  font-size: 36px;
+  font-size: 16px;
   color: #fe5b02;
-  font-family: "Helvetica Neue";
+  font-family: PingFangSC-Medium;
   font-weight: 800;
   text-align: center;
   margin: 8px 0;
 `;
 const Text = styled.div`
-  font-size: 15px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
   color: ${props => props.color || "#747E90"};
   line-height: 1.6;
   margin: 12px 0 18px;
@@ -330,9 +331,9 @@ export default class Pages extends React.Component<any, any> {
         </HeaderWrap>
 
         <ContentWrap>
-          <H1>LUGIA DESIGN</H1>
+          <H1>快捷搭你所想，随时见你所愿</H1>
           <Text>
-            Lugia的诞生就是要树立中后台组件化的标杆。我们不仅仅创造了一套属于通用的开源组件及其设计器，而是将设计、代码，变成一种专属语言，一种跨时代的组件规范。
+            在Lugia中，通过简单的拖动操作拼出设计稿，之后直接交给开发人员开发，还可以使用丰富易用的主题样式，高效便捷的模型管理等功能，随时灵活调整页面的视觉主题与交互需求，从而高效的搭建项目。
           </Text>
           <StartPanle>
             <Theme config={startTheme}>
