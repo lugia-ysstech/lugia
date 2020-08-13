@@ -208,7 +208,7 @@ const MinLeafWrap = styled.div`
 
 const LugiaIntroduction = styled.div`
   width: 100%;
-  height: 168px;
+  height: 200px;
   background: #f8f9fa;
   display: flex;
   justify-content: center;
@@ -216,6 +216,7 @@ const LugiaIntroduction = styled.div`
 const LugiaIntroductionInner = styled.div`
   width: 650px;
   height: inherit;
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -232,6 +233,7 @@ const IntroductionContent = styled.div`
   width: 67%;
   height: 105px;
   line-height: 25px;
+  padding-left: 20px;
   font-family: PingFangSC-Regular;
   font-size: 14px;
   color: #747e90;
