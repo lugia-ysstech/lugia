@@ -208,7 +208,7 @@ const MinLeafWrap = styled.div`
 
 const LugiaIntroduction = styled.div`
   width: 100%;
-  height: 200px;
+  height: 220px;
   background: #f8f9fa;
   display: flex;
   justify-content: center;
@@ -229,9 +229,11 @@ const LogoWrap = styled.div`
 const IntroductionLogo = styled.img`
   width: 160px;
 `;
+const MinIntroductionLogo = styled.img`
+  width: 140px;
+`;
 const IntroductionContent = styled.div`
   width: 67%;
-  height: 105px;
   line-height: 25px;
   padding-left: 20px;
   font-family: PingFangSC-Regular;
@@ -629,7 +631,26 @@ export default class Pages extends React.Component<any, any> {
         <LugiaIntroduction>
           <LugiaIntroductionInner>
             <LogoWrap>
-              <IntroductionLogo src={logoIntroduction} />
+              <Row>
+                <Col
+                  span={0}
+                  sm={{ span: 0 }}
+                  md={{ span: 24 }}
+                  xl={{ span: 24 }}
+                  xxl={{ span: 24 }}
+                >
+                  <IntroductionLogo src={logoIntroduction} />
+                </Col>
+                <Col
+                  span={0}
+                  sm={{ span: 24 }}
+                  md={{ span: 0 }}
+                  xl={{ span: 0 }}
+                  xxl={{ span: 0 }}
+                >
+                  <MinIntroductionLogo src={logoIntroduction} />
+                </Col>
+              </Row>
             </LogoWrap>
             <IntroductionContent>
               <p style={{ fontWeight: "bold" }}>快捷搭你所想，随时见你所愿</p>
