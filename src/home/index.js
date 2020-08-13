@@ -24,6 +24,7 @@ import dynamicBulb from "../../public/home/dynamic-bulb.gif";
 import staticLeaf from "../../public/home/static-leaf.png";
 import dynamicLeaf from "../../public/home/dynamic-leaf.gif";
 import banner from "../../public/home/banner.png";
+import backgroundLogo from "../../public/home/background-logo.png";
 
 const { themeColor } = colorsFunc();
 
@@ -86,6 +87,7 @@ const GitIcon = styled.div`
 const GitStar = styled.div`
   width: 55px;
   padding: 0 10px;
+  margin-left: 8px;
   height: 30px;
   font-size: 14px;
   font-weight: bold;
@@ -93,6 +95,21 @@ const GitStar = styled.div`
   background: #f2f2f2;
   text-align: center;
   line-height: 30px;
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    left: -12px;
+    top: 7px;
+    width: 0px;
+    height: 0px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid #f2f2f2;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
+  }
 `;
 
 const HeadIndex = styled.a`
@@ -128,7 +145,7 @@ const SloganImgWrap = styled.div`
   }
 `;
 const SloganImg = styled.img`
-  width: 647px;
+  width: 650px;
   height: 96px;
   margin-bottom: 50px;
 `;
@@ -161,7 +178,7 @@ const LugiaIntroduction = styled.div`
   justify-content: center;
 `;
 const LugiaIntroductionInner = styled.div`
-  width: 665px;
+  width: 650px;
   height: inherit;
   display: flex;
   justify-content: space-between;
@@ -252,6 +269,9 @@ const ContentCardStart = styled.div`
 const SolutionItemContent = styled.div`
   width: 100%;
   margin-top: 38px;
+  background: url(${backgroundLogo}) no-repeat;
+  background-size: contain;
+  background-position: right bottom;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -452,7 +472,7 @@ const tabsTheme = {
     ContentBlock: {
       normal: {
         background: {
-          color: "#F8F9FA"
+          color: "#eeeeee50"
         }
       }
     }
@@ -552,12 +572,8 @@ export default class Pages extends React.Component<any, any> {
               <IntroductionLogo src={logoIntroduction} />
             </LogoWrap>
             <IntroductionContent>
-              在Lugia中，只要通过简单的拖动操作拼出设计稿，成果直接让开发人员使用，从而高效的搭建项目。并且丰富易用的主题样式，高效便捷的模型管理，可以随时灵活调整页面的视觉主题与交互需求。
-              真正做到了：
-              <span style={{ fontWeight: "bold" }}>
-                快捷搭你所想，随时见你所愿
-              </span>
-              。
+              <p style={{ fontWeight: "bold" }}>快捷搭你所想，随时见你所愿</p>
+              在Lugia中，通过简单的拖动操作拼出设计稿，之后直接交给开发人员开发，还可以使用丰富易用的主题样式，高效便捷的模型管理等功能，随时灵活调整页面的视觉主题与交互需求，从而高效的搭建项目。
             </IntroductionContent>
           </LugiaIntroductionInner>
         </LugiaIntroduction>

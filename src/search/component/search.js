@@ -116,6 +116,7 @@ export default class Navcomponent extends React.Component<any, any> {
       [Widget.Input]: {
         Container: {
           normal: {
+            width: 160,
             margin: { top: 0, right: 0, bottom: 0, left: 38 }
           }
         },
