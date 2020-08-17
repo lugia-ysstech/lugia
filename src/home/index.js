@@ -10,6 +10,7 @@ import { Theme, Grid, Button, Tabs } from "@lugia/lugia-web";
 import Widget from "@lugia/lugia-web/dist/consts/index";
 import styled from "styled-components";
 import Header from "../components/header";
+import { Footer } from "../components/footer";
 import { linkToUrl } from "../support/commonMethods";
 
 import slogan from "../../public/home/slogan.png";
@@ -23,7 +24,6 @@ import staticLeaf from "../../public/home/static-leaf.png";
 import dynamicLeaf from "../../public/home/dynamic-leaf.gif";
 import banner from "../../public/home/banner.png";
 import backgroundLogo from "../../public/home/background-logo.png";
-
 
 const { Row, Col } = Grid;
 
@@ -281,21 +281,6 @@ const VideoBox = styled.div`
     height: 100%;
   }
 `;
-const Footer = styled.div`
-  width: 100%;
-  height: 90px;
-  margin-top: 70px;
-  background: #f8f9fa;
-  display: grid;
-  place-items: center;
-`;
-const CopyRight = styled.div`
-  line-height: 25px;
-  font-family: PingFangSC-Regular;
-  font-size: 14px;
-  color: #747e90;
-  text-align: center;
-`;
 
 const solutionData = [
   {
@@ -446,6 +431,7 @@ export default class Pages extends React.Component<any, any> {
     return (
       <React.Fragment>
         <BannerImg />
+
         <Row>
           <Col span={1} md={{ span: 1 }} xl={{ span: 2 }} xxl={{ span: 3 }}>
             <Wrapper> </Wrapper>
@@ -616,11 +602,8 @@ export default class Pages extends React.Component<any, any> {
             <Wrapper> </Wrapper>
           </Col>
         </Row>
-        <Footer>
-          <CopyRight>
-            Copyright @ 2001-2019 Ysstech,All Rights Reserved 粤ICP备05050184号
-          </CopyRight>
-        </Footer>
+
+        <Footer />
       </React.Fragment>
     );
   }
