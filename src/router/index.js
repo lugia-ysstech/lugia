@@ -271,11 +271,28 @@ const getChildrenRout = (data, rout) => {
   });
   return innerRout;
 };
-const getTutorialRoute = data => {
+const getChildrenRoutMobile = (data, rout) => {
+  let innerRout = rout;
+  if (!data) return;
+  data.forEach(item => {
+    const { value, text, sort, children } = item;
+    innerRout[value] = {
+      render: () => import("../mobile/tutorial-center/pages/page.js"),
+      value,
+      text,
+      sort
+    };
+    getChildrenRoutMobile(children, innerRout);
+  });
+  return innerRout;
+};
+const getTutorialRoute = (data, isMobile = false) => {
   const rout = {};
   data.forEach(item => {
     const { children } = item;
-    getChildrenRout(children, rout);
+    isMobile
+      ? getChildrenRoutMobile(children, rout)
+      : getChildrenRout(children, rout);
   });
   return rout;
 };
@@ -439,6 +456,28 @@ const tutorialRouter = {
     }
   }
 };
+const tutorialRouterMobile = {
+  ...getTutorialRoute(tutorialConfig, true),
+  "/tutorial/404": {
+    exact: true,
+    render: async () => import("../access/NotAccess"),
+    value: "/tutorial/404",
+    isHidden: true,
+    text: "404"
+  },
+  NotFound: {
+    isHidden: true,
+    render: async () => {
+      return () => (
+        <Redirect
+          to={{
+            pathname: "/tutorial/404"
+          }}
+        />
+      );
+    }
+  }
+};
 
 const getDesignRouteMobile = data => {
   const rout = {};
@@ -561,6 +600,7 @@ const routerConfigMobile = {
 
 let defaultDesignRouter = designRouter;
 let defaultRouterConfig = routerConfig;
+let defaultTutorialRouter = tutorialRouter;
 
 const u = window.navigator.userAgent.toLowerCase();
 if (
@@ -572,6 +612,7 @@ if (
   if (_query_url.indexOf("ismobile") < 0) {
     defaultDesignRouter = designRouterMobile;
     defaultRouterConfig = routerConfigMobile;
+    defaultTutorialRouter = tutorialRouterMobile;
   }
 }
 
@@ -582,5 +623,5 @@ export default {
   menuConfig,
   designRouterMobile,
   tutorialConfig,
-  tutorialRouter
+  tutorialRouter: defaultTutorialRouter
 };
