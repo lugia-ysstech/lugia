@@ -14,9 +14,9 @@ const { Textarea } = Input;
 
 const BannerImg = styled.div`
   width: 100%;
-  height: 520px;
+  height: 100%;
   background:url("${banner}") no-repeat;
-  background-size: auto 520px;
+  background-size: cover;
   background-position: center center;
   position:absolute;
   top:0;

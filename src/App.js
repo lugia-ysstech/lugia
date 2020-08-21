@@ -117,6 +117,13 @@ export const designRouterMobile = {
     url: "/doc",
     render: () => import("./archive")
   },
+  "/tutorial": {
+    value: "教程中心",
+    text: "教程中心",
+    url: "/tutorial",
+    isHidden: true,
+    render: () => import("./mobile/tutorial-center")
+  },
   NotFound: {
     render: async () => {
       return () => <Redirect to={"/home"} />;
