@@ -19,6 +19,12 @@ const tutorialRouter = {
       return import("./feedback");
     }
   },
+  "/tutorial/pages": {
+    value: "/tutorial/pages",
+    text: "教程页面",
+    url: "/tutorial/pages",
+    render: () => import("./pages")
+  },
   NotFound: {
     render: async () => {
       return () => <Redirect to={"/home"} />;

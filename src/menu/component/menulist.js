@@ -4,16 +4,16 @@
  *
  * @flow
  */
-import React from 'react';
-import { go } from '@lugia/lugiax-router';
-import { Navmenu } from '@lugia/lugia-web';
-import '../../css/menu.css';
-import Router from '../../router';
-import Widget from '@lugia/lugia-web/dist/consts/index';
-import styled from 'styled-components';
-import { getBorderRadius, getBoxShadow } from '@lugia/theme-utils';
+import React from "react";
+import { go } from "@lugia/lugiax-router";
+import { Navmenu } from "@lugia/lugia-web";
+import "../../css/menu.css";
+import Router from "../../router";
+import Widget from "@lugia/lugia-web/dist/consts/index";
+import styled from "styled-components";
+import { getBorderRadius, getBoxShadow } from "@lugia/theme-utils";
 
-import colorsFunc from '@lugia/lugia-web/dist/css/stateColor';
+import colorsFunc from "@lugia/lugia-web/dist/css/stateColor";
 
 const { themeColor } = colorsFunc();
 
@@ -53,12 +53,12 @@ const getMenuItems = (data: Object) => {
 
 const Container = styled.div`
   padding: ${props =>
-  props.fixed ? '0' : props.padding ? props.padding : '42px 0 10px'};
-  position: ${props => (props.fixed ? 'fixed' : 'relative')};
+    props.fixed ? "0" : props.padding ? props.padding : "42px 0 10px"};
+  position: ${props => (props.fixed ? "fixed" : "relative")};
   top: 0;
   width: ${props => `${props.width || 260}px`};
-  ${props => (props.mobile ? '' : 'overflow-y: scroll;overflow-x: hidden;')}
-  height: ${props => props.height + 'px'};
+  ${props => (props.mobile ? "" : "overflow-y: scroll;overflow-x: hidden;")}
+  height: ${props => props.height + "px"};
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -97,7 +97,7 @@ function getScrollTop(): number {
   let scrollPos;
   if (window.pageYOffset) {
     scrollPos = window.pageYOffset;
-  } else if (document.compatMode && document.compatMode != 'BackCompat') {
+  } else if (document.compatMode && document.compatMode != "BackCompat") {
     scrollPos = document.documentElement && document.documentElement.scrollTop;
   } else if (document.body) {
     scrollPos = document.body.scrollTop;
@@ -119,23 +119,23 @@ export default class MenuList extends React.Component<any, any> {
     this.defCurrent =
       pathFilter.length > 1 ? "/" + pathFilter.join("/") : defaultUrl;
     this.routerType = pathType;
-    const {routerType = this.routerType} = this.props;
+    const { routerType = this.routerType } = this.props;
     this.defaultData = getMenuItems(Router[routerType]);
     this.state = {};
   }
 
   componentDidMount() {
     this.getWindowHeight();
-    window.addEventListener('scroll', this.addWindowListener);
+    window.addEventListener("scroll", this.addWindowListener);
     window.onresize = () => {
       this.getWindowHeight();
     };
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
-    const {routerType: nextRouterType} = nextProps;
-    const {routerType} = this.props;
-    if(routerType !== nextRouterType){
+    const { routerType: nextRouterType } = nextProps;
+    const { routerType } = this.props;
+    if (routerType !== nextRouterType) {
       this.defaultData = getMenuItems(Router[nextRouterType]);
     }
 
@@ -144,8 +144,8 @@ export default class MenuList extends React.Component<any, any> {
 
   getWindowHeight = () => {
     const viewHeight = document.body.clientHeight - 60;
-    const {height} = this.state;
-    if(height === viewHeight){
+    const { height } = this.state;
+    if (height === viewHeight) {
       return;
     }
     this.setState({
@@ -159,7 +159,7 @@ export default class MenuList extends React.Component<any, any> {
       padding = {},
       isMobile = false,
       data,
-      current = this.defCurrent,
+      current = this.defCurrent
     } = this.props;
     const { height } = this.state;
 
@@ -170,7 +170,7 @@ export default class MenuList extends React.Component<any, any> {
             normal: {
               width,
               height,
-              boxShadow: getBoxShadow('none')
+              boxShadow: getBoxShadow("none")
             }
           },
           TreeItem: {
@@ -195,7 +195,7 @@ export default class MenuList extends React.Component<any, any> {
                 font: {
                   size: 15
                 },
-                color: '#fff',
+                color: "#fff",
                 borderRadius: getBorderRadius(35)
               }
             }
@@ -211,8 +211,8 @@ export default class MenuList extends React.Component<any, any> {
             <Navmenu
               autoHeight={isMobile}
               theme={config}
-              inlineType={'ellipse'}
-              mode={'inline'}
+              inlineType={"ellipse"}
+              mode={"inline"}
               data={data || this.defaultData}
               value={current}
               inlineExpandAll={true}
@@ -224,9 +224,9 @@ export default class MenuList extends React.Component<any, any> {
           <Navmenu
             autoHeight={true}
             theme={config}
-            inlineType={'ellipse'}
-            mode={'inline'}
-            data={this.defaultData}
+            inlineType={"ellipse"}
+            mode={"inline"}
+            data={data || this.defaultData}
             value={this.state.current}
             inlineExpandAll={true}
             onSelect={this.onSelect}
@@ -248,11 +248,11 @@ export default class MenuList extends React.Component<any, any> {
   };
 
   setFixed = fixed => {
-    const {fixed: stateFixed} = this.state;
-    if(stateFixed === fixed){
+    const { fixed: stateFixed } = this.state;
+    if (stateFixed === fixed) {
       return;
     }
-    this.setState({fixed});
+    this.setState({ fixed });
   };
 
   addWindowListener = () => {
