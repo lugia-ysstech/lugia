@@ -6,6 +6,7 @@ import { getBorderRadius } from "@lugia/theme-utils";
 import Header from "../components/header";
 import { Footer } from "../components/footer";
 import OpreationProcess from "./operationProcess";
+import Video from "./video";
 
 import banner from "./img/banner-background.png";
 import basicConstructor from "./img/basic-constructor.png";
@@ -369,14 +370,7 @@ export default class TutorialCenter extends Component {
                 <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
                   <VideoCardWrap>
                     <VideoWrap>
-                      <iframe
-                        src="//player.bilibili.com/player.html?aid=67434572&cid=116925497&page=1"
-                        scrolling="no"
-                        border="0"
-                        frameBorder="no"
-                        framespacing="0"
-                        allowFullScreen="true"
-                      />
+                      <Video src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4" />
                     </VideoWrap>
                   </VideoCardWrap>
                   <VideoTitle>新功能介绍</VideoTitle>
@@ -384,14 +378,7 @@ export default class TutorialCenter extends Component {
                 <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
                   <VideoCardWrap>
                     <VideoWrap>
-                      <iframe
-                        src="//player.bilibili.com/player.html?aid=67434572&cid=116925497&page=1"
-                        scrolling="no"
-                        border="0"
-                        frameBorder="no"
-                        framespacing="0"
-                        allowFullScreen="true"
-                      />
+                      <Video src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4" />
                     </VideoWrap>
                   </VideoCardWrap>
                   <VideoTitle>快速入手</VideoTitle>
@@ -399,14 +386,7 @@ export default class TutorialCenter extends Component {
                 <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
                   <VideoCardWrap>
                     <VideoWrap>
-                      <iframe
-                        src="//player.bilibili.com/player.html?aid=67434572&cid=116925497&page=1"
-                        scrolling="no"
-                        border="0"
-                        frameBorder="no"
-                        framespacing="0"
-                        allowFullScreen="true"
-                      />
+                      <Video src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4" />
                     </VideoWrap>
                   </VideoCardWrap>
                   <VideoTitle>常规面板</VideoTitle>
