@@ -10,6 +10,7 @@ import styled from "styled-components";
 import { BackTop } from "@lugia/lugia-web";
 import { linkToUrl } from "../../support/commonMethods";
 import { pageData } from "./pageData";
+import Video from "../video";
 
 const Container = styled.div`
   width: 100%;
@@ -111,14 +112,7 @@ export default class TutorialPage extends Component {
           <DescWrap>{desc}</DescWrap>
           <VideoCardWrap>
             <VideoWrap>
-              <iframe
-                src={videoSrc}
-                scrolling="no"
-                border="0"
-                frameBorder="no"
-                framespacing="0"
-                allowFullScreen="true"
-              />
+              <Video src={videoSrc}></Video>
             </VideoWrap>
           </VideoCardWrap>
         </Fragment>
