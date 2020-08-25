@@ -5,7 +5,7 @@ import Widget from "@lugia/lugia-web/dist/consts/index";
 import { getBorderRadius } from "@lugia/theme-utils";
 import Header from "../components/header";
 import { Footer } from "../components/footer";
-import OpreationProcess from "./operationProcess";
+import OpreationProcess from "./graph";
 import Video from "./video";
 
 import banner from "./img/banner-background.png";
