@@ -1,5 +1,6 @@
-import React, { Component, Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import G6 from "@antv/g6";
+import { linkToUrl } from "../support/commonMethods";
 
 const data = {
   nodes: [
@@ -8,13 +9,11 @@ const data = {
       x: 50,
       y: 160,
       label: "创建项目",
+      url: "/tutorial/pages/quick-start",
+      class: "dev",
       style: {
         width: 70,
-        height: 40,
-        fill: "#6FBDFF10",
-        stroke: "#6FBDFF10",
-        lineWidth: 1,
-        radius: 4
+        height: 40
       },
       labelCfg: {
         style: {
@@ -27,14 +26,11 @@ const data = {
       id: "node2",
       x: 170,
       y: 110,
+      class: "des",
       label: "常规建页",
       style: {
         width: 70,
-        height: 40,
-        fill: "#4D68FF10",
-        stroke: "#4D68FF10",
-        lineWidth: 1,
-        radius: 4
+        height: 40
       },
       labelCfg: {
         style: {
@@ -47,14 +43,11 @@ const data = {
       id: "node3",
       x: 170,
       y: 210,
+      class: "dev",
       label: "智能建页",
       style: {
         width: 70,
-        height: 40,
-        fill: "#6FBDFF10",
-        stroke: "#6FBDFF10",
-        lineWidth: 1,
-        radius: 4
+        height: 40
       },
       labelCfg: {
         style: {
@@ -67,14 +60,11 @@ const data = {
       id: "node4",
       x: 290,
       y: 160,
+      class: "des",
       label: "主题配置",
       style: {
         width: 70,
-        height: 40,
-        fill: "#4D68FF10",
-        stroke: "#4D68FF10",
-        lineWidth: 1,
-        radius: 4
+        height: 40
       },
       labelCfg: {
         style: {
@@ -87,14 +77,11 @@ const data = {
       id: "node5",
       x: 410,
       y: 110,
+      class: "des",
       label: "搭建页面",
       style: {
         width: 70,
-        height: 40,
-        fill: "#4D68FF10",
-        stroke: "#4D68FF10",
-        lineWidth: 1,
-        radius: 4
+        height: 40
       },
       labelCfg: {
         style: {
@@ -107,14 +94,11 @@ const data = {
       id: "node6",
       x: 515,
       y: 110,
+      class: "des",
       label: "智能布局",
       style: {
         width: 70,
-        height: 40,
-        fill: "#4D68FF10",
-        stroke: "#4D68FF10",
-        lineWidth: 1,
-        radius: 4
+        height: 40
       },
       labelCfg: {
         style: {
@@ -127,14 +111,11 @@ const data = {
       id: "node7",
       x: 410,
       y: 210,
+      class: "dev",
       label: "模板管理",
       style: {
         width: 70,
-        height: 40,
-        fill: "#6FBDFF10",
-        stroke: "#6FBDFF10",
-        lineWidth: 1,
-        radius: 4
+        height: 40
       },
       labelCfg: {
         style: {
@@ -147,14 +128,11 @@ const data = {
       id: "node8",
       x: 650,
       y: 160,
+      class: "des",
       label: "创建页面/路由层级",
       style: {
         width: 130,
-        height: 40,
-        fill: "#4D68FF10",
-        stroke: "#4D68FF10",
-        lineWidth: 1,
-        radius: 4
+        height: 40
       },
       labelCfg: {
         style: {
@@ -167,14 +145,11 @@ const data = {
       id: "node9",
       x: 780,
       y: 160,
+      class: "des",
       label: "动作设计",
       style: {
         width: 70,
-        height: 40,
-        fill: "#4D68FF10",
-        stroke: "#4D68FF10",
-        lineWidth: 1,
-        radius: 4
+        height: 40
       },
       labelCfg: {
         style: {
@@ -188,13 +163,10 @@ const data = {
       x: 895,
       y: 160,
       label: "页面交互开发",
+      class: "dev",
       style: {
         width: 100,
-        height: 40,
-        fill: "#6FBDFF10",
-        stroke: "#6FBDFF10",
-        lineWidth: 1,
-        radius: 4
+        height: 40
       },
       labelCfg: {
         style: {
@@ -393,6 +365,33 @@ export default function() {
   const ref = React.useRef(null);
   let graph = null;
 
+  const bindEvents = () => {
+    graph.on("node:mouseenter", event => {
+      const { item } = event;
+      const { class: className } = item.getModel();
+      graph.setItemState(item, "hover", true);
+      if (className === "dev" || className === "des") {
+        graph.updateItem(item, {
+          labelCfg: {
+            style: {
+              fill: "#ffffff"
+            }
+          }
+        });
+      }
+    });
+    graph.on("node:mouseleave", event => {
+      const { item } = event;
+      graph.setItemState(item, "hover", false);
+    });
+
+    graph.on("node:click", event => {
+      const { item } = event;
+      const { url } = item.getModel();
+      url && linkToUrl(url);
+    });
+  };
+
   useEffect(() => {
     if (!graph) {
       graph = new G6.Graph({
@@ -410,7 +409,43 @@ export default function() {
 
     graph.data(data);
 
+    graph.node(node => {
+      const defaultNodeStyle = { lineWidth: 1, radius: 4 };
+      switch (node.class) {
+        case "des":
+          return {
+            style: {
+              fill: "#4D68FF10",
+              stroke: "#4D68FF10",
+              ...defaultNodeStyle
+            },
+            stateStyles: {
+              hover: {
+                fill: "#4D68FF"
+              }
+            }
+          };
+        case "dev":
+          return {
+            style: {
+              fill: "#6FBDFF10",
+              stroke: "#6FBDFF10",
+              ...defaultNodeStyle
+            },
+            stateStyles: {
+              hover: {
+                fill: "#6FBDFF"
+              }
+            }
+          };
+        default:
+          return {};
+      }
+    });
+
     graph.render();
+
+    bindEvents();
   }, []);
 
   return <div ref={ref}></div>;
