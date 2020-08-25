@@ -370,7 +370,7 @@ export default class TutorialCenter extends Component {
                 <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
                   <VideoCardWrap>
                     <VideoWrap>
-                      <Video src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4" />
+                      <Video src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" />
                     </VideoWrap>
                   </VideoCardWrap>
                   <VideoTitle>新功能介绍</VideoTitle>
@@ -378,7 +378,7 @@ export default class TutorialCenter extends Component {
                 <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
                   <VideoCardWrap>
                     <VideoWrap>
-                      <Video src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4" />
+                      <Video src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" />
                     </VideoWrap>
                   </VideoCardWrap>
                   <VideoTitle>快速入手</VideoTitle>
@@ -386,7 +386,7 @@ export default class TutorialCenter extends Component {
                 <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
                   <VideoCardWrap>
                     <VideoWrap>
-                      <Video src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4" />
+                      <Video src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" />
                     </VideoWrap>
                   </VideoCardWrap>
                   <VideoTitle>常规面板</VideoTitle>
