@@ -1,6 +1,57 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import G6 from "@antv/g6";
+import styled from "styled-components";
 import { linkToUrl } from "../support/commonMethods";
+
+const HoverDecorateWrap = styled.div`
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  top: ${props => (props.y ? props.y : 0)}px;
+  left: ${props => (props.x ? props.x : 0)}px;
+`;
+const BigDot = styled.div`
+  width: 11px;
+  height: 11px;
+  border-radius: 4px;
+  background: ${props => (props.isDev ? "#6FBDFF" : "#4d68ff")};
+  opacity: 0.3;
+  position: absolute;
+  right: 0px;
+  bottom: 4px;
+`;
+const BigDotDown = styled(BigDot)`
+  top: 4px;
+  left: 8px;
+`;
+const MiddleDot = styled.div`
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: ${props => (props.isDev ? "#6FBDFF" : "#4d68ff")};
+  opacity: 0.3;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+`;
+const MiddleDotDown = styled(MiddleDot)`
+  left: 22px;
+  top: 16px;
+`;
+const SmallDot = styled.div`
+  width: 5px;
+  height: 5px;
+  border-radius: 4px;
+  background: ${props => (props.isDev ? "#6FBDFF" : "#4d68ff")};
+  opacity: 0.3;
+  position: absolute;
+  left: 8px;
+  bottom: 4px;
+`;
+const SmallDotDown = styled(SmallDot)`
+  left: 0;
+  bottom: 6px;
+`;
 
 const data = {
   nodes: [
@@ -361,14 +412,40 @@ const data = {
   ]
 };
 
+const HoverDecorateUp = ({ x, y, isDev }) => {
+  return (
+    <HoverDecorateWrap x={x} y={y}>
+      <BigDot isDev={isDev} />
+      <MiddleDot isDev={isDev} />
+      <SmallDot isDev={isDev} />
+    </HoverDecorateWrap>
+  );
+};
+const HoverDecorateDown = ({ x, y, isDev }) => {
+  return (
+    <HoverDecorateWrap x={x} y={y}>
+      <BigDotDown isDev={isDev} />
+      <MiddleDotDown isDev={isDev} />
+      <SmallDotDown isDev={isDev} />
+    </HoverDecorateWrap>
+  );
+};
+
 export default function() {
   const ref = React.useRef(null);
   let graph = null;
 
+  const [showHoverDecorate, setshowHoverDecorate] = useState(false);
+  const [hoverDecorateUpX, setHoverDecorateUpX] = useState(0);
+  const [hoverDecorateUpY, setHoverDecorateUpY] = useState(0);
+  const [hoverDecorateDownX, setHoverDecorateDownX] = useState(0);
+  const [hoverDecorateDownY, setHoverDecorateDownY] = useState(0);
+  const [isDevStyle, setIsDevStyle] = useState(false);
+
   const bindEvents = () => {
     graph.on("node:mouseenter", event => {
       const { item } = event;
-      const { class: className } = item.getModel();
+      const { class: className, x, y } = item.getModel();
       graph.setItemState(item, "hover", true);
       if (className === "dev" || className === "des") {
         graph.updateItem(item, {
@@ -378,11 +455,18 @@ export default function() {
             }
           }
         });
+        setshowHoverDecorate(true);
+        setHoverDecorateUpX(x);
+        setHoverDecorateUpY(y - 45);
+        setHoverDecorateDownX(x - 30);
+        setHoverDecorateDownY(y + 20);
+        className === "dev" ? setIsDevStyle(true) : setIsDevStyle(false);
       }
     });
     graph.on("node:mouseleave", event => {
       const { item } = event;
       graph.setItemState(item, "hover", false);
+      setshowHoverDecorate(false);
     });
 
     graph.on("node:click", event => {
@@ -448,5 +532,22 @@ export default function() {
     bindEvents();
   }, []);
 
-  return <div ref={ref}></div>;
+  return (
+    <div ref={ref} style={{ position: "relative" }}>
+      {showHoverDecorate && (
+        <HoverDecorateUp
+          x={hoverDecorateUpX}
+          y={hoverDecorateUpY}
+          isDev={isDevStyle}
+        />
+      )}
+      {showHoverDecorate && (
+        <HoverDecorateDown
+          x={hoverDecorateDownX}
+          y={hoverDecorateDownY}
+          isDev={isDevStyle}
+        />
+      )}
+    </div>
+  );
 }
