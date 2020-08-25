@@ -228,7 +228,7 @@ const data = {
     },
     {
       id: "node11",
-      x: 750,
+      x: 840,
       y: 295,
       label: "设计人员",
       style: {
@@ -241,6 +241,7 @@ const data = {
       },
       labelCfg: {
         position: "right",
+        offset: -30,
         style: {
           fill: "#4D68FF",
           fontSize: 12
@@ -262,6 +263,7 @@ const data = {
       },
       labelCfg: {
         position: "right",
+        offset: -30,
         style: {
           fill: "#6FBDFF",
           fontSize: 12
