@@ -1,5 +1,3 @@
-import G6 from "@antv/g6";
-
 export const data = {
   nodes: [
     {
@@ -12,12 +10,6 @@ export const data = {
       style: {
         width: 70,
         height: 40
-      },
-      labelCfg: {
-        style: {
-          fill: "#6FBDFF",
-          fontSize: 14
-        }
       }
     },
     {
@@ -29,12 +21,6 @@ export const data = {
       style: {
         width: 70,
         height: 40
-      },
-      labelCfg: {
-        style: {
-          fill: "#4D68FF",
-          fontSize: 14
-        }
       }
     },
     {
@@ -46,12 +32,6 @@ export const data = {
       style: {
         width: 70,
         height: 40
-      },
-      labelCfg: {
-        style: {
-          fill: "#6FBDFF",
-          fontSize: 14
-        }
       }
     },
     {
@@ -63,12 +43,6 @@ export const data = {
       style: {
         width: 70,
         height: 40
-      },
-      labelCfg: {
-        style: {
-          fill: "#4D68FF",
-          fontSize: 14
-        }
       }
     },
     {
@@ -80,12 +54,6 @@ export const data = {
       style: {
         width: 70,
         height: 40
-      },
-      labelCfg: {
-        style: {
-          fill: "#4D68FF",
-          fontSize: 14
-        }
       }
     },
     {
@@ -97,12 +65,6 @@ export const data = {
       style: {
         width: 70,
         height: 40
-      },
-      labelCfg: {
-        style: {
-          fill: "#4D68FF",
-          fontSize: 14
-        }
       }
     },
     {
@@ -114,12 +76,6 @@ export const data = {
       style: {
         width: 70,
         height: 40
-      },
-      labelCfg: {
-        style: {
-          fill: "#6FBDFF",
-          fontSize: 14
-        }
       }
     },
     {
@@ -131,12 +87,6 @@ export const data = {
       style: {
         width: 130,
         height: 40
-      },
-      labelCfg: {
-        style: {
-          fill: "#4D68FF",
-          fontSize: 14
-        }
       }
     },
     {
@@ -148,12 +98,6 @@ export const data = {
       style: {
         width: 70,
         height: 40
-      },
-      labelCfg: {
-        style: {
-          fill: "#4D68FF",
-          fontSize: 14
-        }
       }
     },
     {
@@ -165,12 +109,6 @@ export const data = {
       style: {
         width: 100,
         height: 40
-      },
-      labelCfg: {
-        style: {
-          fill: "#6FBDFF",
-          fontSize: 14
-        }
       }
     },
     {
@@ -223,11 +161,6 @@ export const data = {
       source: "node1",
       target: "node2",
       type: "polyline",
-      style: {
-        stroke: "#4D68FF",
-        lineWidth: 1,
-        endArrow: { path: G6.Arrow.triangle(6, 6, 0), fill: "#4D68FF" }
-      },
       controlPoints: [
         { x: 110, y: 160 },
         { x: 110, y: 110 }
@@ -237,11 +170,6 @@ export const data = {
       source: "node1",
       target: "node3",
       type: "polyline",
-      style: {
-        stroke: "#4D68FF",
-        lineWidth: 1,
-        endArrow: { path: G6.Arrow.triangle(6, 6, 0), fill: "#4D68FF" }
-      },
       controlPoints: [
         { x: 110, y: 160 },
         { x: 110, y: 210 }
@@ -251,11 +179,6 @@ export const data = {
       source: "node2",
       target: "node4",
       type: "polyline",
-      style: {
-        stroke: "#4D68FF",
-        lineWidth: 1,
-        endArrow: { path: G6.Arrow.triangle(6, 6, 0), fill: "#4D68FF" }
-      },
       controlPoints: [
         { x: 230, y: 110 },
         { x: 230, y: 160 }
@@ -265,11 +188,6 @@ export const data = {
       source: "node3",
       target: "node4",
       type: "polyline",
-      style: {
-        stroke: "#4D68FF",
-        lineWidth: 1,
-        endArrow: { path: G6.Arrow.triangle(6, 6, 0), fill: "#4D68FF" }
-      },
       controlPoints: [
         { x: 230, y: 210 },
         { x: 230, y: 160 }
@@ -279,11 +197,6 @@ export const data = {
       source: "node4",
       target: "node5",
       type: "polyline",
-      style: {
-        stroke: "#4D68FF",
-        lineWidth: 1,
-        endArrow: { path: G6.Arrow.triangle(6, 6, 0), fill: "#4D68FF" }
-      },
       controlPoints: [
         { x: 350, y: 160 },
         { x: 350, y: 110 }
@@ -291,22 +204,12 @@ export const data = {
     },
     {
       source: "node5",
-      target: "node6",
-      style: {
-        stroke: "#4D68FF",
-        lineWidth: 1,
-        endArrow: { path: G6.Arrow.triangle(6, 6, 0), fill: "#4D68FF" }
-      }
+      target: "node6"
     },
     {
       source: "node4",
       target: "node7",
       type: "polyline",
-      style: {
-        stroke: "#4D68FF",
-        lineWidth: 1,
-        endArrow: { path: G6.Arrow.triangle(6, 6, 0), fill: "#4D68FF" }
-      },
       controlPoints: [
         { x: 350, y: 160 },
         { x: 350, y: 210 }
@@ -316,11 +219,6 @@ export const data = {
       source: "node6",
       target: "node8",
       type: "polyline",
-      style: {
-        stroke: "#4D68FF",
-        lineWidth: 1,
-        endArrow: { path: G6.Arrow.triangle(6, 6, 0), fill: "#4D68FF" }
-      },
       controlPoints: [
         { x: 565, y: 110 },
         { x: 565, y: 160 }
@@ -330,11 +228,6 @@ export const data = {
       source: "node7",
       target: "node8",
       type: "polyline",
-      style: {
-        stroke: "#4D68FF",
-        lineWidth: 1,
-        endArrow: { path: G6.Arrow.triangle(6, 6, 0), fill: "#4D68FF" }
-      },
       controlPoints: [
         { x: 565, y: 210 },
         { x: 565, y: 160 }
@@ -342,21 +235,11 @@ export const data = {
     },
     {
       source: "node8",
-      target: "node9",
-      style: {
-        stroke: "#4D68FF",
-        lineWidth: 1,
-        endArrow: { path: G6.Arrow.triangle(6, 6, 0), fill: "#4D68FF" }
-      }
+      target: "node9"
     },
     {
       source: "node9",
-      target: "node10",
-      style: {
-        stroke: "#4D68FF",
-        lineWidth: 1,
-        endArrow: { path: G6.Arrow.triangle(6, 6, 0), fill: "#4D68FF" }
-      }
+      target: "node10"
     }
   ]
 };
