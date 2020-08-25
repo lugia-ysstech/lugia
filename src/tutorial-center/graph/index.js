@@ -38,7 +38,18 @@ export default function() {
     });
     graph.on("node:mouseleave", event => {
       const { item } = event;
+      const { class: className, x, y } = item.getModel();
       graph.setItemState(item, "hover", false);
+      let newLabelFill;
+      className === "dev" && (newLabelFill = "#6FBDFF");
+      className === "des" && (newLabelFill = "#4D68FF");
+      graph.updateItem(item, {
+        labelCfg: {
+          style: {
+            fill: newLabelFill
+          }
+        }
+      });
       setshowHoverDecorate(false);
     });
     graph.on("node:click", event => {
@@ -75,6 +86,12 @@ export default function() {
               stroke: "#4D68FF10",
               ...defaultNodeStyle
             },
+            labelCfg: {
+              style: {
+                fill: "#4D68FF",
+                fontSize: 14
+              }
+            },
             stateStyles: {
               hover: {
                 fill: "#4D68FF"
@@ -88,6 +105,12 @@ export default function() {
               stroke: "#6FBDFF10",
               ...defaultNodeStyle
             },
+            labelCfg: {
+              style: {
+                fill: "#6FBDFF",
+                fontSize: 14
+              }
+            },
             stateStyles: {
               hover: {
                 fill: "#6FBDFF"
@@ -97,6 +120,15 @@ export default function() {
         default:
           return {};
       }
+    });
+    graph.edge(() => {
+      return {
+        style: {
+          stroke: "#4D68FF",
+          lineWidth: 1,
+          endArrow: { path: G6.Arrow.triangle(6, 6, 0), fill: "#4D68FF" }
+        }
+      };
     });
 
     graph.render();
