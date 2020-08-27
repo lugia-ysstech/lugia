@@ -1,12 +1,11 @@
 import React, { Component, Fragment } from "react";
 import styled from "styled-components";
-import { Grid, Theme, Input, Icon } from "@lugia/lugia-web";
-import Widget from "@lugia/lugia-web/dist/consts/index";
-import { getBorderRadius } from "@lugia/theme-utils";
+import { Grid } from "@lugia/lugia-web";
 import Header from "../components/header";
 import { Footer } from "../components/footer";
 import OpreationProcess from "./graph";
 import Video from "./video";
+import Search from "./search";
 
 import banner from "./img/banner-background.png";
 import basicConstructor from "./img/basic-constructor.png";
@@ -214,41 +213,6 @@ const FeedbackDesc = styled.div`
   color: #747e90;
 `;
 
-const searchTheme = {
-  [Widget.Input]: {
-    Container: {
-      normal: {
-        width: 665,
-        height: 48,
-        borderRadius: getBorderRadius(24),
-        padding: {
-          left: 30
-        },
-        font: {
-          size: 16
-        }
-      }
-    },
-    Placeholder: {
-      normal: {
-        font: {
-          size: 16
-        }
-      }
-    },
-    InputSuffix: {
-      normal: {
-        margin: {
-          right: 20
-        },
-        font: {
-          size: 16
-        }
-      }
-    }
-  }
-};
-
 const featureReferenceData = [
   {
     image: basicConstructor,
@@ -348,12 +312,7 @@ export default class TutorialCenter extends Component {
             <Header />
             <SearchWrap>
               <SearchHeader>Hi~请问有什么可以帮您？</SearchHeader>
-              <Theme config={searchTheme}>
-                <Input
-                  suffix={<Icon iconClass="lugia-icon-financial_search" />}
-                  placeholder="搜索答案"
-                />
-              </Theme>
+              <Search />
             </SearchWrap>
             <Content>
               <ContentTitleWrap>
@@ -370,7 +329,7 @@ export default class TutorialCenter extends Component {
                 <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
                   <VideoCardWrap>
                     <VideoWrap>
-                      <Video src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" />
+                      <Video src="https://dpv.videocc.net/2e083fc999/5/2e083fc99905374b24b7ab56730be4f5_2.mp4?pid=1598490306156X1347262" />
                     </VideoWrap>
                   </VideoCardWrap>
                   <VideoTitle>新功能介绍</VideoTitle>
@@ -378,7 +337,7 @@ export default class TutorialCenter extends Component {
                 <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
                   <VideoCardWrap>
                     <VideoWrap>
-                      <Video src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" />
+                      <Video src="http://dpv.videocc.net/88083abbf5/2/88083abbf5f16507525894e5a997aeb2_3.mp4?pid=1598442769375X1522668" />
                     </VideoWrap>
                   </VideoCardWrap>
                   <VideoTitle>快速入手</VideoTitle>

@@ -23,7 +23,10 @@ const tutorialRouter = {
     value: "/tutorial/pages",
     text: "教程页面",
     url: "/tutorial/pages",
-    render: () => import("./pages")
+    render: () => import("./pages"),
+    verify() {
+      return true;
+    }
   },
   NotFound: {
     render: async () => {
