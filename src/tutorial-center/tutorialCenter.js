@@ -5,7 +5,7 @@ import Header from "../components/header";
 import { Footer } from "../components/footer";
 import OpreationProcess from "./graph";
 import Video from "./video";
-import Search from "./search";
+import Search from "../search";
 
 import banner from "./img/banner-background.png";
 import basicConstructor from "./img/basic-constructor.png";
@@ -312,7 +312,7 @@ export default class TutorialCenter extends Component {
             <Header />
             <SearchWrap>
               <SearchHeader>Hi~请问有什么可以帮您？</SearchHeader>
-              <Search />
+              <Search type={"tutorial"} />
             </SearchWrap>
             <Content>
               <ContentTitleWrap>
