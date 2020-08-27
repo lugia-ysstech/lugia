@@ -8,7 +8,7 @@ import Asides from "../../menu";
 import PageLoading from "../../pageloading";
 
 const { Row, Col } = Grid;
-const { tutorialConfig, tutorialRouter } = Router;
+const { tutorialRouter } = Router;
 
 const rout = createRoute(tutorialRouter, PageLoading);
 
@@ -20,7 +20,7 @@ export default () => {
       <Headers />
       <Row>
         <Col span={5} xl={{ span: 5 }} xxl={{ span: 5 }}>
-          <Asides data={tutorialConfig} />
+          <Asides />
           {block}
         </Col>
         <Col span={19} xl={{ span: 19 }} xxl={{ span: 19 }}>

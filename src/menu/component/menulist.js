@@ -112,7 +112,12 @@ export default class MenuList extends React.Component<any, any> {
     this.canCancelFixed = false;
     const path = window.location.hash;
     const pathFilter = path.match(/[^#]+/g)[0].match(/[^/]+/g);
-    const pathType = pathFilter[0] === "design" ? "designConfig" : "menuConfig";
+    const pathType =
+      pathFilter[0] === "design"
+        ? "designConfig"
+        : pathFilter[0] === "component"
+        ? "menuConfig"
+        : "tutorialConfig";
     const defaultUrl = Router[pathType][0].children
       ? Router[pathType][0].children[0].value
       : Router[pathType][0].value;
