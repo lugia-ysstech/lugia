@@ -112,6 +112,10 @@ export default class Navcomponent extends React.Component<any, any> {
   }
 
   render() {
+    const { type } = this.props;
+    const { searchInfo } = this.state;
+    const poup = this.getPopup();
+
     const InputStyle = {
       [Widget.Input]: {
         Container: {
@@ -153,17 +157,60 @@ export default class Navcomponent extends React.Component<any, any> {
         zIndex: 9999999
       }
     };
-    const { searchInfo } = this.state;
-    const poup = this.getPopup();
+    const tutorialInputStyle = {
+      [Widget.Input]: {
+        Container: {
+          normal: {
+            width: 665,
+            height: 48,
+            borderRadius: getBorderRadius(24),
+            padding: {
+              left: 30
+            },
+            font: {
+              size: 16
+            }
+          }
+        },
+        Placeholder: {
+          normal: {
+            font: {
+              size: 16
+            }
+          }
+        },
+        InputSuffix: {
+          normal: {
+            margin: {
+              right: 20
+            },
+            font: {
+              size: 16
+            }
+          }
+        }
+      },
+      [Widget.Trigger]: {
+        width: 500,
+        zIndex: 9999999
+      }
+    };
+
+    const isTutorial = type === "tutorial";
+    const chosenTheme = isTutorial ? tutorialInputStyle : InputStyle;
+    const iconPositionName = isTutorial ? "suffix" : "prefix";
+    const chosenIcon = { [iconPositionName]: <SearchIcon /> };
+    const placeholderValue = isTutorial ? "搜索答案" : "在lugia中搜索";
+
     return (
-      <Theme config={InputStyle}>
+      <Theme config={chosenTheme}>
         <Trigger offsetX={120} offsetY={0} action={["focus"]} popup={poup}>
           <Input
             ref={this.input}
-            prefix={<SearchIcon />}
             onChange={this.handleInputChange}
-            placeholder="在lugia中搜索"
+            placeholder={placeholderValue}
             value={searchInfo}
+            {...chosenIcon}
           />
         </Trigger>
       </Theme>
@@ -255,8 +302,8 @@ export default class Navcomponent extends React.Component<any, any> {
   };
 
   fetchRequest = (newValue: string) => {
-    const { fetchRequest } = this.props;
-    fetchRequest && fetchRequest(newValue);
+    const { fetchRequest, type } = this.props;
+    fetchRequest && fetchRequest({ newValue, type });
   };
   linkToUrl = (res: string) => {
     if (!res) {

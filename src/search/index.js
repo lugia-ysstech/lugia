@@ -35,10 +35,10 @@ const SearchComponent = connect(
 )(SearchElement);
 
 
-export default () => {
+export default (props) => {
   return (
     <SearchContainer >
-      <SearchComponent />
+      <SearchComponent {...props}/>
     </SearchContainer>
   );
 };
