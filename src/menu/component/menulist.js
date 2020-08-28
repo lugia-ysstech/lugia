@@ -59,6 +59,7 @@ const Container = styled.div`
   width: ${props => `${props.width || 260}px`};
   ${props => (props.mobile ? "" : "overflow-y: scroll;overflow-x: hidden;")}
   height: ${props => props.height + "px"};
+  border-right: 1px solid #E6EAEB;
 
   &::-webkit-scrollbar {
     width: 6px;

@@ -40,6 +40,7 @@ const DialogWrap = styled.div`
   width: 100%;
   display: grid;
   place-items: center;
+  margin-top: 60px;
 `;
 const DialogWrapInner = styled.div`
   width: 700px;
@@ -141,6 +142,13 @@ const textareaTheme = {
       normal: {
         width: 600,
         height: 60
+      }
+    },
+    Placeholder: {
+      normal: {
+        font: {
+          color: "#C2C5CE"
+        }
       }
     }
   }

@@ -65,7 +65,7 @@ const Content = styled.div`
 const ContentTitleWrap = styled.div`
   width: 100%;
   height: 100px;
-  margin-bottom: 8px;
+  margin: 30px 0 8px 0;
   display: grid;
   place-items: center;
   position: relative;
@@ -126,6 +126,7 @@ const OperationalProcessWrap = styled.div`
 const FeatureReferenceWrap = styled.div`
   width: 100%;
   display: flex;
+  margin-top: 20px;
 `;
 const FeatureReferenceCradWrap = styled.div`
   width: 20%;
@@ -329,7 +330,10 @@ export default class TutorialCenter extends Component {
                 <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
                   <VideoCardWrap>
                     <VideoWrap>
-                      <Video src="https://dpv.videocc.net/2e083fc999/5/2e083fc99905374b24b7ab56730be4f5_2.mp4?pid=1598490306156X1347262" />
+                      <Video
+                        src="https://dpv.videocc.net/2e083fc999/5/2e083fc99905374b24b7ab56730be4f5_2.mp4?pid=1598490306156X1347262"
+                        switchSize={"small"}
+                      />
                     </VideoWrap>
                   </VideoCardWrap>
                   <VideoTitle>新功能介绍</VideoTitle>
@@ -337,7 +341,10 @@ export default class TutorialCenter extends Component {
                 <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
                   <VideoCardWrap>
                     <VideoWrap>
-                      <Video src="http://dpv.videocc.net/88083abbf5/2/88083abbf5f16507525894e5a997aeb2_3.mp4?pid=1598442769375X1522668" />
+                      <Video
+                        switchSize={"small"}
+                        src="http://dpv.videocc.net/88083abbf5/2/88083abbf5f16507525894e5a997aeb2_3.mp4?pid=1598442769375X1522668"
+                      />
                     </VideoWrap>
                   </VideoCardWrap>
                   <VideoTitle>快速入手</VideoTitle>
@@ -345,7 +352,10 @@ export default class TutorialCenter extends Component {
                 <Col span={8} sm={{ span: 24 }} xl={{ span: 8 }}>
                   <VideoCardWrap>
                     <VideoWrap>
-                      <Video src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" />
+                      <Video
+                        switchSize={"small"}
+                        src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4"
+                      />
                     </VideoWrap>
                   </VideoCardWrap>
                   <VideoTitle>常规面板</VideoTitle>

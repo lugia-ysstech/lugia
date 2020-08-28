@@ -300,6 +300,7 @@ const tutorialConfig = [
   {
     value: "常规建页",
     text: "常规建页",
+    describe: true,
     children: [
       {
         value: "/tutorial/pages/quick-start",
@@ -337,6 +338,7 @@ const tutorialConfig = [
   {
     value: "主题配置",
     text: "主题配置",
+    describe: true,
     children: [
       {
         value: "/tutorial/pages/theme-quick-start",
@@ -358,6 +360,7 @@ const tutorialConfig = [
   {
     value: "搭建页面",
     text: "搭建页面",
+    describe: true,
     children: [
       {
         value: "/tutorial/pages/built-quick-start",
@@ -425,6 +428,7 @@ const tutorialConfig = [
   {
     value: "智能布局",
     text: "智能布局",
+    describe: true,
     children: [
       {
         value: "/tutorial/pages/layout-quick-start",
