@@ -5,7 +5,6 @@ import switchImg from "../img/switch.png";
 const VideoWrap = styled.div`
   width: 100%;
   height: 100%;
-  border: 1px solid #e8e8e8;
   box-shadow: 0 0 10px 0 rgba(80, 87, 93, 0.2);
   position: relative;
   background: #fff;

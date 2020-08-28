@@ -212,10 +212,16 @@ export default class Navcomponent extends React.Component<any, any> {
     const chosenIcon = { [iconPositionName]: <SearchIcon /> };
     const placeholderValue = isTutorial ? "搜索答案" : "在lugia中搜索";
     const chosenSearchInfo = isTutorial ? tutorialSearchInfo : searchInfo;
+    const chosenTriggerPosX = isTutorial ? -60 : 120;
 
     return (
       <Theme config={chosenTheme}>
-        <Trigger offsetX={120} offsetY={0} action={["focus"]} popup={poup}>
+        <Trigger
+          offsetX={chosenTriggerPosX}
+          offsetY={0}
+          action={["focus"]}
+          popup={poup}
+        >
           <Input
             ref={this.input}
             onChange={this.handleInputChange}
@@ -307,8 +313,8 @@ export default class Navcomponent extends React.Component<any, any> {
     } else {
       newValue = event.newValue;
     }
-    const { handleInputChange,type } = this.props;
-    handleInputChange && handleInputChange({newValue,type});
+    const { handleInputChange, type } = this.props;
+    handleInputChange && handleInputChange({ newValue, type });
     this.fetchRequest(newValue);
   };
 
