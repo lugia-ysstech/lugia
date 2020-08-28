@@ -50,6 +50,7 @@ const SearchWrap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 40px;
 `;
 const SearchHeader = styled.div`
   margin-bottom: 25px;
@@ -69,6 +70,9 @@ const ContentTitleWrap = styled.div`
   display: grid;
   place-items: center;
   position: relative;
+`;
+const ContentTitleWrapQa = styled(ContentTitleWrap)`
+  margin: 50px 0 8px 0;
 `;
 const ContentTitle = styled.h2`
   font-family: PingFangSC-Medium;
@@ -376,9 +380,9 @@ export default class TutorialCenter extends Component {
                 {getFeatureReferenceContent(featureReferenceData)}
               </FeatureReferenceWrap>
 
-              <ContentTitleWrap>
+              <ContentTitleWrapQa>
                 <ContentTitle>无法解决您的问题?</ContentTitle>
-              </ContentTitleWrap>
+              </ContentTitleWrapQa>
               <FeedbackWrap>
                 <Row
                   gutter={[

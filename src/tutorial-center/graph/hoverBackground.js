@@ -24,7 +24,7 @@ const HoverDecorateWrap = styled.div`
   position: absolute;
   top: ${props => (props.y ? props.y : 0)}px;
   left: ${props => (props.x ? props.x : 0)}px;
-  animation: ${HoverDecorateWrapKeyframes} 0.2s linear 1;
+  animation: ${HoverDecorateWrapKeyframes} 0.2s ease 1;
 `;
 const HoverDecorateWrapDwon = styled(HoverDecorateWrap)`
   animation: ${HoverDecorateWrapDwonKeyframes} 0.2s linear 1;
