@@ -80,7 +80,7 @@ export const data = {
     },
     {
       id: "node8",
-      x: 650,
+      x: 660,
       y: 160,
       class: "des",
       label: "创建页面/路由层级",
@@ -91,18 +91,7 @@ export const data = {
     },
     {
       id: "node9",
-      x: 780,
-      y: 160,
-      class: "des",
-      label: "动作设计",
-      style: {
-        width: 70,
-        height: 40
-      }
-    },
-    {
-      id: "node10",
-      x: 895,
+      x: 800,
       y: 160,
       label: "页面交互开发",
       class: "dev",
@@ -236,10 +225,6 @@ export const data = {
     {
       source: "node8",
       target: "node9"
-    },
-    {
-      source: "node9",
-      target: "node10"
     }
   ]
 };
