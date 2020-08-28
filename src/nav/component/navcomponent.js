@@ -74,16 +74,21 @@ const Logo = styled.img`
   cursor:pointer
 `;
 
+/*
+// 暂时隐藏(勿删)
 const Language = styled.div`
-  margin:0 12px 0 0;
-  height:100%;
-  float:right;
+  margin: 0 12px 0 0;
+  height: 100%;
+  float: right;
 `;
+*/
 
 const SearchBox = styled.div`
- float:left;
+  float: left;
 `;
 
+/*
+// 暂时隐藏(勿删)
 const HeadRight = styled.div`
   float:right;
   display:flex;
@@ -91,14 +96,13 @@ const HeadRight = styled.div`
   margin-left
 `;
 
-
 const ThemeColor = styled.span`
-  background:${themeColor};
-  width:16px;
-  height:16px;
-  border-radius:5px;
-  
+  background: ${themeColor};
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
 `;
+*/
 
 
 type DefProps={
@@ -131,11 +135,14 @@ export default class Navcomponent extends React.Component<any, any> {
         <Header>
           <Logo src={logo} alt="" onClick={e => this.onTabClick('/home')}/>
           <SearchBox><Search/></SearchBox>
-          <HeadRight>
-            <Language>English</Language>
-            <Language>|</Language>
-            <ThemeColor/>
-          </HeadRight>
+          {/*
+            // 暂时隐藏(勿删)
+            <HeadRight>
+              <Language>English</Language>
+              <Language>|</Language>
+              <ThemeColor/>
+            </HeadRight>
+          */}
           <Wrapper>
             <TabBox>
               {this.getchildren(designRouter,current)}

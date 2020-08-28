@@ -13,9 +13,12 @@ const VideoWrap = styled.div`
     border: 1px solid #4d68ff;
   }
 `;
+const getSize = props => {
+  return props.switchSize === "small" ? "36px" : "72px";
+};
 const VideoSwitchWrap = styled.div`
-  width: 72px;
-  height: 72px;
+  width: ${getSize};
+  height: ${getSize};
   position: absolute;
   top: 50%;
   left: 50%;
@@ -86,7 +89,8 @@ export default class Video extends Component {
 
   render() {
     const {
-      src = "https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4"
+      src = "https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4",
+      switchSize
     } = this.props;
     const { playStatus } = this.state;
     return (
@@ -94,6 +98,7 @@ export default class Video extends Component {
         <VideoSwitchWrap
           onClick={this.handleSwitchClick}
           visible={playStatus}
+          switchSize={switchSize}
         />
         <video
           ref={this.videoRef}

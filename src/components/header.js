@@ -44,6 +44,9 @@ const HeadIndex = styled.a`
   &:hover {
     color: ${themeColor};
   }
+  @media (max-width: 1400px) {
+    display: none;
+  }
 `;
 const GitIconContainer = styled.a`
   height: 80px;
@@ -114,10 +117,10 @@ export default class Header extends Component {
     return (
       <Fragment>
         <Row>
-          <Col span={1} md={{ span: 1 }} xl={{ span: 2 }} xxl={{ span: 3 }}>
+          <Col span={1} md={{ span: 1 }} xl={{ span: 2 }} xxl={{ span: 2 }}>
             <Wrapper> </Wrapper>
           </Col>
-          <Col span={22} md={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 18 }}>
+          <Col span={22} md={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 20 }}>
             <Head title="head">
               <Logo src={logo} alt="" onClick={() => linkToUrl("/home")} />
               <SearchBox>
@@ -162,7 +165,7 @@ export default class Header extends Component {
               </GitIconContainer>
             </Head>
           </Col>
-          <Col span={1} md={{ span: 1 }} xl={{ span: 2 }} xxl={{ span: 3 }}>
+          <Col span={1} md={{ span: 1 }} xl={{ span: 2 }} xxl={{ span: 2 }}>
             <Wrapper> </Wrapper>
           </Col>
         </Row>

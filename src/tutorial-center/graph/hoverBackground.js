@@ -1,5 +1,22 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const HoverDecorateWrapKeyframes = keyframes`
+  from {
+    transform: translateX(-10px) translateY(20px);
+  }
+  to {
+    transform: translateX(0px) translateY(0px);
+  }
+`;
+const HoverDecorateWrapDwonKeyframes = keyframes`
+  from {
+    transform: translateX(10px) translateY(-20px);
+  }
+  to {
+    transform: translateX(0px) translateY(0px);
+  }
+`;
 
 const HoverDecorateWrap = styled.div`
   width: 30px;
@@ -7,6 +24,10 @@ const HoverDecorateWrap = styled.div`
   position: absolute;
   top: ${props => (props.y ? props.y : 0)}px;
   left: ${props => (props.x ? props.x : 0)}px;
+  animation: ${HoverDecorateWrapKeyframes} 0.2s linear 1;
+`;
+const HoverDecorateWrapDwon = styled(HoverDecorateWrap)`
+  animation: ${HoverDecorateWrapDwonKeyframes} 0.2s linear 1;
 `;
 
 const CommonDot = styled.div`
@@ -57,10 +78,10 @@ export const HoverDecorateUp = ({ x, y, isDev }) => {
 };
 export const HoverDecorateDown = ({ x, y, isDev }) => {
   return (
-    <HoverDecorateWrap x={x} y={y}>
+    <HoverDecorateWrapDwon x={x} y={y}>
       <BigDotDown isDev={isDev} />
       <MiddleDotDown isDev={isDev} />
       <SmallDotDown isDev={isDev} />
-    </HoverDecorateWrap>
+    </HoverDecorateWrapDwon>
   );
 };
