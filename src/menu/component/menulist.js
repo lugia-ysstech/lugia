@@ -196,13 +196,12 @@ export default class MenuList extends React.Component<any, any> {
             SelectedText: {
               normal: {
                 background: {
-                  color: themeColor
+                  color: "#4D68FF10"
                 },
                 font: {
                   size: 15
                 },
-                color: "#fff",
-                borderRadius: getBorderRadius(35)
+                color: "#4D68FF",
               }
             }
           }
@@ -233,7 +232,7 @@ export default class MenuList extends React.Component<any, any> {
             inlineType={"ellipse"}
             mode={"inline"}
             data={data || this.defaultData}
-            value={this.state.current}
+            value={this.props.current}
             inlineExpandAll={true}
             onSelect={this.onSelect}
             step={60}
