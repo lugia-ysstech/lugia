@@ -89,13 +89,23 @@ export default class Navcomponent extends React.Component<any, any> {
   }
 
   static getDerivedStateFromProps(defProps: DefProps, stateProps: StateProps) {
-    const { searchInfo, result } = defProps;
+    const { searchInfo, tutorialSearchInfo, result, type } = defProps;
     if (!stateProps) {
       return {
         searchInfo,
+        tutorialSearchInfo,
         result,
         current: null,
         totalLi: 0
+      };
+    }
+    if (type === "tutorial") {
+      return {
+        tutorialSearchInfo:
+          "tutorialSearchInfo" in defProps
+            ? tutorialSearchInfo
+            : stateProps.tutorialSearchInfo,
+        result: "tutorialSearchInfo" in defProps ? result : stateProps.result
       };
     }
     return {
@@ -113,7 +123,7 @@ export default class Navcomponent extends React.Component<any, any> {
 
   render() {
     const { type } = this.props;
-    const { searchInfo } = this.state;
+    const { searchInfo, tutorialSearchInfo } = this.state;
     const poup = this.getPopup();
 
     const InputStyle = {
@@ -201,6 +211,7 @@ export default class Navcomponent extends React.Component<any, any> {
     const iconPositionName = isTutorial ? "suffix" : "prefix";
     const chosenIcon = { [iconPositionName]: <SearchIcon /> };
     const placeholderValue = isTutorial ? "搜索答案" : "在lugia中搜索";
+    const chosenSearchInfo = isTutorial ? tutorialSearchInfo : searchInfo;
 
     return (
       <Theme config={chosenTheme}>
@@ -209,7 +220,7 @@ export default class Navcomponent extends React.Component<any, any> {
             ref={this.input}
             onChange={this.handleInputChange}
             placeholder={placeholderValue}
-            value={searchInfo}
+            value={chosenSearchInfo}
             {...chosenIcon}
           />
         </Trigger>
@@ -296,8 +307,8 @@ export default class Navcomponent extends React.Component<any, any> {
     } else {
       newValue = event.newValue;
     }
-    const { handleInputChange } = this.props;
-    handleInputChange && handleInputChange(newValue);
+    const { handleInputChange,type } = this.props;
+    handleInputChange && handleInputChange({newValue,type});
     this.fetchRequest(newValue);
   };
 
