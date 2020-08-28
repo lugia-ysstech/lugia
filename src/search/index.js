@@ -4,26 +4,26 @@
  *
  *
  */
-import React from 'react';
-import { Button, Menu, Navmenu, Theme } from '@lugia/lugia-web';
-import '../css/menu.css';
-import { connect } from '@lugia/lugiax';
-import search from './models/search';
-import SearchElement from './component/search';
+import React from "react";
+import { Button, Menu, Navmenu, Theme } from "@lugia/lugia-web";
+import "../css/menu.css";
+import { connect } from "@lugia/lugiax";
+import search from "./models/search";
+import SearchElement from "./component/search";
 import styled from "styled-components";
 
-
 const SearchContainer = styled.div`
- line-height: 1rem;
- margin-top: 15px;
+  line-height: 1rem;
+  margin-top: 15px;
 `;
 
 const SearchComponent = connect(
   search,
   state => {
     return {
-      searchInfo: state.get('searchInfo'),
-      result: state.get('result'),
+      searchInfo: state.get("searchInfo"),
+      tutorialSearchInfo: state.get("tutorialSearchInfo"),
+      result: state.get("result")
     };
   },
   mutations => {
@@ -34,11 +34,10 @@ const SearchComponent = connect(
   }
 )(SearchElement);
 
-
-export default (props) => {
+export default props => {
   return (
-    <SearchContainer >
-      <SearchComponent {...props}/>
+    <SearchContainer>
+      <SearchComponent {...props} />
     </SearchContainer>
   );
 };

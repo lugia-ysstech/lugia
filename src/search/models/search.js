@@ -13,15 +13,20 @@ import tutorialSearchData from "../../tutorial-center/search/searchData";
 
 const model = "search";
 const state = {
-  searchInfo: null
+  searchInfo: null,
+  tutorialSearchInfo: null
 };
 export default lugiax.register({
   model,
   state,
   mutations: {
     sync: {
-      handleInputChange(state, inParam) {
-        return state.set("searchInfo", inParam);
+      handleInputChange(state, value) {
+        const { newValue, type } = value;
+        if (type === "tutorial") {
+          return state.set("tutorialSearchInfo", newValue);
+        }
+        return state.set("searchInfo", newValue);
       }
     },
     async: {
