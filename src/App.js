@@ -25,7 +25,10 @@ export const designRouter = {
     value: "设计指南",
     text: "设计指南",
     url: "/design/introduce",
-    render: () => import("./design")
+    render: () => import("./design"),
+    verify() {
+      return true;
+    }
   },
   "/component": {
     value: "lugia-web",
@@ -58,7 +61,10 @@ export const designRouter = {
     value: "tutorial",
     text: "教程中心",
     url: "/tutorial",
-    render: () => import("./tutorial-center")
+    render: () => import("./tutorial-center"),
+    verify() {
+      return true;
+    }
   },
   NotFound: {
     render: async () => {

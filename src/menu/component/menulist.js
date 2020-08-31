@@ -201,7 +201,7 @@ export default class MenuList extends React.Component<any, any> {
                 font: {
                   size: 15
                 },
-                color: "#4D68FF",
+                color: "#4D68FF"
               }
             }
           }
@@ -232,7 +232,7 @@ export default class MenuList extends React.Component<any, any> {
             inlineType={"ellipse"}
             mode={"inline"}
             data={data || this.defaultData}
-            value={this.props.current}
+            value={this.state.current}
             inlineExpandAll={true}
             onSelect={this.onSelect}
             step={60}
@@ -243,6 +243,7 @@ export default class MenuList extends React.Component<any, any> {
   }
 
   onSelect = res => {
+    this.setState({ current: res.value });
     const { onSelect, ignoreGo } = this.props;
     onSelect && onSelect(res);
     if (ignoreGo) {
