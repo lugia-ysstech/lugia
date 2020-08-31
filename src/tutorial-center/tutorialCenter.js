@@ -335,7 +335,7 @@ export default class TutorialCenter extends Component {
                   <VideoCardWrap>
                     <VideoWrap>
                       <Video
-                        src="https://dpv.videocc.net/2e083fc999/5/2e083fc99905374b24b7ab56730be4f5_2.mp4?pid=1598490306156X1347262"
+                        src="http://139.9.26.43/video//1.3.5-alpha.7.mp4"
                         switchSize={"small"}
                       />
                     </VideoWrap>
@@ -347,7 +347,7 @@ export default class TutorialCenter extends Component {
                     <VideoWrap>
                       <Video
                         switchSize={"small"}
-                        src="http://dpv.videocc.net/88083abbf5/2/88083abbf5f16507525894e5a997aeb2_3.mp4?pid=1598442769375X1522668"
+                        src="http://139.9.26.43/video//1.3.5-alpha.7.mp4"
                       />
                     </VideoWrap>
                   </VideoCardWrap>
@@ -358,7 +358,7 @@ export default class TutorialCenter extends Component {
                     <VideoWrap>
                       <Video
                         switchSize={"small"}
-                        src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4"
+                        src="http://139.9.26.43/video//1.3.5-alpha.7.mp4"
                       />
                     </VideoWrap>
                   </VideoCardWrap>
