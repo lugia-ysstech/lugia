@@ -146,7 +146,7 @@ export default class Header extends Component {
                     <HeadIndex onClick={() => linkToUrl("/component")}>
                       lugia-web
                     </HeadIndex>
-                    <HeadIndex onClick={() => linkToUrl("/component/affix")}>
+                    <HeadIndex onClick={() => linkToUrl("/design/introduce")}>
                       设计指南
                     </HeadIndex>
                   </Col>
