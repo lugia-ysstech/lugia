@@ -199,9 +199,16 @@ export default class MenuList extends React.Component<any, any> {
                   color: "#4D68FF10"
                 },
                 font: {
-                  size: 15
+                  size: 14
                 },
                 color: "#4D68FF"
+              }
+            },
+            SelectedParentText: {
+              normal: {
+                font: {
+                  weight: 600
+                }
               }
             }
           }
