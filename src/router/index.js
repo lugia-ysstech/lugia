@@ -3,6 +3,7 @@ import widgetrouter from "./widgetrouter";
 import { Redirect } from "@lugia/lugiax-router";
 import React from "react";
 import PageLoading from "../pageloading";
+import { tutorialRouterData } from "../tutorial-center/data/tutorialData";
 
 const getMenuConfig = data => {
   const arr = [];
@@ -296,148 +297,8 @@ const getTutorialRoute = (data, isMobile = false) => {
   });
   return rout;
 };
-const tutorialConfig = [
-  {
-    value: "常规建页",
-    text: "常规建页",
-    children: [
-      {
-        value: "/tutorial/pages/quick-start",
-        text: "快速上手",
-        sort: 1
-      },
-      {
-        value: "/tutorial/pages/normal-built",
-        text: "普通建页",
-        sort: 2
-      },
-      {
-        value: "建页操作",
-        text: "建页操作",
-        describe: true,
-        children: [
-          {
-            value: "/tutorial/pages/group",
-            text: "成组",
-            sort: 3
-          },
-          {
-            value: "/tutorial/pages/component-tree",
-            text: "组件树",
-            sort: 4
-          },
-          {
-            value: "/tutorial/pages/align",
-            text: "对齐",
-            sort: 5
-          }
-        ]
-      }
-    ]
-  },
-  {
-    value: "主题配置",
-    text: "主题配置",
-    children: [
-      {
-        value: "/tutorial/pages/theme-quick-start",
-        text: "快速上手",
-        sort: 6
-      },
-      {
-        value: "/tutorial/pages/public-value-set",
-        text: "设置公共值",
-        sort: 7
-      },
-      {
-        value: "/tutorial/pages/component-set",
-        text: "设置组件库",
-        sort: 8
-      }
-    ]
-  },
-  {
-    value: "搭建页面",
-    text: "搭建页面",
-    children: [
-      {
-        value: "/tutorial/pages/built-quick-start",
-        text: "快速上手",
-        sort: 9
-      },
-      {
-        value: "基础操作",
-        text: "基础操作",
-        describe: true,
-        children: [
-          {
-            value: "/tutorial/pages/drag",
-            text: "拖拽/选择/替换组件",
-            sort: 10
-          },
-          {
-            value: "/tutorial/pages/magnify",
-            text: "放大/缩小/移动组件",
-            sort: 11
-          },
-          {
-            value: "/tutorial/pages/copy",
-            text: "复制/粘贴/移动组件",
-            sort: 12
-          },
-          {
-            value: "/tutorial/pages/built-align",
-            text: "对齐",
-            sort: 13
-          },
-          {
-            value: "/tutorial/pages/reference-line",
-            text: "参考线",
-            sort: 14
-          },
-          {
-            value: "/tutorial/pages/component-level",
-            text: "组件层级",
-            sort: 15
-          },
-          {
-            value: "/tutorial/pages/component-group",
-            text: "组件成组",
-            sort: 16
-          },
-          {
-            value: "/tutorial/pages/change-position",
-            text: "组件互换位置",
-            sort: 17
-          }
-        ]
-      },
-      {
-        value: "/tutorial/pages/page-list",
-        text: "页面列表板",
-        sort: 18
-      },
-      {
-        value: "/tutorial/pages/page-component",
-        text: "页面组件树",
-        sort: 19
-      }
-    ]
-  },
-  {
-    value: "智能布局",
-    text: "智能布局",
-    children: [
-      {
-        value: "/tutorial/pages/layout-quick-start",
-        text: "快速上手",
-        sort: 20
-      }
-    ]
-  }
-];
 const tutorialRouter = {
-  ...getTutorialRoute(tutorialConfig),
+  ...getTutorialRoute(tutorialRouterData),
   "/tutorial/404": {
     exact: true,
     render: async () => import("../access/NotAccess"),
@@ -459,7 +320,7 @@ const tutorialRouter = {
   }
 };
 const tutorialRouterMobile = {
-  ...getTutorialRoute(tutorialConfig, true),
+  ...getTutorialRoute(tutorialRouterData, true),
   "/tutorial/404": {
     exact: true,
     render: async () => import("../access/NotAccess"),
@@ -624,6 +485,6 @@ export default {
   designConfig,
   menuConfig,
   designRouterMobile,
-  tutorialConfig,
+  tutorialConfig: tutorialRouterData,
   tutorialRouter: defaultTutorialRouter
 };
