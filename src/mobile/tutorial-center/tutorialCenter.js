@@ -6,7 +6,7 @@ import Widget from "@lugia/lugia-web/dist/consts/index";
 import HeaderNav from "../nav";
 
 import banner from "./img/banner.png";
-import {linkToUrl} from "../../support/commonMethods";
+import { linkToUrl } from "../../support/commonMethods";
 
 const HeaderWrap = styled.div`
   width: 100%;
@@ -103,8 +103,9 @@ export default class TutorialCenterMobile extends React.Component<any, any> {
     if (!stateProps) {
       return {};
     }
+    const current = "current" in defProps ? defProps.value : stateProps.current;
     return {
-      current: "current" in defProps ? defProps.value : stateProps.current
+      current
     };
   }
 
@@ -122,7 +123,9 @@ export default class TutorialCenterMobile extends React.Component<any, any> {
             <HeaderContentInner>
               <HeaderQuestion>Hi~请问有什么可以帮您？</HeaderQuestion>
               <Theme config={buttonTheme}>
-                <Button onClick={() => linkToUrl("/tutorial/pages")}>查看教程</Button>
+                <Button onClick={() => linkToUrl("/tutorial/pages")}>
+                  查看教程
+                </Button>
               </Theme>
             </HeaderContentInner>
           </HeaderContent>
