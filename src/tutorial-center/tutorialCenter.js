@@ -321,9 +321,7 @@ export default class TutorialCenter extends Component {
             </SearchWrap>
             <Content>
               <ContentTitleWrap>
-                <ContentTitle onClick={() => linkToUrl("/tutorial/pages")}>
-                  基础教程
-                </ContentTitle>
+                <ContentTitle>基础教程</ContentTitle>
               </ContentTitleWrap>
               <Row
                 gutter={[

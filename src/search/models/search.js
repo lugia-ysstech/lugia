@@ -9,7 +9,7 @@
 import lugiax from "@lugia/lugiax";
 import { groupBy } from "ramda";
 import searchData from "../../router/search";
-import tutorialSearchData from "../../tutorial-center/search/searchData";
+import { tutorialSearchData } from "../../tutorial-center/data/tutorialData";
 
 const model = "search";
 const state = {
