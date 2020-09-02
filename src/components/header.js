@@ -16,7 +16,6 @@ const Wrapper = styled.div`
 `;
 const Head = styled.div`
   height: 80px;
-  line-height: 80px;
   display: flex;
   justify-content: space-between;
 `;
@@ -34,10 +33,11 @@ const SearchBox = styled.div`
 const GuideWrap = styled.div`
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
 `;
 const HeadIndex = styled.a`
-  height: 100%;
-  float: right;
+  line-height: 80px;
   margin-left: 50px;
   font-size: 14px;
   color: #50575d;
@@ -102,8 +102,9 @@ export default class Header extends Component {
     if (!stateProps) {
       return {};
     }
+    const current = "current" in defProps ? defProps.value : stateProps.current;
     return {
-      current: "current" in defProps ? defProps.value : stateProps.current
+      current
     };
   }
 
@@ -134,20 +135,20 @@ export default class Header extends Component {
                     xl={{ span: 24 }}
                     xxl={{ span: 24 }}
                   >
-                    <HeadIndex onClick={() => linkToUrl("/tutorial")}>
-                      教程中心
-                    </HeadIndex>
-                    <HeadIndex onClick={() => linkToUrl("/logs")}>
-                      更新日志
-                    </HeadIndex>
-                    <HeadIndex onClick={() => linkToUrl("/lugia-mega")}>
-                      lugia-mega
+                    <HeadIndex onClick={() => linkToUrl("/design/introduce")}>
+                      设计指南
                     </HeadIndex>
                     <HeadIndex onClick={() => linkToUrl("/component")}>
                       lugia-web
                     </HeadIndex>
-                    <HeadIndex onClick={() => linkToUrl("/design/introduce")}>
-                      设计指南
+                    <HeadIndex onClick={() => linkToUrl("/lugia-mega")}>
+                      lugia-mega
+                    </HeadIndex>
+                    <HeadIndex onClick={() => linkToUrl("/logs")}>
+                      更新日志
+                    </HeadIndex>
+                    <HeadIndex onClick={() => linkToUrl("/tutorial")}>
+                      教程中心
                     </HeadIndex>
                   </Col>
                 </Row>
