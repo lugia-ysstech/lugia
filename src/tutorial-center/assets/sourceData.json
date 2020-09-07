@@ -1,80 +1,123 @@
 {
   "0": {
-    "value": "常规建页",
-    "text": "常规建页",
+    "value": "创建项目",
+    "text": "创建项目",
     "children": [
       {
         "value": "quick-start",
         "text": "快速上手",
-        "desc": "我是描述文字",
-        "keyword": ""
+        "desc": "以实际项目为例，介绍如何快速创建项目",
+        "keyword": "",
+        "videoId": 1
       },
       {
-        "value": "normal-built",
-        "text": "普通建页",
-        "desc": "我是描述文字",
-        "keyword": ""
-      },
-      {
-        "value": "建页操作",
-        "text": "建页操作",
-        "describe": true,
-        "children": [
-          {
-            "value": "group",
-            "text": "成组",
-            "desc": "我是描述文字",
-            "keyword": ""
-          },
-          {
-            "value": "component-tree",
-            "text": "组件树",
-            "desc": "我是描述文字",
-            "keyword": ""
-          },
-          {
-            "value": "align",
-            "text": "对齐",
-            "desc": "我是描述文字",
-            "keyword": ""
-          }
-        ]
+        "value": "specific-introduction",
+        "text": "具体介绍",
+        "desc": "可以输入项目名称，选择项目路径以及项目源等",
+        "keyword": "",
+        "videoId": 2
       }
     ]
   },
   "1": {
+    "value": "常规建页",
+    "text": "常规建页",
+    "children": [
+      {
+        "value": "normal-quick-start",
+        "text": "快速上手",
+        "desc": "以实际项目为例，介绍如何快速创建常规页面",
+        "keyword": "",
+        "videoId": 3
+      },
+      {
+        "value": "normal-specific-introduction",
+        "text": "具体介绍",
+        "desc": "讲解输入常规页面的名称，选择页面大小、背景颜色等",
+        "keyword": "",
+        "videoId": 4
+      }
+    ]
+  },
+  "2": {
+    "value": "智能建页",
+    "text": "智能建页",
+    "children": [
+      {
+        "value": "intelligence-quick-start",
+        "text": "快速上手",
+        "desc": "以实际项目为例，介绍如何快速创建智能模板页面",
+        "keyword": "",
+        "videoId": 5
+      },
+      {
+        "value": "intelligence-specific-introduction",
+        "text": "具体介绍",
+        "desc": "如何以一个模板为基准创建页面",
+        "keyword": "",
+        "videoId": 6
+      }
+    ]
+  },
+  "3": {
     "value": "主题配置",
     "text": "主题配置",
     "children": [
       {
         "value": "theme-quick-start",
         "text": "快速上手",
-        "desc": "我是描述文字",
-        "keyword": ""
+        "desc": "以实际项目为例，介绍如何快速创建主题配置",
+        "keyword": "",
+        "videoId": 7
       },
       {
         "value": "public-value-set",
         "text": "设置公共值",
-        "desc": "我是描述文字",
-        "keyword": ""
+        "desc": "介绍如何设置项目的公共值以及公共值和组件库的关系",
+        "keyword": "",
+        "videoId": 8
       },
       {
         "value": "component-set",
         "text": "设置组件库",
-        "desc": "我是描述文字",
-        "keyword": ""
+        "desc": "介绍组件库的使用方式以及一个项目如何设置多个组件库主题。注：多组件库导入请参考「辅助说明-项目管理」教程",
+        "descSkip": "setting",
+        "keyword": "",
+        "videoId": 9
+      },
+      {
+        "value": "theme-panel",
+        "text": "主题面板",
+        "desc": "讲解如何对每个组件进行详细主题配置及修改",
+        "keyword": "",
+        "videoId": 10
+      },
+      {
+        "value": "multi-theme-set",
+        "text": "多主题库设置",
+        "desc": "讲解一个项目如何设置多套风格主题",
+        "keyword": "",
+        "videoId": 11
+      },
+      {
+        "value": "Import-export-theme",
+        "text": "导入/导出主题",
+        "desc": "介绍主题导入/导出功能",
+        "keyword": "",
+        "videoId": 12
       }
     ]
   },
-  "2": {
+  "4": {
     "value": "搭建页面",
     "text": "搭建页面",
     "children": [
       {
         "value": "built-quick-start",
         "text": "快速上手",
-        "desc": "我是描述文字",
-        "keyword": ""
+        "desc": "以实际项目为例，介绍如何快速搭建页面",
+        "keyword": "",
+        "videoId": 13
       },
       {
         "value": "基础操作",
@@ -82,78 +125,308 @@
         "describe": true,
         "children": [
           {
+            "value": "canvas",
+            "text": "画布操作",
+            "desc": "讲解画布的缩放、删除、选择操作",
+            "keyword": "",
+            "videoId": 14
+          },
+          {
             "value": "drag",
             "text": "拖拽/选择/替换组件",
-            "desc": "我是描述文字",
-            "keyword": ""
+            "desc": "如何拖拽组件到画布、在父容器中选择组件以及把组件替换为另一个组件",
+            "keyword": "",
+            "videoId": 15
           },
           {
             "value": "magnify",
             "text": "放大/缩小/移动组件",
-            "desc": "我是描述文字",
-            "keyword": ""
+            "desc": "讲解如何放大缩小组件，以及在画布上如何移动组件",
+            "keyword": "",
+            "videoId": 16
           },
           {
             "value": "copy",
             "text": "复制/粘贴/移动组件",
-            "desc": "我是描述文字",
-            "keyword": ""
+            "desc": "讲解组件的复制、粘贴、剪切功能，并且支持跨页面操作",
+            "keyword": "",
+            "videoId": 17
           },
           {
             "value": "built-align",
-            "text": "对齐",
-            "desc": "我是描述文字",
-            "keyword": ""
+            "text": "对齐/分布组件",
+            "desc": "如何水平、垂直、居中对齐、左右对齐、顶部底部对齐组件，以及均匀分布组件",
+            "keyword": "",
+            "videoId": 18
           },
           {
             "value": "reference-line",
             "text": "参考线",
-            "desc": "我是描述文字",
-            "keyword": ""
+            "desc": "讲解在画布操作组件时，如何运用参考线进行对齐吸附以及距离检测",
+            "keyword": "",
+            "videoId": 19
           },
           {
             "value": "component-level",
             "text": "组件层级",
-            "desc": "我是描述文字",
-            "keyword": ""
+            "desc": "讲解如何设置组件置顶置底，以及调整组件层级关系",
+            "keyword": "",
+            "videoId": 20
           },
           {
             "value": "component-group",
             "text": "组件成组",
-            "desc": "我是描述文字",
-            "keyword": ""
-          },
-          {
-            "value": "change-position",
-            "text": "组件互换位置",
-            "desc": "我是描述文字",
-            "keyword": ""
+            "desc": "讲解如何对多个组件进行成组，解组等操作",
+            "keyword": "",
+            "videoId": 21
           }
         ]
       },
       {
         "value": "page-list",
-        "text": "页面列表板",
-        "desc": "我是描述文字",
-        "keyword": ""
+        "text": "页面板",
+        "desc": "分为缩略图以及列表两种样式，讲解在页面板中如何对页面进行选择、复制、设置及删除",
+        "keyword": "",
+        "videoId": 22
       },
       {
         "value": "page-component",
         "text": "页面组件树",
-        "desc": "我是描述文字",
-        "keyword": ""
+        "desc": "分为主画布和草稿层，讲解在组件树中如何拖动更改组件层级，隐藏、锁定组件",
+        "keyword": "",
+        "videoId": 23
+      },
+      {
+        "value": "lugiad",
+        "text": "子页面运用",
+        "desc": "讲解子页面如何插入到需要切换页面的组件（如标签页、折叠面板等）中，以及如何嵌入页面中，作为复选区块使用",
+        "keyword": "",
+        "videoId": 24
+      },
+      {
+        "value": "import-page",
+        "text": "导入页面",
+        "desc": "讲解如何把其他项目页面拖入到本项目中",
+        "keyword": "",
+        "videoId": 25
       }
     ]
   },
-  "3": {
+  "5": {
     "value": "智能布局",
     "text": "智能布局",
     "children": [
       {
         "value": "layout-quick-start",
         "text": "快速上手",
-        "desc": "我是描述文字",
-        "keyword": ""
+        "desc": "以实际项目为例，介绍如何快速调整页面的智能布局",
+        "keyword": "",
+        "videoId": 26
+      },
+      {
+        "value": "discusses-layout",
+        "text": "浅谈智能布局",
+        "desc": "简单介绍智能布局的使用方式",
+        "keyword": "",
+        "videoId": 27
+      },
+      {
+        "value": "layout-fixed",
+        "text": "固定",
+        "desc": "讲解固定的用法，固定方向的变化，以及实际页面设置固定产生的效果",
+        "keyword": "",
+        "videoId": 28
+      },
+      {
+        "value": "layout-self-adaption",
+        "text": "自适应",
+        "desc": "讲解自适应的用法以及px、百分比、屏幕比和calc计算应用最值的关系",
+        "keyword": "",
+        "videoId": 29
+      },
+      {
+        "value": "layout-content-adaptation",
+        "text": "内容适配",
+        "desc": "讲解自适应的用法以及最值的关联性和内容适配方向的变化",
+        "keyword": "",
+        "videoId": 30
+      },
+      {
+        "value": "layout-mixed",
+        "text": "混合使用",
+        "desc": "以实际项目为例，将宽高固定、自适应、内容适配三种方式混合使用，并介绍各种模式的使用场景",
+        "keyword": "",
+        "videoId": 31
+      },
+      {
+        "value": "layout-scroll",
+        "text": "滚动条",
+        "desc": "介绍滚动条在父容器出现的概念，以及原理，并结合实际案例配置生成滚动条。",
+        "keyword": "",
+        "videoId": 32
+      }
+    ]
+  },
+  "6": {
+    "value": "模板管理",
+    "text": "模板管理",
+    "children": [
+      {
+        "value": "copy-to-project",
+        "text": "拷贝到项目",
+        "desc": "如何把本地项目拷贝到项目模版",
+        "keyword": "",
+        "videoId": 33
+      },
+      {
+        "value": "rebuild-page",
+        "text": "重建页面",
+        "desc": "讲解如何选择模板中已建页面，对选中页面进行模板的更换操作",
+        "keyword": "",
+        "videoId": 34
+      },
+      {
+        "value": "replace-template",
+        "text": "替换模板",
+        "desc": "讲解如何用其他模板替换选中模板",
+        "keyword": "",
+        "videoId": 35
+      },
+      {
+        "value": "import-template",
+        "text": "导入模板",
+        "desc": "介绍如何导入自定义模版",
+        "keyword": "",
+        "videoId": 36
+      }
+    ]
+  },
+  "7": {
+    "value": "创建页面层级/路由",
+    "text": "创建页面层级/路由",
+    "children": [
+      {
+        "value": "page-quick-start",
+        "text": "快速上手",
+        "desc": "以实际项目为例，介绍如何创建页面层级",
+        "keyword": "",
+        "videoId": 37
+      },
+      {
+        "value": "create-page-hierarchy",
+        "text": "创建页面层级",
+        "desc": "介绍如何设置项目的侧边导航以及顶部导航页面层级关系",
+        "keyword": "",
+        "videoId": 38
+      },
+      {
+        "value": "modify-page-routing",
+        "text": "修改页面路由",
+        "desc": "讲解修改页面名称、页面路由以及文件名，以及如何添加外部链接页面",
+        "keyword": "",
+        "videoId": 39
+      }
+    ]
+  },
+  "8": {
+    "value": "页面交互开发",
+    "text": "页面交互开发",
+    "children": [
+      {
+        "value": "layout-quick-start",
+        "text": "快速上手",
+        "desc": "以实际项目为例，介绍如何开发页面交互",
+        "keyword": "",
+        "videoId": 40
+      },
+      {
+        "value": "model-management",
+        "text": "model管理",
+        "desc": "讲解如何新建model，管理model",
+        "keyword": "",
+        "videoId": 41
+      },
+      {
+        "value": "model-selection",
+        "text": "模型选择",
+        "desc": "讲解如何筛选模型、设置页面初始化、页面打开、页面关闭等",
+        "keyword": "",
+        "videoId": 42
+      },
+      {
+        "value": "属性绑定",
+        "text": "属性绑定",
+        "describe": true,
+        "children": [
+          {
+            "value": "general-settings",
+            "text": "常规设置",
+            "desc": "讲解如何设置是否开启该属性、选择类型、输入文本、数据编辑等",
+            "keyword": "",
+            "videoId": 43
+          },
+          {
+            "value": "business-binding",
+            "text": "业务绑定",
+            "desc": "讲解如何选择自定义的数据进行渲染",
+            "keyword": "",
+            "videoId": 44
+          }
+        ]
+      }
+    ]
+  },
+  "9": {
+    "value": "辅助说明",
+    "text": "辅助说明",
+    "children": [
+      {
+        "value": "setting",
+        "text": "设置",
+        "desc": "设置是关于Mega应用的设置，包含了一些不同页面/项目的的设定并可自定义的操作与配置",
+        "keyword": "",
+        "videoId": 45
+      },
+      {
+        "value": "check",
+        "text": "查看",
+        "desc": "查看您所创建项目的源代码",
+        "keyword": "",
+        "videoId": 46
+      },
+      {
+        "value": "export",
+        "text": "导出",
+        "desc": "介绍如何把项目打包构建，以及把项目页面导出为图片",
+        "keyword": "",
+        "videoId": 47
+      },
+      {
+        "value": "project-management",
+        "text": "项目管理",
+        "desc": "讲解如何查看项目信息，管理依赖和图片，以及增删组件库等功能",
+        "keyword": "",
+        "videoId": 48
+      }
+    ]
+  },
+  "10": {
+    "value": "高阶开发",
+    "text": "高阶开发",
+    "children": [
+      {
+        "value": "custom-component",
+        "text": "自定义组件开发",
+        "desc": "如何添加已经开发好的组件库，也可使用Mega的脚手架开发组件库",
+        "keyword": "",
+        "videoId": 49
+      },
+      {
+        "value": "custom-template",
+        "text": "自定义模板开发",
+        "desc": "如何添加已经开发好的模板，也可使用Mega的脚手架开发模板",
+        "keyword": "",
+        "videoId": 50
       }
     ]
   }
