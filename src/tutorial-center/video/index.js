@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import switchImg from "../img/switch.png";
+import videoPoster from "../img/poster.png";
 
 const VideoWrap = styled.div`
   width: 100%;
@@ -27,12 +28,6 @@ const VideoSwitchWrap = styled.div`
   cursor: pointer;
   z-index: 2;
   display: ${props => (props.visible ? "none" : "block")};
-`;
-
-const VideoPoster = styled.div`
-  width: 100%;
-  height: 100%;
-  background: #fff;
 `;
 
 export default class Video extends Component {
@@ -104,7 +99,7 @@ export default class Video extends Component {
           src={src}
           style={{ width: "100%", height: "100%" }}
           controls={false}
-          poster={<VideoPoster />}
+          poster={videoPoster}
         ></video>
       </VideoWrap>
     );
