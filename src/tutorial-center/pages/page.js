@@ -9,7 +9,7 @@ import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import { BackTop } from "@lugia/lugia-web";
 import { linkToUrl } from "../../support/commonMethods";
-import { pageData } from "./pageData";
+import { tutorialPageData } from "../data/tutorialData";
 import Video from "../video";
 
 const Container = styled.div`
@@ -27,6 +27,11 @@ const DescWrap = styled.div`
   color: #50575d;
   font-size: 14px;
   font-family: PingFangSC-Regular;
+`;
+const SkipWrap = styled(DescWrap)`
+  display: inline-block;
+  color: #4d68ff;
+  cursor: pointer;
 `;
 const VideoCardWrap = styled.div`
   width: 100%;
@@ -76,9 +81,9 @@ export default class TutorialPage extends Component {
   }
 
   getPageData = () => {
-    const dataLen = Object.keys(pageData).length;
+    const dataLen = Object.keys(tutorialPageData).length;
     const { pathType } = this.state;
-    return { pageContent: pageData[pathType], dataLen };
+    return { pageContent: tutorialPageData[pathType], dataLen };
   };
 
   getNewID = isPre => {
@@ -95,21 +100,43 @@ export default class TutorialPage extends Component {
 
   handlePreStepChange = (isPre = false) => {
     const newID = this.getNewID(isPre);
-    Object.keys(pageData).forEach(item => {
-      if (pageData[item].id === newID) {
+    Object.keys(tutorialPageData).forEach(item => {
+      if (tutorialPageData[item].id === newID) {
         linkToUrl(`/tutorial/pages/${item}`);
       }
     });
   };
 
+  getDesc = (desc, descSkip) => {
+    if (descSkip) {
+      const startPos = desc.indexOf("「");
+      const endPos = desc.indexOf("」");
+
+      const preContent = desc.substring(0, startPos - 1);
+      const skipContent = desc.substring(startPos, endPos + 1);
+      const sufContent = desc.substring(endPos);
+
+      return (
+        <Fragment>
+          {preContent}
+          <SkipWrap>{skipContent}</SkipWrap>
+          {sufContent}
+        </Fragment>
+      );
+    }
+    return desc;
+  };
+
   getPageContent = () => {
     const { pageContent } = this.getPageData();
     if (pageContent) {
-      const { title, desc, videoSrc } = pageContent;
+      const { title, desc, videoSrc, descSkip = "" } = pageContent;
+      console.log(title, desc.includes("「"));
       return (
         <Fragment>
           <TitleWrap>{title}</TitleWrap>
-          <DescWrap>{desc}</DescWrap>
+          {/*<DescWrap>{desc}</DescWrap>*/}
+          <DescWrap>{this.getDesc(desc, descSkip)}</DescWrap>
           <VideoCardWrap>
             <VideoWrap>
               <Video src={videoSrc}></Video>

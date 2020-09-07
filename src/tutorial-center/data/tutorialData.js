@@ -7,6 +7,7 @@ let times = 0;
 
 export const tutorialRouterData = getRouterData(tutorialData);
 export const tutorialSearchData = getSearchData(tutorialData);
+export const tutorialPageData = getPageData(tutorialData);
 
 // 搜索数据:
 function getSearchData(data, type) {
@@ -51,6 +52,29 @@ function getRouterData(data) {
         const url = `/tutorial/pages/${value}`;
         tempObj.push({ value: url, text, desc, sort: sort });
         sort++;
+      }
+    });
+  return tempObj;
+}
+
+// 页面数据:
+function getPageData(data) {
+  let tempObj = {};
+  Array.isArray(data) &&
+    data.forEach(item => {
+      const { value, text, desc, keyword, children, videoId, descSkip } = item;
+      if (children) {
+        tempObj = { ...tempObj, ...getPageData(children) };
+      } else {
+        // const url = `http://139.9.26.43/video//1.3.5-alpha.7.mp4`;
+        const url = `http://139.9.26.43/video//${videoId}.mp4`;
+        tempObj[value] = {
+          id: videoId,
+          title: text,
+          desc,
+          videoSrc: url,
+          descSkip
+        };
       }
     });
   return tempObj;
