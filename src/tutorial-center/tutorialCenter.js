@@ -394,7 +394,11 @@ export default class TutorialCenter extends Component {
                         <FeedbackImg bgImage={notebook}></FeedbackImg>
                         <FeedbackContent>
                           <FeedbackTitle
+                            /*
+                            暂时保留
                             onClick={() => linkToUrl("/tutorial/feedback")}
+                            */
+                            href="https://github.com/lugia-ysstech/lugia/issues"
                           >
                             提交反馈
                           </FeedbackTitle>

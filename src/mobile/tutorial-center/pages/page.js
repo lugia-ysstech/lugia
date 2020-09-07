@@ -8,7 +8,7 @@
 import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import { BackTop } from "@lugia/lugia-web";
-import { pageData } from "../../../tutorial-center/pages/pageData";
+import { tutorialPageData } from "../../../tutorial-center/data/tutorialData";
 
 const Container = styled.div`
   width: 100%;
@@ -54,9 +54,9 @@ export default class TutorialPage extends Component {
   }
 
   getPageData = () => {
-    const dataLen = Object.keys(pageData).length;
+    const dataLen = Object.keys(tutorialPageData).length;
     const { pathType } = this.state;
-    return { pageContent: pageData[pathType], dataLen };
+    return { pageContent: tutorialPageData[pathType], dataLen };
   };
   getPageContent = () => {
     const { pageContent } = this.getPageData();

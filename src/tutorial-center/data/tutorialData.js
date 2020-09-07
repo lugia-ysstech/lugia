@@ -66,7 +66,6 @@ function getPageData(data) {
       if (children) {
         tempObj = { ...tempObj, ...getPageData(children) };
       } else {
-        // const url = `http://139.9.26.43/video//1.3.5-alpha.7.mp4`;
         const url = `http://139.9.26.43/video//${videoId}.mp4`;
         tempObj[value] = {
           id: videoId,

@@ -32,6 +32,9 @@ const SkipWrap = styled(DescWrap)`
   display: inline-block;
   color: #4d68ff;
   cursor: pointer;
+  &:hover {
+    color: #8c9eff;
+  }
 `;
 const VideoCardWrap = styled.div`
   width: 100%;
@@ -114,12 +117,12 @@ export default class TutorialPage extends Component {
 
       const preContent = desc.substring(0, startPos - 1);
       const skipContent = desc.substring(startPos, endPos + 1);
-      const sufContent = desc.substring(endPos);
+      const sufContent = desc.substring(endPos + 1);
 
       return (
         <Fragment>
           {preContent}
-          <SkipWrap>{skipContent}</SkipWrap>
+          <SkipWrap onClick={()=>{linkToUrl(`/tutorial/pages/${descSkip}`)}}>{skipContent}</SkipWrap>
           {sufContent}
         </Fragment>
       );
@@ -131,7 +134,6 @@ export default class TutorialPage extends Component {
     const { pageContent } = this.getPageData();
     if (pageContent) {
       const { title, desc, videoSrc, descSkip = "" } = pageContent;
-      console.log(title, desc.includes("「"));
       return (
         <Fragment>
           <TitleWrap>{title}</TitleWrap>
