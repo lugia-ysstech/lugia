@@ -4,6 +4,7 @@ import { Theme, Button } from "@lugia/lugia-web";
 import { getBorderRadius } from "@lugia/theme-utils";
 import Widget from "@lugia/lugia-web/dist/consts/index";
 import HeaderNav from "../nav";
+import Video from "../../tutorial-center/video";
 
 import banner from "./img/banner.png";
 import { linkToUrl } from "../../support/commonMethods";
@@ -123,7 +124,7 @@ export default class TutorialCenterMobile extends React.Component<any, any> {
             <HeaderContentInner>
               <HeaderQuestion>Hi~请问有什么可以帮您？</HeaderQuestion>
               <Theme config={buttonTheme}>
-                <Button onClick={() => linkToUrl("/tutorial/pages")}>
+                <Button onClick={() => linkToUrl("/tutorial/pages/quick-start")}>
                   查看教程
                 </Button>
               </Theme>
@@ -136,13 +137,9 @@ export default class TutorialCenterMobile extends React.Component<any, any> {
             <VideoCardTitle>新功能介绍</VideoCardTitle>
             <VideoCardWrap>
               <VideoWrap>
-                <iframe
-                  src="//player.bilibili.com/player.html?aid=67434572&cid=116925497&page=1"
-                  scrolling="no"
-                  border="0"
-                  frameBorder="no"
-                  framespacing="0"
-                  allowFullScreen="true"
+                <Video
+                  // src="http://139.9.26.43/video//1.mp4"
+                  switchSize={"small"}
                 />
               </VideoWrap>
             </VideoCardWrap>
@@ -151,13 +148,9 @@ export default class TutorialCenterMobile extends React.Component<any, any> {
             <VideoCardTitle>快速入手</VideoCardTitle>
             <VideoCardWrap>
               <VideoWrap>
-                <iframe
-                  src="//player.bilibili.com/player.html?aid=67434572&cid=116925497&page=1"
-                  scrolling="no"
-                  border="0"
-                  frameBorder="no"
-                  framespacing="0"
-                  allowFullScreen="true"
+                <Video
+                  // src="http://139.9.26.43/video//1.mp4"
+                  switchSize={"small"}
                 />
               </VideoWrap>
             </VideoCardWrap>
@@ -166,13 +159,9 @@ export default class TutorialCenterMobile extends React.Component<any, any> {
             <VideoCardTitle>常规面板</VideoCardTitle>
             <VideoCardWrap>
               <VideoWrap>
-                <iframe
-                  src="//player.bilibili.com/player.html?aid=67434572&cid=116925497&page=1"
-                  scrolling="no"
-                  border="0"
-                  frameBorder="no"
-                  framespacing="0"
-                  allowFullScreen="true"
+                <Video
+                  // src="http://139.9.26.43/video//1.mp4"
+                  switchSize={"small"}
                 />
               </VideoWrap>
             </VideoCardWrap>

@@ -18,6 +18,7 @@ export const data = {
       y: 110,
       class: "des",
       label: "常规建页",
+      url: "/tutorial/pages/normal-quick-start",
       style: {
         width: 70,
         height: 40
@@ -29,6 +30,7 @@ export const data = {
       y: 210,
       class: "dev",
       label: "智能建页",
+      url: "/tutorial/pages/intelligence-quick-start",
       style: {
         width: 70,
         height: 40
@@ -40,6 +42,7 @@ export const data = {
       y: 160,
       class: "des",
       label: "主题配置",
+      url: "/tutorial/pages/theme-quick-start",
       style: {
         width: 70,
         height: 40
@@ -51,6 +54,7 @@ export const data = {
       y: 110,
       class: "des",
       label: "搭建页面",
+      url: "/tutorial/pages/built-quick-start",
       style: {
         width: 70,
         height: 40
@@ -62,6 +66,7 @@ export const data = {
       y: 110,
       class: "des",
       label: "智能布局",
+      url: "/tutorial/pages/layout-quick-start",
       style: {
         width: 70,
         height: 40
@@ -73,6 +78,7 @@ export const data = {
       y: 210,
       class: "dev",
       label: "模板管理",
+      url: "/tutorial/pages/copy-to-project",
       style: {
         width: 70,
         height: 40
@@ -84,6 +90,7 @@ export const data = {
       y: 160,
       class: "des",
       label: "创建页面/路由层级",
+      url: "/tutorial/pages/page-quick-start",
       style: {
         width: 130,
         height: 40
@@ -94,6 +101,7 @@ export const data = {
       x: 800,
       y: 160,
       label: "页面交互开发",
+      url: "/tutorial/pages/layout-quick-start",
       class: "dev",
       style: {
         width: 100,

@@ -34,7 +34,8 @@ export default class Video extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      playStatus: false
+      playStatus: false,
+      controlsStatus: false
     };
     this.videoRef = React.createRef();
   }
@@ -46,14 +47,13 @@ export default class Video extends Component {
     } else {
       this.videoRef.current.pause();
     }
+    this.setState({ controlsStatus: true });
   };
   switchPlayStatus = () => {
     const { playStatus } = this.state;
-    const currentVideo = this.videoRef.current;
     this.setState({
       playStatus: !playStatus
     });
-    currentVideo && (currentVideo.controls = !playStatus);
   };
 
   componentDidMount() {
@@ -84,9 +84,11 @@ export default class Video extends Component {
   render() {
     const {
       src = "https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4",
-      switchSize
+      switchSize,
+      poster
     } = this.props;
-    const { playStatus } = this.state;
+    const { playStatus, controlsStatus } = this.state;
+    const chosenPoster = poster ? poster : videoPoster;
     return (
       <VideoWrap>
         <VideoSwitchWrap
@@ -98,8 +100,8 @@ export default class Video extends Component {
           ref={this.videoRef}
           src={src}
           style={{ width: "100%", height: "100%" }}
-          controls={false}
-          poster={videoPoster}
+          controls={controlsStatus}
+          poster={chosenPoster}
         ></video>
       </VideoWrap>
     );
