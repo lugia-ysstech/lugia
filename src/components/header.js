@@ -44,7 +44,13 @@ const HeadIndex = styled.a`
   &:hover {
     color: ${themeColor};
   }
-  @media (max-width: 1400px) {
+  @media (max-width: 1720px) {
+    margin-left: 30px
+  }
+  @media (max-width: 1550px) {
+    margin-left: 20px
+  }
+    @media (max-width: 1440px) {
     display: none;
   }
 `;
@@ -146,6 +152,9 @@ export default class Header extends Component {
                     </HeadIndex>
                     <HeadIndex onClick={() => linkToUrl("/logs")}>
                       更新日志
+                    </HeadIndex>
+                    <HeadIndex onClick={() => linkToUrl("/doc")}>
+                      获取文档
                     </HeadIndex>
                     <HeadIndex onClick={() => linkToUrl("/tutorial")}>
                       教程中心
