@@ -12,6 +12,7 @@ import styled from "styled-components";
 import Header from "../components/header";
 import { Footer } from "../components/footer";
 import { linkToUrl } from "../support/commonMethods";
+import Video from '../tutorial-center/video';
 
 import slogan from "../../public/home/slogan.png";
 import logoIntroduction from "../../public/home/logo-introduction.png";
@@ -24,6 +25,7 @@ import staticLeaf from "../../public/home/static-leaf.png";
 import dynamicLeaf from "../../public/home/dynamic-leaf.gif";
 import banner from "../../public/home/banner.png";
 import backgroundLogo from "../../public/home/background-logo.png";
+import videoPoster from "../tutorial-center/img/poster_blank.png";
 
 const { Row, Col } = Grid;
 
@@ -586,13 +588,9 @@ export default class Pages extends React.Component<any, any> {
               <ItemTitle>新增功能</ItemTitle>
               <VideoBoxWrap>
                 <VideoBox>
-                  <iframe
-                    src="//player.bilibili.com/player.html?aid=67434572&cid=116925497&page=1"
-                    scrolling="no"
-                    border="0"
-                    frameBorder="no"
-                    framespacing="0"
-                    allowFullScreen="true"
+                  <Video
+                    // src="http://139.9.26.43/video//1.mp4"
+                    poster={videoPoster}
                   />
                 </VideoBox>
               </VideoBoxWrap>

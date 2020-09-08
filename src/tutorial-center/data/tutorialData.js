@@ -1,5 +1,22 @@
 import data from "../assets/sourceData.json";
 
+//异步获取数据
+/*async function asyncGetData() {
+  const result = await fetch("http://139.9.26.43/video/sourceData.json", {
+    method: "GET",
+    headers: new Headers({ "Content-Type": "application/json" })
+  })
+    .then(response => response.json())
+    .then(data => {
+      return data;
+    });
+
+  return result;
+}
+const res = async () => {
+  await asyncGetData();
+};*/
+
 const tutorialData = Object.values(data);
 
 let sort = 1;

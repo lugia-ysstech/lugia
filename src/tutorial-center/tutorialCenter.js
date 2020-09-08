@@ -15,6 +15,7 @@ import assistIllustrate from "./img/assist-illustrate.png";
 import advanceDev from "./img/advance-dev.png";
 import notebook from "./img/notebook.png";
 import notebookMail from "./img/notebook-mail.png";
+import videoPoster from "./img/poster_blank.png";
 import { linkToUrl } from "../support/commonMethods";
 
 const { Row, Col } = Grid;
@@ -223,18 +224,21 @@ const featureReferenceData = [
     image: basicConstructor,
     title: "基础搭建",
     item: [
-      { itemTitle: "创建项目", itemUrl: "" },
-      { itemTitle: "普通建页", itemUrl: "" },
-      { itemTitle: "建页操作", itemUrl: "" }
+      { itemTitle: "创建项目", itemUrl: "/tutorial/pages/quick-start" },
+      { itemTitle: "常规建页", itemUrl: "/tutorial/pages/normal-quick-start" },
+      {
+        itemTitle: "建页操作",
+        itemUrl: "/tutorial/pages/normal-specific-introduction"
+      }
     ]
   },
   {
     image: themeConfig,
     title: "主题配置",
     item: [
-      { itemTitle: "主题面板", itemUrl: "" },
-      { itemTitle: "设置公共值", itemUrl: "" },
-      { itemTitle: "设置组件库", itemUrl: "" }
+      { itemTitle: "主题面板", itemUrl: "/tutorial/pages/theme-panel" },
+      { itemTitle: "设置公共值", itemUrl: "/tutorial/pages/public-value-set" },
+      { itemTitle: "设置组件库", itemUrl: "/tutorial/pages/component-set" }
     ]
   },
   {
@@ -250,17 +254,20 @@ const featureReferenceData = [
     image: assistIllustrate,
     title: "辅助说明",
     item: [
-      { itemTitle: "设置", itemUrl: "" },
-      { itemTitle: "查看", itemUrl: "" },
-      { itemTitle: "导出", itemUrl: "" }
+      { itemTitle: "设置", itemUrl: "/tutorial/pages/setting" },
+      { itemTitle: "查看", itemUrl: "/tutorial/pages/check" },
+      { itemTitle: "导出", itemUrl: "/tutorial/pages/export" }
     ]
   },
   {
     image: advanceDev,
     title: "高阶开发",
     item: [
-      { itemTitle: "导出自定义组件", itemUrl: "" },
-      { itemTitle: "自定义模板", itemUrl: "" }
+      {
+        itemTitle: "导出自定义组件",
+        itemUrl: "/tutorial/pages/custom-component"
+      },
+      { itemTitle: "自定义模板", itemUrl: "/tutorial/pages/custom-template" }
     ]
   }
 ];
@@ -279,7 +286,9 @@ const getFeatureReferenceCradItem = data => {
             xl={{ span: 24 }}
             xxl={{ span: 24 }}
           >
-            <FeatureReferenceCradItem>{itemTitle}</FeatureReferenceCradItem>
+            <FeatureReferenceCradItem onClick={() => linkToUrl(itemUrl)}>
+              {itemTitle}
+            </FeatureReferenceCradItem>
           </Col>
         </Row>
       );
@@ -333,8 +342,9 @@ export default class TutorialCenter extends Component {
                   <VideoCardWrap>
                     <VideoWrap>
                       <Video
-                        src="http://139.9.26.43/video//1.3.5-alpha.7.mp4"
+                        // src="http://139.9.26.43/video//1.mp4"
                         switchSize={"small"}
+                        poster={videoPoster}
                       />
                     </VideoWrap>
                   </VideoCardWrap>
@@ -345,7 +355,8 @@ export default class TutorialCenter extends Component {
                     <VideoWrap>
                       <Video
                         switchSize={"small"}
-                        src="http://139.9.26.43/video//1.3.5-alpha.7.mp4"
+                        // src="http://139.9.26.43/video//1.mp4"
+                        poster={videoPoster}
                       />
                     </VideoWrap>
                   </VideoCardWrap>
@@ -356,7 +367,8 @@ export default class TutorialCenter extends Component {
                     <VideoWrap>
                       <Video
                         switchSize={"small"}
-                        src="http://139.9.26.43/video//1.3.5-alpha.7.mp4"
+                        // src="http://139.9.26.43/video//1.mp4"
+                        poster={videoPoster}
                       />
                     </VideoWrap>
                   </VideoCardWrap>
