@@ -355,7 +355,7 @@ export default class TutorialCenter extends Component {
                     <VideoWrap>
                       <Video
                         switchSize={"small"}
-                        // src="http://139.9.26.43/video//1.mp4"
+                        src="http://139.9.26.43/video//A01.mp4"
                         poster={videoPoster}
                       />
                     </VideoWrap>
@@ -367,7 +367,7 @@ export default class TutorialCenter extends Component {
                     <VideoWrap>
                       <Video
                         switchSize={"small"}
-                        // src="http://139.9.26.43/video//1.mp4"
+                        src="http://139.9.26.43/video//A02.mp4"
                         poster={videoPoster}
                       />
                     </VideoWrap>
