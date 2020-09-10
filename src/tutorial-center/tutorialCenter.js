@@ -224,11 +224,11 @@ const featureReferenceData = [
     image: basicConstructor,
     title: "基础搭建",
     item: [
-      { itemTitle: "创建项目", itemUrl: "/tutorial/pages/quick-start" },
-      { itemTitle: "常规建页", itemUrl: "/tutorial/pages/normal-quick-start" },
+      { itemTitle: "创建项目", itemUrl: "/tutorial/pages/specific-introduction" },
+      { itemTitle: "常规建页", itemUrl: "/tutorial/pages/normal-specific-introduction" },
       {
-        itemTitle: "建页操作",
-        itemUrl: "/tutorial/pages/normal-specific-introduction"
+        itemTitle: "智能建页",
+        itemUrl: "/tutorial/pages/intelligence-specific-introduction"
       }
     ]
   },
@@ -245,9 +245,9 @@ const featureReferenceData = [
     image: smartConfig,
     title: "灵活配置",
     item: [
-      { itemTitle: "创建页面层级", itemUrl: "" },
-      { itemTitle: "插件体系", itemUrl: "" },
-      { itemTitle: "块组件", itemUrl: "" }
+      { itemTitle: "导入页面", itemUrl: "/tutorial/pages/import-page" },
+      { itemTitle: "modal管理", itemUrl: "/tutorial/pages/model-management" },
+      { itemTitle: "浅谈智能布局", itemUrl: "/tutorial/pages/discusses-layout" }
     ]
   },
   {
