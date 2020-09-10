@@ -20,7 +20,7 @@ const CopyRight = styled.div`
 export const Footer = () => (
   <FooterWrap>
     <CopyRight>
-      Copyright @ 2001-2019 Ysstech,All Rights Reserved 粤ICP备05050184号
+      Copyright @ 2001-2020 Ysstech,All Rights Reserved 粤ICP备05050184号
     </CopyRight>
   </FooterWrap>
 );

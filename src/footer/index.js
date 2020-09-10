@@ -29,7 +29,7 @@ export default class Footer extends React.Component {
     return (
       <Wrapper height={height}>
         <CopyRight>
-          Copyright @ 2001-2019 Ysstech,All Rights Reserved 粤ICP备05050184号
+          Copyright @ 2001-2020 Ysstech,All Rights Reserved 粤ICP备05050184号
         </CopyRight>
       </Wrapper>
     );

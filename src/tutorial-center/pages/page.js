@@ -137,7 +137,6 @@ export default class TutorialPage extends Component {
       return (
         <Fragment>
           <TitleWrap>{title}</TitleWrap>
-          {/*<DescWrap>{desc}</DescWrap>*/}
           <DescWrap>{this.getDesc(desc, descSkip)}</DescWrap>
           <VideoCardWrap>
             <VideoWrap>
