@@ -589,7 +589,7 @@ export default class Pages extends React.Component<any, any> {
               <VideoBoxWrap>
                 <VideoBox>
                   <Video
-                    // src="http://139.9.26.43/video//1.mp4"
+                    src="http://139.9.26.43/video//A03.mp4"
                     poster={videoPoster}
                   />
                 </VideoBox>
