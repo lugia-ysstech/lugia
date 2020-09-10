@@ -18,6 +18,8 @@ import appSlogan from "../../../public/home/app-slogan.png";
 import designValue from "../../../public/home/design-value.png";
 import designPrinciple from "../../../public/home/design-principle.png";
 import visualPrinciple from "../../../public/home/visual-principle.png";
+import Video from "../../tutorial-center/video";
+import videoPoster from "../../tutorial-center/img/poster_blank.png";
 
 const { themeColor } = colorsFunc();
 
@@ -462,13 +464,10 @@ export default class Pages extends React.Component<any, any> {
             <ModuleTitle>新增功能</ModuleTitle>
             <VideoBoxWrap>
               <VideoBox>
-                <iframe
-                  src="//player.bilibili.com/player.html?aid=67434572&cid=116925497&page=1"
-                  scrolling="no"
-                  border="0"
-                  frameBorder="no"
-                  framespacing="0"
-                  allowFullScreen="true"
+                <Video
+                  switchSize="small"
+                  src="http://139.9.26.43/video//A03.mp4"
+                  poster={videoPoster}
                 />
               </VideoBox>
             </VideoBoxWrap>
