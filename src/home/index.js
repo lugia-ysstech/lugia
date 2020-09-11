@@ -25,7 +25,7 @@ import staticLeaf from "../../public/home/static-leaf.png";
 import dynamicLeaf from "../../public/home/dynamic-leaf.gif";
 import banner from "../../public/home/banner.png";
 import backgroundLogo from "../../public/home/background-logo.png";
-import videoPoster from "../tutorial-center/img/poster_blank.png";
+import newFeature from '../../public/tutorial-center/new_feature.png';
 
 const { Row, Col } = Grid;
 
@@ -590,7 +590,7 @@ export default class Pages extends React.Component<any, any> {
                 <VideoBox>
                   <Video
                     src="http://139.9.26.43/video//A03.mp4"
-                    poster={videoPoster}
+                    poster={newFeature}
                   />
                 </VideoBox>
               </VideoBoxWrap>

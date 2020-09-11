@@ -19,7 +19,7 @@ import designValue from "../../../public/home/design-value.png";
 import designPrinciple from "../../../public/home/design-principle.png";
 import visualPrinciple from "../../../public/home/visual-principle.png";
 import Video from "../../tutorial-center/video";
-import videoPoster from "../../tutorial-center/img/poster_blank.png";
+import newFeature from '../../../public/tutorial-center/new_feature.png';
 
 const { themeColor } = colorsFunc();
 
@@ -467,7 +467,7 @@ export default class Pages extends React.Component<any, any> {
                 <Video
                   switchSize="small"
                   src="http://139.9.26.43/video//A03.mp4"
-                  poster={videoPoster}
+                  poster={newFeature}
                 />
               </VideoBox>
             </VideoBoxWrap>
