@@ -354,25 +354,18 @@
         "videoId": 42
       },
       {
-        "value": "属性绑定",
+        "value": "attributes-bind",
         "text": "属性绑定",
-        "describe": true,
-        "children": [
-          {
-            "value": "general-settings",
-            "text": "常规设置",
-            "desc": "讲解如何设置是否开启该属性、选择类型、输入文本、数据编辑等",
-            "keyword": "",
-            "videoId": 43
-          },
-          {
-            "value": "business-binding",
-            "text": "业务绑定",
-            "desc": "讲解如何选择自定义的数据进行渲染",
-            "keyword": "",
-            "videoId": 44
-          }
-        ]
+        "desc": "讲解如何设置是否开启该属性、选择类型、输入文本、数据编辑等",
+        "keyword": "",
+        "videoId": 43
+      },
+      {
+        "value": "event-trigger",
+        "text": "事件触发",
+        "desc": "可定义事件渲染数据等操作",
+        "keyword": "",
+        "videoId": 44
       }
     ]
   },
