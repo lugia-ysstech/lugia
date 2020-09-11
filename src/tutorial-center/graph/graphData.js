@@ -101,7 +101,7 @@ export const data = {
       x: 800,
       y: 160,
       label: "页面交互开发",
-      url: "/tutorial/pages/layout-quick-start",
+      url: "/tutorial/pages/experience-quick-start",
       class: "dev",
       style: {
         width: 100,

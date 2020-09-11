@@ -372,7 +372,7 @@ export default class TutorialCenter extends Component {
                       />
                     </VideoWrap>
                   </VideoCardWrap>
-                  <VideoTitle>常规面板</VideoTitle>
+                  <VideoTitle>常用面板</VideoTitle>
                 </Col>
               </Row>
 
