@@ -239,7 +239,7 @@ export default class MenuList extends React.Component<any, any> {
             inlineType={"ellipse"}
             mode={"inline"}
             data={data || this.defaultData}
-            value={this.state.current}
+            value={this.state.current || this.defCurrent}
             inlineExpandAll={true}
             onSelect={this.onSelect}
             step={60}
