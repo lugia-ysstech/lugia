@@ -25,7 +25,7 @@ import staticLeaf from "../../public/home/static-leaf.png";
 import dynamicLeaf from "../../public/home/dynamic-leaf.gif";
 import banner from "../../public/home/banner.png";
 import backgroundLogo from "../../public/home/background-logo.png";
-import newFeature from '../../public/tutorial-center/new_feature.png';
+import newFeature from '../../public/tutorial-center/home_poster.png';
 
 const { Row, Col } = Grid;
 

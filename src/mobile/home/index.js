@@ -19,7 +19,7 @@ import designValue from "../../../public/home/design-value.png";
 import designPrinciple from "../../../public/home/design-principle.png";
 import visualPrinciple from "../../../public/home/visual-principle.png";
 import Video from "../../tutorial-center/video";
-import newFeature from '../../../public/tutorial-center/new_feature.png';
+import newFeature from '../../../public/tutorial-center/home_poster.png';
 
 const { themeColor } = colorsFunc();
 
