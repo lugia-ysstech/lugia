@@ -81,7 +81,7 @@
         "value": "component-set",
         "text": "设置组件库",
         "desc": "介绍组件库的使用方式以及一个项目如何设置多个组件库主题。注：多组件库导入请参考「辅助说明-项目管理」教程",
-        "descSkip": "setting",
+        "descSkip": "project-management",
         "keyword": "",
         "videoId": 9
       },

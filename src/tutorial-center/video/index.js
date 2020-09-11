@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import switchImg from "../img/switch.png";
-import videoPoster from "../img/poster.png";
+import videoPoster from "../img/video_poster.png";
 
 const VideoWrap = styled.div`
   width: 100%;
