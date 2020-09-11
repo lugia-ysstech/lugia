@@ -148,6 +148,14 @@ export default class MenuList extends React.Component<any, any> {
     return true;
   }
 
+  componentDidUpdate(nextProps, nextState, nextContext) {
+    const path = window.location.hash;
+    const pathFilter = path.match(/[^#]+/g)[0];
+    if (this.state.current !== pathFilter) {
+      this.setState({ current: pathFilter });
+    }
+  }
+
   getWindowHeight = () => {
     const viewHeight = document.body.clientHeight - 60;
     const { height } = this.state;
