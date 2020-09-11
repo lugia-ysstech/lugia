@@ -5,6 +5,9 @@ import { getBorderRadius } from "@lugia/theme-utils";
 import Widget from "@lugia/lugia-web/dist/consts/index";
 import HeaderNav from "../nav";
 import Video from "../../tutorial-center/video";
+import newFeature from '../../../public/tutorial-center/new_feature.png';
+import quickStart from '../../../public/tutorial-center/quick_start.png';
+import normalPanel from '../../../public/tutorial-center/normal_panel.png';
 
 import banner from "./img/banner.png";
 import { linkToUrl } from "../../support/commonMethods";
@@ -138,8 +141,9 @@ export default class TutorialCenterMobile extends React.Component<any, any> {
             <VideoCardWrap>
               <VideoWrap>
                 <Video
-                  // src="http://139.9.26.43/video//1.mp4"
+                  src="http://139.9.26.43/video//A03.mp4"
                   switchSize={"small"}
+                  poster={newFeature}
                 />
               </VideoWrap>
             </VideoCardWrap>
@@ -149,8 +153,9 @@ export default class TutorialCenterMobile extends React.Component<any, any> {
             <VideoCardWrap>
               <VideoWrap>
                 <Video
-                  // src="http://139.9.26.43/video//1.mp4"
+                  src="http://139.9.26.43/video//A01.mp4"
                   switchSize={"small"}
+                  poster={quickStart}
                 />
               </VideoWrap>
             </VideoCardWrap>
@@ -160,8 +165,9 @@ export default class TutorialCenterMobile extends React.Component<any, any> {
             <VideoCardWrap>
               <VideoWrap>
                 <Video
-                  // src="http://139.9.26.43/video//1.mp4"
+                  src="http://139.9.26.43/video//A02.mp4"
                   switchSize={"small"}
+                  poster={normalPanel}
                 />
               </VideoWrap>
             </VideoCardWrap>

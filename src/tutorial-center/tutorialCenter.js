@@ -15,7 +15,9 @@ import assistIllustrate from "./img/assist-illustrate.png";
 import advanceDev from "./img/advance-dev.png";
 import notebook from "./img/notebook.png";
 import notebookMail from "./img/notebook-mail.png";
-import videoPoster from "./img/poster_blank.png";
+import newFeature from '../../public/tutorial-center/new_feature.png';
+import quickStart from '../../public/tutorial-center/quick_start.png';
+import normalPanel from '../../public/tutorial-center/normal_panel.png';
 import { linkToUrl } from "../support/commonMethods";
 
 const { Row, Col } = Grid;
@@ -344,7 +346,7 @@ export default class TutorialCenter extends Component {
                       <Video
                         src="http://139.9.26.43/video//A03.mp4"
                         switchSize={"small"}
-                        poster={videoPoster}
+                        poster={newFeature}
                       />
                     </VideoWrap>
                   </VideoCardWrap>
@@ -356,7 +358,7 @@ export default class TutorialCenter extends Component {
                       <Video
                         switchSize={"small"}
                         src="http://139.9.26.43/video//A01.mp4"
-                        poster={videoPoster}
+                        poster={quickStart}
                       />
                     </VideoWrap>
                   </VideoCardWrap>
@@ -368,7 +370,7 @@ export default class TutorialCenter extends Component {
                       <Video
                         switchSize={"small"}
                         src="http://139.9.26.43/video//A02.mp4"
-                        poster={videoPoster}
+                        poster={normalPanel}
                       />
                     </VideoWrap>
                   </VideoCardWrap>
