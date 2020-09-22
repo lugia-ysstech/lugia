@@ -224,6 +224,7 @@ const ContentCardTitle = styled.div`
 const ContentCardStart = styled.div`
   font-size: 14px;
   color: #4d68ff;
+  cursor: pointer;
   &:hover {
     color: #8c9dff;
   }
@@ -263,6 +264,7 @@ const TabsBlockDesc = styled.div`
 const TabsBlockDetail = styled.div`
   font-size: 14px;
   color: #4d68ff;
+  cursor: pointer;
 `;
 
 const VideoBoxWrap = styled.div`
