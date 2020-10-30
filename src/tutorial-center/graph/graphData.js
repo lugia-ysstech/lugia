@@ -98,7 +98,19 @@ export const data = {
     },
     {
       id: "node9",
-      x: 800,
+      x: 790,
+      y: 160,
+      label: "动作设计",
+      url: "",
+      class: "des",
+      style: {
+        width: 70,
+        height: 40
+      }
+    },
+    {
+      id: "node10",
+      x: 900,
       y: 160,
       label: "页面交互开发",
       url: "/tutorial/pages/experience-quick-start",
@@ -233,6 +245,10 @@ export const data = {
     {
       source: "node8",
       target: "node9"
+    },
+    {
+      source: "node9",
+      target: "node10"
     }
   ]
 };
