@@ -48,7 +48,7 @@ const Head = styled.div`
 const BgImg2 = styled.div`
   background:url("${props => props.img}") no-repeat;
   width:90%;
-  height:196px;
+  height:250px;
   background-size:cover;
   float: ${props => props.position ? props.position : 'left'};
   padding-left: 80px;
@@ -94,6 +94,9 @@ const Container = styled.div`
    display: flex;
    align-items: center;
    height: 196px;
+`;
+const DevContainer = styled(Container)`
+   height: 250px;
 `;
 const Block = styled.div`
   width: 100%;
@@ -175,14 +178,18 @@ export default class Pages extends React.Component<any, any> {
                           <Text>详细介绍和API说明</Text>
                         </Col>
                         <Col span={12}>
-                          <Container>
+                          <DevContainer>
                             <ContentWrapper>
                               <LinkText href={'https://shimo.im/docs/bn3j8rlpvdSwFEk2'} target={'_blank'}>Lugia体系-组件开发手册</LinkText>
                               <LinkText href={'https://shimo.im/docs/293DVZPvKnHLFRk4'} target={'_blank'}>Lugiax开发手册</LinkText>
                               <LinkText href={'https://shimo.im/docs/5zAZVl8Jaot5FgAo'} target={'_blank'}>Lugia-web开发手册</LinkText>
                               <LinkText href={'https://shimo.im/docs/Ne3NVmwRBrsOF93O'} target={'_blank'}>Lugia-theme开发手册</LinkText>
+                              <LinkText href={'https://shimo.im/docs/R13j8rRgKMceJnk5'} target={'_blank'}>Lugia模板开发手册</LinkText>
+                              <LinkText href={'https://shimo.im/docs/wV3VVx5nd0fOD43y'} target={'_blank'}>插件开发手册</LinkText>
+                              <LinkText href={'https://shimo.im/docs/Ee32M2EP4zsBDRA2'} target={'_blank'}>动作开发手册</LinkText>
+                              <LinkText href={'https://shimo.im/docs/1lq7MK6GxRSLrRAe'} target={'_blank'}>智能模板插件开发手册</LinkText>
                             </ContentWrapper>
-                          </Container>
+                          </DevContainer>
                         </Col>
                       </Row>
                     </BgImg2>
