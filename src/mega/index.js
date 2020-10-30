@@ -265,11 +265,11 @@ export default class Mega extends React.Component {
                     </DownLoad>
                   </DownLoadInnerBox>
                   <DownLoadInnerBox>
-                    <Linux href="#">
+                    <Linux href="#DownLoadLinuxdeb">
                       <LinuxLogo />
                       <Span>linux.deb</Span>
                     </Linux>
-                    <Linux href="#">
+                    <Linux href="#DownLoadLinuxrpm">
                       <LinuxLogo />
                       <Span>linux.rpm</Span>
                     </Linux>
