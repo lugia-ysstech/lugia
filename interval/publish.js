@@ -102,10 +102,12 @@ async function publish(param) {
       to
     });
   };
-  const { mac, win, pdf } = param;
+  const { mac, win, pdf, linuxdeb, linuxrpm } = param;
   await replaceDownUrl('#DownLoadMac', mac);
   await replaceDownUrl('#DownLoadWindows', win);
   await replaceDownUrl('#DownLoadWindows', pdf);
+  await replaceDownUrl('#DownLoadLinuxdeb', linuxdeb);
+  await replaceDownUrl('#DownLoadLinuxrpm', linuxrpm);
 
   console.info('替换下载地址');
   console.info('上传JS文件');
