@@ -370,6 +370,96 @@
     ]
   },
   "9": {
+    "value": "插件管理",
+    "text": "插件管理",
+    "children": [
+      {
+        "value": "plugin-install-uninstall-update",
+        "text": "插件安装、卸载及更新",
+        "desc": "如何安装插件、卸载和更新插件",
+        "keyword": "",
+        "videoId": 51
+      },
+      {
+        "value": "office-plugin-apply",
+        "text": "官方插件简单介绍",
+        "desc": "官方插件的简单介绍",
+        "keyword": "",
+        "videoId": 52
+      }
+    ]
+  },
+  "10": {
+    "value": "动作设计",
+    "text": "动作设计",
+    "children": [
+      {
+        "value": "action-quick-start",
+        "text": "快速上手",
+        "desc": "以实际项目为例，介绍如何使用动作插件",
+        "keyword": "",
+        "videoId": 53
+      },
+      {"value": "基础操作",
+        "text": "基础操作",
+        "describe": true,
+        "children": [
+          {
+            "value": "action-change-attributes",
+            "text": "修改组件属性",
+            "desc": "讲解如何使用插件修改属性",
+            "keyword": "",
+            "videoId": 54
+          },
+          {
+            "value": "action-switch-tab",
+            "text": "切换标签页",
+            "desc": "讲解如何使用插件切换标签页",
+            "keyword": "",
+            "videoId": 55
+          },
+          {
+            "value": "action-open&close-foldpanel",
+            "text": "打开&&收起折叠板",
+            "desc": "讲解如何使用插件切换折叠板",
+            "keyword": "",
+            "videoId": 56
+          },
+          {
+            "value": "action-jump-page",
+            "text": "跳转页面",
+            "desc": "讲解如何使用插件跳转页面",
+            "keyword": "",
+            "videoId": 57
+          },
+          {
+            "value": "action-pop-internal-component",
+            "text": "弹出内置组件",
+            "desc": "讲解如何使用插件弹出内置组件",
+            "keyword": "",
+            "videoId": 58
+          },
+          {
+            "value": "action-delay-operation",
+            "text": "延时操作",
+            "desc": "讲解如何使用插件延时操作",
+            "keyword": "",
+            "videoId": 59
+          },
+          {
+            "value": "action-custom-movement",
+            "text": "自定义动作",
+            "desc": "讲解如何使用插件自定义动作",
+            "keyword": "",
+            "videoId": 60
+          }
+
+        ]
+      }
+
+    ]
+  },
+  "11": {
     "value": "辅助说明",
     "text": "辅助说明",
     "children": [
@@ -403,7 +493,7 @@
       }
     ]
   },
-  "10": {
+  "12": {
     "value": "高阶开发",
     "text": "高阶开发",
     "children": [
