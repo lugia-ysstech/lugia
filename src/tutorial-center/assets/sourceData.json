@@ -420,7 +420,7 @@
           },
           {
             "value": "action-open&close-foldpanel",
-            "text": "打开&&收起折叠板",
+            "text": "打开/收起折叠板",
             "desc": "讲解如何使用插件切换折叠板",
             "keyword": "",
             "videoId": 56
