@@ -101,7 +101,7 @@ export const data = {
       x: 790,
       y: 160,
       label: "动作设计",
-      url: "",
+      url: "/tutorial/pages/action-quick-start",
       class: "des",
       style: {
         width: 70,
