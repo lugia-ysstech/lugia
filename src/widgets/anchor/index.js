@@ -45,7 +45,7 @@ export default PageNavHoC(
                 title={"基本用法"}
                 titleID={"anchor-0"}
                 code={
-                  <code>{`import React from \'react\';\nimport {Anchor} from \'@lugia/lugia-web\';\n\nconst { Link } = Anchor;\n\nexport default class AnchorDemo extends React.Component {\n    render(){\n        return (\n            <Anchor slideType=\"circle\">\n              <Link title=\"基本用法\" href=\"#anchor-0\" />\n              <Link title=\"指定容器\" href=\"#anchor-1\" />\n              <Link title=\"固定状态改变的回调\" href=\"#anchor-2\" />\n            </Anchor>\n        );\n    }\n}\n`}</code>
+                  <code>{`import React from \'react\';\nimport {Anchor} from \'@lugia/lugia-web\';\n\nconst { Link } = Anchor;\n\nexport default class AnchorDemo extends React.Component {\n    render(){\n        return (\n            <Anchor slideType=\"circle\"  id=\"anchor-0\" useHref={false} >\n              <Link title=\"基本用法\" href=\"#anchor-0\" />\n              <Link title=\"指定容器\" href=\"#anchor-1\" />\n              <Link title=\"固定状态改变的回调\" href=\"#anchor-2\" />\n            </Anchor>\n        );\n    }\n}\n`}</code>
                 }
                 desc={"最简单的用法"}
                 demo={<BasicDemo />}
@@ -54,7 +54,7 @@ export default PageNavHoC(
                 title={"指定容器"}
                 titleID={"anchor-1"}
                 code={
-                  <code>{`import React from \'react\';\nimport {Anchor} from \'@lugia/lugia-web\';\n\nconst { Link } = Anchor;\n\nexport default class AnchorDemo extends React.Component {\n    render(){\n        return (\n            <div style={{marginLeft: \'200px\'}}>\n                <Anchor slideType=\"circle\" affix={false}>\n                    <Link title=\"基本用法\" href=\"#anchor-0\" />\n                    <Link title=\"指定容器\" href=\"#anchor-1\" />\n                    <Link title=\"固定状态改变的回调\" href=\"#anchor-2\" />\n                </Anchor>\n            </div>\n        );\n    }\n}\n`}</code>
+                  <code>{`import React from \'react\';\nimport {Anchor} from \'@lugia/lugia-web\';\n\nconst { Link } = Anchor;\n\nexport default class AnchorDemo extends React.Component {\n    render(){\n        return (\n            <div style={{marginLeft: \'200px\'}}  id=\"anchor-1\">\n                <Anchor slideType=\"circle\" useHref={false} affix={false}>\n                    <Link title=\"基本用法\" href=\"#anchor-0\" />\n                    <Link title=\"指定容器\" href=\"#anchor-1\" />\n                    <Link title=\"固定状态改变的回调\" href=\"#anchor-2\" />\n                </Anchor>\n            </div>\n        );\n    }\n}\n`}</code>
                 }
                 desc={"指定滚动容器"}
                 demo={<AffixDemo />}
@@ -63,7 +63,7 @@ export default PageNavHoC(
                 title={"固定状态改变的回调"}
                 titleID={"anchor-2"}
                 code={
-                  <code>{`import React from \'react\';\nimport {Anchor} from \'@lugia/lugia-web\';\n\nconst { Link } = Anchor;\n\nexport default class AnchorDemo extends React.Component {\n    render(){\n        return (\n            <div style={{marginLeft: \'400px\'}}>\n                <Anchor slideType=\"none\">\n                  <Link title=\"基本用法\" href=\"#anchor-0\" />\n                  <Link title=\"指定容器\" href=\"#anchor-1\" />\n                  <Link title=\"固定状态改变的回调\" href=\"#anchor-2\" />\n                </Anchor>\n            </div>\n\n        );\n    }\n}\n`}</code>
+                  <code>{`import React from \'react\';\nimport {Anchor} from \'@lugia/lugia-web\';\n\nconst { Link } = Anchor;\n\nexport default class AnchorDemo extends React.Component {\n    render(){\n        return (\n            <div style={{marginLeft: \'400px\'}}  id=\"anchor-2\">\n                <Anchor slideType=\"none\"  useHref={false}>\n                  <Link title=\"基本用法\" href=\"#anchor-0\" />\n                  <Link title=\"指定容器\" href=\"#anchor-1\" />\n                  <Link title=\"固定状态改变的回调\" href=\"#anchor-2\" />\n                </Anchor>\n            </div>\n\n        );\n    }\n}\n`}</code>
                 }
                 desc={"可以获取是否固定状态"}
                 demo={<TypeDemo />}
