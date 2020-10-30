@@ -21,6 +21,7 @@ import wuliao from "../../mega/wuliao.png";
 import developTool from "../../mega/developTool.png";
 import model from "../../mega/model.png";
 import error from "../../mega/error.png";
+import linux from "../../../public/mega/linux.png";
 
 const Container = styled.div`
   height: 286px;
@@ -120,8 +121,12 @@ const PdfContainer = styled.div`
 const DownLoadBox = styled.div`
   padding: 20px 20px 0;
   display: flex;
+  flex-direction: column;
+`;
+const DownLoadInnerBox = styled.div`
+  display: flex;
   flex-direction: row;
-  justify-content: center;
+  padding-bottom: 16px;
 `;
 
 const MidBlock = styled.div`
@@ -210,6 +215,19 @@ const Mac = styled.div`
     background: linear-gradient(0deg, #3D53CC 0%, #8093FF 100%);
   }
 `;
+const Linux = styled(Mac)`
+  background: #798F9D;
+  margin-right: 6px;
+`;
+const LinuxLogo = styled.div`
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  background: url(${linux}) no-repeat;
+  background-size: contain;
+`;
 
 const Window = styled.div`
   display: flex;
@@ -297,46 +315,59 @@ export default class Mega extends React.Component {
             <Tittle5>欢迎使用 Lugia Mega</Tittle5>
             <Tittle2 margin={'10px 0 0'}>请选择您要安装的操作系统</Tittle2>
             <DownLoadBox>
-              <Mac onClick={() => this.doAlertMask(true)}>
-                <Icon
-                  iconClass="lugia-icon-logo_apple"
-                  theme={{
-                    icon: {
-                      Icon: {
-                        normal: {
-                          font: {
-                            size: 18
-                          },
-                          margin: 6,
-                          // color: "#4d63ff"
+              <DownLoadInnerBox>
+                <Mac onClick={() => this.doAlertMask(true)}>
+                  <Icon
+                    iconClass="lugia-icon-logo_apple"
+                    theme={{
+                      icon: {
+                        Icon: {
+                          normal: {
+                            font: {
+                              size: 18
+                            },
+                            margin: 6,
+                            // color: "#4d63ff"
+                          }
                         }
                       }
-                    }
-                  }}
-                  viewClass={"icon"}
-                />
-                <Span>mac版本</Span>
-              </Mac>
-              <Window  onClick={() => this.doAlertMask(true)}>
-                <Icon
-                  iconClass="lugia-icon-logo_windows"
-                  theme={{
-                    icon: {
-                      Icon: {
-                        normal: {
-                          font: {
-                            size: 18
-                          },
-                          margin: 6,
-                          color: "#4d63ff"
+                    }}
+                    viewClass={"icon"}
+                  />
+                  <Span>mac版本</Span>
+                </Mac>
+                <Window  onClick={() => this.doAlertMask(true)}>
+                  <Icon
+                    iconClass="lugia-icon-logo_windows"
+                    theme={{
+                      icon: {
+                        Icon: {
+                          normal: {
+                            font: {
+                              size: 18
+                            },
+                            margin: 6,
+                            color: "#4d63ff"
+                          }
                         }
                       }
-                    }
-                  }}
-                  viewClass={"icon"}
-                />
-                <Span>windows版本</Span>
-              </Window>
+                    }}
+                    viewClass={"icon"}
+                  />
+                  <Span>windows版本</Span>
+                </Window>
+              </DownLoadInnerBox>
+              <DownLoadInnerBox>
+                <Linux onClick={() => this.doAlertMask(true)}>
+                  <LinuxLogo/>
+                  <Span>linux.deb</Span>
+                </Linux>
+                <Linux onClick={() => this.doAlertMask(true)}>
+                  <LinuxLogo/>
+                  <Span>linux.rpm</Span>
+                </Linux>
+              </DownLoadInnerBox>
+
 
             </DownLoadBox>
             <PdfContainer>
