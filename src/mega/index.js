@@ -13,6 +13,7 @@ import colorsFunc from "@lugia/lugia-web/dist/css/stateColor";
 import Headers from "../nav";
 
 import mac from "../../public/mega/mac.png";
+import linux from "../../public/mega/linux.png";
 import windows from "../../public/mega/windows.png";
 import banner from "./banner.png";
 import megaImg from "./mega.png";
@@ -70,7 +71,10 @@ const Main = styled.div`
 const DownLoadBox = styled.div`
   padding: 34px 0 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+`;
+const DownLoadInnerBox = styled.div`
+  padding-bottom: 16px;
 `;
 
 const MidBlock = styled.div`
@@ -136,6 +140,13 @@ const Mac = styled.a`
     background-color: #333;
   }
 `;
+const Linux = styled(Mac)`
+  background-color: #798F9D;
+  margin-right: 6px;
+  &:hover {
+    background-color: #798F9D95;
+  }
+`;
 
 const MacLogo = styled.div`
   height: 20px;
@@ -144,6 +155,10 @@ const MacLogo = styled.div`
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
+`;
+const LinuxLogo = styled(MacLogo)`
+  background: url(${linux}) no-repeat;
+  background-size: contain;
 `;
 
 const Window = styled.a`
@@ -218,35 +233,47 @@ export default class Mega extends React.Component {
                 <Tittle5>欢迎使用 Lugia Mega</Tittle5>
                 <Tittle2>请选择您要安装的操作系统</Tittle2>
                 <DownLoadBox>
-                  <Mac href="#DownLoadMac">
-                    <MacLogo />
-                    <Span>mac版本</Span>
-                  </Mac>
-                  <Window href="#DownLoadWindows">
-                    <WindowLogo />
-                    <Span>windows版本</Span>
-                  </Window>
-                  <DownLoad href="https://shimo.im/docs/VOAWVa7rRNf8FYkZ/" target='_blank'>
-                    <IconSpan>
-                      <Icon
-                        iconClass="lugia-icon-financial_pdf"
-                        theme={{
-                          icon: {
-                            Icon: {
-                              normal: {
-                                font: {
-                                  size: 18
-                                },
-                                margin: 6,
-                                color: "#4d63ff"
+                  <DownLoadInnerBox>
+                    <Mac href="#DownLoadMac">
+                      <MacLogo />
+                      <Span>mac版本</Span>
+                    </Mac>
+                    <Window href="#DownLoadWindows">
+                      <WindowLogo />
+                      <Span>windows版本</Span>
+                    </Window>
+                    <DownLoad href="https://shimo.im/docs/VOAWVa7rRNf8FYkZ/" target='_blank'>
+                      <IconSpan>
+                        <Icon
+                          iconClass="lugia-icon-financial_pdf"
+                          theme={{
+                            icon: {
+                              Icon: {
+                                normal: {
+                                  font: {
+                                    size: 18
+                                  },
+                                  margin: 6,
+                                  color: "#4d63ff"
+                                }
                               }
                             }
-                          }
-                        }}
-                        viewClass={"icon"}
-                      />
-                    </IconSpan>
-                  </DownLoad>
+                          }}
+                          viewClass={"icon"}
+                        />
+                      </IconSpan>
+                    </DownLoad>
+                  </DownLoadInnerBox>
+                  <DownLoadInnerBox>
+                    <Linux href="#">
+                      <LinuxLogo />
+                      <Span>linux.deb</Span>
+                    </Linux>
+                    <Linux href="#">
+                      <LinuxLogo />
+                      <Span>linux.rpm</Span>
+                    </Linux>
+                  </DownLoadInnerBox>
                 </DownLoadBox>
               </Main>
               <MidBlock>
