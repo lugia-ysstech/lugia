@@ -24,7 +24,8 @@ export default function() {
         graph.updateItem(item, {
           labelCfg: {
             style: {
-              fill: "#ffffff"
+              fill: "#ffffff",
+              cursor: "pointer"
             }
           }
         });
