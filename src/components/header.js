@@ -40,18 +40,30 @@ const HeadIndex = styled.a`
   line-height: 80px;
   margin-left: 50px;
   font-size: 14px;
-  color: #50575d;
+  color: ${props => (props.active ? "#4d63ff" : "#50575d")};
+  position: relative;
   &:hover {
     color: ${themeColor};
   }
   @media (max-width: 1720px) {
-    margin-left: 30px
+    margin-left: 30px;
   }
   @media (max-width: 1550px) {
-    margin-left: 20px
+    margin-left: 20px;
   }
-    @media (max-width: 1440px) {
+  @media (max-width: 1440px) {
     display: none;
+  }
+  &::after {
+    display: ${props => (props.active ? "true" : "none")};
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: ${themeColor};
   }
 `;
 const GitIconContainer = styled.a`
@@ -105,12 +117,14 @@ const GitStar = styled.div`
 
 export default class Header extends Component {
   static getDerivedStateFromProps(defProps: any, stateProps: any) {
+    const path = "/" + window.location.hash.match(/[^(#|\/)]+/)[0];
     if (!stateProps) {
-      return {};
+      return {
+        current: path
+      };
     }
-    const current = "current" in defProps ? defProps.value : stateProps.current;
     return {
-      current
+      current: "current" in defProps ? path : stateProps.current
     };
   }
 
@@ -120,7 +134,8 @@ export default class Header extends Component {
   }
 
   render() {
-    const { stars } = this.state;
+    const { stars, current } = this.state;
+    const isTutorial = current === "/tutorial";
     return (
       <Fragment>
         <Row>
@@ -156,7 +171,10 @@ export default class Header extends Component {
                     <HeadIndex onClick={() => linkToUrl("/doc")}>
                       获取文档
                     </HeadIndex>
-                    <HeadIndex onClick={() => linkToUrl("/tutorial")}>
+                    <HeadIndex
+                      active={isTutorial}
+                      onClick={() => linkToUrl("/tutorial")}
+                    >
                       教程中心
                     </HeadIndex>
                   </Col>
