@@ -164,7 +164,8 @@ export default class Navcomponent extends React.Component<any, any> {
       const {isHidden} = router[i];
       if(!isHidden){
         const {text,url} = router[i];
-        arr.push(<TabPane title={text} active={current === url} onClick={e => this.onTabClick(url)}>{text}</TabPane>);
+        const isChosenUrl = current === `/${url.match(/[^(#|\/)]+/)[0]}`;
+        arr.push(<TabPane title={text} active={isChosenUrl} onClick={e => this.onTabClick(url)}>{text}</TabPane>);
       }
     }
     return arr;
