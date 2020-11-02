@@ -117,7 +117,9 @@ const GitStar = styled.div`
 
 export default class Header extends Component {
   static getDerivedStateFromProps(defProps: any, stateProps: any) {
-    const path = "/" + window.location.hash.match(/[^(#|\/)]+/)[0];
+    const urlPath = window.location.hash;
+    const path = urlPath === "#/" ? "" : urlPath.match(/[^(#|\/)]+/)[0];
+
     if (!stateProps) {
       return {
         current: path
@@ -135,7 +137,7 @@ export default class Header extends Component {
 
   render() {
     const { stars, current } = this.state;
-    const isTutorial = current === "/tutorial";
+    const isTutorial = current === "tutorial";
     return (
       <Fragment>
         <Row>
