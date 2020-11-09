@@ -108,10 +108,10 @@ export default class Pages extends React.Component<any, any> {
       <React.Fragment>
         <Wrapper>
           <Row>
-            <Col span={5} xl={{ span: 1 }} xxl={{ span: 3 }}>
+            <Col span={1}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
               <Block> </Block>
             </Col>
-            <Col span={14} xl={{ span: 22 }} xxl={{ span: 18 }}>
+            <Col span={22}  xl={{ span: 22 }}  xxl={{ span: 20 }}>
               <Head>
                 <Headers/>
               </Head>
@@ -197,7 +197,7 @@ export default class Pages extends React.Component<any, any> {
                 </Row>
               </FileContainer>
             </Col>
-            <Col span={5} xl={{ span: 1 }} xxl={{ span: 3 }}>
+            <Col span={1}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
               <Block> </Block>
             </Col>
           </Row>

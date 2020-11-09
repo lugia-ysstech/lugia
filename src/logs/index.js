@@ -15,43 +15,43 @@ const { Row, Col } = Grid;
 const OutContainer = styled.div`
   width:100%;
   height:100%;
- 
+
 `;
 
 const Block = styled.div`
   height:60px;
 `;
 
-const Container = styled.div` 
+const Container = styled.div`
   padding:45px 0 50px 0;
   width:100%;
 `;
 
-const NavmenuContainer = styled.div` 
+const NavmenuContainer = styled.div`
   padding:45px 0  0;
 `;
 
-const Title = styled.div` 
+const Title = styled.div`
   font-size: 24px;
   color: #0f1333;
   font-weight: 600;
   margin: 0 0 26px;
 `;
 
-const TitleH2 = styled.div` 
+const TitleH2 = styled.div`
   font-size: 20px;
   color: #0f1333;
   font-weight: 600;
   margin: 26px 0 16px;
 `;
 
-const Text = styled.div` 
+const Text = styled.div`
   font-size: 14px;
   color: #36384d;
 `;
 
 
-const TitleMin = styled.div` 
+const TitleMin = styled.div`
   font-size: 18px;
   color: #0f1333;
   font-weight: 600;
@@ -69,7 +69,7 @@ const TitleMin = styled.div`
   }
 `;
 
-const TimeLineItem = styled.div` 
+const TimeLineItem = styled.div`
   font-size: 14px;
   color: #36384d;
   line-height: 28px;
@@ -88,18 +88,18 @@ const TimeLineItem = styled.div`
 `;
 
 
-const TimeLineContainer = styled.div` 
+const TimeLineContainer = styled.div`
   margin: 36px 0 0 0;
   width:100%;
 `;
 
 
-const TimeLineItemContainer = styled.div` 
+const TimeLineItemContainer = styled.div`
   width:100%;
   position:relative;
 `;
 
-const TimeLineItemLine = styled.div` 
+const TimeLineItemLine = styled.div`
     position:absolute;
     top: 16px;
     left: 4.5px;
@@ -109,7 +109,7 @@ const TimeLineItemLine = styled.div`
     z-index: -1;
 `;
 
-const FlexContainer = styled.div` 
+const FlexContainer = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
@@ -117,7 +117,7 @@ const FlexContainer = styled.div`
 `;
 
 
-const TimeLineTitle = styled.div` 
+const TimeLineTitle = styled.div`
   font-size: 18px;
   color: #0f1333;
   font-weight:600;
@@ -133,7 +133,7 @@ const TimeLineTitle = styled.div`
   }
 `;
 
-const TimeLineDate = styled.div` 
+const TimeLineDate = styled.div`
   font-size: 12px;
   color: #666666;
   margin: 0 0 0 10px;
@@ -143,7 +143,7 @@ const TimeLineDate = styled.div`
   border-radius: 10px;
 `;
 
-const TimeLineText = styled.div` 
+const TimeLineText = styled.div`
   font-size: 14px;
   margin-right: 4px;
   color: ${props => props.highLight?themeColor:'#36384d'} ;
@@ -180,7 +180,7 @@ const TimeLineText = styled.div`
 `;
 
 
-const TimeLineLink = styled.a` 
+const TimeLineLink = styled.a`
   font-size: 14px;
   margin-right: 4px;
   color: ${props => props.highLight?themeColor:'#36384d'} ;
@@ -272,10 +272,10 @@ export default class UpdateLog extends React.Component<any, any> {
     return (
       <OutContainer>
           <Row>
-            <Col span={0}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
+            <Col span={1}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
               <Block/>
             </Col>
-            <Col span={24}  xl={{ span: 22 }}  xxl={{ span: 20 }}>
+            <Col span={22}  xl={{ span: 22 }}  xxl={{ span: 20 }}>
               <HeaderNav />
               <Row>
                 <Col span={6} sm={{span: 10}} md={{span: 9}} lg={{span: 8}} xl={{ span: 6 }}  xxl={{ span: 5 }}>
@@ -326,7 +326,7 @@ export default class UpdateLog extends React.Component<any, any> {
                 </Col>
               </Row>
             </Col>
-            <Col span={0}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
+            <Col span={1}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
               <Block/>
             </Col>
           </Row>
