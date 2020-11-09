@@ -224,10 +224,10 @@ export default class Mega extends React.Component {
       <React.Fragment>
         <Wrapper>
           <Row>
-            <Col span={5} xl={{ span: 1 }} xxl={{ span: 3 }}>
+            <Col span={1} xl={{ span: 1 }} xxl={{ span: 2 }}>
               <Block> </Block>
             </Col>
-            <Col span={14} xl={{ span: 22 }} xxl={{ span: 18 }}>
+            <Col span={22}  xl={{ span: 22 }}  xxl={{ span: 20 }}>
               <Headers />
               <Main>
                 <Tittle5>欢迎使用 Lugia Mega</Tittle5>
@@ -343,7 +343,7 @@ export default class Mega extends React.Component {
                 </FlexBox>
               </MidBlock>
             </Col>
-            <Col span={5} xl={{ span: 1 }} xxl={{ span: 3 }}>
+            <Col span={1} xl={{ span: 1 }} xxl={{ span: 2 }}>
               <Block> </Block>
             </Col>
           </Row>

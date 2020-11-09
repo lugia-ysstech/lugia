@@ -437,10 +437,10 @@ export default class Pages extends React.Component<any, any> {
         <BannerImg />
 
         <Row>
-          <Col span={1} md={{ span: 1 }} xl={{ span: 2 }} xxl={{ span: 3 }}>
+          <Col span={0}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
             <Wrapper> </Wrapper>
           </Col>
-          <Col span={22} md={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 18 }}>
+          <Col span={24}  xl={{ span: 22 }}  xxl={{ span: 20 }}>
             <Header />
             <SloganWrap>
               <Row>
@@ -481,7 +481,7 @@ export default class Pages extends React.Component<any, any> {
               </Theme>
             </SloganWrap>
           </Col>
-          <Col span={1} md={{ span: 1 }} xl={{ span: 2 }} xxl={{ span: 3 }}>
+          <Col span={0}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
             <Wrapper> </Wrapper>
           </Col>
         </Row>

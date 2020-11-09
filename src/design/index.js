@@ -21,10 +21,10 @@ export default () => {
   return (
     <React.Fragment>
       <Row>
-        <Col span={0}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
+        <Col span={1}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
           {block}
         </Col>
-        <Col span={24}  xl={{ span: 22 }}  xxl={{ span: 20 }}>
+        <Col span={22}  xl={{ span: 22 }}  xxl={{ span: 20 }}>
           <Headers />
           <Row>
             <Col span={6} sm={{span: 10}} md={{span: 9}} lg={{span: 8}} xl={{ span: 6 }}  xxl={{ span: 5 }}>
@@ -36,7 +36,7 @@ export default () => {
             </Col>
           </Row>
         </Col>
-        <Col span={0}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
+        <Col span={1}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
           {block}
         </Col>
       </Row>

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import { Grid } from "@lugia/lugia-web";
-import Header from "../components/header";
+import Header from "../nav";
 import { Footer } from "../components/footer";
 import OpreationProcess from "./graph";
 import Video from "./video";
@@ -321,10 +321,10 @@ export default class TutorialCenter extends Component {
       <Fragment>
         <BannerImg />
         <Row>
-          <Col span={1} md={{ span: 1 }} xl={{ span: 2 }} xxl={{ span: 3 }}>
+          <Col span={1}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
             <Wrapper> </Wrapper>
           </Col>
-          <Col span={22} md={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 18 }}>
+          <Col span={22}  xl={{ span: 22 }}  xxl={{ span: 20 }}>
             <Header />
             <SearchWrap>
               <SearchHeader>Hi~请问有什么可以帮您？</SearchHeader>
@@ -442,7 +442,7 @@ export default class TutorialCenter extends Component {
               </FeedbackWrap>
             </Content>
           </Col>
-          <Col span={1} md={{ span: 1 }} xl={{ span: 2 }} xxl={{ span: 3 }}>
+          <Col  span={1}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
             <Wrapper> </Wrapper>
           </Col>
         </Row>
