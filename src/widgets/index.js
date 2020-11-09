@@ -40,11 +40,11 @@ export default () => {
           <Col span={24}  xl={{ span: 22 }}  xxl={{ span: 20 }}>
           <Headers />
           <Row>
-            <Col span={6}  xl={{ span: 4 }}  xxl={{ span: 5 }}>
+            <Col span={6} sm={{span: 10}} md={{span: 9}} lg={{span: 8}} xl={{ span: 6 }}  xxl={{ span: 5 }}>
               <Asides />
               <Block/>
             </Col>
-            <Col span={18} xl={{ span: 20 }}  xxl={{ span: 19 }}>
+            <Col span={18} sm={{span: 14}} md={{span: 15}} lg={{span: 16}} xl={{ span: 18 }}  xxl={{ span: 19 }}>
               <InnerContainer>{rout}</InnerContainer>
               <BackTop/>
             </Col>
