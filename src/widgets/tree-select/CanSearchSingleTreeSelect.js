@@ -69,6 +69,7 @@ export default class CanSearchTreeSelect extends React.Component<any, any> {
       <Theme config={config}>
         <TreeSelect
           data={data}
+          pathSeparator={'/'}
           onlySelectLeaf
           igronSelectField="notCanSelect"
           expandAll
