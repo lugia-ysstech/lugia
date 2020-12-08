@@ -1251,10 +1251,10 @@
     rxjs "^6.3.3"
     tslib "^1.11.1"
 
-"@lugia/lugia-web@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.npmjs.org/@lugia/lugia-web/-/lugia-web-1.2.6.tgz#6943b5dea768d48ea9dc11bcba9c865bcded5c0a"
-  integrity sha512-HBfQ2XdlR/I5PD+Fvj6mpXb2wkNJWNA58UjKlGjOJSVgavTwU5aE+RSznSHl9h9EzM1XkgIOXeLIbIssZXq/gw==
+"@lugia/lugia-web@^1.2.8":
+  version "1.2.8"
+  resolved "http://192.168.102.79:5001/@lugia%2flugia-web/-/lugia-web-1.2.8.tgz#a0a939bc0d53ee5961fb951b3f5829585f6ed071"
+  integrity sha1-oKk5vA1T7llh+5UbP1gpWF9u0HE=
   dependencies:
     "@lugia/css" "^1.0.24"
     "@lugia/listener" "^1.0.5"
@@ -1606,6 +1606,16 @@
     is-plain-object "^3.0.0"
     tslib "^1.11.1"
 
+"@lugia/object-utils@^1.1.0":
+  version "1.1.0"
+  resolved "http://192.168.102.79:5001/@lugia%2fobject-utils/-/object-utils-1.1.0.tgz#52364be605e4a4ff9465c21bdc22dfae6f25f22c"
+  integrity sha1-UjZL5gXkpP+UZcIb3CLfrm8l8iw=
+  dependencies:
+    "@babel/runtime" "^7.4.5"
+    deepmerge "^3.2.0"
+    is-plain-object "^3.0.0"
+    tslib "^1.11.1"
+
 "@lugia/ramada@^1.0.5":
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/@lugia/ramada/download/@lugia/ramada-1.0.5.tgz#e760646adcd3a9b00e4b8200359e03483c344779"
@@ -1635,13 +1645,13 @@
     tslib "^1.11.1"
 
 "@lugia/theme-css-hoc@^1.1.19":
-  version "1.1.19"
-  resolved "https://registry.npmjs.org/@lugia/theme-css-hoc/-/theme-css-hoc-1.1.19.tgz#143618279d5f04640e05de0e8113dd668e72f06e"
-  integrity sha512-pBucapv1ac68iC3tOQU+WVyv4jou8El1uyyxzCMjG9uyV09/hAZ9PE6hFCElTJswPXcRF1cjUDMI0s9SQCXDmA==
+  version "1.1.20"
+  resolved "http://192.168.102.79:5001/@lugia%2ftheme-css-hoc/-/theme-css-hoc-1.1.20.tgz#1aabe4493d07d763284a211842f1fac510c614e5"
+  integrity sha1-GqvkST0H12MoSiEYQvH6xRDGFOU=
   dependencies:
     "@babel/runtime" "^7.4.5"
     "@lugia/css" "^1.0.24"
-    "@lugia/object-utils" "^1.0.19"
+    "@lugia/object-utils" "^1.1.0"
     "@lugia/ramada" "^1.0.5"
     "@lugia/theme-utils" "^1.1.9"
     "@types/react" "^16.9.32"
@@ -1661,8 +1671,8 @@
 
 "@lugia/theme-utils@^1.1.9":
   version "1.1.9"
-  resolved "https://registry.npmjs.org/@lugia/theme-utils/-/theme-utils-1.1.9.tgz#987b794894ecbf661f6da1de0703ec1683f99713"
-  integrity sha512-wdktPzonXm4Dx4pP8AS0lZ3FYqWw9XCh0I/HXL1/NnX2MhW1KCI63QsjR9qKERyzVFEedtdjmOIWksNjbYJ/Aw==
+  resolved "http://192.168.102.79:5001/@lugia%2ftheme-utils/-/theme-utils-1.1.9.tgz#987b794894ecbf661f6da1de0703ec1683f99713"
+  integrity sha1-mHt5SJTsv2YfbaHeBwPsFoP5lxM=
   dependencies:
     "@babel/runtime" "^7.4.5"
     "@lugia/css" "^1.0.24"
