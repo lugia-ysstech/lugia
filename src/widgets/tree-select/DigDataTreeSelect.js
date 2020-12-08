@@ -65,6 +65,7 @@ export default class DefaultTreeSelect extends React.Component<any, any> {
         <TreeSelect
           data={bigTree}
           canSearch
+          pathSeparator={'/'}
           valueField={'key'}
           displayField={'title'}
           onlySelectLeaf

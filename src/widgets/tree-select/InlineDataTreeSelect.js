@@ -75,6 +75,7 @@ export default class InlineDataTreeSelect extends React.Component<any, any> {
       <Theme config={config}>
         <TreeSelect
           data={data}
+          pathSeparator={'/'}
           onlySelectLeaf
           expandAll
           mutliple
