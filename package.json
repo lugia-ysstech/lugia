@@ -23,6 +23,7 @@
     "create": "node ./src/widgets/create.js && npm run lintfix",
     "start": "lugia-scripts start",
     "build": "lugia-scripts build",
+    "replace": "node ./interval/replaceDownloadUrl.js",
     "test": "lugia-scripts test -w",
     "flow": "flow",
     "flow-typed": "flow-typed",

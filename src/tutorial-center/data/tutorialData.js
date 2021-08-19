@@ -1,4 +1,5 @@
 import data from "../assets/sourceData.json";
+import { IPADDRESS } from "../../common/constants";
 
 //异步获取数据
 /*async function asyncGetData() {
@@ -83,7 +84,7 @@ function getPageData(data) {
       if (children) {
         tempObj = { ...tempObj, ...getPageData(children) };
       } else {
-        const url = `http://139.9.26.43/video//${videoId}.mp4`;
+        const url = `${IPADDRESS}/video//${videoId}.mp4`;
         tempObj[value] = {
           id: videoId,
           title: text,

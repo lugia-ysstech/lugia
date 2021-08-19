@@ -4,8 +4,10 @@
  *
  * @flow
  */
-const downloadBaseUrl = 'http://139.9.26.43/download';
-const baseMegaIDE = "1.4.0";
+
+
+const downloadBaseUrl = 'http://lugia.tech/download';
+const baseMegaIDE = "1.5.11";
 module.exports = {
   version: "1.2.23",
   megaIDE: baseMegaIDE,
