@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { COPYRIGHT } from '../common/constants';
 
 const FooterWrap = styled.div`
   width: 100%;
@@ -20,7 +21,7 @@ const CopyRight = styled.div`
 export const Footer = () => (
   <FooterWrap>
     <CopyRight>
-      Copyright @ 2001-2020 Ysstech,All Rights Reserved 粤ICP备05050184号
+      {COPYRIGHT}
     </CopyRight>
   </FooterWrap>
 );

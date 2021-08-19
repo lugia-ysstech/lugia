@@ -12,7 +12,8 @@ import styled from "styled-components";
 import Header from "../components/header";
 import { Footer } from "../components/footer";
 import { linkToUrl } from "../support/commonMethods";
-import Video from '../tutorial-center/video';
+import Video from "../tutorial-center/video";
+import { IPADDRESS } from "../common/constants";
 
 import slogan from "../../public/home/slogan.png";
 import logoIntroduction from "../../public/home/logo-introduction.png";
@@ -25,7 +26,7 @@ import staticLeaf from "../../public/home/static-leaf.png";
 import dynamicLeaf from "../../public/home/dynamic-leaf.gif";
 import banner from "../../public/home/banner.png";
 import backgroundLogo from "../../public/home/background-logo.png";
-import newFeature from '../../public/tutorial-center/home_poster.png';
+import newFeature from "../../public/tutorial-center/home_poster.png";
 
 const { Row, Col } = Grid;
 
@@ -481,7 +482,7 @@ export default class Pages extends React.Component<any, any> {
               </Theme>
             </SloganWrap>
           </Col>
-          <Col span={0}  xl={{ span: 1 }}  xxl={{ span: 2 }}>
+          <Col span={0} xl={{ span: 1 }} xxl={{ span: 2 }}>
             <Wrapper> </Wrapper>
           </Col>
         </Row>
@@ -591,7 +592,7 @@ export default class Pages extends React.Component<any, any> {
               <VideoBoxWrap>
                 <VideoBox>
                   <Video
-                    src="http://139.9.26.43/video//A03.mp4"
+                    src={`${IPADDRESS}/video//A03.mp4`}
                     poster={newFeature}
                   />
                 </VideoBox>

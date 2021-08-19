@@ -6,6 +6,7 @@
  */
 import React from 'react';
 import styled from 'styled-components';
+import { COPYRIGHT } from '../common/constants';
 
 const Wrapper = styled.div`
   text-align: center;
@@ -29,7 +30,7 @@ export default class Footer extends React.Component {
     return (
       <Wrapper height={height}>
         <CopyRight>
-          Copyright @ 2001-2020 Ysstech,All Rights Reserved 粤ICP备05050184号
+          {COPYRIGHT}
         </CopyRight>
       </Wrapper>
     );

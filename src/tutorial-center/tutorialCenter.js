@@ -6,6 +6,7 @@ import { Footer } from "../components/footer";
 import OpreationProcess from "./graph";
 import Video from "./video";
 import Search from "../search";
+import { IPADDRESS } from "../common/constants";
 
 import banner from "./img/banner-background.png";
 import basicConstructor from "./img/basic-constructor.png";
@@ -344,7 +345,7 @@ export default class TutorialCenter extends Component {
                   <VideoCardWrap>
                     <VideoWrap>
                       <Video
-                        src="http://139.9.26.43/video//A03.mp4"
+                        src={`${IPADDRESS}/video//A03.mp4`}
                         switchSize={"small"}
                         poster={newFeature}
                       />
@@ -357,7 +358,7 @@ export default class TutorialCenter extends Component {
                     <VideoWrap>
                       <Video
                         switchSize={"small"}
-                        src="http://139.9.26.43/video//A01.mp4"
+                        src={`${IPADDRESS}/video//A01.mp4`}
                         poster={quickStart}
                       />
                     </VideoWrap>
@@ -369,7 +370,7 @@ export default class TutorialCenter extends Component {
                     <VideoWrap>
                       <Video
                         switchSize={"small"}
-                        src="http://139.9.26.43/video//A02.mp4"
+                        src={`${IPADDRESS}/video//A02.mp4`}
                         poster={normalPanel}
                       />
                     </VideoWrap>

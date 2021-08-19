@@ -12,6 +12,7 @@ import { go } from "@lugia/lugiax-router";
 import colorsFunc from "@lugia/lugia-web/dist/css/stateColor";
 import HeaderNav from "../nav";
 import Widget from "@lugia/lugia-web/dist/consts/index";
+import { IPADDRESS } from "../../common/constants";
 
 import appBanner from "../../../public/home/appbanner.png";
 import appSlogan from "../../../public/home/app-slogan.png";
@@ -466,7 +467,7 @@ export default class Pages extends React.Component<any, any> {
               <VideoBox>
                 <Video
                   switchSize="small"
-                  src="http://139.9.26.43/video//A03.mp4"
+                  src={`${IPADDRESS}/video//A03.mp4`}
                   poster={newFeature}
                 />
               </VideoBox>
